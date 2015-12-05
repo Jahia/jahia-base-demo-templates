@@ -1,0 +1,28 @@
+<jdmix = 'http://www.jahia.org/jahiademo/mix/1.0'>
+<jdnt = 'http://www.jahia.org/jahiademo/nt/1.0'>
+<jmix = 'http://www.jahia.org/jahia/mix/1.0'>
+<jnt = 'http://www.jahia.org/jahia/nt/1.0'>
+
+[jdnt:navmenu] > jnt:content, jdmix:jahiademo, jmix:studioOnly, jmix:navMenuComponent
+
+[jdmix:hidePage] mixin
+ extends = jmix:navMenuItem
+ itemtype = content
+ - value (string) = 'This page will be hidden in the menu.' protected
+
+[jdmix:alternateTitle] mixin
+ extends = jmix:navMenuItem
+ itemtype = content
+ - alternateTitle (string) internationalized
+
+[jdmix:jahiademo] > jmix:droppableContent, jmix:editorialContent mixin
+
+[jdnt:menuLevel] > jnt:content, jdmix:jahiademo, jmix:navMenuComponent
+ - baseLevel (long) = '0' hidden
+ - hideParentMenu (boolean) = 'false'
+
+[jdmix:footerWidgets] mixin
+
+[jdnt:logo] > jnt:content, jdmix:jahiademo, jmix:studioOnly, jmix:navMenuComponent
+ - logo (weakreference, picker[type='image']) < 'jmix:image'
+

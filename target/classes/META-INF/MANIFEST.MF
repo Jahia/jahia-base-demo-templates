@@ -1,0 +1,71 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1449265021268
+Build-Jdk: 1.8.0_51
+Built-By: rlodge
+Bundle-Category: jahia-module
+Bundle-Description: This is the custom profile module (jahiademo) for ru
+ nning on a Digital Factory server.
+Bundle-DocURL: http://www.jahia.com
+Bundle-ManifestVersion: 2
+Bundle-Name: jahiademo
+Bundle-SymbolicName: jahiademo
+Bundle-Vendor: Jahia Solutions Group SA
+Bundle-Version: 1.0.0.SNAPSHOT
+Created-By: Apache Maven Bundle Plugin
+Dynamic-ImportPackage: *
+Implementation-Title: jahiademo
+Implementation-URL: http://www.jahia.com
+Implementation-Vendor: Jahia Solutions Group SA
+Implementation-Version: 1.0-SNAPSHOT
+Import-Package: org.jahia.taglibs;version="[7.1,8)",org.jahia.services.r
+ ender,javax.jcr;version="[2.0,3)",org.jahia.taglibs.query;version="[7.1
+ ,8)",org.jahia.taglibs.template;version="[7.1,8)",org.jahia.taglibs.tem
+ plate.include;version="[7.1,8)",org.jahia.exceptions,org.apache.taglibs
+ .standard.tag.rt.core,org.jahia.services.content.nodetypes,org.apache.t
+ aglibs.standard.tag.common.core,org.apache.taglibs.standard.tei,org.apa
+ che.taglibs.standard.functions,org.jahia.services.content.decorator,org
+ .jahia.taglibs.jcr;version="[7.1,8)",org.jahia.taglibs.template.layoutm
+ anager;version="[7.1,8)",org.jahia.taglibs.user;version="[7.1,8)",org.j
+ ahia.taglibs.jcr.query;version="[7.1,8)",org.jahia.taglibs.template.gwt
+ ;version="[7.1,8)",org.apache.naming.java,org.jahia.taglibs.jcr.node;ve
+ rsion="[7.1,8)",org.jahia.taglibs.template.pager;version="[7.1,8)",org.
+ jahia.services.render.scripting,org.jahia.services.content,org.jahia.de
+ faults.config.spring,org.jahia.services
+Jahia-Depends: default
+Jahia-Download-Sources-Available: true
+Jahia-GroupId: org.jahia.modules
+Jahia-Module-Type: templatesSet
+Jahia-Required-Version: 7.1.0.1
+Jahia-Source-Control-Connection: scm:dummy:uri
+Jahia-Source-Control-DeveloperConnection: scm:dummy:uri
+Jahia-Source-Control-Tag: HEAD
+Jahia-Source-Folders: /Users/rlodge/MavenProjects/jahiademo
+Jahia-Static-Resources: /css,/icons,/images,/img,/javascript
+Provide-Capability: com.jahia.services.content;nodetypes:List<String>="j
+ dmix:alternateTitle,jdmix:footerWidgets,jdmix:hidePage,jdmix:jahiademo,
+ jdnt:logo,jdnt:menuLevel,jdnt:navmenu"
+Require-Capability: com.jahia.services.content;filter:="(nodetypes=jmix:
+ droppableContent)",com.jahia.services.content;filter:="(nodetypes=jmix:
+ editorialContent)",com.jahia.services.content;filter:="(nodetypes=jmix:
+ image)",com.jahia.services.content;filter:="(nodetypes=jmix:navMenuComp
+ onent)",com.jahia.services.content;filter:="(nodetypes=jmix:navMenuItem
+ )",com.jahia.services.content;filter:="(nodetypes=jmix:studioOnly)",com
+ .jahia.services.content;filter:="(nodetypes=jmix:theme)",com.jahia.serv
+ ices.content;filter:="(nodetypes=jnt:content)",com.jahia.services.conte
+ nt;filter:="(nodetypes=jnt:contentFolder)",com.jahia.services.content;f
+ ilter:="(nodetypes=jnt:contentList)",com.jahia.services.content;filter:
+ ="(nodetypes=jnt:contentTemplate)",com.jahia.services.content;filter:="
+ (nodetypes=jnt:folder)",com.jahia.services.content;filter:="(nodetypes=
+ jnt:mainResourceDisplay)",com.jahia.services.content;filter:="(nodetype
+ s=jnt:module)",com.jahia.services.content;filter:="(nodetypes=jnt:modul
+ es)",com.jahia.services.content;filter:="(nodetypes=jnt:page)",com.jahi
+ a.services.content;filter:="(nodetypes=jnt:pageTemplate)",com.jahia.ser
+ vices.content;filter:="(nodetypes=jnt:portletFolder)",com.jahia.service
+ s.content;filter:="(nodetypes=jnt:template)",com.jahia.services.content
+ ;filter:="(nodetypes=jnt:templatesFolder)",com.jahia.services.content;f
+ ilter:="(nodetypes=jnt:translation)",com.jahia.services.content;filter:
+ ="(nodetypes=mix:title)"
+Specification-Title: jahiademo
+Specification-Vendor: Jahia Solutions Group SA
+Specification-Version: 1.0-SNAPSHOT
+Tool: Bnd-2.3.0.201405100607
