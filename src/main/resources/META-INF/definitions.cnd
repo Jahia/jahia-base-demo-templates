@@ -17,6 +17,8 @@
 
 [jdmix:jahiademo] > jmix:droppableContent, jmix:editorialContent mixin
 
+[jdmix:landing] mixin
+
 [jdnt:menuLevel] > jnt:content, jdmix:jahiademo, jmix:navMenuComponent
  - baseLevel (long) = '0' hidden
  - hideParentMenu (boolean) = 'false'
@@ -26,3 +28,6 @@
 [jdnt:logo] > jnt:content, jdmix:jahiademo, jmix:studioOnly, jmix:navMenuComponent
  - logo (weakreference, picker[type='image']) < 'jmix:image'
 
+[jdnt:sliderPanel] > jnt:content, mix:title
+
+[jdnt:slider] > jnt:content, jdmix:jahiademo, jmix:manuallyOrderable, jmix:list, jdmix:landing orderable

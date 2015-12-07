@@ -16,6 +16,9 @@
 <%--@elvariable id="renderContext" type="org.jahia.services.render.RenderContext"--%>
 <%--@elvariable id="currentResource" type="org.jahia.services.render.Resource"--%>
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
+<%-- TODO: Logo is hard coded --%>
+<%-- TODO: Topbar is hard coded --%>
+<%-- TODO: copyright footer section is hard coded --%>
 
 
 <head>
@@ -45,6 +48,7 @@
     <template:addResources type="css" resources="animate.css"/>
     <template:addResources type="css" resources="line-icons.css"/>
     <template:addResources type="css" resources="font-awesome.min.css"/>
+    <template:addResources type="css" resources="parallax-slider.css"/>
 
 
     <!-- CSS Customization -->
@@ -62,7 +66,7 @@
         <div class="container">
             <!-- Logo -->
             <a class="logo" href="index.html">
-                <img src="assets/img/logo1-default.png" alt="Logo">
+                <img src="http://htmlstream.com/preview/unify-v1.8/assets/img/logo1-default.png" alt="Logo">
             </a>
             <!-- End Logo -->
 
@@ -109,7 +113,7 @@
 
 
 
-
+    <template:area path="landing" nodeTypes="jdmix:landing"/>
     <!--=== Content Part ===-->
     <div class="container content-sm">
         <template:area path="pagecontent"/>
@@ -200,21 +204,33 @@
 </div><!--/wrapper-->
 
 <!-- JS Global Compulsory -->
-<script type="text/javascript" src="file:///Users/rlodge/Documents/Unify-v1.8/HTML/assets/plugins/jquery/jquery.min.js"></script>
-<script type="text/javascript" src="file:///Users/rlodge/Documents/Unify-v1.8/HTML/assets/plugins/jquery/jquery-migrate.min.js"></script>
-<script type="text/javascript" src="file:///Users/rlodge/Documents/Unify-v1.8/HTML/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+<template:addResources type="javascript" resources="jquery.min.js"/>
+<template:addResources type="javascript" resources="jquery-migrate.min.js"/>
+<template:addResources type="javascript" resources="bootstrap.min.js"/>
 <!-- JS Implementing Plugins -->
-<script type="text/javascript" src="file:///Users/rlodge/Documents/Unify-v1.8/HTML/assets/plugins/back-to-top.js"></script>
-<script type="text/javascript" src="file:///Users/rlodge/Documents/Unify-v1.8/HTML/assets/plugins/smoothScroll.js"></script>
-<script type="text/javascript" src="file:///Users/rlodge/Documents/Unify-v1.8/HTML/assets/plugins/parallax-slider/js/modernizr.js"></script>
+<template:addResources type="javascript" resources="back-to-top.js"/>
+<template:addResources type="javascript" resources="smoothScroll.js"/>
+<template:addResources type="javascript" resources="modernizr.js"/>
+<template:addResources type="javascript" resources="jquery.cslider.js"/>
 <!-- JS Customization -->
-<script type="text/javascript" src="file:///Users/rlodge/Documents/Unify-v1.8/HTML/assets/js/custom.js"></script>
+<template:addResources type="javascript" resources="custom.js"/>
 <!-- JS Page Level -->
-<script type="text/javascript" src="file:///Users/rlodge/Documents/Unify-v1.8/HTML/assets/js/app.js"></script>
+<template:addResources type="javascript" resources="app.js"/>
+<template:addResources type="javascript" resources="parallax-slider.js" />
+<template:addResources type="inline">
+    <script type="text/javascript">
+        jQuery(document).ready(function() {
+            App.init();
+            <%--           OwlCarousel.initOwlCarousel();
+                       StyleSwitcher.initStyleSwitcher(); --%>
+            ParallaxSlider.initParallaxSlider();
+        });
+    </script>
+</template:addResources>
 <!--[if lt IE 9]>
-<script src="file:///Users/rlodge/Documents/Unify-v1.8/HTML/assets/plugins/respond.js"></script>
-<script src="file:///Users/rlodge/Documents/Unify-v1.8/HTML/assets/plugins/html5shiv.js"></script>
-<script src="file:///Users/rlodge/Documents/Unify-v1.8/HTML/assets/plugins/placeholder-IE-fixes.js"></script>
+<template:addResources type="javascript" resources="respond.js"/>
+<template:addResources type="javascript" resources="html5shiv.js"/>
+<template:addResources type="javascript" resources="placeholder-IE-fixes.js"/>
 <![endif]-->
 
 </body>
