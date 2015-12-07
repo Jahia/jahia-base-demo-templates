@@ -23,10 +23,14 @@
  - baseLevel (long) = '0' hidden
  - hideParentMenu (boolean) = 'false'
 
+[jdmix:headerWidgets] mixin
+
 [jdmix:footerWidgets] mixin
 
-[jdnt:logo] > jnt:content, jdmix:jahiademo, jmix:studioOnly, jmix:navMenuComponent
+[jdnt:logo] > jnt:content, jdmix:jahiademo, jdmix:headerWidgets
  - logo (weakreference, picker[type='image']) < 'jmix:image'
+
+[jdnt:topbar] > jnt:content, jdmix:jahiademo, jdmix:headerWidgets
 
 [jdnt:sliderPanel] > jnt:content, mix:title
 

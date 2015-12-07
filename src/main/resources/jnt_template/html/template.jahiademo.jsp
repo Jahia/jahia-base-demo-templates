@@ -16,8 +16,6 @@
 <%--@elvariable id="renderContext" type="org.jahia.services.render.RenderContext"--%>
 <%--@elvariable id="currentResource" type="org.jahia.services.render.Resource"--%>
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
-<%-- TODO: Logo is hard coded --%>
-<%-- TODO: Topbar is hard coded --%>
 <%-- TODO: copyright footer section is hard coded --%>
 
 
@@ -64,34 +62,7 @@
     <!--=== Header ===-->
     <div class="header">
         <div class="container">
-            <!-- Logo -->
-            <a class="logo" href="index.html">
-                <img src="http://htmlstream.com/preview/unify-v1.8/assets/img/logo1-default.png" alt="Logo">
-            </a>
-            <!-- End Logo -->
-
-            <!-- Topbar -->
-            <div class="topbar">
-                <ul class="loginbar pull-right">
-                    <li class="hoverSelector">
-                        <i class="fa fa-globe"></i>
-                        <a>Languages</a>
-                        <ul class="languages hoverSelectorBlock">
-                            <li class="active">
-                                <a href="#">English <i class="fa fa-check"></i></a>
-                            </li>
-                            <li><a href="#">Spanish</a></li>
-                            <li><a href="#">Russian</a></li>
-                            <li><a href="#">German</a></li>
-                        </ul>
-                    </li>
-                    <li class="topbar-devider"></li>
-                    <li><a href="page_faq.html">Help</a></li>
-                    <li class="topbar-devider"></li>
-                    <li><a href="page_login.html">Login</a></li>
-                </ul>
-            </div>
-            <!-- End Topbar -->
+            <template:area path="header" nodeTypes="jdmix:headerWidgets" moduleType="absoluteArea" level="0"/>
 
             <!-- Toggle get grouped for better mobile display -->
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">

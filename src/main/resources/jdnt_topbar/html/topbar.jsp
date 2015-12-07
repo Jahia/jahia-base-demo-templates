@@ -11,14 +11,25 @@
 <%--@elvariable id="renderContext" type="org.jahia.services.render.RenderContext"--%>
 <%--@elvariable id="currentResource" type="org.jahia.services.render.Resource"--%>
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
+<%-- TODO: Hardcoded component --%>
 
-<c:set var="siteNode" value="${renderContext.site}"/>
-<c:set var="logo" value="${currentNode.properties['logo'].node}"/>
-
-
-<c:if test="${! empty logo}">
-    <c:url var="logoUrl" value="${logo.url}"/>
-    <c:url var="homePageURL" value="${renderContext.site.home.url}"/>
-
-        <a href="${homePageURL}" class="logo"><img src="${logoUrl}" alt="Logo"></a>
-</c:if>
+<div class="topbar">
+    <ul class="loginbar pull-right">
+        <li class="hoverSelector">
+            <i class="fa fa-globe"></i>
+            <a>Languages</a>
+            <ul class="languages hoverSelectorBlock">
+                <li class="active">
+                    <a href="#">English <i class="fa fa-check"></i></a>
+                </li>
+                <li><a href="#">Spanish</a></li>
+                <li><a href="#">Russian</a></li>
+                <li><a href="#">German</a></li>
+            </ul>
+        </li>
+        <li class="topbar-devider"></li>
+        <li><a href="page_faq.html">Help</a></li>
+        <li class="topbar-devider"></li>
+        <li><a href="page_login.html">Login</a></li>
+    </ul>
+</div>
