@@ -18,7 +18,6 @@
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
 <%-- TODO: copyright footer section is hard coded --%>
 
-
 <head>
     <title>${fn:escapeXml(renderContext.mainResource.node.displayableName)}</title>
 
@@ -48,6 +47,7 @@
     <template:addResources type="css" resources="font-awesome.min.css"/>
     <template:addResources type="css" resources="parallax-slider.css"/>
 
+    <template:addResources type="css" resources="dark.css"/>
 
     <!-- CSS Customization -->
     <template:addResources type="css" resources="custom.css"/>
@@ -56,21 +56,13 @@
 <c:set var="siteNode" value="${renderContext.site}"/>
 
 
-<body>
+<body class="<template:include view="hidden.style"/>" >
 
 <div class="wrapper">
     <!--=== Header ===-->
     <div class="header">
         <div class="container">
             <template:area path="header" nodeTypes="jdmix:headerWidgets" moduleType="absoluteArea" level="0"/>
-
-            <!-- Toggle get grouped for better mobile display -->
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="fa fa-bars"></span>
-            </button>
-            <!-- End Toggle -->
-
         </div><!--/end container-->
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -83,12 +75,8 @@
     <!--=== End Header ===-->
 
 
-
-    <template:area path="landing" nodeTypes="jdmix:landing"/>
     <!--=== Content Part ===-->
-    <div class="container content-sm">
         <template:area path="pagecontent"/>
-    </div><!--/container-->
     <!-- End Content Part -->
 
     <!--=== Footer Version 1 ===-->

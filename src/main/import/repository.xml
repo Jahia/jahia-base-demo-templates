@@ -6,7 +6,24 @@
                  j:modulePriority="0"
                  j:moduleType="templatesSet"
                  j:title="jahiademo"
+                 jcr:mixinTypes="jmix:hasExternalProviderExtension"
                  jcr:primaryType="jnt:module">
+
+<sources jcr:mixinTypes="jmix:hasExternalProviderExtension"
+                  jcr:primaryType="jnt:moduleVersionFolder"
+                  j:staticMountPointProviderKey="module-jahiademo-1.0-SNAPSHOT">
+                    <src jcr:primaryType="jnt:folder">
+                        <main jcr:primaryType="jnt:folder">
+                            <resources jcr:primaryType="jnt:folder">
+                                <jnt_template jcr:primaryType="jnt:nodeTypeFolder">
+                                    <html jcr:primaryType="jnt:templateTypeFolder">
+                                        <template.jahiademo.jsp jcr:primaryType="jnt:viewFile"/>
+                                    </html>
+                                </jnt_template>
+                            </resources>
+                        </main>
+                    </src>
+                </sources>
 
             <portlets jcr:primaryType="jnt:portletFolder"/>
             <files jcr:primaryType="jnt:folder"/>
@@ -22,7 +39,6 @@
                   j:view="jahiademo"
                   jcr:mixinTypes="jmix:theme"
                   jcr:primaryType="jnt:template">
-                    <home jcr:primaryType="jnt:pageTemplate"/>
                     <simple jcr:primaryType="jnt:pageTemplate"/>
                         <navmenu jcr:primaryType="jnt:contentList">
                             <navigation-menu jcr:primaryType="jdnt:navmenu"/>
@@ -30,6 +46,34 @@
                         <logo jcr:primaryType="jnt:contentList">
                             <logo jcr:primaryType="jdnt:logo"/>
                         </logo>
+                <_x0032_-column j:hiddenTemplate="false" jcr:primaryType="jnt:pageTemplate">
+                            <j:translation_en jcr:language="en"
+                                    jcr:mixinTypes="mix:title"
+                                    jcr:primaryType="jnt:translation"
+                                    jcr:title="2 Column"/>
+                            <pagecontent jcr:primaryType="jnt:contentList">
+                                <grid-layout bottomMargin="false"
+                                  jcr:primaryType="jdnt:gridLayout"
+                                  layout="3-4_1-4"/>
+                            </pagecontent>
+                        </_x0032_-column>
+                        <_x0033_-column j:hiddenTemplate="false" jcr:primaryType="jnt:pageTemplate">
+                            <j:translation_en jcr:language="en"
+                                    jcr:mixinTypes="mix:title"
+                                    jcr:primaryType="jnt:translation"
+                                    jcr:title="3 Column"/>
+                            <pagecontent jcr:primaryType="jnt:contentList">
+                                <grid-layout bottomMargin="false"
+                                  jcr:primaryType="jdnt:gridLayout"
+                                  layout="1-3_1-3_1-3"/>
+                            </pagecontent>
+                        </_x0033_-column>
+                        <home jcr:primaryType="jnt:pageTemplate">
+                            <j:translation_en jcr:language="en"
+                                    jcr:mixinTypes="mix:title"
+                                    jcr:primaryType="jnt:translation"
+                                    jcr:title="default"/>
+                        </home>
                 </base>
                     <content-template j:applyOn="jnt:content"
                               j:hiddenTemplate="true"
