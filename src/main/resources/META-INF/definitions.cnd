@@ -43,3 +43,19 @@
 [jdnt:gridLayout] > jnt:content, jdmix:jahiademo
  - layout (string, choicelist[resourceBundle,moduleImage='png']) = '1' autocreated < '1', '1-2_1-2', '2-3_1-3', '1-3_2-3', '1-4_3-4', '3-4_1-4', '1-4_2-4_1-4', '1-3_1-3_1-3', '1-4_1-4_1-4_1-4'
  - bottomMargin (boolean) = 'false'
+
+[jdnt:highlights] > jnt:contentList, jdmix:jahiademo, jmix:manuallyOrderable, jmix:list orderable
+ - numColumns (string, choicelist[resourceBundle]) = '3' autocreated < '1', '2', '3', '4'
+  + * (jdnt:highlight)
+
+[jdnt:highlight] > jnt:content, mix:title, famix:faIcon
+ - jcr:title (string) internationalized primary
+ - description (string) internationalized
+
+[jdmix:imgView] mixin
+ extends = jdnt:highlight
+ - image (weakreference, picker[type='image']) < 'jmix:image'
+
+[jdmix:hasLink] mixin
+ extends = jdnt:highlight
+ - internalLink (weakreference, picker[type='page']) < 'jnt:page'
