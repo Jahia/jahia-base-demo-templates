@@ -46,7 +46,7 @@
     <template:addResources type="css" resources="line-icons.css"/>
     <template:addResources type="css" resources="font-awesome.min.css"/>
     <template:addResources type="css" resources="parallax-slider.css"/>
-
+    <template:addResources type="css" resources="owl.carousel.css"/>
     <template:addResources type="css" resources="dark.css"/>
 
     <!-- CSS Customization -->
@@ -64,6 +64,10 @@
         <div class="container">
             <template:area path="header" nodeTypes="jdmix:headerWidgets" moduleType="absoluteArea" level="0"/>
         </div><!--/end container-->
+        <%-- add a line break so the menu doesn't overlay the header activation button --%>
+        <c:if test="${renderContext.editMode}">
+            <br/>
+        </c:if>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse mega-menu navbar-responsive-collapse">
@@ -76,9 +80,11 @@
 
 
     <!--=== Content Part ===-->
+    <div class="container">
         <template:area path="pagecontent"/>
+    </div>
     <!-- End Content Part -->
-
+<br/>
     <!--=== Footer Version 1 ===-->
     <div class="footer-v1">
         <div class="footer">
@@ -171,17 +177,19 @@
 <template:addResources type="javascript" resources="smoothScroll.js"/>
 <template:addResources type="javascript" resources="modernizr.js"/>
 <template:addResources type="javascript" resources="jquery.cslider.js"/>
+<template:addResources type="javascript" resources="owl.carousel.js"/>
 <!-- JS Customization -->
 <template:addResources type="javascript" resources="custom.js"/>
 <!-- JS Page Level -->
 <template:addResources type="javascript" resources="app.js"/>
+<template:addResources type="javascript" resources="owl-carousel.js"/>
 <template:addResources type="javascript" resources="parallax-slider.js" />
 <template:addResources type="inline">
     <script type="text/javascript">
         jQuery(document).ready(function() {
             App.init();
-            <%--           OwlCarousel.initOwlCarousel();
-                       StyleSwitcher.initStyleSwitcher(); --%>
+            OwlCarousel.initOwlCarousel();
+            <%--           StyleSwitcher.initStyleSwitcher(); --%>
             ParallaxSlider.initParallaxSlider();
         });
     </script>

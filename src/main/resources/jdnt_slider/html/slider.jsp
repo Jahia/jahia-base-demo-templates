@@ -21,6 +21,10 @@
 
 
 
+<!-- Close the container from the template before starting a slider section
+       Have to reopen the div AFTER the slider -->
+</div>
+
 
 <!--=== Slider ===-->
 <div class="slider-inner">
@@ -50,5 +54,6 @@
 </div><!--/slider-->
 <!--=== End Slider ===-->
 
-
+<!-- open the template container for remaining content -->
+<div class="container">
 

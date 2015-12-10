@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <content xmlns:j="http://www.jahia.org/jahia/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0">
     <modules jcr:primaryType="jnt:modules">
-        <jahiademo j:dependencies="default"
+        <jahiademo j:dependencies="default font-awesome"
                  j:installedModules="jahiademo"
                  j:modulePriority="0"
                  j:moduleType="templatesSet"
                  j:title="jahiademo"
                  jcr:mixinTypes="jmix:hasExternalProviderExtension"
                  jcr:primaryType="jnt:module">
-
-<sources jcr:mixinTypes="jmix:hasExternalProviderExtension"
+                <sources jcr:mixinTypes="jmix:hasExternalProviderExtension"
                   jcr:primaryType="jnt:moduleVersionFolder"
                   j:staticMountPointProviderKey="module-jahiademo-1.0-SNAPSHOT">
                     <src jcr:primaryType="jnt:folder">
@@ -20,6 +19,9 @@
                                         <template.jahiademo.jsp jcr:primaryType="jnt:viewFile"/>
                                     </html>
                                 </jnt_template>
+                                <META-INF jcr:primaryType="jnt:metaInfFolder">
+                                    <definitions.cnd jcr:primaryType="jnt:definitionFile"/>
+                                </META-INF>
                             </resources>
                         </main>
                     </src>
@@ -46,7 +48,7 @@
                         <logo jcr:primaryType="jnt:contentList">
                             <logo jcr:primaryType="jdnt:logo"/>
                         </logo>
-                <_x0032_-column j:hiddenTemplate="false" jcr:primaryType="jnt:pageTemplate">
+                        <_x0032_-column j:hiddenTemplate="false" jcr:primaryType="jnt:pageTemplate">
                             <j:translation_en jcr:language="en"
                                     jcr:mixinTypes="mix:title"
                                     jcr:primaryType="jnt:translation"

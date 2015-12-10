@@ -17,33 +17,29 @@
 <%--@elvariable id="currentResource" type="org.jahia.services.render.Resource"--%>
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
 
-<c:set var="numColumns" value="${currentNode.properties['numColumns'].string}"/>
-<c:if test="${empty numColumns}">
-    <c:set var="numColumns" value="3"/>
-</c:if>
-<c:set var="colWidth">
-    <fmt:formatNumber type="number" maxFractionDigits="0" value="${12/numColumns}" />
-</c:set>
-
-<%--div class="container content"--%>
-    <c:set var="highlights" value="${jcr:getChildrenOfType(currentNode, 'jdnt:highlight')}"/>
-    <c:forEach items="${highlights}" var="highlight" varStatus="item">
-        <c:if test="${item.count%numColumns == 1}">
-            <div class="row margin-bottom-30">
-        </c:if>
-        <div class="col-md-${colWidth}">
-            <template:module node="${highlight}" nodeTypes="jdnt:highlight" editable="true"/>
-        </div>
-        <c:if test="${item.count%numColumns == 0 or item.last}">
+<div id="myCarousel" class="carousel slide carousel-v1">
+    <div class="carousel-inner">
+        <c:set var="images" value="${jcr:getChildrenOfType(currentNode, 'jdnt:carouselImg')}"/>
+        <c:forEach items="${images}" var="image" varStatus="item">
+            <div class="item<c:if test="${item.first}"> active</c:if>">
+            <template:module node="${image}" nodeTypes="jdnt:carouselImg" editable="true"/>
             </div>
-        </c:if>
-    </c:forEach>
-    <c:if test="${renderContext.editMode}">
-        <template:module path="*" nodeTypes="jdnt:highlight"/>
-    </c:if>
+        </c:forEach>
+    </div>
 
-<%--/div--%>
+    <div class="carousel-arrow">
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <i class="fa fa-angle-left"></i>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <i class="fa fa-angle-right"></i>
+        </a>
+    </div>
+</div>
 
+<c:if test="${renderContext.editMode}">
+    <template:module path="*" />
+</c:if>
 
 
 

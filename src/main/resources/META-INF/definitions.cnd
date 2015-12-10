@@ -1,7 +1,9 @@
+<famix = 'http://fontawesome.io/jahia/mix/1.0'>
 <jdmix = 'http://www.jahia.org/jahiademo/mix/1.0'>
 <jdnt = 'http://www.jahia.org/jahiademo/nt/1.0'>
 <jmix = 'http://www.jahia.org/jahia/mix/1.0'>
 <jnt = 'http://www.jahia.org/jahia/nt/1.0'>
+<mix = 'http://www.jcp.org/jcr/mix/1.0'>
 
 [jdnt:navmenu] > jnt:content, jdmix:jahiademo, jmix:studioOnly, jmix:navMenuComponent
 
@@ -54,8 +56,19 @@
 
 [jdmix:imgView] mixin
  extends = jdnt:highlight
- - image (weakreference, picker[type='image']) < 'jmix:image'
+ - image (weakreference, picker[type='image']) mandatory < 'jmix:image'
 
 [jdmix:hasLink] mixin
  extends = jdnt:highlight
- - internalLink (weakreference, picker[type='page']) < 'jnt:page'
+ - internalLink (weakreference, picker[type='page']) mandatory < 'jnt:page'
+
+[jdnt:headline] > jnt:content, mix:title, jdmix:jahiademo
+
+[jdnt:carousel] > jnt:content, jdmix:jahiademo, jmix:manuallyOrderable, jmix:list orderable
+ + * (jdnt:carouselImg)
+
+[jdnt:carouselImg] > jnt:content
+ - image (weakreference, picker[type='image']) mandatory < 'jmix:image'
+ - caption (string)
+
+
