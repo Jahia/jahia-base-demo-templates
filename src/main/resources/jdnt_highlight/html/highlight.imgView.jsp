@@ -19,7 +19,16 @@
 
 <c:set var="title" value="${currentNode.properties['jcr:title'].string}"/>
 <c:set var="description" value="${currentNode.properties['description'].string}"/>
-<c:set var="imageUrl" value="${currentNode.properties['image'].node.url}"/>
+<c:set var="image" value="${currentNode.properties['image'].node}"/>
+<c:choose>
+    <c:when test="${empty image}">
+        <c:url var="imageUrl" value="${url.currentModule}/img/background.jpg"/>
+    </c:when>
+    <c:otherwise>
+        <c:url var="imageUrl" value="${image.url}"/>
+    </c:otherwise>
+</c:choose>
+
 <c:if test="${jcr:isNodeType(currentNode, 'jdmix:hasLink')}">
     <c:set var="linkUrl" value="${currentNode.properties['internalLink'].node.url}"/>
 </c:if>

@@ -21,7 +21,7 @@
     <c:set var="images" value="${jcr:getChildrenOfType(currentNode, 'jdnt:carouselImg')}"/>
     <c:forEach items="${images}" var="image" varStatus="item">
         <div class="item<c:if test="${item.first}"> active</c:if>">
-            <template:module node="${image}" nodeTypes="jdnt:carouselImg" editable="true"/>
+            <template:module node="${image}" view="owl" nodeTypes="jdnt:carouselImg" editable="true"/>
         </div>
     </c:forEach>
 </div>
