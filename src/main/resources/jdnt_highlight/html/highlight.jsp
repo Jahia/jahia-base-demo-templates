@@ -36,16 +36,15 @@
                 <c:otherwise><i class="fa ${icon} service-icon"></i></c:otherwise>
             </c:choose>
                 <div class="desc">
-                    <c:choose>
-                    <c:when test="${jcr:isNodeType(currentNode, 'jdmix:hasLink')}">
-                    <h4><a href="${linkUrl}">${title}</a></h4>
-                    </c:when>
-                        <c:otherwise>
                     <h4>${title}</h4>
-                        </c:otherwise>
-                    </c:choose>
+
                     <p>${description}</p>
+        <%-- display a read more text link if a link has been provided --%>
+        <c:if test="${jcr:isNodeType(currentNode, 'jdmix:hasLink')}">
+            <a href="${linkUrl}"><fmt:message key="jdnt_highlight.readmore"/></a>
+        </c:if>
                 </div>
+
             </div>
 <%-- removed to allow user to change view on the layout tab in edit mode
     </c:otherwise>

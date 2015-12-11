@@ -21,6 +21,7 @@
 <c:set var="description" value="${currentNode.properties['description'].string}"/>
 <c:set var="image" value="${currentNode.properties['image'].node}"/>
 <c:choose>
+    <%-- If no image has been supplied for the image view, put a placeholder image in place --%>
     <c:when test="${empty image}">
         <c:url var="imageUrl" value="${url.currentModule}/img/background.jpg"/>
     </c:when>
@@ -29,20 +30,30 @@
     </c:otherwise>
 </c:choose>
 
+<%-- check if the link property has been used on this content --%>
 <c:if test="${jcr:isNodeType(currentNode, 'jdmix:hasLink')}">
     <c:set var="linkUrl" value="${currentNode.properties['internalLink'].node.url}"/>
 </c:if>
-
 
     <div class="thumbnails thumbnail-style thumbnail-kenburn">
         <div class="thumbnail-img">
             <div class="overflow-hidden">
                 <img class="img-responsive" src="${imageUrl}" alt="">
             </div>
-            <a class="btn-more hover-effect" href="${linkUrl}">read more +</a>
+            <%-- only display the read more text if a link has been provided --%>
+            <c:if test="${not empty linkUrl}">
+                <a class="btn-more hover-effect" href="${linkUrl}"><fmt:message key="jdnt_highlight.readmore"/> +</a>
+            </c:if>
         </div>
         <div class="caption">
+            <c:choose>
+            <c:when test="${not empty linkUrl}">
             <h3><a class="hover-effect" href="${linkUrl}">${title}</a></h3>
+            </c:when>
+                <c:otherwise>
+                    <h3><a class="hover-effect" href="#">${title}</a></h3>
+                </c:otherwise>
+            </c:choose>
             <p>${description}</p>
         </div>
     </div>

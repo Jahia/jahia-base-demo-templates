@@ -17,6 +17,12 @@
 <%--@elvariable id="currentResource" type="org.jahia.services.render.Resource"--%>
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
 
+<%-- Get the title of the carousel, if exists display above carousel --%>
+<c:set var="title" value="${currentNode.properties['jcr:title'].string}"/>
+<c:if test="${not empty title}">
+    <div class="headline"><h2>${title}</h2></div>
+</c:if>
+
 <div class="owl-clients-v1">
     <c:set var="images" value="${jcr:getChildrenOfType(currentNode, 'jdnt:carouselImg')}"/>
     <c:forEach items="${images}" var="image" varStatus="item">

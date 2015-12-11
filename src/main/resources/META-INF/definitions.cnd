@@ -46,7 +46,7 @@
  - layout (string, choicelist[resourceBundle,moduleImage='png']) = '1' autocreated < '1', '1-2_1-2', '2-3_1-3', '1-3_2-3', '1-4_3-4', '3-4_1-4', '1-4_2-4_1-4', '1-3_1-3_1-3', '1-4_1-4_1-4_1-4'
  - bottomMargin (boolean) = 'false'
 
-[jdnt:highlights] > jnt:contentList, jdmix:jahiademo, jmix:manuallyOrderable, jmix:list orderable
+[jdnt:highlights] > jnt:contentList, mix:title, jdmix:jahiademo, jmix:manuallyOrderable, jmix:list orderable
  - numColumns (string, choicelist[resourceBundle]) = '3' autocreated < '1', '2', '3', '4'
   + * (jdnt:highlight)
 
@@ -64,11 +64,12 @@
 
 [jdnt:headline] > jnt:content, mix:title, jdmix:jahiademo
 
-[jdnt:carousel] > jnt:content, jdmix:jahiademo, jmix:manuallyOrderable, jmix:list orderable
+[jdnt:carousel] > jnt:content, mix:title, jdmix:jahiademo, jmix:manuallyOrderable, jmix:list orderable
+ - jcr:title (string) internationalized primary
  + * (jdnt:carouselImg)
 
 [jdnt:carouselImg] > jnt:content
  - image (weakreference, picker[type='image']) mandatory < 'jmix:image'
- - caption (string)
+ - caption (string) internationalized
 
 

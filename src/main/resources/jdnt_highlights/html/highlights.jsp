@@ -17,15 +17,22 @@
 <%--@elvariable id="currentResource" type="org.jahia.services.render.Resource"--%>
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
 
+<%-- Get the title of the carousel, if exists display above carousel --%>
+<c:set var="title" value="${currentNode.properties['jcr:title'].string}"/>
+<c:if test="${not empty title}">
+    <div class="headline"><h2>${title}</h2></div>
+</c:if>
+
+<%-- get the number of columns from the properties, if empty set to 3 columns--%>
 <c:set var="numColumns" value="${currentNode.properties['numColumns'].string}"/>
 <c:if test="${empty numColumns}">
     <c:set var="numColumns" value="3"/>
 </c:if>
+<%-- set the columnd width based on 12 for a full width, divided by number of columns selected --%>
 <c:set var="colWidth">
     <fmt:formatNumber type="number" maxFractionDigits="0" value="${12/numColumns}" />
 </c:set>
 
-<%--div class="container content"--%>
     <c:set var="highlights" value="${jcr:getChildrenOfType(currentNode, 'jdnt:highlight')}"/>
     <c:forEach items="${highlights}" var="highlight" varStatus="item">
         <c:if test="${item.count%numColumns == 1}">
@@ -41,8 +48,6 @@
     <c:if test="${renderContext.editMode}">
         <template:module path="*" nodeTypes="jdnt:highlight"/>
     </c:if>
-
-<%--/div--%>
 
 
 
