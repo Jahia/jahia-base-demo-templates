@@ -17,7 +17,8 @@
 <%--@elvariable id="currentResource" type="org.jahia.services.render.Resource"--%>
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
 
-<div id="myCarousel" class="carousel slide carousel-v1">
+
+<div id="myCarousel${currentNode.identifier}" class="carousel slide carousel-v1">
     <div class="carousel-inner">
         <c:set var="images" value="${jcr:getChildrenOfType(currentNode, 'jdnt:carouselImg')}"/>
         <c:forEach items="${images}" var="image" varStatus="item">
@@ -28,10 +29,10 @@
     </div>
 
     <div class="carousel-arrow">
-        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+        <a class="left carousel-control" href="#myCarousel${currentNode.identifier}" data-slide="prev">
             <i class="fa fa-angle-left"></i>
         </a>
-        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+        <a class="right carousel-control" href="#myCarousel${currentNode.identifier}" data-slide="next">
             <i class="fa fa-angle-right"></i>
         </a>
     </div>
