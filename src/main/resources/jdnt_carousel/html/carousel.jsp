@@ -17,22 +17,37 @@
 <%--@elvariable id="currentResource" type="org.jahia.services.render.Resource"--%>
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
 
+<%-- set componentId variable to in order to make each carousel unique on the page. These will be used to define carousel div id and its nav controls --%>
+<c:set var="componentId" value="${currentNode.identifier}"/>
 
-<div id="myCarousel${currentNode.identifier}" class="carousel slide carousel-v1">
+<div id="myCarousel-${componentId}" class="carousel slide carousel-v1">
     <div class="carousel-inner">
         <c:set var="images" value="${jcr:getChildrenOfType(currentNode, 'jdnt:carouselImg')}"/>
-        <c:forEach items="${images}" var="image" varStatus="item">
-            <div class="item<c:if test="${item.first}"> active</c:if>">
-            <template:module node="${image}" nodeTypes="jdnt:carouselImg" editable="true"/>
-            </div>
-        </c:forEach>
+      	<%-- Test to see if carousel is empty, if so insert placeholder image --%>
+     	<c:choose>
+          <c:when test="${fn:length(images) == 0}">
+            		<div class="item active">
+    					<img src="${url.currentModule}/img/background.jpg" alt="placeholder">
+                      	<%-- use resource bundle to display a placeholder caption --%>
+                      	<div class="carousel-caption"><p><fmt:message key="jdnt_carousel.placeholderCaption"/> </p></div>
+					</div>
+          </c:when>
+	    	<c:otherwise>
+		        <c:forEach items="${images}" var="image" varStatus="item">
+      		  		<div class="item<c:if test="${item.first}"> active</c:if>">
+           			 <template:module node="${image}" nodeTypes="jdnt:carouselImg" editable="true"/>
+            		</div>
+        		</c:forEach>
+          </c:otherwise>
+		</c:choose>
+
     </div>
 
     <div class="carousel-arrow">
-        <a class="left carousel-control" href="#myCarousel${currentNode.identifier}" data-slide="prev">
+        <a class="left carousel-control" href="#myCarousel-${componentId}" data-slide="prev">
             <i class="fa fa-angle-left"></i>
         </a>
-        <a class="right carousel-control" href="#myCarousel${currentNode.identifier}" data-slide="next">
+        <a class="right carousel-control" href="#myCarousel-${componentId}" data-slide="next">
             <i class="fa fa-angle-right"></i>
         </a>
     </div>
