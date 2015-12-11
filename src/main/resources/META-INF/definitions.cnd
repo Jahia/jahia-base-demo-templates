@@ -48,6 +48,7 @@
 
 [jdnt:highlights] > jnt:contentList, mix:title, jdmix:jahiademo, jmix:manuallyOrderable, jmix:list orderable
  - numColumns (string, choicelist[resourceBundle]) = '3' autocreated < '1', '2', '3', '4'
+ - bottomMargin (string, choicelist[resourceBundle]) = '30' autocreated < 'No margin', '5', '10', '15', '20', '25', '30', '35', '40', '45', '50', '55', '60', '100'
   + * (jdnt:highlight)
 
 [jdnt:highlight] > jnt:content, mix:title, famix:faIcon

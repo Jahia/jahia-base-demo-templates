@@ -17,6 +17,22 @@
 <%--@elvariable id="currentResource" type="org.jahia.services.render.Resource"--%>
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
 
+<%-- get the bottom margin size --%>
+<c:set var="bottomMargin" value="${currentNode.properties['bottomMargin'].string}"/>
+<%-- if empty default to 30 pixels --%>
+<c:if test="${empty bottomMargin}">
+    <c:set var="bottomMargin" value="30"/>
+</c:if>
+<c:choose>
+    <c:when test="${bottomMargin == 'No margin'}">
+        <c:set var="marginClass" value=""/>
+    </c:when>
+    <c:otherwise>
+        <c:set var="marginClass" value=" margin-bottom-${bottomMargin}"/>
+    </c:otherwise>
+</c:choose>
+
+
 <%-- Get the title of the carousel, if exists display above carousel --%>
 <c:set var="title" value="${currentNode.properties['jcr:title'].string}"/>
 <c:if test="${not empty title}">
@@ -28,7 +44,7 @@
 <c:if test="${empty numColumns}">
     <c:set var="numColumns" value="3"/>
 </c:if>
-<%-- set the columnd width based on 12 for a full width, divided by number of columns selected --%>
+<%-- set the column width based on 12 for a full width, divided by number of columns selected --%>
 <c:set var="colWidth">
     <fmt:formatNumber type="number" maxFractionDigits="0" value="${12/numColumns}" />
 </c:set>
@@ -36,7 +52,7 @@
     <c:set var="highlights" value="${jcr:getChildrenOfType(currentNode, 'jdnt:highlight')}"/>
     <c:forEach items="${highlights}" var="highlight" varStatus="item">
         <c:if test="${item.count%numColumns == 1}">
-            <div class="row margin-bottom-30">
+        <div class="row${marginClass}">
         </c:if>
         <div class="col-md-${colWidth}">
             <template:module node="${highlight}" nodeTypes="jdnt:highlight" editable="true"/>
