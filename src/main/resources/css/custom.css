@@ -1,1 +1,31 @@
 /* Add here all your css styles (customizations) */
+
+#logo {
+    float: left;
+}
+
+.wrapper .header .topbar .open > .dropdown-menu{
+    display: block;
+}
+
+.header .topbar .dropdown > a:after {
+    display: none;
+}
+
+.header .topbar #languages i.fa {
+    color: #bbb;
+}
+
+.header .topbar  a, .header .topbar a:hover {
+    color: #7c8082;
+    font-size: 11px;
+    text-transform: uppercase;
+}
+
+#languages{
+    margin-right: 10px;
+}
+
+#loginBox{
+    margin-top: 2px;
+}

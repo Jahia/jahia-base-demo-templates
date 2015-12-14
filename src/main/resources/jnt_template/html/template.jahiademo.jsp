@@ -62,12 +62,13 @@
     <!--=== Header ===-->
     <div class="header">
         <div class="container">
-            <template:area path="header" nodeTypes="jdmix:headerWidgets" moduleType="absoluteArea" level="0"/>
+            <div id="logo">
+                <template:area path="logo"/>
+            </div>
+            <div class="topbar">
+            <template:area path="header"/>
+            </div>
         </div><!--/end container-->
-        <%-- add a line break so the menu doesn't overlay the header activation button --%>
-        <c:if test="${renderContext.editMode}">
-            <br/>
-        </c:if>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse mega-menu navbar-responsive-collapse">
