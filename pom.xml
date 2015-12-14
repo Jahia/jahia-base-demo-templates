@@ -89,7 +89,7 @@
     <developerConnection>scm:dummy:uri</developerConnection>
   </scm>
   <properties>
-    <jahia-depends>default,font-awesome</jahia-depends>
+    <jahia-depends>default,font-awesome,news</jahia-depends>
   </properties>
   <repositories>
     <repository>

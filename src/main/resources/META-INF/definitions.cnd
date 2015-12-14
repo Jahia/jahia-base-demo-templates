@@ -73,4 +73,7 @@
  - image (weakreference, picker[type='image']) mandatory < 'jmix:image'
  - caption (string) internationalized
 
-
+[jdnt:timeline] > jnt:contentList, jdmix:jahiademo orderable
+ - limit (string)
+ - parentPage (weakreference, picker[type='page']) < 'jnt:page'
+ + * (jnt:news)
