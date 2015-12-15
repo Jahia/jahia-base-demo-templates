@@ -102,7 +102,7 @@
     </div>
     <!--=== End Header v8 ===-->
 
-
+    <template:area path="landing"/>
     <!--=== Content Part ===-->
     <div class="container">
         <template:area path="pagecontent"/>
@@ -213,6 +213,7 @@
         jQuery(document).ready(function() {
             App.init();
             OwlCarousel.initOwlCarousel();
+            MSfullWidth.initMSfullWidth();
             <%--           StyleSwitcher.initStyleSwitcher(); --%>
             ParallaxSlider.initParallaxSlider();
         });
