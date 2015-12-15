@@ -17,42 +17,86 @@
 <%--@elvariable id="renderContext" type="org.jahia.services.render.RenderContext"--%>
 <%--@elvariable id="currentResource" type="org.jahia.services.render.Resource"--%>
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
+<template:addResources type="css" resources="masterslider/style/masterslider.css"/>
+<template:addResources type="css" resources="masterslider/skins/default/style.css"/>
+<template:addResources type="javascript" resources="masterslider/masterslider.min.js"/>
 <%-- TODO: Hardcoded component --%>
-
+<%-- TODO: when masterslider.css is added nothing displays on the screen. If masterslider.css is left out the content displays just not in a proper layout as expected. --%>
 
 
 <!-- Close the container from the template before starting a slider section
        Have to reopen the div AFTER the slider -->
 </div>
 
+<h1>SLIDER</h1>
+<!-- masterslider -->
+<div class="master-slider ms-skin-default" id="masterslider">
+    <!-- new slide -->
+    <div class="ms-slide">
 
-<!--=== Slider ===-->
-<div class="slider-inner">
-    <div id="da-slider" class="da-slider">
-   <%--     <div class="da-slide">
-            <h2><i>CLEAN &amp; FRESH</i> <br /> <i>FULLY RESPONSIVE</i> <br /> <i>DESIGN</i></h2>
-            <p><i>Lorem ipsum dolor amet</i> <br /> <i>tempor incididunt ut</i> <br /> <i>veniam omnis </i></p>
-            <div class="da-img"><img class="img-responsive" src="http://htmlstream.com/preview/unify-v1.8/assets/plugins/parallax-slider/img/1.png" alt=""></div>
-        </div> --%>
-        <div class="da-slide">
-            <h2><i>RESPONSIVE VIDEO</i> <br /> <i>SUPPORT AND</i> <br /> <i>MANY MORE</i></h2>
-            <p><i>Lorem ipsum dolor amet</i> <br /> <i>tempor incididunt ut</i></p>
-            <div class="da-img">
-                <iframe src="http://player.vimeo.com/video/47911018" width="530" height="300" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+        <!-- slide background -->
+        <img src="http://htmlstream.com/preview/unify-v1.8//assets/plugins/master-slider/masterslider/style/blank.gif"
+             data-src="http://htmlstream.com/preview/unify-v1.8//assets/plugins/master-slider/masterslider/images/1.jpg" alt="lorem ipsum dolor sit"/>
+
+        <!-- slide text layer -->
+        <div class="ms-layer ms-caption" style="top:10px; left:30px;">
+            Lorem ipsum dolor sit amet
             </div>
-        </div>
-        <div class="da-slide">
-            <h2><i>USING BEST WEB</i> <br /> <i>SOLUTIONS WITH</i> <br /> <i>HTML5/CSS3</i></h2>
-            <p><i>Lorem ipsum dolor amet</i> <br /> <i>tempor incididunt ut</i> <br /> <i>veniam omnis </i></p>
-            <div class="da-img"><img src="http://htmlstream.com/preview/unify-v1.8/assets/plugins/parallax-slider/img/html5andcss3.png" alt="image01" /></div>
-        </div>
-        <div class="da-arrows">
-            <span class="da-arrows-prev"></span>
-            <span class="da-arrows-next"></span>
-        </div>
+
     </div>
-</div><!--/slider-->
+    <!-- end of slide -->
+<%--
+    <!-- new slide -->
+    <div class="ms-slide">
+
+        <!-- slide background -->
+        <img src="hhttp://htmlstream.com/preview/unify-v1.8//assets/plugins/master-slider/masterslider/style/blank.gif" data-src="http://htmlstream.com/preview/unify-v1.8//assets/plugins/master-slider/masterslider/images/2.jpg" alt="lorem ipsum dolor sit"/>
+
+        <!-- slide text layer -->
+        <div class="ms-layer ms-caption" style="top:10px; left:30px;">
+            Lorem ipsum dolor sit amet
+        </div>
+
+        <!-- linked slide -->
+        <a href="http://codecanyon.net/user/averta">Averta</a>
+
+        </div>
+    <!-- end of slide -->
+
+    <!-- new slide -->
+    <div class="ms-slide">
+
+        <!-- slide background -->
+        <img src="http://htmlstream.com/preview/unify-v1.8//assets/plugins/master-slider/masterslider/style/blank.gif" data-src="http://htmlstream.com/preview/unify-v1.8//assets/plugins/master-slider/masterslider/images/3.jpg" alt="lorem ipsum dolor sit"/>
+
+        <!-- slide text layer -->
+        <div class="ms-layer ms-caption" style="top:10px; left:30px;">
+            Lorem ipsum dolor sit amet
+        </div>
+
+        <!-- youtube video -->
+        <a href="http://www.youtube.com/embed/YHWkro9-e9Q?hd=1&wmode=opaque&controls=1&showinfo=0" data-type="video">Youtube video</a>
+
+        </div>
+    <!-- end of slide -->
+--%>
+    </div>
+<!-- end of masterslider -->
 <!--=== End Slider ===-->
+<template:addResources type="inline">
+    <script>
+        var slider = new MasterSlider();
+        slider.setup('masterslider' , {
+            width:800,    // slider standard width
+            height:350,   // slider standard height
+            space:5
+            // more slider options goes here...
+            // check slider options section in documentation for more options.
+        });
+        // adds Arrows navigation control to the slider.
+        slider.control('arrows');
+    </script>
+</template:addResources>
 
 <!-- open the template container for remaining content -->
 <div class="container">
