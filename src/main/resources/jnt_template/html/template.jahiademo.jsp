@@ -48,7 +48,11 @@
     <template:addResources type="css" resources="parallax-slider.css"/>
     <template:addResources type="css" resources="owl.carousel.css"/>
     <template:addResources type="css" resources="dark.css"/>
-
+    <template:addResources type="css" resources="ie8.css"/>
+    <template:addResources type="css" resources="blocks.css"/>
+    <template:addResources type="css" resources="plugins.css"/>
+    <template:addResources type="css" resources="app.css"/>
+    
     <!-- CSS Customization -->
     <template:addResources type="css" resources="custom.css"/>
 </head>
