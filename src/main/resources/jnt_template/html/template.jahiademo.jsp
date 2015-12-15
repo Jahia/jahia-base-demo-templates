@@ -38,7 +38,7 @@
     <template:addResources type="css" resources="style.css"/>
 
     <!-- CSS Header and Footer -->
-    <template:addResources type="css" resources="headers/header-default.css"/>
+    <template:addResources type="css" resources="headers/header-v8.css"/>
     <template:addResources type="css" resources="footers/footer-v1.css"/>
 
     <!-- CSS Implementing Plugins -->
@@ -52,7 +52,7 @@
     <template:addResources type="css" resources="blocks.css"/>
     <template:addResources type="css" resources="plugins.css"/>
     <template:addResources type="css" resources="app.css"/>
-    
+
     <!-- CSS Customization -->
     <template:addResources type="css" resources="custom.css"/>
 </head>
@@ -60,28 +60,47 @@
 <c:set var="siteNode" value="${renderContext.site}"/>
 
 
-<body class="<template:include view="hidden.style"/>" >
+<body class="header-fixed header-fixed-space-v2 <template:include view="hidden.style"/>" >
 
 <div class="wrapper">
-    <!--=== Header ===-->
-    <div class="header">
-        <div class="container">
-            <div id="logo">
-                <template:area path="logo"/>
+    <!--=== Header v8 ===-->
+    <div class="header-v8 header-sticky">
+        <!-- Topbar blog -->
+        <div class="blog-topbar">
+            <div class="topbar-search-block">
+                <template:area path="search"/>
             </div>
-            <div class="topbar">
-            <template:area path="header"/>
-            </div>
-        </div><!--/end container-->
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse mega-menu navbar-responsive-collapse">
-        <div class="container">
-        <template:area path="navmenu"/>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-8 col-xs-8">
+                        <template:area path="languageLoginMini"/>
+                    </div>
+                    <div class="col-sm-4 col-xs-4 clearfix">
+                        <template:area path="languageLogin"/>
+                    </div>
+                </div><!--/end row-->
+            </div><!--/end container-->
         </div>
+        <!-- End Topbar blog -->
+
+        <!-- Navbar -->
+        <div class="navbar mega-menu" role="navigation">
+
+            <div class="container">
+                <div class="res-container">
+                    <template:area path="toggleNav"/>
+                    <div id="logo" class="navbar-brand">
+                        <template:area path="logo"/>
+                    </div>
+                </div>
+                <div class="collapse navbar-collapse navbar-responsive-collapse">
+                <template:area path="navmenu"/>
+                </div>
+            </div>
+        </div>
+        <!-- End Navbar -->
     </div>
-    </div>
-    <!--=== End Header ===-->
+    <!--=== End Header v8 ===-->
 
 
     <!--=== Content Part ===-->

@@ -29,3 +29,7 @@
 #loginBox{
     margin-top: 2px;
 }
+
+.blog-topbar form.simplesearchform {
+    margin-bottom: 0px;
+}
