@@ -77,3 +77,5 @@
  - limit (string)
  - parentPage (weakreference, picker[type='page']) < 'jnt:page'
  + * (jnt:news)
+
+[jdnt:login] > jnt:content, jdmix:jahiademo, jdmix:headerWidgets, jmix:studioOnly
