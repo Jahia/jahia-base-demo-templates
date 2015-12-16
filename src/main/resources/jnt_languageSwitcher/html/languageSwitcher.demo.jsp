@@ -19,21 +19,15 @@
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
 <template:addResources type="css" resources="languageSwitchingLinks.css"/>
 <c:set var="linkKind" value="${currentNode.properties.typeOfDisplay.string}"/>
-<c:set var="flag" value="${linkKind eq 'flag'}"/>
+
 <ui:initLangBarAttributes activeLanguagesOnly="${renderContext.liveMode}"/>
-<div id="languages" class="hoverSelector pull-right">
-    <i class="fa fa-globe"></i>
-    <a>Languages</a>
-    <ul class="languages hoverSelectorBlock">
+<div id="languages" class=" pull-right">
+    <a href="javascript:void(0);">Languages <span class="caret"></span></a>
+    <ul class="languages topbar-dropdown">
         <c:forEach items="${requestScope.languageCodes}" var="language">
             <ui:displayLanguageSwitchLink languageCode="${language}" display="false" urlVar="switchUrl"
                                           var="renderedLanguage"
                                           linkKind="${currentNode.properties.typeOfDisplay.string}"/>
-            <c:if test="${flag}">
-                <c:set var="renderedLanguage">
-                    <span class='flag ${functions:getLanguageFlagCSSClass(functions:toLocale(language))}'></span>
-                </c:set>
-            </c:if>
             <c:choose>
                 <c:when test="${language eq currentResource.locale}">
                     <li class="active"><a href="#">${renderedLanguage}<i class="fa fa-check"></i></a></li>

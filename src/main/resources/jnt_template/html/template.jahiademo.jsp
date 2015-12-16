@@ -53,8 +53,45 @@
     <template:addResources type="css" resources="plugins.css"/>
     <template:addResources type="css" resources="app.css"/>
 
+    <!-- CSS Login Modal -->
+    <template:addResources type="css" resources="plugins/login-signup-modal-window/style.css"/>
+
     <!-- CSS Customization -->
     <template:addResources type="css" resources="custom.css"/>
+
+
+    <!-- JS Global Compulsory -->
+    <template:addResources type="javascript" resources="jquery.min.js"/>
+    <template:addResources type="javascript" resources="jquery-migrate.min.js"/>
+    <template:addResources type="javascript" resources="bootstrap.min.js"/>
+    <!-- JS Implementing Plugins -->
+    <template:addResources type="javascript" resources="back-to-top.js"/>
+    <template:addResources type="javascript" resources="smoothScroll.js"/>
+    <template:addResources type="javascript" resources="modernizr.js"/>
+    <template:addResources type="javascript" resources="jquery.cslider.js"/>
+    <template:addResources type="javascript" resources="owl.carousel.js"/>
+    <!-- JS Customization -->
+    <template:addResources type="javascript" resources="custom.js"/>
+    <!-- JS Page Level -->
+    <template:addResources type="javascript" resources="app.js"/>
+    <template:addResources type="javascript" resources="owl-carousel.js"/>
+    <template:addResources type="javascript" resources="parallax-slider.js" />
+    <template:addResources type="inline">
+        <script type="text/javascript">
+            jQuery(document).ready(function() {
+                App.init();
+                OwlCarousel.initOwlCarousel();
+                MSfullWidth.initMSfullWidth();
+                <%--           StyleSwitcher.initStyleSwitcher(); --%>
+                ParallaxSlider.initParallaxSlider();
+            });
+        </script>
+    </template:addResources>
+    <!--[if lt IE 9]>
+    <template:addResources type="javascript" resources="respond.js"/>
+    <template:addResources type="javascript" resources="html5shiv.js"/>
+    <template:addResources type="javascript" resources="placeholder-IE-fixes.js"/>
+    <![endif]-->
 </head>
 
 <c:set var="siteNode" value="${renderContext.site}"/>
@@ -72,12 +109,21 @@
             </div>
             <div class="container">
                 <div class="row">
-                    <div class="col-sm-8 col-xs-8">
+                    <!--Small language login menu-->
+                    <div class="col-sm-6 col-xs-6">
+                        <div class="topbar-list topbar-menu"/>
                         <template:area path="languageLoginMini"/>
+                        </div>
+                    <div class="topbar-toggler"><span class="fa fa-angle-down"></span><span class="hidden-sm hidden-md hidden-lg">Languages / Login</span></div>
                     </div>
-                    <div class="col-sm-4 col-xs-4 clearfix">
-                        <template:area path="languageLogin"/>
+                    <!--/end Small language login menu-->
+                    <!--Full language login menu-->
+                    <div class="col-sm-6 col-xs-6 clearfix">
+                        <div class="topbar-list topbar-log_reg pull-right visible-sm-block visible-md-block visible-lg-block">
+                            <template:area path="languageLogin"/>
+                        </div>
                     </div>
+                    <!--/end Full language login menu-->
                 </div><!--/end row-->
             </div><!--/end container-->
         </div>
@@ -190,40 +236,8 @@
         </div><!--/copyright-->
     </div>
     <!--=== End Footer Version 1 ===-->
+    <template:area path="modals"/>
 </div><!--/wrapper-->
-
-<!-- JS Global Compulsory -->
-<template:addResources type="javascript" resources="jquery.min.js"/>
-<template:addResources type="javascript" resources="jquery-migrate.min.js"/>
-<template:addResources type="javascript" resources="bootstrap.min.js"/>
-<!-- JS Implementing Plugins -->
-<template:addResources type="javascript" resources="back-to-top.js"/>
-<template:addResources type="javascript" resources="smoothScroll.js"/>
-<template:addResources type="javascript" resources="modernizr.js"/>
-<template:addResources type="javascript" resources="jquery.cslider.js"/>
-<template:addResources type="javascript" resources="owl.carousel.js"/>
-<!-- JS Customization -->
-<template:addResources type="javascript" resources="custom.js"/>
-<!-- JS Page Level -->
-<template:addResources type="javascript" resources="app.js"/>
-<template:addResources type="javascript" resources="owl-carousel.js"/>
-<template:addResources type="javascript" resources="parallax-slider.js" />
-<template:addResources type="inline">
-    <script type="text/javascript">
-        jQuery(document).ready(function() {
-            App.init();
-            OwlCarousel.initOwlCarousel();
-            MSfullWidth.initMSfullWidth();
-            <%--           StyleSwitcher.initStyleSwitcher(); --%>
-            ParallaxSlider.initParallaxSlider();
-        });
-    </script>
-</template:addResources>
-<!--[if lt IE 9]>
-<template:addResources type="javascript" resources="respond.js"/>
-<template:addResources type="javascript" resources="html5shiv.js"/>
-<template:addResources type="javascript" resources="placeholder-IE-fixes.js"/>
-<![endif]-->
 
 </body>
 </html>

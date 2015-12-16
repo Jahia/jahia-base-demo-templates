@@ -23,21 +23,21 @@
         <c:set var="siteNode" value="${currentNode.resolveSite}"/>
 
         <c:if test="${! jcr:isNodeType(siteNode, 'genericmix:hideLoginButton')}">
-            <div class="pull-right"><a id="login" href="#loginForm" role="button" data-toggle="modal" data-target="#loginForm"><i class="fa fa-user"></i> <fmt:message
+            <div class="hidden-sm hidden-md hidden-lg"><a id="login" href="#loginForm" role="button" data-toggle="modal" data-target="#loginForm"><i class="fa fa-user"></i> <fmt:message
                     key="loginForm.loginbutton.label"/></a>
             </div>
         </c:if>
     </c:if>
 </c:if>
 <c:if test="${renderContext.loggedIn}">
-    <div class="user-box dropdown pull-right">
+    <div class="user-box dropdown hidden-sm hidden-md hidden-lg">
 
         <jcr:node var="userNode" path="${currentUser.localPath}" />
         <jcr:nodeProperty var="picture" node="${userNode}" name="j:picture"/>
         <c:set var="firstname" value="${userNode.properties['j:firstName'].string}"/>
         <c:set var="lastname" value="${userNode.properties['j:lastName'].string}"/>
 
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+        <a href="javascript:void(0);">
             ${fn:escapeXml(empty firstname and empty lastname ? userNode.name : firstname)}&nbsp;${fn:escapeXml(lastname)} <span class="caret"></span>
         </a>
         <ul class="topbar-dropdown">

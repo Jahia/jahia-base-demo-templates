@@ -17,19 +17,27 @@
 <%--@elvariable id="renderContext" type="org.jahia.services.render.RenderContext"--%>
 <%--@elvariable id="currentResource" type="org.jahia.services.render.Resource"--%>
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
-                  
-<ul class="topbar-list topbar-menu">
-  <li class="hidden-sm hidden-md hidden-lg">
-    <a href="javascript:void(0);">Languages</a>
-    <ul class="topbar-dropdown">
-      <li><a href="#">English </a></li>
-      <li><a href="#">Spanish</a></li>
-      <li><a href="#">Russian</a></li>
-      <li><a href="#">German</a></li>
-    </ul>
-  </li>
-  <li class="cd-log_reg hidden-sm hidden-md hidden-lg"><strong><a class="cd-signin" href="javascript:void(0);">Login</a></strong></li>
-  <li class="cd-log_reg hidden-sm hidden-md hidden-lg"><strong><a class="cd-signup" href="javascript:void(0);">Register</a></strong></li>
-</ul>
+<template:addResources type="css" resources="languageSwitchingLinks.css"/>
+<c:set var="linkKind" value="${currentNode.properties.typeOfDisplay.string}"/>
 
-<div class="topbar-toggler"><span class="fa fa-angle-down"></span><span class="hidden-sm hidden-md hidden-lg">Languages / Login</span></div>
+<ui:initLangBarAttributes activeLanguagesOnly="${renderContext.liveMode}"/>
+<div id="languages" class="hidden-sm hidden-md hidden-lg">
+    <a href="javascript:void(0);">Languages <span class="caret"></span></a>
+    <ul class="topbar-dropdown">
+        <c:forEach items="${requestScope.languageCodes}" var="language">
+            <ui:displayLanguageSwitchLink languageCode="${language}" display="false" urlVar="switchUrl"
+                                          var="renderedLanguage"
+                                          linkKind="${currentNode.properties.typeOfDisplay.string}"/>
+            <c:choose>
+                <c:when test="${language eq currentResource.locale}">
+                    <li class="active"><a href="#">${renderedLanguage}<i class="fa fa-check"></i></a></li>
+                </c:when>
+                <c:otherwise>
+                    <li><a title="<fmt:message key='switchTo'/>"
+                           href="<c:url context='/' value='${switchUrl}'/>">${renderedLanguage}</a>
+                    </li>
+                </c:otherwise>
+            </c:choose>
+        </c:forEach>
+    </ul>
+</div>

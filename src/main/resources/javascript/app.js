@@ -92,7 +92,7 @@ var App = function () {
 
     // TopBar SubMenu (Header v8)
     function handleTopBarSubMenu() {
-        $(".topbar-list > li").on("click", function(e) {
+        $(".topbar-list > div").on("click", function(e) {
           if (jQuery(this).children("ul").hasClass("topbar-dropdown")) {
             if (jQuery(this).children("ul").hasClass("topbar-dropdown-visible")) {
               jQuery(this).children(".topbar-dropdown").slideUp();

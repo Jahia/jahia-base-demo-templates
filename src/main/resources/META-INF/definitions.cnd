@@ -81,7 +81,7 @@
 [jdnt:login] > jnt:content, jdmix:jahiademo, jdmix:headerWidgets, jmix:studioOnly
 
 [jdnt:toggleNavBarButton] > jnt:content, jdmix:jahiademo, jdmix:headerWidgets, jmix:studioOnly
-  
-[jdnt:languageLogin] > jnt:content, jdmix:jahiademo, jdmix:headerWidgets, jmix:studioOnly
+
+[jdnt:toggleSearchButton] > jnt:content, jdmix:jahiademo, jdmix:headerWidgets, jmix:studioOnly
 
 [jdnt:investorContactForm] > jnt:content, jdmix:jahiademo

@@ -17,18 +17,6 @@
 <%--@elvariable id="renderContext" type="org.jahia.services.render.RenderContext"--%>
 <%--@elvariable id="currentResource" type="org.jahia.services.render.Resource"--%>
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
-
- <i class="fa fa-search search-btn pull-right"></i>
-<ul class="topbar-list topbar-log_reg pull-right visible-sm-block visible-md-block visible-lg-block">
-  <li>
-    <a href="javascript:void(0);">Languages</a>
-    <ul class="topbar-dropdown">
-      <li><a href="#">English </a></li>
-      <li><a href="#">Spanish</a></li>
-      <li><a href="#">Russian</a></li>
-      <li><a href="#">German</a></li>
-    </ul>
-  </li>
-  <li class="cd-log_reg home"><a class="cd-signin" href="javascript:void(0);">Login</a></li>
-  <li class="cd-log_reg"><a class="cd-signup" href="javascript:void(0);">Register</a></li>
-</ul>
+<div class="pull-right">
+    <i class="fa fa-search search-btn"></i>
+</div>

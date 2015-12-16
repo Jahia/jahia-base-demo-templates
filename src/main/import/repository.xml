@@ -8,17 +8,28 @@
                  j:title="jahiademo"
                  jcr:mixinTypes="jmix:hasExternalProviderExtension"
                  jcr:primaryType="jnt:module">
-                <sources jcr:mixinTypes="jmix:hasExternalProviderExtension"
+                <sources jcr:mixinTypes="jmix:hasExternalProviderExtension jmix:sourceControl"
                   jcr:primaryType="jnt:moduleVersionFolder"
                   j:staticMountPointProviderKey="module-jahiademo-1.0-SNAPSHOT">
-                    <src jcr:primaryType="jnt:folder">
-                        <main jcr:primaryType="jnt:folder">
-                            <resources jcr:primaryType="jnt:folder">
-                                <jdnt_carousel jcr:primaryType="jnt:nodeTypeFolder">
+                    <src jcr:mixinTypes="jmix:sourceControl" jcr:primaryType="jnt:folder">
+                        <main jcr:mixinTypes="jmix:sourceControl" jcr:primaryType="jnt:folder">
+                            <resources jcr:mixinTypes="jmix:sourceControl" jcr:primaryType="jnt:folder">
+                                <jdnt_investorContactForm jcr:primaryType="jnt:nodeTypeFolder">
                                     <html jcr:primaryType="jnt:templateTypeFolder">
-                                        <carousel.jsp jcr:primaryType="jnt:viewFile"/>
+                                        <investorContactForm.jsp jcr:primaryType="jnt:viewFile"/>
                                     </html>
-                                </jdnt_carousel>
+                                </jdnt_investorContactForm>
+                                <jnt_languageSwitcher jcr:mixinTypes="jmix:sourceControl"
+                                           jcr:primaryType="jnt:nodeTypeFolder">
+                                    <html jcr:mixinTypes="jmix:sourceControl"
+                              jcr:primaryType="jnt:templateTypeFolder">
+                                        <languageSwitcher.demo.jsp jcr:mixinTypes="jmix:sourceControl" jcr:primaryType="jnt:viewFile"/>
+                                    </html>
+                                </jnt_languageSwitcher>
+                                <META-INF jcr:mixinTypes="jmix:sourceControl" jcr:primaryType="jnt:metaInfFolder">
+                                    <definitions.cnd jcr:mixinTypes="jmix:sourceControl"
+                                         jcr:primaryType="jnt:definitionFile"/>
+                                </META-INF>
                             </resources>
                         </main>
                     </src>
@@ -90,12 +101,21 @@
                                      typeOfDisplay="nameInLocale"/>
                         </header>
                         <languageLoginMini jcr:primaryType="jnt:contentList">
-                            <languagelogin j:view="mini"
-                                 jcr:mixinTypes="jmix:renderable"
-                                 jcr:primaryType="jdnt:languageLogin"/>
+                            <language-switcher j:view="demoMini"
+                                     jcr:mixinTypes="jmix:renderable"
+                                     jcr:primaryType="jnt:languageSwitcher"
+                                     typeOfDisplay="nameCurrentLocale"/>
+                            <login j:view="mini"
+                         jcr:mixinTypes="jmix:renderable"
+                         jcr:primaryType="jdnt:login"/>
                         </languageLoginMini>
                         <languageLogin jcr:primaryType="jnt:contentList">
-                            <languagelogin jcr:primaryType="jdnt:languageLogin"/>
+                            <togglesearchbutton jcr:primaryType="jdnt:toggleSearchButton"/>
+                            <login jcr:primaryType="jdnt:login"/>
+                            <language-switcher j:view="demo"
+                                     jcr:mixinTypes="jmix:renderable"
+                                     jcr:primaryType="jnt:languageSwitcher"
+                                     typeOfDisplay="nameCurrentLocale"/>
                         </languageLogin>
                         <search jcr:primaryType="jnt:contentList">
                             <simple-search-form j:view="demo"
@@ -106,6 +126,11 @@
                         <toggleNav jcr:primaryType="jnt:contentList">
                             <togglenavbarbutton jcr:primaryType="jdnt:toggleNavBarButton"/>
                         </toggleNav>
+                        <modals jcr:primaryType="jnt:contentList">
+                            <login j:view="modal"
+                         jcr:mixinTypes="jmix:renderable"
+                         jcr:primaryType="jdnt:login"/>
+                        </modals>
                 </base>
                     <content-template j:applyOn="jnt:content"
                               j:hiddenTemplate="true"
