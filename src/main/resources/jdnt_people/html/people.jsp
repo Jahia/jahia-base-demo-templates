@@ -17,40 +17,42 @@
 <%--@elvariable id="renderContext" type="org.jahia.services.render.RenderContext"--%>
 <%--@elvariable id="currentResource" type="org.jahia.services.render.Resource"--%>
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
+<%-- TODO: Update for automatic list ordering -- %>
 
-<div class="container-fluid">
+<div class="container content" id="leadership">
     <c:set var="people" value="${jcr:getChildrenOfType(currentNode, 'jnt:person')}"/>
     <c:choose>
         <%-- if there are no person modules added yet, show a placeholder --%>
         <c:when test="${fn:length(people) == 0}">
-            <div class="row team-v7 no-gutter equal-height-columns">
-                <div class="col-md-6 team-arrow-right">
-                    <div class="dp-table">
-                        <div class="equal-height-column dp-table-cell team-v7-in" style="height: 463px;">
-                            <span class="team-v7-name">Person Name</span>
-                            <span class="team-v7-position">Person Title</span>
-                            This is the biography of the sample person.
-                            <ul class="list-inline social-icons-v1">
-                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                            </ul>
+            <div class="row content-xs">
+                <div class="col-md-3">
+                    <div class="portrait">
+                        <div class="portrait-bg">
+                            <img src="${url.currentModule}/img/default_person_img.jpg" alt="" />
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 team-v7-img">
-                    <c:set var="photoUrl" value="${url.currentModule}/img/default_person_img.jpg"/>
-                    <img class="img-responsive full-width equal-height-column" src="${photoUrl}" alt=""
-                         style="height: 463px;">
+                <div class="col-md-9">
+                    <div class="title">Sample Person</div>
+                    <div class="subtitle color-green">Placeholder</div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia <strong>deserunt</strong> mollit anim id est laborum.</p>
+
+                    <ul class="list-inline team-social">
+                        <li><a data-placement="top" data-toggle="tooltip" class="fb tooltips" data-original-title="Facebook" href="#" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                        <li><a data-placement="top" data-toggle="tooltip" class="tw tooltips" data-original-title="Twitter" href="#" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                        <li><a data-placement="top" data-toggle="tooltip" class="gp tooltips" data-original-title="Google plus" href="#" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+                    </ul>
+                </div>
+                <div class="col-md-12">
+                    <hr class="devider devider-dotted">
                 </div>
             </div>
         </c:when>
         <c:otherwise>
+            <%-- for each person show the default view --%>
             <c:forEach items="${people}" var="person" varStatus="item">
-                <%-- pass a parameter to the person template so we can use to calculate proper layout --%>
-                <template:module node="${person}" nodeTypes="jnt:person" editable="true">
-                    <template:param name="itemCount" value="${item.count}"/>
-                </template:module>
+                <template:module node="${person}" nodeTypes="jnt:person" editable="true"/>
             </c:forEach>
         </c:otherwise>
     </c:choose>

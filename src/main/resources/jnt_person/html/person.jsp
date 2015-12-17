@@ -17,48 +17,56 @@
 <%--@elvariable id="renderContext" type="org.jahia.services.render.RenderContext"--%>
 <%--@elvariable id="currentResource" type="org.jahia.services.render.Resource"--%>
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
+<template:addResources type="css" resources="leadership.css"/>
 
 <c:set var="name" value="${currentNode.properties.firstname.string}&nbsp;${currentNode.properties.lastname.string}"/>
 <c:set var="title" value="${currentNode.properties.function.string}"/>
 <c:set var="bio" value="${currentNode.properties.biography.string}"/>
 <c:set var="photo" value="${currentNode.properties.picture}"/>
+<%-- if social icons were included, get the urls --%>
+<c:if test="${jcr:isNodeType(currentNode, 'jdmix:socialIcons')}">
+    <c:set var="facebook" value="${currentNode.properties.facebook.string}"/>
+    <c:set var="linkedin" value="${currentNode.properties.linkedIn.string}"/>
+    <c:set var="twitter" value="${currentNode.properties.twitter.string}"/>
+</c:if>
 
-<%-- use the itemCount parameter to decide if the image should be on the left or right --%>
-<c:set var="count" value="${currentResource.moduleParams.itemCount}"/>
+<%-- get default photo if one was not provided --%>
 <c:choose>
-    <c:when test="${count % 2 == 0}">
-        <c:set var="layout" value="col-md-push-6 team-arrow-left"/>
+    <c:when test="${empty photo}">
+        <c:set var="photoUrl" value="${url.currentModule}/img/default_person_img.jpg"/>
     </c:when>
     <c:otherwise>
-        <c:set var="layout" value="team-arrow-right"/>
+        <c:url var="photoUrl" value="${photo.node.url}"/>
     </c:otherwise>
 </c:choose>
 
-<div class="row team-v7 no-gutter equal-height-columns">
-    <div class="col-md-6 ${layout}">
-        <div class="dp-table">
-            <div class="equal-height-column dp-table-cell team-v7-in" style="height: 463px;">
-                <span class="team-v7-name">${name}</span>
-                <span class="team-v7-position">${title}</span>
-                ${bio}
-                <ul class="list-inline social-icons-v1">
-                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                </ul>
+
+    <div class="row content-xs">
+        <div class="col-md-3">
+            <div class="portrait">
+                <div class="portrait-bg">
+                    <img src="${photoUrl}" alt="" />
+                </div>
             </div>
         </div>
+        <div class="col-md-9">
+            <div class="title">${name}</div>
+            <div class="subtitle color-green">${title}</div>
+            ${bio}
+            <ul class="list-inline team-social">
+                <%-- check if the social icon links were properly filled in before displaying--%>
+                <c:if test="${not empty facebook and facebook != 'http://'}">
+                    <li><a data-placement="top" data-toggle="tooltip" class="fb tooltips" data-original-title="Facebook" href="${facebook}" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                </c:if>
+                <c:if test="${not empty twitter and twitter != 'http://'}">
+                    <li><a data-placement="top" data-toggle="tooltip" class="tw tooltips" data-original-title="Twitter" href="${twitter}" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                </c:if>
+                <c:if test="${not empty linkedin and linkedin != 'http://'}">
+                    <li><a data-placement="top" data-toggle="tooltip" class="gp tooltips" data-original-title="Google plus" href="${linkedin}" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+                </c:if>
+            </ul>
+        </div>
+        <div class="col-md-12">
+            <hr class="devider devider-dotted">
+        </div>
     </div>
-    <div class="col-md-6 <c:if test="${count % 2 == 0}">col-md-pull-6 </c:if>team-v7-img">
-        <c:choose>
-            <c:when test="${empty photo}">
-                <c:set var="photoUrl" value="${url.currentModule}/img/default_person_img.jpg"/>
-            </c:when>
-            <c:otherwise>
-                <c:url var="photoUrl" value="${photo.node.url}"/>
-            </c:otherwise>
-        </c:choose>
-            <img class="img-responsive full-width equal-height-column" src="${photoUrl}" alt="" style="height: 463px;">
-    </div>
-</div>
-
