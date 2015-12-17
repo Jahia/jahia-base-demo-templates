@@ -10,7 +10,6 @@
 6. Header - Mega Menu
 7. Header - Fixed
 8. Header Boxed Layout
-9. Header Theme Color
 
 -----------------------------------------------------------------------*/
 
@@ -43,7 +42,15 @@
 	display: inline-block;
 	text-transform: uppercase;
 }
-
+.topbar-list > li:before {
+	top: 11px;
+	left: -3px;
+	width: 1px;
+	height: 9px;
+	content: ' ';
+	background: #eee;
+	position: absolute;
+}
 .topbar-list li:last-child {
 	padding-right: 0;
 }
@@ -61,7 +68,7 @@
 /* Topbar Dropdown */
 .topbar-list .topbar-dropdown {
 	top: 23px;
-/*	left: -3px; */
+	left: -3px;
   	z-index: 1;
 	display: none;
 	padding: 7px 0;
@@ -395,7 +402,7 @@
 .header-v8 .navbar-nav > li > a {
 	color: #fff;
 	font-size: 14px;
-	font-weight: 400;
+	font-weight: 600;
 	letter-spacing: 1px;
 	text-transform: uppercase;
 }
@@ -936,42 +943,4 @@
 	.boxed-layout-space.header-fixed .header-v8.header-sticky {
 		top: 0;
 	}
-}
-
-
-/*--------------------------------------------------
-[9. Header Theme Color]
-----------------------------------------------------*/
-.header-v8 .dropdown-menu {
-	border-top: solid 3px #EF1979;
-}
-.header-v8 .dropdown-menu .active > a,
-.header-v8 .dropdown-menu li > a:hover {
-	color: #EF1979;
-}
-.header-v8 .navbar-nav .open .dropdown-menu > li > a:hover,
-.header-v8 .navbar-nav .open .dropdown-menu > li > a:focus {
-	color: #EF1979;
-}
-.header-v8 .navbar-nav .open .dropdown-menu > .active > a,
-.header-v8 .navbar-nav .open .dropdown-menu > .active > a:hover,
-.header-v8 .navbar-nav .open .dropdown-menu > .active > a:focus {
-	color: #EF1979;
-}
-
-.header-v8 .navbar-nav .open .dropdown-menu > .disabled > a,
-.header-v8 .navbar-nav .open .dropdown-menu > .disabled > a:hover,
-.header-v8 .navbar-nav .open .dropdown-menu > .disabled > a:focus {
-	color: #EF1979;
-}
-.header-v8 .navbar-nav > li > a:hover {
-	color: #EF1979;
-}
-.header-v8 .navbar-nav > .active > a,
-.header-v8 .navbar-nav > .active > a:hover,
-.header-v8 .navbar-nav > .active > a:focus {
-	color: #EF1979 !important;
-}
-.header-v8 .mega-menu .mega-menu-fullwidth .dropdown-link-list li a:hover {
-	color: #EF1979;
 }

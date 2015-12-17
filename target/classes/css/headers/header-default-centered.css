@@ -66,7 +66,7 @@
 }
 
 .topbar-v1 .top-v1-data li a:hover i {
-	color: #EF1979;
+	color: #72c02c;
 }
 
 /*Responsive Topbar v1*/
@@ -150,7 +150,7 @@
 .header .navbar-toggle,
 .header .navbar-toggle:hover, 
 .header .navbar-toggle:focus {
-	background: #EF1979;
+	background: #72c02c;
 	padding: 6px 10px 2px;
 }
 
@@ -172,7 +172,7 @@
 }
 
 .header .navbar-nav > .active > a {
-	color: #EF1979;
+	color: #72c02c;
 }
 
 /*--------------------------------------------------
@@ -292,13 +292,13 @@
 	}
 
 	.header .navbar-nav > li > a:hover {
-		color: #EF1979;
+		color: #72c02c;
 	}
 
 	.header .navbar-nav > .active > a,
 	.header .navbar-nav > .active > a:hover,
 	.header .navbar-nav > .active > a:focus {
-		background: #EF1979;
+		background: #72c02c;
 		color: #fff !important;	
 	}
 
@@ -346,7 +346,7 @@
 	.header .navbar-nav > .active > a {
 		bottom: -2px;
 		position: relative;
-		border-bottom: solid 2px #EF1979;
+		border-bottom: solid 2px #72c02c;
 	}
 	
 	.header .navbar-nav > li > a,
@@ -361,11 +361,11 @@
 	.header .navbar-nav > .open > a,
 	.header .navbar-nav > .open > a:hover,
 	.header .navbar-nav > .open > a:focus {
-		color: #EF1979;
+		color: #72c02c;
 	}
 
 	.header .navbar-nav > li:hover > a {
-        color: #EF1979;
+        color: #72c02c;
     }
 
 	/*Dropdown Menu*/
@@ -375,7 +375,7 @@
 		min-width: 200px;
 		border-radius: 0; 
 		z-index: 9999 !important;
-		border-top: solid 2px #EF1979;
+		border-top: solid 2px #72c02c; 
 		border-bottom: solid 2px #687074; 
 	}
 
@@ -526,9 +526,9 @@
 }
 
 .header .nav > li > .search:hover {
-	color: #EF1979;
+	color: #72c02c;
 	background: #f7f7f7;
-	border-bottom-color: #EF1979;
+	border-bottom-color: #72c02c;
 }
 
 .header .nav .search-open {
@@ -843,7 +843,7 @@
 	}
 
 	.header.header-dark .navbar-nav .dropdown > a:hover {
-		color: #EF1979;
+		color: #72c02c;
 		background: inherit;
 	}
 
@@ -877,7 +877,7 @@
 @media (min-width: 992px) {
 	.header.header-dark .navbar-nav > li > a:hover,
 	.header.header-dark .navbar-nav > .active > a {
-		color: #EF1979 !important;
+		color: #72c02c !important;
 	}
 
 	.header.header-dark .dropdown-menu {

@@ -55,7 +55,3 @@
 .wrapper .blog-topbar .search-btn {
     padding-left: 10px;
 }
-
-.dropdown-backdrop {
-    z-index: 1 !important;
-}

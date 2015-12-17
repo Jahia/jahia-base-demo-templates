@@ -64,7 +64,7 @@ printMenu = { node, navMenuLevel ->
                                     if (menuItem.parent != null) {
                                         homePage = menuItem.parent;
                                         homeTitle = homePage.displayableName;
-                                        println "<li><a href=\"" + homePage.url + "\" class=\"dropdown-toggle\">" + homeTitle + "</a></li>\n";
+                                        println "<li><a href=\"" + homePage.url + "\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">" + homeTitle + "</a></li>\n";
 
                                 /*        if (homePage.hasProperty("alternateTitle")) {
                                             homeTitle = menuItem.getProperty("alternateTitle").string
@@ -76,7 +76,7 @@ printMenu = { node, navMenuLevel ->
                                 }
                                 if (hasChildren) {
                                     print "<li ${listItemCssClass}>";
-                                    print "    <a href=\"${link}\" ${linkTitle} class=\"dropdown-toggle\">";
+                                    print "    <a href=\"${link}\" ${linkTitle} class=\"dropdown-toggle\" data-toggle=\"dropdown\">";
                                     print menuItem.displayableName;
                                     print "</a>\n";
                                     if (hasChildren && navMenuLevel < maxDepth) {
@@ -84,7 +84,7 @@ printMenu = { node, navMenuLevel ->
                                     }
                                     println "</li>\n";
                                 } else {
-                                    println "<li ${listItemCssClass}><a href=\"${link}\" ${linkTitle} class=\"dropdown-toggle\">" + menuItem.displayableName + "</a></li>\n";
+                                    println "<li ${listItemCssClass}><a href=\"${link}\" ${linkTitle} class=\"dropdown-toggle\" data-toggle=\"dropdown\">" + menuItem.displayableName + "</a></li>\n";
                                 }
                             } else {
                                 if (!ulIsOpen) {

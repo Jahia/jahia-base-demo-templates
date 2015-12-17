@@ -16,7 +16,7 @@
 <%--@elvariable id="renderContext" type="org.jahia.services.render.RenderContext"--%>
 <%--@elvariable id="currentResource" type="org.jahia.services.render.Resource"--%>
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
-<%-- TODO: copyright footer section is hard coded --%>
+
 
 <head>
     <title>${fn:escapeXml(renderContext.mainResource.node.displayableName)}</title>
@@ -38,123 +38,84 @@
     <template:addResources type="css" resources="style.css"/>
 
     <!-- CSS Header and Footer -->
-    <template:addResources type="css" resources="headers/header-v8.css"/>
+    <template:addResources type="css" resources="headers/header-default.css"/>
     <template:addResources type="css" resources="footers/footer-v1.css"/>
 
     <!-- CSS Implementing Plugins -->
     <template:addResources type="css" resources="animate.css"/>
     <template:addResources type="css" resources="line-icons.css"/>
     <template:addResources type="css" resources="font-awesome.min.css"/>
-    <template:addResources type="css" resources="parallax-slider.css"/>
-    <template:addResources type="css" resources="owl.carousel.css"/>
-    <template:addResources type="css" resources="dark.css"/>
-    <template:addResources type="css" resources="ie8.css"/>
-    <template:addResources type="css" resources="blocks.css"/>
-    <template:addResources type="css" resources="plugins.css"/>
-    <template:addResources type="css" resources="app.css"/>
 
-    <!-- CSS Login Modal -->
-    <template:addResources type="css" resources="plugins/login-signup-modal-window/style.css"/>
 
     <!-- CSS Customization -->
     <template:addResources type="css" resources="custom.css"/>
-
-
-    <!-- JS Global Compulsory -->
-    <template:addResources type="javascript" resources="jquery.min.js"/>
-    <template:addResources type="javascript" resources="jquery-migrate.min.js"/>
-    <template:addResources type="javascript" resources="bootstrap.min.js"/>
-    <!-- JS Implementing Plugins -->
-    <template:addResources type="javascript" resources="back-to-top.js"/>
-    <template:addResources type="javascript" resources="smoothScroll.js"/>
-    <template:addResources type="javascript" resources="modernizr.js"/>
-    <template:addResources type="javascript" resources="jquery.cslider.js"/>
-    <template:addResources type="javascript" resources="owl.carousel.js"/>
-    <!-- JS Customization -->
-    <template:addResources type="javascript" resources="custom.js"/>
-    <!-- JS Page Level -->
-    <template:addResources type="javascript" resources="app.js"/>
-    <template:addResources type="javascript" resources="owl-carousel.js"/>
-    <template:addResources type="javascript" resources="parallax-slider.js" />
-    <template:addResources type="inline">
-        <script type="text/javascript">
-            jQuery(document).ready(function() {
-                App.init();
-                OwlCarousel.initOwlCarousel();
-                MSfullWidth.initMSfullWidth();
-                <%--           StyleSwitcher.initStyleSwitcher(); --%>
-                ParallaxSlider.initParallaxSlider();
-            });
-        </script>
-    </template:addResources>
-    <!--[if lt IE 9]>
-    <template:addResources type="javascript" resources="respond.js"/>
-    <template:addResources type="javascript" resources="html5shiv.js"/>
-    <template:addResources type="javascript" resources="placeholder-IE-fixes.js"/>
-    <![endif]-->
 </head>
 
 <c:set var="siteNode" value="${renderContext.site}"/>
 
 
-<body class="header-fixed header-fixed-space-v2 <template:include view="hidden.style"/>" >
+<body>
 
 <div class="wrapper">
-    <!--=== Header v8 ===-->
-    <div class="header-v8 header-sticky">
-        <!-- Topbar blog -->
-        <div class="blog-topbar">
-            <div class="topbar-search-block">
-                <template:area path="search"/>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <!--Small language login menu-->
-                    <div class="col-sm-6 col-xs-6">
-                        <div class="topbar-list topbar-menu"/>
-                        <template:area path="languageLoginMini"/>
-                        </div>
-                    <div class="topbar-toggler"><span class="fa fa-angle-down"></span><span class="hidden-sm hidden-md hidden-lg">Languages / Login</span></div>
-                    </div>
-                    <!--/end Small language login menu-->
-                    <!--Full language login menu-->
-                    <div class="col-sm-6 col-xs-6 clearfix">
-                        <div class="topbar-list topbar-log_reg pull-right visible-sm-block visible-md-block visible-lg-block">
-                            <template:area path="languageLogin"/>
-                        </div>
-                    </div>
-                    <!--/end Full language login menu-->
-                </div><!--/end row-->
-            </div><!--/end container-->
-        </div>
-        <!-- End Topbar blog -->
+    <!--=== Header ===-->
+    <div class="header">
+        <div class="container">
+            <!-- Logo -->
+            <a class="logo" href="index.html">
+                <img src="assets/img/logo1-default.png" alt="Logo">
+            </a>
+            <!-- End Logo -->
 
-        <!-- Navbar -->
-        <div class="navbar mega-menu" role="navigation">
-
-            <div class="container">
-                <div class="res-container">
-                    <template:area path="toggleNav"/>
-                    <div id="logo" class="navbar-brand">
-                        <template:area path="logo"/>
-                    </div>
-                </div>
-                <div class="collapse navbar-collapse navbar-responsive-collapse">
-                <template:area path="navmenu"/>
-                </div>
+            <!-- Topbar -->
+            <div class="topbar">
+                <ul class="loginbar pull-right">
+                    <li class="hoverSelector">
+                        <i class="fa fa-globe"></i>
+                        <a>Languages</a>
+                        <ul class="languages hoverSelectorBlock">
+                            <li class="active">
+                                <a href="#">English <i class="fa fa-check"></i></a>
+                            </li>
+                            <li><a href="#">Spanish</a></li>
+                            <li><a href="#">Russian</a></li>
+                            <li><a href="#">German</a></li>
+                        </ul>
+                    </li>
+                    <li class="topbar-devider"></li>
+                    <li><a href="page_faq.html">Help</a></li>
+                    <li class="topbar-devider"></li>
+                    <li><a href="page_login.html">Login</a></li>
+                </ul>
             </div>
+            <!-- End Topbar -->
+
+            <!-- Toggle get grouped for better mobile display -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="fa fa-bars"></span>
+            </button>
+            <!-- End Toggle -->
+
+        </div><!--/end container-->
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse mega-menu navbar-responsive-collapse">
+        <div class="container">
+        <template:area path="navmenu"/>
         </div>
-        <!-- End Navbar -->
     </div>
-    <!--=== End Header v8 ===-->
+    </div>
+    <!--=== End Header ===-->
 
-    <template:area path="landing"/>
+
+
+
     <!--=== Content Part ===-->
-    <div class="container">
+    <div class="container content-sm">
         <template:area path="pagecontent"/>
-    </div>
+    </div><!--/container-->
     <!-- End Content Part -->
-<br/>
+
     <!--=== Footer Version 1 ===-->
     <div class="footer-v1">
         <div class="footer">
@@ -236,8 +197,25 @@
         </div><!--/copyright-->
     </div>
     <!--=== End Footer Version 1 ===-->
-    <template:area path="modals"/>
 </div><!--/wrapper-->
+
+<!-- JS Global Compulsory -->
+<script type="text/javascript" src="file:///Users/rlodge/Documents/Unify-v1.8/HTML/assets/plugins/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="file:///Users/rlodge/Documents/Unify-v1.8/HTML/assets/plugins/jquery/jquery-migrate.min.js"></script>
+<script type="text/javascript" src="file:///Users/rlodge/Documents/Unify-v1.8/HTML/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+<!-- JS Implementing Plugins -->
+<script type="text/javascript" src="file:///Users/rlodge/Documents/Unify-v1.8/HTML/assets/plugins/back-to-top.js"></script>
+<script type="text/javascript" src="file:///Users/rlodge/Documents/Unify-v1.8/HTML/assets/plugins/smoothScroll.js"></script>
+<script type="text/javascript" src="file:///Users/rlodge/Documents/Unify-v1.8/HTML/assets/plugins/parallax-slider/js/modernizr.js"></script>
+<!-- JS Customization -->
+<script type="text/javascript" src="file:///Users/rlodge/Documents/Unify-v1.8/HTML/assets/js/custom.js"></script>
+<!-- JS Page Level -->
+<script type="text/javascript" src="file:///Users/rlodge/Documents/Unify-v1.8/HTML/assets/js/app.js"></script>
+<!--[if lt IE 9]>
+<script src="file:///Users/rlodge/Documents/Unify-v1.8/HTML/assets/plugins/respond.js"></script>
+<script src="file:///Users/rlodge/Documents/Unify-v1.8/HTML/assets/plugins/html5shiv.js"></script>
+<script src="file:///Users/rlodge/Documents/Unify-v1.8/HTML/assets/plugins/placeholder-IE-fixes.js"></script>
+<![endif]-->
 
 </body>
 </html>

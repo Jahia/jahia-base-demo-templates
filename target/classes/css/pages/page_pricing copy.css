@@ -78,7 +78,7 @@
 	border-bottom:solid 1px #f5f9e7;
 }
 .pricing-content li i {
-	color:#EF1979;
+	color:#72c02c;
 	font-size:16px;
 	margin-right:5px;
 	position:relative;
@@ -696,11 +696,11 @@ background-color: #717984!important;
 	min-height: 41px;
 }
 .pricing-mega-v1 .pricing-content li i {
-	color: #EF1979;
+	color: #72C02C; 
 }
 .pricing-mega-v1 .btn-group .dropdown-menu  {
 	width: 100%;
-	background: #EF1979;
+	background: #72c02c;
 	border-color: #eee;
 	margin: 0;
 	border: 0;
@@ -906,7 +906,7 @@ background-color: #717984!important;
 	margin: 0;
 	border: 0;
 	width: 100%;
-	background: #EF1979;
+	background: #72c02c;
 	border-color: #eee;
 	border: 1px solid #fff;
 	border-top: none;

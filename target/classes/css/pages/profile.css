@@ -108,7 +108,7 @@
 }
 
 .profile .profile-post.color-one {
-	border-left: 2px solid #EF1979;
+	border-left: 2px solid #72c02c;
 }
 .profile .profile-post.color-two {
 	border-left: 2px solid #3498db;
@@ -138,7 +138,7 @@
 }
 
 .profile .profile-post:hover span.profile-post-numb {
-	color: #EF1979;
+	color: #72c02c;
 }
 
 .profile .profile-post-in {
@@ -176,7 +176,7 @@
 	color: #fff;
 	float: left;
 	text-align: center;
-	background: #EF1979;
+	background: #72c02c;
 	margin: 7px 13px 0 0;
 	padding: 7px 10px 4px;
 }
@@ -272,7 +272,7 @@
 }
 
 .profile .comment-list li:hover i {
-	color: #EF1979;
+	color: #72c02c;
 }
 
 /*Image Post*/
@@ -324,7 +324,7 @@
 	text-decoration: none;
 }
 .profile .img-post-list li a:hover i {
-	color: #EF1979;
+	color: #72c02c;
 }
 
 /*Media*/
@@ -684,11 +684,11 @@
 }
 
 .profile .name-location span a:hover {
-	color: #EF1979;
+	color: #72c02c;
 }
 
 .profile .name-location span i {
-	color: #EF1979;
+	color: #72c02c;
 	font-size: 18px;
 	margin-right: 5px;
 }
@@ -767,7 +767,7 @@
 }
 
 .profile .comment-list-v2 li:hover i {
-	color: #EF1979;
+	color: #72c02c;
 }
 
 .profile .star-vote li {

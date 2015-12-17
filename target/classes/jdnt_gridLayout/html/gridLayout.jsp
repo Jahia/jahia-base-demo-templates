@@ -54,7 +54,7 @@
 
         <c:when test="${layout == '2-3_1-3'}">
             <div class="col-md-8"><template:area path="${colName}"/></div>
-            <div class="col-md-4"><template:area path="${colName}-2"/></div>
+            <div class="col-md-8"><template:area path="${colName}-2"/></div>
         </c:when>
 
         <c:when test="${layout == '1-4_3-4'}">
