@@ -21,6 +21,6 @@
 
 <div class="owl-item" style="width: 163px;">
     <div class="item">
-        <img src="${imageUrl}" alt="">
+        <img class="img-responsive" src="${imageUrl}" alt="">
     </div>
 </div>
