@@ -87,3 +87,10 @@
 [jdnt:investorContactForm] > jnt:content, jdmix:jahiademo
 
 [jdnt:people] > jnt:contentList, jdmix:jahiademo orderable
+
+[jdmix:socialIcons] mixin
+ extends = jnt:person
+ itemtype = content
+ - facebook (string) = 'http://'
+ - linkedIn (string) = 'http://'
+ - twitter (string) = 'http://'

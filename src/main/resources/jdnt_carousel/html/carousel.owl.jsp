@@ -23,14 +23,28 @@
     <div class="headline"><h2>${title}</h2></div>
 </c:if>
 
-<div class="owl-clients-v1">
-    <c:set var="images" value="${jcr:getChildrenOfType(currentNode, 'jdnt:carouselImg')}"/>
-    <c:forEach items="${images}" var="image" varStatus="item">
-        <div class="item<c:if test="${item.first}"> active</c:if>">
-            <template:module node="${image}" view="owl" nodeTypes="jdnt:carouselImg" editable="true"/>
+
+<div class="owl-carousel-v1 margin-bottom-50">
+    <!--navigation-->
+    <div class="owl-navigation">
+        <div class="customNavigation">
+            <a class="owl-btn prev-v1"><i class="fa fa-angle-left"></i></a>
+            <a class="owl-btn next-v1"><i class="fa fa-angle-right"></i></a>
         </div>
-    </c:forEach>
+    </div><!--end navigation-->
+
+    <div class="owl-slider-v3 owl-carousel owl-theme">
+        <c:set var="images" value="${jcr:getChildrenOfType(currentNode, 'jdnt:carouselImg')}"/>
+        <c:forEach items="${images}" var="image" varStatus="item">
+            <div class="item<c:if test="${item.first}"> active</c:if>">
+                <template:module node="${image}" view="owl" nodeTypes="jdnt:carouselImg" editable="true"/>
+            </div>
+        </c:forEach>
+
+    </div>
 </div>
+<!-- End Owl Carousel v1 -->
+
 
 
 <c:if test="${renderContext.editMode}">
