@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <content xmlns:j="http://www.jahia.org/jahia/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0">
     <modules jcr:primaryType="jnt:modules">
-        <jahiademo j:dependencies="default font-awesome news search"
+        <jahiademo j:dependencies="default font-awesome news person search"
                  j:installedModules="jahiademo"
                  j:modulePriority="0"
                  j:moduleType="templatesSet"

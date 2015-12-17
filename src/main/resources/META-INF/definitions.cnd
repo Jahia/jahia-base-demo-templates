@@ -85,3 +85,5 @@
 [jdnt:toggleSearchButton] > jnt:content, jdmix:jahiademo, jdmix:headerWidgets, jmix:studioOnly
 
 [jdnt:investorContactForm] > jnt:content, jdmix:jahiademo
+
+[jdnt:people] > jnt:contentList, jdmix:jahiademo orderable
