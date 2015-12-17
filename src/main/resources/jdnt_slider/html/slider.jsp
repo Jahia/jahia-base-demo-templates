@@ -29,8 +29,6 @@
 <%-- Close the container from the template before starting a slider section
        Have to reopen the div AFTER the slider --%>
 <%--</div>--%>
-
-<h1>SLIDER</h1>
 <!--=== Slider ===-->
 <div class="ms-layers-template">
 <!-- masterslider -->
@@ -77,7 +75,7 @@
         <div class="ms-slide" style="z-index: 13">
             <img src="http://htmlstream.com/preview/unify-v1.8/assets/plugins/master-slider/masterslider/style/blank.gif" data-src="http://htmlstream.com/preview/unify-v1.8/assets/img/bg/img4.jpg" alt="">
 
-            <img class="ms-layer" src="http://htmlstream.com/preview/unify-v1.8/assets/plugins/master-slider/masterslider/style/blank.gif" data-src="assets/img/mockup/hand-black-iphone-l.png" alt=""
+            <img class="ms-layer" src="http://htmlstream.com/preview/unify-v1.8/assets/plugins/master-slider/masterslider/style/blank.gif" data-src="http://htmlstream.com/preview/unify-v1.8/assets/img/mockup/hand-black-iphone-l.png" alt=""
                  style="bottom:-10px; left:15px; width:400px; height: auto;"
                  data-effect="bottom(100)"
                  data-duration="2000"

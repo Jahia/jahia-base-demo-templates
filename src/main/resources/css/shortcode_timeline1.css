@@ -87,7 +87,7 @@
 	cursor: pointer;
 	text-align: center;
 	position: absolute;
-	top: 19px;
+	top: 32px;
 	right: -12px;
 	/*background-color: #999999;*/
 	z-index: 9;
@@ -272,4 +272,9 @@
 	.timeline-v1 > li.timeline-inverted > .timeline-badge{
 		left: 28px;
 	}
+
+}
+
+.timeline-v1 li:hover .timeline-badge{
+	color: #EF1979 ;
 }
