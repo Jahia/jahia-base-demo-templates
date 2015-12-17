@@ -33,7 +33,7 @@
         </div>
     </div><!--end navigation-->
 
-    <div class="owl-slider-v3 owl-carousel owl-theme">
+    <div class="owl-slider-ap owl-carousel owl-theme">
         <c:set var="images" value="${jcr:getChildrenOfType(currentNode, 'jdnt:carouselImg')}"/>
         <c:forEach items="${images}" var="image" varStatus="item">
             <div class="item<c:if test="${item.first}"> active</c:if>">
