@@ -265,7 +265,7 @@ topbar including in mobile version*/
 .header-v2 .navbar-toggle,
 .header-v2 .navbar-default .navbar-toggle:hover, 
 .header-v2 .navbar-default .navbar-toggle:focus {
-	background: #72c02c;
+	background: #EF1979;
 	padding: 6px 10px 2px;
 }
 
@@ -416,13 +416,13 @@ topbar including in mobile version*/
 	}
 
 	.header-v2 .navbar-default .navbar-nav > li > a:hover {
-		color: #72c02c;
+		color: #EF1979;
 	}
 
 	.header-v2 .navbar-default .navbar-nav > .active > a,
 	.header-v2 .navbar-default .navbar-nav > .active > a:hover,
 	.header-v2 .navbar-default .navbar-nav > .active > a:focus {
-		background: #72c02c;
+		background: #EF1979;
 		color: #fff !important;	
 	}
 
@@ -485,7 +485,7 @@ topbar including in mobile version*/
 		min-width: 200px;
 		border-radius: 0; 
 		z-index: 9999 !important;
-		border-top: solid 2px #72c02c; 
+		border-top: solid 2px #EF1979;
 		border-bottom: solid 2px #687074; 
 	}
 

@@ -1,1 +1,57 @@
 /* Add here all your css styles (customizations) */
+
+#logo {
+    float: left;
+}
+
+.wrapper .header .topbar .open > .dropdown-menu{
+    display: block;
+}
+
+.header .topbar .dropdown > a:after {
+    display: none;
+}
+
+.header .topbar #languages i.fa {
+    color: #bbb;
+}
+
+.header .topbar  a, .header .topbar a:hover {
+    color: #7c8082;
+    font-size: 11px;
+    text-transform: uppercase;
+}
+
+.blog-topbar form.simplesearchform {
+    margin-bottom: 0px;
+}
+
+.topbar-list a {
+    color: #eee;
+    font-size: 10px;
+    padding: 7px 12px;
+    position: relative;
+    letter-spacing: 1px;
+    display: inline-block;
+    text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+    .topbar-menu div {
+        display: block;
+        padding: 7px 0;
+    }
+
+    .topbar-list a {
+        padding: 2px 12px;
+    }
+}
+
+.topbar-menu div.clear {
+    display: block;
+    padding: 0;
+}
+
+.wrapper .blog-topbar .search-btn {
+    padding-left: 10px;
+}

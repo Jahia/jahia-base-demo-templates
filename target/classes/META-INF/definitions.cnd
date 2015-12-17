@@ -1,7 +1,9 @@
+<famix = 'http://fontawesome.io/jahia/mix/1.0'>
 <jdmix = 'http://www.jahia.org/jahiademo/mix/1.0'>
 <jdnt = 'http://www.jahia.org/jahiademo/nt/1.0'>
 <jmix = 'http://www.jahia.org/jahia/mix/1.0'>
 <jnt = 'http://www.jahia.org/jahia/nt/1.0'>
+<mix = 'http://www.jcp.org/jcr/mix/1.0'>
 
 [jdnt:navmenu] > jnt:content, jdmix:jahiademo, jmix:studioOnly, jmix:navMenuComponent
 
@@ -17,12 +19,71 @@
 
 [jdmix:jahiademo] > jmix:droppableContent, jmix:editorialContent mixin
 
+[jdmix:style] mixin
+ extends = jnt:virtualsite
+ itemtype = content
+ - layout (string, choicelist[resourceBundle]) = 'Wide' autocreated < 'Boxed', 'Wide'
+ - colorTheme (string, choicelist[resourceBundle]) = 'Light' autocreated < 'Dark', 'Light'
+
 [jdnt:menuLevel] > jnt:content, jdmix:jahiademo, jmix:navMenuComponent
  - baseLevel (long) = '0' hidden
  - hideParentMenu (boolean) = 'false'
 
+[jdmix:headerWidgets] mixin
+
 [jdmix:footerWidgets] mixin
 
-[jdnt:logo] > jnt:content, jdmix:jahiademo, jmix:studioOnly, jmix:navMenuComponent
+[jdnt:logo] > jnt:content, jdmix:jahiademo, jdmix:headerWidgets
  - logo (weakreference, picker[type='image']) < 'jmix:image'
 
+[jdnt:topbar] > jnt:content, jdmix:jahiademo, jdmix:headerWidgets
+
+[jdnt:sliderPanel] > jnt:content, mix:title
+
+[jdnt:slider] > jnt:content, jdmix:jahiademo, jmix:manuallyOrderable, jmix:list orderable
+
+[jdnt:gridLayout] > jnt:content, jdmix:jahiademo
+ - layout (string, choicelist[resourceBundle,moduleImage='png']) = '1' autocreated < '1', '1-2_1-2', '2-3_1-3', '1-3_2-3', '1-4_3-4', '3-4_1-4', '1-4_2-4_1-4', '1-3_1-3_1-3', '1-4_1-4_1-4_1-4'
+ - bottomMargin (boolean) = 'false'
+
+[jdnt:highlights] > jnt:contentList, mix:title, jdmix:jahiademo, jmix:manuallyOrderable, jmix:list orderable
+ - numColumns (string, choicelist[resourceBundle]) = '3' autocreated < '1', '2', '3', '4'
+ - bottomMargin (string, choicelist[resourceBundle]) = '30' autocreated < 'No margin', '5', '10', '15', '20', '25', '30', '35', '40', '45', '50', '55', '60', '100'
+  + * (jdnt:highlight)
+
+[jdnt:highlight] > jnt:content, mix:title, famix:faIcon
+ - jcr:title (string) internationalized primary
+ - description (string) internationalized
+
+[jdmix:imgView] mixin
+ extends = jdnt:highlight
+ - image (weakreference, picker[type='image']) mandatory < 'jmix:image'
+
+[jdmix:hasLink] mixin
+ extends = jdnt:highlight
+ - internalLink (weakreference, picker[type='page']) mandatory < 'jnt:page'
+
+[jdnt:headline] > jnt:content, mix:title, jdmix:jahiademo
+
+[jdnt:carousel] > jnt:content, mix:title, jdmix:jahiademo, jmix:manuallyOrderable, jmix:list orderable
+ - jcr:title (string) internationalized primary
+ + * (jdnt:carouselImg)
+
+[jdnt:carouselImg] > jnt:content
+ - image (weakreference, picker[type='image']) mandatory < 'jmix:image'
+ - caption (string) internationalized
+
+[jdnt:timeline] > jnt:contentList, jdmix:jahiademo orderable
+ - limit (string)
+ - parentPage (weakreference, picker[type='page']) < 'jnt:page'
+ + * (jnt:news)
+
+[jdnt:login] > jnt:content, jdmix:jahiademo, jdmix:headerWidgets, jmix:studioOnly
+
+[jdnt:toggleNavBarButton] > jnt:content, jdmix:jahiademo, jdmix:headerWidgets, jmix:studioOnly
+
+[jdnt:toggleSearchButton] > jnt:content, jdmix:jahiademo, jdmix:headerWidgets, jmix:studioOnly
+
+[jdnt:investorContactForm] > jnt:content, jdmix:jahiademo
+
+[jdnt:people] > jnt:contentList, jdmix:jahiademo orderable
