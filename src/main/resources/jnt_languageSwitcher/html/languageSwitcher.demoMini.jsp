@@ -22,6 +22,7 @@
 
 <ui:initLangBarAttributes activeLanguagesOnly="${renderContext.liveMode}"/>
 <div id="languages" class="hidden-sm hidden-md hidden-lg">
+    <c:if test="${fn:length(requestScope.languageCodes) > 1}">
     <a href="javascript:void(0);">Languages <span class="caret"></span></a>
     <ul class="topbar-dropdown">
         <c:forEach items="${requestScope.languageCodes}" var="language">
@@ -40,4 +41,5 @@
             </c:choose>
         </c:forEach>
     </ul>
+    </c:if>
 </div>

@@ -18,6 +18,10 @@
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
 <%--@elvariable id="currentUser" type="org.jahia.services.usermanager.JahiaUser"--%>
 <%--@elvariable id="currentAliasUser" type="org.jahia.services.usermanager.JahiaUser"--%>
+<template:addResources type="css" resources="plugins/login-signup-modal-window/style.css"/>
+<template:addResources type="javascript" resources="modernizr.js"/>
+<template:addResources type="javascript" resources="plugins/login-signup-modal-window/main.js"/>
+
 <c:if test="${! renderContext.editMode}">
     <c:if test="${! renderContext.loggedIn}">
         <c:set var="siteNode" value="${currentNode.resolveSite}"/>
@@ -43,8 +47,8 @@
                             <p class="fieldset">
                                 <label class="image-replace cd-password" for="signin-password">
                                     <fmt:message key="label.password"/></label>
-                                <input class="full-width has-padding has-border" name="password" id="password" type="text" placeholder="<fmt:message key="label.password"/>">
-                                <a href="javascript:void(0);" class="hide-password">Hide</a>
+                                <input class="full-width has-padding has-border" name="password" id="password" type="password" placeholder="<fmt:message key="label.password"/>">
+                                <a href="javascript:void(0);" class="hide-password">Show</a>
                                 <span class="cd-error-message">Error message here!</span>
                             </p>
 
@@ -53,16 +57,24 @@
                                 <label for="useCookie"><fmt:message key="loginForm.rememberMe.label"/></label>
                             </p>
 
-                            <p class="text-right">
-                                <button class="btn btn-primary"><i class="fa fa-check"></i> <fmt:message
-                                        key='loginForm.loginbutton.label'/>
-                                </button>
+                            <p class="fieldset">
+                                <input class="full-width btn btn-primary" type="submit" value="<fmt:message
+                                        key='loginForm.loginbutton.label'/>"/>
+                                </input>
                             </p>
+
 
                         </ui:loginArea>
                     </div>
                 </div>
             </div>
+            <script type="text/javascript">
+                $(document).ready(function () {
+                    <c:set var="modalOption" value="${empty param['loginError'] ? 'hide' : 'show'}"/>
+                    $('#loginForm').modal('${modalOption}');
+
+                })
+            </script>
         </c:if>
     </c:if>
 </c:if>

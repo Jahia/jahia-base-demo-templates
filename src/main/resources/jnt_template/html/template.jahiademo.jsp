@@ -53,9 +53,6 @@
     <template:addResources type="css" resources="plugins.css"/>
     <template:addResources type="css" resources="app.css"/>
 
-    <!-- CSS Login Modal -->
-    <template:addResources type="css" resources="plugins/login-signup-modal-window/style.css"/>
-
     <!-- CSS Customization -->
     <template:addResources type="css" resources="custom.css"/>
 
@@ -68,6 +65,7 @@
     <template:addResources type="javascript" resources="back-to-top.js"/>
     <template:addResources type="javascript" resources="smoothScroll.js"/>
     <template:addResources type="javascript" resources="modernizr.js"/>
+    <template:addResources type="javascript" resources="jquery.parallax.js"/>
     <template:addResources type="javascript" resources="jquery.cslider.js"/>
     <template:addResources type="javascript" resources="owl.carousel.js"/>
     <!-- JS Customization -->
@@ -87,6 +85,8 @@
             });
         </script>
     </template:addResources>
+
+
     <!--[if lt IE 9]>
     <template:addResources type="javascript" resources="respond.js"/>
     <template:addResources type="javascript" resources="html5shiv.js"/>
