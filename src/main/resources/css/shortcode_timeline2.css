@@ -23,27 +23,27 @@
 }
 
 /* The date/time */
-.timeline-v2 > li .cbp_tmtime {
+li .cbp_tmtime {
 	width: 25%;
 	display: block;
 	position: absolute;
 	padding-right: 80px;
 }
 
-.timeline-v2 > li .cbp_tmtime span {
+li .cbp_tmtime span {
 	top: 9px;
 	display: block;
 	text-align: right;
 	position: relative;
 }
 
-.timeline-v2 > li .cbp_tmtime span:first-child {
+li .cbp_tmtime span:first-child {
 	color: #999;
 	font-size: 14px;
 	line-height: 0.9;
 }
 
-.timeline-v2 > li .cbp_tmtime span:last-child {
+li .cbp_tmtime span:last-child {
 	color: #585f69;
 	font-size: 20px;
 	font-weight: normal;
@@ -51,7 +51,7 @@
 }
 
 /* Right content */
-.timeline-v2 > li .cbp_tmlabel {
+li .cbp_tmlabel {
 	color: #fff;
 	padding: 10px 20px 20px;
 	background: #f3f3f3;

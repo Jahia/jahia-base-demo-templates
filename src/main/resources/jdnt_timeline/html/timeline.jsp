@@ -18,7 +18,6 @@
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
 <template:addResources type="css" resources="shortcode_timeline2.css"/>
 
-
 <%-- Get the title of the timeline, if exists display above carousel --%>
 <c:set var="title" value="${currentNode.properties['jcr:title'].string}"/>
 <c:if test="${not empty title}">
@@ -26,14 +25,38 @@
 </c:if>
 
     <ul class="timeline-v2">
-        <c:set var="entries" value="${jcr:getChildrenOfType(currentNode, 'jnt:news')}"/>
-        <c:forEach items="${entries}" var="entry" varStatus="item">
-            <%-- TODO: by placing <li> tag here in the list the timeline displays properly in edit mode --%>
+
+
+
+
+        <c:set var="resourceReadOnly" value="${currentResource.moduleParams.readOnly}"/>
+        <template:include view="hidden.header"/>
+        <c:set var="isEmpty" value="true"/>
+                <c:forEach items="${moduleMap.currentList}" var="subchild" begin="${moduleMap.begin}" end="${moduleMap.end}">
+                    <template:module node="${subchild}" view="${moduleMap.subNodesView}" editable="${moduleMap.editable && !resourceReadOnly}"/>
+                    <c:set var="isEmpty" value="false"/>
+                </c:forEach>
+                <c:if test="${not empty moduleMap.emptyListMessage and (renderContext.editMode or moduleMap.forceEmptyListMessageDisplay) and isEmpty}">
+                    ${moduleMap.emptyListMessage}
+                </c:if>
+                <c:if test="${moduleMap.editable and renderContext.editMode && !resourceReadOnly}">
+                    <template:module path="*"/>
+                </c:if>
+                <template:include view="hidden.footer"/>
+
+
+
+        <%--
+            <c:set var="entries" value="${jcr:getChildrenOfType(currentNode, 'jnt:news')}"/>
+            <c:forEach items="${entries}" var="entry" varStatus="item">
+                <%-- TODO: by placing <li> tag here in the list the timeline displays properly in edit mode --%>
+<%--
             <li class="equal-height-columns">
                 <template:module node="${entry}" nodeTypes="jnt:news" editable="true"/>
             </li>
         </c:forEach>
-<%--        <li class="equal-height-columns">
+
+            <li class="equal-height-columns">
             <div class="cbp_tmtime equal-height-column"><span>7/2/09</span> <span>February</span></div>
             <i class="cbp_tmicon rounded-x hidden-xs"></i>
             <div class="cbp_tmlabel equal-height-column">
@@ -143,7 +166,8 @@
             </div>
         </li>--%>
     </ul>
-
+<%--
 <c:if test="${renderContext.editMode}">
     <template:module path="*" nodeTypes="jnt:news"/>
 </c:if>
+--%>
