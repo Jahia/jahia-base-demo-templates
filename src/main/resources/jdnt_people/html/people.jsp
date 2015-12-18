@@ -17,7 +17,7 @@
 <%--@elvariable id="renderContext" type="org.jahia.services.render.RenderContext"--%>
 <%--@elvariable id="currentResource" type="org.jahia.services.render.Resource"--%>
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
-<%-- TODO: Update for automatic list ordering -- %>
+<%-- TODO: Update for automatic list ordering --%>
 
 <div class="container content" id="leadership">
     <c:set var="people" value="${jcr:getChildrenOfType(currentNode, 'jnt:person')}"/>
