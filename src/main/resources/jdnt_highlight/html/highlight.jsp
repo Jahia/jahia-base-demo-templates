@@ -24,15 +24,12 @@
     <c:set var="linkUrl" value="${currentNode.properties['internalLink'].node.url}"/>
 </c:if>
 
-<%-- removed to allow user to change view on the layout tab in edit mode
+<div class="service">
 <c:choose>
-<c:when test="${jcr:isNodeType(currentNode, 'jdmix:imgView')}">
-    <template:include view="imgView" />
+        <%-- if there is a link display, make the icon clickable --%>
+        <c:when test="${jcr:isNodeType(currentNode, 'jdmix:hasLink')}">
+            <a href="${linkUrl}"><i class="fa ${icon} service-icon"></i></a>
 </c:when>
-    <c:otherwise> --%>
-        <div class="service">
-            <c:choose><c:when test="${jcr:isNodeType(currentNode, 'jdmix:hasLink')}">
-            <a href="${linkUrl}"><i class="fa ${icon} service-icon"></i></a></c:when>
                 <c:otherwise><i class="fa ${icon} service-icon"></i></c:otherwise>
             </c:choose>
                 <div class="desc">
@@ -41,11 +38,8 @@
                     <p>${description}</p>
         <%-- display a read more text link if a link has been provided --%>
         <c:if test="${jcr:isNodeType(currentNode, 'jdmix:hasLink')}">
-            <a href="${linkUrl}"><fmt:message key="jdnt_highlight.readmore"/></a>
+            <a href="${linkUrl}" alt="${title}"><fmt:message key="jdnt_highlight.readmore"/></a>
         </c:if>
                 </div>
 
             </div>
-<%-- removed to allow user to change view on the layout tab in edit mode
-    </c:otherwise>
-</c:choose>--%>

@@ -39,6 +39,7 @@
 					</div>
           </c:when>
 	    	<c:otherwise>
+                <%-- for each image in the carousel display using the carouselImg jsp --%>
 		        <c:forEach items="${images}" var="image" varStatus="item">
       		  		<div class="item<c:if test="${item.first}"> active</c:if>">
            			 <template:module node="${image}" nodeTypes="jdnt:carouselImg" editable="true"/>
@@ -59,6 +60,7 @@
     </div>
 </div>
 
+<%--  if edit mode display button to add more images to the carousel --%>
 <c:if test="${renderContext.editMode}">
     <template:module path="*" />
 </c:if>

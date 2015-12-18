@@ -18,8 +18,23 @@ var OwlCarousel = function () {
                 owl.trigger('owl.prev');
             })
 
+            //Owl Slider v1 autoplay
+            var owl = jQuery(".owl-slider-ap").owlCarousel({
+                autoPlay : 5000,
+                itemsDesktop : [1000,5],
+                itemsDesktopSmall : [900,4],
+                itemsTablet: [600,3],
+                itemsMobile : [479,2],
+            });
+            jQuery(".next-v1").click(function(){
+                owl.trigger('owl.next');
+            })
+            jQuery(".prev-v1").click(function(){
+                owl.trigger('owl.prev');
+            })
 
-	        //Owl Slider v2
+
+            //Owl Slider v2
 			var owl1 = jQuery(".owl-slider-v2").owlCarousel({
                 itemsDesktop : [1000,5],
                 itemsDesktopSmall : [900,4],

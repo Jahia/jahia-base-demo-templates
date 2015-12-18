@@ -16,25 +16,40 @@
 <%--@elvariable id="renderContext" type="org.jahia.services.render.RenderContext"--%>
 <%--@elvariable id="currentResource" type="org.jahia.services.render.Resource"--%>
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
-<%-- TODO: Graphics are not lining up exactly with the timeline circle --%>
 <%-- TODO: Layout issues when there is an entry longer than the others. Same issue as on jahia.com --%>
 
 <template:addResources type="css" resources="shortcode_timeline1.css"/>
 
 <ul class="timeline-v1">
-    <c:set var="entries" value="${jcr:getChildrenOfType(currentNode, 'jnt:news')}"/>
-    <c:forEach items="${entries}" var="entry" varStatus="item">
-        <%-- TODO: by placing <li>and top <div> tags here in the list the timeline displays properly in edit mode --%>
-        <li <c:if test="${item.count%2 == 0}">class="timeline-inverted"</c:if> >
+    <c:set var="resourceReadOnly" value="${currentResource.moduleParams.readOnly}"/>
+    <%-- Displaying the view of inherited nodetype jnt:contentList and this view is loading all subnodes,
+                                    the view is setting modulemap that we get from the included template header --%>
+    <%-- must set the Sub Nodes View to "alternating" when setting the layout --%>
+    <template:include view="hidden.header"/>
+    <c:set var="isEmpty" value="true"/>
+    <c:forEach items="${moduleMap.currentList}" var="subchild" begin="${moduleMap.begin}" end="${moduleMap.end}" varStatus="item">
+        <%-- By setting the li and div tags here this displays properly in edit mode. --%>
+    <li
+            <c:if test="${item.count%2 == 0}">class="timeline-inverted"</c:if> >
             <div class="timeline-badge primary"><i class="glyphicon glyphicon-record"></i></div>
             <div class="timeline-panel">
-            <template:module node="${entry}" view="alternating" nodeTypes="jnt:news" editable="true"/>
+
+        <template:module node="${subchild}" view="${moduleMap.subNodesView}" editable="${moduleMap.editable && !resourceReadOnly}"/>
                 </div>
         </li>
-    </c:forEach>
-    <li class="clearfix" style="float: none;"></li>
-</ul>
 
-<c:if test="${renderContext.editMode}">
+        <c:set var="isEmpty" value="false"/>
+    </c:forEach>
+
+    <%-- If the list is empty then we will display the default contentList message for empty list --%>
+    <c:if test="${not empty moduleMap.emptyListMessage and (renderContext.editMode or moduleMap.forceEmptyListMessageDisplay) and isEmpty}">
+        ${moduleMap.emptyListMessage}
+    </c:if>
+    <%-- Add the add new content item button if in edit mode --%>
+    <c:if test="${moduleMap.editable and renderContext.editMode && !resourceReadOnly}">
+        <%-- limit to adding jnt:news nodes to the list --%>
     <template:module path="*" nodeTypes="jnt:news"/>
 </c:if>
+    <template:include view="hidden.footer"/>
+    <li class="clearfix" style="float: none;"></li>
+</ul>

@@ -36,11 +36,19 @@
 [jdnt:logo] > jnt:content, jdmix:jahiademo, jdmix:headerWidgets
  - logo (weakreference, picker[type='image']) < 'jmix:image'
 
-[jdnt:topbar] > jnt:content, jdmix:jahiademo, jdmix:headerWidgets
-
 [jdnt:sliderPanel] > jnt:content, mix:title
+ - jcr:title (string) internationalized
+ - textColor (string, choicelist[resourceBundle]) = 'light' autocreated < 'light', 'dark'
+ - subtitle (string) internationalized
+ - body (string) internationalized
+ - internalLink (weakreference, picker[type='page']) < 'jnt:page'
+ - linkText (string) internationalized
+ - backgroundImg (weakreference, picker[type='image']) < 'jmix:image'
+ - smallPhoto (weakreference, picker[type='image']) < 'jmix:image
+ - layout (string, choicelist[resourceBundle]) < 'left', 'right'
 
 [jdnt:slider] > jnt:content, jdmix:jahiademo, jmix:manuallyOrderable, jmix:list orderable
+ + * (jdnt:sliderPanel)
 
 [jdnt:gridLayout] > jnt:content, jdmix:jahiademo
  - layout (string, choicelist[resourceBundle,moduleImage='png']) = '1' autocreated < '1', '1-2_1-2', '2-3_1-3', '1-3_2-3', '1-4_3-4', '3-4_1-4', '1-4_2-4_1-4', '1-3_1-3_1-3', '1-4_1-4_1-4_1-4'
@@ -74,8 +82,6 @@
  - caption (string) internationalized
 
 [jdnt:timeline] > jnt:contentList, jdmix:jahiademo orderable
- - limit (string)
- - parentPage (weakreference, picker[type='page']) < 'jnt:page'
  + * (jnt:news)
 
 [jdnt:login] > jnt:content, jdmix:jahiademo, jdmix:headerWidgets, jmix:studioOnly
@@ -94,6 +100,7 @@
  - facebook (string) = 'http://'
  - linkedIn (string) = 'http://'
  - twitter (string) = 'http://'
+ - googlePlus (string) = 'http://'
 
 [jdnt:investorContact] > jnt:content
  - firstname (string) i18n
