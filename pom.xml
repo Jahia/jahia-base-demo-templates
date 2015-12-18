@@ -90,6 +90,12 @@
   </scm>
   <properties>
     <jahia-depends>default,font-awesome,news,search,person</jahia-depends>
+    <jahia.modules.importPackage>
+      org.jahia.defaults.config.spring,
+      org.jahia.exceptions,
+      org.jahia.services,
+      org.jahia.services.search
+    </jahia.modules.importPackage>
   </properties>
   <repositories>
     <repository>

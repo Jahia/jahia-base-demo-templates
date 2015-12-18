@@ -59,3 +59,28 @@
 .dropdown-backdrop {
     z-index: 1 !important;
 }
+
+.search-block div.input-group {
+    width: 100%;
+    padding-right: 66px;
+}
+
+.search-block span.input-group-btn {
+    display: block;
+}
+
+.search-block .btn-u-lg, a.btn-u-lg {
+    padding: 15px 25px;
+}
+
+.wrapper .search-block {
+    background: url(../img/bg.jpg) 50% 0 repeat fixed;
+}
+
+.s-results .results-number {
+    margin-left: 40px;
+}
+
+.s-results ol li {
+    list-style-type: none;
+}

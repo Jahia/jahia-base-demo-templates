@@ -94,3 +94,15 @@
  - facebook (string) = 'http://'
  - linkedIn (string) = 'http://'
  - twitter (string) = 'http://'
+
+[jdnt:investorContact] > jnt:content
+ - firstname (string) i18n
+ - lastname (string) i18n
+ - email (string) i18n
+ - phone (string) i18n
+ - investorType (string, choicelist[resourceBundle]) analyzer='keyword' < 'undefined', 'female','male'
+ - contactReason (string, choicelist[resourceBundle]) analyzer='keyword' < 'undefined', 'master', 'doctor', 'professor'
+ - message (string) i18n
+ - subscription (string, choicelist[resourceBundle]) analyzer='keyword' < 'undefined', 'subject1', 'subject2', 'subject3', 'subject4'
+
+[jdnt:investorContactForm] > jnt:content, jdmix:jahiademo
