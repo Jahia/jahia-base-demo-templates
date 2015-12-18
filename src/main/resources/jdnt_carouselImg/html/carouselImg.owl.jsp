@@ -17,10 +17,11 @@
 <%--@elvariable id="currentResource" type="org.jahia.services.render.Resource"--%>
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
 
+<%-- get the imageURL to display --%>
 <c:set var="imageUrl" value="${currentNode.properties['image'].node.url}"/>
 
 <div class="owl-item" style="width: 163px;">
     <div class="item">
-        <img class="img-responsive" src="${imageUrl}" alt="">
+        <img class="img-responsive" src="${imageUrl}" alt=""/>
     </div>
 </div>

@@ -49,22 +49,71 @@
     <fmt:formatNumber type="number" maxFractionDigits="0" value="${12/numColumns}" />
 </c:set>
 
-    <c:set var="highlights" value="${jcr:getChildrenOfType(currentNode, 'jdnt:highlight')}"/>
-    <c:forEach items="${highlights}" var="highlight" varStatus="item">
+<c:set var="resourceReadOnly" value="${currentResource.moduleParams.readOnly}"/>
+<%-- Displaying the view of inherited nodetype jnt:contentList and this view is loading all subnodes,
+                                        the view is setting modulemap that we get from the included template header --%>
+<template:include view="hidden.header"/>
+<c:set var="isEmpty" value="true"/>
+<c:forEach items="${moduleMap.currentList}" var="subchild" begin="${moduleMap.begin}" end="${moduleMap.end}"
+           varStatus="item">
+    <%-- if this is the start of a new row create a new row div --%>
         <c:if test="${item.count%numColumns == 1}">
         <div class="row${marginClass}">
         </c:if>
         <div class="col-md-${colWidth}">
-            <template:module node="${highlight}" nodeTypes="jdnt:highlight" editable="true"/>
+        <template:module node="${subchild}" view="${moduleMap.subNodesView}"
+                         editable="${moduleMap.editable && !resourceReadOnly}"/>
         </div>
+    <%-- if this is the end of a row or the last highlight in the list, close the row div --%>
         <c:if test="${item.count%numColumns == 0 or item.last}">
             </div>
         </c:if>
+    <c:set var="isEmpty" value="false"/>
     </c:forEach>
-    <c:if test="${renderContext.editMode}">
+
+<%-- If the list is empty then we will display a sample imgView and default view Highlight --%>
+<c:if test="${not empty moduleMap.emptyListMessage and (renderContext.editMode or moduleMap.forceEmptyListMessageDisplay) and isEmpty}">
+    <%-- Sample imgView Highlight --%>
+    <div class="row${marginClass}">
+        <div class="col-md-${colWidth}">
+            <div class="thumbnails thumbnail-style thumbnail-kenburn">
+                <div class="thumbnail-img">
+                    <div class="overflow-hidden">
+                        <img class="img-responsive" src="${url.currentModule}/img/background.jpg" alt="">
+                    </div>
+                    <a class="btn-more hover-effect" href="#" alt=""><fmt:message key="jdnt_highlight.readmore"/> +</a>
+                </div>
+                <div class="caption">
+
+                    <h3><a class="hover-effect" href="#"><fmt:message key="jdnt_highlight.sampleImgTitle"/></a></h3>
+
+                    <p><fmt:message key="jdnt_highlight.sampleBody"/></p>
+                </div>
+            </div>
+
+        </div>
+<%-- Sample default view highlight --%>
+    <div class="col-md-${colWidth}">
+        <div class="service">
+            <a href="#"><i class="fa fa-chevron-down service-icon"></i></a>
+
+            <div class="desc">
+                <h4><fmt:message key="jdnt_highlight.sampleTitle"/></h4>
+
+                <p><fmt:message key="jdnt_highlight.sampleBody"/></p>
+                <a href="#" alt=""><fmt:message key="jdnt_highlight.readmore"/></a>
+            </div>
+
+        </div>
+    </div>
+</div>
+</c:if>
+<%-- Add the add new content item button if in edit mode --%>
+<c:if test="${moduleMap.editable and renderContext.editMode && !resourceReadOnly}">
+    <%-- limit to adding jdnt:highlight nodes to the list --%>
         <template:module path="*" nodeTypes="jdnt:highlight"/>
     </c:if>
-
+<template:include view="hidden.footer"/>
 
 
 

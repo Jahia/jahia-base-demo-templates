@@ -31,22 +31,36 @@
             <a class="owl-btn prev-v1"><i class="fa fa-angle-left"></i></a>
             <a class="owl-btn next-v1"><i class="fa fa-angle-right"></i></a>
         </div>
-    </div><!--end navigation-->
+    </div>
+    <!--end navigation-->
 
     <div class="owl-slider-ap owl-carousel owl-theme">
+        <%-- for each carouselImg display using the carouselImg jsp --%>
         <c:set var="images" value="${jcr:getChildrenOfType(currentNode, 'jdnt:carouselImg')}"/>
+        <%-- Test to see if carousel is empty, if so insert placeholder image --%>
+        <c:choose>
+            <c:when test="${fn:length(images) == 0}">
+                <div class="item active">
+                    <div class="owl-item" style="width: 163px;">
+                        <div class="item">
+                            <img class="img-responsive" src="${url.currentModule}/img/background.jpg" alt="placeholder"/>
+                        </div>
+                    </div>
+                </div>
+            </c:when>
+            <c:otherwise>
         <c:forEach items="${images}" var="image" varStatus="item">
             <div class="item<c:if test="${item.first}"> active</c:if>">
                 <template:module node="${image}" view="owl" nodeTypes="jdnt:carouselImg" editable="true"/>
             </div>
         </c:forEach>
-
+            </c:otherwise>
+        </c:choose>
     </div>
 </div>
 <!-- End Owl Carousel v1 -->
 
-
-
+<%--  if edit mode display button to add more images to the carousel --%>
 <c:if test="${renderContext.editMode}">
     <template:module path="*"/>
 </c:if>

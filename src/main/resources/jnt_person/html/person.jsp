@@ -28,6 +28,7 @@
     <c:set var="facebook" value="${currentNode.properties.facebook.string}"/>
     <c:set var="linkedin" value="${currentNode.properties.linkedIn.string}"/>
     <c:set var="twitter" value="${currentNode.properties.twitter.string}"/>
+    <c:set var="googlePlus" value="${currentNode.properties.googlePlus.string}"/>
 </c:if>
 
 <%-- get default photo if one was not provided --%>
@@ -45,7 +46,7 @@
         <div class="col-md-3">
             <div class="portrait">
                 <div class="portrait-bg">
-                    <img src="${photoUrl}" alt="" />
+                <img src="${photoUrl}" alt="${name}"/>
                 </div>
             </div>
         </div>
@@ -56,13 +57,20 @@
             <ul class="list-inline team-social">
                 <%-- check if the social icon links were properly filled in before displaying--%>
                 <c:if test="${not empty facebook and facebook != 'http://'}">
-                    <li><a data-placement="top" data-toggle="tooltip" class="fb tooltips" data-original-title="Facebook" href="${facebook}" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                <li><a data-placement="top" data-toggle="tooltip" class="fb tooltips" data-original-title="Facebook"
+                       href="${facebook}"><i class="fa fa-facebook"></i></a></li>
                 </c:if>
                 <c:if test="${not empty twitter and twitter != 'http://'}">
-                    <li><a data-placement="top" data-toggle="tooltip" class="tw tooltips" data-original-title="Twitter" href="${twitter}" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                <li><a data-placement="top" data-toggle="tooltip" class="tw tooltips" data-original-title="Twitter"
+                       href="${twitter}"><i class="fa fa-twitter"></i></a></li>
+            </c:if>
+            <c:if test="${not empty googlePlus and googlePlus != 'http://'}">
+                <li><a data-placement="top" data-toggle="tooltip" class="gp tooltips"
+                       data-original-title="Google plus" href="${googlePlus}"><i class="fa fa-google-plus"></i></a></li>
                 </c:if>
                 <c:if test="${not empty linkedin and linkedin != 'http://'}">
-                    <li><a data-placement="top" data-toggle="tooltip" class="gp tooltips" data-original-title="Google plus" href="${linkedin}" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+                <li><a data-placement="top" data-toggle="tooltip" class="ln	tooltips"
+                       data-original-title="Linkedin" href="${linkedin}"><i class="fa fa-linkedin"></i></a></li>
                 </c:if>
             </ul>
         </div>

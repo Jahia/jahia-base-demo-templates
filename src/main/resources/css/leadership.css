@@ -1,6 +1,22 @@
 /*LEADERSHIP*/
 
 
+.team-social li a.ln {
+	color: #0083a8;
+	border: 1px solid #0083a8;
+}
+
+.team-social li a:hover {
+	text-decoration: none;
+}
+
+.team-social li a.ln:hover {
+	color: #fff;
+	background: #0083a8;
+}
+
+
+
 #leadership{
 	margin: 50px auto;
 }
@@ -60,6 +76,9 @@
 	border-radius: 105px;
 	width: 210px;
 	height: 210px;
+	-webkit-filter: grayscale(100%);
+	filter: grayscale(100%);
+	border: 2px solid #eee;
 }
 
 

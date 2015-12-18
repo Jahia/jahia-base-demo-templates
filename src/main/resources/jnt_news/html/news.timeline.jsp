@@ -17,7 +17,6 @@
 <fmt:formatDate pattern="MMMM" dateStyle="long" value="${currentNode.properties['date'].time}" var="newsMonth"/>
 <fmt:formatDate pattern="d/M/yy" dateStyle="short" value="${currentNode.properties['date'].time}" var="newsDate"/>
 <li class="equal-height-columns">
-
     <div class="cbp_tmtime equal-height-column"><span>${newsDate}</span> <span>${newsMonth}</span></div>
     <i class="cbp_tmicon rounded-x hidden-xs"></i>
     <div class="cbp_tmlabel equal-height-column">

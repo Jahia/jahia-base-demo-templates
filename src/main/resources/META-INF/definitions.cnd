@@ -36,8 +36,6 @@
 [jdnt:logo] > jnt:content, jdmix:jahiademo, jdmix:headerWidgets
  - logo (weakreference, picker[type='image']) < 'jmix:image'
 
-[jdnt:topbar] > jnt:content, jdmix:jahiademo, jdmix:headerWidgets
-
 [jdnt:sliderPanel] > jnt:content, mix:title
  - jcr:title (string) internationalized
  - textColor (string, choicelist[resourceBundle]) = 'light' autocreated < 'light', 'dark'
@@ -102,3 +100,4 @@
  - facebook (string) = 'http://'
  - linkedIn (string) = 'http://'
  - twitter (string) = 'http://'
+ - googlePlus (string) = 'http://'

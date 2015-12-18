@@ -42,7 +42,7 @@
             </div>
             <%-- only display the read more text if a link has been provided --%>
             <c:if test="${not empty linkUrl}">
-                <a class="btn-more hover-effect" href="${linkUrl}"><fmt:message key="jdnt_highlight.readmore"/> +</a>
+                <a class="btn-more hover-effect" href="${linkUrl}" alt="${title}"><fmt:message key="jdnt_highlight.readmore"/> +</a>
             </c:if>
         </div>
         <div class="caption">

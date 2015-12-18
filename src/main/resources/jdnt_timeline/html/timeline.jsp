@@ -29,6 +29,7 @@
         <c:set var="resourceReadOnly" value="${currentResource.moduleParams.readOnly}"/>
         <%-- Displaying the view of inherited nodetype jnt:contentList and this view is loading all subnodes,
                                         the view is setting modulemap that we get from the included template header --%>
+        <%-- must set the Sub Nodes View to "timeline" when setting the layout --%>
         <template:include view="hidden.header"/>
         <c:set var="isEmpty" value="true"/>
                 <c:forEach items="${moduleMap.currentList}" var="subchild" begin="${moduleMap.begin}" end="${moduleMap.end}">
