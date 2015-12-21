@@ -45,6 +45,9 @@
                     </span>
 					</s:form>
 				</div>
+				<a class="accordion-toggle collapsed" id="search-options" data-toggle="collapse" href="#advancedSearch" aria-expanded="false">Advanced Search
+					<div class="arrow"></div>
+				</a>
 			</div>
 		</div>
 	</div>

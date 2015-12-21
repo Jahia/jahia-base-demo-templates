@@ -5,83 +5,94 @@
 <%@ taglib prefix="s" uri="http://www.jahia.org/tags/search" %>
 <%@ taglib prefix="template" uri="http://www.jahia.org/tags/templateLib" %>
 <template:addResources type="javascript" resources="jquery.min.js"/>
-<template:addResources type="css" resources="advancedsearchform.css"/>
+<template:addResources type="css" resources="plugins/skyforms/sky-forms.css"/>
+<template:addResources type="css" resources="plugins/skyforms/custom/custom-sky-forms.css"/>
 
 <jcr:nodeProperty name="jcr:title" node="${currentNode}" var="title"/>
-<template:addResources>
-    <script type="text/javascript">
-        function toggleSearchMode(field) {
-            if (field.type == 'checkbox') {
-                if (field.name.indexOf('siteContent') != -1) {
-                    document.getElementById('search-pages-criteria').style.display = field.checked ? '' : 'none';
-                }
-                if (field.name.indexOf('files') != -1) {
-                    document.getElementById('search-documents-criteria').style.display = field.checked ? '' : 'none';
-                }
-            } else {
-                var o,i=0;
-                while(o=field.options[i++]){
-                    if (o.value == 'siteContent') {
-                        document.getElementById('search-pages-criteria').style.display = o.selected ? '' : 'none';
-                    }
-                    if (o.value == 'files') {
-                        document.getElementById('search-documents-criteria').style.display = o.selected ? '' : 'none';
-                    }
-                }
-            }
-        }
-        $(document).ready(function() {
-            $('#advancedSearch').hide();
-
-            $('.BtToggleSearch').click(function() {
-                $('#advancedSearch').slideToggle("slow");
-            });
-        })
-    </script>
-</template:addResources>
 <c:if test="${not empty title.string}">
     <h3 class="inline-advancedSearchForm-title"> ${fn:escapeXml(title.string)} </h3>
 </c:if>
-<a id="advancedSearchButton"  href="#loginForm" role="button" data-toggle="modal" data-target="#advancedSearch"><fmt:message key="search.advancedSearch.advancedSearchForm"/></a>
-<div class="clear"></div>
-<div id="advancedSearch" class="modal fade" role="dialog">
-    <div class="cd-user-modal-container">
+<div class="container">
+    <div id="advancedSearch"  class="row panel-collapse collapse" aria-expanded="false">
+        <div class="row" id="advanced-search">
         <c:url value='${url.base}${renderContext.mainResource.node.path}.html' var="searchUrl"/>
-        <s:form name="advancedSearchForm" class="Form advancedSearchForm" method="post" action="${searchUrl}">
-            <fieldset>
-                <legend><fmt:message key="search.advancedSearch.criteria.text.title"/></legend>
-                <p><label class="left" for="searchTerm"><fmt:message key="search"/></label>&nbsp;<s:termMatch selectionOptions="all_words,exact_phrase,any_word,as_is"/>&nbsp;<s:term id="searchTerm"/></p>
-                <p><label class="left" for="searchFields"><fmt:message key="searchForm.term.searchIn"/></label>&nbsp;<s:termFields id="searchFields" onchange="toggleSearchMode(this)"/></p>
-            </fieldset>
-            <fieldset>
-                <legend><fmt:message key="search.advancedSearch.criteria.authorAndDate.title"/></legend>
-                <p><label class="left" for="searchCreatedBy"><fmt:message key="search.advancedSearch.criteria.authorAndDate.createdBy"/></label><s:createdBy id="searchCreatedBy"/></p>
-                <p><label class="left" for="searchCreated"><fmt:message key="search.advancedSearch.criteria.authorAndDate.created"/></label><s:created id="searchCreated"/></p>
-                <p><label class="left" for="searchLastModifiedBy"><fmt:message key="search.advancedSearch.criteria.authorAndDate.modifiedBy"/></label><s:lastModifiedBy id="searchLastModifiedBy"/></p>
-                <p><label class="left" for="searchLastModified"><fmt:message key="search.advancedSearch.criteria.authorAndDate.modified"/></label><s:lastModified id="searchLastModified"/></p>
-            </fieldset>
-            <fieldset>
-                <legend><fmt:message key="search.advancedSearch.criteria.miscellanea.title"/></legend>
-                <p><label class="left" for="searchSite"><fmt:message key="search.advancedSearch.criteria.miscellanea.site"/></label><s:site id="searchSite" includeReferencesFrom="systemsite"/></p>
-                <p><label class="left" for="searchLanguage"><fmt:message key="search.advancedSearch.criteria.miscellanea.language"/></label><s:language id="searchLanguage"/></p>
-                <c:set var="searchInFieldkey" value="src_terms[0].fields.custom"/>
-                <c:set var="searchInFilesKey" value="src_terms[0].fields.files"/>
-                <c:set var="searchInSiteContentKey" value="src_terms[0].fields.siteContent"/>
-                <c:set var="pValues" value="${fn:join(paramValues[searchInFieldkey], ',')}"/>
-                <c:set var="pFilesValue" value="${param[searchInFilesKey]}"/>
-                <c:set var="pSiteContentValue" value="${param[searchInSiteContentKey]}"/>
-                <div id="search-pages-criteria" ${fn:contains(pValues, 'siteContent') || pSiteContentValue == 'true' ? '' : 'style="display:none"'}>
-                    <p><label class="left" for="searchPagePath"><fmt:message key="search.advancedSearch.criteria.miscellanea.pagePath"/></label><s:pagePath id="searchPagePath"/></p>
-                </div>
-                <div id="search-documents-criteria" ${fn:contains(pValues, 'fileContent') or fn:contains(pValues, 'files') or pFilesValue == 'true' ? '' : 'style="display:none"'}>
-                    <p><label class="left" for="searchFileType"><fmt:message key="search.advancedSearch.criteria.miscellanea.fileType"/></label><s:fileType id="searchFileType"/></p>
-                    <p><label class="left" for="searchFilePath"><fmt:message key="search.advancedSearch.criteria.miscellanea.location"/></label><s:filePath id="searchFilePath"/></p>
-                </div>
-                <p><label class="left" for="searchResultsPerPage"><fmt:message key="search.advancedSearch.criteria.miscellanea.itemsPerPage"/></label><s:itemsPerPage id="searchResultsPerPage"/></p>
-            </fieldset>
-            <div class="divButton">
-                <input type="submit" name="search" class="button" value="<fmt:message key='search.advancedSearch.submit'/>"/>
+        <s:form name="advancedSearchForm" class="sky-form" method="post" action="${searchUrl}">
+            <div class="col-md-4">
+                <header><fmt:message key="search.advancedSearch.criteria.text.title"/></header>
+                <fieldset>
+                    <section>
+                        <label class="label"><fmt:message key="search"/></label>
+                        <label class="select">
+                            <s:termMatch selectionOptions="all_words,exact_phrase,any_word,as_is"/>
+                            <i></i>
+                        </label>
+                        <label class="input">
+                            <s:term id="searchTerm"/>
+                        </label>
+                        <label class="label"><fmt:message key="searchForm.term.searchIn"/></label>
+                        <div class="inline-group">
+                            <s:termFields id="searchFields" onchange="toggleSearchMode(this)"/>
+                        </div>
+                    </section>
+                </fieldset>
+            </div>
+            <div class="col-md-4">
+                <header><fmt:message key="search.advancedSearch.criteria.authorAndDate.title"/></header>
+                <fieldset>
+                    <section>
+                        <label class="label"><fmt:message key="search.advancedSearch.criteria.authorAndDate.createdBy"/></label>
+                        <label class="input">
+                            <s:createdBy id="searchCreatedBy"/>
+                        </label>
+                        <label class="label"><fmt:message key="search.advancedSearch.criteria.authorAndDate.created"/></label>
+                        <label class="select">
+                            <s:created id="searchCreated"/>
+                            <i></i>
+                        </label>
+                        <label class="label"><fmt:message key="search.advancedSearch.criteria.authorAndDate.modifiedBy"/></label>
+                        <label class="input">
+                            <s:lastModifiedBy id="searchLastModifiedBy"/>
+                        </label>
+                        <label class="label"><fmt:message key="search.advancedSearch.criteria.authorAndDate.modified"/></label>
+                        <label class="select">
+                            <s:lastModified id="searchLastModified"/>
+                            <i></i>
+                        </label>
+                    </section>
+                </fieldset>
+            </div>
+            <div class="col-md-4">
+                <header><fmt:message key="search.advancedSearch.criteria.miscellanea.title"/></header>
+                <fieldset>
+                    <section>
+                        <label class="label"><fmt:message key="search.advancedSearch.criteria.miscellanea.site"/></label>
+                        <label class="select">
+                            <s:site id="searchSite" includeReferencesFrom="systemsite"/>
+                            <i></i>
+                        </label>
+                        <label class="label"><fmt:message key="search.advancedSearch.criteria.miscellanea.language"/></label>
+                        <label class="select">
+                            <s:language id="searchLanguage"/>
+                            <i></i>
+                        </label>
+                        <c:set var="searchInFieldkey" value="src_terms[0].fields.custom"/>
+                        <c:set var="searchInFilesKey" value="src_terms[0].fields.files"/>
+                        <c:set var="searchInSiteContentKey" value="src_terms[0].fields.siteContent"/>
+                        <c:set var="pValues" value="${fn:join(paramValues[searchInFieldkey], ',')}"/>
+                        <c:set var="pFilesValue" value="${param[searchInFilesKey]}"/>
+                        <c:set var="pSiteContentValue" value="${param[searchInSiteContentKey]}"/>
+                        <label class="label" for="searchResultsPerPage"><fmt:message key="search.advancedSearch.criteria.miscellanea.itemsPerPage"/></label>
+                        <label class="select">
+                            <s:itemsPerPage id="searchResultsPerPage"/>
+                            <i></i>
+                        </label>
+                    </section>
+                </fieldset>
+                <footer>
+                    <button type="submit" class="btn-u"><fmt:message key='search.advancedSearch.submit'/></button>
+                </footer>
             </div>
         </s:form>
     </div>
+</div>
 </div>
