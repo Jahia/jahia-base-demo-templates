@@ -17,73 +17,80 @@
 <%--@elvariable id="renderContext" type="org.jahia.services.render.RenderContext"--%>
 <%--@elvariable id="currentResource" type="org.jahia.services.render.Resource"--%>
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
+<template:addResources type="css" resources="plugins/skyforms/sky-forms.css"/>
+<template:addResources type="css" resources="plugins/skyforms/custom/custom-sky-forms.css"/>
 <div>
 <form action="#" id="sky-form4" class="sky-form" novalidate="novalidate">
-  <header>Registration form</header>
-  
+  <jcr:nodeType name="jdnt:investorContact" var="investorContact"/>
+  <c:set var="propDefs" value="${investorContact.declaredPropertyDefinitionsAsMap}"/>
+  <header><fmt:message key="jdnt_investorContactForm.header"/></header>
   <fieldset>                  
     <section>
       <label class="input">
         <i class="icon-append fa fa-user"></i>
-        <input type="text" name="username" placeholder="Username">
-        <b class="tooltip tooltip-bottom-right">Needed to enter the website</b>
+        <input type="text" name="firstname" placeholder="<fmt:message key="jdnt_investorContactForm.firstname"/>">
+        <b class="tooltip tooltip-bottom-right"><fmt:message key="jdnt_investorContactForm.firstname.tooltip"/></b>
       </label>
     </section>
-    
+
+    <section>
+      <label class="input">
+        <i class="icon-append fa fa-user"></i>
+        <input type="text" name="lastname" placeholder="<fmt:message key="jdnt_investorContactForm.lastname"/>">
+        <b class="tooltip tooltip-bottom-right"><fmt:message key="jdnt_investorContactForm.lastname.tooltip"/></b>
+      </label>
+    </section>
+
     <section>
       <label class="input">
         <i class="icon-append fa fa-envelope"></i>
-        <input type="email" name="email" placeholder="Email address">
-        <b class="tooltip tooltip-bottom-right">Needed to verify your account</b>
+        <input type="email" name="email" placeholder="<fmt:message key="jdnt_investorContactForm.email"/>">
+        <b class="tooltip tooltip-bottom-right"><fmt:message key="jdnt_investorContactForm.email.tooltip"/></b>
       </label>
     </section>
-    
+
     <section>
       <label class="input">
-        <i class="icon-append fa fa-lock"></i>
-        <input type="password" name="password" placeholder="Password" id="password">
-        <b class="tooltip tooltip-bottom-right">Don't forget your password</b>
+        <i class="icon-append fa fa-phone"></i>
+        <input type="text" name="phone" placeholder="<fmt:message key="jdnt_investorContactForm.phone"></fmt:message>">
+        <b class="tooltip tooltip-bottom-right"><fmt:message key="jdnt_investorContactForm.phone.tooltip"/></b>
       </label>
     </section>
-    
-    <section>
-      <label class="input">
-        <i class="icon-append fa fa-lock"></i>
-        <input type="password" name="passwordConfirm" placeholder="Confirm password">
-        <b class="tooltip tooltip-bottom-right">Don't forget your password</b>
-      </label>
-    </section>
-  </fieldset>
-  
-  <fieldset>
-    <div class="row">
-      <section class="col col-6">
-        <label class="input">
-          <input type="text" name="firstname" placeholder="First name">
-        </label>
-      </section>
-      <section class="col col-6">
-        <label class="input">
-          <input type="text" name="lastname" placeholder="Last name">
-        </label>
-      </section>
-    </div>
     
     <section>
       <label class="select">
-        <select name="gender">
-          <option value="0" selected="" disabled="">Gender</option>
-          <option value="1">Male</option>
-          <option value="2">Female</option>
-          <option value="3">Other</option>
+        <select name="investorType" id="investorType">
+          <option value="0" selected="" disabled=""><fmt:message key="jdnt_investorContactForm.investorType"/></option>
+          <c:forEach items="${propDefs.investorType.valueConstraints}" var="valueOption">
+            <option value="${valueOption}"><fmt:message key="jdnt_investorContactForm.investorType.${valueOption}"/></option>
+          </c:forEach>
         </select>
         <i></i>
       </label>
     </section>
-    
+
     <section>
-      <label class="checkbox"><input type="checkbox" name="subscription" id="subscription"><i></i>I want to receive news and  special offers</label>
-      <label class="checkbox"><input type="checkbox" name="terms" id="terms"><i></i>I agree with the Terms and Conditions</label>
+      <label class="select">
+        <select name="contactReason" id="contactReason">
+          <option value="0" selected="" disabled=""><fmt:message key="jdnt_investorContactForm.contactReason"/></option>
+          <c:forEach items="${propDefs.contactReason.valueConstraints}" var="valueOption">
+            <option value="${valueOption}"><fmt:message key="jdnt_investorContactForm.contactReason.${valueOption}"/></option>
+          </c:forEach>
+        </select>
+        <i></i>
+      </label>
+    </section>
+
+    <section>
+        <label class="label">
+          <fmt:message key="jdnt_investorContactForm.subscription.label"/>
+        </label>
+          <c:forEach items="${propDefs.subscription.valueConstraints}" var="valueOption">
+            <label class="radio">
+            <input type="radio" name="subscription" value="${valueOption}"><fmt:message key="jdnt_investorContactForm.subscription.${valueOption}"/>
+              <i></i>
+            </label>
+          </c:forEach>
     </section>
   </fieldset>
   <footer>

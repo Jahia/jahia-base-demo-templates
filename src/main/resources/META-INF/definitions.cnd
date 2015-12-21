@@ -107,9 +107,9 @@
  - lastname (string) i18n
  - email (string) i18n
  - phone (string) i18n
- - investorType (string, choicelist[resourceBundle]) analyzer='keyword' < 'undefined', 'female','male'
- - contactReason (string, choicelist[resourceBundle]) analyzer='keyword' < 'undefined', 'master', 'doctor', 'professor'
+ - investorType (string, choicelist[resourceBundle]) analyzer='keyword' < 'institutional', 'individual','other'
+ - contactReason (string, choicelist[resourceBundle]) analyzer='keyword' < 'general', 'stockholderaccount', 'comment', 'other'
  - message (string) i18n
- - subscription (string, choicelist[resourceBundle]) analyzer='keyword' < 'undefined', 'subject1', 'subject2', 'subject3', 'subject4'
+ - subscription (string, choicelist[resourceBundle]) analyzer='keyword' < 'bulletins', 'annual', 'quarterly'
 
 [jdnt:investorContactForm] > jnt:content, jdmix:jahiademo
