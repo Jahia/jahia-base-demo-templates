@@ -72,8 +72,9 @@
     <%-- if a small photo was provided display it --%>
     <%-- TODO: Update layout options here for small photo layer placement --%>
             <c:if test="${not empty image}">
-        <img class="ms-layer" src="${image.url}" alt=""
-             style="bottom: -10px; left: ${photoLayout} width: 400px; height: 562px; margin: 0px; padding: 0px;">
+                <div class="ms-layer" style="bottom: -10px; left: ${photoLayout} width: 400px; height: 562px; margin: 0px; padding: 0px;">
+                    <img src="${image.url}" alt="">
+                </div>
             </c:if>
 
     <%-- TODO: update the following div class to use different styles already provided in the CSS --%>

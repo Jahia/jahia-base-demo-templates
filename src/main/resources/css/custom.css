@@ -143,3 +143,7 @@
 #advancedSearch .sky-form .select select {
     padding: 3px 10px;
 }
+
+.container .navbar-brand {
+    padding: 30px 0 0 0;
+}
