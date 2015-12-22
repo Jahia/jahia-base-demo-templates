@@ -79,8 +79,8 @@
             jQuery(document).ready(function() {
                 App.init();
                 OwlCarousel.initOwlCarousel();
-                <%-- MSfullWidth.initMSfullWidth();
-                          StyleSwitcher.initStyleSwitcher(); --%>
+                 MSfullWidth.initMSfullWidth();
+                <%--         StyleSwitcher.initStyleSwitcher(); --%>
                 ParallaxSlider.initParallaxSlider();
             });
         </script>
