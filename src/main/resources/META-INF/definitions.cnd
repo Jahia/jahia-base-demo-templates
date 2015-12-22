@@ -113,3 +113,7 @@
  - subscription (string, choicelist[resourceBundle]) analyzer='keyword' < 'bulletins', 'annual', 'quarterly'
 
 [jdnt:investorContactForm] > jnt:content, jdmix:jahiademo
+ + * (jdnt:investorContact)
+
+[jdnt:investorContactList] > jnt:content, jmix:list, jmix:cache, jdmix:jahiademo
+- maxItems (long) = 10 indexed=no
