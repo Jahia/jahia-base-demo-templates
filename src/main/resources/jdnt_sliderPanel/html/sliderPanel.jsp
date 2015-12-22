@@ -124,5 +124,12 @@
 
 
         </div>
+<template:addResources type="inline">
+    <script type="text/javascript">
+        jQuery(document).ready(function() {
+            MSfullWidth.initMSfullWidth();
+        });
+    </script>
+</template:addResources>
 
 
