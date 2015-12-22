@@ -148,6 +148,12 @@
                             <main-resource-display j:mainResourceView="default" jcr:primaryType="jnt:mainResourceDisplay"/>
                     </pagecontent>
                 </content-template>
+                    <newsletter-issue j:applyOn="jnt:newsletterIssue"
+                              j:defaultTemplate="true"
+                              j:hiddenTemplate="false"
+                              j:priority="20"
+                              j:view="jahiademoNewsletter"
+                              jcr:primaryType="jnt:contentTemplate"/>
             </templates>
                 
                 <home j:isHomePage="true"
