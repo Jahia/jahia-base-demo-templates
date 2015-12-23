@@ -117,3 +117,6 @@
 
 [jdnt:investorContactList] > jnt:content, jmix:list, jmix:cache, jdmix:jahiademo
 - maxItems (long) = 10 indexed=no
+
+[jdnt:stockWidget] > jnt:content, jdmix:jahiademo
+- stock (string)
