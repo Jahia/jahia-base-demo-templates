@@ -87,14 +87,31 @@
 
 /*ADVANCED SEARCH*/
 
-#advanced-search{
-    margin: 20px auto;
+#advanced-search select{
+    line-height: 17px!important;
 }
 
-.sky-form{
-    position: relative;
+#form-footer{
+    padding: 30px;
+}
+
+#custom-search-block{
+    margin-bottom: 50px;
+}
+
+
+#advanced-search{
+    margin: 20px auto;
+    border: none!important;
+}
+
+
+#advancedSearch .sky-form{
     border: none;
-    margin: 0 auto;
+}
+
+#advancedSearch .sky-form footer{
+    border: none;
 }
 
 #search-options{
