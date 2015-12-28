@@ -17,6 +17,7 @@
 <%--@elvariable id="renderContext" type="org.jahia.services.render.RenderContext"--%>
 <%--@elvariable id="currentResource" type="org.jahia.services.render.Resource"--%>
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
+<template:addResources type="css" resources="leadership.css"/>
 
 <div class="container content" id="leadership">
     <c:set var="people" value="${jcr:getChildrenOfType(currentNode, 'jnt:person')}"/>
