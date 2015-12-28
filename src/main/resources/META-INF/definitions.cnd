@@ -50,10 +50,6 @@
 [jdnt:slider] > jnt:content, jdmix:jahiademo, jmix:manuallyOrderable, jmix:list orderable
  + * (jdnt:sliderPanel)
 
-[jdnt:gridLayout] > jnt:content, jdmix:jahiademo
- - layout (string, choicelist[resourceBundle,moduleImage='png']) = '1' autocreated < '1', '1-2_1-2', '2-3_1-3', '1-3_2-3', '1-4_3-4', '3-4_1-4', '1-4_2-4_1-4', '1-3_1-3_1-3', '1-4_1-4_1-4_1-4'
- - bottomMargin (boolean) = 'false'
-
 [jdnt:highlights] > jnt:contentList, mix:title, jdmix:jahiademo, jmix:manuallyOrderable, jmix:list orderable
  - numColumns (string, choicelist[resourceBundle]) = '3' autocreated < '1', '2', '3', '4'
  - bottomMargin (string, choicelist[resourceBundle]) = '30' autocreated < 'No margin', '5', '10', '15', '20', '25', '30', '35', '40', '45', '50', '55', '60', '100'
@@ -120,3 +116,13 @@
 
 [jdnt:stockWidget] > jnt:content, jdmix:jahiademo
 - stock (string)
+
+[jdnt:company] > jnt:content, jdmix:jahiademo, mix:title
+ - investorType (string, choicelist[resourceBundle]) < 'media', 'technology','retail','goods','healthcare'
+ - headline (string, richtext) i18n
+ - overview (string, richtext) i18n
+ - phone (string) i18n
+ - email (string) i18n
+ - website (string) i18n
+ - bannerImg (weakreference, picker[type='image']) < 'jmix:image'
+ - thumbnail (weakreference, picker[type='image']) < 'jmix:image'

@@ -89,13 +89,11 @@
     <developerConnection>scm:dummy:uri</developerConnection>
   </scm>
   <properties>
-    <jahia-depends>default,font-awesome,news,search,person</jahia-depends>
-    <jahia.modules.importPackage>
-      org.jahia.defaults.config.spring,
+    <jahia.modules.importPackage>org.jahia.defaults.config.spring,
       org.jahia.exceptions,
       org.jahia.services,
-      org.jahia.services.search
-    </jahia.modules.importPackage>
+      org.jahia.services.search</jahia.modules.importPackage>
+    <jahia-depends>default,font-awesome,bootstrap,bootstrap-components,grid,news,person,search</jahia-depends>
   </properties>
   <repositories>
     <repository>
