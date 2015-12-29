@@ -17,6 +17,7 @@
 <%--@elvariable id="renderContext" type="org.jahia.services.render.RenderContext"--%>
 <%--@elvariable id="currentResource" type="org.jahia.services.render.Resource"--%>
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
+<%-- TODO: hover on button rolls over to green regardless of theme --%>
 <template:addResources type="css" resources="masterslider/style/masterslider.css"/>
 <template:addResources type="css" resources="masterslider/skins/black-2/style.css"/>
 <template:addResources type="javascript" resources="masterslider/masterslider.min.js"/>
@@ -38,7 +39,6 @@
 <%-- if linkText is not filled in use default Read More from resource file --%>
 <c:if test="${empty linkText}">
     <c:set var="linkText"><fmt:message key="jdnt_sliderPanel.readMore"/></c:set>
-
 </c:if>
 
 <%-- get the background image, if none provided use default background.jpg image --%>

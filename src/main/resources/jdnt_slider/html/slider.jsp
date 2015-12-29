@@ -22,21 +22,21 @@
 <template:addResources type="javascript" resources="masterslider/masterslider.min.js"/>
 <template:addResources type="javascript" resources="masterslider/jquery.easing.min.js"/>
 <template:addResources type="javascript" resources="master-slider-fw.js"/>
+<%-- TODO: remove slider arrows if only one panel --%>
+<%-- TODO: update list processing --%>
 
-<%-- get the child sliderPanels --%>
-<c:set var="panels" value="${jcr:getChildrenOfType(currentNode, 'jdnt:sliderPanel')}"/>
+
 <c:choose>
-    <%-- TODO: if edit mode show a different text only view --%>
     <c:when test="${renderContext.editMode}">
-        <h3>The slider does not currently display in edit mode. Please review in preview mode.</h3>
-        <ul>
-            <c:forEach items="${panels}" var="panel" varStatus="item">
-                <li><template:module node="${panel}" view="edit" nodeTypes="jdnt:sliderPanel" editable="true"/></li>
-            </c:forEach>
-        </ul>
+        <template:include view="edit"/>
+        <template:module path="*" nodeTypes="jdnt:sliderPanel"/>
     </c:when>
     <c:otherwise>
-       <%-- Not edit mode, display with proper div layers --%>
+
+
+        <%-- get the child sliderPanels --%>
+
+        <c:set var="panels" value="${jcr:getChildrenOfType(currentNode, 'jdnt:sliderPanel')}"/>
 <div class="ms-layers-template">
     <div class="master-slider ms-skin-black-2 round-skin" id="masterslider">
                     <%-- for each slider panel specified, use the sliderPanel jsp to display --%>
@@ -47,7 +47,3 @@
 </div>
     </c:otherwise>
 </c:choose>
-
-<c:if test="${renderContext.editMode}">
-    <template:module path="*" nodeTypes="jdnt:sliderPanel"/>
-</c:if>

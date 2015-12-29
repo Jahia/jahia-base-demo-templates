@@ -9,6 +9,10 @@
 <%@ taglib prefix="query" uri="http://www.jahia.org/tags/queryLib" %>
 <%@ taglib prefix="utility" uri="http://www.jahia.org/tags/utilityLib" %>
 <%@ taglib prefix="s" uri="http://www.jahia.org/tags/search" %>
+<%-- TODO: live/preview only offer light/dark theme options, not colors as stated here. editSlider.css needs to update to match --%>
+<%-- TODO: edit mode is tiling smaller photos, but live/preview stretches, need to update edit mode --%>
+<%-- TODO: overlay image is a white boxed background, not transparent --%>
+<%-- TODO: update tab naming to be unique --%>
 <%--@elvariable id="currentNode" type="org.jahia.services.content.JCRNodeWrapper"--%>
 <%--@elvariable id="out" type="java.io.PrintWriter"--%>
 <%--@elvariable id="script" type="org.jahia.services.render.scripting.Script"--%>
@@ -27,28 +31,52 @@
 <c:set var="background" value="${currentNode.properties.backgroundImg.node}"/>
 <c:set var="image" value="${currentNode.properties.smallPhoto.node}"/>
 
+<%-- If a color theme was not selected use light --%>
+<c:if test="${empty textColor}"><c:set var="textColor" value="light"/></c:if>
 
 <%-- if linkText is not filled in use default Read More from resource file--%>
 <c:if test="${empty linkText}">
     <c:set var="linkText"><fmt:message key="jdnt_sliderPanel.readMore"/></c:set>
 </c:if>
 
-<c:if test="${not empty title}">
-    <h1>Title: ${title}</h1>
+<%-- get the background image, if none provided use default background.jpg image --%>
+<c:choose>
+    <c:when test="${empty background}">
+        <c:url var="backgroundUrl" value="${url.currentModule}/img/background.jpg"/>
+    </c:when>
+    <c:otherwise>
+        <c:url var="backgroundUrl" value="${background.url}"/>
+    </c:otherwise>
+</c:choose>
+
+<%-- get pixel layout for text and image --%>
+<%-- TODO: edit this as necessary for best layout options or update to be a parameter --%>
+<c:set var="layout" value="${currentNode.properties.layout.string}"/>
+
+<c:if test="${layout == 'right'}">
+    <c:set var="textLayout" value="-right"/>
 </c:if>
-<c:if test="${not empty subtitle}">
-    <h2>Subtitle: ${subtitle}</h2>
+
+
+<div id="tab-2" class="tab-content"
+     style="background: url('${backgroundUrl}')">
+    <div class="edit-slider-cont${textLayout}">
+        <c:if test="${not empty title}"><div class="first-layer-editslider">${title}</div></c:if>
+        <c:if test="${not empty subtitle}"><div class="second-layer-editslider">
+        <span class="color-${textColor}">${subtitle}</span>
+        </div></c:if>
+
+        <c:if test="${not empty summary}"><div class="text-layer-editslider">${summary}
+        </div></c:if>
+
+        <c:if test="${not empty link}">
+        <a class="but-layer-editslider" href="${link.url}" alt="${title}">${linkText}</a>
 </c:if>
-<c:if test="${not empty summary}">
-    <h3>Summary: ${summary}</h3>
+    </div>
+    <%-- second image if exists --%>
+    <c:if test="${not empty image}">
+    <img class="ms-img-bordered edit-slider-img" src="${image.url}" alt="">
 </c:if>
-<c:if test="${not empty link}">
-    <a class="ms-layer btn-u" href="${link.url}"
-       data-effect="bottom(40)"
-       data-duration="2000"
-       data-delay="1300"
-       data-ease="easeOutExpo"
-       alt="${title}"
-            >${linkText}</a>
-</c:if>
+</div>
+
 
