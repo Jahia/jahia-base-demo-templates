@@ -117,7 +117,7 @@
 [jdnt:stockWidget] > jnt:content, jdmix:jahiademo
 - stock (string)
 
-[jdnt:company] > jnt:content, jdmix:jahiademo, mix:title
+[jdnt:company] > jnt:content, jdmix:jahiademo, mix:title, jdmix:hasPeople orderable
  - investorType (string, choicelist[resourceBundle]) < 'media', 'technology','retail','goods','healthcare'
  - headline (string, richtext) i18n
  - overview (string, richtext) i18n
@@ -126,3 +126,12 @@
  - website (string) i18n
  - bannerImg (weakreference, picker[type='image']) < 'jmix:image'
  - thumbnail (weakreference, picker[type='image']) < 'jmix:image'
+
+[jdmix:hasPeople] mixin
+ - boxTitle (string)
+ + relatedPeople (jdnt:personList) = jdnt:personList autocreated
+
+[jdnt:personList] > jnt:contentList
+ + * (jnt:person)
+
+[jdnt:companyNews] > jnt:content, jmix:list, mix:title, jdmix:jahiademo

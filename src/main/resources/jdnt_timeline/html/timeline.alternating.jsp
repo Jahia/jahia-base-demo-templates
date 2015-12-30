@@ -34,7 +34,7 @@
             <div class="timeline-badge primary"><i class="glyphicon glyphicon-record"></i></div>
             <div class="timeline-panel">
 
-        <template:module node="${subchild}" view="${moduleMap.subNodesView}" editable="${moduleMap.editable && !resourceReadOnly}"/>
+        <template:module node="${subchild}" view="alternating" editable="${moduleMap.editable && !resourceReadOnly}"/>
                 </div>
         </li>
 
@@ -48,8 +48,9 @@
     <%-- Add the add new content item button if in edit mode --%>
     <c:if test="${moduleMap.editable and renderContext.editMode && !resourceReadOnly}">
         <%-- limit to adding jnt:news nodes to the list --%>
-    <template:module path="*" nodeTypes="jnt:news"/>
-</c:if>
+        <template:module path="*" nodeTypes="jnt:news"/>
+    </c:if>
+
     <template:include view="hidden.footer"/>
     <li class="clearfix" style="float: none;"></li>
 </ul>
