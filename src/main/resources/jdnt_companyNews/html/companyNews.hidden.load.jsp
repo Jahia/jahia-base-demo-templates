@@ -5,9 +5,11 @@
 <%@ taglib prefix="template" uri="http://www.jahia.org/tags/templateLib" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="query" uri="http://www.jahia.org/tags/queryLib" %>
+<%@ taglib prefix="uiComponents" uri="http://www.jahia.org/tags/uiComponentsLib" %>
 
+<c:set var="boundComponent" value="${uiComponents:getBindedComponent(currentNode, renderContext, 'j:bindedComponent')}"/>
 
-<c:set var="lastNewsStatement" value="select * from [jnt:news] as news where ISDESCENDANTNODE(news,'${renderContext.mainResource.node.resolveSite.path}')  order by news.[date] desc"/>
+<c:set var="lastNewsStatement" value="select * from [jnt:news] as news where desc like '%${boundComponent.properties['jcr:title'].string}%' and ISDESCENDANTNODE(news,'${renderContext.mainResource.node.resolveSite.path}')  order by news.[date] desc"/>
 
 <query:definition var="listQuery" statement="${lastNewsStatement}" limit="6"  />
 
