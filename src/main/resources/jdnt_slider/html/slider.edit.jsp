@@ -17,6 +17,7 @@
 <%--@elvariable id="renderContext" type="org.jahia.services.render.RenderContext"--%>
 <%--@elvariable id="currentResource" type="org.jahia.services.render.Resource"--%>
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
+<%-- TODO: Navigation needs to be redesigned, dropdown does not work --%>
 <template:addResources type="css" resources="masterslider/style/masterslider.css"/>
 <template:addResources type="css" resources="masterslider/skins/black-2/style.css"/>
 <template:addResources type="javascript" resources="masterslider/masterslider.min.js"/>

@@ -93,7 +93,7 @@
       org.jahia.exceptions,
       org.jahia.services,
       org.jahia.services.search</jahia.modules.importPackage>
-    <jahia-depends>default,font-awesome,bootstrap,bootstrap-components,grid,location,news,person,search</jahia-depends>
+    <jahia-depends>default,font-awesome,bootstrap,bootstrap-components,grid,location,news,person,search,topstories</jahia-depends>
   </properties>
   <repositories>
     <repository>

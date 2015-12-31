@@ -18,6 +18,8 @@
 <c:set var="description" value="${currentNode.properties['desc']}" />
 <fmt:formatDate dateStyle="long" value="${currentNode.properties['date'].time}" var="newsDate"/>
 
+<c:url var="detailUrl" value="${url.base}${currentNode.path}.html"/>
+
 <c:if test="${not empty newsImage}">
     <jahia:addCacheDependency node="${newsImage.node}" />
     <c:url value="${url.files}${newsImage.node.path}" var="imageUrl"/>
@@ -28,7 +30,7 @@
     <div class="timeline-body text-justify">
         <h2><a href="#">${fn:escapeXml(newsTitle.string)}</a></h2>
         <p>${description.string}</p>
-<%--        <a class="btn-u btn-u-sm" href="#">Read More</a> --%>
+        <a class="btn-u btn-u-sm" href="${detailUrl}">Read More</a>
     </div>
     <div class="timeline-footer">
         <ul class="list-unstyled list-inline blog-info">
