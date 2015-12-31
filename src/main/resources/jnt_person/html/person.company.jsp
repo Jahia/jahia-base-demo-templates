@@ -21,8 +21,10 @@
 
 <c:set var="name" value="${currentNode.properties.firstname.string}&nbsp;${currentNode.properties.lastname.string}"/>
 <c:set var="title" value="${currentNode.properties.function.string}"/>
-<c:set var="bio" value="${currentNode.properties.biography.string}"/>
+<%-- set bio variable as plain text by stripping the rich text html tags from it --%>
+<c:set var="bio" value="${functions:removeHtmlTags(currentNode.properties.biography.string)}"/>
 <c:set var="photo" value="${currentNode.properties.picture}"/>
+<c:url var="personURL" value="${currentNode.url}"/>
 <%-- if social icons were included, get the urls --%>
 <c:if test="${jcr:isNodeType(currentNode, 'jdmix:socialIcons')}">
     <c:set var="facebook" value="${currentNode.properties.facebook.string}"/>
@@ -41,10 +43,10 @@
     </c:otherwise>
 </c:choose>
 
-<img class="rounded-x center-block margin-bottom-20 margin-top-20" src="${photoUrl}" style="width: 80px" alt="">
-<li><strong>${title}:</strong> ${name}</li>
-<p>${bio}</p>
-    <!-- Contact Social Icons -->
+<li><a href="${personURL}"><img class="rounded-x center-block margin-bottom-20 margin-top-20" src="${photoUrl}" style="width: 80px" alt=""></a></li>
+<li><a href="${personURL}"><strong>${title}:</strong> ${name}</a></li>
+<li><p>${fn:replace(bio, fn:substring(bio, 200, fn:length(bio)), '... ')}</p></li>
+<!-- Contact Social Icons -->
 <ul class="list-inline who">
     <c:if test="${not empty facebook and facebook != 'http://'}">
         <li><a href="${facebook}"><i class="fa fa-facebook-official"></i></a></li>

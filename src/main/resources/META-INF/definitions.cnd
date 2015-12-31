@@ -123,7 +123,7 @@
  - overview (string, richtext) i18n
  - phone (string) i18n
  - email (string) i18n
- - website (string) i18n
+ - website (string) = 'http://' i18n
  - bannerImg (weakreference, picker[type='image']) < 'jmix:image'
  - thumbnail (weakreference, picker[type='image']) < 'jmix:image'
 
