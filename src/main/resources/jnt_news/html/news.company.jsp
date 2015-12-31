@@ -12,7 +12,9 @@
 <c:set var="creator" value="${currentNode.properties['jcr:createdBy']}" />
 <c:set var="newsImage" value="${currentNode.properties['image']}"/>
 <c:set var="newsTitle" value="${currentNode.properties['jcr:title']}"/>
-<c:set var="description" value="${currentNode.properties['desc']}" />
+<%-- set descriptionTxt variable as plain text by stripping the rich text html tags from it --%>
+<c:set var="descriptionTxt" value="${functions:removeHtmlTags(currentNode.properties['desc'].string)}" />
+
 <fmt:formatDate pattern="MMM" dateStyle="long" value="${currentNode.properties['date'].time}" var="newsMonth"/>
 <fmt:formatDate pattern="d" dateStyle="short" value="${currentNode.properties['date'].time}" var="newsDate"/>
 
@@ -36,6 +38,7 @@
     <div class="news-v2-desc bg-color-light">
         <h3><a href="#">${newsTitle.string}</a></h3>
         <small>By ${creator.string}</small>
-        <p>${description.string}</p>
+        <%-- Shorten the description text to 100 characters --%>
+        <p>${fn:replace(descriptionTxt, fn:substring(descriptionTxt, 100, fn:length(descriptionTxt)), '... ')}</p>
     </div>
 </div>
