@@ -128,7 +128,7 @@
  - thumbnail (weakreference, picker[type='image']) < 'jmix:image'
 
 [jdmix:hasPeople] mixin
- - boxTitle (string)
+ - boxTitle (string)  = 'Leadership' i18n
  + relatedPeople (jdnt:personList) = jdnt:personList autocreated
 
 [jdnt:personList] > jnt:contentList
