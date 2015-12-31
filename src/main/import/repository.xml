@@ -182,12 +182,12 @@
                                     <bootstrap-container-side1 jcr:primaryType="jnt:contentList">
                                         <main-resource-display j:mainResourceView="metadata" jcr:primaryType="jnt:mainResourceDisplay"/>
                                         <map-static j:bindedComponent="/modules/jahiademo/templates/base/company-content-template/pagecontent/bootstrap-container/bootstrap-container/main-resource-display"
-                                       j:height="300"
+                                       j:height="255"
                                        j:imageType="png8"
                                        j:mapType="roadmap"
                                        j:markerColor="normal"
                                        j:markerSize="normal"
-                                       j:width="500"
+                                       j:width="255"
                                        j:zoom="auto"
                                        jcr:primaryType="jnt:staticMap"/>
                                         <main-resource-display-1 j:mainResourceView="addPeople"
