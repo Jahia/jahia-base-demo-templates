@@ -312,3 +312,7 @@
     margin: 0 auto ;
     display: table;
 }
+
+.news-v2 .news-v2-badge{
+    min-height: 170px;
+}

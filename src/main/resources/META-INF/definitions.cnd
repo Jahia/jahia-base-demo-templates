@@ -91,7 +91,7 @@
 [jdnt:people] > jnt:contentList, jdmix:jahiademo orderable
 
 [jdmix:socialIcons] mixin
- extends = jnt:person
+ extends = jnt:person, jdnt:company
  itemtype = content
  - facebook (string) = 'http://'
  - linkedIn (string) = 'http://'
@@ -134,4 +134,6 @@
 [jdnt:personList] > jnt:contentList
  + * (jnt:person)
 
-[jdnt:companyNews] > jnt:content, jmix:list, mix:title, jdmix:jahiademo
+[jdnt:companyNews] > jnt:content, jmix:list, mix:title, jdmix:jahiademo, jmix:bindedComponent
+
+[jdnt:parallaxSlider] > jnt:content, jdmix:jahiademo

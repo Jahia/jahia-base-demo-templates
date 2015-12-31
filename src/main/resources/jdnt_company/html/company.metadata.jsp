@@ -24,18 +24,42 @@
 <jcr:nodeProperty node="${currentNode}" name="j:zipCode" var="zipCode"/>
 <jcr:nodeProperty node="${currentNode}" name="j:town" var="town"/>
 <jcr:nodeProperty node="${currentNode}" name="j:country" var="country"/>
+<%-- if social icons were included, get the urls --%>
+<c:if test="${jcr:isNodeType(currentNode, 'jdmix:socialIcons')}">
+    <c:set var="facebook" value="${currentNode.properties.facebook.string}"/>
+    <c:set var="linkedin" value="${currentNode.properties.linkedIn.string}"/>
+    <c:set var="twitter" value="${currentNode.properties.twitter.string}"/>
+    <c:set var="googlePlus" value="${currentNode.properties.googlePlus.string}"/>
+</c:if>
 
 <div class="headline"><h2>Headquarters</h2></div>
 <ul class="list-unstyled who">
-    <li><a href="#"><i class="fa fa-building-o"></i>${street.string},&nbsp;${zipCode.string}&nbsp;${town.string}&nbsp;${country.string}</a></li>
-    <li><a href="#"><i class="fa fa-envelope"></i>${email.string}</a></li>
-    <li><a href="#"><i class="fa fa-phone"></i>${phone.string}</a></li>
-    <li><a href="#"><i class="fa fa-globe"></i>${website.string}</a></li>
+    <c:if test="${not empty street.string or zipCode.string or town.string or country.string}">
+        <li><a href="#"><i class="fa fa-building-o"></i>${street.string},&nbsp;${zipCode.string}&nbsp;${town.string}&nbsp;${country.string}</a></li>
+    </c:if>
+    <c:if test="${not empty email.string}">
+        <li><a href="#"><i class="fa fa-envelope"></i>${email.string}</a></li>
+    </c:if>
+    <c:if test="${not empty phone.string}">
+        <li><a href="#"><i class="fa fa-phone"></i>${phone.string}</a></li>
+    </c:if>
+    <c:if test="${not empty website.string}">
+        <li><a href="#"><i class="fa fa-globe"></i>${website.string}</a></li>
+    </c:if>
 </ul>
 
 <ul class="list-inline who margin-bottom-30">
-    <li><a href="#"><i class="fa fa-facebook-official"></i></a></li>
-    <li><a href="#"><i class="fa fa-twitter-square"></i></a></li>
-    <li><a href="#"><i class="fa fa-google-plus-square"></i></a></li>
-    <li><a href="#"><i class="fa fa-linkedin-square"></i></a></li>
+    <%-- check if the social icon links were properly filled in before displaying--%>
+    <c:if test="${not empty facebook and facebook != 'http://'}">
+        <li><a href="${facebook}"><i class="fa fa-facebook-official"></i></a></li>
+    </c:if>
+    <c:if test="${not empty twitter and twitter != 'http://'}">
+        <li><a href="${twitter}"><i class="fa fa-twitter-square"></i></a></li>
+    </c:if>
+    <c:if test="${not empty googlePlus and googlePlus != 'http://'}">
+        <li><a href="${googlePlus}"><i class="fa fa-google-plus-square"></i></a></li>
+    </c:if>
+    <c:if test="${not empty linkedin and linkedin != 'http://'}">
+        <li><a href="${linkedin}"><i class="fa fa-linkedin-square"></i></a></li>
+    </c:if>
 </ul>
