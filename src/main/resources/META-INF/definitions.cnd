@@ -137,3 +137,7 @@
 [jdnt:companyNews] > jnt:content, jmix:list, mix:title, jdmix:jahiademo, jmix:bindedComponent
 
 [jdnt:parallaxSlider] > jnt:content, jdmix:jahiademo
+
+[jdmix:topViews] mixin
+ extends = jnt:topStories
+ - view (string, choicelist[templates='jnt:news'])

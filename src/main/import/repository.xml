@@ -8,37 +8,7 @@
                  j:title="jahiademo"
                  jcr:mixinTypes="jmix:hasExternalProviderExtension"
                  jcr:primaryType="jnt:module">
-                <sources jcr:mixinTypes="jmix:hasExternalProviderExtension jmix:sourceControl"
-                  jcr:primaryType="jnt:moduleVersionFolder"
-                  j:staticMountPointProviderKey="module-jahiademo-1.0-SNAPSHOT">
-                    <src jcr:mixinTypes="jmix:sourceControl" jcr:primaryType="jnt:folder">
-                        <main jcr:mixinTypes="jmix:sourceControl" jcr:primaryType="jnt:folder">
-                            <resources jcr:mixinTypes="jmix:sourceControl" jcr:primaryType="jnt:folder">
-                                <jdnt_investorContactForm jcr:primaryType="jnt:nodeTypeFolder">
-                                    <html jcr:primaryType="jnt:templateTypeFolder">
-                                        <investorContactForm.jsp jcr:primaryType="jnt:viewFile"/>
-                                    </html>
-                                </jdnt_investorContactForm>
-                                <jnt_languageSwitcher jcr:primaryType="jnt:nodeTypeFolder">
-                                    <html jcr:primaryType="jnt:templateTypeFolder">
-                                        <languageSwitcher.demo.jsp jcr:primaryType="jnt:viewFile"/>
-                                    </html>
-                                </jnt_languageSwitcher>
-                                <jnt_searchResults jcr:primaryType="jnt:nodeTypeFolder">
-                                    <html jcr:primaryType="jnt:templateTypeFolder">
-                                        <searchHit.jspf jcr:primaryType="jnt:editableFile"/>
-                                    </html>
-                                </jnt_searchResults>
-                                <META-INF jcr:mixinTypes="jmix:sourceControl" jcr:primaryType="jnt:metaInfFolder">
-                                    <definitions.cnd jcr:mixinTypes="jmix:sourceControl"
-                                         jcr:primaryType="jnt:definitionFile"/>
-                                </META-INF>
-                            </resources>
-                        </main>
-                    </src>
-                </sources>
-
-            <portlets jcr:primaryType="jnt:portletFolder"/>
+                            <portlets jcr:primaryType="jnt:portletFolder"/>
                 <files jcr:primaryType="jnt:folder">
                     <bootstrap jcr:primaryType="jnt:folder">
                         <css jcr:primaryType="jnt:folder">
@@ -182,13 +152,16 @@
                                     <bootstrap-container-side1 jcr:primaryType="jnt:contentList">
                                         <main-resource-display j:mainResourceView="metadata" jcr:primaryType="jnt:mainResourceDisplay"/>
                                         <map-static j:bindedComponent="/modules/jahiademo/templates/base/company-content-template/pagecontent/bootstrap-container/bootstrap-container/main-resource-display"
+                                       j:classname="map map-box map-box-space1 margin-bottom-30 overflow-hidden"
                                        j:height="255"
                                        j:imageType="png8"
                                        j:mapType="roadmap"
                                        j:markerColor="normal"
                                        j:markerSize="normal"
-                                       j:width="255"
+                                       j:skin="skins.custom"
+                                       j:width="325"
                                        j:zoom="auto"
+                                       jcr:mixinTypes="jmix:customSkin jmix:skinnable"
                                        jcr:primaryType="jnt:staticMap"/>
                                         <main-resource-display-1 j:mainResourceView="addPeople"
                                                     jcr:primaryType="jnt:mainResourceDisplay"/>
