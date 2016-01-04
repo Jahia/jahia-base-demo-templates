@@ -17,16 +17,58 @@
 <%--@elvariable id="renderContext" type="org.jahia.services.render.RenderContext"--%>
 <%--@elvariable id="currentResource" type="org.jahia.services.render.Resource"--%>
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
-<div id="parallax1" class="parallaxParent">
-    <div style="background-image: url(../../img/example_parallax_bg1.png);">sdfdsfsdf</div>
+<template:addResources type="css" resources="scrollmagic/style.css"/>
+<template:addResources type="css" resources="scrollmagic/examples.css"/>
+
+<template:addResources type="javascript" resources="scrollmagic/highlight.pack.js"/>
+<template:addResources type="javascript" resources="scrollmagic/modernizr.custom.min.js"/>
+<template:addResources type="javascript" resources="scrollmagic/ScrollMagic.js"/>
+<!--template:addResources type="javascript" resources="scrollmagic/debug.addIndicators.js"/-->
+<c:set var="sliders" value="${jcr:getChildrenOfType(currentNode, 'jdnt:parallaxSliderItem')}"/>
+
+<div id="content-wrapper">
+    <div id="example-wrapper">
+        <div class="scrollContent">
+            <section class="demo" id="section-wipes">
+                <c:forEach items="${sliders}" var="slider" varStatus="item">
+                    <template:module node="${slider}"/>
+                </c:forEach>
+                <c:if test="${renderContext.editMode}">
+                    <template:module path="*"/>
+                </c:if>
+            </section>
+        </div>
+    </div>
 </div>
 <script>
-    // init controller
-    var controller = new ScrollMagic.Controller({globalSceneOptions: {triggerHook: "onEnter", duration: "200%"}});
+    $(function () { // wait for document ready
+        // init
+        var controller = new ScrollMagic.Controller({
+            globalSceneOptions: {
+                triggerHook: 'onLeave'
+            }
+        });
 
-    // build scenes
-    new ScrollMagic.Scene({triggerElement: "#parallax1"})
-            .setTween("#parallax1 > div", {y: "80%", ease: Linear.easeNone})
-            .addIndicators()
-            .addTo(controller);
+        // get all slides
+        var slides = document.querySelectorAll("section.parallaxPanel");
+
+        // create scene for every slide
+        for (var i=0; i<slides.length; i++) {
+            if (slides[i].className.indexOf("noeffect") < 0){
+                new ScrollMagic.Scene({
+                    triggerElement: slides[i]
+                })
+                        .setPin(slides[i])
+                        //.addIndicators() add indicators (requires plugin)
+                        .addTo(controller);
+            }else{
+                new ScrollMagic.Scene({
+                    triggerElement: slides[i+1]
+                })
+                        .setPin(slides[i])
+                        //.addIndicators() add indicators (requires plugin)
+                        .addTo(controller);
+            }
+        }
+    });
 </script>
