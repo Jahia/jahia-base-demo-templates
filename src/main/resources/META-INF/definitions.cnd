@@ -147,3 +147,6 @@
  - body (string, richtext) i18n
  - effect (boolean) = true autocreated
 
+[jdmix:topViews] mixin
+ extends = jnt:topStories
+ - view (string, choicelist[templates='jnt:news'])

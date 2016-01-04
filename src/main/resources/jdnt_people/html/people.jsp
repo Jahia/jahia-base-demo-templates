@@ -19,7 +19,7 @@
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
 <template:addResources type="css" resources="leadership.css"/>
 
-<div class="container content" id="leadership">
+<div class="content" id="leadership">
     <c:set var="people" value="${jcr:getChildrenOfType(currentNode, 'jnt:person')}"/>
     <c:set var="resourceReadOnly" value="${currentResource.moduleParams.readOnly}"/>
     <%-- Displaying the view of inherited nodetype jnt:contentList and this view is loading all subnodes,
