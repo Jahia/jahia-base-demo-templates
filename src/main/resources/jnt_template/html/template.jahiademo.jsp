@@ -52,6 +52,9 @@
     <template:addResources type="css" resources="blocks.css"/>
     <template:addResources type="css" resources="plugins.css"/>
     <template:addResources type="css" resources="app.css"/>
+    <template:addResources type="css" resources="plugins/cube-portfolio/cubeportfolio/css/cubeportfolio.min.css"/>
+    <template:addResources type="css" resources="plugins/cube-portfolio/cubeportfolio/custom/custom-cubeportfolio.css"/>
+
 
     <!-- CSS Customization -->
     <template:addResources type="css" resources="custom.css"/>

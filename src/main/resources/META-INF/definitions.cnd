@@ -117,6 +117,9 @@
 [jdnt:stockWidget] > jnt:content, jdmix:jahiademo
 - stock (string)
 
+[jdnt:companies] > jnt:contentList, mix:title, jdmix:jahiademo, jmix:manuallyOrderable, jmix:list orderable
+  + * (jdnt:company)
+
 [jdnt:company] > jnt:content, jdmix:jahiademo, mix:title, jdmix:hasPeople orderable
  - investorType (string, choicelist[resourceBundle]) < 'media', 'technology','retail','goods','healthcare'
  - headline (string, richtext) i18n

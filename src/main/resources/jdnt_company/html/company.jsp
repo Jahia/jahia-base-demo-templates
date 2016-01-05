@@ -17,6 +17,35 @@
 <%--@elvariable id="renderContext" type="org.jahia.services.render.RenderContext"--%>
 <%--@elvariable id="currentResource" type="org.jahia.services.render.Resource"--%>
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
-<jcr:nodeProperty node="${currentNode}" name="jcr:title" var="title"/>
 
-<div class="more"><span><a href="<c:url value='${url.base}${currentNode.path}.html'/>"><fmt:message key="label.read"/>: ${fn:escapeXml(title.string)}</a></span></div>
+<jcr:nodeProperty node="${currentNode}" name="jcr:title" var="title"/>
+<%--Set variable for company descriptions and remove HTML tags--%>
+<c:set var="description" value="${functions:removeHtmlTags(currentNode.properties.headline.string)}"/>
+
+<%--Start Item Container--%>
+        <div class="cbp-item graphic">
+            <div class="cbp-caption margin-bottom-20">
+                <div class="cbp-caption-defaultWrap">
+                    <%--TODO: Get company thumbnail image vs placeholder--%>
+                    <img src="${url.currentModule}/img/default_person_img.jpg" alt="">
+                </div>
+                <div class="cbp-caption-activeWrap">
+                    <div class="cbp-l-caption-alignCenter">
+                        <div class="cbp-l-caption-body">
+                            <ul class="link-captions no-bottom-space">
+                                <li><a href="<c:url value='${url.base}${currentNode.path}.html'/>"><i class="rounded-x fa fa-link"></i></a></li>
+                                <%--TODO: Get company thumbnail image for the lightbox vs placeholder--%>
+                                <li><a href="${url.currentModule}/img/default_person_img.jpg" class="cbp-lightbox" data-title="${fn:escapeXml(title.string)}"><i class="rounded-x fa fa-search"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cbp-title-dark">
+                <div class="cbp-l-grid-agency-title"><a href="<c:url value='${url.base}${currentNode.path}.html'/>">${fn:escapeXml(title.string)}</a></div>
+                <%--Shorten Company Description to 100 char --%>
+                <div class="cbp-l-grid-agency-desc">${fn:replace(description, fn:substring(description, 100, fn:length(description)), ' ...')}</div>
+            </div>
+        </div>
+<%--/end Item Container--%>
+
