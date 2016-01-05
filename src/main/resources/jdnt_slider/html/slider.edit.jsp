@@ -31,7 +31,7 @@
 <div class="tab-container">
 
     <!-- Dropdown navigation -->
-    <%-- commented out due to not working
+    <%-- TODO: does not work --%>
     <div class="tab-navigation">
         <select id="select-box">
             <option value="1">First tab (empty)</option>
@@ -40,7 +40,7 @@
             <option value="4">Option 4 - text plus small img</option>
         </select>
 
-    </div> --%>
+    </div>
     <c:set var="resourceReadOnly" value="${currentResource.moduleParams.readOnly}"/>
     <%-- Displaying the view of inherited nodetype jnt:contentList and this view is loading all subnodes,
                                             the view is setting modulemap that we get from the included template header --%>

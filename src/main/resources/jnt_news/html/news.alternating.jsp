@@ -14,8 +14,8 @@
 <fmt:setLocale value="${language}" scope="session"/>
 
 <c:set var="newsImage" value="${currentNode.properties['image']}"/>
-<c:set var="newsTitle" value="${currentNode.properties['jcr:title']}"/>
-<c:set var="description" value="${currentNode.properties['desc']}" />
+<c:set var="newsTitle" value="${currentNode.properties['jcr:title'].string}"/>
+<c:set var="description" value="${currentNode.properties['desc'].string}" />
 <fmt:formatDate dateStyle="long" value="${currentNode.properties['date'].time}" var="newsDate"/>
 
 <c:url var="detailUrl" value="${url.base}${currentNode.path}.html"/>
@@ -28,9 +28,9 @@
     </div>
 </c:if>
     <div class="timeline-body text-justify">
-        <h2><a href="#">${fn:escapeXml(newsTitle.string)}</a></h2>
-        <p>${description.string}</p>
-        <a class="btn-u btn-u-sm" href="${detailUrl}">Read More</a>
+        <h2><a href="#">${fn:escapeXml(newsTitle)}</a></h2>
+        <p>${fn:substring(description, 0, 150)}</p>
+        <a class="btn-u btn-u-sm" href="${detailUrl}"><fmt:message key="jdnt_news.read_more"/></a>
     </div>
     <div class="timeline-footer">
         <ul class="list-unstyled list-inline blog-info">

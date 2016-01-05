@@ -33,207 +33,24 @@
                     <li>Posted ${newsDate}</li>
                 </ul>
                 ${description.string}
-<%--                <ul class="post-shares post-shares-lg">
-                    <li>
-                        <a href="#">
-                            <i class="rounded-x icon-speech"></i>
-                            <span>28</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="rounded-x icon-share"></i>
-                            <span>355</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="rounded-x icon-heart"></i>
-                            <span>107</span>
-                        </a>
-                    </li>
-                </ul> --%>
-            </div>
-            <!-- End News v3 -->
-
-            <!-- Recent Comments -->
-<%--
-            <div class="media">
-                <h3>Comments</h3>
-            </div>
-            <div class="media">
-                <div class="pull-left">
-                    <img class="media-object rounded-x" src="assets/img/testimonials/img1.jpg" alt=""/>
-                    <br/><span class="testimonial-author">
-                                        Jeremy
-						</span>
-                </div>
-
-                <h4 class="media-heading">Comment heading <span>5 hours ago</span></h4>
-
-                <p>Donec id elit non mi portas sats eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris
-                    condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna..</p>
-
-                <hr>
             </div>
 
-            <div class="media">
-                <div class="pull-left">
-                    <img class="media-object rounded-x" src="assets/img/user.jpg" alt=""/>
-                    <br/><span class="testimonial-author">
-                                        Anonymous
-						</span>
-                </div>
-                <div class="media-body">
-                    <h4 class="media-heading">Comment heading <span>17 hours ago</span></h4>
-
-                    <p>Donec id elit non mi portas sats eget metus. Fusce dapibus, tellus ac cursus commodo, tortor
-                        mauris condimentum anibhut fermentum massa justo sit amet risus. Etiam porta sem malesuada
-                        magna..</p>
-                </div>
-            </div>
-
-            <hr>
-
-            <div class="media">
-                <div class="pull-left">
-                    <img class="media-object rounded-x" src="assets/img/testimonials/img3.jpg" alt=""/>
-                    <br/><span class="testimonial-author">
-                                        Jeremy
-						</span>
-                </div>
-                <div class="media-body">
-                    <h4 class="media-heading">Comment heading <span>2 days ago</span></h4>
-
-                    <p>Donec id elit non mi portas sats eget metus. Fusce dapibus, tellus ac cursus commodo, tortor
-                        mauris condimentum anibhut fermentum massa justo sit amet risus. Etiam porta sem malesuada
-                        magna..</p>
-                </div>
-            </div>
-            <!--/media-->
-
-            <!-- End Recent Comments -->
-            <hr>
-
-            <!-- Comment Form -->
-            <div class="post-comment">
-                <h3>Leave a Comment</h3>
-
-                <form>
-                    <label>Name</label>
-
-                    <div class="row margin-bottom-20">
-                        <div class="col-md-7 col-md-offset-0">
-                            <input type="text" class="form-control">
-                        </div>
                     </div>
 
-                    <label>Email <span class="color-red">*</span></label>
-
-                    <div class="row margin-bottom-20">
-                        <div class="col-md-7 col-md-offset-0">
-                            <input type="text" class="form-control">
-                        </div>
-                    </div>
-
-                    <label>Message</label>
-
-                    <div class="row margin-bottom-20">
-                        <div class="col-md-11 col-md-offset-0">
-                            <textarea class="form-control" rows="8"></textarea>
-                        </div>
-                    </div>
-
+<%-- get the parent page for the back navigation --%>
+<c:set var="parentPage" value="${jcr:getParentOfType(renderContext.mainResource.node, 'jnt:page')}"/>
+<c:choose>
+    <c:when test="${! empty parentPage}">
+        <c:url var="parentUrl" value='${parentPage.url}'/>
+        <c:set var="parentTitle" value="${parentPage.properties['jcr:title'].string}"/>
+    </c:when>
+    <c:otherwise>
+        <c:set var="parentUrl">javascript:history.back()</c:set>
+    </c:otherwise>
+</c:choose>
                     <p>
-                        <button class="btn-u" type="submit">Send Message</button>
+    <a href="${parentUrl}" class="button button-mini button-border button-rounded"><span><i
+            class="icon-line-arrow-left"></i><fmt:message key="jdnt_news.back"/>&nbsp;${parentTitle}</span></a>
                     </p>
-                </form>
-            </div>
-            <!-- End Comment Form --> --%>
-        </div>
-
-    <!-- End Blog All Posts -->
-
-<%--    <!-- Blog Sidebar -->
-    <div class="col-md-3">
-        <div class="headline-v2 tag-box-v2"><h2>Top Rated</h2></div>
-        <!-- Trending -->
-        <ul class="list-unstyled blog-trending margin-bottom-50">
-            <li>
-                <h3><a href="#">Proin dapibus ornare magna.</a></h3>
-                <small>19 Jan, 2015 / <a href="#">Hi-Tech,</a> <a href="#">Technology</a></small>
-            </li>
-            <li>
-                <h3><a href="#">Fusce at diam ante.</a></h3>
-                <small>17 Jan, 2015 / <a href="#">Artificial Intelligence</a></small>
-            </li>
-            <li>
-                <h3><a href="#">Donec quis consequat magna...</a></h3>
-                <small>5 Jan, 2015 / <a href="#">Web,</a> <a href="#">Webdesign</a></small>
-            </li>
-        </ul>
-        <!-- End Trending -->
-
-        <div class="headline-v2 tag-box-v2"><h2>Latest Posts</h2></div>
-        <!-- Latest Links -->
-        <ul class="list-unstyled blog-latest-posts margin-bottom-20">
-            <li>
-                <h3><a href="#">Many desktop publishing packages...</a></h3>
-                <small>23 Jan, 2015 / <a href="#">Art,</a> <a href="#">Lifestyles</a></small>
-                <p>Integer vehicula sed justo ac dapibus. In sodales nunc non varius accumsan.</p>
-            </li>
-            <li>
-                <h3><a href="#">The point of using Lorem Ipsum</a></h3>
-                <small>19 Jan, 2015 / <a href="#">Hi-Tech,</a> <a href="#">Technology</a></small>
-                <p>Phasellus ullamcorper pellentesque ex. Cras venenatis elit orci...</p>
-            </li>
-            <li>
-                <h3><a href="#">Many desktop publishing packages...</a></h3>
-                <small>23 Jan, 2015 / <a href="#">Art,</a> <a href="#">Lifestyles</a></small>
-                <p>Integer vehicula sed justo ac dapibus. In sodales nunc non varius accumsan.</p>
-            </li>
-            <li>
-                <h3><a href="#">The point of using Lorem Ipsum</a></h3>
-                <small>19 Jan, 2015 / <a href="#">Hi-Tech,</a> <a href="#">Technology</a></small>
-                <p>Phasellus ullamcorper pellentesque ex. Cras venenatis elit orci...</p>
-            </li>
-            <li>
-                <h3><a href="#">Many desktop publishing packages...</a></h3>
-                <small>23 Jan, 2015 / <a href="#">Art,</a> <a href="#">Lifestyles</a></small>
-                <p>Integer vehicula sed justo ac dapibus. In sodales nunc non varius accumsan.</p>
-            </li>
-        </ul>
-        <ul class="pager">
-            <li class="next btn-u-xs"><a href="#">More News <i class="fa fa-angle-right"></i></a></li>
-        </ul>
-        <!-- End Latest Links -->
 
 
-        <div class="headline-v2 tag-box-v2"><h2>Tags</h2></div>
-        <!-- Tags v2 -->
-        <ul class="list-inline tags-v2 margin-bottom-50">
-            <li><a href="#">Web Design</a></li>
-            <li><a href="#">Economy</a></li>
-            <li><a href="#">Sport</a></li>
-            <li><a href="#">Marketing</a></li>
-            <li><a href="#">Books</a></li>
-            <li><a href="#">Elections</a></li>
-            <li><a href="#">Flickr</a></li>
-            <li><a href="#">Politics</a></li>
-        </ul>
-        <!-- End Tags v2 -->
-        <div class="headline-v2 tag-box-v2"><h2>Newsletter</h2></div>
-        <!-- Blog Newsletter -->
-        <p>Subscribe to our newsletter for good news, sent out every month.</p>
-
-        <div class="input-group margin-bottom-40">
-            <input class="form-control" placeholder="Email" type="text">
-                            <span class="input-group-btn">
-                                <button class="btn-u" type="button">Subscribe</button>
-                            </span>
-        </div>
-
-        <!-- End Blog Newsletter -->
-
-    </div>
-    <!-- End Blog Sidebar --> --%>
