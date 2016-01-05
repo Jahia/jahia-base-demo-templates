@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <content xmlns:j="http://www.jahia.org/jahia/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0">
     <modules jcr:primaryType="jnt:modules">
-        <jahiademo j:dependencies="bootstrap bootstrap-components default font-awesome grid location news person search topstories"
+        <jahiademo j:dependencies="bootstrap bootstrap3-components default font-awesome grid location news person search"
                  j:installedModules="jahiademo"
                  j:modulePriority="0"
                  j:moduleType="templatesSet"
@@ -38,7 +38,9 @@
                     </bootstrap>
                 </files>
             <contents jcr:primaryType="jnt:contentFolder"/>
-            <templates jcr:primaryType="jnt:templatesFolder">
+                <templates bootstrapVersion="less3"
+                    jcr:mixinTypes="jmix:bootstrapVersion"
+                    jcr:primaryType="jnt:templatesFolder">
                 <files jcr:primaryType="jnt:folder">
                     <themes jcr:primaryType="jnt:folder">
                             <default jcr:primaryType="jnt:folder"/>
@@ -59,8 +61,8 @@
                   jcr:primaryType="jnt:template">
                         <simple jcr:primaryType="jnt:pageTemplate">
                             <pagecontent jcr:primaryType="jnt:contentList">
-                                <bootstrap-container jcr:mixinTypes="jmix:bootstrapFullComponentRowPredefined"
-                                     jcr:primaryType="jnt:bootstrapFullComponent"
+                                <bootstrap-container jcr:mixinTypes="jmix:bootstrap3FullComponentRowPredefined"
+                                     jcr:primaryType="jnt:bootstrap3FullComponent"
                                      layout="12"
                                      rowType="predefined"/>
                             </pagecontent>
@@ -78,8 +80,8 @@
                                     jcr:primaryType="jnt:translation"
                                     jcr:title="2 Column"/>
                             <pagecontent jcr:primaryType="jnt:contentList">
-                                <bootstrap-container jcr:mixinTypes="jmix:bootstrapFullComponentRowPredefined"
-                                                       jcr:primaryType="jnt:bootstrapFullComponent"
+                                <bootstrap-container jcr:mixinTypes="jmix:bootstrap3FullComponentRowPredefined"
+                                                       jcr:primaryType="jnt:bootstrap3FullComponent"
                                                        layout="9_3"
                                                        rowType="predefined"/>
                             </pagecontent>
@@ -90,8 +92,8 @@
                                     jcr:primaryType="jnt:translation"
                                     jcr:title="3 Column"/>
                             <pagecontent jcr:primaryType="jnt:contentList">
-                                <bootstrap-container jcr:mixinTypes="jmix:bootstrapFullComponentRowPredefined"
-                                                       jcr:primaryType="jnt:bootstrapFullComponent"
+                                <bootstrap-container jcr:mixinTypes="jmix:bootstrap3FullComponentRowPredefined"
+                                                       jcr:primaryType="jnt:bootstrap3FullComponent"
                                                        layout="4_4_4"
                                                        rowType="predefined"/>
                             </pagecontent>
@@ -102,8 +104,8 @@
                                     jcr:primaryType="jnt:translation"
                                     jcr:title="default"/>
                             <pagecontent jcr:primaryType="jnt:contentList">
-                                <bootstrap-container jcr:mixinTypes="jmix:bootstrapFullComponentRowPredefined"
-                                          jcr:primaryType="jnt:bootstrapFullComponent"
+                                <bootstrap-container jcr:mixinTypes="jmix:bootstrap3FullComponentRowPredefined"
+                                          jcr:primaryType="jnt:bootstrap3FullComponent"
                                           layout="12"
                                           rowType="predefined"/>
                             </pagecontent>
@@ -156,8 +158,8 @@
                                     jcr:primaryType="jnt:translation"
                                     jcr:title="Company Content Template"/>
                             <pagecontent jcr:primaryType="jnt:contentList">
-                                <bootstrap-container jcr:mixinTypes="jmix:bootstrapFullComponentRowPredefined"
-                                                       jcr:primaryType="jnt:bootstrapFullComponent"
+                                <bootstrap-container jcr:mixinTypes="jmix:bootstrap3FullComponentRowPredefined"
+                                                       jcr:primaryType="jnt:bootstrap3FullComponent"
                                                        layout="9_3"
                                           rowType="predefined">
                                     <bootstrap-container jcr:primaryType="jnt:contentList">
