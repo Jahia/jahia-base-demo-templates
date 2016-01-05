@@ -9,7 +9,6 @@
 
 <%-- TODO: display categories and/or tags --%>
 <%-- TODO: remove html tags from the description --%>
-<%-- TODO: check formatting, should ... indicate read more? --%>
 
 <template:addResources type="css" resources="news.css"/>
 <c:set var="language" value="${currentResource.locale.language}"/>
@@ -24,6 +23,6 @@
 <li>
     <h3><a href="${detailUrl}">${newsTitle}</a></h3>
     <small>${newsDate} / <%-- categories <a href="#">Hi-Tech,</a> <a href="#">Technology</a>--%></small>
-    <p>${fn:replace(description, fn:substring(description, 150, fn:length(description)), '... ')}</p>
+    <p>${fn:substring(description, 0, 150)}</p>
 </li>
     </ul>
