@@ -46,12 +46,11 @@
                                         the view is setting modulemap that we get from the included template header --%>
 <template:include view="hidden.header"/>
 <c:set var="isEmpty" value="true"/>
-<c:forEach items="${moduleMap.currentList}" var="subchild" begin="${moduleMap.begin}" end="${moduleMap.end}"
-           varStatus="item">
+<c:forEach items="${moduleMap.currentList}" var="subchild" begin="${moduleMap.begin}" end="${moduleMap.end}" varStatus="item">
     <template:module node="${subchild}" view="${moduleMap.subNodesView}"
                      editable="${moduleMap.editable && !resourceReadOnly}"/>
     <c:set var="isEmpty" value="false"/>
-    </c:forEach>
+</c:forEach>
 
 <%-- If the list is empty then we will display a sample imgView and default view Highlight --%>
 <c:if test="${not empty moduleMap.emptyListMessage and (renderContext.editMode or moduleMap.forceEmptyListMessageDisplay) and isEmpty}">

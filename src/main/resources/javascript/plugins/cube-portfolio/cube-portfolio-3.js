@@ -1,5 +1,4 @@
-(function($, window, document, undefined) {
-    'use strict';
+jQuery(document).ready(function() {
 
     var gridContainer = $('#grid-container'),
         filtersContainer = $('#filters-container'),
@@ -92,5 +91,4 @@
             }
         }
     });
-
-})(jQuery, window, document);
+})
