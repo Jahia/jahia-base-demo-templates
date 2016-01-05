@@ -649,7 +649,6 @@ input#scr_terms{
 	#small-stock-widget .stock-widget-wrapper{
 		padding: 5px;
 	}
-
 }
 
 @media (max-width: 992px) {
@@ -719,6 +718,11 @@ input#scr_terms{
 		color: #E74C3C;
 	}
 	
+	#space{
+		margin-top: 20px;
+		text-align: center;
+	}
+	
 /*	STOCK WIDGET*/
 
 	#stock-widget{
@@ -775,4 +779,4 @@ input#scr_terms{
 		vertical-align: text-top;
 		margin: auto 10px;
 	}
-}
+}/* Add here all your css styles (customizations) */

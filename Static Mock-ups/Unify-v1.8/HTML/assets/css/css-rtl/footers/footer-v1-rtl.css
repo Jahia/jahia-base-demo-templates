@@ -32,7 +32,16 @@
 
 /*Dotted Map*/
 .footer-v1 .footer .map-img {
-	background: url(../../../img/map-img.png) 5px 60px no-repeat;
+	background: url(../../img/map-img.png) 5px 60px no-repeat;
+}
+
+/*Blog Posts (with images)*/
+.footer-v1 .footer .posts .dl-horizontal a {
+ color: #dadada;
+}
+
+.footer-v1 .footer .dl-horizontal a:hover {
+ color: #c0392b !important;
 }
 
 /*Copyright*/
@@ -53,7 +62,7 @@
 
 .footer-v1 .footer-socials {
 	margin-top: 12px;
-	text-align: left;
+	text-align: right;
 }
 
 .footer-v1 .footer-socials li a {
@@ -64,6 +73,6 @@
 @media (max-width: 991px) {
 	.footer-v1 .copyright,
 	.footer-v1 .footer-socials {
-		text-align: right;
+		text-align: left;
 	}
 }

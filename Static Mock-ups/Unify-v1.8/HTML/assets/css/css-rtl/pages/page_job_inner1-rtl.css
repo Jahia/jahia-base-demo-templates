@@ -28,7 +28,7 @@
 .job-description i.position-top {
 	color: #777;
 	top: 10px;
-	left: 10px;
+	right: 10px;
 	font-size: 18px;
 	min-width: 28px;
 	padding: 5px 4px;
@@ -42,11 +42,11 @@
 }
 
 .job-description .left-inner img {
-	float: right;
+	float: left;
 	width: 80px;
 	height: auto;
 	padding: 3px;
-	margin: 0 0 10px 10px;
+	margin: 0 10px 10px 0;
 	border: 1px solid #eee;
 }
 
@@ -59,9 +59,9 @@
 }
 
 .job-description .star-vote {
-	float: right;
-	margin-right: 5px;
-	margin-left: 10px;
+	float: left;
+	margin-left: 5px;
+	margin-right: 10px;
 }
 
 .job-description .star-vote li {
@@ -70,9 +70,9 @@
 
 /*Progresses*/
 .job-description .progression span {
-	float: right;
+	float: left;
 	width: 150px;
-	margin: -8px 0 0 15px;
+	margin: -8px 15px 0 0;
 }
 
 /*Right-Inner*/
@@ -82,10 +82,10 @@
 }
 
 .job-description .right-inner img {
-	float: right;
+	float: left;
 	width: 90px;
 	height: auto;
-	margin-left: 10px;
+	margin-right: 10px;
 }
 
 .job-description .right-inner .font-s {
@@ -106,13 +106,13 @@
 }
 
 .job-description .p-chart .circle {
-	float: right;
-	margin-left: 10px;
+	float: left;
+	margin-right: 10px;
 }
 
 .job-description .p-chart .overflow-h li i,
 .job-description .p-chart .overflow-h li a {
-	color: #72c02c;
+	color: #e74c3c;
 }
 
 .job-description .p-chart .overflow-h li a {
@@ -142,27 +142,27 @@
 }
 
 .job-description .save-job a:hover {
-	color: #72c02c;
+	color: #e74c3c;
 }
 
 /*Overview*/
 .job-description .overview i {
 	color: #fff;
-	float: right;
+	float: left;
 	min-width: 38px;
 	font-size: 20px;
 	padding: 10px 3px;
 	text-align: center;
-	margin-left: 10px;
+	margin-right: 10px;
 	background: #585f69;
 }
 
 /*People-Say*/
 .job-description .people-say img {
-	float: right;
+	float: left;
 	width: 40px;
 	height: auto;
-	margin: 6px 0 0 10px;
+	margin: 6px 10px 0 0;
 }
 
 .job-description .people-say .overflow-h span {
@@ -175,6 +175,6 @@
 }
 
 .job-description .people-say .overflow-h small {
-	text-align: left;
+	text-align: right;
 	font-style: italic;
 }

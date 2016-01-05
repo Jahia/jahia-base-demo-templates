@@ -25,12 +25,12 @@
 
 .job-description .position-top {
 	top: 20px;
-	left: 20px;
+	right: 20px;
 	position: absolute;
 }
 
 .job-description .social-icons {
-	float: right;
+	float: left;
 }
 
 .job-description .position-top i {
@@ -38,7 +38,7 @@
 	color: #777;
 	font-size: 18px;
 	min-width: 28px;
-	margin-right: 6px;
+	margin-left: 6px;
 	padding: 5px 4px;
 	position: relative;
 	text-align: center;
@@ -57,11 +57,11 @@
 }
 
 .job-description .left-inner img {
-	float: right;
+	float: left;
 	width: 80px;
 	height: 80px;
 	padding: 3px;
-	margin: 0 0 10px 10px;
+	margin: 0 10px 10px 0;
 	border: 1px solid #eee;
 }
 
@@ -74,7 +74,7 @@
 }
 
 .job-description .star-vote {
-	margin-right: 5px;
+	margin-left: 5px;
 }
 
 .job-description .star-vote li {
@@ -83,26 +83,26 @@
 
 /*Progresses*/
 .job-description .progression span {
-	float: right;
+	float: left;
 	width: 150px;
-	margin: -8px 0 0 15px;
+	margin: -8px 15px 0 0;
 }
 
 /*Overview*/
 .job-description .overview i {
 	color: #fff;
-	float: right;
+	float: left;
 	min-width: 38px;
 	font-size: 20px;
 	padding: 10px 3px;
 	text-align: center;
-	margin-left: 10px;
+	margin-right: 10px;
 	background: #585f69;
 }
 
 /*Colorful-ul*/
 .job-description .colorful-ul li a {
-	color: #72c02c;
+	color: #e74c3c;
 }
 
 /*Copyright-v2

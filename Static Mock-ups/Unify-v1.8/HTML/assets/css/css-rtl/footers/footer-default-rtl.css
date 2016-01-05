@@ -19,10 +19,10 @@
 } 
 
 .footer-default .footer a {
-	color: #72c02c;
+	color: #c0392b;
 }
 .footer-default .footer a:hover {
-	color: #5fb611;
+	color: #c0392b;
     -webkit-transition: all 0.4s ease-in-out;
     -moz-transition: all 0.4s ease-in-out;
     -o-transition: all 0.4s ease-in-out;
@@ -67,7 +67,7 @@
 	color: #dadada;
 }
 .footer-default .footer .dl-horizontal a:hover {
-	color: #5fb611 !important;
+	color: #c0392b !important;
 }
 .footer-default .footer .dl-horizontal img {
 	border-color: #888 !important;
@@ -87,10 +87,10 @@
 
 .footer-default .copyright a {
 	margin: 0 5px;
-	color: #72c02c;
+	color: #c0392b;
 }
 .footer-default .copyright a:hover {
-	color: #5fb611;
+	color: #c0392b;
 }
 
 .footer-default .copyright a img {

@@ -11,14 +11,14 @@
 
 /*Heading Fotoer*/
 .footer-v5 .heading-footer {
-	text-align: right;
+	text-align: left;
     position: relative;
     margin-bottom: 30px;
     padding-bottom: 2px;
 }
 
 .footer-v5 .heading-footer:after {
-    right: 0;
+    left: 0;
     bottom: 0;
     height: 1px;
     width: 50px;
@@ -35,12 +35,12 @@
 
 /*Dark Social v2*/
 .footer-v5 .dark-social-v2 li {
-    padding-left: 0;
+    padding-right: 0;
     margin-bottom: 8px;
 }
 
 .footer-v5 .dark-social-v2 li:first-child {
-    padding-right: 5px;
+    padding-left: 5px;
 }
 
 .footer-v5 .dark-social-v2 li i {
@@ -56,7 +56,7 @@
 
 .footer-v5 .dark-social-v2 li i:hover {
     color: #fff;
-    background: #72c02c;
+    background: #e74c3c;
     text-decoration: none;
     -webkit-transition: all 0.3s ease-in-out;
     -moz-transition: all 0.3s ease-in-out;
@@ -111,10 +111,10 @@
 }
 
 .footer-v5 .footer .thumb-news > li img {
-	float: right;
+	float: left;
 	width: 80px;
 	height: auto;
-	margin-left: 10px;
+	margin-right: 10px;
 }
 
 .footer-v5 .footer .thumb-news > li a {
@@ -138,10 +138,10 @@
 }
 
 .footer-v5 .footer .tweets li i {
-    float: right;
+    float: left;
     color: #777;
     font-size: 25px;
-    margin: 3px 0 0 10px;
+    margin: 3px 10px 0 0;
 }
 
 .footer-v5 .footer .tweets li p {
@@ -171,15 +171,15 @@
 	color: #bbb;
 	font-size: 13px;
 	line-height: 10px;
-	margin-left: 2px;
-	padding-right: 10px;
-	padding-right: 10px;
-	border-right: 1px solid #777;
+	margin-right: 2px;
+	padding-left: 10px;
+	padding-left: 10px;
+	border-left: 1px solid #777;
 }
 
 .footer-v5 .copyright .terms-menu li:first-child {
-	border-right: none;
-	padding: 0 0 0 7px;
+	border-left: none;
+	padding: 0 7px 0 0;
 }
 
 .footer-v5 .copyright .terms-menu li a {

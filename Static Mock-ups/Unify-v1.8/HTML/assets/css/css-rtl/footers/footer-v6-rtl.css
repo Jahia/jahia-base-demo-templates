@@ -11,14 +11,14 @@
 
 /*Heading Fotoer*/
 .footer-v6 .heading-footer {
-	text-align: right;
+	text-align: left;
     position: relative;
     margin-bottom: 30px;
     padding-bottom: 2px;
 }
 
 .footer-v6 .heading-footer:after {
-    right: 0;
+    left: 0;
     bottom: 0;
     height: 1px;
     width: 50px;
@@ -105,14 +105,14 @@
 }
 
 .footer-v6 .footer .contacts li i {
-	float: right;
+	float: left;
 	width: 30px;
     height: 30px;
 	color: #777;
 	padding: 8px 5px;
 	background: #333;
 	text-align: center;
-	margin: 4px 0 0 10px;
+	margin: 4px 10px 0 0;
 	display: inline-block;
 }
 
@@ -140,7 +140,7 @@
 }
 
 .footer-v6 .dark-social li {
-    margin-right: 5px;
+    margin-left: 5px;
 }
 
 .footer-v6 .dark-social li i {
@@ -156,16 +156,16 @@
 	color: #777;
 	font-size: 13px;
 	line-height: 10px;
-	margin-left: 2px;
+	margin-right: 2px;
 	border-color: #777;
-	padding-right: 10px;
-	padding-right: 10px;
-	border-right: 1px solid #bbb;
+	padding-left: 10px;
+	padding-left: 10px;
+	border-left: 1px solid #bbb;
 }
 
 .footer-v6 .copyright .terms-menu li:first-child {
-	border-right: none;
-	padding: 0 0 0 7px;
+	border-left: none;
+	padding: 0 7px 0 0;
 }
 
 .footer-v6 .copyright .terms-menu li a {

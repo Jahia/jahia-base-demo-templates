@@ -14,12 +14,12 @@
 .timeline-v2:before {
 	top: 0;
 	bottom: 0;
-	right: 22%;
+	left: 22%;
 	width: 4px;
 	content: '';
 	background: #f3f3f3;
 	position: absolute;
-	margin-right: -14px;
+	margin-left: -14px;
 }
 
 /* The date/time */
@@ -27,13 +27,13 @@
 	width: 25%;
 	display: block;
 	position: absolute;
-	padding-left: 80px;
+	padding-right: 80px;
 }
 
 .timeline-v2 > li .cbp_tmtime span {
 	top: 9px;
 	display: block;
-	text-align: left;
+	text-align: right;
 	position: relative;
 }
 
@@ -58,8 +58,8 @@
 	line-height: 1.4;
 	clear: both;
 	position: relative;
-	border-radius: 5px;
-	margin: 0 75% 40px 0;
+	/*border-radius: 5px;*/
+	margin: 0 0 40px 25%;
 }
 
 /*
@@ -89,19 +89,19 @@
 }
 
 .timeline-v2 > li .cbp_tmlabel .text-left {
-	float: right;
+	float: left;
 }
 
 /* The triangle */
 .timeline-v2 > li .cbp_tmlabel:after {
-	left: 100%;
+	right: 100%;
 	border: solid transparent;
 	content: " ";
 	height: 0;
 	width: 0;
 	position: absolute;
 	pointer-events: none;
-	border-left-color: #f3f3f3;
+	border-right-color: #f3f3f3;
 	border-width: 10px;
 	top: 18px;
 }
@@ -109,13 +109,13 @@
 /* The icons */
 .timeline-v2 > li .cbp_tmicon {
 	top: 22px;
-	right: 22%;
+	left: 22%;
 	width: 10px;
 	height: 10px;
 	position: absolute;
-	background: #72c02c;
-	margin: 0 -17px 0 0;
-	box-shadow: 0 4px 0 0 #f3f3f3;
+	background: #e74c3c;
+	margin: 0 0 0 -17px;
+	box-shadow: 0 0 0 4px #f3f3f3;
 	-webkit-font-smoothing: antialiased;
 }
 
@@ -139,7 +139,7 @@
 	}
 
 	.timeline-v2 > li .cbp_tmtime span {
-		text-align: right;
+		text-align: left;
 	}
 
 	.timeline-v2 > li .cbp_tmlabel {
@@ -149,17 +149,18 @@
 	}
 
 	.timeline-v2 > li .cbp_tmlabel:after {
-		right: 20px;
+		left: 20px;
 		top: -20px;
-		left: auto;
+		right: auto;
 		border-bottom-color: #f3f3f3;
-		border-left-color: transparent;
+		border-right-color: transparent;
 	}
 
 	.timeline-v2 > li .cbp_tmicon {
-		right: auto;
-		float: left;
+		left: auto;
+		float: right;
 		position: relative;
-		margin: -55px 0px 0 5px;
+		margin: -55px 5px 0 0px;
 	}	
 }
+

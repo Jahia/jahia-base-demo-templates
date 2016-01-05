@@ -19,8 +19,8 @@
 }
 
 .sorting-block .sorting-nav li.active {
-	color: #72c02c;
-	border-bottom: solid 1px #72c02c;
+	color: #e74c3c;
+	border-bottom: solid 1px #e74c3c;
 }
 
 /*Sorting Navigation v1*/
@@ -62,7 +62,7 @@
 }
 
 .sorting-block .sorting-grid li a:hover .sorting-cover {
-	background: #72c02c;
+	background: #e74c3c;
     -webkit-transition: all 0.4s ease;
     -moz-transition: all 0.4s ease;
     -o-transition: all 0.4s ease;

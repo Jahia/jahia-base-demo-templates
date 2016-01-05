@@ -3,7 +3,7 @@
 .search-block {
 	padding: 40px 0 50px;
 	border-bottom: 1px solid #eee;
-	background: url(../../../img/patterns/breadcrumbs.png) repeat;
+	background: url(../../img/patterns/breadcrumbs.png) repeat;
 }
 
 .search-block h2 {
@@ -18,7 +18,7 @@
 /*Table Search v1
 ------------------------------------*/
 .table-search-v1 .btn-u.dropdown-toggle {
-	border-right: none;
+	border-left: none;
 }
 
 .table-search-v1 .btn-group .btn-u {
@@ -60,7 +60,7 @@
 }
 
 .table-search-v1 .m-marker i {
-	float: right;
+	float: left;
 	min-width: 20px;
 	font-size: 26px;
 }
@@ -79,7 +79,7 @@
 /*Table Search v2
 ------------------------------------*/
 .table-search-v2 .btn-u.dropdown-toggle {
-	border-right: none;
+	border-left: none;
 }
 
 .table-search-v2 .btn-group .btn-u {

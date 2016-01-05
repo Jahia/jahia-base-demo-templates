@@ -8,6 +8,8 @@
 4. Header - Submenu
 5. Header - Mega Menu
 6. Header - Fixed
+7. Header - Fixed Boxed
+
 -----------------------------------------------------------------------*/
 
 
@@ -38,13 +40,13 @@
 	color: #fff;
 	font-weight: 200;
 	line-height: 12px;
-	padding: 0 15px 0 12px;
-	border-right: 1px solid #fff;
+	padding: 0 12px 0 15px;
+	border-left: 1px solid #fff;
 }
 
 .header-v2 .top-v2-contacts > li:first-child {
-	padding-right: 0;
-	border-right: none;
+	padding-left: 0;
+	border-left: none;
 }
 
 .header-v2 .top-v2-contacts > li > a,
@@ -117,14 +119,14 @@ topbar including in mobile version*/
 }
 
 .header-v2 .languages-dropdown {
-	right: 0;
+	left: 0;
 	top: 100%;
 	z-index: 1000;
 	display: none;
 	padding: 5px 0;
 	font-size: 14px;
 	min-width: 100px;
-	text-align: right;
+	text-align: left;
 	list-style: none;
 	position: absolute;
 	background: #f0f0f0;
@@ -138,15 +140,15 @@ topbar including in mobile version*/
 	width: 0; 
 	height: 0;
 	top: -4px;
-	right: 8px;
+	left: 8px;
 	content: " "; 
 	display: block; 
 	position: absolute;
 	border-bottom: 6px solid #f0f0f0;	
-	border-right: 6px solid transparent;
 	border-left: 6px solid transparent;
-	border-right-style: inset; /*FF fixes*/
+	border-right: 6px solid transparent;
 	border-left-style: inset; /*FF fixes*/
+	border-right-style: inset; /*FF fixes*/
 }
 
 @media (min-width: 992px) {
@@ -170,7 +172,7 @@ topbar including in mobile version*/
 
 .header-v2 .languages-dropdown > li.active > a:after {
 	top: 3px;
-	left: 10px;
+	right: 10px;
 	color: #555;
 	content: "\f00c";
 	position: absolute;
@@ -230,8 +232,8 @@ topbar including in mobile version*/
 /*Navbar Brand*/
 .header-v2 .navbar-brand { 
 	z-index: 1;
-	margin-left: 50px;
-	padding: 10px 16px 10px 10px;
+	margin-right: 50px;
+	padding: 10px 10px 10px 16px;
 }
 
 @media (max-width: 991px) {
@@ -242,7 +244,7 @@ topbar including in mobile version*/
 
 /*Navbar Toggle*/
 .header-v2 .navbar-default .navbar-toggle {
-	border-color: #5fb611;
+	border-color: #c0392b;
 }
 
 @media (max-width: 991px) {
@@ -253,7 +255,7 @@ topbar including in mobile version*/
 
 @media (min-width: 768px) {
 	.header-v2 .navbar-default .navbar-toggle {
-		margin-left: 0;
+		margin-right: 0;
 	}
 }
 
@@ -265,12 +267,12 @@ topbar including in mobile version*/
 .header-v2 .navbar-toggle,
 .header-v2 .navbar-default .navbar-toggle:hover, 
 .header-v2 .navbar-default .navbar-toggle:focus {
-	background: #72c02c;
+	background: #e74c3c;
 	padding: 6px 10px 2px;
 }
 
 .header-v2 .navbar-toggle:hover {
-	background: #5fb611 !important;
+	background: #c0392b !important;
 }
 
 /*Navbar Collapse*/
@@ -289,7 +291,7 @@ topbar including in mobile version*/
 
 @media (min-width: 992px) {
 	.header-v2 .navbar-nav {
-		float: left;
+		float: right;
 	}	
 }
 
@@ -355,7 +357,7 @@ topbar including in mobile version*/
 
 	.header-v2 .navbar-nav .open .dropdown-menu > li > a,
 	.header-v2 .navbar-nav .open .dropdown-menu .dropdown-header {
-		padding: 5px 25px 5px 15px;
+		padding: 5px 15px 5px 25px;
 	}
 	
 	.header-v2 .navbar-nav .open .dropdown-menu > li > a {
@@ -398,8 +400,8 @@ topbar including in mobile version*/
   	/*Design for max-width: 991px*/
   	.header-v2 .navbar-collapse,
 	.header-v2 .navbar-collapse .container {
-		padding-right: 0 !important;
 		padding-left: 0 !important;
+		padding-right: 0 !important;
 	}
 
 	.header-v2 .navbar-default .navbar-nav > li > a {
@@ -416,13 +418,13 @@ topbar including in mobile version*/
 	}
 
 	.header-v2 .navbar-default .navbar-nav > li > a:hover {
-		color: #72c02c;
+		color: #e74c3c;
 	}
 
 	.header-v2 .navbar-default .navbar-nav > .active > a,
 	.header-v2 .navbar-default .navbar-nav > .active > a:hover,
 	.header-v2 .navbar-default .navbar-nav > .active > a:focus {
-		background: #72c02c;
+		background: #e74c3c;
 		color: #fff !important;	
 	}
 
@@ -458,7 +460,7 @@ topbar including in mobile version*/
 
 	.header-v2 .navbar-default .navbar-nav > li > a {
 		line-height: 25px;
-		padding: 9px 20px 13px 30px;
+		padding: 9px 30px 13px 20px;
 	}
 
 	.header-v2 .navbar-default .navbar-nav > li > a,
@@ -485,7 +487,7 @@ topbar including in mobile version*/
 		min-width: 200px;
 		border-radius: 0; 
 		z-index: 9999 !important;
-		border-top: solid 2px #72c02c; 
+		border-top: solid 2px #e74c3c; 
 		border-bottom: solid 2px #687074; 
 	}
 
@@ -536,7 +538,7 @@ topbar including in mobile version*/
 .header-v2 .dropdown > a:after,
 .header-v2 .dropdown-submenu > a:after {
     top: 8px;
-    left: 9px;
+    right: 9px;
     font-size: 11px;
     content: "\f105";
     position: absolute;
@@ -553,20 +555,20 @@ topbar including in mobile version*/
 
 .header-v2 .dropdown > a:after {
     top: 9px;
-    left: 15px;
+    right: 15px;
     content: "\f107";
 }
 
 .header-v2 .dropdown-submenu > .dropdown-menu { 
 	top: 3px; 
-	right: 100%; 
+	left: 100%; 
 	margin-top: -5px; 
-	margin-right: 0px; 
+	margin-left: 0px; 
 }
 
 /*Submenu comes from LEFT side*/
 .header-v2 .dropdown-submenu > .dropdown-menu.submenu-left {
-	right: -100%;
+	left: -100%;
 }
 
 .header-v2 .dropdown-submenu:hover > .dropdown-menu {  
@@ -576,7 +578,7 @@ topbar including in mobile version*/
 @media (max-width: 991px) {
 	.header-v2 .dropdown-submenu > .dropdown-menu {  
 		display: block;
-		margin-right: 15px;
+		margin-left: 15px;
 	}
 }
 
@@ -585,15 +587,15 @@ topbar including in mobile version*/
 }
 
 .header-v2 .dropdown-submenu.pull-left > .dropdown-menu {
-	right: -100%;
-	margin-right: 10px;
+	left: -100%;
+	margin-left: 10px;
 }
 
 .header-v2 .dropdown-menu li [class^="fa-"],
 .header-v2 .dropdown-menu li [class*=" fa-"] {
-	right: -3px;
+	left: -3px;
 	width: 1.25em;
-	margin-left: 1px;
+	margin-right: 1px;
 	position: relative;
 	text-align: center;
 	display: inline-block;
@@ -624,7 +626,7 @@ topbar including in mobile version*/
 }
 
 .header-v2 .mega-menu .dropdown-menu {
-  	right: auto;
+  	left: auto;
 }
 
 .header-v2 .mega-menu .dropdown-menu > li {
@@ -632,11 +634,11 @@ topbar including in mobile version*/
 }
 
 .header-v2 .mega-menu .dropdown-submenu .dropdown-menu {
-  	right: 100%;
+  	left: 100%;
 }
 
 .header-v2 .mega-menu .nav.pull-right .dropdown-menu {
-  	left: 0;
+  	right: 0;
 }
 
 .header-v2 .mega-menu .mega-menu-content {
@@ -661,15 +663,15 @@ topbar including in mobile version*/
 }
 
 .header-v2 .mega-menu .dropdown.mega-menu-fullwidth .dropdown-menu {
-  	right: 0;
   	left: 0;
+  	right: 0;
   	overflow: hidden;
 }
 
 @media (min-width: 992px) {
 	.header-v2 .mega-menu .dropdown.mega-menu-fullwidth .dropdown-menu {
-  		margin-right: 10px;
-  		margin-left: 15px;
+  		margin-left: 10px;
+  		margin-right: 15px;
 	}
 }
 
@@ -696,7 +698,7 @@ topbar including in mobile version*/
 .header-v2 .mega-menu .equal-height-list h3 {
 	font-size: 15px;
 	font-weight: 400;
-	padding: 0 13px 0 10px;
+	padding: 0 10px 0 13px;
 	text-transform: uppercase;
 }
 
@@ -711,12 +713,12 @@ topbar including in mobile version*/
 @media (min-width: 992px) {
     .header-v2 .mega-menu .equal-height-in {
         padding: 20px 0;
-        border-right: 1px solid #eee;
+        border-left: 1px solid #eee;
     }
 
     .header-v2 .mega-menu .equal-height-in:first-child {
-        border-right: none;
-        margin-right: -1px;
+        border-left: none;
+        margin-left: -1px;
     }
 
     .header-v2 .mega-menu .equal-height-list {
@@ -727,7 +729,7 @@ topbar including in mobile version*/
         display: block;
         position: relative;
         border-bottom: none;
-        padding: 5px 15px 5px 10px;
+        padding: 5px 10px 5px 15px;
     }
 
     .header-v2 .mega-menu .equal-height-list a:hover {
@@ -736,12 +738,12 @@ topbar including in mobile version*/
     
     /*Dropdown Arrow Icons*/
     .header-v2 .mega-menu .mega-menu-fullwidth li a {
-    	padding: 5px 30px 5px 10px;	
+    	padding: 5px 10px 5px 30px;	
     }
 
     .header-v2 .mega-menu .mega-menu-fullwidth li a:after {
         top: 7px;
-        right: 15px;
+        left: 15px;
         font-size: 11px;
         content: "\f105";
         position: absolute;
@@ -752,7 +754,7 @@ topbar including in mobile version*/
 
     /*Dropdown Arrow Icons Disable class*/
     .header-v2 .mega-menu .mega-menu-fullwidth .disable-icons li a {
-    	padding: 5px 15px 5px 10px;
+    	padding: 5px 10px 5px 15px;
     }
 
     .header-v2 .mega-menu .mega-menu-fullwidth .disable-icons li a:after {
@@ -767,22 +769,22 @@ topbar including in mobile version*/
 	}
 
 	.header-v2 .mega-menu .equal-height {
-		margin-left: 0;
+		margin-right: 0;
 	}
 
 	.header-v2 .mega-menu .equal-height-in {
-    	padding-left: 0;
-    	margin-left: -15px;
+    	padding-right: 0;
+    	margin-right: -15px;
     }
 }
 
 @media (max-width: 991px) {
 	.header-v2 .mega-menu .equal-height {
-		margin-left: 0;
+		margin-right: 0;
 	}
 
 	.header-v2 .mega-menu .equal-height-in {
-    	padding-left: 0;
+    	padding-right: 0;
     }
 }
 
@@ -816,7 +818,7 @@ topbar including in mobile version*/
 		display: block;
 		font-size: 13px; 
 		font-weight: 400; 
-		margin-right: 15px;
+		margin-left: 15px;
 		padding: 6px 25px; 
 		border-bottom: solid 1px #eee;
 	}
@@ -847,10 +849,10 @@ topbar including in mobile version*/
 
 .header-fixed .header-v2.header-fixed-shrink {
 	top: 0;
-	right: 0;
+	left: 0;
 	width: 100%;
 	height: 93px;
-	z-index: 9999;
+	z-index: 999;
 	position: fixed;
 	margin-top: -35px;
 	border-bottom: none;
@@ -868,7 +870,7 @@ topbar including in mobile version*/
 	top: 50px;
 	z-index: 1;
 	position: relative;
-	padding: 0 15px 10px 10px;
+	padding: 0 10px 10px 15px;
 }
 
 .header-fixed .header-v2.header-fixed-shrink .navbar-brand img {
@@ -897,7 +899,7 @@ topbar including in mobile version*/
 	.header-fixed .header-v2.header-fixed-shrink .navbar-nav > li > a {
 		color: #777;
 		margin-top: 25px;
-		padding: 21px 20px 17px 30px;
+		padding: 21px 30px 17px 20px;
 		border-bottom: solid 1px transparent !important;
 		-webkit-transition: color 0.2s ease-in-out;
 		-moz-transition: color 0.2s ease-in-out;
@@ -912,4 +914,14 @@ topbar including in mobile version*/
 	.header-fixed .header-v2.header-fixed-shrink .dropdown > a:after {
 		top: 22px;
 	}
+}
+
+
+/*--------------------------------------------------
+    [7. Header - Fixed Boxed]
+----------------------------------------------------*/
+
+.boxed-layout.header-fixed .header-v2.header-sticky {
+	left: inherit;
+	width: inherit;
 }

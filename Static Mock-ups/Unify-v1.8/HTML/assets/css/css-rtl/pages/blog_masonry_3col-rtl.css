@@ -23,11 +23,11 @@
 }
 
 .blog_masonry_3col h3 a:hover {
-	color: #72c02c;
+	color: #e74c3c;
 }
 
 .blog_masonry_3col h3 a:hover {
-	color: #72c02c;
+	color: #e74c3c;
 }
 
 .blog_masonry_3col ul.grid-boxes-news {
@@ -44,7 +44,7 @@
 }
 
 .blog_masonry_3col ul.grid-boxes-news li a:hover {
-	color: #72c02c;
+	color: #e74c3c;
 }
 
 /*Quote Block*/
@@ -60,14 +60,14 @@
 
 .grid-boxes-quote p:after {
     content: " \" ";
-	margin-right: 10px;
+	margin-left: 10px;
     position: absolute;
     font-family: Tahoma;
 }
 
 .grid-boxes-quote p:before {
     content: " \" ";
-	margin-right: -15px;
+	margin-left: -15px;
     position: absolute;
     font-family: Tahoma;
 }
@@ -85,4 +85,5 @@
 .grid-boxes-quote span {
 	font-size: 12px;
 }
+
 

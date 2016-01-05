@@ -13,7 +13,7 @@
 	box-shadow:0 0 15px #b5b5b5;
 }
 .pricing-bg-colored .pricing:hover h4 {
-	color:#74C52C;
+	color:#c42c2c;
 }
 .pricing-bg-colored .pricing-head {
 	text-align:center;
@@ -41,7 +41,7 @@
 	padding:12px 0;
 	font-size:35px;
 	font-family:Arial;
-	background:#74C52C;
+	background:#c42c2c;
 	border-radius:3px 3px 0 0;
 	text-shadow:0 1px 0 #32a20f;
 }
@@ -58,7 +58,7 @@
 	border-bottom:solid 1px #f5f9e7;
 }
 .pricing-bg-colored .pricing-content li i {
-	color:#72c02c;
+	color:#e74c3c;
 	font-size:16px;
 	margin-right:5px;
 	position:relative;
@@ -81,7 +81,7 @@
 	margin-top: -15px;
 }
 .pricing-bg-colored .price-active h4 {
-	color:#74C52C;
+	color:#c42c2c;
 }
 
 /*Pricing Extra*/
@@ -138,7 +138,7 @@
 	border: 1px solid #EEEEEE;
 }
 .pricing-bg-colored .pricing:hover {	
-	background: #74C52C; 
+	background: #c42c2c; 
 }
 .pricing-bg-colored .pricing:hover li,
 .pricing-bg-colored .pricing:hover li i, 
@@ -146,7 +146,7 @@
 	color: #fff; 
 }
 .pricing-bg-colored .pricing-head i {
-	color: #74C52C;
+	color: #c42c2c;
 	padding-top: 20px;	
 	margin-top: 10px 0px;
 }

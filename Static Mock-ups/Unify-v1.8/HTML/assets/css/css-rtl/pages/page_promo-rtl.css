@@ -7,7 +7,7 @@
 
 .slider-promo-info-bg {
 	padding: 25px 20px 20px;
-	background: url(../../../img/bg-black.png) repeat;
+	background: url(../img/bg-black.png) repeat;
 }
 
 .slider-promo-info span.big-size { 
@@ -65,7 +65,7 @@
 }
 
 .promo-service a.btn-u {
-	margin: 0 0 10px 20px;
+	margin: 0 20px 10px 0;
 }
 
 .promo-service .carousel {

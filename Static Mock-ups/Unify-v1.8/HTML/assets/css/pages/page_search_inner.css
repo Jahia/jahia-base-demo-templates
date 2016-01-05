@@ -44,7 +44,7 @@
 }
 
 .s-results .related-search a:hover {
-	color: #72c02c;
+	color: #e74c3c;
 }
 
 .s-results .related-search hr {
@@ -84,7 +84,7 @@
 }
 
 .s-results .inner-results h3 a:hover {
-	color: #72c02c;
+	color: #e74c3c;
 }
 
 .s-results .inner-results img {
@@ -104,7 +104,7 @@
 }
 
 .s-results .up-ul li a:hover {
-	color: #72c02c;
+	color: #e74c3c;
 }
 
 /*btn-group 'dropdown'*/
@@ -153,7 +153,7 @@
 }
 
 .s-results .down-ul li a {
-	color: #72c02c;
+	color: #e74c3c;
 }
 
 .s-results .star-vote {

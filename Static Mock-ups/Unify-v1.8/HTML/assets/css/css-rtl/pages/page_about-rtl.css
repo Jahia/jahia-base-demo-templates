@@ -2,7 +2,7 @@
 ------------------------------------*/
 .parallax-bg {
   position: relative;
-  background: url(../../../img/bg/25.jpg) 50% no-repeat fixed;
+  background: url(../../img/bg/25.jpg) 50% no-repeat fixed;
 }
 
 .parallax-bg:before {
@@ -82,7 +82,7 @@
 
 .about-list-style li i.fa,
 .about-list-style li i.icon {
-    margin-left: 5px;
+    margin-right: 5px;
 }
 
 /*Check-style in Responsive*/
@@ -91,6 +91,7 @@
         width: 100% !important;
     }
 }
+
 
 
 

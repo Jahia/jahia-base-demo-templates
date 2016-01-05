@@ -14,7 +14,7 @@
 }
 
 .blog h2 a:hover {
-	color: #72c02c;
+	color: #e74c3c;
 	text-decoration: none;
 }
 
@@ -56,12 +56,12 @@
 	font-size: 11px;
 	display: inline;
 	padding: 3px 7px;
-	margin-left: 2px;
+	margin-right: 2px;
 	background: #f4f4f4;
 }
 
 .blog-post-tags ul.blog-tags a:hover {
-	background: #72c02c;
+	background: #e74c3c;
 }
 
 /*Blog Item Page
@@ -75,7 +75,7 @@
 
 .post-comment h3,
 .blog-item .media h3 {
-	color: #72c02c;
+	color: #e74c3c;
 	font-size: 21px;
 	margin-bottom: 25px;
 }
@@ -88,14 +88,14 @@
 
 .blog-item .media h4.media-heading span {
 	top: 3px; 
-	left: 0;
+	right: 0;
 	color: #777;
 	font-size: 12px;
 	position: absolute;
 }
 
 .blog-item .media h4.media-heading span a {
-	color: #72c02c;
+	color: #e74c3c;
 }
 
 /*Blog Medium

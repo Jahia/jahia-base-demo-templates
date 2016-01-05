@@ -11,7 +11,7 @@
 	box-shadow:0 0 15px #b5b5b5;
 }
 .pricing:hover h4 {
-	color:#74C52C;
+	color:#c42c2c;
 }
 .pricing-head {
 	text-align:center;
@@ -38,7 +38,7 @@
 	padding:12px 0;
 	font-size:35px;
 	font-family:Arial;
-	background:#74C52C;
+	background:#c42c2c;
 	border-radius:3px 3px 0 0;
 	text-shadow:0 1px 0 #32a20f;
 }
@@ -74,7 +74,7 @@
 	border-bottom:solid 1px #f5f9e7;
 }
 .pricing-content li i {
-	color:#72c02c;
+	color:#e74c3c;
 	font-size:16px;
 	margin-right:5px;
 	position:relative;
@@ -97,7 +97,7 @@
 	margin-top: -15px;
 }
 .price-active h4 {
-	color:#74C52C;
+	color:#c42c2c;
 }
 
 /*Pricing Extra*/
@@ -224,7 +224,7 @@
 }
 .pricing-accord-inner .pricing-footer .btn-u:hover,
 .shadow-wrapper .btn-u:hover{
-background-color: #74C52C!important;
+background-color: #c42c2c!important;
 border-color: #eee !important;
 }
 .pricing-accord-inner .pricing-footer .btn-u:hover h4 {

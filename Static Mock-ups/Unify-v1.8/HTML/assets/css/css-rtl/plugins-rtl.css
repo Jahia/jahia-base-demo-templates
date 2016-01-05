@@ -1,7 +1,7 @@
 /*   
  * Template Name: Unify - Responsive Bootstrap Template
  * Description: Business, Corporate, Portfolio, E-commerce, Blog and One Page Template.
- * Version: 1.7
+ * Version: 1.8
  * Author: @htmlstream
  * Website: http://htmlstream.com
 */
@@ -28,6 +28,37 @@
    .da-slide .da-img {
       display:none;
    }
+}
+
+/*Master Slider
+------------------------------------*/
+.ms-promo-info {
+  font-size: 45px;
+  font-weight: 300;
+  line-height: 1.5;
+  text-transform: uppercase;
+  font-family: "Open Sans", Arial, sans-serif;
+}
+
+.ms-promo-info-in {
+  font-size: 60px;
+  font-weight: 600;  
+}
+
+.ms-promo-sub {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: "Open Sans", Arial, sans-serif;
+}
+
+.ms-promo-sub-in {
+  font-size: 15px;
+}
+
+.ms-img-bordered {
+  background: #fff;
+  padding: 7px;
 }
 
 /*Revolution Slider
@@ -81,8 +112,8 @@
 /*Slider Contents v1*/
 .revolution-mch-1:after {
   top: 0;
-  right: 0;
   left: 0;
+  right: 0;
   width: 100%;
   height: 100%;
   content: ' ';
@@ -111,13 +142,13 @@
 }
 
 .revolution-ch2:after {
-  right: 50%;
+  left: 50%;
   width: 70px;
   height: 2px;
   content: ' '; 
   bottom: -20px;
   background: #fff;
-  margin-right: -35px;
+  margin-left: -35px;
   position: absolute;
 }
 
@@ -181,11 +212,11 @@
 }
 
 .rs-caption-1:after {
-  left: 4%;
+  right: 4%;
 }
 
 .rs-caption-1:before {
-  right: 4%;
+  left: 4%;
 }
 
 .rs-caption-2 {
@@ -199,13 +230,13 @@
 }
 
 .rs-caption-2:after {
-  right: 50%;
+  left: 50%;
   content: "";
   height: 1px;
   width: 100px;
   bottom: -10px;
   background: #fff;
-  margin-right: -50px;
+  margin-left: -50px;
   position: absolute;
 }
 
@@ -239,7 +270,7 @@
    #sequence-theme .info {
       top:80px !important;
       width:60% !important;
-      margin-left:50px;
+      margin-right:50px;
    }
 }
 
@@ -247,7 +278,7 @@
    #sequence-theme .info {
       top:70px !important;
       width:70% !important;
-      margin-left:25px;
+      margin-right:25px;
    }
    #sequence-theme h2 {
       font-size:30px !important;
@@ -269,7 +300,7 @@
 }
 .clients li {
   overflow: hidden;
-  margin-right: 1px;
+  margin-left: 1px;
   position: relative;
   background: #fafafa;
 }
@@ -278,7 +309,7 @@
 }
 .clients li img.color-img {
   top: 0;
-  right: 0;
+  left: 0;
   display: none;
   position: absolute;
 }
@@ -347,22 +378,22 @@
    min-width: 65px;
    font-size: 30px;
    position: relative;
-   background: #72c02c;
+   background: #e74c3c;
 }
 
 .counters span.counter-icon i:after {
    width: 0; 
    height: 0;
-   right: 38%;
+   left: 38%;
    content: " "; 
    bottom: -7px;
    display: block; 
    position: absolute;
-   border-top: 7px solid #72c02c;
-   border-right: 7px solid transparent;
+   border-top: 7px solid #e74c3c;
    border-left: 7px solid transparent;
-   border-right-style: inset; /*FF fixes*/
+   border-right: 7px solid transparent;
    border-left-style: inset; /*FF fixes*/
+   border-right-style: inset; /*FF fixes*/
 }
 
 .counters:hover span.counter-icon i {
@@ -379,14 +410,14 @@
   font-size: 20px;
   background: #222;
   position: relative;
-  left: 14px !important;
+  right: 14px !important;
   bottom: 11px !important;
   border-radius: 3px !important;
 }
 
 #topcontrol:after {
   top: -2px;
-  right: 8.5px;
+  left: 8.5px;
   content: "\f106";
   position: absolute;
   text-align: center;
@@ -395,7 +426,7 @@
 
 #topcontrol:hover {
   color: #fff;
-  background: #72c02c;
+  background: #e74c3c;
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
@@ -415,12 +446,12 @@
 
 .owl-btn:hover {
   color: #fff;
-  background: #72c02c;
+  background: #e74c3c;
 }
 
 /*Owl Carousel v1*/
 .owl-carousel-v1 .owl-navigation {
-  text-align: left;
+  text-align: right;
   margin-bottom: 20px;
 }
 
@@ -490,7 +521,7 @@
 
 .owl-carousel-v5 .owl-controls .owl-page.active span,
 .owl-carousel-v5 .owl-controls.clickable .owl-page:hover span {
-  background: #72c02c;
+  background: #e74c3c;
 }
 
 .owl-carousel-v5 .owl-controls .owl-page span {
@@ -621,7 +652,7 @@
 }
 
 .testimonials-v3 .testimonials-v3-title p {
-  color: #72c02c;
+  color: #e74c3c;
   margin-bottom: 0;
 }
 
@@ -636,8 +667,8 @@
   display: none;
 }
 
-.testimonials-v3 .owl-nav .owl-prev,
-.testimonials-v3 .owl-nav .owl-next {
+.testimonials-v3 .owl-buttons .owl-prev,
+.testimonials-v3 .owl-buttons .owl-next {
   padding: 13px;
   position: relative;
   margin: 15px 2px 0; 
@@ -645,8 +676,8 @@
   display: inline-block;  
 }
 
-.testimonials-v3 .owl-nav .owl-prev:after, 
-.testimonials-v3 .owl-nav .owl-next:after {
+.testimonials-v3 .owl-buttons .owl-prev:after, 
+.testimonials-v3 .owl-buttons .owl-next:after {
     top: 0;
     color: #bbb;
     font-size: 16px;
@@ -656,24 +687,24 @@
     font-family: FontAwesome;
 }
 
-.testimonials-v3 .owl-nav .owl-prev:after {
-  right: 10px;
+.testimonials-v3 .owl-buttons .owl-prev:after {
+  left: 10px;
   content: "\f104";
 }
 
-.testimonials-v3 .owl-nav .owl-next:after {
-  left: 10px;
+.testimonials-v3 .owl-buttons .owl-next:after {
+  right: 10px;
   content: "\f105";
 }
 
-.testimonials-v3 .owl-nav .owl-prev:hover:after, 
-.testimonials-v3 .owl-nav .owl-next:hover:after {
+.testimonials-v3 .owl-buttons .owl-prev:hover:after, 
+.testimonials-v3 .owl-buttons .owl-next:hover:after {
   color: #fff;
 }
 
-.testimonials-v3 .owl-nav .owl-prev:hover,
-.testimonials-v3 .owl-nav .owl-next:hover {
-  background: #72c02c;
+.testimonials-v3 .owl-buttons .owl-prev:hover,
+.testimonials-v3 .owl-buttons .owl-next:hover {
+  background: #e74c3c;
   -webkit-transition: background 0.4s ease-in-out;
   -moz-transition: background 0.4s ease-in-out;
   -o-transition: background 0.4s ease-in-out;
@@ -722,9 +753,6 @@
   color: #777;
 }
 
-.owl-work-v1 .item a {
-  display: inline-block;
-}
 .owl-work-v1 .item a img {
    -webkit-transition: all 0.8s ease-in-out;
    -moz-transition: all 0.8s ease-in-out;
@@ -743,7 +771,7 @@
 }
 
 .owl-work-v1 .item a:hover span {
-  border-bottom: solid 2px #72c02c;
+  border-bottom: solid 2px #e74c3c;
     -webkit-transition: all 0.2s ease-in-out;
     -moz-transition: all 0.3s ease-in-out;
     -o-transition: all 0.2s ease-in-out;
@@ -757,14 +785,14 @@
   padding: 100px 0;
   position: relative;
   text-align: center;
-  background: #333 url(../../img/bg/19.jpg) 50% 0 fixed;
+  background: #333 url(../img/bg/19.jpg) 50% 0 fixed;
   background-size: cover;
   background-position: center center;    
 }
 
 .parallax-twitter:after {
   top: 0;
-  right: 0;
+  left: 0;
   width: 100%;
   height: 100%; 
   content: " ";
@@ -774,12 +802,12 @@
 
 .parallax-twitter:before {
   top: 0;
-  right: 0;
+  left: 0;
   width: 100%;
   height: 100%; 
   content: " ";
   position: absolute;
-  background: url(../../img/patterns/gridtile.png) repeat;
+  background: url(../img/patterns/gridtile.png) repeat;
 }
 
 .parallax-twitter-in {
@@ -828,14 +856,14 @@
 .clients-section {
   padding: 60px 0;
   position: relative;
-  background: #333 url(../../img/bg/7.jpg) 50% fixed;
+  background: #333 url(../img/bg/7.jpg) 50% fixed;
   background-size: cover;
   background-position: center center;    
 }
 
 .clients-section:after {
   top: 0;
-  right: 0;
+  left: 0;
   width: 100%;
   height: 100%; 
   content: " ";
@@ -845,12 +873,12 @@
 
 .clients-section:before {
   top: 0;
-  right: 0;
+  left: 0;
   width: 100%;
   height: 100%; 
   content: " ";
   position: absolute;
-  background: url(../../img/patterns/gridtile.png) repeat;
+  background: url(../img/patterns/gridtile.png) repeat;
 }
 
 .clients-section .title-v1 p,
@@ -906,9 +934,9 @@
 
 .owl-video img.video-play {
   top: 50%;
-  right: 50%;
+  left: 50%;
   margin-top: -52px;
-  margin-right: -52px;
+  margin-left: -52px;
   position: absolute;
 }
 

@@ -457,7 +457,7 @@ a.read-more:hover {
 
 /* Buttons Color */
 .btn-u-split.dropdown-toggle {
-   border-right: solid 1px #26bac8;
+   border-left: solid 1px #26bac8;
 }
 
 /* Bordered Buttons */
@@ -506,10 +506,10 @@ a.read-more:hover {
 
 /* Blockquote */
 blockquote:hover {
-	border-right-color:#27d7e7; 
+	border-left-color:#27d7e7; 
 }
 .hero {
-	border-right-color: #27d7e7;
+	border-left-color: #27d7e7;
 }
 blockquote.hero.hero-default {
   background: #27d7e7;
@@ -761,7 +761,7 @@ ul.blog-tags a:hover {
 
 /* Tag Boxes v2 */
 .tag-box-v2 {
-	border-right: solid 2px #27d7e7;
+	border-left: solid 2px #27d7e7;
 }
 
 /* Tag Boxes v7 */
@@ -922,10 +922,10 @@ blockquote.text-right:hover {
 
 /* Green Left Bordered Funny Box */
 .funny-boxes-left-green {
-  border-right: solid 2px #27d7e7;
+  border-left: solid 2px #27d7e7;
 }
 .funny-boxes-left-green:hover {
-  border-right-color: #27d7e7;
+  border-left-color: #27d7e7;
 }
 
 /* Testimonials Default
@@ -1085,14 +1085,14 @@ i.icon-bg-u {
 .pricing:hover h4 {
 	color:#27d7e7;
 }
+.pricing-head h3 {
+	background:#27d7e7;
+	text-shadow: 0 1px 0 #26bac8;	
+}
 .pricing-head h4 {
 	color:#999;
 	background:#fcfcfc;
 	border-bottom:solid 1px #d5eef0;
-}
-.pricing-mega-v1 .pricing-head h3 {
-	background:#27d7e7;
-	text-shadow: 0 1px 0 #26bac8;	
 }
 	
 /* Pricing Content */
@@ -1128,7 +1128,7 @@ i.icon-bg-u {
 .pricing-mega-v1 .pricing-head h3,
 .pricing-mega-v2 .pricing-head h3,
 .pricing-mega-v3 .pricing-head h3 {
-	text-shadow: 0 -1px 0 #26bac8;
+	text-shadow: 0 1px 0 #26bac8;
 }
 
 /* Pricing Table Mega v1 Version

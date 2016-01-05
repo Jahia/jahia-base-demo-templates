@@ -1,6 +1,6 @@
 /*Center Icon*/
 .center-icon {
-	right: 50%;
+	left: 50%;
 	top: -22px;
 	color: #585f69;
 	min-width: 45px;
@@ -9,7 +9,7 @@
 	padding: 10px 5px;
 	text-align: center;
 	position: absolute;
-	margin: 0 -22px 0 10px;
+	margin: 0 10px 0 -22px;
 	border: 1px solid #eee;
 }
 
@@ -42,7 +42,7 @@
 }
 
 .image-block {
-	background: url(../../../img/bg/19.jpg) 30% 40% no-repeat;
+	background: url(../../img/bg/19.jpg) 70% 40% no-repeat;
 }
 
 /*Company Description*/
@@ -61,7 +61,7 @@
 }
 
 .image-block .company-description p {
-	text-align: right;
+	text-align: left;
 }
 
 .image-block .benefits {
@@ -69,7 +69,7 @@
 }
 
 .image-block .benefits li {
-	margin: 0 0 10px 7px;
+	margin: 0 7px 10px 0;
 	font-style: italic;
 }
  
@@ -78,7 +78,7 @@
 	min-width: 32px;
 	font-size: 15px;
 	padding: 7px 6px;
-	margin-left: 10px;
+	margin-right: 10px;
 	text-align: center;
 	border: 1px solid #555;
 }
@@ -103,18 +103,18 @@
 
 .block-description .left-inner i.position-top {
 	top: 20px;
-	left: 20px;
+	right: 20px;
 	color: #585f69;
 	font-size: 18px;
 	position: absolute;
 }
 
 .block-description .left-inner img {
-	float: right;
+	float: left;
 	width: 80px;
 	height: auto;
 	padding: 3px;
-	margin: 0 0 10px 10px;
+	margin: 0 10px 10px 0;
 	border: 1px solid #eee;
 }
 
@@ -127,9 +127,9 @@
 }
 
 .block-description .star-vote {
-	float: right;
-	margin-right: 0;
-	margin-left: 10px;
+	float: left;
+	margin-left: 0;
+	margin-right: 10px;
 }
 
 .block-description .star-vote li {
@@ -138,9 +138,9 @@
 
 /*Progresses*/
 .block-description .progression span {
-	float: right;
+	float: left;
 	width: 150px;
-	margin: -8px 0 0 15px;
+	margin: -8px 15px 0 0;
 }
 
 /*Right Inner*/
@@ -150,10 +150,10 @@
 }
 
 .block-description .right-inner img {
-	float: right;
+	float: left;
 	width: 90px;
 	height: auto;
-	margin-left: 10px;
+	margin-right: 10px;
 }
 
 .block-description .right-inner .font-s {
@@ -174,13 +174,13 @@
 }
 
 .block-description .p-chart .circle {
-	float: right;
-	margin-left: 10px;
+	float: left;
+	margin-right: 10px;
 }
 
 .block-description .p-chart .overflow-h li i,
 .block-description .p-chart .overflow-h li a {
-	color: #72c02c;
+	color: #e74c3c;
 }
 
 .block-description .p-chart .overflow-h li a {
@@ -210,7 +210,7 @@
 }
 
 .block-description .save-job a:hover {
-	color: #72c02c;
+	color: #e74c3c;
 }
 
 /*Overview*/
@@ -220,21 +220,21 @@
 
 .block-description .overview i {
 	color: #fff;
-	float: right;
+	float: left;
 	min-width: 38px;
 	font-size: 20px;
 	padding: 10px 3px;
 	text-align: center;
-	margin-left: 10px;
+	margin-right: 10px;
 	background: #585f69;
 }
 
 /*People Say*/
 .block-description .people-say img {
-	float: right;
+	float: left;
 	width: 40px;
 	height: auto;
-	margin: 6px 0 0 10px;
+	margin: 6px 10px 0 0;
 }
 
 .block-description .people-say .overflow-h span {
@@ -247,7 +247,7 @@
 }
 
 .block-description .people-say .overflow-h small {
-	text-align: left;
+	text-align: right;
 	font-style: italic;
 }
 

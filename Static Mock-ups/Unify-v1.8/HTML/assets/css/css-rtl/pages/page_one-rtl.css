@@ -1,8 +1,8 @@
 /*One Page
 ------------------------------------*/
 .one-page {
-	padding-right: 0;
 	padding-left: 0;
+	padding-right: 0;
 }
 
 .one-page h1,
@@ -44,8 +44,8 @@
 	margin-bottom: 15px;
 	font-size: 18px;
 	font-weight: 200;
-	padding-right: 30px;
-	padding-left: 30px;  
+	padding-left: 30px;
+	padding-right: 30px;  
 }
 
 .one-page .btn-u {

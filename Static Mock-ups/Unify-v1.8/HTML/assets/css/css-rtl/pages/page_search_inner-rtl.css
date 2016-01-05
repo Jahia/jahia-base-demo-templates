@@ -4,7 +4,7 @@
 	margin-bottom: 50px;
 	padding: 50px 0 58px;
 	border-bottom: 1px solid #eee;
-	background: url(../../../img/patterns/breadcrumbs.png) repeat;
+	background: url(../../img/patterns/breadcrumbs.png) repeat;
 }
 
 .search-block-v2 h2 {
@@ -19,7 +19,7 @@
 ------------------------------------*/
 /*Related-search*/
 .s-results .related-search  {
-	border-left: 1px solid #eee;
+	border-right: 1px solid #eee;
 }
 
 .s-results .related-search h3 {
@@ -44,7 +44,7 @@
 }
 
 .s-results .related-search a:hover {
-	color: #72c02c;
+	color: #e74c3c;
 }
 
 .s-results .related-search hr {
@@ -84,14 +84,14 @@
 }
 
 .s-results .inner-results h3 a:hover {
-	color: #72c02c;
+	color: #e74c3c;
 }
 
 .s-results .inner-results img {
-	float: right;
+	float: left;
 	width: 85px;
 	height: auto;
-	margin: 0 0 10px 10px;
+	margin: 0 10px 10px 0;
 }
 
 /*up-ul*/
@@ -104,7 +104,7 @@
 }
 
 .s-results .up-ul li a:hover {
-	color: #72c02c;
+	color: #e74c3c;
 }
 
 /*btn-group 'dropdown'*/
@@ -153,11 +153,11 @@
 }
 
 .s-results .down-ul li a {
-	color: #72c02c;
+	color: #e74c3c;
 }
 
 .s-results .star-vote {
-	margin-right: 0px;
+	margin-left: 0px;
 }
 
 .s-results .star-vote li {
@@ -167,7 +167,7 @@
 @media (max-width: 992px) {
 	/*Related-search*/
 	.s-results .related-search  {
-		border-left: none;
+		border-right: none;
 		margin-bottom: 30px;
 		padding-bottom: 10px;
 		border-bottom: 1px solid #eee;

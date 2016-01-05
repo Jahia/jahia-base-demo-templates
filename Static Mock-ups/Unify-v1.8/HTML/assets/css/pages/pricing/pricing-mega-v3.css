@@ -12,7 +12,7 @@
 }
 
 .pricing:hover h4 {
-	color:#74C52C;
+	color:#c42c2c;
 }
 .pricing-head {
 	text-align:center;
@@ -39,7 +39,7 @@
 	padding:12px 0;
 	font-size:35px;
 	font-family:Arial;
-	background:#74C52C;
+	background:#c42c2c;
 	border-radius:3px 3px 0 0;
 	text-shadow:0 1px 0 #32a20f;
 }
@@ -75,7 +75,7 @@
 	border-bottom:solid 1px #f5f9e7;
 }
 .pricing-content li i {
-	color:#72c02c;
+	color:#e74c3c;
 	font-size:16px;
 	margin-right:5px;
 	position:relative;
@@ -93,7 +93,7 @@
 
 /*Pricing Active*/
 .price-active h4 {
-	color:#74C52C;
+	color:#c42c2c;
 }
 
 /*Pricing Extra*/
@@ -131,7 +131,7 @@
  .sticker-left {
     top: 9px;
     left: -48px;
-   	background: rgba(116, 197, 44, 1);
+   	background: rgb(196, 44, 44);
     transform: rotate(-45deg);   
 	-o-transform: rotate(-45deg);
 	-ms-transform: rotate(-45deg);
@@ -227,7 +227,7 @@
 	margin: 0;
 	border: 0;
 	width: 100%;
-	background: #72c02c;
+	background: #e74c3c;
 	border-color: #eee;
 	border: 1px solid #fff;
 	border-top: none;
@@ -238,7 +238,7 @@
 	color: #fff;
 }
 .pricing-mega-v3 .btn-group .dropdown-menu li a:hover { 
-	background: #5fb611;
+	background: #b61010;
 }
 .pricing-mega-v3 .btn-group-justified {
  	display: block;
