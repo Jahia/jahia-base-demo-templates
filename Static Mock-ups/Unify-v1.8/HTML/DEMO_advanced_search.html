@@ -42,7 +42,7 @@
 	<link rel="stylesheet" href="assets/css/app.css">
 	<link rel="stylesheet" href="assets/plugins/sky-forms-pro/skyforms/css/sky-forms.css">
 	<link rel="stylesheet" href="assets/plugins/sky-forms-pro/skyforms/custom/custom-sky-forms.css">
-	<link rel="stylesheet" href="http://htmlstream.com/preview/unify-v1.8/assets/css/pages/page_search_inner.css">
+	<link rel="stylesheet" href="assets/css/pages/page_search_inner.css">
 	
 
     <!-- CSS Customization -->
@@ -780,7 +780,8 @@
                 </a>
             </div>
         </div>
-    </div><!--/container-->
+    </div>
+    <!--/container-->
     
     
     
@@ -1002,273 +1003,7 @@
 	</div>
 
 	
-		<!--<div id="advancedSearch"  style="display: block;" class="row panel-collapse collapse" aria-expanded="false">
-			<div class="row" id="advanced-search">
-	            <form action="#" class="sky-form">
-	            	<div class="col-md-4 col-sm-12 col-xs-12">
-						<header>Text search</header>
-						<fieldset>
-							<section>
-			                	<div class="control-group">
-			                    	<label class="label control-label" for="searchTerm">Search</label>
-				                    <div class="controls">
-				                    	<label class="select">
-											<select name="src_terms[0].match">
-								                <option value="all_words">all these words</option>
-								                <option value="exact_phrase">this exact phrase</option>
-								                <option value="any_word">any of these words</option>
-								                <option value="as_is">free text search</option>
-									        </select>
-									        <i></i>
-									    </label>
-									    <label class="input">
-				    						<input name="src_terms[0].term" id="searchTerm" type="text" value="">
-				    						<input type="hidden" name="src_terms[0].applyFilter" value="true">
-				    					</label>
-				                    </div>
-			                    	<label class="label control-label">search in:</label>
-				                    <div class="controls">
-			            				<span class="searchFields">
-											<input type="hidden" id="src_terms[0].fields.siteContent" name="src_terms[0].fields.siteContent" value="false">
-											<span class="searchField inline-group">
-												<label class="checkbox" for="src_terms[0].fields.siteContent_view">
-													<input type="checkbox" id="src_terms[0].fields.siteContent_view" name="src_terms[0].fields.siteContent_view" value="true" onchange="document.getElementById(&#39;src_terms[0].fields.siteContent&#39;).value = this.checked;toggleSearchMode(this)">
-													<i></i>site content
-												</label>
-											</span>
-			        			            <input type="hidden" id="src_terms[0].fields.files" name="src_terms[0].fields.files" value="false">
-			            					<span class="searchField inline-group">
-			            						<label class="checkbox" for="src_terms[0].fields.files_view">
-													<input type="checkbox" id="src_terms[0].fields.files_view" name="src_terms[0].fields.files_view" value="true" onchange="document.getElementById(&#39;src_terms[0].fields.files&#39;).value = this.checked;toggleSearchMode(this)">
-			            							<i></i>documents
-			            						</label>
-			            					</span>
-			        		            </span>
-									</div>
-								</div>
-							</section>
-						</fieldset>
-					</div>
-					<div class="col-md-4 col-sm-12 col-xs-12">
-						<header>Author and date</header>
-			            <fieldset>
-			            	<section>
-			                	<div class="control-group">
-			                    	<label class="label control-label" for="searchCreatedBy">Author:</label>
-									<div class="controls">
-										<label class="input">
-				    						<input name="src_createdBy" id="searchCreatedBy" type="text" value="">
-										</label>
-									</div>
-									<label class="label control-label" for="searchCreated">Created:</label>
-									<div class="controls">
-										<label class="select">
-											<select name="src_created.type" id="searchCreated" onchange="searchDateTypeToggle(this, document.getElementById(&#39;range-6&#39;));">
-												<option value="anytime">anytime</option>
-												<option value="today">today</option>
-												<option value="last_week">last week</option>
-												<option value="last_month">last month</option>
-												<option value="last_three_months">last three months</option>
-												<option value="last_six_months">last six months</option>
-												<option value="range">date range...</option>
-				        					</select>
-											<i></i>
-				        				</label>
-			        					<div style="display:none" class="dateRange" id="range-6">
-			        							from:
-			        						<label class="input">
-			       								<input type="text" name="src_created.from" id="src_created_from" value="" class="hasDatepicker">
-			       							</label>
-			       								<script type="text/javascript">
-			        								/* <![CDATA[ */
-											        $(document).ready(function() {
-											            $('#src_created_from').datepicker(
-											            {dateFormat: 'dd.mm.yy', showButtonPanel: true, showOn:'focus'}
-											        );
-											        });
-			       									/* ]]> */
-			   									</script>
-			   									to:
-			   								<label class="input">
-												<input type="text" name="src_created.to" id="src_created_to" value="" class="hasDatepicker">
-											</label>
-											<script type="text/javascript">
-													/* <![CDATA[ */
-											        $(document).ready(function() {
-											            $('#src_created_to').datepicker(
-											            {dateFormat: 'dd.mm.yy', showButtonPanel: true, showOn:'focus'}
-											        );
-											        });
-													/* ]]> */
-											</script>
-										</div>
-				                    </div>
-			                    <label class="label control-label" for="searchLastModifiedBy">Last editor:</label>
-			                    <div class="controls">                            
-									<label class="input">
-										<input name="src_lastModifiedBy" id="searchLastModifiedBy" type="text" value="">
-			                    	</label>
-			                    </div>
-			                    <label class="label control-label" for="searchLastModified">Modified:</label>
-			                    <div class="controls">
-									<label class="select">
-										<select name="src_lastModified.type" id="searchLastModified" onchange="searchDateTypeToggle(this, document.getElementById(&#39;range-7&#39;));">
-											<option value="anytime">anytime</option>
-											<option value="today">today</option>
-											<option value="last_week">last week</option>
-											<option value="last_month">last month</option>
-											<option value="last_three_months">last three months</option>
-											<option value="last_six_months">last six months</option>
-											<option value="range">date range...</option>
-										</select>
-										<i></i>
-									</label>
-									<div style="display:none" class="dateRange" id="range-7">
-			       							from:
-			       						<label class="input">
-											<input type="text" name="src_lastModified.from" id="src_lastModified_from" value="" class="hasDatepicker">
-										</label>
-										<script type="text/javascript">
-										/* <![CDATA[ */
-									        $(document).ready(function() {
-									            $('#src_lastModified_from').datepicker(
-									            {dateFormat: 'dd.mm.yy', showButtonPanel: true, showOn:'focus'}
-									        );
-									        });
-										/* ]]> */
-										</script>
-										to:
-										<label class="input">
-											<input type="text" name="src_lastModified.to" id="src_lastModified_to" value="" class="hasDatepicker">
-										</label>
-										<script type="text/javascript">
-										/* <![CDATA[ */
-									        $(document).ready(function() {
-									            $('#src_lastModified_to').datepicker(
-									            {dateFormat: 'dd.mm.yy', showButtonPanel: true, showOn:'focus'}
-									        );
-									        });
-										/* ]]> */
-										</script>
-									</div>
-			                    </div>
-			                </div>
-						</section>
-		            </fieldset>
-				</div>
-				<div class="col-md-4 col-sm-12 col-xs-12">
-					<header>More...</header>
-		            <fieldset>
-		                <div class="control-group">
-		                    <label class="label control-label" for="searchSite">Site:</label>
-		                    <div class="controls">
-								<label class="select">
-									<select name="src_sites.values" id="searchSite">
-										<option value="-all-">any</option>
-										<option value="ACMESPACE" selected="selected">ACME SPACE</option>
-										<option value="intra">Intranet</option>
-									</select>
-									<i></i>
-								</label>
-								<label class="input">
-									<input type="hidden" name="src_sitesForReferences.values" value="systemsite">
-		                    	</label>
-		                    </div>
-		                    <label class="label control-label" for="searchLanguage">Language:</label>
-		                    <div class="controls">
-								<label class="select">
-									<select name="src_languages.values" id="searchLanguage">
-										<option value="en" selected="selected">English</option>
-										<option value="fr">French</option>
-									</select>
-									<i></i>
-								</label>
-		                    </div>
-		                </div>
-		                <div class="control-group" id="search-pages-criteria" style="display:none">
-		                    <label class="label control-label" for="searchPagePath">Page:</label>
-							<label class="input">
-								<input name="src_pagePath.value" id="src_pagePath_value" type="hidden" value="">
-							</label>
-							<label class="input">
-								<input name="src_pagePath.valueView" id="searchPagePath" type="text" value="">
-							</label>
-							<a href="http://localhost:8080/cms/render/default/en/sites/ACMESPACE/search-results.html#src_pagePath_value-treeItemSelector" id="src_pagePath_value-treeItemSelectorTrigger" class="">Select page</a>
-				        	<div>
-		        				<label class="label control-label" for="src_pagePath.includeChildren">include subpages</label>&nbsp;<input type="checkbox" id="src_pagePath.includeChildren" name="src_pagePath.includeChildren" value="true" checked="checked">&nbsp;</div>
-								<script type="text/javascript">
-									$(document).ready(function() { jahiaCreateTreeItemSelector("src_pagePath_value", "searchPagePath", "/cms/render/default/en", "/sites/ACMESPACE", "jnt:page,jnt:virtualsite", "jnt:page", "", null, null, null, null); });
-								</script>
-								<div style="display:none">
-									<div id="src_pagePath_value-treeItemSelector"></div>
-								</div>
-		                	</div>
-		                	<div class="control-group" id="search-documents-criteria" style="display:none">
-		                   		<label class="label control-label" for="searchFileType">File type:</label>
-		                    <div class="controls">
-		                    	<label class="select">
-									<select name="src_fileType" id="searchFileType">
-										<option value="">any</option>
-										<option value="image">Image</option>
-										<option value="pdf">Adobe Acrobat PDF</option>
-										<option value="word">Microsoft Word</option>
-										<option value="rtf">Rich Text Format</option>
-										<option value="excel">Microsoft Excel</option>
-										<option value="powerpoint">Microsoft PowerPoint</option>
-										<option value="openoffice">OpenOffice</option>
-										<option value="archive">Archive</option>
-										<option value="video">???searchForm.fileType.video???</option>
-									</select>
-									<i></i>
-								</label>
-		                    </div>
-		                    <label class="label control-label" for="searchFilePath">Location:</label>
-		                    <div class="controls">
-								<label class="input">
-									<input name="src_filePath.value" id="searchFilePath" type="text" value="">
-								</label>
-								<a href="http://localhost:8080/cms/render/default/en/sites/ACMESPACE/search-results.html#searchFilePath-treeItemSelector" id="searchFilePath-treeItemSelectorTrigger" class="">Select folder</a>
-								<div>
-									<label class="label control-label" for="src_filePath.includeChildren">include subfolders</label>
-									<label class="input">
-										<input type="checkbox" id="src_filePath.includeChildren" name="src_filePath.includeChildren" value="true" checked="checked">
-									</label>
-								</div>
-								<script type="text/javascript">
-									$(document).ready(function() { jahiaCreateTreeItemSelector("searchFilePath", "searchFilePath-treeItemSelectorTrigger", "/cms/render/default/en", "/sites/ACMESPACE", "nt:folder,jnt:virtualsite", "nt:folder", "", null, null, null, null); });
-								</script>
-								<div style="display:none">
-									<div id="searchFilePath-treeItemSelector"></div>
-								</div>
-							</div>
-		                </div>
-		                <div class="control-group">
-		                    <label class="label control-label" for="searchResultsPerPage">Results per page:</label>
-							<div class="controls">
-								<label class="select">
-									<select name="src_itemsPerPage" id="searchResultsPerPage">
-										<option value="5">5</option>
-										<option value="10" selected="selected">10</option>
-										<option value="25">25</option>
-										<option value="50">50</option>
-										<option value="100">100</option>
-									</select>
-									<i></i>
-								</label>
-							</div>
-						</div>
-					</fieldset>
-				</div>
-				<div class="col-md-4 col-sm-12 col-xs-12">
-				    <div class="controls" id="form-footer">
-				        <input type="submit" name="search" class="btn-u btn-u-red btn-small" value="Submit">
-				    </div>
-				</div>
-			</form>
-			
-		</div>
-		<hr class="devider devider-dotted">        
-	</div>-->
+		
 
 
 <!--END ADVANCED SEARCH-->
@@ -1287,9 +1022,7 @@
 	                					<div class="arrow"></div>
 	                					1.293
 	                				</div>
-	                				<a href="#" class="btn-wrapper">
-	                					<div class="btn-u btn-u-red">Show me more</div>
-	                				</a>
+	                				<a href="#" class="btn">Show me more</a>
 	                			</div>
 	                		</div>
 							<hr>

@@ -222,7 +222,8 @@
 #advancedSearch .btn-primary{
 	background: #E74C3C!important;
 	border: none;
-	margin-left: 25px;
+	margin-top: 10px;
+	margin-left: 22px;
 	margin-bottom: 50px;
 }
 
@@ -373,20 +374,7 @@
 	display: inline-block;
 }
 
-/*#advancedSearch input[type="checkbox"]::after{
-	content: '\f00c';
-	position: absolute;
-	top: 10px;
-	left: 10px;
-	width: 15px;
-	height: 15px;
-	font: normal 12px/16px FontAwesome;
-	text-align: center;
-	top: 2px;
-	left: 0;
-	font: normal 10px FontAwesome;
-	display: inline-block;
-}*/
+
 
 #advancedSearch label{
 	border-radius: 0;
@@ -427,7 +415,7 @@ input#scr_terms{
 }
 
 
-/*#advanced-search select{
+#advanced-search select{
 	line-height: 17px!important;
 }
 
@@ -494,7 +482,7 @@ input#scr_terms{
 	-webkit-transition: all 0.5s ease;
 	-o-transition: all 0.5s ease;
 	transition: all 0.5s ease;
-}*/
+}
 
 /*STOCK WIDGET*/
 
@@ -528,6 +516,7 @@ input#scr_terms{
 #stock-widget .title{
 	text-align: center;
 	font-size: 30px;
+	line-height: 30px;
 	margin-bottom: 10px;
 	color: #E74C3C;
 }
@@ -553,16 +542,14 @@ input#scr_terms{
 	max-width: 360px;
 }
 
-#stock-widget .btn-u{
-	float: right;	
+#stock-widget .btn{
 	display: block;
-}
-
-#stock-widget .btn-wrapper {
-	margin: 0 auto ;
+	margin: 0 auto;
+	padding: 0;
 	width: 70%;
 	max-width: 360px;
-	display: table;
+	text-align: right;	
+	text-decoration: underline;
 }
 
 /*small*/
@@ -623,28 +610,19 @@ input#scr_terms{
 	max-width: 360px;
 }
 
-#small-stock-widget .btn-u{
-	float: right;	
+#small-stock-widget .btn{
 	display: block;
+	margin: 0 auto;
+	text-decoration: underline;
 }
 
-#small-stock-widget .btn-wrapper {
-	margin: 0 auto ;
-	display: table;
-}
+
 
 /*MEDIA QUERIES*/
 
 @media (max-width: 1200px) {
 
 /*	small stock widget*/
-
-	#small-stock-widget .btn-u{
-		background: transparent;
-		color: #E74C3C;
-		text-decoration: underline;
-		text-align: center;
-	}
 	
 	#small-stock-widget .stock-widget-wrapper{
 		padding: 5px;
@@ -739,9 +717,8 @@ input#scr_terms{
 		max-width: 350px;
 	}
 	
-	#stock-widget .btn-wrapper {
+	#stock-widget .btn {
 		width: 60%;
-		max-width: 350px;
 	}
 	
 }
@@ -759,14 +736,14 @@ input#scr_terms{
 		text-align: right;
 		width: 60%;
 		max-width: 350px;
-		margin: 0 auto;
+		margin: 0px auto;
 	}
 	
 	#stock-widget .description{
 		text-align: right;
 		font-size: 12px;
 		width: 60%;
-		margin: 0 auto;
+		margin: 15px auto 0 auto;
 		max-width: 350px;
 	}
 	
@@ -779,4 +756,4 @@ input#scr_terms{
 		vertical-align: text-top;
 		margin: auto 10px;
 	}
-}/* Add here all your css styles (customizations) */
+}
