@@ -282,14 +282,14 @@ jcr:primaryType="jnt:pageTemplate">
                                  jcr:mixinTypes="mix:title"
                                  jcr:primaryType="jnt:translation"
                                  jcr:title="Search Results"/>
-                    <pagecontent jcr:primaryType="jnt:contentList">
+                    <bootstrap-container jcr:primaryType="jnt:contentList">
                             <advanced-search-form jcr:primaryType="jnt:advancedSearchForm"/>
                         <search-results autoSuggest="true"
                                autoSuggestHitCount="2"
                                autoSuggestMaxTermCount="1"
                                autoSuggestMinimumHitCount="2"
                                jcr:primaryType="jnt:searchResults"/>
-                    </pagecontent>
+                    </bootstrap-container>
                         <landing jcr:primaryType="jnt:contentList">
                             <simple-search-form j:view="banner"
                                       jcr:mixinTypes="jmix:renderable"
