@@ -123,7 +123,7 @@
                                                     <table border="0" cellpadding="0" cellspacing="0" align="left" class="deviceWidth">
                                                         <tbody><tr>
                                                             <td class="center" style="padding: 10px 0px 10px 0px">
-                                                                <template:area path="logo"/>
+                                                                <a href="#"><img src="<c:url value='${url.currentModule}/img/logo/logo_red.png'/>"></a>
                                                             </td>
                                                         </tr>
                                                         </tbody></table><!--End logo-->
@@ -143,20 +143,35 @@
                                         <template:area path="banner"/>
                                     </td>
                                 </tr>
-                                </tbody></table>
-
-                            <!--Start Body-->
-                            <table width="700" border="0" cellpadding="0" cellspacing="0" align="center" class="deviceWidth">
-                                <tbody>
-                                    <tr>
-                                        <td width="100%" bgcolor="#ffffff">
-                                            <template:area path="body"/>
-                                        </td>
-                                    </tr>
                                 </tbody>
                             </table>
 
-                            <!--Start Footer-->
+                            <!--Start Body-->
+                            <table width="700" border="0" cellpadding="0" cellspacing="0" align="center" class="deviceWidth">
+                                <tr>
+                                    <td width="325" align="center" valign="top">
+                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                            <tr>
+                                                <td align="left" style="padding: 5px;">
+                                                    <template:area path="col1"/>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+
+                                    <td width="325" align="center" valign="top">
+                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                            <tr>
+                                                <td align="left" style=" padding: 5px;">
+                                                    <template:area path="col2"/>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+
+                                <!--Start Footer-->
                             <table width="700" border="0" cellpadding="0" cellspacing="0" align="center" class="deviceWidth">
                                 <tbody>
                                 <tr>
@@ -166,7 +181,37 @@
                                 </tr>
                                 </tbody>
                             </table>
-
+                            <!--Start Weekly Prize-->
+                            <table width="700" border="0" cellpadding="0" cellspacing="0" align="center" class="deviceWidth">
+                                <tr>
+                                    <td width="100%" bgcolor="#c7c7c7" class="center">
+                                        <table  border="0" cellpadding="0" cellspacing="0" align="center">
+                                            <tr>
+                                                <td valign="top" style="padding: 20px 10px " class="center">
+                                                    <a href="#"><img width="32" hight="32" src="<c:url value='${url.currentModule}/img/icons/newsletter/icon_facebook.png'/>"></a>
+                                                </td>
+                                                <td valign="top" style="padding: 20px 10px " class="center">
+                                                    <a href="#"><img width="32" hight="32" src="<c:url value='${url.currentModule}/img/icons/newsletter/icon_twitter.png'/>"></a>
+                                                </td>
+                                                <td valign="top" style="padding: 20px 10px " class="center">
+                                                    <a href="#"><img width="32" hight="32" src="<c:url value='${url.currentModule}/img/icons/newsletter/icon_youtube.png'/>"></a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <table  border="0" cellpadding="0" cellspacing="0" align="center">
+                                            <tr>
+                                                <td  class="center" style="font-size: 16px; color: #ffffff; font-weight: bold; text-align: center; font-family: Arial, Helvetica, sans-serif; line-height: 25px; vertical-align: middle; padding: 0px 10px; ">
+                                                    Stay Involved With Us
+                                                </td>
+                                            </tr>
+                                            <td  class="center" style="font-size: 12px; color: #ffffff; font-weight: bold; text-align: center; font-family: Arial, Helvetica, sans-serif; line-height: 25px; vertical-align: middle; padding: 20px 10px; " >
+                                                Arrival entered an if drawing requests iness she ham but instantlyt putif departuresam propr. Certain be yeamiasa ble by exposed Two differed husbands met screened his. How daughters not promotion few knowledge. contented. Yet winter law  romotion few knowledge contented behind
+                                            </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
 
                         </td>
                     </tr>
