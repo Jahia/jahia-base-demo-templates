@@ -213,11 +213,9 @@ jcr:primaryType="jnt:pageTemplate">
                                                 jcr:primaryType="jnt:translation"
                                                 text="&lt;div class=&#34;headline-v2 tag-box-v2&#34;&gt;&#xA;&lt;h2&gt;Top Rated&lt;/h2&gt;&#xA;&lt;/div&gt;&#xA;"/>
                                         </rich-text>
-                                        <top-stories j:level="first"
-                                        j:limit="5"
-                                        jcr:mixinTypes="jdmix:topViews"
-                                        jcr:primaryType="jnt:topStories"
-                                        view="topstory"/>
+                                        <top-rated j:minNbOfVotes="5"
+                                        j:typeOfContent="jnt:news"
+                                        jcr:primaryType="jnt:topRated"/>
                                         <rich-text-1 jcr:primaryType="jnt:bigText">
                                             <j:translation_en jcr:language="en"
                                                 jcr:primaryType="jnt:translation"
