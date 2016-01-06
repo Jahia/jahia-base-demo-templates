@@ -252,6 +252,14 @@ jcr:primaryType="jnt:pageTemplate">
                                             <commentable jcr:primaryType="jnt:addComment"/>
                                         </bootstrap-layer-container-rows-a>
                                 </news-detail>
+                        <landing jcr:primaryType="jnt:contentList">
+                                <banner jcr:primaryType="jnt:banner">
+                                    <j:translation_en cast="&lt;p&gt;Learn About Us&lt;/p&gt;&#xA;"
+                                          jcr:language="en"
+                                          jcr:primaryType="jnt:translation"
+                                          jcr:title="Newsroom"/>
+                                </banner>
+                            </landing>
                         </news>
                         </base>
                     <newsletter-issue j:applyOn="jnt:newsletterIssue"

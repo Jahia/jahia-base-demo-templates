@@ -158,3 +158,4 @@
  extends = jnt:news
  itemtype = content
  - readMoreText (string) = 'Read more' mandatory internationalized
+
