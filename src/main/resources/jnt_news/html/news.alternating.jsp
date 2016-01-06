@@ -7,7 +7,6 @@
 <%@ taglib prefix="functions" uri="http://www.jahia.org/tags/functions" %>
 <%@ taglib prefix="jahia" uri="http://www.jahia.org/tags/templateLib" %>
 <%-- TODO: current commented out likes and comment counts --%>
-<%-- TODO: read more commented out --%>
 
 <template:addResources type="css" resources="news.css"/>
 <c:set var="language" value="${currentResource.locale.language}"/>
@@ -29,8 +28,17 @@
 </c:if>
     <div class="timeline-body text-justify">
         <h2><a href="#">${fn:escapeXml(newsTitle)}</a></h2>
+        <c:choose>
+        <c:when test="${jcr:isNodeType(currentNode, 'jdmix:hasReadMore')}">
+            <c:set var="readMore" value="${currentNode.properties.readMoreText.string}"/>
         <p>${fn:substring(description, 0, 150)}</p>
-        <a class="btn-u btn-u-sm" href="${detailUrl}"><fmt:message key="jdnt_news.read_more"/></a>
+            <a class="btn-u btn-u-sm" href="${detailUrl}">${readMore}</a>
+        </c:when>
+            <c:otherwise>
+                <p>${description}</p>
+            </c:otherwise>
+        </c:choose>
+
     </div>
     <div class="timeline-footer">
         <ul class="list-unstyled list-inline blog-info">

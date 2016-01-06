@@ -153,3 +153,8 @@
 [jdmix:topViews] mixin
  extends = jnt:topStories
  - view (string, choicelist[templates='jnt:news'])
+
+[jdmix:hasReadMore] mixin
+ extends = jnt:news
+ itemtype = content
+ - readMoreText (string) = 'Read more' mandatory internationalized

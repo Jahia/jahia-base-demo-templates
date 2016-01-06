@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <content xmlns:j="http://www.jahia.org/jahia/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0">
     <modules jcr:primaryType="jnt:modules">
-        <jahiademo j:dependencies="bootstrap bootstrap3-components default font-awesome grid location news person search"
+        <jahiademo j:dependencies="bootstrap bootstrap3-components default font-awesome grid location news person rating search topstories"
                  j:installedModules="jahiademo"
                  j:modulePriority="0"
                  j:moduleType="templatesSet"
@@ -201,8 +201,8 @@ jcr:primaryType="jnt:pageTemplate">
                                     jcr:title="News"/>
                             <pagecontent jcr:primaryType="jnt:contentList">
                                 <bootstrap-layer-container-rows-a containerType="fluid"
-                                                       jcr:mixinTypes="jmix:bootstrapFullComponentAdvancedProps jmix:bootstrapFullComponentRowPredefined"
-                                                       jcr:primaryType="jnt:bootstrapFullComponent"
+                                                       jcr:mixinTypes="jmix:bootstrap3FullComponentAdvancedProps jmix:bootstrap3FullComponentRowPredefined"
+                                                       jcr:primaryType="jnt:bootstrap3FullComponent"
                                                        layout="9_3"
                                                        rowType="predefined"
                                                        sectionCssClass="row blog-page blog-item"
@@ -246,6 +246,8 @@ jcr:primaryType="jnt:pageTemplate">
                                     jcr:title="News Detail"/>
                             <bootstrap-layer-container-rows-a jcr:primaryType="jnt:contentList">
                                         <main-resource-display j:mainResourceView="detail" jcr:primaryType="jnt:mainResourceDisplay"/>
+                                        <rating j:bindedComponent="/modules/jahiademo/templates/base/news/news-detail/bootstrap-layer-container-rows-a/main-resource-display"
+                                jcr:primaryType="jnt:rateable"/>
                                         <display-comments jcr:primaryType="jnt:commentsList"/>
                                             <commentable jcr:primaryType="jnt:addComment"/>
                                         </bootstrap-layer-container-rows-a>
