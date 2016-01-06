@@ -277,7 +277,9 @@ jcr:primaryType="jnt:pageTemplate">
                               jcr:mixinTypes="mix:title"
                               jcr:primaryType="jnt:translation"
                               jcr:title="Home"/>
-                    <search-results j:templateName="simple" jcr:primaryType="jnt:page">
+                    <search-results j:templateName="simple"
+                            jcr:mixinTypes="jdmix:hidePage"
+                            jcr:primaryType="jnt:page">
                         <j:translation_en jcr:language="en"
                                  jcr:mixinTypes="mix:title"
                                  jcr:primaryType="jnt:translation"
