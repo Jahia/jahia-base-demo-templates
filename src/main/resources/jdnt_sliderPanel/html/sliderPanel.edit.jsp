@@ -58,7 +58,7 @@
 </c:if>
 
 
-<div id="tab-2" class="tab-content"
+<div id="slidertab-${currentNode.identifier}" class="tab-content"
      style="background: url('${backgroundUrl}')">
     <div class="edit-slider-cont${textLayout}">
         <c:if test="${not empty title}"><div class="first-layer-editslider">${title}</div></c:if>

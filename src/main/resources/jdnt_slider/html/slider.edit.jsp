@@ -26,25 +26,25 @@
 
 <!-- Main style -->
 <template:addResources type="css" resources="editSlider.css"/>
-
+<template:include view="hidden.header"/>
 <!-- Main container -->
-<div class="tab-container">
-
-    <!-- Dropdown navigation -->
-    <%-- TODO: does not work --%>
+<div class="tab-container" id="sliderEdit-${currentNode.identifier}">
     <div class="tab-navigation">
-        <select id="select-box">
-            <option value="1">First tab (empty)</option>
-            <option value="2">Option 2 - Left text and CTA</option>
-            <option value="3">Option 3 - Right text</option>
-            <option value="4">Option 4 - text plus small img</option>
-        </select>
+        <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Select slider
+                <span class="caret"></span></button>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+            <c:forEach items="${moduleMap.currentList}" var="subchild">
+                    <template:module node="${subchild}" view="select" editable="false"/>
+            </c:forEach>
+            </ul>
 
+        </div>
     </div>
     <c:set var="resourceReadOnly" value="${currentResource.moduleParams.readOnly}"/>
     <%-- Displaying the view of inherited nodetype jnt:contentList and this view is loading all subnodes,
                                             the view is setting modulemap that we get from the included template header --%>
-    <template:include view="hidden.header"/>
+
     <c:set var="isEmpty" value="true"/>
     <c:forEach items="${moduleMap.currentList}" var="subchild" begin="${moduleMap.begin}" end="${moduleMap.end}"
                varStatus="item">
@@ -68,27 +68,21 @@
 
 </div>
 
-<!-- Main script -->
-<%--<template:addResources type="inline">
     <script type="text/javascript">
         $(document).ready(function () {
             // Hide all tabs first
-            $('.tab-content').hide();
-
+             $('.tab-content').hide();
             // Show the first tab content
-            $('#tab-1').show();
-
-            $('#select-box').change(function () {
-
-                dropdown = $('#select-box').val();
-
-                // First hide all tabs again when a new option is selected
-                $('.tab-content').hide();
-
-                // Then show the tab content of whatever option value was selected
-                $('#' + "tab-" + dropdown).show();
-
-            });
+           $('.tab-content').first().show();
         })
+
+        function myFunction(element) {
+            var $this = $(element)
+            debugger;
+            sliderPanel = "#"+$this.parent().attr("tab");
+            // First hide all tabs again when a new option is selected
+            $('.tab-content').hide();
+            // Then show the tab content of whatever option value was selected
+            $(sliderPanel).show();
+        }
     </script>
-</template:addResources>--%>
