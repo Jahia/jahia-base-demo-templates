@@ -152,7 +152,7 @@
 
     <template:area path="landing"/>
     <!--=== Content Part ===-->
-    <div class="container">
+    <div class="container margin-top-20">
         <template:area path="pagecontent"/>
     </div>
     <!-- End Content Part -->

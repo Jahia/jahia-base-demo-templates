@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <content xmlns:j="http://www.jahia.org/jahia/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0">
     <modules jcr:primaryType="jnt:modules">
-        <jahiademo j:dependencies="bootstrap bootstrap3-components default font-awesome grid location news person rating search topstories"
+        <jahiademo j:dependencies="bootstrap bootstrap-components bootstrap3-components default font-awesome grid location news person search topstories"
                  j:installedModules="jahiademo"
                  j:modulePriority="0"
                  j:moduleType="templatesSet"
@@ -14,14 +14,11 @@
                     <src jcr:primaryType="jnt:folder">
                         <main jcr:primaryType="jnt:folder">
                             <resources jcr:primaryType="jnt:folder">
-                                <jnt_template jcr:primaryType="jnt:nodeTypeFolder">
+                                <jdnt_carousel jcr:primaryType="jnt:nodeTypeFolder">
                                     <html jcr:primaryType="jnt:templateTypeFolder">
-                                        <template.jahiademo.jsp jcr:primaryType="jnt:viewFile"/>
+                                        <carousel.jsp jcr:primaryType="jnt:viewFile"/>
                                     </html>
-                                </jnt_template>
-                                <META-INF jcr:primaryType="jnt:metaInfFolder">
-                                    <definitions.cnd jcr:primaryType="jnt:definitionFile"/>
-                                </META-INF>
+                                </jdnt_carousel>
                             </resources>
                         </main>
                     </src>
@@ -194,15 +191,15 @@
                                 <main-resource-display j:mainResourceView="banner" jcr:primaryType="jnt:mainResourceDisplay"/>
                             </landing>
                         </company-content-template>
-                    <news j:hiddenTemplate="false"
-jcr:primaryType="jnt:pageTemplate">
+                        <news j:hiddenTemplate="false" jcr:primaryType="jnt:pageTemplate">
                             <j:translation_en jcr:language="en"
+                                    jcr:mixinTypes="mix:title"
                                     jcr:primaryType="jnt:translation"
                                     jcr:title="News"/>
                             <pagecontent jcr:primaryType="jnt:contentList">
                                 <bootstrap-layer-container-rows-a containerType="fluid"
-                                                       jcr:mixinTypes="jmix:bootstrap3FullComponentAdvancedProps jmix:bootstrap3FullComponentRowPredefined"
-                                                       jcr:primaryType="jnt:bootstrap3FullComponent"
+                                                       jcr:mixinTypes="jmix:bootstrapFullComponentAdvancedProps jmix:bootstrapFullComponentRowPredefined"
+                                                       jcr:primaryType="jnt:bootstrapFullComponent"
                                                        layout="9_3"
                                                        rowType="predefined"
                                                        sectionCssClass="row blog-page blog-item"
@@ -244,8 +241,6 @@ jcr:primaryType="jnt:pageTemplate">
                                     jcr:title="News Detail"/>
                             <bootstrap-layer-container-rows-a jcr:primaryType="jnt:contentList">
                                         <main-resource-display j:mainResourceView="detail" jcr:primaryType="jnt:mainResourceDisplay"/>
-                                        <rating j:bindedComponent="/modules/jahiademo/templates/base/news/news-detail/bootstrap-layer-container-rows-a/main-resource-display"
-                                jcr:primaryType="jnt:rateable"/>
                                         <display-comments jcr:primaryType="jnt:commentsList"/>
                                             <commentable jcr:primaryType="jnt:addComment"/>
                                         </bootstrap-layer-container-rows-a>
@@ -259,6 +254,19 @@ jcr:primaryType="jnt:pageTemplate">
                                 </banner>
                             </landing>
                         </news>
+                        <person-bio-content-template j:applyOn="jnt:person"
+                                            j:defaultTemplate="true"
+                                            j:hiddenTemplate="false"
+                                            j:priority="100"
+                                            jcr:primaryType="jnt:contentTemplate">
+                            <j:translation_en jcr:language="en"
+                                    jcr:primaryType="jnt:translation"
+                                    jcr:title="Person Bio Content Template"/>
+                            <landing jcr:primaryType="jnt:contentList"/>
+                            <pagecontent jcr:primaryType="jnt:contentList">
+                                <main-resource-display j:mainResourceView="default" jcr:primaryType="jnt:mainResourceDisplay"/>
+                            </pagecontent>
+                        </person-bio-content-template>
                         </base>
                     <newsletter-issue j:applyOn="jnt:newsletterIssue"
                               j:defaultTemplate="true"
@@ -275,21 +283,19 @@ jcr:primaryType="jnt:pageTemplate">
                               jcr:mixinTypes="mix:title"
                               jcr:primaryType="jnt:translation"
                               jcr:title="Home"/>
-                    <search-results j:templateName="simple"
-                            jcr:mixinTypes="jdmix:hidePage"
-                            jcr:primaryType="jnt:page">
+                    <search-results j:templateName="simple" jcr:primaryType="jnt:page">
                         <j:translation_en jcr:language="en"
                                  jcr:mixinTypes="mix:title"
                                  jcr:primaryType="jnt:translation"
                                  jcr:title="Search Results"/>
-                    <bootstrap-container jcr:primaryType="jnt:contentList">
+                        <pagecontent jcr:primaryType="jnt:contentList">
                             <advanced-search-form jcr:primaryType="jnt:advancedSearchForm"/>
                         <search-results autoSuggest="true"
                                autoSuggestHitCount="2"
                                autoSuggestMaxTermCount="1"
                                autoSuggestMinimumHitCount="2"
                                jcr:primaryType="jnt:searchResults"/>
-                    </bootstrap-container>
+                        </pagecontent>
                         <landing jcr:primaryType="jnt:contentList">
                             <simple-search-form j:view="banner"
                                       jcr:mixinTypes="jmix:renderable"
