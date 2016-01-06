@@ -33,7 +33,7 @@
         <template:include view="hidden.header"/>
         <c:set var="isEmpty" value="true"/>
                 <c:forEach items="${moduleMap.currentList}" var="subchild" begin="${moduleMap.begin}" end="${moduleMap.end}">
-                    <template:module node="${subchild}" view="${moduleMap.subNodesView}" editable="${moduleMap.editable && !resourceReadOnly}"/>
+                    <template:module node="${subchild}" view="timeline" editable="${moduleMap.editable && !resourceReadOnly}"/>
                     <c:set var="isEmpty" value="false"/>
                 </c:forEach>
 

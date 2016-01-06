@@ -25,16 +25,17 @@
 </c:if>
 
 <%-- Start Cube-Portfolio Container --%>
-<div class="cube-portfolio container margin-bottom-60">
+<div class="cube-portfolio margin-bottom-60">
     <div class="content-xs">
         <%-- Add Cube-Portfolio filters container --%>
         <%-- TODO: get filter categories from the choice list of industries --%>
         <div id="filters-container" class="cbp-l-filters-text content-xs">
             <div data-filter="*" class="cbp-filter-item-active cbp-filter-item"> All </div> |
-            <div data-filter=".identity" class="cbp-filter-item"> Identity </div> |
-            <div data-filter=".web-design" class="cbp-filter-item"> Web Design </div> |
-            <div data-filter=".graphic" class="cbp-filter-item"> Graphic </div> |
-            <div data-filter=".logos" class="cbp-filter-item"> Logo </div>
+            <div data-filter=".media" class="cbp-filter-item"> Media </div> |
+            <div data-filter=".technology" class="cbp-filter-item"> Technology </div> |
+            <div data-filter=".retail" class="cbp-filter-item"> Retail </div> |
+            <div data-filter=".goods" class="cbp-filter-item"> Goods </div> |
+            <div data-filter=".heathcare" class="cbp-filter-item"> Healthcare </div>
         </div>
         <%--/end Filters Container--%>
     </div>

@@ -35,14 +35,30 @@
                 <div class="md-margin-bottom-20"></div>
             </div>
             <div class="col-md-8">
+                <c:choose>
+                    <c:when test="${jcr:isNodeType(currentNode, 'jdmix:hasReadMore')}">
+                        <c:set var="readMore" value="${currentNode.properties.readMoreText.string}"/>
                 <p>${fn:substring(description, 0, 150)}</p>
-                <a class="btn-u btn-u-sm" href="${detailUrl}"><fmt:message key="jdnt_news.read_more"/></a>
+                        <a class="btn-u btn-u-sm" href="${detailUrl}">${readMore}</a>
+                    </c:when>
+                    <c:otherwise>
+                        <p>${description}</p>
+                    </c:otherwise>
+                </c:choose>
             </div>
         </div>
         </c:when>
             <c:otherwise>
+                <c:choose>
+                    <c:when test="${jcr:isNodeType(currentNode, 'jdmix:hasReadMore')}">
+                        <c:set var="readMore" value="${currentNode.properties.readMoreText.string}"/>
                 <p>${fn:substring(description, 0, 150)}</p>
-                <a class="btn-u btn-u-sm" href="${detailUrl}"><fmt:message key="jdnt_news.read_more"/></a>
+                        <a class="btn-u btn-u-sm" href="${detailUrl}">${readMore}</a>
+                    </c:when>
+                    <c:otherwise>
+                        <p>${description}</p>
+                    </c:otherwise>
+                </c:choose>
             </c:otherwise>
         </c:choose>
 
