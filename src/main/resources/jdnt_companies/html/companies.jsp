@@ -48,9 +48,15 @@
 <template:include view="hidden.header"/>
 <c:set var="isEmpty" value="true"/>
 <c:forEach items="${moduleMap.currentList}" var="subchild" begin="${moduleMap.begin}" end="${moduleMap.end}" varStatus="item">
-    <template:module node="${subchild}" view="${moduleMap.subNodesView}"
-                     editable="${moduleMap.editable && !resourceReadOnly}"/>
-    <c:set var="isEmpty" value="false"/>
+    <c:if test="${renderContext.editMode}">
+        <div class="cbp-item">
+    </c:if>
+        <template:module node="${subchild}" view="${moduleMap.subNodesView}"
+                         editable="${moduleMap.editable && !resourceReadOnly}"/>
+        <c:set var="isEmpty" value="false"/>
+    <c:if test="${renderContext.editMode}">
+        </div>
+    </c:if>
 </c:forEach>
 
 <%-- If the list is empty then we will display a sample imgView and default view Highlight --%>
@@ -83,10 +89,12 @@
     <%--/end Agency Grid Container--%>
 </div>
 <%--/end Cube-Portfolio Container--%>
+<c:if test="${not renderContext.editMode}">
+    <!-- JS Page Level -->
+    <template:addResources type="javascript" resources="plugins/cube-portfolio/jquery.cubeportfolio.js" />
+    <template:addResources type="javascript" resources="plugins/cube-portfolio/cube-portfolio-3.js" />
+</c:if>
 
-<!-- JS Page Level -->
-<template:addResources type="javascript" resources="plugins/cube-portfolio/jquery.cubeportfolio.js" />
-<template:addResources type="javascript" resources="plugins/cube-portfolio/cube-portfolio-3.js" />
 
 <%-- Add the add new content item button if in edit mode --%>
 <c:if test="${moduleMap.editable and renderContext.editMode && !resourceReadOnly}">
