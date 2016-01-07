@@ -15,7 +15,7 @@
 	box-shadow:0 0 15px #b5b5b5;
 }
 .pricing:hover h4 {
-	color:#74C52C;
+	color:#e74c3c;
 }
 .pricing-head {
 	text-align:center;
@@ -42,7 +42,7 @@
 	padding:12px 0;
 	font-size:35px;
 	font-family:Arial;
-	background:#74C52C;
+	background:#e74c3c;
 	border-radius:3px 0 0 3px;
 	text-shadow:0 1px 0 #32a20f;
 }
@@ -78,7 +78,7 @@
 	border-bottom:solid 1px #f5f9e7;
 }
 .pricing-content li i {
-	color:#EF1979;
+	color:#e74c3c;
 	font-size:16px;
 	margin-left:5px;
 	position:relative;
@@ -96,7 +96,7 @@
 
 
 .price-active h4 {
-	color:#74C52C;
+	color:#e74c3c;
 }
 
 /*Pricing Extra*/
@@ -134,7 +134,7 @@
  .sticker-left {
     top: 9px;
     right: -48px;
-   	background: rgba(116, 197, 44, 1);
+   	background: rgb(196, 44, 44);
     transform: rotate(-45deg);   
 	-o-transform: rotate(-45deg);
 	-ms-transform: rotate(-45deg);
@@ -165,7 +165,7 @@
 	color: #888888;
 }
 .pricing-mega-v2 .pricing:hover h4 i {
-	color: #74C52C;
+	color: #e74c3c;
 }
 
 .pricing-mega-v2 .pricing-head h4 span,
@@ -200,7 +200,7 @@
 	color: #888;
 }  
 .pricing-mega-v2 .hidden-area li:hover  i{
-	color: #74C52C;
+	color: #e74c3c;
 } 
 
 .pricing-mega-v2 .block li {
@@ -226,7 +226,7 @@
 	background-color: #f9f9f9;	
 }
 .pricing-mega-v2 .block:hover .bg-color {
-	background: #74C52C;
+	background: #e74c3c;
 }
 .pricing-mega-v2 .block:hover h3,
 .pricing-mega-v2 .block:hover h4, 
@@ -234,7 +234,7 @@
 .pricing-mega-v2 .block:hover li i,
 .pricing-mega-v2 .block:hover h4 i {
 	color: #fff !important;
-	background: #74C52C;
+	background: #e74c3c;
 }
 .pricing-mega-v2 .hidden-area:hover li i {
 	color: #888;

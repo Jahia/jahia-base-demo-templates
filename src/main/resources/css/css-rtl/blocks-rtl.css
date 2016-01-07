@@ -33,7 +33,7 @@
 }
 .breadcrumb li.active,
 .breadcrumb li a:hover {
-  color: #EF1979;
+  color: #e74c3c;
   text-decoration: none;
 }
 
@@ -332,7 +332,7 @@
 }
 
 .block-grid-v1:hover {
-  border-color: #EF1979;
+  border-color: #e74c3c;
 }
 
 .block-grid-v1 img {
@@ -421,7 +421,7 @@
 }
 
 .block-grid-v2 li:hover .block-grid-v2-info {
-  border-color: #EF1979;
+  border-color: #e74c3c;
 }
 
 .block-grid-v2-info h3 {
@@ -456,7 +456,7 @@
   bottom: -15px;
   position: absolute;
   margin-right: -25px;
-  background: #EF1979;
+  background: #e74c3c;
 }
 
 .service-box-v1 ul {
@@ -467,11 +467,11 @@
   margin: 8px 0;
   font-size: 15px;
   padding-top: 8px;
-  border-top: dotted 1px #EF1979;
+  border-top: dotted 1px #e74c3c;
 }
 
 .service-box-v1 li:hover {
-  color: #EF1979;
+  color: #e74c3c;
 }
 
 .service-box-v1 li:first-child {
@@ -500,7 +500,7 @@
   margin-right: -30px;
   text-align: center;
   position: absolute;
-  background: #EF1979;
+  background: #e74c3c;
   display: inline-block;
 }
 
@@ -631,7 +631,7 @@
 }
 
 .service-block-v4 .service-desc i {
-  color: #EF1979;
+  color: #e74c3c;
   display: block;
   font-size: 30px;
   margin-bottom: 20px;
@@ -721,7 +721,7 @@
   font-size: 25px;
   text-align: center;
   position: absolute;
-  background: #EF1979;
+  background: #e74c3c;
   margin-right: -22.5px;
   display: inline-block;
 }
@@ -763,7 +763,7 @@
   width: 30px;
   content: " ";
   position: absolute;
-  background: #EF1979;
+  background: #e74c3c;
 }
 
 /*Process v1
@@ -778,7 +778,7 @@
   height: 30px;
   position: relative;
   text-align: center;
-  background: #EF1979;
+  background: #e74c3c;
   margin-bottom: 15px;
   display: inline-block;
   border: solid 9px #fff; 
@@ -952,7 +952,7 @@
 
 .team-v1 li:hover > p:before {
   width: 100%;
-  background: #EF1979;
+  background: #e74c3c;
 }
 
 /*Team v2
@@ -1177,7 +1177,7 @@
 }
 
 .team-v4 .team-social-v4 a:hover {
-  color: #EF1979;
+  color: #e74c3c;
   text-decoration: none;
 }
 
@@ -1197,7 +1197,7 @@
 
 .team-v5 small {
   display: block;
-  color: #EF1979;
+  color: #e74c3c;
   font-size: 13px;
   font-style: italic;
   position: relative;
@@ -1311,7 +1311,7 @@
 
 .team-v6 small {
   display: block;
-  color: #EF1979;
+  color: #e74c3c;
   font-size: 13px;
   margin-bottom: 15px;
 }
@@ -1332,7 +1332,7 @@
 
 .team-v7 .team-v7-position {
   display: block;
-  color: #EF1979;
+  color: #e74c3c;
   font-style: normal;
   margin-bottom: 15px;
 }
@@ -1571,7 +1571,7 @@
     padding: 16px;
     font-size: 20px;
     text-align: center;
-    background: #EF1979;
+    background: #e74c3c;
     display: inline-block;
 }
 
@@ -1592,7 +1592,7 @@
 }
 
 .portfolio-box small.project-tag a:hover {
-  color: #EF1979;
+  color: #e74c3c;
 }
 
 /*Portfolio Box v1
@@ -1782,11 +1782,11 @@
     margin-left: 5px;
     text-align: center;
     display: inline-block;
-    background: rgba(114,192,44,0.8);
+    background: rgba(192, 44, 44,0.8);
 }
 
 .portfolio-box-v2 .portfolio-box-v2-in i:hover {
-    background: #EF1979;
+    background: #e74c3c;
 }
 
 /*Thumbnail v1
@@ -1806,7 +1806,7 @@
 }
 
 .thumbnails-v1 .read-more {
-  color: #EF1979;
+  color: #e74c3c;
   font-size: 12px;
   text-transform: uppercase;
 }
@@ -2269,7 +2269,7 @@
 }
 
 .flat-bg-block-v1 .checked-list i {
-  color: #EF1979;
+  color: #e74c3c;
   margin-left: 5px;
 }
 
@@ -2458,7 +2458,7 @@
 }
 
 .testimonials-v5 .testimonials-by small {
-  color: #EF1979;
+  color: #e74c3c;
   font-size: 12px;
 }
 
@@ -2484,7 +2484,7 @@
 }
 
 .testimonials-v6 .testimonials-info:hover {
-    border-color: #EF1979;
+    border-color: #e74c3c;
 }
 
 .testimonials-v6 .testimonials-info img {
@@ -2532,7 +2532,7 @@
   content: " ";
   bottom: -10px;
   position: absolute;
-  background: #EF1979;
+  background: #e74c3c;
 }
 
 .featured-blog .featured-img {
@@ -2599,7 +2599,7 @@
 
 .featured-blog .featured-img i:hover {
   color: #fff;
-  background: #EF1979;
+  background: #e74c3c;
   text-decoration: none;
   transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;
@@ -2688,7 +2688,7 @@
 }
 
 .quote-v1 p:before {
-  color: #EF1979;
+  color: #e74c3c;
   font-size: 60px;
   content: "\201C";
   position: absolute;
@@ -2753,7 +2753,7 @@
 
 .social-icons-v1 i:hover {
   color: #fff;
-  background: #EF1979;
+  background: #e74c3c;
   text-decoration: none;
   transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;
@@ -2961,7 +2961,7 @@
 }
 
 .blog-trending small a:hover {
-  color: #EF1979;
+  color: #e74c3c;
 }
 
 /*Blog Latest Posts
@@ -3202,7 +3202,7 @@
 }
 
 .news-v1 h3 a:hover {
-  color: #EF1979;
+  color: #e74c3c;
 }
 
 .news-v1 p {
@@ -3224,7 +3224,7 @@
 }
 
 .news-v1 .news-v1-info li a:hover {
-  color: #EF1979;
+  color: #e74c3c;
   text-decoration: none;
 }
 
@@ -3275,7 +3275,7 @@
 }
 
 .news-v2 .news-v2-desc h3 a:hover {
-  color: #EF1979;
+  color: #e74c3c;
 }
 
 .news-v2 .news-v2-desc small {
@@ -3331,7 +3331,7 @@
 }
 
 .news-v3 h2 a:hover {
-  color: #EF1979;
+  color: #e74c3c;
   text-decoration: none;
 }
 
@@ -3380,7 +3380,7 @@
 }
 
 .news-v3 .posted-info li a:hover {
-  color: #EF1979;
+  color: #e74c3c;
 }
 
 /*News Shares*/
@@ -3426,7 +3426,7 @@
   line-height: 10px;
   position: absolute;
   text-align: center;
-  background: #EF1979;
+  background: #e74c3c;
   border: 2px solid #fff;
   border-radius: 50% !important;
 }

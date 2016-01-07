@@ -19,22 +19,50 @@
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
 <%@ page import="java.util.Calendar" %>
 
+<c:set var="topLevel" value="${currentNode.properties['j:level'].string}"/>
+<c:if test="${jcr:isNodeType(currentNode, 'jdmix:topViews')}">
+    <c:set var="view" value="${currentNode.properties['view'].string}"/>
+    <c:set target="${moduleMap}" property="subNodesView" value="${view}"/>
+</c:if>
+<jsp:useBean id="now" class="java.util.Date"/>
+<fmt:formatDate value="${now}" pattern="yyyy-MM-dd" var="today"/>
+
 <c:if test="${renderContext.editMode}"><h4><fmt:message key="label.topStoriesArea"/></h4>
     <p><fmt:message key="label.componentDescription"/></p>
 </c:if>
+
+<c:choose>
+    <c:when test="${view == 'newsroom'}">
+        <jcr:sql var="topStories"
+                 sql="select * from [jmix:topStory] as story where isdescendantnode(story, ['${renderContext.site.path}'])
+         and story.[j:level]='${topLevel}' and (story.[j:endDate] is null or story.[j:endDate] > CAST('+${today}T00:00:00.000' as date)) order by story.[date] desc"
+                 limit="${currentNode.properties['j:limit'].long}"/>
+            <c:forEach items="${topStories.nodes}" var="topStory" varStatus="item">
+                    <template:module view="hidden.newsroom${topLevel}" path="${topStory.path}">
+                        <%-- pass count to subnode view --%>
+                        <template:param name="nodePosition" value="${item.count}"/>
+                        <%-- pass chosen levelto subnode view --%>
+                        <template:param name="topLevel" value="${topLevel}"/>
+                        <template:param name="last" value="${item.last}"/>
+                    </template:module>
+
+            </c:forEach>
+    </c:when>
+    <c:otherwise>
+
 <c:if test="${currentNode.properties['j:limit'].long gt 0}">
-    <jsp:useBean id="now" class="java.util.Date"/>
-    <fmt:formatDate value="${now}" pattern="yyyy-MM-dd" var="today"/>
 
     <query:definition var="listQuery"
                       statement="select * from [jmix:topStory] as story where isdescendantnode(story, ['${renderContext.site.path}'])
-         and story.[j:level]='${currentNode.properties['j:level'].string}' and (story.[j:endDate] is null or story.[j:endDate] > CAST('+${today}T00:00:00.000' as date)) order by story.[jcr:lastModified] desc"
+         and story.[j:level]='${topLevel}' and (story.[j:endDate] is null or story.[j:endDate] > CAST('+${today}T00:00:00.000' as date)) order by story.[date] desc"
                       limit="${currentNode.properties['j:limit'].long}"/>
 
     <c:set target="${moduleMap}" property="editable" value="false" />
     <c:set target="${moduleMap}" property="listQuery" value="${listQuery}" />
-    <c:if test="${jcr:isNodeType(currentNode, 'jdmix:topViews')}">
+<%--    <c:if test="${jcr:isNodeType(currentNode, 'jdmix:topViews')}">
         <c:set var="view" value="${currentNode.properties['view'].string}"/>
         <c:set target="${moduleMap}" property="subNodesView" value="${view}"/>
+    </c:if>--%>
     </c:if>
-</c:if>
+    </c:otherwise>
+</c:choose>

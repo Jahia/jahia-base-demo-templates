@@ -37,20 +37,11 @@
 
                     </div>
 
-<%-- get the parent page for the back navigation --%>
-<c:set var="parentPage" value="${jcr:getParentOfType(renderContext.mainResource.node, 'jnt:page')}"/>
-<c:choose>
-    <c:when test="${! empty parentPage}">
-        <c:url var="parentUrl" value='${parentPage.url}'/>
-        <c:set var="parentTitle" value="${parentPage.properties['jcr:title'].string}"/>
-    </c:when>
-    <c:otherwise>
+<%-- set up the back navigation --%>
         <c:set var="parentUrl">javascript:history.back()</c:set>
-    </c:otherwise>
-</c:choose>
                     <p>
     <a href="${parentUrl}" class="button button-mini button-border button-rounded"><span><i
-            class="icon-line-arrow-left"></i><fmt:message key="jdnt_news.back"/>&nbsp;${parentTitle}</span></a>
+            class="icon-line-arrow-left"></i><fmt:message key="jdnt_news.back"/></span></a>
                     </p>
 
 

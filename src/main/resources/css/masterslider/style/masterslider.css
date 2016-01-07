@@ -203,11 +203,11 @@
 }
 
 .ms-default-btn{
-	background: #0074A2;
+	background: #e74c3c;
 	border-radius: 5px;
 	color: #FFF;
 }
-.ms-default-btn:hover{background-color: #0098D5;}
+.ms-default-btn:hover{background-color: #c0392b;}
 .ms-default-btn:active{top:1px;}
 
 

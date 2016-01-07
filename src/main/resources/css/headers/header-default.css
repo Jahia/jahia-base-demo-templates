@@ -179,7 +179,7 @@
 
 /*Navbar Toggle*/
 .header .navbar-toggle {
-	border-color: #5fb611;
+	border-color: #c0392b;
 }
 
 @media (max-width: 991px) {
@@ -196,12 +196,12 @@
 .header .navbar-toggle,
 .header .navbar-toggle:hover, 
 .header .navbar-toggle:focus {
-	background: #EF1979;
+	background: #e74c3c;
 	padding: 6px 10px 2px;
 }
 
 .header .navbar-toggle:hover {
-	background: #5fb611 !important;
+	background: #c0392b !important;
 }
 
 /*Navbar Collapse*/
@@ -227,7 +227,7 @@
 }
 
 .header .navbar-nav > .active > a {
-	color: #EF1979;
+	color: #e74c3c;
 }
 
 @media (min-width: 992px) {
@@ -353,13 +353,13 @@
 	}
 
 	.header .navbar-nav > li > a:hover {
-		color: #EF1979;
+		color: #e74c3c;
 	}
 
 	.header .navbar-nav > .active > a,
 	.header .navbar-nav > .active > a:hover,
 	.header .navbar-nav > .active > a:focus {
-		background: #EF1979;
+		background: #e74c3c;
 		color: #fff !important;	
 	}
 
@@ -403,7 +403,7 @@
 	.header .navbar-nav > .active > a {
 		bottom: -2px;
 		position: relative;
-		border-bottom: solid 2px #EF1979;
+		border-bottom: solid 2px #e74c3c;
 	}
 	
 	.header .navbar-nav > li > a,
@@ -418,11 +418,11 @@
 	.header .navbar-nav > .open > a,
 	.header .navbar-nav > .open > a:hover,
 	.header .navbar-nav > .open > a:focus {
-		color: #EF1979;
+		color: #e74c3c;
 	}
 
 	.header .navbar-nav > li:hover > a {
-        color: #EF1979;
+        color: #e74c3c;
     }
 
 	/*Dropdown Menu*/
@@ -432,7 +432,7 @@
 		min-width: 200px;
 		border-radius: 0; 
 		z-index: 9999 !important;
-		border-top: solid 2px #EF1979;
+		border-top: solid 2px #e74c3c; 
 		border-bottom: solid 2px #687074; 
 	}
 
@@ -583,9 +583,9 @@
 }
 
 .header .nav > li > .search:hover {
-	color: #EF1979;
+	color: #e74c3c;
 	background: #f7f7f7;
-	border-bottom-color: #EF1979;
+	border-bottom-color: #e74c3c;
 }
 
 .header .nav .search-open {
@@ -627,7 +627,7 @@
 	}
 
 	.header .nav > li > .search:hover {
-		background: #5fb611;
+		background: #c0392b;
 		color: #fff !important;
 	}
 
@@ -900,7 +900,7 @@
 	}
 
 	.header.header-dark .navbar-nav .dropdown > a:hover {
-		color: #EF1979;
+		color: #e74c3c;
 		background: inherit;
 	}
 
@@ -934,7 +934,7 @@
 @media (min-width: 992px) {
 	.header.header-dark .navbar-nav > li > a:hover,
 	.header.header-dark .navbar-nav > .active > a {
-		color: #EF1979 !important;
+		color: #e74c3c !important;
 	}
 
 	.header.header-dark .dropdown-menu {
