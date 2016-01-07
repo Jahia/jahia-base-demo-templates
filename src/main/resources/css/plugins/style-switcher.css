@@ -158,8 +158,13 @@ i.style-switcher-btn-option:hover {
 }
 
 .style-switcher li.theme-default {
-   background: #EF1979;
+   background: #e74c3c;
 }
+
+.style-switcher li.theme-green {
+   background: #72c02c;
+}
+
 .style-switcher li.theme-blue {
    background: #3498db;
 }

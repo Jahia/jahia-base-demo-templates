@@ -943,35 +943,35 @@
 [9. Header Theme Color]
 ----------------------------------------------------*/
 .header-v8 .dropdown-menu {
-	border-top: solid 3px #EF1979;
+	border-top: solid 3px #e74c3c;
 }
 .header-v8 .dropdown-menu .active > a,
 .header-v8 .dropdown-menu li > a:hover {
-	color: #EF1979;
+	color: #e74c3c;
 }
 .header-v8 .navbar-nav .open .dropdown-menu > li > a:hover,
 .header-v8 .navbar-nav .open .dropdown-menu > li > a:focus {
-	color: #EF1979;
+	color: #e74c3c;
 }
 .header-v8 .navbar-nav .open .dropdown-menu > .active > a,
 .header-v8 .navbar-nav .open .dropdown-menu > .active > a:hover,
 .header-v8 .navbar-nav .open .dropdown-menu > .active > a:focus {
-	color: #EF1979;
+	color: #e74c3c;
 }
 
 .header-v8 .navbar-nav .open .dropdown-menu > .disabled > a,
 .header-v8 .navbar-nav .open .dropdown-menu > .disabled > a:hover,
 .header-v8 .navbar-nav .open .dropdown-menu > .disabled > a:focus {
-	color: #EF1979;
+	color: #e74c3c;
 }
 .header-v8 .navbar-nav > li > a:hover {
-	color: #EF1979;
+	color: #e74c3c;
 }
 .header-v8 .navbar-nav > .active > a,
 .header-v8 .navbar-nav > .active > a:hover,
 .header-v8 .navbar-nav > .active > a:focus {
-	color: #EF1979 !important;
+	color: #e74c3c !important;
 }
 .header-v8 .mega-menu .mega-menu-fullwidth .dropdown-link-list li a:hover {
-	color: #EF1979;
+	color: #e74c3c;
 }

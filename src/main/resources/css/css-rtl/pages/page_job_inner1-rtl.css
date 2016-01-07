@@ -112,7 +112,7 @@
 
 .job-description .p-chart .overflow-h li i,
 .job-description .p-chart .overflow-h li a {
-	color: #EF1979;
+	color: #c0392b;
 }
 
 .job-description .p-chart .overflow-h li a {
@@ -142,7 +142,7 @@
 }
 
 .job-description .save-job a:hover {
-	color: #EF1979;
+	color: #c0392b;
 }
 
 /*Overview*/

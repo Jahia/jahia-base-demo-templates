@@ -242,7 +242,7 @@ topbar including in mobile version*/
 
 /*Navbar Toggle*/
 .header-v2 .navbar-default .navbar-toggle {
-	border-color: #5fb611;
+	border-color: #c0392b;
 }
 
 @media (max-width: 991px) {
@@ -265,12 +265,12 @@ topbar including in mobile version*/
 .header-v2 .navbar-toggle,
 .header-v2 .navbar-default .navbar-toggle:hover, 
 .header-v2 .navbar-default .navbar-toggle:focus {
-	background: #EF1979;
+	background: #e74c3c;
 	padding: 6px 10px 2px;
 }
 
 .header-v2 .navbar-toggle:hover {
-	background: #5fb611 !important;
+	background: #c0392b !important;
 }
 
 /*Navbar Collapse*/
@@ -416,13 +416,13 @@ topbar including in mobile version*/
 	}
 
 	.header-v2 .navbar-default .navbar-nav > li > a:hover {
-		color: #EF1979;
+		color: #e74c3c;
 	}
 
 	.header-v2 .navbar-default .navbar-nav > .active > a,
 	.header-v2 .navbar-default .navbar-nav > .active > a:hover,
 	.header-v2 .navbar-default .navbar-nav > .active > a:focus {
-		background: #EF1979;
+		background: #e74c3c;
 		color: #fff !important;	
 	}
 
@@ -485,7 +485,7 @@ topbar including in mobile version*/
 		min-width: 200px;
 		border-radius: 0; 
 		z-index: 9999 !important;
-		border-top: solid 2px #EF1979;
+		border-top: solid 2px #e74c3c;
 		border-bottom: solid 2px #687074; 
 	}
 

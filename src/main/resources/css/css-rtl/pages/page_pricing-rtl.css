@@ -15,7 +15,7 @@
 	box-shadow:0 0 15px #b5b5b5;
 }
 .pricing:hover h4 {
-	color:#74C52C;
+	color:#c0392b;
 }
 .pricing-head {
 	text-align:center;
@@ -42,7 +42,7 @@
 	padding:12px 0;
 	font-size:35px;
 	font-family:Arial;
-	background:#74C52C;
+	background:#c0392b;
 	border-radius:3px 0 0 3px;
 	text-shadow:0 1px 0 #32a20f;
 }
@@ -78,7 +78,7 @@
 	border-bottom:solid 1px #f5f9e7;
 }
 .pricing-content li i {
-	color:#EF1979;
+	color:#e74c3c;
 	font-size:16px;
 	margin-left:5px;
 	position:relative;
@@ -101,7 +101,7 @@
 	margin-top: -15px;
 }
 .price-active h4 {
-	color:#74C52C;
+	color:#c0392b;
 }
 
 /*Pricing Extra*/
@@ -139,7 +139,7 @@
  .sticker-left {
     top: 9px;
     right: -48px;
-   	background: rgba(116, 197, 44, 1);
+   	background: rgb(196, 44, 44);
     transform: rotate(-45deg);   
 	-o-transform: rotate(-45deg);
 	-ms-transform: rotate(-45deg);
@@ -160,7 +160,7 @@
 	border: 1px solid #EEEEEE;
 }
 .pricing-bg-colored .pricing:hover {	
-	background: #74C52C; 
+	background: #c0392b; 
 }
 .pricing-bg-colored .pricing:hover li,
 .pricing-bg-colored .pricing:hover li i, 
@@ -168,7 +168,7 @@
 	color: #fff; 
 }
 .pricing-bg-colored .pricing-head i {
-	color: #74C52C;
+	color: #c0392b;
 	padding-top: 20px;	
 	margin-top: 10px 0px;
 }
@@ -660,7 +660,7 @@ background-color: #717984!important;
 	color: #888;
 }
 .pricing-mega-v1 .pricing:hover h4 i {
-	color: #74C52C;
+	color: #c0392b;
 }
 .pricing-mega-v1 .pricing-head h4 span,
 .pricing-mega-v1 .pricing-content li span,
@@ -706,11 +706,11 @@ background-color: #717984!important;
 	min-height: 41px;
 }
 .pricing-mega-v1 .pricing-content li i {
-	color: #EF1979;
+	color: #e74c3c;
 }
 .pricing-mega-v1 .btn-group .dropdown-menu  {
 	width: 100%;
-	background: #EF1979;
+	background: #e74c3c;
 	border-color: #eee;
 	margin: 0;
 	border: 0;
@@ -719,7 +719,7 @@ background-color: #717984!important;
 	color: #fff;
 }
 .pricing-mega-v1 .btn-group .dropdown-menu  li a:hover { 
-	background: #5fb611
+	background: #c0392b
 }
 
 /*Pricing Table Mega v2 
@@ -750,7 +750,7 @@ background-color: #717984!important;
 	color: #888888;
 }
 .pricing-mega-v2 .pricing:hover h4 i {
-	color: #74C52C;
+	color: #c0392b;
 }
 
 .pricing-mega-v2 .pricing-head h4 span,
@@ -785,7 +785,7 @@ background-color: #717984!important;
 	color: #888;
 }  
 .pricing-mega-v2 .hidden-area li:hover  i{
-	color: #74C52C;
+	color: #c0392b;
 } 
 
 .pricing-mega-v2 .block li {
@@ -811,7 +811,7 @@ background-color: #717984!important;
 	background-color: #f9f9f9;	
 }
 .pricing-mega-v2 .block:hover .bg-color {
-	background: #74C52C;
+	background: #c0392b;
 }
 .pricing-mega-v2 .block:hover h3,
 .pricing-mega-v2 .block:hover h4, 
@@ -819,7 +819,7 @@ background-color: #717984!important;
 .pricing-mega-v2 .block:hover li i,
 .pricing-mega-v2 .block:hover h4 i {
 	color: #fff !important;
-	background: #74C52C;
+	background: #c0392b;
 }
 .pricing-mega-v2 .hidden-area:hover li i {
 	color: #888;
@@ -916,7 +916,7 @@ background-color: #717984!important;
 	margin: 0;
 	border: 0;
 	width: 100%;
-	background: #EF1979;
+	background: #e74c3c;
 	border-color: #eee;
 	border: 1px solid #fff;
 	border-top: none;
@@ -927,7 +927,7 @@ background-color: #717984!important;
 	color: #fff;
 }
 .pricing-mega-v3 .btn-group .dropdown-menu li a:hover { 
-	background: #5fb611;
+	background: #c0392b;
 }
 .pricing-mega-v3 .btn-group-justified {
  display: block;

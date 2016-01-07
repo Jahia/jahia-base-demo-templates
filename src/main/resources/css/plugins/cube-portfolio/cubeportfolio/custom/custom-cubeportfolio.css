@@ -43,7 +43,7 @@
 
 /*Grenn Transparent*/
 .cube-portfolio .cbp-caption-activeWrap.default-transparent-hover {
-	background: rgba(114,192,44,.9) !important;
+	background: rgba(231,76,60,.9) !important;
 }
 
 .cube-portfolio .cbp-caption-activeWrap.default-transparent-hover .link-captions i:hover {
@@ -63,15 +63,15 @@
 
 .cube-portfolio .cbp-l-filters-text .cbp-filter-item.cbp-filter-item-active,
 .cube-portfolio .cbp-l-filters-text .cbp-filter-item:hover {
-	color: #72c02c;
+	color: #e74c3c;
 }
 
 .cube-portfolio .cbp-l-filters-text .cbp-filter-counter {
-	background: #72c02c;
+	background: #e74c3c;
 }
 
 .cube-portfolio .cbp-l-filters-text .cbp-filter-counter:before {
-	border-top-color: #72c02c;
+	border-top-color: #e74c3c;
 }
 
 /*Pagination*/
@@ -82,12 +82,12 @@
 /*Buttons*/
 .cube-portfolio .cbp-l-caption-buttonLeft,
 .cube-portfolio .cbp-l-caption-buttonRight {
-	background: #72c02c;
+	background: #e74c3c;
 }
 
 .cube-portfolio .cbp-l-caption-buttonLeft:hover,
 .cube-portfolio .cbp-l-caption-buttonRight:hover {
-	background: #5fb611;
+	background: #c0392b;
 }
 
 /*Titles*/
@@ -141,7 +141,7 @@
 
 .cube-portfolio .link-captions li i:hover {
 	color: #fff;
-	background: #72c02c;
+	background: #e74c3c;
 	-webkit-transition: all .2s ease-in-out;
   	-moz-transition: all .2s ease-in-out;
   	-o-transition: all .2s ease-in-out;
