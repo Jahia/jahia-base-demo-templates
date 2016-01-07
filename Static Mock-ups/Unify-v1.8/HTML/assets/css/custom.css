@@ -1,5 +1,36 @@
 /* Add here all your css styles (customizations) */
 
+
+/*SUCCESS*/
+
+.success-img{
+	display: block;
+	margin: 100px auto;
+	width: 100%;
+	max-width: 797px;
+}
+
+
+/*VCARD ICON*/
+
+.fa-vcard:before {
+    content:'\F007';
+}
+
+.fa-vcard:after {
+    content:'\f0c9';
+    padding-right:0.2em;
+    padding-left:0.1em;
+}
+
+.fa-vcard-bordered {
+    padding: 0.3em 0.2em;
+    display:inline-block;
+    border:2px solid black;
+    border-radius: 5px;
+}
+
+
 /*LEADERSHIP*/
 
 .team-social li a.ln {
@@ -235,9 +266,6 @@
 	margin: auto 10px;
 }
 
-
-
-
 #advancedSearch .control-group{
 	background: #fff;
 	display: block;
@@ -458,7 +486,6 @@ input#scr_terms{
 
 .search-block{
 	margin: 0;
-
 }
 
 .arrow{
