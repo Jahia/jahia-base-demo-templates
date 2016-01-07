@@ -8,7 +8,6 @@
 <%@ taglib prefix="jahia" uri="http://www.jahia.org/tags/templateLib" %>
 
 <%-- TODO: display categories and/or tags --%>
-<%-- TODO: remove html tags from the description --%>
 
 <template:addResources type="css" resources="news.css"/>
 <c:set var="language" value="${currentResource.locale.language}"/>
@@ -22,7 +21,7 @@
 <ul class="list-unstyled blog-latest-posts margin-bottom-20">
 <li>
     <h3><a href="${detailUrl}">${newsTitle}</a></h3>
-    <small>${newsDate} / <%-- categories <a href="#">Hi-Tech,</a> <a href="#">Technology</a>--%></small>
-    <p>${fn:substring(description, 0, 150)}</p>
+    <small>${newsDate} <%-- categories/  <a href="#">Hi-Tech,</a> <a href="#">Technology</a>--%></small>
+    <p>${fn:substring(functions:removeHtmlTags(description), 0, 150)}...</p>
 </li>
     </ul>

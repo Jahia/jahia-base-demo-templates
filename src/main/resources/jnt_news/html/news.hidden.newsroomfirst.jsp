@@ -34,7 +34,7 @@
             <li>Posted ${newsDate}</li>
         </ul>
         <h2><a href="${detailUrl}">${newsTitle}</a></h2>
-            ${fn:replace(description, fn:substring(description, 300, fn:length(description)), ' ...')}
+        <p>${fn:substring(functions:removeHtmlTags(description), 0, 300)}...</p>
    <%--     <ul class="post-shares">
             <li>
                 <a href="#">

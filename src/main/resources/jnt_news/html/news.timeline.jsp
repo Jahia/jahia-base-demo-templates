@@ -38,7 +38,7 @@
                 <c:choose>
                     <c:when test="${jcr:isNodeType(currentNode, 'jdmix:hasReadMore')}">
                         <c:set var="readMore" value="${currentNode.properties.readMoreText.string}"/>
-                <p>${fn:substring(description, 0, 150)}</p>
+                        <p>${fn:substring(functions:removeHtmlTags(description), 0, 150)}...</p>
                         <a class="btn-u btn-u-sm" href="${detailUrl}">${readMore}</a>
                     </c:when>
                     <c:otherwise>
@@ -52,7 +52,7 @@
                 <c:choose>
                     <c:when test="${jcr:isNodeType(currentNode, 'jdmix:hasReadMore')}">
                         <c:set var="readMore" value="${currentNode.properties.readMoreText.string}"/>
-                <p>${fn:substring(description, 0, 150)}</p>
+                        <p>${fn:substring(functions:removeHtmlTags(description), 0, 150)}...</p>
                         <a class="btn-u btn-u-sm" href="${detailUrl}">${readMore}</a>
                     </c:when>
                     <c:otherwise>
