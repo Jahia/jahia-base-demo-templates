@@ -259,6 +259,19 @@ jcr:primaryType="jnt:pageTemplate">
                                 </banner>
                             </landing>
                         </news>
+                        <person-bio-content-template j:applyOn="jnt:person"
+                                            j:defaultTemplate="true"
+                                            j:hiddenTemplate="false"
+                                            j:priority="100"
+                                            jcr:primaryType="jnt:contentTemplate">
+                            <j:translation_en jcr:language="en"
+                                    jcr:primaryType="jnt:translation"
+                                    jcr:title="Person Bio Content Template"/>
+                            <landing jcr:primaryType="jnt:contentList"/>
+                            <pagecontent jcr:primaryType="jnt:contentList">
+                                <main-resource-display j:mainResourceView="default" jcr:primaryType="jnt:mainResourceDisplay"/>
+                            </pagecontent>
+                        </person-bio-content-template>
                         </base>
                     <newsletter-issue j:applyOn="jnt:newsletterIssue"
                               j:defaultTemplate="true"
