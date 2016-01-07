@@ -95,6 +95,13 @@
     border-radius: 5px;
 }
 
+/* VIDEO */
+video, .video-js{
+	width: 100%    !important;
+	height: auto   !important;
+	position: relative !important;
+}
+
 /*LEADERSHIP*/
 
 .team-social li a.ln {
