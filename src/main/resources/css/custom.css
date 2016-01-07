@@ -222,7 +222,7 @@
 #error-bg .background{
 	opacity: 0.2;
 	position: absolute;
-	background: url('/resources/img/404/background.png') no-repeat left top;
+	background: url('../img/404/background.png') no-repeat left top;
 	height: 850px;
 	width: 850px;
 	-webkit-animation-name: spinnerRotate;
