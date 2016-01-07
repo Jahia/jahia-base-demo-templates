@@ -11,7 +11,7 @@
     <c:url var="url" value="${node.url}" context="/"/>
 
 
-    <img src="${url}" alt="${fn:escapeXml(not empty title.string ? title.string : currentNode.name)}" width="100%" height="auto" escapeXml="false"/> />
+    <img src="${url}" alt="${fn:escapeXml(not empty title.string ? title.string : currentNode.name)}" width="100%" height="auto" /> />
 </c:if>
 <c:if test="${empty node and renderContext.editMode}">
     <fmt:message key="label.missingReference"/>
