@@ -33,7 +33,7 @@
 
 <%-- get default photo if one was not provided --%>
 <c:choose>
-    <c:when test="${empty photo}">
+    <c:when test="${empty photo.node}">
         <c:set var="photoUrl" value="${url.currentModule}/img/default_person_img.jpg"/>
     </c:when>
     <c:otherwise>
@@ -72,6 +72,8 @@
                     <li><a data-placement="top" data-toggle="tooltip" class="ln	tooltips"
                            data-original-title="Linkedin" href="${linkedin}"><i class="fa fa-linkedin"></i></a></li>
                 </c:if>
+            <li><c:url var="vcardUrl" value="${url.base}${currentNode.path}.vcf"/>
+                <a href="${vcardUrl}"><fmt:message key="jnt_person.vcard"/></a></li>
             </ul>
         </div>
         <div class="col-md-12">
