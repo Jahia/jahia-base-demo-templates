@@ -36,12 +36,11 @@
     <div class="col-sm-7 news-v3">
         <div class="news-v3-in-sm no-padding">
             <ul class="list-inline posted-info">
-                <li>By Alexander Jenni</li>
-                <li>In <a href="#">Design</a></li>
-                <li>Posted January 24, 2015</li>
+              <%--  <li>In <a href="#">Design</a></li> --%>
+                <li>Posted ${newsDate}</li>
             </ul>
             <h2><a href="${detailUrl}">${newsTitle}</a></h2>
-            ${fn:replace(description, fn:substring(description, 300, fn:length(description)), ' ...')}
+            <p>${fn:substring(functions:removeHtmlTags(description), 0, 300)}...</p>
   <%--          <ul class="post-shares">
                 <li>
                     <a href="#">

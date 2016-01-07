@@ -7,10 +7,6 @@
 <%@ taglib prefix="functions" uri="http://www.jahia.org/tags/functions" %>
 <%@ taglib prefix="jahia" uri="http://www.jahia.org/tags/templateLib" %>
 
-
-<%-- if the first node for the top level --%>
-<c:if test="${nodePosition == 1 && topLevel == 1}">
-    </c:if>
 <template:addResources type="css" resources="news.css"/>
 <c:set var="language" value="${currentResource.locale.language}"/>
 <fmt:setLocale value="${language}" scope="session"/>
@@ -23,7 +19,16 @@
 <ul class="list-unstyled blog-latest-posts margin-bottom-20">
 <li>
     <h3><a href="${detailUrl}">${newsTitle}</a></h3>
-    <small>${newsDate} / <%-- categories <a href="#">Hi-Tech,</a> <a href="#">Technology</a>--%></small>
-    <p>${fn:substring(description, 0, 150)}</p>
+    <small>${newsDate} <%--/  categories <a href="#">Hi-Tech,</a> <a href="#">Technology</a>--%></small>
+    <c:choose>
+        <c:when test="${jcr:isNodeType(currentNode, 'jdmix:hasReadMore')}">
+            <c:set var="readMore" value="${currentNode.properties.readMoreText.string}"/>
+            <p>${fn:substring(functions:removeHtmlTags(description), 0, 150)}...</p>
+            <a class="btn-u btn-u-sm" href="${detailUrl}">${readMore}</a>
+        </c:when>
+        <c:otherwise>
+            <p>${description}</p>
+        </c:otherwise>
+    </c:choose>
 </li>
     </ul>

@@ -59,10 +59,6 @@
 
     <c:set target="${moduleMap}" property="editable" value="false" />
     <c:set target="${moduleMap}" property="listQuery" value="${listQuery}" />
-<%--    <c:if test="${jcr:isNodeType(currentNode, 'jdmix:topViews')}">
-        <c:set var="view" value="${currentNode.properties['view'].string}"/>
-        <c:set target="${moduleMap}" property="subNodesView" value="${view}"/>
-    </c:if>--%>
     </c:if>
     </c:otherwise>
 </c:choose>
