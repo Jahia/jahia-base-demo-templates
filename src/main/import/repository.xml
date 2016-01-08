@@ -8,21 +8,6 @@
                  j:title="jahiademo"
                  jcr:mixinTypes="jmix:hasExternalProviderExtension"
                  jcr:primaryType="jnt:module">
-                <sources jcr:mixinTypes="jmix:hasExternalProviderExtension"
-                  jcr:primaryType="jnt:moduleVersionFolder"
-                  j:staticMountPointProviderKey="module-jahiademo-1.0-SNAPSHOT">
-                    <src jcr:primaryType="jnt:folder">
-                        <main jcr:primaryType="jnt:folder">
-                            <resources jcr:primaryType="jnt:folder">
-                                <jdnt_carousel jcr:primaryType="jnt:nodeTypeFolder">
-                                    <html jcr:primaryType="jnt:templateTypeFolder">
-                                        <carousel.jsp jcr:primaryType="jnt:viewFile"/>
-                                    </html>
-                                </jdnt_carousel>
-                            </resources>
-                        </main>
-                    </src>
-                </sources>
 
                             <portlets jcr:primaryType="jnt:portletFolder"/>
                 <files jcr:primaryType="jnt:folder">
@@ -57,12 +42,7 @@
                   jcr:mixinTypes="jmix:theme"
                   jcr:primaryType="jnt:template">
                         <simple jcr:primaryType="jnt:pageTemplate">
-                            <pagecontent jcr:primaryType="jnt:contentList">
-                                <bootstrap-container jcr:mixinTypes="jmix:bootstrap3FullComponentRowPredefined"
-                                     jcr:primaryType="jnt:bootstrap3FullComponent"
-                                     layout="12"
-                                     rowType="predefined"/>
-                            </pagecontent>
+                            <pagecontent jcr:primaryType="jnt:contentList"/>
                         </simple>
                         <navmenu jcr:primaryType="jnt:contentList">
                             <navigation-menu jcr:primaryType="jdnt:navmenu"/>
@@ -76,36 +56,21 @@
                                     jcr:mixinTypes="mix:title"
                                     jcr:primaryType="jnt:translation"
                                     jcr:title="2 Column"/>
-                            <pagecontent jcr:primaryType="jnt:contentList">
-                                <bootstrap-container jcr:mixinTypes="jmix:bootstrap3FullComponentRowPredefined"
-                                                       jcr:primaryType="jnt:bootstrap3FullComponent"
-                                                       layout="9_3"
-                                                       rowType="predefined"/>
-                            </pagecontent>
+                            <pagecontent jcr:primaryType="jnt:contentList"/>
                         </_x0032_-column>
                         <_x0033_-column j:hiddenTemplate="false" jcr:primaryType="jnt:pageTemplate">
                             <j:translation_en jcr:language="en"
                                     jcr:mixinTypes="mix:title"
                                     jcr:primaryType="jnt:translation"
                                     jcr:title="3 Column"/>
-                            <pagecontent jcr:primaryType="jnt:contentList">
-                                <bootstrap-container jcr:mixinTypes="jmix:bootstrap3FullComponentRowPredefined"
-                                                       jcr:primaryType="jnt:bootstrap3FullComponent"
-                                                       layout="4_4_4"
-                                                       rowType="predefined"/>
-                            </pagecontent>
+                            <pagecontent jcr:primaryType="jnt:contentList"/>
                         </_x0033_-column>
                         <home jcr:primaryType="jnt:pageTemplate">
                             <j:translation_en jcr:language="en"
                                     jcr:mixinTypes="mix:title"
                                     jcr:primaryType="jnt:translation"
                                     jcr:title="default"/>
-                            <pagecontent jcr:primaryType="jnt:contentList">
-                                <bootstrap-container jcr:mixinTypes="jmix:bootstrap3FullComponentRowPredefined"
-                                          jcr:primaryType="jnt:bootstrap3FullComponent"
-                                          layout="12"
-                                          rowType="predefined"/>
-                            </pagecontent>
+                            <pagecontent jcr:primaryType="jnt:contentList"/>
                         </home>
                         <header jcr:primaryType="jnt:contentList">
                             <login jcr:primaryType="jdnt:login"/>
@@ -154,39 +119,7 @@
                                     jcr:mixinTypes="mix:title"
                                     jcr:primaryType="jnt:translation"
                                     jcr:title="Company Content Template"/>
-                            <pagecontent jcr:primaryType="jnt:contentList">
-                                <bootstrap-container jcr:mixinTypes="jmix:bootstrap3FullComponentRowPredefined"
-                                                       jcr:primaryType="jnt:bootstrap3FullComponent"
-                                                       layout="9_3"
-                                          rowType="predefined">
-                                    <bootstrap-container jcr:primaryType="jnt:contentList">
-                                        <main-resource-display j:mainResourceView="body" jcr:primaryType="jnt:mainResourceDisplay"/>
-                                        <companynews jcr:primaryType="jdnt:companyNews">
-                                            <j:translation_en jcr:language="en"
-                                                jcr:mixinTypes="mix:title"
-                                                jcr:primaryType="jnt:translation"
-                                                jcr:title="Digitall Widgets Co News"/>
-                                        </companynews>
-                                </bootstrap-container>
-                                    <bootstrap-container-side1 jcr:primaryType="jnt:contentList">
-                                        <main-resource-display j:mainResourceView="metadata" jcr:primaryType="jnt:mainResourceDisplay"/>
-                                        <map-static j:bindedComponent="/modules/jahiademo/templates/base/company-content-template/pagecontent/bootstrap-container/bootstrap-container/main-resource-display"
-                                       j:classname="map map-box map-box-space1 margin-bottom-30 overflow-hidden"
-                                       j:height="255"
-                                       j:imageType="png8"
-                                       j:mapType="roadmap"
-                                       j:markerColor="normal"
-                                       j:markerSize="normal"
-                                       j:skin="skins.custom"
-                                       j:width="325"
-                                       j:zoom="auto"
-                                       jcr:mixinTypes="jmix:customSkin jmix:skinnable"
-                                       jcr:primaryType="jnt:staticMap"/>
-                                        <main-resource-display-1 j:mainResourceView="addPeople"
-                                                    jcr:primaryType="jnt:mainResourceDisplay"/>
-                                    </bootstrap-container-side1>
-                                </bootstrap-container>
-                            </pagecontent>
+                            <pagecontent jcr:primaryType="jnt:contentList"/>
                             <landing jcr:primaryType="jnt:contentList">
                                 <main-resource-display j:mainResourceView="banner" jcr:primaryType="jnt:mainResourceDisplay"/>
                             </landing>
@@ -196,40 +129,7 @@
                                     jcr:mixinTypes="mix:title"
                                     jcr:primaryType="jnt:translation"
                                     jcr:title="News"/>
-                            <pagecontent jcr:primaryType="jnt:contentList">
-                                <bootstrap-layer-container-rows-a containerType="fluid"
-                                                       jcr:mixinTypes="jmix:bootstrap3FullComponentAdvancedProps jmix:bootstrap3FullComponentRowPredefined"
-                                                       jcr:primaryType="jnt:bootstrap3FullComponent"
-                                                       layout="9_3"
-                                                       rowType="predefined"
-                                                       sectionCssClass="row blog-page blog-item"
-                                                       sectionElement="div">
-                                    <bootstrap-layer-container-rows-a-side1 jcr:primaryType="jnt:contentList">
-                                        <rich-text jcr:primaryType="jnt:bigText">
-                                            <j:translation_en jcr:language="en"
-                                                jcr:primaryType="jnt:translation"
-                                                text="&lt;div class=&#34;headline-v2 tag-box-v2&#34;&gt;&#xA;&lt;h2&gt;Top Rated&lt;/h2&gt;&#xA;&lt;/div&gt;&#xA;"/>
-                                        </rich-text>
-                                        <top-rated j:minNbOfVotes="5"
-                                        j:typeOfContent="jnt:news"
-                                        jcr:primaryType="jnt:topRated"/>
-                                        <rich-text-1 jcr:primaryType="jnt:bigText">
-                                            <j:translation_en jcr:language="en"
-                                                jcr:primaryType="jnt:translation"
-                                                text="&lt;div class=&#34;headline-v2 tag-box-v2&#34;&gt;&lt;h2&gt;Latest Posts&lt;/h2&gt;&lt;/div&gt;"/>
-                                        </rich-text-1>
-                                        <latest-posts j:expiration="0"
-                                         j:subNodesView="topstory"
-                                         jcr:primaryType="jnt:lastNews"
-                                         maxNews="3">
-                                            <j:translation_en jcr:language="en"
-                                                jcr:mixinTypes="mix:title"
-                                                jcr:primaryType="jnt:translation"
-                                                jcr:title="Latest Posts"/>
-                                        </latest-posts>
-                                    </bootstrap-layer-container-rows-a-side1>
-                                </bootstrap-layer-container-rows-a>
-                            </pagecontent>
+                            <pagecontent jcr:primaryType="jnt:contentList"/>
                         <news-detail j:applyOn="jnt:news"
                                    j:defaultTemplate="true"
                                    j:hiddenTemplate="false"
@@ -268,11 +168,6 @@
                                     jcr:title="Person Bio Content Template"/>
                             <landing jcr:primaryType="jnt:contentList"/>
                             <pagecontent jcr:primaryType="jnt:contentList">
-                                <bootstrap-breadcrumb displayCurrentPage="true"
-                                           displayHome="true"
-                                           displayLinkOnCurrentPage="false"
-                                           displayOnFirstLevel="false"
-                                           jcr:primaryType="jnt:bootstrap3Breadcrumb"/>
                                 <main-resource-display j:mainResourceView="default" jcr:primaryType="jnt:mainResourceDisplay"/>
                                 <back-to-parent-page jcr:primaryType="jnt:backToParentPage"/>
                             </pagecontent>
