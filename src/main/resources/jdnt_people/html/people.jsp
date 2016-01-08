@@ -61,6 +61,8 @@
                            data-original-title="Google plus" href="#"><i class="fa fa-google-plus"></i></a></li>
                     <li><a data-placement="top" data-toggle="tooltip" class="ln	tooltips"
                            data-original-title="Linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+                    <li><a data-placement="top" data-toggle="tooltip" class="vcard	tooltips"
+                           data-original-title="Download vCard" href="#"><i class="fa fa-vcard"></i></a></li>
                     </ul>
                 </div>
                 <div class="col-md-12">
