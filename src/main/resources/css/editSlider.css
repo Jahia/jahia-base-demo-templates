@@ -7,15 +7,17 @@
 
 /* Global tabs styles */
 .tab-content {
-  color: #969696;
-  font-size: 30px;
-  line-height: 26px;
-  background: #eee;
-  width: 100%;
-  margin: 0 auto;
-  font-family: Lato, sans-serif;
-  background-size: cover;
-  height: 550px;
+    position: relative;
+    color: #969696;
+    font-size: 30px;
+    line-height: 26px;
+    background: #eee;
+    width: 100%;
+    margin: 0 auto;
+    font-family: Lato, sans-serif;
+    background-size: cover!important;
+    background-position: center center;
+    height: 550px;
     overflow: hidden;
 }
 
@@ -152,32 +154,32 @@
 }
 
 .edit-slider-img {
-  right: 15px;
-  width: 650px;
-  height: 370px;
-  float: right;
-  margin-right: 60px;
-  margin-top: 80px;
-  -webkit-transition: all 200ms ease-in;
-  -moz-transition: all 200ms ease-in;
-  -ms-transition: all 200ms ease-in;
-  -o-transition: all 200ms ease-in;
-  transition: all 200ms ease-in;
+    position: absolute;
+    max-width: 300px;
+    width: 100%;
+    height: auto;
+    top: 50px;
+    right: 30px;
+    -webkit-transition: all 200ms ease-in;
+    -moz-transition: all 200ms ease-in;
+    -ms-transition: all 200ms ease-in;
+    -o-transition: all 200ms ease-in;
+    transition: all 200ms ease-in;
 }
 
 .ms-img-bordered {
-    background: #fff;
+    background: transparent;
     padding: 7px;
 }
 
 .small-plus-img {
-  max-width: 300px;
+    max-width: 300px;
 }
 
 .edit-slider-img:hover {
-  -webkit-box-shadow: 0 0 50px 4px rgba(0,0,0,0.4);
-  box-shadow: 0 0 50px 4px rgba(0,0,0,0.4);
-  cursor: pointer;
+    border: 3px solid #2e8ae5;
+    cursor: pointer;
+    background: rgba(0,0,0,0.1);
 }
 
 .tab-content.empty {
