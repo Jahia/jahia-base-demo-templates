@@ -159,3 +159,7 @@
  itemtype = content
  - readMoreText (string) = 'Read more' mandatory internationalized
 
+[jdmix:internalLink] mixin
+ extends = jnt:topStories
+ - linkTitle (string) internationalized
+ - internalLink (weakreference, picker[type='page']) < 'jnt:page'
