@@ -73,7 +73,8 @@
                            data-original-title="Linkedin" href="${linkedin}"><i class="fa fa-linkedin"></i></a></li>
                 </c:if>
             <li><c:url var="vcardUrl" value="${url.base}${currentNode.path}.vcf"/>
-                <a href="${vcardUrl}"><fmt:message key="jnt_person.vcard"/></a></li>
+                <a data-placement="top" data-toggle="tooltip" class="vcard	tooltips"
+                   data-original-title="Download vCard" href=""${vcardUrl}"><i class="fa fa-vcard"></a></i></li>
             </ul>
         </div>
         <div class="col-md-12">

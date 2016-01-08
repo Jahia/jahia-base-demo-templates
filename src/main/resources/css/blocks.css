@@ -1025,6 +1025,11 @@
   border: 1px solid #dc4a38;
 }
 
+.team-social li a.vcard {
+  color: #e74c3c;
+  border: 1px solid #e74c3c;
+}
+
 .team-social li a:hover {
   text-decoration: none;
 }
@@ -1042,6 +1047,11 @@
 .team-social li a.gp:hover {
   color: #fff;
   background: #dc4a38;
+}
+
+.team-social li a.vcard:hover {
+  color: #fff;
+  background: #e74c3c;
 }
 
 /*Team v3
