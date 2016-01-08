@@ -80,10 +80,12 @@
 
 .fa-vcard:before {
     content:'\F007';
+	font-size:0.7em;
 }
 
 .fa-vcard:after {
     content:'\f0c9';
+	font-size:0.7em;
     padding-right:0.2em;
     padding-left:0.1em;
 }
@@ -117,6 +119,21 @@ video, .video-js{
   color: #fff;
   background: #0083a8;
 }
+
+.team-social vcard a.ln {
+	color: #e74c3c;
+	border: 1px solid #e74c3c;
+}
+
+.team-social vcard a:hover {
+	text-decoration: none;
+}
+
+.team-social vcard a.ln:hover {
+	color: #fff;
+	background: #c0392b;
+}
+
 
 #leadership{
 	margin: 50px auto;
