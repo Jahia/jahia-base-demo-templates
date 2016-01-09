@@ -38,7 +38,7 @@
         <c:set var="lastname" value="${userNode.properties['j:lastName'].string}"/>
 
         <a href="javascript:void(0);">
-            ${fn:escapeXml(empty firstname and empty lastname ? userNode.name : firstname)}&nbsp;${fn:escapeXml(lastname)} <span class="caret"></span>
+            <i class="fa fa-user"></i>&nbsp;${fn:escapeXml(empty firstname and empty lastname ? userNode.name : firstname)}&nbsp;${fn:escapeXml(lastname)} <span class="caret"></span>
         </a>
         <ul class="topbar-dropdown">
             <c:if test="${!renderContext.settings.distantPublicationServerMode

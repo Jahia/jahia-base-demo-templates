@@ -2,10 +2,10 @@ CKEDITOR.stylesSet.add('demo_styles', [
 
     // Inline styles
     {name: 'Headline', element: 'div', attributes: {'class': 'headline'}},
-    {name: 'Paragraph', element: 'p', attributes: {'class': 'headline'}},
-    {name: 'Drop cap', element: 'span', attributes: {'class': 'headline'}},
-    {name: 'Drop cap inverse', element: 'span', attributes: {'class': 'headline'}},
-    {name: 'Drop cap rounded', element: 'span', attributes: {'class': 'headline'}},
+    {name: 'Paragraph lead', element: 'p', attributes: {'class': 'lead'}},
+    {name: 'Drop cap', element: 'span', attributes: {'class': 'dropcap'}},
+    {name: 'Drop cap inverse', element: 'span', attributes: {'class': 'dropcap-bg'}},
+    {name: 'Drop cap rounded', element: 'span', attributes: {'class': 'dropcap-bg rounded-x'}},
     {name: 'Drop cap dark', element: 'span', attributes: {'class': 'dropcap dropcap-bg bg-color-dark'}},
     {name: 'Dotted divider', element: 'hr', attributes: {'class': 'devider deviser-dotted'}},
     {name: 'Dashed divider', element: 'hr', attributes: {'class': 'devider deviser-dashed'}},

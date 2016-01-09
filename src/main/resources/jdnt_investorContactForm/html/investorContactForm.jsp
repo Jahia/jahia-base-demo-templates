@@ -33,8 +33,7 @@
             <c:set var="componentId" value="${currentNode.identifier}"/>
           <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-1" href="#collapse-${componentId}">
             <span class="tooltips" data-toggle="tooltip" data-original-title="Please fill this form to keep informed">
-                Contact Form<span class="text-right" style="float:right"><i class="fa fa-caret-square-o-down"></i>
-            </span>
+                Contact Form<span class="pull-right"><i class="fa fa-caret-square-o-down"></i></span>
           </a>
         </h4>
       </div>

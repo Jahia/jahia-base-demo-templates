@@ -126,7 +126,7 @@
                         <div class="topbar-list topbar-menu"/>
                         <template:area path="languageLoginMini"/>
                         </div>
-                    <div class="topbar-toggler"><span class="fa fa-angle-down"></span><span class="hidden-sm hidden-md hidden-lg">Languages / Login</span></div>
+                    <div class="topbar-toggler"><span class="user-box hidden-sm hidden-md hidden-lg"> <i class="fa fa-user"></i>&nbsp;|&nbsp;<i class="fa fa-globe"></i>&nbsp;<i class="fa fa-caret-up"></i></span></div>
                     </div>
                     <!--/end Small language login menu-->
                     <!--Full language login menu-->
