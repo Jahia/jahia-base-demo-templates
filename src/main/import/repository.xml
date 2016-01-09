@@ -263,13 +263,6 @@
                                        jcr:title="All News"/>
                                 <bootstrap-layer-container-rows-a jcr:primaryType="jnt:contentList">
                                     <article j:allowedTypes="jnt:news" jcr:primaryType="jnt:area"/>
-                                    <bootstrap-pagination displayNbOfItemsPerPage="true"
-                                              displayNbOfItemsPerPageValues="5,10,25,50,100"
-                                              displayPager="true"
-                                              j:bindedComponent="/modules/jahiademo/templates/base/news/all-news/bootstrap-layer-container-rows-a/article"
-                                              jcr:primaryType="jnt:bootstrap3Pager"
-                                              nbOfPages="10"
-                                              pageSize="2"/>
                                 </bootstrap-layer-container-rows-a>
                             </all-news>
                         </news>
