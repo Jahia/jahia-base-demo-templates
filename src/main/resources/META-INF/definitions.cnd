@@ -157,9 +157,12 @@
 [jdmix:hasReadMore] mixin
  extends = jnt:news
  itemtype = content
- - readMoreText (string) = 'Read more' mandatory internationalized
+ - agree (boolean)
 
 [jdmix:internalLink] mixin
  extends = jnt:topStories
  - linkTitle (string) internationalized
  - internalLink (weakreference, picker[type='page']) < 'jnt:page'
+
+[jdnt:allStories] > jnt:content, jdmix:jahiademo, jmix:list, mix:title
+ - view (string, choicelist[templates='jnt:news'])
