@@ -22,10 +22,7 @@
 
 <c:set var="pageView"><%= ((String) request.getParameter("pageView"))%>
 </c:set>
-<c:set var="view" value="${currentNode.properties['view'].string}"/>
-<c:if test="${empty currentNode.properties.view}">
     <c:set var="view" value="default"/>
-</c:if>
 <jsp:useBean id="now" class="java.util.Date"/>
 <fmt:formatDate value="${now}" pattern="yyyy-MM-dd" var="today"/>
 <c:if test="${renderContext.editMode}"><h4><fmt:message key="label.topStoriesArea"/></h4>
