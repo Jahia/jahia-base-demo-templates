@@ -14,11 +14,14 @@
                     <src jcr:primaryType="jnt:folder">
                         <main jcr:primaryType="jnt:folder">
                             <resources jcr:primaryType="jnt:folder">
-                                <jdnt_carousel jcr:primaryType="jnt:nodeTypeFolder">
+                                <jnt_template jcr:primaryType="jnt:nodeTypeFolder">
                                     <html jcr:primaryType="jnt:templateTypeFolder">
-                                        <carousel.jsp jcr:primaryType="jnt:viewFile"/>
+                                        <template.jahiademo.jsp jcr:primaryType="jnt:viewFile"/>
                                     </html>
-                                </jdnt_carousel>
+                                </jnt_template>
+                                <META-INF jcr:primaryType="jnt:metaInfFolder">
+                                    <definitions.cnd jcr:primaryType="jnt:definitionFile"/>
+                                </META-INF>
                             </resources>
                         </main>
                     </src>
@@ -275,7 +278,6 @@
                                     jcr:mixinTypes="mix:title"
                                     jcr:primaryType="jnt:translation"
                                     jcr:title="Person Bio Content Template"/>
-                            <landing jcr:primaryType="jnt:contentList"/>
                             <pagecontent jcr:primaryType="jnt:contentList">
                                 <bootstrap-breadcrumb displayCurrentPage="true"
                                            displayHome="true"
@@ -286,6 +288,17 @@
                                 <back-to-parent-page jcr:primaryType="jnt:backToParentPage"/>
                             </pagecontent>
                         </person-bio-content-template>
+                        <press-release j:applyOn="jnt:press"
+                              j:defaultTemplate="true"
+                              j:hiddenTemplate="false"
+                              jcr:primaryType="jnt:contentTemplate">
+                            <j:translation_en jcr:language="en"
+                                    jcr:primaryType="jnt:translation"
+                                    jcr:title="Press Release"/>
+                            <pagecontent jcr:primaryType="jnt:contentList">
+                                <main-resource-display j:mainResourceView="fullpage" jcr:primaryType="jnt:mainResourceDisplay"/>
+                            </pagecontent>
+                        </press-release>
                         </base>
                     <newsletter-issue j:applyOn="jnt:newsletterIssue"
                               j:defaultTemplate="true"
