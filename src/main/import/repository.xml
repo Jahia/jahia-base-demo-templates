@@ -83,8 +83,20 @@
                                 <bootstrap-container jcr:mixinTypes="jmix:bootstrap3FullComponentRowPredefined"
                                                        jcr:primaryType="jnt:bootstrap3FullComponent"
                                                        layout="9_3"
-                                                       rowType="predefined"/>
+                                          rowType="predefined"/>
                             </pagecontent>
+                            <press-release-content-template j:applyOn="jnt:press"
+                                                  j:defaultTemplate="false"
+                                                  j:hiddenTemplate="false"
+                                                  jcr:primaryType="jnt:contentTemplate">
+                                <j:translation_en jcr:language="en"
+                                       jcr:mixinTypes="mix:title"
+                                       jcr:primaryType="jnt:translation"
+                                       jcr:title="Press Release Content Template"/>
+                                <bootstrap-container jcr:primaryType="jnt:contentList">
+                                    <main-resource-display j:mainResourceView="detail" jcr:primaryType="jnt:mainResourceDisplay"/>
+                                </bootstrap-container>
+                            </press-release-content-template>
                         </_x0032_-column>
                         <_x0033_-column j:hiddenTemplate="false" jcr:primaryType="jnt:pageTemplate">
                             <j:translation_en jcr:language="en"
