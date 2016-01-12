@@ -165,3 +165,5 @@
  - internalLink (weakreference, picker[type='page']) < 'jnt:page'
 
 [jdnt:allStories] > jnt:content, jdmix:jahiademo, jmix:list, mix:title
+
+[jdnt:pressSearch] > jnt:content, jdmix:jahiademo, jmix:list, mix:title
