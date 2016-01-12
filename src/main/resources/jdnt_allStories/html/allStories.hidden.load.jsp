@@ -34,9 +34,9 @@
 
 <div class="tab-v1">
 <ul class="nav nav-tabs">
-    <li <c:if test="${pageView != 'top' && pageView != 'featured'}">class="active"</c:if> ><a href="${pageUrl}">Home</a></li>
-    <li <c:if test="${pageView == 'top'}">class="active"</c:if> ><a href="${pageUrl}?pageView=top" >Top Stories</a></li>
-    <li <c:if test="${pageView == 'featured'}">class="active"</c:if> ><a href="${pageUrl}?pageView=featured" >Featured Stories</a></li>
+    <li <c:if test="${pageView != 'top' && pageView != 'featured'}">class="active"</c:if> ><a href="${pageUrl}"><fmt:message key="jdnt_allStories.allNews"/></a></li>
+    <li <c:if test="${pageView == 'top'}">class="active"</c:if> ><a href="${pageUrl}?pageView=top" ><fmt:message key="jdnt_allStories.topNews"/></a></li>
+    <li <c:if test="${pageView == 'featured'}">class="active"</c:if> ><a href="${pageUrl}?pageView=featured"><fmt:message key="jdnt_allStories.featuredNews"/></a></li>
 </ul>
 
 <div class="tab-content">
