@@ -33,14 +33,13 @@
 <c:url var="pageUrl" value="${pageNode.url}" />
 
 <div class="tab-v1">
-<ul class="nav nav-tabs">
+    <ul class="nav nav-tabs">
     <li <c:if test="${pageView != 'top' && pageView != 'featured'}">class="active"</c:if> ><a href="${pageUrl}"><fmt:message key="jdnt_allStories.allNews"/></a></li>
     <li <c:if test="${pageView == 'top'}">class="active"</c:if> ><a href="${pageUrl}?pageView=top" ><fmt:message key="jdnt_allStories.topNews"/></a></li>
     <li <c:if test="${pageView == 'featured'}">class="active"</c:if> ><a href="${pageUrl}?pageView=featured"><fmt:message key="jdnt_allStories.featuredNews"/></a></li>
-</ul>
+    </ul>
 
-<div class="tab-content">
-    <div class="tab-pane fade in active">
+    <div class="tab-content">
         <c:choose>
             <c:when test="${pageView == 'top'}">
                 <jcr:sql var="topStories"
@@ -61,12 +60,9 @@
         </c:choose>
 
         <c:forEach items="${topStories.nodes}" var="topStory" varStatus="item">
-        <div class="row">
             <template:module view="${view}" path="${topStory.path}">
                 <template:param name="last" value="${item.last}"/>
             </template:module>
-            </div>
-        </c:forEach>
+           </c:forEach>
     </div>
-</div>
 </div>
