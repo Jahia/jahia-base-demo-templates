@@ -1,7 +1,6 @@
 CKEDITOR.stylesSet.add('demo_styles', [
 
     // Inline styles
-    {name: 'Headline', element: 'div', attributes: {'class': 'headline'}},
     {name: 'Paragraph lead', element: 'p', attributes: {'class': 'lead'}},
     {name: 'Drop cap', element: 'span', attributes: {'class': 'dropcap'}},
     {name: 'Drop cap inverse', element: 'span', attributes: {'class': 'dropcap-bg'}},
@@ -11,6 +10,7 @@ CKEDITOR.stylesSet.add('demo_styles', [
     {name: 'Dashed divider', element: 'hr', attributes: {'class': 'devider deviser-dashed'}},
 
     // Block styles
+    {name: 'Headline div', element: 'div', attributes: {'class': 'headline'}},
     {name: 'Text right', element: 'span', attributes: {'class': 'text-right'}},
     {name: 'Text center', element: 'span', attributes: {'class': 'text-center'}},
     {name: 'Blockquote', element: 'blockquote'},
@@ -57,9 +57,9 @@ CKEDITOR.editorConfig = function (config) {
         ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', 'Blockquote', 'CreateDiv'],
         ['JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'],
         ['Link', 'Unlink', 'Anchor'],
-        ['Image', 'Flash', 'Table', 'HorizontalRule', 'SpecialChar'],
+        ['Image', 'Flash', 'Table', 'HorizontalRule', 'SpecialChar', 'Iframe'],
         '/',
-        ['Macros', 'Styles', 'Format', 'FontSize'],
+        ['Macros', 'Styles', 'Format', 'FontSize', 'TextColor', 'BGColor'],
         ['Maximize', 'ShowBlocks', '-', 'About']
     ];
 
@@ -80,5 +80,6 @@ CKEDITOR.editorConfig = function (config) {
     // Loading custom templates
     config.templates_files = [((typeof contextJsParameters != 'undefined') ? contextJsParameters.contextPath : '') + '/modules/jahiademo/javascript/ckeditor_templates.js'];
 }
+
 
 

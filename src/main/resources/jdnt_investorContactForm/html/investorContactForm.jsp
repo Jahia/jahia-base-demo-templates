@@ -41,7 +41,7 @@
         <div class="panel-body">
         <%-- Tokenized Contact Form --%>
               <template:tokenizedForm>
-                <form action="<c:url value='${url.base}${currentNode.path}/*'/>" class="sky-form" method="post">
+                <form action="<c:url value='${url.base}${currentNode.path}/*'/>" class="sky-form" id="investor-contact-${componentId}" method="post">
                   <input type="hidden" name="jcrNodeType" value="jdnt:investorContact"/>
                   <input type="hidden" name="jcrRedirectTo" value="<c:url value='${url.base}${renderContext.mainResource.node.path}'/>"/>
                     <%-- Define the output format for the newly created node by default html or by jcrRedirectTo--%>

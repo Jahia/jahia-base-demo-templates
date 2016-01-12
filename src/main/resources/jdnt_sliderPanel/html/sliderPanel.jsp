@@ -78,25 +78,25 @@
             </c:if>
 
     <%-- TODO: update the following div class to use different styles already provided in the CSS --%>
-    <%-- if a title is provided display it --%>
-    <c:if test="${not empty title}">
+    <%-- if a subtitle is provided display it --%>
+    <c:if test="${not empty subtitle}">
             <div class="ms-layer ms-promo-info-in color-${textColor}" style="left:${textLayout}; top:160px"
                  data-effect="bottom(40)"
                  data-duration="2000"
                  data-delay="700"
                  data-ease="easeOutExpo"
-                    >${title}</div>
+                    >${subtitle}</div>
     </c:if>
 
     <%-- TODO: update the following div class to use different styles already provided in the CSS --%>
-    <%-- if a sub title is provided display it --%>
-    <c:if test="${not empty subtitle}">
+    <%-- if a title is provided display it --%>
+    <c:if test="${not empty title}">
             <div class="ms-layer ms-promo-info-in ms-promo-info color-${textColor}" style="left:${textLayout}; top:210px"
                  data-effect="bottom(40)"
                  data-duration="2000"
                  data-delay="1000"
                  data-ease="easeOutExpo"
-                    ><span class="color-green">${subtitle}</span></div>
+                    ><span class="color-green">${title}</span></div>
     </c:if>
 
     <%-- TODO: update the following div class to use different styles already provided in the CSS --%>

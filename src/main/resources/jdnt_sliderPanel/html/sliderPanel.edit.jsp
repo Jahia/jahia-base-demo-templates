@@ -61,13 +61,24 @@
 <div id="slidertab-${currentNode.identifier}" class="tab-content"
      style="background: url('${backgroundUrl}')">
     <div class="edit-slider-cont${textLayout}">
-        <c:if test="${not empty title}"><div class="first-layer-editslider">${title}</div></c:if>
-        <c:if test="${not empty subtitle}"><div class="second-layer-editslider">
-        <span class="color-${textColor}">${subtitle}</span>
+
+        <c:if test="${not empty subtitle}">
+            <c:choose>
+                <c:when test="${textColor eq 'dark'}"> <div class="first-layer-editslider color-dark">${subtitle}</div></c:when>
+                <c:otherwise><div class="first-layer-editslider">${subtitle}</div></c:otherwise>
+            </c:choose>
+        </c:if>
+        <c:if test="${not empty title}"><div class="second-layer-editslider">
+            <%--TODO: Subtitle should always be color-green --%>
+        <span class="color-green">${title}</span>
         </div></c:if>
 
-        <c:if test="${not empty summary}"><div class="text-layer-editslider">${summary}
-        </div></c:if>
+        <c:if test="${not empty summary}">
+            <c:choose>
+                <c:when test="${textColor eq 'dark'}"> <div class="text-layer-editslider color-dark">${summary}</div></c:when>
+                <c:otherwise><div class="text-layer-editslider">${summary}</div></c:otherwise>
+            </c:choose>
+        </c:if>
 
         <c:if test="${not empty link}">
         <a class="but-layer-editslider" href="${link.url}" alt="${title}">${linkText}</a>

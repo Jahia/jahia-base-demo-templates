@@ -5,6 +5,16 @@ CKEDITOR.addTemplates('default',
         // Template definitions.
         templates: [
             {
+                title: 'Headline',
+                description: 'Default headline',
+                html: '<div class="headline">'+
+                '<h2>'+
+                'Headline'+
+                '</h2>'+
+                '</div>'+
+                '<br/>'
+            },
+            {
                 title: 'Grey testimonial',
                 //image: 'list1.png',
                 description: 'Grey testimonial',
