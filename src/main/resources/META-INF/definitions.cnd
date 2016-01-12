@@ -164,6 +164,13 @@
  - linkTitle (string) internationalized
  - internalLink (weakreference, picker[type='page']) < 'jnt:page'
 
+[jdmix:searchArea] mixin
+ extends = jnt:topStories
+ itemtype = content
+ - startPage (weakreference, picker[type='page'])
+
 [jdnt:allStories] > jnt:content, jdmix:jahiademo, jmix:list, mix:title
+ - startPage (weakreference, picker[type='page'])
 
 [jdnt:pressSearch] > jnt:content, jdmix:jahiademo, jmix:list, mix:title
+ - startPage (weakreference, picker[type='page'])

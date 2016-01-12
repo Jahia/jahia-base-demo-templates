@@ -27,6 +27,13 @@
     <c:set var="view" value="${currentNode.properties['view'].string}"/>
     <c:set target="${moduleMap}" property="subNodesView" value="${view}"/>
 </c:if>
+<c:if test="${jcr:isNodeType(currentNode, 'jdmix:searchArea')}">
+    <c:set var="startNodePath" value="${currentNode.properties['startPage'].node.path}"/>
+</c:if>
+<c:if test="${empty startNodePath}">
+    <c:set var="startNodePath" value="${currentNode.resolveSite.path}"/>
+</c:if>
+
 <jsp:useBean id="now" class="java.util.Date"/>
 <fmt:formatDate value="${now}" pattern="yyyy-MM-dd" var="today"/>
 
@@ -39,7 +46,7 @@
     <c:when test="${view == 'newsroom'}">
 
         <jcr:sql var="topStories"
-                 sql="select * from [jmix:topStory] as story where isdescendantnode(story, ['${renderContext.site.path}'])
+                 sql="select * from [jmix:topStory] as story where isdescendantnode(story, ['${startNodePath}'])
          and story.[j:level]='${topLevel}' and (story.[j:endDate] is null or story.[j:endDate] > CAST('+${today}T00:00:00.000' as date)) order by story.[date] desc"
                  limit="${currentNode.properties['j:limit'].long}"/>
 
@@ -78,7 +85,7 @@
     </c:when>
     <c:when test="${pageView == 'top'}">
         <jcr:sql var="topStories"
-                 sql="select * from [jmix:topStory] as story where isdescendantnode(story, ['${renderContext.site.path}'])
+                 sql="select * from [jmix:topStory] as story where isdescendantnode(story, ['${startNodePath}'])
          and story.[j:level]='first' and (story.[j:endDate] is null or story.[j:endDate] > CAST('+${today}T00:00:00.000' as date)) order by story.[date] desc"/>
 
         <c:forEach items="${topStories.nodes}" var="topStory" varStatus="item">
@@ -90,7 +97,7 @@
     </c:when>
     <c:when test="${pageView == 'featured'}">
         <jcr:sql var="topStories"
-                 sql="select * from [jmix:topStory] as story where isdescendantnode(story, ['${renderContext.site.path}'])
+                 sql="select * from [jmix:topStory] as story where isdescendantnode(story, ['${startNodePath}'])
          and story.[j:level]='second' and (story.[j:endDate] is null or story.[j:endDate] > CAST('+${today}T00:00:00.000' as date)) order by story.[date] desc"/>
 
         <c:forEach items="${topStories.nodes}" var="topStory" varStatus="item">
@@ -102,7 +109,7 @@
     </c:when>
     <c:when test="${pageView == 'all'}">
         <jcr:sql var="topStories"
-                 sql="select * from [jmix:topStory] as story where isdescendantnode(story, ['${renderContext.site.path}']) order by story.[date] desc"/>
+                 sql="select * from [jmix:topStory] as story where isdescendantnode(story, ['${startNodePath}']) order by story.[date] desc"/>
 
         <c:forEach items="${topStories.nodes}" var="topStory" varStatus="item">
             <template:module view="default" path="${topStory.path}">
@@ -116,7 +123,7 @@
 <c:if test="${currentNode.properties['j:limit'].long gt 0}">
 
     <query:definition var="listQuery"
-                      statement="select * from [jmix:topStory] as story where isdescendantnode(story, ['${renderContext.site.path}'])
+                              statement="select * from [jmix:topStory] as story where isdescendantnode(story, ['${startNodePath}'])
          and story.[j:level]='${topLevel}' and (story.[j:endDate] is null or story.[j:endDate] > CAST('+${today}T00:00:00.000' as date)) order by story.[date] desc"
                       limit="${currentNode.properties['j:limit'].long}"/>
 

@@ -28,6 +28,12 @@
 <c:set var="lastYear" value="${thisYear-1}"/>
 <c:set var="yearBefore" value="${lastYear-1}"/>
 
+<%-- get the starting page for the search --%>
+<c:set var="startNodePath" value="${currentNode.properties['startPage'].node.path}"/>
+<c:if test="${empty startNodePath}">
+    <c:set var="startNodePath" value="${currentNode.resolveSite.path}"/>
+</c:if>
+
 <div class="tab-v1">
     <ul class="nav nav-tabs">
         <li class="active"><a href="#${thisYear}" data-toggle="tab">${thisYear}</a></li>
@@ -38,58 +44,50 @@
     <div class="tab-content">
         <div class="tab-pane fade in active" id="${thisYear}">
             <jcr:sql var="pressReleases"
-                     sql="select * from [jnt:press] as press where isdescendantnode(press, ['${renderContext.site.path}'])
+                     sql="select * from [jnt:press] as press where isdescendantnode(press, ['${startNodePath}'])
          and press.[date] >= CAST('${thisYear}-01-01T00:00:00.000Z' AS DATE)
             AND press.[date] <= CAST('${thisYear}-12-31T23:59:59.999Z' AS DATE)
          order by press.[date] desc"/>
             <c:forEach items="${pressReleases.nodes}" var="pressRelease" varStatus="item">
-                <div class="row">
                     <template:module view="default" path="${pressRelease.path}">
                         <template:param name="last" value="${item.last}"/>
                     </template:module>
-                </div>
             </c:forEach>
 
         </div>
         <div class="tab-pane fade in" id="${lastYear}">
             <jcr:sql var="pressReleases"
-                     sql="select * from [jnt:press] as press where isdescendantnode(press, ['${renderContext.site.path}'])
+                     sql="select * from [jnt:press] as press where isdescendantnode(press, ['${startNodePath}'])
          and press.[date] >= CAST('${lastYear}-01-01T00:00:00.000Z' AS DATE)
             AND press.[date] <= CAST('${lastYear}-12-31T23:59:59.999Z' AS DATE)
          order by press.[date] desc"/>
             <c:forEach items="${pressReleases.nodes}" var="pressRelease" varStatus="item">
-                <div class="row">
                     <template:module view="default" path="${pressRelease.path}">
                         <template:param name="last" value="${item.last}"/>
                     </template:module>
-                </div>
             </c:forEach>
                   </div>
         <div class="tab-pane fade in" id="${yearBefore}">
             <jcr:sql var="pressReleases"
-                     sql="select * from [jnt:press] as press where isdescendantnode(press, ['${renderContext.site.path}'])
+                     sql="select * from [jnt:press] as press where isdescendantnode(press, ['${startNodePath}'])
          and press.[date] >= CAST('${yearBefore}-01-01T00:00:00.000Z' AS DATE)
             AND press.[date] <= CAST('${yearBefore}-12-31T23:59:59.999Z' AS DATE)
          order by press.[date] desc"/>
             <c:forEach items="${pressReleases.nodes}" var="pressRelease" varStatus="item">
-                <div class="row">
                     <template:module view="default" path="${pressRelease.path}">
                         <template:param name="last" value="${item.last}"/>
                     </template:module>
-                </div>
             </c:forEach>
         </div>
         <div class="tab-pane fade in" id="Older">
             <jcr:sql var="pressReleases"
-                     sql="select * from [jnt:press] as press where isdescendantnode(press, ['${renderContext.site.path}'])
+                     sql="select * from [jnt:press] as press where isdescendantnode(press, ['${startNodePath}'])
          and press.[date] <= CAST('${yearBefore}-01-01T00:00:00.000Z' AS DATE)
          order by press.[date] desc"/>
             <c:forEach items="${pressReleases.nodes}" var="pressRelease" varStatus="item">
-                <div class="row">
                     <template:module view="default" path="${pressRelease.path}">
                         <template:param name="last" value="${item.last}"/>
                     </template:module>
-                </div>
             </c:forEach>
 
         </div>

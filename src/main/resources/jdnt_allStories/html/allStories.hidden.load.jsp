@@ -29,6 +29,12 @@
     <p><fmt:message key="label.componentDescription"/></p>
 </c:if>
 
+<%-- get the starting page for the search --%>
+<c:set var="startNodePath" value="${currentNode.properties['startPage'].node.path}"/>
+<c:if test="${empty startNodePath}">
+    <c:set var="startNodePath" value="${currentNode.resolveSite.path}"/>
+</c:if>
+
 <c:set var="pageNode" value="${renderContext.mainResource.node}"/>
 <c:url var="pageUrl" value="${pageNode.url}" />
 
@@ -43,19 +49,19 @@
         <c:choose>
             <c:when test="${pageView == 'top'}">
                 <jcr:sql var="topStories"
-                         sql="select * from [jmix:topStory] as story where isdescendantnode(story, ['${renderContext.site.path}'])
+                 sql="select * from [jmix:topStory] as story where isdescendantnode(story, ['${startNodePath}'])
          and story.[j:level]='first' and (story.[j:endDate] is null or story.[j:endDate] > CAST('+${today}T00:00:00.000' as date)) order by story.[date] desc"/>
 
             </c:when>
             <c:when test="${pageView == 'featured'}">
                 <jcr:sql var="topStories"
-                         sql="select * from [jmix:topStory] as story where isdescendantnode(story, ['${renderContext.site.path}'])
+                 sql="select * from [jmix:topStory] as story where isdescendantnode(story, ['${startNodePath}'])
          and story.[j:level]='second' and (story.[j:endDate] is null or story.[j:endDate] > CAST('+${today}T00:00:00.000' as date)) order by story.[date] desc"/>
 
             </c:when>
             <c:otherwise>
                 <jcr:sql var="topStories"
-                         sql="select * from [jnt:news] as story where isdescendantnode(story, ['${renderContext.site.path}']) order by story.[date] desc"/>
+                         sql="select * from [jnt:news] as story where isdescendantnode(story, ['${startNodePath}']) order by story.[date] desc"/>
             </c:otherwise>
         </c:choose>
 
