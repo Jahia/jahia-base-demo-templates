@@ -119,6 +119,16 @@
 	width: 100%;
 }
 
+/* Fernando's code */
+.ms-slide-bgcont img{
+    position: relative!important;
+    background-size: cover!important;
+    height: 100%!important;
+    top: 0!important;
+    right: 0!important;    
+    margin: 0 auto!important;
+}
+
 .ms-slide .ms-slide-link { 
 	display: block;
 	width: 100%;
