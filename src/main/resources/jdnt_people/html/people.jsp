@@ -19,7 +19,7 @@
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
 <template:addResources type="css" resources="leadership.css"/>
 
-<div class="content" id="leadership">
+<div id="leadership">
     <%-- Get the title, if exists display above people list --%>
     <c:set var="title" value="${currentNode.properties['jcr:title'].string}"/>
     <c:if test="${not empty title}">

@@ -1,31 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <content xmlns:j="http://www.jahia.org/jahia/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0">
     <modules jcr:primaryType="jnt:modules">
-        <jahiademo j:dependencies="bootstrap bootstrap3-components default font-awesome grid location news person rating search topstories"
+        <jahiademo j:dependencies="bootstrap bootstrap3-components calendar default event facets font-awesome grid location news person rating search topstories"
                  j:installedModules="jahiademo"
                  j:modulePriority="0"
                  j:moduleType="templatesSet"
                  j:title="jahiademo"
                  jcr:mixinTypes="jmix:hasExternalProviderExtension"
                  jcr:primaryType="jnt:module">
-                <sources jcr:mixinTypes="jmix:hasExternalProviderExtension"
-                  jcr:primaryType="jnt:moduleVersionFolder"
-                  j:staticMountPointProviderKey="module-jahiademo-1.0-SNAPSHOT">
-                    <src jcr:primaryType="jnt:folder">
-                        <main jcr:primaryType="jnt:folder">
-                            <resources jcr:primaryType="jnt:folder">
-                                <jnt_template jcr:primaryType="jnt:nodeTypeFolder">
-                                    <html jcr:primaryType="jnt:templateTypeFolder">
-                                        <template.jahiademo.jsp jcr:primaryType="jnt:viewFile"/>
-                                    </html>
-                                </jnt_template>
-                                <META-INF jcr:primaryType="jnt:metaInfFolder">
-                                    <definitions.cnd jcr:primaryType="jnt:definitionFile"/>
-                                </META-INF>
-                            </resources>
-                        </main>
-                    </src>
-                </sources>
 
                             <portlets jcr:primaryType="jnt:portletFolder"/>
                 <files jcr:primaryType="jnt:folder">
@@ -301,6 +283,107 @@
                                 <back-to-parent-page jcr:primaryType="jnt:backToParentPage"/>
                             </pagecontent>
                         </person-bio-content-template>
+                        <events j:hiddenTemplate="false" jcr:primaryType="jnt:pageTemplate">
+                            <j:translation_en jcr:language="en"
+                                    jcr:primaryType="jnt:translation"
+                                    jcr:title="Events"/>
+                            <pagecontent jcr:primaryType="jnt:contentList">
+                                <bootstrap-layer-container-rows-a jcr:mixinTypes="jmix:bootstrap3FullComponentRowPredefined"
+                                                       jcr:primaryType="jnt:bootstrap3FullComponent"
+                                                       layout="3_9"
+                                                       rowType="predefined">
+                                    <bootstrap-layer-container-rows-a-side1 jcr:primaryType="jnt:contentList">
+                                        <calendar endDateProperty="endDate"
+                                     j:bindedComponent="/modules/jahiademo/templates/base/events/pagecontent/bootstrap-layer-container-rows-a/bootstrap-layer-container-rows-a/Events"
+                                     jcr:primaryType="jnt:calendar"
+                                     startDateProperty="startDate"/>
+                                        <facets j:bindedComponent="/modules/jahiademo/templates/base/events/pagecontent/bootstrap-layer-container-rows-a/bootstrap-layer-container-rows-a/Events"
+                                   j:type="jnt:event"
+                                   jcr:primaryType="jnt:facets">
+                                            <fieldFacet facet="type"
+                                          field="jnt:event;eventsType"
+                                          jcr:primaryType="jnt:fieldFacet"
+                                          limit="100"
+                                          mincount="1"
+                                          missing="false"
+                                          offset="0">
+                                                <j:translation_en jcr:language="en" jcr:primaryType="jnt:translation" label="Type"/>
+                                            </fieldFacet>
+                                            <field-hierarchical-facet facet="Categories"
+                                                        field="jmix:categorized;j:defaultCategory"
+                                                        jcr:primaryType="jnt:fieldHierarchicalFacet"
+                                                        limit="100"
+                                                        mincount="1"
+                                                        missing="false"
+                                                        offset="0"
+                                                        prefix="/sites/systemsite/categories">
+                                                <j:translation_en jcr:language="en"
+                                                   jcr:primaryType="jnt:translation"
+                                                   label="Categories"/>
+                                                <j:translation_fr jcr:language="fr"
+                                                   jcr:primaryType="jnt:translation"
+                                                   label="Catégories"/>
+                                            </field-hierarchical-facet>
+                                            <queryFacet facet="nextEvents"
+                                          jcr:primaryType="jnt:queryFacet"
+                                          mincount="1"
+                                          query="0\:FACET\:startDate:[NOW/DAY TO NOW/MONTH+1MONTH-1SECOND] OR 0\:FACET\:endDate:[NOW/DAY TO NOW/MONTH+1MONTH-1SECOND]">
+                                                <j:translation_en jcr:language="en"
+                                                   jcr:primaryType="jnt:translation"
+                                                   label="Next events per month"
+                                                   valueLabel="##DynamicDateLabel(NOW/MONTH,date,MMMM)##"/>
+                                                <j:translation_fr jcr:language="fr"
+                                                   jcr:primaryType="jnt:translation"
+                                                   label="Prochains évènements par mois"
+                                                   valueLabel="##DynamicDateLabel(NOW/MONTH,date,MMMM)##"/>
+                                            </queryFacet>
+                                            <queryFacet-1 facet="nextEvents"
+                                            jcr:primaryType="jnt:queryFacet"
+                                            mincount="1"
+                                            query="0\:FACET\:startDate:[NOW/MONTH+1MONTH TO NOW/MONTH+2MONTH-1SECOND] OR 0\:FACET\:endDate:[NOW/MONTH+1MONTH TO NOW/MONTH+2MONTH-1SECOND]">
+                                                <j:translation_en jcr:language="en"
+                                                   jcr:primaryType="jnt:translation"
+                                                   label="Next events per month"
+                                                   valueLabel="##DynamicDateLabel(NOW/MONTH+1MONTH,date,MMMM)##"/>
+                                                <j:translation_fr jcr:language="fr"
+                                                   jcr:primaryType="jnt:translation"
+                                                   label="Prochains évènements par mois"
+                                                   valueLabel="##DynamicDateLabel(NOW/MONTH+1MONTH,date,MMMM)##"/>
+                                            </queryFacet-1>
+                                            <queryFacet-2 facet="nextEvents"
+                                            jcr:primaryType="jnt:queryFacet"
+                                            mincount="1"
+                                            query="0\:FACET\:startDate:[NOW/MONTH+2MONTH TO NOW/MONTH+3MONTH-1SECOND] OR 0\:FACET\:endDate:[NOW/MONTH+2MONTH TO NOW/MONTH+3MONTH-1SECOND]">
+                                                <j:translation_en jcr:language="en"
+                                                   jcr:primaryType="jnt:translation"
+                                                   label="Next events per month"
+                                                   valueLabel="##DynamicDateLabel(NOW/MONTH+2MONTH,date,MMMM)##"/>
+                                                <j:translation_fr jcr:language="fr"
+                                                   jcr:primaryType="jnt:translation"
+                                                   label="Prochains évènements par mois"
+                                                   valueLabel="##DynamicDateLabel(NOW/MONTH+2MONTH,date,MMMM)##"/>
+                                            </queryFacet-2>
+                                            <queryFacet-3 facet="nextEvents"
+                                            jcr:primaryType="jnt:queryFacet"
+                                            mincount="1"
+                                            query="0\:FACET\:startDate:[NOW/MONTH+3MONTH TO NOW/MONTH+4MONTH-1SECOND] OR 0\:FACET\:endDate:[NOW/MONTH+3MONTH TO NOW/MONTH+4MONTH-1SECOND]">
+                                                <j:translation_en jcr:language="en"
+                                                   jcr:primaryType="jnt:translation"
+                                                   label="Next events per month"
+                                                   valueLabel="##DynamicDateLabel(NOW/MONTH+3MONTH,date,MMMM)##"/>
+                                                <j:translation_fr jcr:language="fr"
+                                                   jcr:primaryType="jnt:translation"
+                                                   label="Prochains évènements par mois"
+                                                   valueLabel="##DynamicDateLabel(NOW/MONTH+3MONTH,date,MMMM)##"/>
+                                            </queryFacet-3>
+                                        </facets>
+                                    </bootstrap-layer-container-rows-a-side1>
+                                    <bootstrap-layer-container-rows-a jcr:primaryType="jnt:contentList">
+                                        <Events j:allowedTypes="jnt:event" jcr:primaryType="jnt:area"/>
+                                </bootstrap-layer-container-rows-a>
+                                </bootstrap-layer-container-rows-a>
+                            </pagecontent>
+                        </events>
                         </base>
                     <newsletter-issue j:applyOn="jnt:newsletterIssue"
                               j:defaultTemplate="true"

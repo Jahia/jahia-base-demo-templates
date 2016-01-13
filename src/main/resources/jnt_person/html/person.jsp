@@ -74,7 +74,7 @@
                 </c:if>
             <li><c:url var="vcardUrl" value="${url.base}${currentNode.path}.vcf"/>
                 <a data-placement="top" data-toggle="tooltip" class="vcard	tooltips"
-                   data-original-title="<fmt:message key="jnt_person.vcard"/>" href=""${vcardUrl}"><i class="fa fa-vcard"></a></i></li>
+                   data-original-title="<fmt:message key="jnt_person.vcard"/>" href="${vcardUrl}"><i class="fa fa-vcard"></i></a></li>
             </ul>
         </div>
         <div class="col-md-12">
