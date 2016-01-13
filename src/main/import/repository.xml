@@ -384,6 +384,40 @@
                                 </bootstrap-layer-container-rows-a>
                             </pagecontent>
                         </events>
+                        <event-content-template j:applyOn="jnt:event"
+                                           j:defaultTemplate="true"
+                                           j:hiddenTemplate="true"
+                                           j:priority="30"
+                                           jcr:primaryType="jnt:contentTemplate">
+                            <j:translation_en jcr:language="en"
+                                    jcr:mixinTypes="mix:title"
+                                    jcr:primaryType="jnt:translation"
+                                    jcr:title="Event Content Template"/>
+                            <pagecontent jcr:primaryType="jnt:contentList">
+                                <bootstrap-container jcr:mixinTypes="jmix:bootstrap3FullComponentRowPredefined"
+                                          jcr:primaryType="jnt:bootstrap3FullComponent"
+                                          layout="9_3"
+                                          rowType="predefined">
+                                    <bootstrap-container jcr:primaryType="jnt:contentList">
+                                        <main-resource-display j:mainResourceView="default" jcr:primaryType="jnt:mainResourceDisplay"/>
+                                    </bootstrap-container>
+                                    <bootstrap-container-side1 jcr:primaryType="jnt:contentList">
+                                        <main-resource-display j:mainResourceView="default" jcr:primaryType="jnt:mainResourceDisplay"/>
+                                        <map j:classname="map map-box map-box-space1 margin-bottom-30 overflow-hidden"
+                                j:height="255"
+                                j:mapType="roadmap"
+                                j:skin="skins.custom"
+                                j:width="325"
+                                j:zoom="10"
+                                jcr:mixinTypes="jmix:customSkin jmix:skinnable"
+                                jcr:primaryType="jnt:map"/>
+                                        <main-resource-display-1 j:mainResourceView="addPeople"
+                                                    jcr:primaryType="jnt:mainResourceDisplay"/>
+                                    </bootstrap-container-side1>
+                                </bootstrap-container>
+                            </pagecontent>
+                            <landing jcr:primaryType="jnt:contentList"/>
+                        </event-content-template>
                         </base>
                     <newsletter-issue j:applyOn="jnt:newsletterIssue"
                               j:defaultTemplate="true"
