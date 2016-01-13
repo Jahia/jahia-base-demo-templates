@@ -3863,3 +3863,20 @@ img.img-center,
    -ms-transform: scale(2) rotate(5deg);
    transform: scale(2) rotate(5deg);
 }
+
+/*fermaca portfolio grid edit mode fix*/
+.cbp-caption-defaultWrap{
+	overflow: hidden!important;
+	width: 500px;
+	height: 325px;
+}
+
+.cbp-caption-defaultWrap img{
+	width: 100%;
+	height: auto;
+}
+
+.cbp-l-grid-agency{
+	display: flex;
+	flex-wrap: wrap;
+}
