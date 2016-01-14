@@ -30,6 +30,41 @@
     border-radius: 5px;
 }
 
+/*eventdate ICON*/
+
+.eventsDateBadge {
+	width: 50px; height: 54px; 
+	background: #fcfcfc; 
+	background: linear-gradient(top, #fcfcfc 0%,#dad8d8 100%); 
+	background: -moz-linear-gradient(top, #fcfcfc 0%, #dad8d8 100%); 
+	background: -webkit-linear-gradient(top, #fcfcfc 0%,#dad8d8 100%); 
+	border: 1px solid #d2d2d2;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	box-shadow: 0px 0px 15px rgba(0,0,0,0.1);
+	-moz-box-shadow: 0px 0px 15px rgba(0,0,0,0.1);
+	-webkit-box-shadow: 0px 0px 15px rgba(0,0,0,0.1);
+}
+	
+.eventsDateBadge p {
+	font-size: 25px; text-align: center!important; 
+	line-height: 1!important;
+	}
+	
+.eventsDateBadge p span {
+	background: #d10000!important; 
+	background: linear-gradient(top, #E74C3C 0%, #c0392b 100%)!important;
+	background: -moz-linear-gradient(top, #E74C3C 0%, #c0392b 100%)!important;
+	background: -webkit-linear-gradient(top, #E74C3C 0%, #c0392b 100%)!important;
+	font-size: 15px; font-weight: bold; color: #fff; text-transform: uppercase!important; 	
+	display: block!important;
+	border-radius: 0 0 5px 5px!important;
+	-moz-border-radius: 0 0 5px 5px!important;
+	-webkit-border-radius: 0 0 5px 5px!important;
+	padding: 6px 0 6px 0!important;
+	}
+
 
 /*LEADERSHIP*/
 
