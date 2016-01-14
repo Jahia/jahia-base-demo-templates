@@ -17,6 +17,7 @@
 <%--@elvariable id="renderContext" type="org.jahia.services.render.RenderContext"--%>
 <%--@elvariable id="currentResource" type="org.jahia.services.render.Resource"--%>
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
+<%-- TODO: finish adding componentID to the div ID --%>
 
 <%@ page import="java.util.Calendar" %>
 
@@ -27,6 +28,9 @@
 <fmt:formatDate value="${now}" pattern="yyyy" var="thisYear"/>
 <c:set var="lastYear" value="${thisYear-1}"/>
 <c:set var="yearBefore" value="${lastYear-1}"/>
+
+<%-- set componentId variable to in order to make each carousel unique on the page. These will be used to define carousel div id and its nav controls --%>
+<c:set var="componentId" value="${currentNode.identifier}"/>
 
 <%-- get the starting page for the search --%>
 <c:set var="startNodePath" value="${currentNode.properties['startPage'].node.path}"/>
