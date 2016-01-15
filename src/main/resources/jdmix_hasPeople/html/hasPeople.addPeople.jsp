@@ -23,7 +23,7 @@
     <div class="headline"><h2>${boxTitle.string}</h2></div>
         <ul class="list-unstyled margin-bottom-30">
         <template:area path="relatedPeople" nodeTypes="jnt:person">
-            <template:param name="subNodesView" value="company"/>
+            <template:param name="subNodesView" value="condensed"/>
         </template:area>
         </ul>
 </div>

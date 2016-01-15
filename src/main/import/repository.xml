@@ -9,7 +9,7 @@
                  jcr:mixinTypes="jmix:hasExternalProviderExtension"
                  jcr:primaryType="jnt:module">
 
-                            <portlets jcr:primaryType="jnt:portletFolder"/>
+<portlets jcr:primaryType="jnt:portletFolder"/>
                 <files jcr:primaryType="jnt:folder">
                     <bootstrap jcr:primaryType="jnt:folder">
                         <css jcr:primaryType="jnt:folder">
@@ -399,10 +399,10 @@
                                           layout="9_3"
                                           rowType="predefined">
                                     <bootstrap-container jcr:primaryType="jnt:contentList">
-                                        <main-resource-display j:mainResourceView="default" jcr:primaryType="jnt:mainResourceDisplay"/>
+                                        <main-resource-display j:mainResourceView="detail" jcr:primaryType="jnt:mainResourceDisplay"/>
                                     </bootstrap-container>
                                     <bootstrap-container-side1 jcr:primaryType="jnt:contentList">
-                                        <main-resource-display j:mainResourceView="default" jcr:primaryType="jnt:mainResourceDisplay"/>
+                                        <main-resource-display j:mainResourceView="metadata" jcr:primaryType="jnt:mainResourceDisplay"/>
                                         <map j:classname="map map-box map-box-space1 margin-bottom-30 overflow-hidden"
                                 j:height="255"
                                 j:mapType="roadmap"
@@ -416,8 +416,7 @@
                                     </bootstrap-container-side1>
                                 </bootstrap-container>
                             </pagecontent>
-                            <landing jcr:primaryType="jnt:contentList"/>
-                        </event-content-template>
+                            </event-content-template>
                         </base>
                     <newsletter-issue j:applyOn="jnt:newsletterIssue"
                               j:defaultTemplate="true"

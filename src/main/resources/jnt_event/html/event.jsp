@@ -67,7 +67,7 @@
                         </c:if>
                         <ul class="list-inline">
                             <li><i class="fa   fa-users"></i>&nbsp;${boxTitle}:</li>
-                            <template:area path="relatedPeople" nodeTypes="jnt:person">
+                            <template:area path="${currentNode.path}/relatedPeople" nodeTypes="jnt:person">
                                 <template:param name="subNodesView" value="event"/>
                             </template:area>
                         </ul>
