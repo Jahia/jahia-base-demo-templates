@@ -127,7 +127,7 @@ video, .video-js{
 }
 
 .eventsDateBadge p span {
-	background: #d10000!important;
+	background: #c0392b!important;
 	background: linear-gradient(top, #E74C3C 0%, #c0392b 100%)!important;
 	background: -moz-linear-gradient(top, #E74C3C 0%, #c0392b 100%)!important;
 	background: -webkit-linear-gradient(top, #E74C3C 0%, #c0392b 100%)!important;
@@ -163,7 +163,7 @@ video, .video-js{
 	font-weight: bold;
 }
 .fc-state-highlight {
-	background: #d10000!important;
+	background: #c0392b!important;
 	background: linear-gradient(top, #E74C3C 0%, #c0392b 100%)!important;
 	background: -moz-linear-gradient(top, #E74C3C 0%, #c0392b 100%)!important;
 	background: -webkit-linear-gradient(top, #E74C3C 0%, #c0392b 100%)!important;
