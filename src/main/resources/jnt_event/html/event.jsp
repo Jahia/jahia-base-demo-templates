@@ -33,7 +33,7 @@
 
 <div class="eventsListItem"><!--start eventsListItem -->
     <div class="eventsInfoDate hidden-xs">
-        <div class="eventsDateBadge">
+        <div class="eventsDateBadge margin-top-20">
             <p><fmt:formatDate value="${startDate}" pattern="dd" type="date"/><span><fmt:formatDate value="${startDate}"
                                                                                                     pattern="MMM"
                                                                                                     type="date"/></span>

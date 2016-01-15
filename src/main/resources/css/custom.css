@@ -158,6 +158,42 @@ video, .video-js{
 	min-height: 1px;
 }
 
+.fc-today {
+	color:#fff;
+	font-weight: bold;
+}
+.fc-state-highlight {
+	background: #d10000!important;
+	background: linear-gradient(top, #E74C3C 0%, #c0392b 100%)!important;
+	background: -moz-linear-gradient(top, #E74C3C 0%, #c0392b 100%)!important;
+	background: -webkit-linear-gradient(top, #E74C3C 0%, #c0392b 100%)!important;
+}
+
+.wrapper .fc-event-skin {
+	background-color: #FFF;
+	border-color:#E74C3C;
+	color: #E74C3C;
+	font-weight: bold;
+	text-align: center;
+}
+
+.fc-corner-left .fc-button-inner, .fc-corner-left .fc-event-inner {
+	margin-left: 0px!important;
+}
+
+.fc-corner-right .fc-button-inner, .fc-corner-right .fc-event-inner {
+	margin-right: 0px!important;
+}
+
+.fc-header-title h2{
+	font-size: 115%;
+}
+
+/*Carousel Image fix */
+
+img.carouselImageFull {
+	max-width:100%;
+}
 /*LEADERSHIP*/
 
 .team-social li a.ln {
