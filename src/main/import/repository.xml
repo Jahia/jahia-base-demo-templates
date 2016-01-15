@@ -254,15 +254,15 @@
                                           jcr:title="Newsroom"/>
                                 </banner>
                             </landing>
-                            <all-news j:hiddenTemplate="false" jcr:primaryType="jnt:pageTemplate">
+                            <news-entry j:hiddenTemplate="false" jcr:primaryType="jnt:pageTemplate">
                                 <j:translation_en jcr:language="en"
                                        jcr:mixinTypes="mix:title"
                                        jcr:primaryType="jnt:translation"
-                                       jcr:title="All News"/>
+                                       jcr:title="News Entry"/>
                                 <bootstrap-layer-container-rows-a jcr:primaryType="jnt:contentList">
                                     <article j:allowedTypes="jnt:news" jcr:primaryType="jnt:area"/>
                                 </bootstrap-layer-container-rows-a>
-                            </all-news>
+                            </news-entry>
                         </news>
                         <person-bio-content-template j:applyOn="jnt:person"
                                             j:defaultTemplate="true"

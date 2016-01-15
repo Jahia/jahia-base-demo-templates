@@ -64,7 +64,25 @@
 	-webkit-border-radius: 0 0 5px 5px!important;
 	padding: 6px 0 6px 0!important;
 	}
+/*eventdate Layout*/
 
+.eventsInfoDate {
+	float:left!important;
+	width: 85px!important;
+	position: relative!important;
+	min-height: 1px!important;
+	padding-right: 15px!important;
+	padding-left: 15px!important;
+}
+
+.eventsBody {
+	float:left!important;
+	width: 725px!important;
+	position: relative!important;
+	min-height: 1px!important;
+	padding-right: 15px!important;
+	padding-left: 15px!important;
+}
 
 /*LEADERSHIP*/
 

@@ -45,7 +45,7 @@ printMenu = { node, navMenuLevel ->
                             else if (navMenuLevel <= 1 && hasChildren){
                                 listItemCssClass = "class=\"dropdown " + (inpath || active ? "active" : "") + "\"";
                             }
-                            else { listItemCssClass = (inpath || active ? "class\"=active\"" : "");}
+                            else { listItemCssClass = (inpath || active ? "class=\"active\"" : "");}
                             description = menuItem.properties['jcr:description'];
                             linkTitle = description ? " title=\"${description.string}\"" : "";
                             if (menuItem.isNodeType('jnt:nodeLink')) {

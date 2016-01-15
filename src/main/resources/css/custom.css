@@ -139,6 +139,25 @@ video, .video-js{
 	padding: 6px 0 6px 0!important;
 }
 
+/*eventdate Layout*/
+
+.eventsInfoDate {
+	display: inline-block;
+	width: 10%;
+	position: relative;
+	min-height: 1px;
+	padding-right: 15px;
+	padding-left: 15px;
+	vertical-align:top;
+}
+
+.eventsBody {
+	display: inline-block;
+	width: 89%;
+	position: relative;
+	min-height: 1px;
+}
+
 /*LEADERSHIP*/
 
 .team-social li a.ln {
