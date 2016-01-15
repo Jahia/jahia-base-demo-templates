@@ -175,3 +175,4 @@
 
 [jdnt:pressSearch] > jnt:content, jdmix:jahiademo, jmix:list, mix:title
  - startPage (weakreference, picker[type='page'])
+[jdmix:backLink] mixin
