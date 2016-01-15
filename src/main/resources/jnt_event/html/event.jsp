@@ -32,7 +32,7 @@
 <c:url var="detailUrl" value="${url.base}${currentNode.path}.html"/>
 
 <div class="eventsListItem"><!--start eventsListItem -->
-    <div class="eventsInfoDate col-md-1 hidden-xs">
+    <div class="eventsInfoDate hidden-xs">
         <div class="eventsDateBadge">
             <p><fmt:formatDate value="${startDate}" pattern="dd" type="date"/><span><fmt:formatDate value="${startDate}"
                                                                                                     pattern="MMM"
@@ -40,7 +40,7 @@
             </p>
         </div>
     </div>
-    <div class="eventsBody col-md-11"><!--start eventsBody -->
+    <div class="eventsBody"><!--start eventsBody -->
             <div class=" shadow-wrapper">
                 <div class="tag-box tag-box-v2 box-shadow shadow-effect-4">
                     <!-- event title -->
