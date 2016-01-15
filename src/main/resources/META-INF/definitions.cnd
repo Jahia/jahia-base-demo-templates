@@ -175,4 +175,11 @@
 
 [jdnt:pressSearch] > jnt:content, jdmix:jahiademo, jmix:list, mix:title
  - startPage (weakreference, picker[type='page'])
+
 [jdmix:backLink] mixin
+
+[jdmix:fileAttachment] mixin
+ extends = jnt:event
+ itemtype = content
+ - downloadTitle (string) internationalized
+ - pdfVersion (weakreference, picker[type='file']) i18n

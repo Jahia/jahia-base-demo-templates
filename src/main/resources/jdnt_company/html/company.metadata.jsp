@@ -32,7 +32,7 @@
     <c:set var="googlePlus" value="${currentNode.properties.googlePlus.string}"/>
 </c:if>
 
-<div class="headline"><h2>Headquarters</h2></div>
+<div class="headline"><h2><fmt:message key="jdnt_company.headlineTitle"/></h2></div>
 <ul class="list-unstyled who">
     <c:if test="${not empty street or not empty  town or not empty country}">
     <li><a href="https://maps.google.com?q=${street.string}+${town.string}+${zipCode.string}+${country.string}"><i class="fa fa-building-o"></i>${street.string}
