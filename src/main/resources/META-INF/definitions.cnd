@@ -55,7 +55,7 @@
  - bottomMargin (string, choicelist[resourceBundle]) = '30' autocreated < 'No margin', '5', '10', '15', '20', '25', '30', '35', '40', '45', '50', '55', '60', '100'
   + * (jdnt:highlight)
 
-[jdnt:highlight] > jnt:content, mix:title, famix:faIcon
+[jdnt:highlight] > jnt:content, mix:title, jdmix:jahiademo, famix:faIcon
  - jcr:title (string) internationalized primary
  - description (string) internationalized
 
