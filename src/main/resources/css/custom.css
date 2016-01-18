@@ -895,6 +895,12 @@ input#scr_terms{
 }
 
 
+/*PARALAX*/
+
+.parallaxPanel{
+	background-position: center;
+}
+
 
 
 /*MEDIA QUERIES*/
