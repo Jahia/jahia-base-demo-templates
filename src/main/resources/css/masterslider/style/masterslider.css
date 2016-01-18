@@ -3,6 +3,12 @@
  * 	Core css file
  */
 
+
+
+.master-slider img {
+	width: initial!important;
+}
+
 .master-slider{
 	position: relative;
 	visibility: hidden;
@@ -32,16 +38,7 @@
 
 .ms-layout-partialview .ms-container { overflow: hidden; }
 
-.master-slider img {
-    width: 100%!important;
-    height: auto!important;
-    float: none;
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    max-width: none;
 
-}
 
 .ms-slide-bgvideocont video{
     max-width: none;
@@ -119,15 +116,7 @@
 	width: 100%;
 }
 
-/* Fernando's code */
-.ms-slide-bgcont img{
-    position: relative!important;
-    background-size: cover!important;
-    height: 100%!important;
-    top: 0!important;
-    right: 0!important;    
-    margin: 0 auto!important;
-}
+
 
 .ms-slide .ms-slide-link { 
 	display: block;
