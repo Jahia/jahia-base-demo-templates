@@ -45,7 +45,7 @@
 </c:if>
 
 <c:if test="${not empty title}">
-    <h2>${title}</h2>
+    <div class="headline"><h2>${title}</h2></div>
 </c:if>
 
 <div id="${componentId}" class="tab-v1">
