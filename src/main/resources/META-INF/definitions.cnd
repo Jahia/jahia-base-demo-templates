@@ -161,7 +161,7 @@
  - agree (boolean)
 
 [jdmix:internalLink] mixin
- extends = jnt:topStories
+ extends = jnt:topStories, jnt:banner
  - linkTitle (string) internationalized
  - internalLink (weakreference, picker[type='page']) < 'jnt:page'
 
@@ -175,6 +175,8 @@
 
 [jdnt:pressSearch] > jnt:content, jdmix:jahiademo, jmix:list, mix:title
  - startPage (weakreference, picker[type='page'])
+ - filter (weakreference, choicelist[nodes='/sites/systemsite/categories/;jnt:category',sort])
+ - numTabs (long)
 
 [jdmix:backLink] mixin
 

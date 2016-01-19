@@ -36,6 +36,14 @@
 <%--Set variable for banner headline and remove HTML tags--%>
 <c:set var="headline" value="${functions:removeHtmlTags(currentNode.properties.cast.string)}"/>
 
+<c:if test="${jcr:isNodeType(currentNode, 'jdmix:internalLink')}">
+    <c:set var="linkNode" value="${currentNode.properties.internalLink.node}"/>
+    <c:set var="linkTitle" value="${currentNode.properties.linkTitle.string}"/>
+    <c:if test="${empty linkTitle}">
+        <c:set var="linkTitle" value="${linkNode.displayableName}"/>
+    </c:if>
+    <a href="${linkNode.url}" style="text-decoration: none;">
+</c:if>
     <!--=== Breadcrumbs v1 ===-->
     <div class="breadcrumbs-v1" style='background:url("${bannerUrl}") no-repeat scroll center center / cover;'>
         <div class="container">
@@ -44,3 +52,6 @@
         </div>
     </div>
     <!--=== End Breadcrumbs v1 ===-->
+<c:if test="${jcr:isNodeType(currentNode, 'jdmix:internalLink')}">
+    </a>
+</c:if>

@@ -8,6 +8,24 @@
                  j:title="jahiademo"
                  jcr:mixinTypes="jmix:hasExternalProviderExtension"
                  jcr:primaryType="jnt:module">
+                <sources jcr:mixinTypes="jmix:hasExternalProviderExtension"
+                  jcr:primaryType="jnt:moduleVersionFolder"
+                  j:staticMountPointProviderKey="module-jahiademo-1.0-SNAPSHOT">
+                    <src jcr:primaryType="jnt:folder">
+                        <main jcr:primaryType="jnt:folder">
+                            <resources jcr:primaryType="jnt:folder">
+                                <jnt_template jcr:primaryType="jnt:nodeTypeFolder">
+                                    <html jcr:primaryType="jnt:templateTypeFolder">
+                                        <template.jahiademo.jsp jcr:primaryType="jnt:viewFile"/>
+                                    </html>
+                                </jnt_template>
+                                <META-INF jcr:primaryType="jnt:metaInfFolder">
+                                    <definitions.cnd jcr:primaryType="jnt:definitionFile"/>
+                                </META-INF>
+                            </resources>
+                        </main>
+                    </src>
+                </sources>
 
 <portlets jcr:primaryType="jnt:portletFolder"/>
                 <files jcr:primaryType="jnt:folder">
@@ -67,7 +85,7 @@
                                                        layout="9_3"
                                           rowType="predefined"/>
                             </pagecontent>
-                            <press-release-content-template j:applyOn="jnt:press"
+                            <press-pelease-content-template j:applyOn="jnt:press"
                                                   j:defaultTemplate="true"
                                                   j:hiddenTemplate="false"
                                                   j:priority="100"
@@ -75,11 +93,11 @@
                                 <j:translation_en jcr:language="en"
                                        jcr:mixinTypes="mix:title"
                                        jcr:primaryType="jnt:translation"
-                                       jcr:title="Press Release Content Template"/>
+                                       jcr:title="press pelease content template"/>
                                 <bootstrap-container jcr:primaryType="jnt:contentList">
                                     <main-resource-display j:mainResourceView="fullpage" jcr:primaryType="jnt:mainResourceDisplay"/>
                                 </bootstrap-container>
-                            </press-release-content-template>
+                            </press-pelease-content-template>
                         </_x0032_-column>
                         <_x0033_-column j:hiddenTemplate="false" jcr:primaryType="jnt:pageTemplate">
                             <j:translation_en jcr:language="en"
@@ -151,7 +169,7 @@
                             <j:translation_en jcr:language="en"
                                     jcr:mixinTypes="mix:title"
                                     jcr:primaryType="jnt:translation"
-                                    jcr:title="Company Content Template"/>
+                                    jcr:title="company content template"/>
                             <pagecontent jcr:primaryType="jnt:contentList">
                                 <bootstrap-container jcr:mixinTypes="jmix:bootstrap3FullComponentRowPredefined"
                                                        jcr:primaryType="jnt:bootstrap3FullComponent"
@@ -193,7 +211,7 @@
                             <j:translation_en jcr:language="en"
                                     jcr:mixinTypes="mix:title"
                                     jcr:primaryType="jnt:translation"
-                                    jcr:title="News"/>
+                                    jcr:title="news"/>
                             <pagecontent jcr:primaryType="jnt:contentList">
                                 <bootstrap-layer-container-rows-a containerType="fluid"
                                                        jcr:mixinTypes="jmix:bootstrap3FullComponentAdvancedProps jmix:bootstrap3FullComponentRowPredefined"
@@ -236,7 +254,7 @@
                             <j:translation_en jcr:language="en"
                                     jcr:mixinTypes="mix:title"
                                        jcr:primaryType="jnt:translation"
-                                    jcr:title="News Detail"/>
+                                       jcr:title="news detail"/>
                             <bootstrap-layer-container-rows-a jcr:primaryType="jnt:contentList">
                                         <main-resource-display j:mainResourceView="detail" jcr:primaryType="jnt:mainResourceDisplay"/>
                                         <rating j:bindedComponent="/modules/jahiademo/templates/base/news/news-detail/bootstrap-layer-container-rows-a/main-resource-display"
@@ -258,7 +276,7 @@
                                 <j:translation_en jcr:language="en"
                                        jcr:mixinTypes="mix:title"
                                        jcr:primaryType="jnt:translation"
-                                       jcr:title="News Entry"/>
+                                       jcr:title="news entry"/>
                                 <bootstrap-layer-container-rows-a jcr:primaryType="jnt:contentList">
                                     <article j:allowedTypes="jnt:news" jcr:primaryType="jnt:area"/>
                                 </bootstrap-layer-container-rows-a>
@@ -272,7 +290,7 @@
                             <j:translation_en jcr:language="en"
                                     jcr:mixinTypes="mix:title"
                                     jcr:primaryType="jnt:translation"
-                                    jcr:title="Person Bio Content Template"/>
+                                    jcr:title="person bio content template"/>
                             <pagecontent jcr:primaryType="jnt:contentList">
                                 <bootstrap-breadcrumb displayCurrentPage="true"
                                            displayHome="true"
@@ -287,7 +305,7 @@
                             <j:translation_en jcr:language="en"
                                     jcr:mixinTypes="mix:title"
                                     jcr:primaryType="jnt:translation"
-                                    jcr:title="Events"/>
+                                    jcr:title="events"/>
                             <pagecontent jcr:primaryType="jnt:contentList">
                                 <bootstrap-layer-container-rows-a jcr:mixinTypes="jmix:bootstrap3FullComponentRowPredefined"
                                                        jcr:primaryType="jnt:bootstrap3FullComponent"
@@ -393,7 +411,7 @@
                             <j:translation_en jcr:language="en"
                                     jcr:mixinTypes="mix:title"
                                     jcr:primaryType="jnt:translation"
-                                    jcr:title="Event Content Template"/>
+                                    jcr:title="event content template"/>
                             <pagecontent jcr:primaryType="jnt:contentList">
                                 <bootstrap-container jcr:mixinTypes="jmix:bootstrap3FullComponentRowPredefined"
                                           jcr:primaryType="jnt:bootstrap3FullComponent"
