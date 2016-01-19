@@ -32,9 +32,7 @@
 <c:url var="detailUrl" value="${url.base}${currentNode.path}.html"/>
 
 
-<div class="eventsBody"><!--start eventsBody -->
-    <div class=" shadow-wrapper">
-        <div class="tag-box tag-box-v2 box-shadow shadow-effect-4">
+
             <!-- event title -->
             <h2><a href="${detailUrl}">${title}</a></h2>
             <!-- event type, date, location -->
@@ -93,10 +91,6 @@
                 <a href="${parentUrl}" class="button button-mini button-border button-rounded"><span><i
                         class="icon-line-arrow-left"></i><fmt:message key="jdmix_backLink.back"/></span></a>
             </p>
-
-        </div>
-    </div>
-</div>
 
 
 

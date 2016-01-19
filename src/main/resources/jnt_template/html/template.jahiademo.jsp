@@ -2,7 +2,8 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
 <!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
-<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
+<!--[if !IE]><!-->
+<html lang="en"> <!--<![endif]-->
 <%@ page language="java" contentType="text/html;charset=UTF-8" %>
 <%@ taglib prefix="template" uri="http://www.jahia.org/tags/templateLib" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -31,7 +32,8 @@
     <link rel="shortcut icon" href="favicon.ico">
 
     <!-- Web Fonts -->
-    <link rel='stylesheet' type='text/css' href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600&amp;subset=cyrillic,latin'>
+    <link rel='stylesheet' type='text/css'
+          href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600&amp;subset=cyrillic,latin'>
 
     <!-- CSS Global Compulsory -->
     <template:addResources type="css" resources="bootstrap.min.css"/>
@@ -123,10 +125,13 @@
                 <div class="row">
                     <!--Small language login menu-->
                     <div class="col-sm-6 col-xs-6">
-                        <div class="topbar-list topbar-menu"/>
+                        <div class="topbar-list topbar-menu">
                         <template:area path="languageLoginMini"/>
                         </div>
-                    <div class="topbar-toggler"><span class="user-box hidden-sm hidden-md hidden-lg"> <i class="fa fa-user"></i>&nbsp;|&nbsp;<i class="fa fa-globe"></i>&nbsp;<i class="fa fa-caret-up"></i></span></div>
+                        <div class="topbar-toggler"><span class="user-box hidden-sm hidden-md hidden-lg"> <i
+                                class="fa fa-user"></i>&nbsp;|&nbsp;<i class="fa fa-globe"></i>&nbsp;<i
+                                class="fa fa-caret-up"></i></span>
+                        </div>
                     </div>
                     <!--/end Small language login menu-->
                     <!--Full language login menu-->
@@ -136,8 +141,10 @@
                         </div>
                     </div>
                     <!--/end Full language login menu-->
-                </div><!--/end row-->
-            </div><!--/end container-->
+                </div>
+                <!--/end row-->
+            </div>
+            <!--/end container-->
         </div>
         <!-- End Topbar blog -->
 
@@ -173,24 +180,33 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-3 md-margin-bottom-40">
-                        <template:area path="footer-1" nodeTypes="jdmix:footerWidgets" moduleType="absoluteArea" level="0"/>
-                    </div><!--/col-md-3-->
+                        <template:area path="footer-1" nodeTypes="jdmix:footerWidgets" moduleType="absoluteArea"
+                                       level="0"/>
+                    </div>
+                    <!--/col-md-3-->
 
                     <div class="col-md-3 md-margin-bottom-40">
-                        <template:area path="footer-2" nodeTypes="jdmix:footerWidgets" moduleType="absoluteArea" level="0"/>
-                    </div><!--/col-md-3-->
+                        <template:area path="footer-2" nodeTypes="jdmix:footerWidgets" moduleType="absoluteArea"
+                                       level="0"/>
+                    </div>
+                    <!--/col-md-3-->
 
                     <div class="col-md-3 md-margin-bottom-40">
-                        <template:area path="footer-3" nodeTypes="jdmix:footerWidgets" moduleType="absoluteArea" level="0"/>
-                    </div><!--/col-md-3-->
+                        <template:area path="footer-3" nodeTypes="jdmix:footerWidgets" moduleType="absoluteArea"
+                                       level="0"/>
+                    </div>
+                    <!--/col-md-3-->
 
                     <div class="col-md-3 map-img md-margin-bottom-40">
-                        <template:area path="footer-4" nodeTypes="jdmix:footerWidgets" moduleType="absoluteArea" level="0"/>
-                    </div><!--/col-md-3-->
+                        <template:area path="footer-4" nodeTypes="jdmix:footerWidgets" moduleType="absoluteArea"
+                                       level="0"/>
+                    </div>
+                    <!--/col-md-3-->
 
                 </div>
             </div>
-        </div><!--/footer-->
+        </div>
+        <!--/footer-->
 
         <div class="copyright">
             <div class="container">
@@ -206,37 +222,44 @@
                     <div class="col-md-6">
                         <ul class="footer-socials list-inline">
                             <li>
-                                <a href="#" class="tooltips" data-toggle="tooltip" data-placement="top" title="" data-original-title="Facebook">
+                                <a href="#" class="tooltips" data-toggle="tooltip" data-placement="top" title=""
+                                   data-original-title="Facebook">
                                     <i class="fa fa-facebook"></i>
                                 </a>
                             </li>
                             <li>
-                                <a href="#" class="tooltips" data-toggle="tooltip" data-placement="top" title="" data-original-title="Skype">
+                                <a href="#" class="tooltips" data-toggle="tooltip" data-placement="top" title=""
+                                   data-original-title="Skype">
                                     <i class="fa fa-skype"></i>
                                 </a>
                             </li>
                             <li>
-                                <a href="#" class="tooltips" data-toggle="tooltip" data-placement="top" title="" data-original-title="Google Plus">
+                                <a href="#" class="tooltips" data-toggle="tooltip" data-placement="top" title=""
+                                   data-original-title="Google Plus">
                                     <i class="fa fa-google-plus"></i>
                                 </a>
                             </li>
                             <li>
-                                <a href="#" class="tooltips" data-toggle="tooltip" data-placement="top" title="" data-original-title="Linkedin">
+                                <a href="#" class="tooltips" data-toggle="tooltip" data-placement="top" title=""
+                                   data-original-title="Linkedin">
                                     <i class="fa fa-linkedin"></i>
                                 </a>
                             </li>
                             <li>
-                                <a href="#" class="tooltips" data-toggle="tooltip" data-placement="top" title="" data-original-title="Pinterest">
+                                <a href="#" class="tooltips" data-toggle="tooltip" data-placement="top" title=""
+                                   data-original-title="Pinterest">
                                     <i class="fa fa-pinterest"></i>
                                 </a>
                             </li>
                             <li>
-                                <a href="#" class="tooltips" data-toggle="tooltip" data-placement="top" title="" data-original-title="Twitter">
+                                <a href="#" class="tooltips" data-toggle="tooltip" data-placement="top" title=""
+                                   data-original-title="Twitter">
                                     <i class="fa fa-twitter"></i>
                                 </a>
                             </li>
                             <li>
-                                <a href="#" class="tooltips" data-toggle="tooltip" data-placement="top" title="" data-original-title="Dribbble">
+                                <a href="#" class="tooltips" data-toggle="tooltip" data-placement="top" title=""
+                                   data-original-title="Dribbble">
                                     <i class="fa fa-dribbble"></i>
                                 </a>
                             </li>
@@ -245,11 +268,13 @@
                     <!-- End Social Links -->
                 </div>
             </div>
-        </div><!--/copyright-->
+        </div>
+        <!--/copyright-->
     </div>
     <!--=== End Footer Version 1 ===-->
     <template:area path="modals"/>
-</div><!--/wrapper-->
+</div>
+<!--/wrapper-->
 
 </body>
 </html>

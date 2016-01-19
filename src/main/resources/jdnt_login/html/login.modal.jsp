@@ -40,27 +40,28 @@
                             <p class="fieldset">
                                 <label class="image-replace cd-username" for="username">
                                     <fmt:message key="label.username"/></label>
-                                <input class="full-width has-padding has-border" id="username" name="username" type="text" placeholder="<fmt:message key="label.username"/>">
+                                <input class="full-width has-padding has-border" id="username" name="username"
+                                       type="text" placeholder="<fmt:message key="label.username"/>"/>
                                 <span class="cd-error-message">Error message here!</span>
                             </p>
 
                             <p class="fieldset">
                                 <label class="image-replace cd-password" for="signin-password">
                                     <fmt:message key="label.password"/></label>
-                                <input class="full-width has-padding has-border" name="password" id="password" type="password" placeholder="<fmt:message key="label.password"/>">
+                                <input class="full-width has-padding has-border" name="password" id="password"
+                                       type="password" placeholder="<fmt:message key="label.password"/>"/>
                                 <a href="javascript:void(0);" class="hide-password">Show</a>
                                 <span class="cd-error-message">Error message here!</span>
                             </p>
 
                             <p class="fieldset">
-                                <input type="checkbox" id="useCookie" name="useCookie" checked="">
+                                <input type="checkbox" id="useCookie" name="useCookie" checked=""/>
                                 <label for="useCookie"><fmt:message key="loginForm.rememberMe.label"/></label>
                             </p>
 
                             <p class="fieldset">
                                 <input class="full-width btn btn-primary" type="submit" value="<fmt:message
                                         key='loginForm.loginbutton.label'/>"/>
-                                </input>
                             </p>
 
 
