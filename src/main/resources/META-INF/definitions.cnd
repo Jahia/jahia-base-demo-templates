@@ -185,3 +185,7 @@
  itemtype = content
  - downloadTitle (string) internationalized
  - pdfVersion (weakreference, picker[type='file']) i18n
+
+[jdnt:eventTabs] > jnt:content, jdmix:jahiademo, jmix:list, mix:title
+ - startPage (weakreference, picker[type='page'])
+ - filter (weakreference, choicelist[nodes='/sites/systemsite/categories/;jnt:category',sort])

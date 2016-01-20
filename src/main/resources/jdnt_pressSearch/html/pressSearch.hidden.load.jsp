@@ -20,8 +20,6 @@
 
 <%@ page import="java.util.Calendar" %>
 
-<c:set var="pageView"><%= ((String) request.getParameter("pageView"))%>
-</c:set>
     <c:set var="view" value="default"/>
 <jsp:useBean id="now" class="java.util.Date"/>
 <fmt:formatDate value="${now}" pattern="yyyy" var="thisYear"/>
@@ -70,7 +68,7 @@
             <jcr:sql var="pressReleases"
                      sql="${sqlQuery}"/>
             <c:forEach items="${pressReleases.nodes}" var="pressRelease" varStatus="item">
-                    <template:module view="default" path="${pressRelease.path}">
+                    <template:module view="${view}" path="${pressRelease.path}">
                         <template:param name="last" value="${item.last}"/>
                     </template:module>
             </c:forEach>
@@ -86,7 +84,7 @@
             AND press.[date] <= CAST('${thisYear-i}-12-31T23:59:59.999Z' AS DATE)
          order by press.[date] desc"/>
             <c:forEach items="${pressReleases.nodes}" var="pressRelease" varStatus="item">
-                    <template:module view="default" path="${pressRelease.path}">
+                    <template:module view="${view}" path="${pressRelease.path}">
                         <template:param name="last" value="${item.last}"/>
                     </template:module>
             </c:forEach>
@@ -100,7 +98,7 @@
          and press.[date] <= CAST('${thisYear-numTabs+1}-01-01T00:00:00.000Z' AS DATE)
          order by press.[date] desc"/>
             <c:forEach items="${pressReleases.nodes}" var="pressRelease" varStatus="item">
-                    <template:module view="default" path="${pressRelease.path}">
+                    <template:module view="${view}" path="${pressRelease.path}">
                         <template:param name="last" value="${item.last}"/>
                     </template:module>
             </c:forEach>
