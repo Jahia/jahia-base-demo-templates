@@ -58,10 +58,6 @@
     <template:addResources type="css" resources="plugins/cube-portfolio/cubeportfolio/custom/custom-cubeportfolio.css"/>
 
 
-    <!-- CSS Customization -->
-    <template:addResources type="css" resources="custom.css"/>
-
-
     <!-- JS Global Compulsory -->
     <template:addResources type="javascript" resources="jquery.min.js"/>
     <template:addResources type="javascript" resources="jquery-migrate.min.js"/>
@@ -73,6 +69,11 @@
     <template:addResources type="javascript" resources="jquery.parallax.js"/>
     <template:addResources type="javascript" resources="jquery.cslider.js"/>
     <template:addResources type="javascript" resources="owl.carousel.js"/>
+
+    <!-- CSS Customization -->
+    <template:addResources type="css" resources="demo-custom.css"/>
+
+
     <!-- JS Customization -->
     <template:addResources type="javascript" resources="custom.js"/>
     <!-- JS Page Level -->
