@@ -8,24 +8,6 @@
                  j:title="jahiademo"
                  jcr:mixinTypes="jmix:hasExternalProviderExtension"
                  jcr:primaryType="jnt:module">
-                <sources jcr:mixinTypes="jmix:hasExternalProviderExtension"
-                  jcr:primaryType="jnt:moduleVersionFolder"
-                  j:staticMountPointProviderKey="module-jahiademo-1.0-SNAPSHOT">
-                    <src jcr:primaryType="jnt:folder">
-                        <main jcr:primaryType="jnt:folder">
-                            <resources jcr:primaryType="jnt:folder">
-                                <jnt_template jcr:primaryType="jnt:nodeTypeFolder">
-                                    <html jcr:primaryType="jnt:templateTypeFolder">
-                                        <template.jahiademo.jsp jcr:primaryType="jnt:viewFile"/>
-                                    </html>
-                                </jnt_template>
-                                <META-INF jcr:primaryType="jnt:metaInfFolder">
-                                    <definitions.cnd jcr:primaryType="jnt:definitionFile"/>
-                                </META-INF>
-                            </resources>
-                        </main>
-                    </src>
-                </sources>
 
 <portlets jcr:primaryType="jnt:portletFolder"/>
                 <files jcr:primaryType="jnt:folder">
@@ -53,6 +35,36 @@
                             <thumbnail jcr:mimeType="image/png" jcr:primaryType="jnt:resource"/>
                             <thumbnail2 jcr:mimeType="image/png" jcr:primaryType="jnt:resource"/>
                         </logo1-default.png>
+                        <img jcr:primaryType="jnt:folder">
+                            <newsroom-bg.jpg j:colorSpace="sRGB"
+                                   j:dateTime="2014:07:30 16:10:38"
+                                   j:dateTimeDigitized="2014:07:28 19:44:32"
+                                   j:dateTimeOriginal="2014:07:28 19:44:32"
+                                   j:exifVersion="2.30"
+                                   j:exposureBiasValue="1/-3 EV"
+                                   j:exposureProgram="Aperture priority"
+                                   j:exposureTime="1/160 sec"
+                                   j:fNumber="F1.4"
+                                   j:flash="Flash did not fire, auto"
+                                   j:focalLength="85.0 mm"
+                                   j:height="1280"
+                                   j:make="Canon"
+                                   j:maxApertureValue="F1.4"
+                                   j:meteringMode="Multi-segment"
+                                   j:model="Canon EOS 6D"
+                                   j:orientation="Top, left side (Horizontal / normal)"
+                                   j:resolutionUnit="Inch"
+                                   j:software="Adobe Photoshop Lightroom 5.5 (Windows)"
+                                   j:width="1920"
+                                   j:xresolution="240 dots per inch"
+                                   j:yresolution="240 dots per inch"
+                                   jcr:mixinTypes="jmix:exif jmix:image"
+                                   jcr:primaryType="jnt:file">
+                                <jcr:content jcr:mimeType="image/jpeg" jcr:primaryType="jnt:resource"/>
+                                <thumbnail jcr:mimeType="image/jpeg" jcr:primaryType="jnt:resource"/>
+                                <thumbnail2 jcr:mimeType="image/jpeg" jcr:primaryType="jnt:resource"/>
+                            </newsroom-bg.jpg>
+                        </img>
                 </files>
                 <contents jcr:primaryType="jnt:contentFolder"/>
                     <base j:theme="/modules/jahiademo/templates/files/themes/default"
@@ -265,7 +277,8 @@
                                 </news-detail>
                         <landing jcr:primaryType="jnt:contentList">
                                 <banner jcr:primaryType="jnt:banner">
-                                    <j:translation_en cast="&lt;p&gt;Learn About Us&lt;/p&gt;&#xA;"
+                                    <j:translation_en background="/modules/jahiademo/templates/files/img/newsroom-bg.jpg"
+                                          cast="&lt;p&gt;Learn About Us&lt;/p&gt;&#xA;"
                                           jcr:language="en"
                                           jcr:mixinTypes="mix:title"
                                           jcr:primaryType="jnt:translation"
