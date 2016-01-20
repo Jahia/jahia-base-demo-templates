@@ -80,8 +80,8 @@
                         <c:set var="label"><fmt:message key="jdmix_fileAttachment.label"/></c:set>
                     </c:if>
                     <p>
-                    <div><strong>${label} :</strong>
-                        <a href="${pdfVersion.node.url}">${pdfVersion.node.name}</a></div>
+                    <div><i class="fa fa-download service-icon"></i> <strong>${label} :</strong>
+                        <a href="${pdfVersion.node.url}">${pdfVersion.node.name} </a></div>
                     </p>
                 </c:if>
             </c:if>

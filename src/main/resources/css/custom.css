@@ -133,6 +133,7 @@ video, .video-js{
     padding: 6px 0 6px 0!important;
 }
 
+
 /*eventdate Layout*/
 
 .eventsInfoDate {
@@ -1049,7 +1050,7 @@ input#scr_terms{
 	}
 }
 
-/**** Start Wiki Customization****/
+/**** Start Wiki and Forum Customization****/
 
 /******************************************************************************
 *  box8 icon mixin
@@ -1238,5 +1239,41 @@ div.box6-blue {
 	background: #FAFAFA none repeat scroll 0% 0%!important;
 	border: 1px solid #EEE!important;
 }
-/**** End Wiki Customization****/
+
+.post-date {
+	width: 50px!important;
+	height: 54px!important;
+	text-align: center!important;
+	color: #555!important;
+	line-height: 140%!important;
+	float: left!important;
+	background: #fcfcfc!important;
+	border: 1px solid #d2d2d2!important;
+	border-radius: 4px!important;
+	-moz-border-radius: 4px!important;
+	-webkit-border-radius: 4px!important;
+	padding: 4px!important;
+	font-size: 14px!important;
+	font-weight: bold!important;
+	text-transform: uppercase!important;
+	display: block!important;
+	border-radius: 3px!important;
+	padding: 6px 0 6px 0!important;
+}
+
+.post-date span {
+	height: 24px !important;
+	background: #E74C3C none repeat scroll 0% 0% !important;
+	font-size: 12px !important;
+	font-weight: bold !important;
+	color: #FFF !important;
+	text-transform: uppercase !important;
+	display: block !important;
+	border-radius: 3px !important;
+	padding: 6px 0px !important;
+	margin: 0px 0px 0px 4px!important;
+	width: 40px!important;
+}
+
+/**** End Wiki and Forum Customization****/
 
