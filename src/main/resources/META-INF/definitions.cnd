@@ -121,7 +121,7 @@
   + * (jdnt:company)
 
 [jdnt:company] > jnt:content, jdmix:jahiademo, mix:title, jdmix:hasPeople orderable
- - investorType (string, choicelist[resourceBundle]) < 'media', 'technology','retail','goods','healthcare'
+ - industryCat (string, choicelist[resourceBundle]) < 'media', 'technology','retail','goods','healthcare'
  - headline (string, richtext) i18n
  - overview (string, richtext) i18n
  - phone (string) i18n

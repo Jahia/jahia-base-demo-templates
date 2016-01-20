@@ -20,7 +20,7 @@
 
 <jcr:nodeProperty node="${currentNode}" name="jcr:title" var="title"/>
 <jcr:nodeProperty node="${currentNode}" name="headline" var="headline"/>
-<jcr:nodeProperty node="${currentNode}" name="investorType" var="category"/>
+<jcr:nodeProperty node="${currentNode}" name="industryCat" var="category"/>
 <jcr:nodeProperty node="${currentNode}" name="thumbnail" var="thumb"/>
 <c:url value="${url.files}${thumb.node.path}" var="thumbURL"/>
 

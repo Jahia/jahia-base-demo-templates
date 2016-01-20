@@ -35,7 +35,7 @@
             <div data-filter=".technology" class="cbp-filter-item"> Technology </div> |
             <div data-filter=".retail" class="cbp-filter-item"> Retail </div> |
             <div data-filter=".goods" class="cbp-filter-item"> Goods </div> |
-            <div data-filter=".heathcare" class="cbp-filter-item"> Healthcare </div>
+            <div data-filter=".healthcare" class="cbp-filter-item"> Healthcare </div>
         </div>
         <%--/end Filters Container--%>
     </div>
