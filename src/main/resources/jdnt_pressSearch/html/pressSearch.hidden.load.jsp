@@ -17,7 +17,6 @@
 <%--@elvariable id="renderContext" type="org.jahia.services.render.RenderContext"--%>
 <%--@elvariable id="currentResource" type="org.jahia.services.render.Resource"--%>
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
-<%-- TODO: finish adding componentID to the div ID --%>
 
 <%@ page import="java.util.Calendar" %>
 
@@ -31,6 +30,11 @@
 <c:set var="numTabs" value="${currentNode.properties['numTabs'].string}"/>
 <c:if test="${empty numTabs}">
     <c:set var="numTabs" value="3"/>
+</c:if>
+
+<c:set var="filter" value="${currentNode.properties['filter']}"/>
+<c:if test="${not empty filter}">
+    <c:set var="filterQuery" value="and press.[j:defaultCategory] = '${filter.string}'"/>
 </c:if>
 
 <c:set var="title" value="${currentNode.properties['jcr:title'].string}"/>
@@ -59,6 +63,7 @@
     <div class="tab-content">
         <div class="tab-pane fade in active" id="${thisYear}">
             <c:set var="sqlQuery" value="select * from [jnt:press] as press where isdescendantnode(press, ['${startNodePath}'])
+            ${filterQuery}
          and press.[date] >= CAST('${thisYear}-01-01T00:00:00.000Z' AS DATE)
             AND press.[date] <= CAST('${thisYear}-12-31T23:59:59.999Z' AS DATE)
          order by press.[date] desc"/>
@@ -76,6 +81,7 @@
             <div class="tab-pane fade in" id="${thisYear-i}">
             <jcr:sql var="pressReleases"
                      sql="select * from [jnt:press] as press where isdescendantnode(press, ['${startNodePath}'])
+                         ${filterQuery}
          and press.[date] >= CAST('${thisYear-i}-01-01T00:00:00.000Z' AS DATE)
             AND press.[date] <= CAST('${thisYear-i}-12-31T23:59:59.999Z' AS DATE)
          order by press.[date] desc"/>
@@ -90,6 +96,7 @@
         <div class="tab-pane fade in" id="Older">
             <jcr:sql var="pressReleases"
                      sql="select * from [jnt:press] as press where isdescendantnode(press, ['${startNodePath}'])
+                     ${filterQuery}
          and press.[date] <= CAST('${thisYear-numTabs+1}-01-01T00:00:00.000Z' AS DATE)
          order by press.[date] desc"/>
             <c:forEach items="${pressReleases.nodes}" var="pressRelease" varStatus="item">
