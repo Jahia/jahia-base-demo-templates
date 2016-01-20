@@ -1048,3 +1048,195 @@ input#scr_terms{
 		margin: auto 10px;
 	}
 }
+
+/**** Start Wiki Customization****/
+
+/******************************************************************************
+*  box8 icon mixin
+******************************************************************************/
+.box8-icon{
+	height:48px!important;
+	width:48px!important;
+	display:block!important;
+	line-height:48px!important;
+	position:absolute!important;
+	background-repeat:no-repeat!important;
+	background-position: top left!important;
+	right:8px!important;
+	top:-8px!important;
+}
+.box8-title-icon{
+	line-height:32px!important;
+	position:relative!important;
+}
+/******************************************************************************
+*  box8
+******************************************************************************/
+div.box8 {
+	position:relative!important;
+	clear:both!important;
+	margin-bottom:1em!important;
+}
+
+div.box8-content {
+	height:1%!important;
+	background:none !important;
+	-webkit-border-radius:0!important;
+	-moz-border-radius:0!important;
+	border-radius:0!important;
+	border: 1px solid #e5e5e5!important;
+	border-top:none!important;
+	padding: 5px 10px!important;
+	overflow:hidden!important;
+	-webkit-box-shadow:none!important;
+	-moz-box-shadow:none!important;
+	box-shadow:none!important;
+	margin-bottom:10px!important;
+}
+div.box8-content p {
+	padding:0px 0px 1em 0px!important;
+}
+
+/*box8 title*/
+h4.box8-title {
+	background:none !important;
+	border:1px solid #e5e5e5!important;
+	color:#333!important;
+	margin-left:0!important;
+	padding:5px!important;
+	font-weight:normal!important;
+	clear:both!important;
+	margin:0!important;
+	-webkit-border-radius:0!important;
+	-moz-border-radius:0!important;
+	border-radius:0!important;
+	padding: 5px 10px!important;
+	-webkit-box-shadow:none!important;
+	-moz-box-shadow:none!important;
+	box-shadow:none!important;
+}
+h4.box8-titleblack {
+	background:none !important;
+	background-color:#333!important;
+	border:1px solid #000!important;
+	color:#fff!important;
+}
+h4.box8-titlegrey {
+	background:none !important;
+	background-color:#f5f5f5!important;
+	border:1px solid #e5e5e5!important;
+}
+h4.box8-titlemushroom {
+	background:none !important;
+	background-color:#f5f5f5!important;
+	border:1px solid #e5e5e5!important;
+}
+h4.box8-titleorange {
+	background:none !important;
+	background-color:#f5f5f5!important;
+	border:1px solid #e5e5e5!important;
+}
+h4.box8-titlered {
+	background:none !important;
+	background-color:#f5f5f5!important;
+	border:1px solid #e5e5e5!important;
+}
+h4.box8-titlegreen {
+	background:none !important;
+	background-color:#f5f5f5!important;
+	border:1px solid #e5e5e5!important;
+}
+h4.box8-titlepurple {
+	background:none !important;
+	background-color:#f5f5f5!important;
+	border:1px solid #e5e5e5!important;
+}
+h4.box8-titleyellow {
+	background:none !important;
+	background-color:#f5f5f5!important;
+	border:1px solid #e5e5e5!important;
+}
+h4.box8-titleblue {
+	background:none !important;
+	background-color:#f5f5f5!important;
+	border:1px solid #e5e5e5!important;
+}
+/******************************************************************************
+*  Tabs
+******************************************************************************/
+
+
+div.idTabsContainer{
+	margin-top: 0px!important;
+	border: none!important;
+	background: none!important;
+	border-bottom: solid 2px #E74C3C!important;
+}
+
+ul.idTabs {
+	clear:both!important;
+	list-style-type:none!important;
+	overflow:hidden!important;
+	background:#FFF none repeat scroll 0% 0%!important;!important;
+	margin:0 0 0 0!important;
+	padding:10px!important;
+	font-size: 14px!important;
+	padding: 5px 15px!important;
+}
+.idTabs li {
+	margin:0px!important;
+	padding:0px!important;
+	padding-bottom: 5px;
+	position: relative!important;
+}
+.idTabs li.spacing{
+	padding-left:5px!important;
+}
+
+.idTabs li a {
+	background:#FFF!important;
+	display:inline!important;
+	float:left!important;
+	height:36px!important;
+	line-height:15px!important;
+	padding-left:0px!important;
+	text-decoration:none!important;
+	margin-right:0px
+}
+.idTabs li a.selected,
+.idTabs li a:hover,
+.idTabs li a.selected {
+	color: #fff!important;
+	border: none!important;
+	background: #72c02cimportant!important;!important;
+}
+
+
+.idTabs li a span {
+	background:#FFF!important;
+	cursor:pointer!important;
+	display:inline!important;
+	float:left!important;
+	height:36px!important;
+	line-height:29px!important;
+	padding-right:15px!important;
+	text-decoration:none!important;
+	font-size: 14px!important;
+	padding: 5px 15px!important;
+
+}
+.idTabs li a.selected span,
+.idTabs li a:hover span,
+.idTabs li a.idTabs span {
+	color: #fff!important;
+	border: none!important;
+	background:#E74C3C!important;
+	text-decoration:none!important;
+}
+
+div.box6-blue {
+	background: #FAFAFA none repeat scroll 0% 0%!important;
+	border: 1px solid #EEE!important;
+}
+/**** End Wiki Customization****/
+
