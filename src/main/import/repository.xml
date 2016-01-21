@@ -192,8 +192,7 @@
                                         <companynews jcr:primaryType="jdnt:companyNews" limit="3">
                                             <j:translation_en jcr:language="en"
                                                 jcr:mixinTypes="mix:title"
-                                                jcr:primaryType="jnt:translation"
-                                                jcr:title="Digitall Widgets Co News"/>
+                                                jcr:primaryType="jnt:translation"/>
                                         </companynews>
                                         <company-content jcr:primaryType="jnt:area"/>
                                 </bootstrap-container>
