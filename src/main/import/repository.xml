@@ -195,6 +195,7 @@
                                                 jcr:primaryType="jnt:translation"
                                                 jcr:title="Digitall Widgets Co News"/>
                                         </companynews>
+                                        <company-content j:allowedTypes="" jcr:primaryType="jnt:area"/>
                                 </bootstrap-container>
                                     <bootstrap-container-side1 jcr:primaryType="jnt:contentList">
                                         <main-resource-display j:mainResourceView="metadata" jcr:primaryType="jnt:mainResourceDisplay"/>
