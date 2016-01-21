@@ -1294,3 +1294,9 @@ div.box6-blue {
     min-width: inherit;
     max-width: inherit;
 }
+
+/* Fix header logo bug */
+
+.header-fixed-shrink #logo {
+    padding-top: 15px !important;
+}
