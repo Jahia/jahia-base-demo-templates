@@ -194,7 +194,7 @@
                                                 jcr:mixinTypes="mix:title"
                                                 jcr:primaryType="jnt:translation"/>
                                         </companynews>
-                                        <company-content jcr:primaryType="jnt:area"/>
+                                        <company-content j:allowedTypes="jmix:droppableContent" jcr:primaryType="jnt:area"/>
                                 </bootstrap-container>
                                     <bootstrap-container-side1 jcr:primaryType="jnt:contentList">
                                         <main-resource-display j:mainResourceView="metadata" jcr:primaryType="jnt:mainResourceDisplay"/>
