@@ -1300,3 +1300,50 @@ div.box6-blue {
 .header-fixed-shrink #logo {
     padding-top: 15px !important;
 }
+
+
+/* Custom styles for Video Player */
+
+.vjs-default-skin .vjs-big-play-button {
+    width: 48px;
+    height: 48px;
+    position: absolute;
+    outline: 0;
+    border: 2px solid #ccc;
+    background-color: rgba(0,0,0,0.25);
+    border-radius: 50%;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translateZ(0) translate(-50%, -50%);
+    -ms-transform: translateZ(0) translate(-50%, -50%);
+    transform: translateZ(0) translate(-50%, -50%);
+    -webkit-transition: opacity 0.25s linear;
+    transition: opacity 0.25s linear;
+}
+
+.vjs-control-bar, #ima-controls-div {
+    cursor: default;
+    width: 100%;
+    z-index: 4;
+    left: 0;
+    background-color: rgba(25,25,25,0.8);
+    color: #ffffff;
+    font-size: 15px;
+    height: 48px;
+    -webkit-transition: bottom .8s;
+    transition: bottom .8s;
+    -webkit-transition-delay: 1s;
+    transition-delay: 1s;
+}
+
+.video-js .vjs-volume-level,
+.video-js .vjs-play-progress,
+.video-js .vjs-slider-bar {
+  background: #e74c3c;
+}
+
+.vjs-playback-rate {
+  display: none;
+}
