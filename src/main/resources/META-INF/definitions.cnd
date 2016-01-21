@@ -139,6 +139,7 @@
  + * (jnt:person)
 
 [jdnt:companyNews] > jnt:content, jmix:list, mix:title, jdmix:jahiademo, jmix:bindedComponent
+ - limit (long) = 3
 
 [jdnt:parallaxSlider] > jnt:content, jdmix:jahiademo orderable
  + * (jdnt:parallaxSliderItem)
