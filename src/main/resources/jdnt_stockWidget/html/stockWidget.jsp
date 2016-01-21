@@ -28,7 +28,7 @@
       <p>Lorem ipsum dolor et sumet malaris</p>
     </div>
     <div class="stock-price">
-      <span>$</span>
+      <span class="currency-value">$</span>
       <span class="counter"></span>
     </div>
     <div class="stock-variable">
