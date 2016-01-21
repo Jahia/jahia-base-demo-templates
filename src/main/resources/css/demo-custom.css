@@ -747,18 +747,14 @@ input#scr_terms{
 
 /*standard*/
 
-#stock-widget{
+.stock-widget{
     width: 100%;
     height: auto;
     position: relative;
     background: white;
-    box-sizing: border-box;
-    border: 1px solid #ccc;
-    background: url('../img/stock_arrow.png') no-repeat;
-    background-position:  right 30px bottom 0px ;
 }
 
-#stock-widget .arrow{
+.stock-widget .arrow{
     margin-bottom: 5px;
     width: 0;
     height: 0;
@@ -768,50 +764,46 @@ input#scr_terms{
     display: inline-block;
 }
 
-.stock-widget-wrapper{
-    padding: 30px;
-}
-
-#stock-widget .title{
-    text-align: center;
+.stock-widget .title{
+    text-align: left;
     font-size: 30px;
     margin-bottom: 10px;
     color: #E74C3C;
+    margin-top: -10px;
 }
 
-#stock-widget .description{
-    text-align: center;
-    font-size: 12px;
+.stock-widget .description p{
+    text-align: left;
+    font-size: 18px;
+    margin-bottom: 10px;
+    margin-top: -10px;
 }
 
-#stock-widget .stock-price{
+.stock-widget .stock-price{
     font-size: 40px;
-    text-align: right;
-    width: 70%;
+    text-align: left;
     margin: 0 auto;
-    max-width: 360px;
+    font-weight: 400;
 }
 
-#stock-widget .stock-variable{
-    text-align: right;
-    font-size: 30px;
-    width: 70%;
-    margin: 0 auto 30px auto;
-    max-width: 360px;
+.stock-widget .stock-variable{
+    text-align: left;
+    font-size: 26px;
+    margin: -20px auto 0 auto;
+    font-weight: 300;
 }
 
-#stock-widget .btn{
+.stock-widget .btn{
 	display: block;
 	margin: 0 auto;
 	padding: 0;
-	width: 70%;
-	max-width: 360px;
-	text-align: right;	
+	text-align: left;	
 	text-decoration: underline;
 }
 
 /*small*/
 
+/*
 .small-stock-widget{
     width: 100%;
     height: auto;
@@ -883,6 +875,7 @@ input#scr_terms{
 	margin: 0 auto;
 	text-decoration: underline;
 }
+*/
 
 /*NEWS*/
 
@@ -914,7 +907,7 @@ input#scr_terms{
 	/*LEADERSHIP*/
 	
 	#leadership{
-		margin: 80px auto 100px auto;
+		margin: 10px auto 100px auto;
 	}
 
 	.portrait{
@@ -984,21 +977,21 @@ input#scr_terms{
 	
 /*	STOCK WIDGET*/
 
-	#stock-widget{
+	.stock-widget{
 		margin: 20px auto;
 	}
 	
-	#stock-widget .stock-price{
+	.stock-widget .stock-price{
 		width: 60%;
 		max-width: 350px;
 	}
 	
-	#stock-widget .stock-variable{
+	.stock-widget .stock-variable{
 		width: 60%;
 		max-width: 350px;
 	}
 	
-	#stock-widget .btn {
+	.stock-widget .btn {
 		width: 60%;
 	}
 	
@@ -1010,28 +1003,32 @@ input#scr_terms{
 /*AUX*/
 
 	.topbar-menu div {
-	        display: block;
-	        padding: 7px 0;
+        display: block;
+        padding: 7px 0;
 	}
 
     .topbar-list a {
         padding: 2px 12px;
     }
+    
+    #leadership{
+        margin: 0 auto!important;
+    }
 
 /*	STOCK WIDGET*/
     
-	#stock-widget{
+	.stock-widget{
 		width: 90%;
 	}
 	
-	#stock-widget .title{
+	.stock-widget .title{
 		text-align: right;
 		width: 60%;
 		max-width: 350px;
 		margin: 0px auto;
 	}
 	
-	#stock-widget .description{
+	.stock-widget .description{
 		text-align: right;
 		font-size: 12px;
 		width: 60%;

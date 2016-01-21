@@ -20,10 +20,10 @@
 <template:addResources type="javascript" resources="plugins/counter/waypoints.min.js"/>
 <template:addResources type="javascript" resources="plugins/counter/jquery.counterup.min.js"/>
 <c:set var="uuid" value="${currentNode.identifier}"/>
-
-<div id="stock-widget${uuid}" class="small-stock-widget">
+<div class="headline"><h2>Stock Widget</h2></div>
+<div id="stock-widget${uuid}" class="stock-widget">
   <div class="stock-widget-wrapper">
-    <div class="title">Stock widget: ${currentNode.properties['stock'].string}</div>
+    <div class="title">${currentNode.properties['stock'].string}</div>
     <div class="description">
       <p>Lorem ipsum dolor et sumet malaris</p>
     </div>
@@ -33,11 +33,11 @@
     </div>
     <div class="stock-variable">
     </div>
-    <a href="#" class="btn-wrapper">
-      <div class="btn-u btn-u-red">Show me more</div>
-    </a>
+    <a href="#" class="btn">Show me more</a>
   </div>
 </div>
+
+
 
 <template:addResources type="inline">
   <script type="text/javascript">

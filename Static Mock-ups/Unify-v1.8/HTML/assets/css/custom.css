@@ -1,6 +1,37 @@
 /* Add here all your css styles (customizations) */
 
 
+/*NEW STOCK WIDGET*/
+
+.investors-update .stock-price {
+    font-family: "Roboto Condensed", sans-serif;
+    line-height: 1;
+ }
+
+.investors-update .list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.investors-update .list {
+    list-style: none;
+    padding-left: 0;
+   list-style: none;
+}
+
+.investors-update .stock-price .price-number {
+    font-size: 4em;
+}
+
+.investors-update .stock-price .price-number {
+    display: inline-block;
+    font-size: 5em;
+    font-weight: 400;
+    letter-spacing: -5px;
+    margin: 0;
+}
+
+
 /*SUCCESS*/
 
 .success-img{
@@ -709,6 +740,9 @@ input#scr_terms{
 	}
 }
 
+
+
+
 @media (max-width: 992px) {
 	/*LEADERSHIP*/
 	
@@ -826,6 +860,11 @@ input#scr_terms{
 		margin: 15px auto 0 auto;
 		max-width: 350px;
 	}
+	
+	
+#leadership{
+	margin: 20px 0;
+}
 	
 	
 /*	ADVANCED SEARCH*/
