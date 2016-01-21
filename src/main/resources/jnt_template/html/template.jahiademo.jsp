@@ -9,6 +9,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="jcr" uri="http://www.jahia.org/tags/jcr" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%--@elvariable id="currentNode" type="org.jahia.services.content.JCRNodeWrapper"--%>
 <%--@elvariable id="out" type="java.io.PrintWriter"--%>
 <%--@elvariable id="script" type="org.jahia.services.render.scripting.Script"--%>
@@ -110,7 +111,10 @@
 </head>
 
 <c:set var="siteNode" value="${renderContext.site}"/>
-
+<%-- get the current year for the copyright --%>
+<%@ page import="java.util.Calendar" %>
+<jsp:useBean id="now" class="java.util.Date"/>
+<fmt:formatDate value="${now}" pattern="YYYY" var="thisYear"/>
 
 <body class="header-fixed header-fixed-space-v2 <template:include view="hidden.style"/>" >
 
@@ -214,8 +218,8 @@
                 <div class="row">
                     <div class="col-md-6">
                         <p>
-                            2016 &copy; All Rights Reserved.
-                            <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+                            ${thisYear} &copy; <fmt:message key="footer.copyrights"/>
+                            <a href="#"><fmt:message key="footer.privacy"/></a> | <a href="#"><fmt:message key="footer.terms"/></a>
                         </p>
                     </div>
 

@@ -17,9 +17,6 @@
 <%--@elvariable id="renderContext" type="org.jahia.services.render.RenderContext"--%>
 <%--@elvariable id="currentResource" type="org.jahia.services.render.Resource"--%>
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
-<%-- TODO: Put date in calendar icon --%>
-<%-- TODO: edit mode is not selecting individual events properly --%>
-
 
 <c:set var="language" value="${currentResource.locale.language}"/>
 <fmt:setLocale value="${language}" scope="session"/>
