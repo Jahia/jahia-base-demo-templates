@@ -29,7 +29,7 @@
 
 <div class="col-md-4 sm-margin-bottom-30">
     <div class="news-v2-badge">
-        <img class="img-responsive" src="${imageUrl}">
+        <img class="img-responsive company-news-img" src="${imageUrl}">
         <p>
             <span>${newsDate}</span>
             <small>${newsMonth}</small>

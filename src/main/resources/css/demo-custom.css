@@ -812,13 +812,6 @@ input#scr_terms{
 }
 
 
-/*NEWS*/
-
-.news-v2 .news-v2-badge{
-    min-height: 170px;
-}
-
-
 /*PARALAX*/
 
 .parallaxPanel{
@@ -1191,52 +1184,52 @@ div.box6-blue {
 }
 
 
-/* Custom styles for Video Player */
+/* Custom styles for Video Player
 
 .vjs-default-skin .vjs-big-play-button {
-    width: 48px;
-    height: 48px;
-    position: absolute;
-    outline: 0;
-    border: 2px solid #ccc;
-    background-color: rgba(0,0,0,0.25);
-    border-radius: 50%;
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translateZ(0) translate(-50%, -50%);
-    -ms-transform: translateZ(0) translate(-50%, -50%);
-    transform: translateZ(0) translate(-50%, -50%);
-    -webkit-transition: opacity 0.25s linear;
-    transition: opacity 0.25s linear;
+    width: 48px!important;
+    height: 48px!important;
+    position: absolute!important;
+    outline: 0!important;
+    border: 2px solid #ccc!important;
+    background-color: rgba(0,0,0,0.25)!important;
+    border-radius: 50%!important;
+    cursor: pointer!important;
+    position: absolute!important;
+    top: 50%!important;
+    left: 50%!important;
+    -webkit-transform: translateZ(0) translate(-50%, -50%)!important;
+    -ms-transform: translateZ(0) translate(-50%, -50%)!important;
+    transform: translateZ(0) translate(-50%, -50%)!important;
+    -webkit-transition: opacity 0.25s linear!important;
+    transition: opacity 0.25s linear!important;
 }
 
 .vjs-control-bar, #ima-controls-div {
-    cursor: default;
-    width: 100%;
-    z-index: 4;
-    left: 0;
-    background-color: rgba(25,25,25,0.8);
-    color: #ffffff;
-    font-size: 15px;
-    height: 48px;
-    -webkit-transition: bottom .8s;
-    transition: bottom .8s;
-    -webkit-transition-delay: 1s;
-    transition-delay: 1s;
+    cursor: default!important;
+    width: 100%!important;
+    z-index: 4!important;
+    left: 0!important;
+    background-color: rgba(25,25,25,0.8)!important;
+    color: #ffffff!important;
+    font-size: 15px!important;
+    height: 48px!important;
+    -webkit-transition: bottom .8s!important;
+    transition: bottom .8s!important;
+    -webkit-transition-delay: 1s!important;
+    transition-delay: 1s!important;
 }
 
 .video-js .vjs-volume-level,
 .video-js .vjs-play-progress,
 .video-js .vjs-slider-bar {
-  background: #e74c3c;
+  background: #e74c3c!important;
 }
 
 .vjs-playback-rate {
-  display: none;
+  display: none!important;
 }
-
+*/
 /* Custom styles for MF Personalization floater fix */
 
 /* fix personas panel*/
@@ -1250,4 +1243,18 @@ div.box6-blue {
 
 .header-fixed .header-v8.header-sticky {
 	z-index: 99 !important;
+}
+
+/* fix company news badge image */
+
+.news-v2 .news-v2-badge{
+	height: 170px;
+}
+
+.company-news-img {
+	display: block;
+	width: auto;
+	height: 100%;
+	min-width: 100%;
+	max-width: inherit;
 }
