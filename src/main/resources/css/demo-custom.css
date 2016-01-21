@@ -490,7 +490,7 @@ img.carouselImageFull {
 
 #advancedSearch fieldset{
 	display: inline-block!important;
-	width: calc(50% - 22px);
+	width: calc(100% - 22px);
 	vertical-align: text-top;
 	margin: auto 10px;
 }
@@ -1281,4 +1281,16 @@ div.box6-blue {
 
 .condensed-list h1, .condensed-list h2, .condensed-list h3, .condensed-list h4, .condensed-list h5, .condensed-list h6 {
 	margin-bottom: 0px;
+}
+
+
+
+/* Fix img height on 'our companies' page */
+
+.cbp img {
+    display: block;
+    width: auto;
+    height: 100%;
+    min-width: inherit;
+    max-width: inherit;
 }
