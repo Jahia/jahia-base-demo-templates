@@ -51,7 +51,7 @@
         <li class="active"><a href="#upcoming" data-toggle="tab"><fmt:message key="jdnt_eventTabs.upcoming"/></a></li>
         <li><a href="#past" data-toggle="tab"><fmt:message key="jdnt_eventTabs.past"/></a></li>
     </ul>
-    <div class="tab-content">
+    <div class="tab-content condensed-list">
         <div class="tab-pane fade in active" id="upcoming">
             <c:set var="sqlQuery"
                    value="select * from [jnt:event] as event where isdescendantnode(event, ['${startNodePath}'])

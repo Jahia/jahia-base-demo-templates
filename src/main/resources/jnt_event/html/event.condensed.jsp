@@ -31,7 +31,7 @@
 
 
 <!-- event title -->
-<h2><a href="${detailUrl}">${title}</a></h2>
+<h4><a href="${detailUrl}">${title}</a></h4>
 <!-- event type, date, location -->
 <ul class="list-inline">
 <%--    <c:if test="${not empty currentNode.properties.eventsType}">

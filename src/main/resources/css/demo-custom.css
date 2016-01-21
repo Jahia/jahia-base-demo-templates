@@ -1277,3 +1277,8 @@ div.box6-blue {
 
 /**** End Wiki and Forum Customization****/
 
+/**** Event and Press Release Condensed List ****/
+
+.condensed-list h1, .condensed-list h2, .condensed-list h3, .condensed-list h4, .condensed-list h5, .condensed-list h6 {
+	margin-bottom: 0px;
+}

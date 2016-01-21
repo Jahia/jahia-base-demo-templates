@@ -58,7 +58,7 @@
         </c:forEach>
         <li><a href="#Older" data-toggle="tab">Older</a></li>
     </ul>
-    <div class="tab-content">
+    <div class="tab-content condensed-list">
         <div class="tab-pane fade in active" id="${thisYear}">
             <c:set var="sqlQuery" value="select * from [jnt:press] as press where isdescendantnode(press, ['${startNodePath}'])
             ${filterQuery}
