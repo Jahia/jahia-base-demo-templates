@@ -20,7 +20,14 @@
 <template:addResources type="javascript" resources="plugins/counter/waypoints.min.js"/>
 <template:addResources type="javascript" resources="plugins/counter/jquery.counterup.min.js"/>
 <c:set var="uuid" value="${currentNode.identifier}"/>
-<div class="headline"><h2>Stock Widget</h2></div>
+
+<%-- Get the title of the carousel, if exists display above carousel --%>
+<c:set var="title" value="${currentNode.properties['jcr:title'].string}"/>
+<c:if test="${not empty title}">
+  <div class="headline"><h2>${title}</h2></div>
+</c:if>
+
+
 <div id="stock-widget${uuid}" class="stock-widget">
   <div class="stock-widget-wrapper">
     <div class="title">${currentNode.properties['stock'].string}</div>

@@ -189,13 +189,13 @@
                                           rowType="predefined">
                                     <bootstrap-container jcr:primaryType="jnt:contentList">
                                         <main-resource-display j:mainResourceView="body" jcr:primaryType="jnt:mainResourceDisplay"/>
-                                        <companynews jcr:primaryType="jdnt:companyNews">
+                                        <companynews jcr:primaryType="jdnt:companyNews" limit="3">
                                             <j:translation_en jcr:language="en"
                                                 jcr:mixinTypes="mix:title"
                                                 jcr:primaryType="jnt:translation"
                                                 jcr:title="Digitall Widgets Co News"/>
                                         </companynews>
-                                        <company-content j:allowedTypes="" jcr:primaryType="jnt:area"/>
+                                        <company-content jcr:primaryType="jnt:area"/>
                                 </bootstrap-container>
                                     <bootstrap-container-side1 jcr:primaryType="jnt:contentList">
                                         <main-resource-display j:mainResourceView="metadata" jcr:primaryType="jnt:mainResourceDisplay"/>
