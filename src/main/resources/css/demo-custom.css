@@ -1236,3 +1236,18 @@ div.box6-blue {
 .vjs-playback-rate {
   display: none;
 }
+
+/* Custom styles for MF Personalization floater fix */
+
+/* fix personas panel*/
+
+.panel_button {
+	width: 50px !important;
+	height: 64px !important;
+}
+
+/* fix z-index header bar for personas panel */
+
+.header-fixed .header-v8.header-sticky {
+	z-index: 99 !important;
+}
