@@ -436,13 +436,12 @@
                                     </bootstrap-container>
                                     <bootstrap-container-side1 jcr:primaryType="jnt:contentList">
                                         <main-resource-display j:mainResourceView="metadata" jcr:primaryType="jnt:mainResourceDisplay"/>
-                                        <map j:classname="map map-box map-box-space1 margin-bottom-30 overflow-hidden"
-                                j:height="255"
+                                        <map j:height="255"
                                 j:mapType="roadmap"
-                                j:skin="skins.custom"
+                                j:view="test"
                                 j:width="325"
                                 j:zoom="10"
-                                jcr:mixinTypes="jmix:customSkin jmix:skinnable"
+                                jcr:mixinTypes="jmix:renderable"
                                 jcr:primaryType="jnt:map"/>
                                         <main-resource-display-1 j:mainResourceView="addPeople"
                                                     jcr:primaryType="jnt:mainResourceDisplay"/>

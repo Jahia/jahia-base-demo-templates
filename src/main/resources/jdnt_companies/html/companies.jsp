@@ -79,8 +79,8 @@
             </div>
         </div>
         <div class="cbp-title-dark">
-            <div class="cbp-l-grid-agency-title">Company</div>
-            <div class="cbp-l-grid-agency-desc">Company Description</div>
+            <div class="cbp-l-grid-agency-title"><fmt:message key="jdnt_companies.company"/></div>
+            <div class="cbp-l-grid-agency-desc"><fmt:message key="jdnt_companies.company_description"/></div>
         </div>
     </div>
 </c:if>

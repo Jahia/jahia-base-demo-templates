@@ -18,17 +18,10 @@
 <%--@elvariable id="currentResource" type="org.jahia.services.render.Resource"--%>
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
 
-<jcr:nodeProperty node="${currentNode}" name="boxTitle" var="boxTitle"/>
-<c:if test="${jcr:isNodeType(currentNode, 'jdmix:hasPeople')}">
+<c:set var="bindedComponent" value="${ui:getBindedComponent(currentNode, renderContext, 'j:bindedComponent')}"/>
 
-<div class="tag-box tag-box-v2 box-shadow shadow-effect-1">
-    <div class="headline"><h2>${boxTitle.string}</h2></div>
-    <ul class="list-unstyled margin-bottom-30">
-        <template:area path="relatedPeople" nodeTypes="jnt:person">
-            <template:param name="subNodesView" value="condensed"/>
-        </template:area>
-    </ul>
-</div>
-
-   </c:if>
-
+<c:if test="${not empty bindedComponent && jcr:isNodeType(bindedComponent, 'jmix:geotagged,jmix:locationAware,jnt:location')}">
+    <div class="map map-box map-box-space1 margin-bottom-30 overflow-hidden">
+    <template:module node="${currentNode}" view="default"/>
+    </div>
+</c:if>
