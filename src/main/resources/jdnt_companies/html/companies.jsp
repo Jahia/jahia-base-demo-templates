@@ -28,14 +28,16 @@
 <div class="cube-portfolio margin-bottom-60">
     <div class="content-xs">
         <%-- Add Cube-Portfolio filters container --%>
-        <%-- TODO: get filter categories from the choice list of industries --%>
+        <%-- Get filter categories from the choice list of industries --%>
+        <jcr:propertyInitializers var="options" nodeType="jdnt:company" name="industryCat" node="${currentNode}"/>
+
         <div id="filters-container" class="cbp-l-filters-text content-xs">
-            <div data-filter="*" class="cbp-filter-item-active cbp-filter-item"> All </div> |
-            <div data-filter=".media" class="cbp-filter-item"> Media </div> |
-            <div data-filter=".technology" class="cbp-filter-item"> Technology </div> |
-            <div data-filter=".retail" class="cbp-filter-item"> Retail </div> |
-            <div data-filter=".goods" class="cbp-filter-item"> Goods </div> |
-            <div data-filter=".healthcare" class="cbp-filter-item"> Healthcare </div>
+            <div data-filter="*" class="cbp-filter-item-active cbp-filter-item"> All</div>
+            |
+            <c:forEach items="${options}" var="option" varStatus="items">
+                <div data-filter=".${option.value.string}" class="cbp-filter-item">${option.displayName}</div>
+                <c:if test="${not items.last}"> |</c:if>
+            </c:forEach>
         </div>
         <%--/end Filters Container--%>
     </div>
@@ -47,7 +49,8 @@
                                         the view is setting modulemap that we get from the included template header --%>
 <template:include view="hidden.header"/>
 <c:set var="isEmpty" value="true"/>
-<c:forEach items="${moduleMap.currentList}" var="subchild" begin="${moduleMap.begin}" end="${moduleMap.end}" varStatus="item">
+        <c:forEach items="${moduleMap.currentList}" var="subchild" begin="${moduleMap.begin}" end="${moduleMap.end}"
+                   varStatus="item">
     <c:if test="${renderContext.editMode}">
         <div class="cbp-item">
     </c:if>
@@ -72,7 +75,8 @@
                     <div class="cbp-l-caption-body">
                         <ul class="link-captions no-bottom-space">
                             <li><a href="#"><i class="rounded-x fa fa-link"></i></a></li>
-                            <li><a href="${url.currentModule}/img/background.jpg" class="cbp-lightbox" data-title="Company"><i class="rounded-x fa fa-search"></i></a></li>
+                                    <li><a href="${url.currentModule}/img/background.jpg" class="cbp-lightbox"
+                                           data-title="Company"><i class="rounded-x fa fa-search"></i></a></li>
                         </ul>
                     </div>
                 </div>
