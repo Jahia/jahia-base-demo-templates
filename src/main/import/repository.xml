@@ -199,16 +199,13 @@
                                     <bootstrap-container-side1 jcr:primaryType="jnt:contentList">
                                         <main-resource-display j:mainResourceView="metadata" jcr:primaryType="jnt:mainResourceDisplay"/>
                                         <map-static j:bindedComponent="/modules/jahiademo/templates/base/company-content-template/pagecontent/bootstrap-container/bootstrap-container/main-resource-display"
-                                       j:classname="map map-box map-box-space1 margin-bottom-30 overflow-hidden"
                                        j:height="255"
                                        j:imageType="png8"
                                        j:mapType="roadmap"
                                        j:markerColor="normal"
                                        j:markerSize="normal"
-                                       j:skin="skins.custom"
                                        j:width="325"
                                        j:zoom="auto"
-                                       jcr:mixinTypes="jmix:customSkin jmix:skinnable"
                                        jcr:primaryType="jnt:staticMap"/>
                                         <main-resource-display-1 j:mainResourceView="addPeople"
                                                     jcr:primaryType="jnt:mainResourceDisplay"/>
@@ -435,13 +432,16 @@
                                     </bootstrap-container>
                                     <bootstrap-container-side1 jcr:primaryType="jnt:contentList">
                                         <main-resource-display j:mainResourceView="metadata" jcr:primaryType="jnt:mainResourceDisplay"/>
-                                        <map j:height="255"
-                                j:mapType="roadmap"
-                                j:view="test"
+                                        <map-static j:height="255"
+                                j:imageType="png8"
+                                       j:mapType="roadmap"
+                                j:markerColor="normal"
+                                       j:markerSize="normal"
+                                       j:view="test"
                                 j:width="325"
-                                j:zoom="10"
+                                j:zoom="auto"
                                 jcr:mixinTypes="jmix:renderable"
-                                jcr:primaryType="jnt:map"/>
+                                jcr:primaryType="jnt:staticMap"/>
                                         <main-resource-display-1 j:mainResourceView="addPeople"
                                                     jcr:primaryType="jnt:mainResourceDisplay"/>
                                     </bootstrap-container-side1>
