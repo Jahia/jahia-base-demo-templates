@@ -745,10 +745,11 @@ input#scr_terms{
 
 /*STOCK WIDGET*/
 
+/*STOCK WIDGET*/
+
 .stock-widget .currency-value{
     font-size: 20px;
-    vertical-align: text-top;
-    margin-right: -15px;
+    vertical-align: 25px;
 }
 
 .stock-widget{
@@ -759,16 +760,29 @@ input#scr_terms{
 }
 
 .stock-widget .arrow{
-    margin-bottom: 5px;
     width: 0;
     height: 0;
     border-style: solid;
-    border-width: 0 7.5px 10px 7.5px;
+    border-width: 0 30px 10px 30px;
     border-color: transparent transparent #6fc117 transparent;
-    display: inline-block;
-    margin-right: 5px;
+    display: block;
     margin-left: 0!important;
+    position: absolute;
+    bottom: 25px;
 }
+
+.stock-widget .arrow-down{
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 10px 30px 0 30px;
+    border-color: #e74c3c transparent transparent transparent;
+    display: block;
+    margin-left: 0!important;
+    position: absolute;
+    bottom: -10px;
+}
+
 
 .stock-widget .title{
     text-align: left;
@@ -791,13 +805,14 @@ input#scr_terms{
     text-align: left;
     margin: 0 auto;
     font-weight: 400;
-    display: inline-block;
+    display: inline-table;
+    vertical-align: middle;
 }
 
 .stock-widget .stock-variable{
-    text-align: left;
+    position: relative;
+    text-align: center;
     font-size: 18px;
-    margin: 0 auto 0 auto;
     font-weight: 300;
     display: inline-block;
 }
@@ -810,6 +825,8 @@ input#scr_terms{
 	text-decoration: underline;
     margin-top: -10px;
 }
+
+
 
 
 /*PARALAX*/
