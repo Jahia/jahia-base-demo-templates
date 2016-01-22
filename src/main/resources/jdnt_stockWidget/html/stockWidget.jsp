@@ -57,10 +57,10 @@
         $("#stock-widget${uuid} .stock-price .counter").text(data[0].l);
         var variation = data[0].c;
         if (variation.indexOf("+")>=0){
-          $("#stock-widget${uuid} .stock-variable").append("<div class='arrow'></div>"+variation.replace('',''));
+          $("#stock-widget${uuid} .stock-variable").append("<div class='arrow'></div>"+variation);
         }
         if (variation.indexOf("-")>=0){
-          $("#stock-widget${uuid} .stock-variable").append("<div class='arrow-down'></div>"+variation.replace('-',''));
+          $("#stock-widget${uuid} .stock-variable").append("<div class='arrow-down'></div>"+variation);
         }
         <c:if test="${not renderContext.editMode}">
         jQuery('#stock-widget${uuid} .counter').counterUp({

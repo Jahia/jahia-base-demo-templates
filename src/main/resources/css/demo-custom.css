@@ -749,7 +749,7 @@ input#scr_terms{
 
 .stock-widget .currency-value{
     font-size: 20px;
-    vertical-align: 25px;
+    vertical-align: 20px;
 }
 
 .stock-widget{
@@ -759,28 +759,29 @@ input#scr_terms{
     background: white;
 }
 
+
+
+
 .stock-widget .arrow{
     width: 0;
     height: 0;
     border-style: solid;
-    border-width: 0 30px 10px 30px;
+    border-width: 0 10px 7.5px 10px;
     border-color: transparent transparent #6fc117 transparent;
     display: block;
-    margin-left: 0!important;
-    position: absolute;
-    bottom: 25px;
+    margin: 0 auto;
 }
 
 .stock-widget .arrow-down{
     width: 0;
     height: 0;
     border-style: solid;
-    border-width: 10px 30px 0 30px;
+    border-width: 7.5px 10px 0 10px;
     border-color: #e74c3c transparent transparent transparent;
     display: block;
-    margin-left: 0!important;
-    position: absolute;
-    bottom: -10px;
+    margin: 0 auto;
+    top: 32px;
+    position: relative;
 }
 
 
@@ -801,12 +802,12 @@ input#scr_terms{
 
 
 .stock-widget .stock-price{
-    font-size: 60px;
+    font-size: 50px;
     text-align: left;
     margin: 0 auto;
     font-weight: 400;
     display: inline-table;
-    vertical-align: middle;
+    vertical-align: -12px;
 }
 
 .stock-widget .stock-variable{
