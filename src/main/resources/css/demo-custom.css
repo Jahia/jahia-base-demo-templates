@@ -840,13 +840,14 @@ input#scr_terms{
 
 /*MEDIA QUERIES*/
 
-@media (max-width: 1200px) {
 
-/*	small stock widget*/
+
+
+@media (max-width: 1200px) {
 	
-	#small-stock-widget .stock-widget-wrapper{
-		padding: 5px;
-	}
+.stock-widget .stock-price{
+    font-size: 40px;
+
 }
 
 @media (max-width: 992px) {
