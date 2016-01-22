@@ -38,7 +38,6 @@
                         <div class="cbp-l-caption-body">
                             <ul class="link-captions no-bottom-space">
                                 <li><a href="<c:url value='${url.base}${currentNode.path}.html'/>"><i class="rounded-x fa fa-link"></i></a></li>
-                                <%--TODO: Get company thumbnail image for the lightbox vs placeholder--%>
                                 <li><a href="${thumbURL}" class="cbp-lightbox" data-title="${fn:escapeXml(title.string)}"><i class="rounded-x fa fa-search"></i></a></li>
                             </ul>
                         </div>
