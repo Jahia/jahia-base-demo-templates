@@ -8,6 +8,23 @@
                  j:title="jahiademo"
                  jcr:mixinTypes="jmix:hasExternalProviderExtension"
                  jcr:primaryType="jnt:module">
+                <sources jcr:mixinTypes="jmix:hasExternalProviderExtension jmix:sourceControl"
+                  jcr:primaryType="jnt:moduleVersionFolder"
+                  j:staticMountPointProviderKey="module-jahiademo-1.0-SNAPSHOT">
+                    <src jcr:mixinTypes="jmix:sourceControl" jcr:primaryType="jnt:folder">
+                        <main jcr:mixinTypes="jmix:sourceControl" jcr:primaryType="jnt:folder">
+                            <resources jcr:mixinTypes="jmix:sourceControl" jcr:primaryType="jnt:folder">
+                                <javascript jcr:mixinTypes="jmix:sourceControl"
+                                 jcr:primaryType="jnt:javascriptFolder">
+                                    <masterslider jcr:mixinTypes="jmix:sourceControl" jcr:primaryType="jnt:folder">
+                                        <masterslider.js jcr:mixinTypes="jmix:sourceControl"
+                                            jcr:primaryType="jnt:javascriptFile"/>
+                                    </masterslider>
+                                </javascript>
+                            </resources>
+                        </main>
+                    </src>
+                </sources>
 
 <portlets jcr:primaryType="jnt:portletFolder"/>
                 <files jcr:primaryType="jnt:folder">
