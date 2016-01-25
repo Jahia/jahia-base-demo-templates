@@ -146,9 +146,9 @@
 
 [jdnt:parallaxSliderItem] > jnt:content
  - backgroundImg (weakreference, picker[type='image']) < 'jmix:image'
- - backgroundColor (string)
- - pause (string)
- - width (string, choicelist[resourceBundle])  < '10%', '20%','30%','40%','50%','60%','70%','80%','90%'
+ - slideTheme(string, choicelist[resourceBundle]) < option1, option2, option3, option4, option5, option6, option7, option8
+ - pause (boolean)
+ - width (string, choicelist[resourceBundle]) = '100%' < '10%', '20%','30%','40%','50%','60%','70%','80%','90%', '100%'
  - body (string, richtext) i18n
  - effect (boolean) = true autocreated
 
