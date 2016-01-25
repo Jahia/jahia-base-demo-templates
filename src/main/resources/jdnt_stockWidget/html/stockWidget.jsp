@@ -32,10 +32,10 @@
   <div class="stock-widget-wrapper">
     <div class="title">${currentNode.properties['stock'].string}</div>
     <div class="description">
-      <p>Lorem ipsum dolor et sumet malaris</p>
+      <p><fmt:message key="jdnt_stockWidget.unavailable"/></p>
     </div>
     <div class="stock-price">
-      <span class="currency-value">$</span>
+      <span class="currency-value"></span>
       <span class="counter"></span>
     </div>
     <div class="stock-variable">
@@ -53,9 +53,17 @@
       dataType: 'jsonp',
       data: { get_param: 'value' },
       success: function(data){
+        $("#stock-widget${uuid} .stock-widget-wrapper .description p").text("Stock unavailable right now");
         $("#stock-widget${uuid} .stock-widget-wrapper .description p").text(data[0].e);
         $("#stock-widget${uuid} .stock-price .counter").text(data[0].l);
+        var counter = data[0].l;
+        if (counter != null) {
+          $("#stock-widget${uuid} .stock-price .currency-value").text("$")
+        }
         var variation = data[0].c;
+        if (variation.indexOf("0")==0){
+          $("#stock-widget${uuid} .stock-variable").append("+"+variation);
+        }
         if (variation.indexOf("+")>=0){
           $("#stock-widget${uuid} .stock-variable").append("<div class='arrow'></div>"+variation);
         }
@@ -69,7 +77,8 @@
         });
         </c:if>
       },
-      error: function(){ alert('error'); },
+      error: function(data){
+        alert('error'); },
 
     });
   </script>
