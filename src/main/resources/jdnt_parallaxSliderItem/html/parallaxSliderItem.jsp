@@ -84,7 +84,7 @@
         $("#parallax${currentNode.identifier} div").width("${width}");
     })
     $(document).ready(function(){
-        $("#parallax${currentNode.identifier}").css("color", "${textColor}");
+        $("#parallax${currentNode.identifier} p, li, li a, label,h1, h2, h3, h4, h5, h6").css("color", "${textColor}");
     })
 </script>
 
