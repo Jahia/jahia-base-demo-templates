@@ -84,34 +84,7 @@
         $("#parallax${currentNode.identifier} div").width("${width}");
     })
     $(document).ready(function(){
-        $("#parallax${currentNode.identifier} p").css("color", "${textColor}");
-    })
-    $(document).ready(function(){
-        $("#parallax${currentNode.identifier} li").css("color", "${textColor}");
-    })
-    $(document).ready(function(){
-        $("#parallax${currentNode.identifier} li a").css("color", "${textColor}");
-    })
-    $(document).ready(function(){
-        $("#parallax${currentNode.identifier} label").css("color", "${textColor}");
-    })
-    $(document).ready(function(){
-        $("#parallax${currentNode.identifier} h1").css("color", "${textColor}");
-    })
-    $(document).ready(function(){
-        $("#parallax${currentNode.identifier} h2").css("color", "${textColor}");
-    })
-    $(document).ready(function(){
-        $("#parallax${currentNode.identifier} h3").css("color", "${textColor}");
-    })
-    $(document).ready(function(){
-        $("#parallax${currentNode.identifier} h4").css("color", "${textColor}");
-    })
-    $(document).ready(function(){
-        $("#parallax${currentNode.identifier} h5").css("color", "${textColor}");
-    })
-    $(document).ready(function(){
-        $("#parallax${currentNode.identifier} h6").css("color", "${textColor}");
+        $("#parallax${currentNode.identifier} p, #parallax${currentNode.identifier} li, #parallax${currentNode.identifier} li a, #parallax${currentNode.identifier} label, #parallax${currentNode.identifier} h1, #parallax${currentNode.identifier} h2, #parallax${currentNode.identifier} h3, #parallax${currentNode.identifier} h4, #parallax${currentNode.identifier} h5, #parallax${currentNode.identifier} h6").css("color", "${textColor}");
     })
 </script>
 
