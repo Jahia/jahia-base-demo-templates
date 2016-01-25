@@ -37,7 +37,7 @@
           href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600&amp;subset=cyrillic,latin'>
 
     <!-- CSS Global Compulsory -->
-    <%--<template:addResources type="css" resources="bootstrap.min.css"/>--%>
+    <%-- <template:addResources type="css" resources="bootstrap.min.css"/>--%>
     <template:addResources type="css" resources="style.css"/>
 
     <!-- CSS Header and Footer -->
@@ -74,7 +74,7 @@
     <template:addResources type="javascript" resources="waypoints.min.js"/>
 
     <!-- CSS Customization -->
-    <template:addResources type="css" resources="demo-custom.css"/>
+    <template:addResources type="css" resources="jahiademo-custom.css"/>
 
 
     <!-- JS Customization -->

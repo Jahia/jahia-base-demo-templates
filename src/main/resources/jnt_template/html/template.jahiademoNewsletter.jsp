@@ -50,7 +50,7 @@
     <template:addResources type="css" resources="app.css"/>
 
     <!-- CSS Customization -->
-    <template:addResources type="css" resources="demo-custom.css"/>
+    <template:addResources type="css" resources="jahiademo-custom.css"/>
 
 
     <!-- JS Global Compulsory -->
