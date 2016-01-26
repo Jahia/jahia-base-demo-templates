@@ -36,19 +36,19 @@
 
 <c:choose>
     <c:when test="${slideTheme == 'option1'}">
-        <c:set var="backgroundColor" value="#E74C3C"/>
+        <c:set var="backgroundColor" value="rgba(231, 76, 60, 0.85)"/>
         <c:set var="textColor" value="#ffe3e3"/>
     </c:when>
     <c:when test="${slideTheme == 'option2'}">
-        <c:set var="backgroundColor" value="#2D3030"/>
+        <c:set var="backgroundColor" value="rgba(45, 48, 48, 0.85)"/>
         <c:set var="textColor" value="#cacaca"/>
     </c:when>
     <c:when test="${slideTheme == 'option3'}">
-        <c:set var="backgroundColor" value="#25232B"/>
+        <c:set var="backgroundColor" value="rgba(37, 35, 43, 0.94)"/>
         <c:set var="textColor" value="#ababab"/>
     </c:when>
     <c:when test="${slideTheme == 'option4'}">
-        <c:set var="backgroundColor" value="#BBBBBB"/>
+        <c:set var="backgroundColor" value="rgba(187, 187, 187, 0.85)"/>
         <c:set var="textColor" value="#3a3535"/>
     </c:when>
     <c:when test="${slideTheme == 'option5'}">
@@ -56,14 +56,18 @@
         <c:set var="textColor" value="#000000"/>
     </c:when>
     <c:when test="${slideTheme == 'option6'}">
-        <c:set var="backgroundColor" value=""/>
+        <c:set var="backgroundColor" value="rgba(255,255,255,0.95)"/>
         <c:set var="textColor" value="#000000"/>
     </c:when>
     <c:when test="${slideTheme == 'option7'}">
         <c:set var="backgroundColor" value=""/>
-        <c:set var="textColor" value="#FFFFFF"/>
+        <c:set var="textColor" value="#000000"/>
     </c:when>
     <c:when test="${slideTheme == 'option8'}">
+        <c:set var="backgroundColor" value=""/>
+        <c:set var="textColor" value="#FFFFFF"/>
+    </c:when>
+    <c:when test="${slideTheme == 'option9'}">
         <c:set var="backgroundColor" value=""/>
         <c:set var="textColor" value="#E74C3C"/>
     </c:when>

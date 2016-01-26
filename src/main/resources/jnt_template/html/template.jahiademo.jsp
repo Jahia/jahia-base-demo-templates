@@ -10,6 +10,7 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="jcr" uri="http://www.jahia.org/tags/jcr" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="bootstrap" uri="http://www.jahia.org/tags/bootstrapLib" %>
 <%--@elvariable id="currentNode" type="org.jahia.services.content.JCRNodeWrapper"--%>
 <%--@elvariable id="out" type="java.io.PrintWriter"--%>
 <%--@elvariable id="script" type="org.jahia.services.render.scripting.Script"--%>
@@ -37,7 +38,7 @@
           href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600&amp;subset=cyrillic,latin'>
 
     <!-- CSS Global Compulsory -->
-    <%-- <template:addResources type="css" resources="bootstrap.min.css"/>--%>
+    <bootstrap:addCSS/>
     <template:addResources type="css" resources="style.css"/>
 
     <!-- CSS Header and Footer -->
@@ -78,7 +79,7 @@
 
 
     <!-- JS Customization -->
-    <template:addResources type="javascript" resources="custom.js"/>
+    <template:addResources type="javascript" resources="jahiademo-jahiademo-custom.js"/>
     <!-- JS Page Level -->
     <template:addResources type="javascript" resources="app.js"/>
     <template:addResources type="javascript" resources="owl-carousel.js"/>

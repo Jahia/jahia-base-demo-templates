@@ -30,7 +30,7 @@
     <link rel='stylesheet' type='text/css' href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600&amp;subset=cyrillic,latin'>
 
     <!-- CSS Global Compulsory -->
-    <template:addResources type="css" resources="bootstrap.min.css"/>
+    <bootstrap:addCSS/>
     <template:addResources type="css" resources="style.css"/>
 
     <!-- CSS Header and Footer -->
@@ -65,7 +65,7 @@
     <template:addResources type="javascript" resources="jquery.cslider.js"/>
     <template:addResources type="javascript" resources="owl.carousel.js"/>
     <!-- JS Customization -->
-    <template:addResources type="javascript" resources="custom.js"/>
+    <template:addResources type="javascript" resources="jahiademo-jahiademo-custom.js"/>
     <!-- JS Page Level -->
     <template:addResources type="javascript" resources="app.js"/>
     <template:addResources type="javascript" resources="owl-carousel.js"/>

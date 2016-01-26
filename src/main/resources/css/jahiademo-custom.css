@@ -1666,6 +1666,22 @@ div.box6-blue {
 	display: none!important;
 }
 
+#forum-body ul.forum-profile-icons {
+	margin: 0px -25px -25px 100px !important;
+}
+
+div.rooms, div.topics, div.posts {
+	padding-top: 20px;
+}
+
+#forum-body ul.forum-profile-icons li a, #forum-body ul.forum-profile-icons li a {
+	color: #cccccc!important;;
+}
+
+#forum-body ul.forum-profile-icons li a:hover, #forum-body ul.forum-profile-icons li a:active {
+	color: #e74c3c!important;
+}
+
 /* Slider title backgrounds */
 
 .ms-layer.ms-promo-info-in.ms-promo-info.color-light span {
