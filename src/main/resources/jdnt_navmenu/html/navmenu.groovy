@@ -52,39 +52,49 @@ printMenu = { node, navMenuLevel ->
                                 link = menuItem.properties['j:node'].node.url;
                             } else if (menuItem.isNodeType('jnt:externalLink')) {
                                 link = menuItem.properties['j:url'].string;
+                            } else if (menuItem.isNodeType('jnt:navMenuText')) {
+                                link = "javascript:void(0)";
                             } else {
                                 link = menuItem.url;
+                            }
+
+                            //get the display name
+                            if (menuItem.hasProperty('alternateTitle')){
+                                displayName = menuItem.getPropertyAsString('alternateTitle');
+                            } else {
+                                displayName = menuItem.displayableName;
                             }
                             if (navMenuLevel == 1) {
                                 if (!ulIsOpen) {
                                     println "<ul class=\"nav navbar-nav\">\n"
                                     /* add home page as item on menu */
-                                   // println "<li><a href=\"#\">Home</a></li>\n"
 
                                     if (menuItem.parent != null) {
                                         homePage = menuItem.parent;
-                                        homeTitle = homePage.displayableName;
+                                        if (homePage.hasProperty("alternateTitle")) {
+                                            homeTitle = homePage.getPropertyAsString("alternateTitle");
+                                        }
+                                        else { homeTitle = homePage.displayableName; }
+
                                         println "<li><a href=\"" + homePage.url + "\" class=\"dropdown-toggle\">" + homeTitle + "</a></li>\n";
 
-                                /*        if (homePage.hasProperty("alternateTitle")) {
-                                            homeTitle = menuItem.getProperty("alternateTitle").string
-                                        }*/
+
 
                                     }
                                     /* end add home page as menu item */
                                     ulIsOpen = true;
                                 }
                                 if (hasChildren) {
+
                                     print "<li ${listItemCssClass}>";
-                                    print "    <a href=\"${link}\" ${linkTitle} class=\"dropdown-toggle\">";
-                                    print menuItem.displayableName;
-                                    print "</a>\n";
+                                    print "    <a href=\"${link}\" ${linkTitle} class=\"dropdown-toggle\">" + displayName + "</a>\n";
                                     if (hasChildren && navMenuLevel < maxDepth) {
                                         printMenu(menuItem, navMenuLevel + 1);
                                     }
                                     println "</li>\n";
                                 } else {
-                                    println "<li ${listItemCssClass}><a href=\"${link}\" ${linkTitle} class=\"dropdown-toggle\">" + menuItem.displayableName + "</a></li>\n";
+
+                                    println "<li ${listItemCssClass}><a href=\"${link}\" ${linkTitle} class=\"dropdown-toggle\">" + displayName + "</a></li>\n";
                                 }
                             } else {
                                 if (!ulIsOpen) {
@@ -107,7 +117,7 @@ printMenu = { node, navMenuLevel ->
                                     } */
                                 }
                                 println "<li ${listItemCssClass}>";
-                                print "<a href=\"${link}\" ${linkTitle} >" + menuItem.displayableName + "   </a>";
+                                print "<a href=\"${link}\" ${linkTitle}>" + displayName + "   </a>";
                                 if (hasChildren && navMenuLevel < maxDepth) {
                                     printMenu(menuItem, navMenuLevel + 1);
                                 }
