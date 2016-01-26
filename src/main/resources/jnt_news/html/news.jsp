@@ -29,7 +29,11 @@
     <div class="col-sm-7 news-v3">
         <div class="news-v3-in-sm no-padding">
             <ul class="list-inline posted-info">
-             <%--   <li>In <a href="#">Design</a></li> --%>
+                <%-- display tags --%>
+                <jcr:nodeProperty node="${currentNode}" name="j:tagList" var="tags"/>
+                <c:forEach items="${tags}" var="tag" varStatus="status">
+                    <li><c:if test="${status.first}"><fmt:message key="jnt_news.in"/></c:if>&nbsp;${tag.string}</li>
+                </c:forEach>
                 <li>Posted ${newsDate}</li>
             </ul>
             <h2><a href="${detailUrl}">${newsTitle}</a></h2>

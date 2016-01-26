@@ -6,7 +6,6 @@
 <%@ taglib prefix="template" uri="http://www.jahia.org/tags/templateLib" %>
 <%@ taglib prefix="functions" uri="http://www.jahia.org/tags/functions" %>
 <%@ taglib prefix="jahia" uri="http://www.jahia.org/tags/templateLib" %>
-<%-- TODO: Display News Categories --%>
 
 <template:addResources type="css" resources="news.css"/>
 <c:set var="language" value="${currentResource.locale.language}"/>
@@ -29,7 +28,11 @@
             </c:if>
             <div class="news-v3-in">
                 <ul class="list-inline posted-info">
-                    <%-- news categories here?                    <li>In <a href="#">Design</a></li> --%>
+            <%-- display tags --%>
+            <jcr:nodeProperty node="${currentNode}" name="j:tagList" var="tags"/>
+            <c:forEach items="${tags}" var="tag" varStatus="status">
+                <li><c:if test="${status.first}"><fmt:message key="jnt_news.in"/></c:if>&nbsp;${tag.string}</li>
+            </c:forEach>
                     <li>Posted ${newsDate}</li>
                 </ul>
                 ${description.string}

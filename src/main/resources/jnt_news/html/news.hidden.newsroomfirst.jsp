@@ -30,7 +30,11 @@
     </c:if>
     <div class="news-v3-in">
         <ul class="list-inline posted-info">
-<%--            <li>In <a href="#">Design</a></li>--%>
+                <%-- display tags --%>
+            <jcr:nodeProperty node="${currentNode}" name="j:tagList" var="tags"/>
+            <c:forEach items="${tags}" var="tag" varStatus="status">
+                <li><c:if test="${status.first}"><fmt:message key="jnt_news.in"/></c:if>&nbsp;${tag.string}</li>
+            </c:forEach>
             <li>Posted ${newsDate}</li>
         </ul>
         <h2><a href="${detailUrl}">${newsTitle}</a></h2>
@@ -77,6 +81,13 @@
         </div>
         <div class="news-v2-desc bg-color-light">
             <h3><a href="${detailUrl}">${newsTitle}</a></h3>
+            <small>
+                    <%-- display tags --%>
+                <jcr:nodeProperty node="${currentNode}" name="j:tagList" var="tags"/>
+                <c:forEach items="${tags}" var="tag" varStatus="status">
+                    <c:if test="${status.first}"><fmt:message key="jnt_news.in"/></c:if>&nbsp;${tag.string}
+                </c:forEach>
+            </small>
 <%--            <small>By Admin | <a class="color-inherit" href="#">16 Comments</a> | In <a href="#">Web Trends</a></small>--%>
         </div>
     </div>

@@ -79,7 +79,7 @@
 
 
     <!-- JS Customization -->
-    <template:addResources type="javascript" resources="jahiademo-jahiademo-custom.js"/>
+    <template:addResources type="javascript" resources="jahiademo-custom.js"/>
     <!-- JS Page Level -->
     <template:addResources type="javascript" resources="app.js"/>
     <template:addResources type="javascript" resources="owl-carousel.js"/>

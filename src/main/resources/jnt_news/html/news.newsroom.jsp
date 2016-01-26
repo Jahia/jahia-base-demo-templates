@@ -19,7 +19,13 @@
 <ul class="list-unstyled blog-latest-posts margin-bottom-20">
 <li>
     <h3><a href="${detailUrl}">${newsTitle}</a></h3>
-    <small>${newsDate} <%--/  categories <a href="#">Hi-Tech,</a> <a href="#">Technology</a>--%></small>
+    <small>${newsDate}
+        <%-- display tags --%>
+        <jcr:nodeProperty node="${currentNode}" name="j:tagList" var="tags"/>
+        <c:forEach items="${tags}" var="tag" varStatus="status">
+            <c:if test="${status.first}">&nbsp;<fmt:message key="jnt_news.in"/>&nbsp;</c:if>${tag.string}<c:if test="${not status.last}">,</c:if>
+        </c:forEach>
+    </small>
     <c:choose>
         <c:when test="${not jcr:isNodeType(currentNode, 'jdmix:hasReadMore')}">
             <p>${fn:substring(functions:removeHtmlTags(description), 0, 150)}...</p>
