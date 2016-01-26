@@ -31,7 +31,14 @@ printMenu = { node, navMenuLevel ->
                     }
 
                     if (correctType) {
-                        hasChildren = navMenuLevel < maxDepth && JCRTagUtils.hasChildrenOfType(menuItem, "jnt:page,jnt:nodeLink,jnt:externalLink")
+                        children = JCRTagUtils.getChildrenOfType(menuItem, "jnt:page,jnt:nodeLink,jnt:externalLink,jnt:navMenuText");
+                        def totalChilds = children.size();
+                        hiddenChildren = JCRTagUtils.getChildrenOfType(menuItem, "jdmix:hidePage");
+                        def numHiddenChilds = hiddenChildren.size();
+
+                        // check that there are actually visible children
+                        hasChildren = navMenuLevel < maxDepth && totalChilds > 0 && totalChilds > numHiddenChilds;
+
                         Resource resource = new Resource(menuItem, "html", "menuElement", currentResource.getContextConfiguration());
                         def render = RenderService.getInstance().render(resource, renderContext)
                         if (render != "") {
@@ -40,6 +47,7 @@ printMenu = { node, navMenuLevel ->
                                     renderContext.mainResource.node.path == menuItem.properties['j:node'].node.path :
                                     renderContext.mainResource.node.path == itemPath;
                             if (navMenuLevel > 1 && hasChildren){
+                                //if there are children us dropdown-submenu to display arrow
                                 listItemCssClass = "class=\"dropdown-submenu " + (inpath || active ? "active" : "") + "\"";
                             }
                             else if (navMenuLevel <= 1 && hasChildren){
