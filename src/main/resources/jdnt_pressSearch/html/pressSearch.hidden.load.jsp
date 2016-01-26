@@ -52,14 +52,14 @@
 
 <div id="${componentId}" class="tab-v1">
     <ul class="nav nav-tabs">
-        <li class="active"><a href="#${thisYear}" data-toggle="tab">${thisYear}</a></li>
+        <li class="active"><a href="#${componentId}-${thisYear}" data-toggle="tab">${thisYear}</a></li>
         <c:forEach var="i" begin="1" end="${numTabs-1}">
-        <li><a href="#${thisYear-i}" data-toggle="tab">${thisYear-i}</a></li>
+        <li><a href="#${componentId}-${thisYear-i}" data-toggle="tab">${thisYear-i}</a></li>
         </c:forEach>
-        <li><a href="#Older" data-toggle="tab">Older</a></li>
+        <li><a href="#${componentId}-Older" data-toggle="tab">Older</a></li>
     </ul>
     <div class="tab-content condensed-list">
-        <div class="tab-pane fade in active" id="${thisYear}">
+        <div class="tab-pane fade in active" id="${componentId}-${thisYear}">
             <c:set var="sqlQuery" value="select * from [jnt:press] as press where isdescendantnode(press, ['${startNodePath}'])
             ${filterQuery}
          and press.[date] >= CAST('${thisYear}-01-01T00:00:00.000Z' AS DATE)
@@ -76,7 +76,7 @@
         </div>
         <%-- create tab for each year --%>
         <c:forEach var="i" begin="1" end="${numTabs-1}">
-            <div class="tab-pane fade in" id="${thisYear-i}">
+            <div class="tab-pane fade in" id="${componentId}-${thisYear-i}">
             <jcr:sql var="pressReleases"
                      sql="select * from [jnt:press] as press where isdescendantnode(press, ['${startNodePath}'])
                          ${filterQuery}
@@ -91,7 +91,7 @@
                   </div>
             </c:forEach>
         <%-- create tab for items older than the last year tab --%>
-        <div class="tab-pane fade in" id="Older">
+        <div class="tab-pane fade in" id="${componentId}-Older">
             <jcr:sql var="pressReleases"
                      sql="select * from [jnt:press] as press where isdescendantnode(press, ['${startNodePath}'])
                      ${filterQuery}
