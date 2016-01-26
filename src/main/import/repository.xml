@@ -194,8 +194,7 @@
                                                 jcr:mixinTypes="mix:title"
                                                 jcr:primaryType="jnt:translation"/>
                                         </companynews>
-                                        <company-content j:allowedTypes="jmix:droppableContent" jcr:primaryType="jnt:area"/>
-                                </bootstrap-container>
+                                        </bootstrap-container>
                                     <bootstrap-container-side1 jcr:primaryType="jnt:contentList">
                                         <main-resource-display j:mainResourceView="metadata" jcr:primaryType="jnt:mainResourceDisplay"/>
                                         <map-static j:bindedComponent="/modules/jahiademo/templates/base/company-content-template/pagecontent/bootstrap-container/bootstrap-container/main-resource-display"
