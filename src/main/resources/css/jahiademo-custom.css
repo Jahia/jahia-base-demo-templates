@@ -1714,3 +1714,150 @@ div.rooms, div.topics, div.posts {
     padding: 0px 20px !important;
     color: #fff !important;
 }
+/*!
+Video.js Default Styles (http://videojs.com)
+Version 4.12.0
+Create your own skin at http://designer.videojs.com
+*/
+/* SKIN
+================================================================================
+The main class name for all skin-specific styles. To make your own skin,
+replace all occurrences of 'vjs-default-skin' with a new name. Then add your new
+skin name to your video tag instead of the default skin.
+e.g. <video class="video-js my-skin-name">
+*/
+.vjs-default-skin {
+	color: #e74c3c!important;
+}
+
+/* Base UI Component Classes
+--------------------------------------------------------------------------------
+*/
+/* Slider - used for Volume bar and Seek bar */
+.vjs-default-skin .vjs-slider {
+	/* background-color-with-alpha */
+	background-color: #e74c3c!important;
+	background-color: rgba(231, 76, 60, 0.8)!important;
+}
+
+
+/* Control Bar
+--------------------------------------------------------------------------------
+The default control bar that is a container for most of the controls.
+*/
+.vjs-default-skin .vjs-control-bar {
+	/* background-color-with-alpha */
+	background-color: #ffffff!important;
+	background-color: rgba(255, 255, 255, 0.8)!important;
+}
+
+
+/* Font button icons */
+.vjs-default-skin .vjs-control:before {
+	text-shadow: 0px 0px 0px!important;
+}
+
+/* Volume/Mute
+-------------------------------------------------------------------------------- */
+
+.vjs-default-skin .vjs-volume-level {
+	background: #e74c3c!important;
+}
+
+
+.vjs-default-skin .vjs-play-progress {
+
+	background: rgba(255,255,255,0.6) url(data:image/png!important;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAGCAYAAADgzO9IAAAAP0lEQVQIHWWMAQoAIAgDR/QJ/Ub//04+w7ZICBwcOg5FZi5iBB82AGzixEglJrd4TVK5XUJpskSTEvpdFzX9AB2pGziSQcvAAAAAAElFTkSuQmCC) -50% 0 repeat!important;
+}
+
+
+
+/* Big Play Button (play button at start)
+--------------------------------------------------------------------------------
+Positioning of the play button in the center or other corners can be done more
+easily in the skin designer. http://designer.videojs.com/
+*/
+.vjs-default-skin .vjs-big-play-button {
+	/* Center it horizontally */
+	left: 50%!important;
+	margin-left: -1.06em!important;
+	/* Center it vertically */
+	top: 50%!important;
+	margin-top: -1.06em!important;
+	font-size: 3em!important;
+	display: block!important;
+	z-index: 2!important;
+	position: absolute!important;
+	width: 2em!important;
+	height: 2em!important;
+	text-align: center!important;
+	vertical-align: middle!important;
+	cursor: pointer!important;
+	opacity: 1!important;
+	/* Need a slightly gray bg so it can be seen on black backgrounds */
+	/* background-color-with-alpha */
+	background-color: #ffffff!important;
+	background-color: rgba(255, 255, 255, 0.8)!important;
+	border: 0.06em solid #e74c3c!important;
+	/* border-radius */
+	-webkit-border-radius: 1.25em!important;
+	-moz-border-radius: 1.25em!important;
+	border-radius: 1.25em!important;
+	/* box-shadow */
+	-webkit-box-shadow: 0px 0px 1em rgba(255, 255, 255, 0.25)!important;
+	-moz-box-shadow: 0px 0px 1em rgba(255, 255, 255, 0.25)!important;
+	box-shadow: 0px 0px 1em rgba(255, 255, 255, 0.25)!important;
+	/* transition */
+	-webkit-transition: all 0.4s!important;
+	-moz-transition: all 0.4s!important;
+	-o-transition: all 0.4s!important;
+	transition: all 0.4s!important;
+}
+
+.vjs-default-skin:hover .vjs-big-play-button,
+.vjs-default-skin .vjs-big-play-button:focus {
+	outline: 0!important;
+	border-color: #fff!important;
+	/* IE8 needs a non-glow hover state */
+	background-color: #c0392b!important;
+	background-color: rgba(192, 57, 43, 0.3)!important;
+	/* box-shadow */
+	-webkit-box-shadow: 0 0 3em #ffffff!important;
+	-moz-box-shadow: 0 0 3em #ffffff!important;
+	box-shadow: 0 0 3em #ffffff!important;
+	/* transition */
+	-webkit-transition: all 0s!important;
+	-moz-transition: all 0s!important;
+	-o-transition: all 0s!important;
+	transition: all 0s!important;
+}
+.vjs-default-skin .vjs-big-play-button:before {
+	content: "\e001"!important;
+	font-family: VideoJS!important;
+	/* In order to center the play icon vertically we need to set the line height
+       to the same as the button height */
+
+	line-height: 2em!important;
+	text-shadow: 0em 0em 0em #000!important;
+	text-align: center /* Needed for IE8 */!important;
+	position: absolute!important;
+	left: 0!important;
+	width: 100%!important;
+	height: 100%!important;
+}
+
+
+.vjs-control-bar::after {
+	width: 79px!important;
+	height: 30px!important;
+	margin: -5px!important;
+	content: url(data:image/png!important;base64,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)!important;
+}
+/* Hide when video starts playing */
+.vjs-default-skin.vjs-has-started .vjs-big-play-button {
+	display: none!important;
+}
+
+/* -----------------------------------------------------------------------------
+The original source of this file lives at
+https://github.com/videojs/video.js/blob/master/src/css/video-js.less */
