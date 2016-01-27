@@ -46,10 +46,12 @@ printMenu = { node, navMenuLevel ->
                             def active = menuItem.isNodeType("jmix:nodeReference") ?
                                     renderContext.mainResource.node.path == menuItem.properties['j:node'].node.path :
                                     renderContext.mainResource.node.path == itemPath;
+
                             if (navMenuLevel > 1 && hasChildren){
-                                //if there are children us dropdown-submenu to display arrow
+                                //if there are children use dropdown-submenu to display arrow
                                 listItemCssClass = "class=\"dropdown-submenu " + (inpath || active ? "active" : "") + "\"";
                             }
+
                             else if (navMenuLevel <= 1 && hasChildren){
                                 listItemCssClass = "class=\"dropdown " + (inpath || active ? "active" : "") + "\"";
                             }
@@ -91,6 +93,12 @@ printMenu = { node, navMenuLevel ->
                                     }
                                     /* end add home page as menu item */
                                     ulIsOpen = true;
+                                }
+                                // if this is the 8th item on the top level menu item put it in a new top level menu item
+                                if (index == 6){
+                                    //start new menu
+                                    println "<li class=\"dropdown\"><a href=\"javascript:void(0)\">▼</a>"
+                                    println "<ul class=\"dropdown-menu \">"
                                 }
                                 if (hasChildren) {
 
