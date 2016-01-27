@@ -46,8 +46,10 @@ printMenu = { node, navMenuLevel ->
                             def active = menuItem.isNodeType("jmix:nodeReference") ?
                                     renderContext.mainResource.node.path == menuItem.properties['j:node'].node.path :
                                     renderContext.mainResource.node.path == itemPath;
-
-                            if (navMenuLevel > 1 && hasChildren){
+                            // if this is not the top level of the menu
+                            // or it's a top level item that has been pushed down a level
+                            // and they have children
+                            if ((navMenuLevel > 1 || (navMenuLevel >=1 && index >= 6)) && hasChildren){
                                 //if there are children use dropdown-submenu to display arrow
                                 listItemCssClass = "class=\"dropdown-submenu " + (inpath || active ? "active" : "") + "\"";
                             }
