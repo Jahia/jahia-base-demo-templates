@@ -41,7 +41,7 @@
  - textColor (string, choicelist[resourceBundle]) = 'light' autocreated < 'light', 'dark'
  - subtitle (string) internationalized
  - body (string) internationalized
- - internalLink (weakreference, picker[type='page']) < 'jnt:page'
+ - internalLink (weakreference, picker[type='editoriallink']) < jmix:droppableContent, jnt:page, jnt:contentFolder, jnt:folder
  - linkText (string) internationalized
  - backgroundImg (weakreference, picker[type='image']) < 'jmix:image'
  - smallPhoto (weakreference, picker[type='image']) < 'jmix:image
@@ -65,7 +65,7 @@
 
 [jdmix:hasLink] mixin
  extends = jdnt:highlight
- - internalLink (weakreference, picker[type='page']) mandatory < 'jnt:page'
+ - internalLink (weakreference, picker[type='editoriallink']) mandatory < jmix:droppableContent, jnt:page, jnt:contentFolder, jnt:folder
 
 [jdnt:headline] > jnt:content, mix:title, jdmix:jahiademo
 
@@ -168,7 +168,7 @@
 [jdmix:internalLink] mixin
  extends = jnt:topStories, jnt:banner
  - linkTitle (string) internationalized
- - internalLink (weakreference, picker[type='page']) < 'jnt:page'
+ - internalLink (weakreference, picker[type='editoriallink']) < jmix:droppableContent, jnt:page, jnt:contentFolder, jnt:folder
 
 [jdmix:searchArea] mixin
  extends = jnt:topStories
