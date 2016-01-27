@@ -129,6 +129,7 @@
  - website (string) = 'http://' i18n
  - bannerImg (weakreference, picker[type='image']) < 'jmix:image'
  - thumbnail (weakreference, picker[type='image']) < 'jmix:image'
+ + * (jnt:content) autocreated
 
 [jdmix:hasPeople] mixin
  extends = jnt:event, jdnt:company
