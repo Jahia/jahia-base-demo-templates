@@ -116,6 +116,9 @@
 
 [jdnt:stockWidget] > jnt:content, mix:title, jdmix:jahiademo
 - stock (string)
+- value (string) hidden
+- variation (string) hidden
+- description (string) hidden
 
 [jdnt:companies] > jnt:contentList, mix:title, jdmix:jahiademo, jmix:manuallyOrderable, jmix:list orderable
   + * (jdnt:company)
