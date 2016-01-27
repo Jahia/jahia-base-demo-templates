@@ -21,4 +21,7 @@
 <div class="row clients-page margin-bottom-30">
     <br>
 ${overview.string}
+
+<template:area path="${currentNode.path}/Company-Specific-Content" nodeTypes="jnt:content"/>
+
 </div>
