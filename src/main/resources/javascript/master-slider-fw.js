@@ -3,9 +3,9 @@ var MSfullWidth = function () {
     return {
         
         //Master Slider - Full Width
-        initMSfullWidth: function () {
+        initMSfullWidth: function (id) {
 		    var slider = new MasterSlider();
-		    slider.setup('masterslider' , {
+		    slider.setup(id , {
 		        width:1024,
 		        height:600,
 		        fullwidth:true,

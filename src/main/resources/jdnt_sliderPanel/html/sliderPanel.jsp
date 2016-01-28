@@ -18,11 +18,6 @@
 <%--@elvariable id="currentResource" type="org.jahia.services.render.Resource"--%>
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
 <%-- TODO: hover on button rolls over to green regardless of theme --%>
-<template:addResources type="css" resources="masterslider/style/masterslider.css"/>
-<template:addResources type="css" resources="masterslider/skins/black-2/style.css"/>
-<template:addResources type="javascript" resources="masterslider/masterslider.min.js"/>
-<template:addResources type="javascript" resources="masterslider/jquery.easing.min.js"/>
-<template:addResources type="javascript" resources="master-slider-fw.js"/>
 
 <c:set var="title" value="${currentNode.properties['jcr:title'].string}"/>
 <c:set var="subtitle" value="${currentNode.properties.subtitle.string}"/>
@@ -125,12 +120,6 @@
 
 
         </div>
-<template:addResources type="inline">
-    <script type="text/javascript">
-        jQuery(document).ready(function() {
-            MSfullWidth.initMSfullWidth();
-        });
-    </script>
-</template:addResources>
+
 
 

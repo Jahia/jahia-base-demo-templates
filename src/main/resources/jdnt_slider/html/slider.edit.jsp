@@ -27,7 +27,8 @@
 <template:addResources type="css" resources="editSlider.css"/>
 <template:include view="hidden.header"/>
 <!-- Main container -->
-<div class="tab-container" id="sliderEdit-${currentNode.identifier}">
+<c:set var="componentId" value="sliderEdit-${currentNode.identifier}"/>
+<div class="tab-container" id="${componentId}">
     <div class="tab-navigation">
         <div class="dropdown">
             <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Select slider
@@ -56,9 +57,9 @@
     <!-- Placeholder Panel -->
     <c:if test="${not empty moduleMap.emptyListMessage and (renderContext.editMode or moduleMap.forceEmptyListMessageDisplay) and isEmpty}">
 
-        <div id="tab-1" class="tab-content empty">
+        <div id="tab-1-${componentId}" class="tab-content empty">
             <div class="second-layer-editslider">
-                <span class="color-red">ADD A NEW SLIDER PANEL</span>
+                <span class="color-red"><fmt:message key="jdnt_sliderPanel.addNewSlider"/></span>
             </div>
             <!-- Placeholder image -->
             <img src="${url.currentModule}/img/placeholder-1000x1000.jpg">

@@ -24,7 +24,8 @@
 <template:addResources type="javascript" resources="master-slider-fw.js"/>
 <%-- TODO: remove slider arrows if only one panel --%>
 <%-- TODO: update list processing --%>
-
+<c:set var="uuid" value="${currentNode.identifier}"/>
+<c:set var="id" value="${fn:replace(uuid,'-', '')}"/>
 
 <c:choose>
     <c:when test="${renderContext.editMode}">
@@ -38,7 +39,7 @@
 
         <c:set var="panels" value="${jcr:getChildrenOfType(currentNode, 'jdnt:sliderPanel')}"/>
 <div class="ms-layers-template">
-    <div class="master-slider ms-skin-black-2 round-skin" id="masterslider">
+            <div class="master-slider ms-skin-black-2 round-skin" id="masterslider${id}">
                     <%-- for each slider panel specified, use the sliderPanel jsp to display --%>
         <c:forEach items="${panels}" var="panel" varStatus="item">
             <template:module node="${panel}" nodeTypes="jdnt:sliderPanel" editable="true"/>
@@ -47,3 +48,13 @@
 </div>
     </c:otherwise>
 </c:choose>
+
+        <template:addResources type="inline">
+        <script type="text/javascript">
+            jQuery(document).ready(function () {
+
+                MSfullWidth.initMSfullWidth("masterslider${id}");
+            });
+
+        </script>
+        </template:addResources>
