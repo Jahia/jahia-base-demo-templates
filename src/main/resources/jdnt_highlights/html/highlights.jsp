@@ -20,18 +20,9 @@
 <%-- get the bottom margin size --%>
 <c:set var="bottomMargin" value="${currentNode.properties['bottomMargin'].string}"/>
 <%-- if empty default to 30 pixels --%>
-<c:if test="${empty bottomMargin}">
-    <c:set var="bottomMargin" value="30"/>
+<c:if test="${not empty bottomMargin}">
+    <c:set var="marginClass" value=" margin-bottom-${bottomMargin}"/>
 </c:if>
-<c:choose>
-    <c:when test="${bottomMargin == 'No margin'}">
-        <c:set var="marginClass" value=""/>
-    </c:when>
-    <c:otherwise>
-        <c:set var="marginClass" value=" margin-bottom-${bottomMargin}"/>
-    </c:otherwise>
-</c:choose>
-
 
 <%-- Get the title of the carousel, if exists display above carousel --%>
 <c:set var="title" value="${currentNode.properties['jcr:title'].string}"/>

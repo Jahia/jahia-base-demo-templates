@@ -50,9 +50,8 @@
 [jdnt:slider] > jnt:content, jdmix:jahiademo, jmix:manuallyOrderable, jmix:list orderable
  + * (jdnt:sliderPanel)
 
-[jdnt:highlights] > jnt:contentList, mix:title, jdmix:jahiademo, jmix:manuallyOrderable, jmix:list orderable
+[jdnt:highlights] > jnt:contentList, mix:title, jdmix:jahiademo, jdmix:margin, jmix:manuallyOrderable, jmix:list orderable
  - numColumns (string, choicelist[resourceBundle]) = '3' autocreated < '1', '2', '3', '4'
- - bottomMargin (string, choicelist[resourceBundle]) = '30' autocreated < 'No margin', '5', '10', '15', '20', '25', '30', '35', '40', '45', '50', '55', '60', '100'
   + * (jdnt:highlight)
 
 [jdnt:highlight] > jnt:content, mix:title, jdmix:jahiademo, famix:faIcon
@@ -194,3 +193,9 @@
 [jdnt:eventTabs] > jnt:content, jdmix:jahiademo, jmix:list, mix:title
  - startPage (weakreference, picker[type='page'])
  - filter (weakreference, choicelist[nodes='/sites/systemsite/categories/;jnt:category',sort])
+
+[jdmix:margin] mixin
+ itemtype=content
+ - bottomMargin (string, choicelist[resourceBundle]) < '5', '10', '15', '20', '25', '30', '35', '40', '45', '50', '55', '60', '100'
+
+[jdnt:spacer] > jnt:content, jdmix:jahiademo, jdmix:margin
