@@ -27,8 +27,8 @@
 <template:addResources type="css" resources="editSlider.css"/>
 <template:include view="hidden.header"/>
 <!-- Main container -->
-<c:set var="componentId" value="sliderEdit-${currentNode.identifier}"/>
-<div class="tab-container" id="${componentId}">
+<c:set var="componentId" value="${currentNode.identifier}"/>
+<div class="tab-container" id="sliderEdit-${componentId}">
     <div class="tab-navigation">
         <div class="dropdown">
             <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Select slider
@@ -71,17 +71,17 @@
     <script type="text/javascript">
         $(document).ready(function () {
             // Hide all tabs first
-             $('.tab-content').hide();
+             $('.tab-selector-${componentId}').hide();
             // Show the first tab content
-           $('.tab-content').first().show();
+           $('.tab-selector-${componentId}').first().show();
         })
-
-        function myFunction(element) {
+<%--TODO Currently ONLY one slider will work per page. To fix this we need to name the javascript function unique per slider component; can't use function ${currentNode.properties['j:nodename'].string}Function(element) since the "-" char is an invalid function name --%>
+        function slideSelectFunction(element) {
             var $this = $(element)
             debugger;
             sliderPanel = "#"+$this.parent().attr("tab");
             // First hide all tabs again when a new option is selected
-            $('.tab-content').hide();
+            $('.tab-selector-${componentId}').hide();
             // Then show the tab content of whatever option value was selected
             $(sliderPanel).show();
         }

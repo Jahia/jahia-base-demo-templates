@@ -58,7 +58,7 @@
 </c:if>
 
 
-<div id="slidertab-${currentNode.identifier}" class="tab-content"
+<div id="slidertab-${currentNode.identifier}" class="tab-content tab-selector-${currentNode.parent.identifier}"
      style="background: url('${backgroundUrl}')">
     <div class="edit-slider-cont${textLayout}">
 
