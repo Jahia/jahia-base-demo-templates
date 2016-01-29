@@ -451,6 +451,18 @@
                                 </bootstrap-container>
                             </pagecontent>
                             </event-content-template>
+                        <press-detail-content-template j:applyOn="jnt:press"
+                                              j:defaultTemplate="true"
+                                              j:hiddenTemplate="false"
+                                              jcr:primaryType="jnt:contentTemplate">
+                            <j:translation_en jcr:language="en"
+                                    jcr:mixinTypes="mix:title"
+                                    jcr:primaryType="jnt:translation"
+                                    jcr:title="press detail content template"/>
+                            <pagecontent jcr:primaryType="jnt:contentList">
+                                        <main-resource-display j:mainResourceView="detail" jcr:primaryType="jnt:mainResourceDisplay"/>
+                            </pagecontent>
+                        </press-detail-content-template>
                         </base>
                     <newsletter-issue j:applyOn="jnt:newsletterIssue"
                               j:defaultTemplate="true"
