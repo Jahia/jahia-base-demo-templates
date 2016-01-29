@@ -46,7 +46,7 @@
     <!-- Placeholder Panel -->
     <c:if test="${not empty moduleMap.emptyListMessage and (renderContext.editMode or moduleMap.forceEmptyListMessageDisplay) and isEmpty}">
 
-        <div id="tab-1-${componentId}" class="tab-content empty">
+        <div id="tab-1-${componentId}" class="slider-tab-content empty">
             <div class="second-layer-editslider">
                 <span class="color-red"><fmt:message key="jdnt_sliderPanel.addNewSlider"/></span>
             </div>

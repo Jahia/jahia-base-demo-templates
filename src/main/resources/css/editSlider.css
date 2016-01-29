@@ -6,7 +6,7 @@
 }
 
 /* Global tabs styles */
-.tab-content {
+.slider-tab-content {
     position: relative;
     color: #969696;
     font-size: 30px;
@@ -183,7 +183,7 @@
     background: rgba(0,0,0,0.1);
 }
 
-.tab-content.empty {
+.slider-tab-content.empty {
   text-align: center;
   -webkit-transition: all 200ms ease-in;
   -moz-transition: all 200ms ease-in;
@@ -192,12 +192,32 @@
   transition: all 200ms ease-in;
 }
 
-.tab-content.empty img {
+.slider-tab-content.empty img {
   height: 550px;
 }
 
-.tab-content.empty:hover {
+.slider-tab-content.empty:hover {
   -webkit-box-shadow: 0 0 50px 2px rgba(0,0,0,0.3);
   box-shadow: 0 0 50px 2px rgba(0,0,0,0.3);
   cursor: pointer;
+}
+
+.second-layer-editslider span {
+    background: rgba(231,76,60,0.8)!important;
+    padding: 0 20px!important;
+    color: #fff!important;
+}
+.edit-slider-cont .text-layer-editslider {
+    background: rgba(0,0,0,0.5)!important;
+    padding: 10px 20px!important;
+    color: #fff!important;
+    font-size: 22px!important;
+    margin-top: -9px!important;
+    font-weight: 500!important;
+    display: table;
+}
+.first-layer-editslider.color-dark {
+    background: rgba(231,76,60,0.8)!important;
+    padding: 0 20px!important;
+    color: #fff!important;
 }

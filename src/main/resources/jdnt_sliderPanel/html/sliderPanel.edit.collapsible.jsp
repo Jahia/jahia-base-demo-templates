@@ -70,7 +70,7 @@
             <div class="row">
 
 
-<div id="slidertab-${currentNode.identifier}" class="tab-content tab-selector-${currentNode.parent.identifier}"
+<div id="slidertab-${currentNode.identifier}" class="slider-tab-content tab-selector-${currentNode.parent.identifier}"
      style="background: url('${backgroundUrl}')">
     <div class="edit-slider-cont${textLayout}">
 
