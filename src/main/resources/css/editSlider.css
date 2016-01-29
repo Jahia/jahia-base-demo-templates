@@ -1,5 +1,5 @@
 /* To be changed according to the parent container*/
-.tab-container {
+.slider-tab-container {
   width: 80%;
   max-width: 1200px;
   margin: 0 auto;
@@ -22,7 +22,7 @@
 }
 
 /* Tab/Slider controls */
-.tab-navigation {
+.slider-tab-navigation {
   margin-bottom:40px;
 }
 

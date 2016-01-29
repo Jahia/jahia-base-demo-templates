@@ -28,8 +28,8 @@
 <template:include view="hidden.header"/>
 <!-- Main container -->
 <c:set var="componentId" value="${currentNode.identifier}"/>
-<div class="tab-container" id="sliderEdit-${componentId}">
-    <div class="tab-navigation">
+<div class="slider-tab-container" id="sliderEdit-${componentId}">
+    <div class="slider-tab-navigation">
         <div class="dropdown">
             <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Select slider
                 <span class="caret"></span></button>
