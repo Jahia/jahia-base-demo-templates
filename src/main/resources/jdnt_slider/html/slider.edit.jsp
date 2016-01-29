@@ -28,6 +28,7 @@
 <template:include view="hidden.header"/>
 <!-- Main container -->
 <c:set var="componentId" value="${currentNode.identifier}"/>
+<c:set var="jsID" value="${fn:replace(currentNode.identifier, '-','' )}" />
 <div class="slider-tab-container" id="sliderEdit-${componentId}">
     <div class="slider-tab-navigation">
         <div class="dropdown">
@@ -76,7 +77,8 @@
            $('.tab-selector-${componentId}').first().show();
         })
 <%--TODO Currently ONLY one slider will work per page. To fix this we need to name the javascript function unique per slider component; can't use function ${currentNode.properties['j:nodename'].string}Function(element) since the "-" char is an invalid function name --%>
-        function slideSelectFunction(element) {
+
+        function Function${jsID}(element) {
             var $this = $(element)
             debugger;
             sliderPanel = "#"+$this.parent().attr("tab");
