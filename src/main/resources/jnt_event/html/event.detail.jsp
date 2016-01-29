@@ -30,24 +30,23 @@
 <c:url var="detailUrl" value="${url.base}${currentNode.path}.html"/>
 
 
-
-            <!-- event title -->
-            <h2><a href="${detailUrl}">${title}</a></h2>
-            <!-- event type, date, location -->
-            <ul class="list-inline">
-                <c:if test="${not empty currentNode.properties.eventsType}">
-                    <li>
-                        <button class="btn btn-xs rounded btn-primary" type="button"><fmt:message
-                                key='jnt_event.eventsType.${currentNode.properties.eventsType.string}'/></button>
-                    </li>
-                </c:if>
-                <li><fmt:formatDate dateStyle="long" type="date"
-                                    value="${currentNode.properties.startDate.time}"/></li>
-                <li><i class="fa  fa-map-marker"></i>&nbsp;${location}</li>
-            </ul>
-            <!-- event body -->
-            <p>${body}</p>
-            <!-- event people if they exist -->
+<!-- event title -->
+<h2><a href="${detailUrl}">${title}</a></h2>
+<!-- event type, date, location -->
+<ul class="list-inline">
+    <c:if test="${not empty currentNode.properties.eventsType}">
+        <li>
+            <button class="btn btn-xs rounded btn-primary" type="button"><fmt:message
+                    key='jnt_event.eventsType.${currentNode.properties.eventsType.string}'/></button>
+        </li>
+    </c:if>
+    <li><fmt:formatDate dateStyle="long" type="date"
+                        value="${currentNode.properties.startDate.time}"/></li>
+    <li><i class="fa  fa-map-marker"></i>&nbsp;${location}</li>
+</ul>
+<!-- event body -->
+<p>${body}</p>
+<!-- event people if they exist -->
 <%--            <c:if test="${jcr:isNodeType(currentNode, 'jdmix:hasPeople')}">
                 <c:set var="boxTitle" value="${currentNode.properties['boxTitle'].string}"/>
                 <c:if test="${empty boxTitle}">
@@ -61,35 +60,89 @@
                 </ul>
             </c:if>
             --%>
-            <!-- event categories -->
-            <jcr:nodeProperty node="${currentNode}" name="j:defaultCategory" var="cat"/>
-            <c:if test="${cat != null}">
-                <ul class="list-inline">
-                    <c:forEach items="${cat}" var="category">
-                        <li><i class="fa fa-tag">&nbsp;${category.node.displayableName}</i></li>
-                    </c:forEach>
-                </ul>
-            </c:if>
-            <c:if test="${jcr:isNodeType(currentNode, 'jdmix:fileAttachment')}">
-                <jcr:nodeProperty node="${currentNode}" name="pdfVersion" var="pdfVersion"/>
-                <c:if test="${not empty pdfVersion}">
-                    <c:set var="label" value="${currentNode.properties.downloadTitle.string}"/>
-                    <c:if test="${empty label}">
-                        <c:set var="label"><fmt:message key="jdmix_fileAttachment.label"/></c:set>
-                    </c:if>
-                    <p>
-                    <div><i class="fa fa-download service-icon"></i> <strong>${label} :</strong>
-                        <a href="${pdfVersion.node.url}">${pdfVersion.node.name} </a></div>
-                    </p>
-                </c:if>
-            </c:if>
-            <%-- set up the back navigation --%>
-            <c:set var="parentUrl">javascript:history.back()</c:set>
-            <p>
-                <a href="${parentUrl}" class="button button-mini button-border button-rounded"><span><i
-                        class="icon-line-arrow-left"></i><fmt:message key="jdmix_backLink.back"/></span></a>
-            </p>
+<!-- event categories -->
+<jcr:nodeProperty node="${currentNode}" name="j:defaultCategory" var="cat"/>
+<c:if test="${cat != null}">
+    <ul class="list-inline">
+        <c:forEach items="${cat}" var="category">
+            <li><i class="fa fa-tag">&nbsp;${category.node.displayableName}</i></li>
+        </c:forEach>
+    </ul>
+</c:if>
+<c:if test="${jcr:isNodeType(currentNode, 'jdmix:fileAttachment')}">
+    <jcr:nodeProperty node="${currentNode}" name="pdfVersion" var="pdfVersion"/>
+    <c:if test="${not empty pdfVersion}">
+        <c:set var="label" value="${currentNode.properties.downloadTitle.string}"/>
+        <c:if test="${empty label}">
+            <c:set var="label"><fmt:message key="jdmix_fileAttachment.label"/></c:set>
+        </c:if>
+        <p>
+        <div>
+                ${pdfVersion.node.name} <a class="view-pdf" href="${pdfVersion.node.url}"><strong><i
+                class="fa fa-fw fa-eye" title="<fmt:message key="label.view"/>"></i></strong></a>&nbsp;<a
+                href="${pdfVersion.node.url}"><strong><i class="fa fa-download"
+                                                         title="<fmt:message key="label.download"/>"></i></strong> </a>
+        </div>
+        </p>
+    </c:if>
+</c:if>
+<%-- set up the back navigation --%>
+<c:set var="parentUrl">javascript:history.back()</c:set>
+<p>
+    <a href="${parentUrl}" class="button button-mini button-border button-rounded"><span><i
+            class="icon-line-arrow-left"></i><fmt:message key="jdmix_backLink.back"/></span></a>
+</p>
 
 
+<script type="text/javascript">
 
+    (function (a) {
+        a.createModal = function (b) {
+            defaults = {title: "", message: "Your Message Goes Here!", closeButton: true, scrollable: false};
+            var b = a.extend({}, defaults, b);
+            var c = (b.scrollable === true) ? 'style="max-height: 420px;overflow-y: auto;"' : "";
+            html = '<div class="modal fade" id="myModal">';
+            html += '<div class="modal-dialog">';
+            html += '<div class="modal-content">';
+            html += '<div class="modal-header">';
+            html += '<button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>';
+            if (b.title.length > 0) {
+                html += '<h4 class="modal-title">' + b.title + "</h4>"
+            }
+            html += "</div>";
+            html += '<div class="modal-body" ' + c + ">";
+            html += b.message;
+            html += "</div>";
+            html += '<div class="modal-footer">';
+            if (b.closeButton === true) {
+                html += '<button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>'
+            }
+            html += "</div>";
+            html += "</div>";
+            html += "</div>";
+            html += "</div>";
+            a("body").prepend(html);
+            a("#myModal").modal().on("hidden.bs.modal", function () {
+                a(this).remove()
+            })
+        }
+    })(jQuery);
+
+
+    $(function () {
+        $('.view-pdf').on('click', function () {
+            var pdf_link = $(this).attr('href');
+//var iframe = '<div class="iframe-container"><iframe src="'+pdf_link+'"></iframe></div>'
+//var iframe = '<object data="'+pdf_link+'" type="application/pdf"><embed src="'+pdf_link+'" type="application/pdf" /></object>'
+            var iframe = '<object type="application/pdf" data="' + pdf_link + '" width="100%" height="500">No Support</object>'
+            $.createModal({
+                title: 'My Title',
+                message: iframe,
+                closeButton: true,
+                scrollable: false
+            });
+            return false;
+        });
+    })
+</script>
 
