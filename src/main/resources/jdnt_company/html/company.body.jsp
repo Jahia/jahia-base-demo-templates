@@ -22,6 +22,6 @@
     <br>
 ${overview.string}
 
-<template:area path="${currentNode.path}/Company-Specific-Content" nodeTypes="jnt:content"/>
+<template:area path="${currentNode.path}/Company-Specific-Content" nodeTypes="jmix:droppableContent"/>
 
 </div>
