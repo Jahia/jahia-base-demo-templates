@@ -49,7 +49,7 @@ printMenu = { node, navMenuLevel ->
                             // if this is not the top level of the menu
                             // or it's a top level item that has been pushed down a level
                             // and they have children
-                            if ((navMenuLevel > 1 || (navMenuLevel >=1 && index >= 6)) && hasChildren){
+                            if ((navMenuLevel > 1 || (navMenuLevel >=1 && index >= 7)) && hasChildren){
                                 //if there are children use dropdown-submenu to display arrow
                                 listItemCssClass = "class=\"dropdown-submenu " + (inpath || active ? "active" : "") + "\"";
                             }
@@ -97,10 +97,10 @@ printMenu = { node, navMenuLevel ->
                                     ulIsOpen = true;
                                 }
                                 // if this is the 8th item on the top level menu item put it in a new top level menu item
-                                if (index == 6){
+                                if (index == 7){
                                     //start new menu
                                     println "<li class=\"dropdown\"><a href=\"javascript:void(0)\">▼</a>"
-                                    println "<ul class=\"dropdown-menu \">"
+                                    println "<ul class=\"dropdown-menu dropdown-menu-alt-side\">"
                                 }
                                 if (hasChildren) {
 
