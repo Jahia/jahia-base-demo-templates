@@ -56,7 +56,7 @@
 
 [jdnt:highlight] > jnt:content, mix:title, jdmix:jahiademo, famix:faIcon
  - jcr:title (string) internationalized primary
- - description (string) internationalized
+ - description (string, textarea) internationalized
 
 [jdmix:imgView] mixin
  extends = jdnt:highlight
