@@ -9,7 +9,7 @@
 <jcr:nodeProperty node="${currentNode}" name='date' var="datePress"/>
 
 <jcr:nodeProperty node="${currentNode}" name="j:defaultCategory" var="pressReleaseContainerCatKeys"/>
-<h4><a href="<c:url value='${url.base}${currentNode.path}.detail.html'/>"><jcr:nodeProperty node="${currentNode}" name='jcr:title'/></a>
+<h4><a href="<c:url value='${url.base}${currentNode.path}.default.html'/>"><jcr:nodeProperty node="${currentNode}" name='jcr:title'/></a>
 </h4>
 <span class="pressRealeseDate"><strong><fmt:formatDate dateStyle="long" type="date" value="${datePress.date.time}" /></strong></span>
 <c:if test="${!empty pressReleaseContainerCatKeys }">
