@@ -26,6 +26,10 @@
 <%-- TODO: update list processing --%>
 <c:set var="uuid" value="${currentNode.identifier}"/>
 <c:set var="id" value="${fn:replace(uuid,'-', '')}"/>
+<c:set var="transition" value="${currentNode.properties.transition.string}"/>
+<c:if test="${empty transition}">
+    <c:set var="transition" value="flow"/>
+</c:if>
 
 <c:choose>
     <c:when test="${renderContext.editMode}">
@@ -53,8 +57,9 @@
         <script type="text/javascript">
             jQuery(document).ready(function () {
 
-                MSfullWidth.initMSfullWidth("masterslider${id}");
+                MSfullWidth.initMSfullWidth("masterslider${id}", "${transition}");
             });
 
         </script>
         </template:addResources>
+

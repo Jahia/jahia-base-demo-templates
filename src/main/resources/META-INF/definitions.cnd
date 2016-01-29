@@ -48,6 +48,7 @@
  - layout (string, choicelist[resourceBundle]) < 'left', 'right'
 
 [jdnt:slider] > jnt:content, jdmix:jahiademo, jmix:manuallyOrderable, jmix:list orderable
+ - transition (string, choicelist[resourceBundle]) < 'basic', 'fade', 'mask', 'wave', 'flow', 'stack', 'scale', 'focus', 'parallaxMask', 'partialWave', 'fadeBasic', 'fadeWave', 'fadeFlow'
  + * (jdnt:sliderPanel)
 
 [jdnt:highlights] > jnt:contentList, mix:title, jdmix:jahiademo, jdmix:margin, jmix:manuallyOrderable, jmix:list orderable

@@ -97,20 +97,7 @@
                                                        layout="9_3"
                                           rowType="predefined"/>
                             </pagecontent>
-                            <press-pelease-content-template j:applyOn="jnt:press"
-                                                  j:defaultTemplate="true"
-                                                  j:hiddenTemplate="false"
-                                                  j:priority="100"
-                                                  jcr:primaryType="jnt:contentTemplate">
-                                <j:translation_en jcr:language="en"
-                                       jcr:mixinTypes="mix:title"
-                                       jcr:primaryType="jnt:translation"
-                                       jcr:title="press pelease content template"/>
-                                <bootstrap-container jcr:primaryType="jnt:contentList">
-                                    <main-resource-display j:mainResourceView="fullpage" jcr:primaryType="jnt:mainResourceDisplay"/>
-                                </bootstrap-container>
-                            </press-pelease-content-template>
-                        </_x0032_-column>
+                            </_x0032_-column>
                         <_x0033_-column j:hiddenTemplate="false" jcr:primaryType="jnt:pageTemplate">
                             <j:translation_en jcr:language="en"
                                     jcr:mixinTypes="mix:title"

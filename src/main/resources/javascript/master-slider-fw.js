@@ -3,7 +3,7 @@ var MSfullWidth = function () {
     return {
         
         //Master Slider - Full Width
-        initMSfullWidth: function (id) {
+        initMSfullWidth: function (id, transition) {
 		    var slider = new MasterSlider();
 		    slider.setup(id , {
 		        width:1024,
@@ -11,7 +11,7 @@ var MSfullWidth = function () {
 		        fullwidth:true,
 		        centerControls:false,
 		        speed:18,
-		        view:'flow',
+		        view: transition,
 				loop: true,
 		    });
 		    slider.control('arrows');
