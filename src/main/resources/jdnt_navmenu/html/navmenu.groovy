@@ -100,7 +100,7 @@ printMenu = { node, navMenuLevel ->
                                 if (index == 7){
                                     //start new menu
                                     println "<li class=\"dropdown\"><a href=\"javascript:void(0)\">▼</a>"
-                                    println "<ul class=\"dropdown-menu dropdown-menu-alt-side\">"
+                                    println "<ul class=\"dropdown-menu pull-right dropdown-menu-alt-side\">"
                                 }
                                 if (hasChildren) {
 

@@ -1879,3 +1879,26 @@ easily in the skin designer. http://designer.videojs.com/
 /* -----------------------------------------------------------------------------
 The original source of this file lives at
 https://github.com/videojs/video.js/blob/master/src/css/video-js.less */
+
+/* ----------Make Dropdown Menu Pop-left ---------------*/
+.dropdown-menu-alt-side .dropdown-submenu .dropdown-menu {
+	right: 100% !important;
+	left: auto !important;
+}
+.dropdown-menu-alt-side .dropdown-submenu > a:after {
+	top: 9px;
+	left: 12px;
+	font-size: 11px;
+	content: "\f105";
+	position: absolute;
+	font-weight: normal;
+	display: inline-block;
+	font-family: FontAwesome;
+	-ms-transform: rotate(180deg);
+	-webkit-transform: rotate(180deg);
+	transform: rotate(180deg);
+}
+
+.dropdown-menu-alt-side  li  a {
+	text-align: right;
+}
