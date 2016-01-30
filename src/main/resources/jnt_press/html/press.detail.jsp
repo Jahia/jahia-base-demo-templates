@@ -6,6 +6,7 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="ui" uri="http://www.jahia.org/tags/uiComponentsLib" %>
 <%-- TODO: detail content template is not displaying --%>
+<c:set var="pressTitle" value="${currentNode.properties['jcr:title'].string}"/>
 <jcr:nodeProperty node="${currentNode}" name="j:defaultCategory" var="pressReleaseContainerCatKeys"/>
 
 <h3><jcr:nodeProperty node="${currentNode}" name='jcr:title'/></h3>
@@ -84,7 +85,7 @@
 //var iframe = '<object data="'+pdf_link+'" type="application/pdf"><embed src="'+pdf_link+'" type="application/pdf" /></object>'
             var iframe = '<object type="application/pdf" data="' + pdf_link + '" width="100%" height="500">No Support</object>'
             $.createModal({
-                title: '${title.string}',
+                title: '${pressTitle}',
                 message: iframe,
                 closeButton: true,
                 scrollable: false
