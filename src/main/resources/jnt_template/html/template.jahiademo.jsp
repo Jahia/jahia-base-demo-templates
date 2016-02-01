@@ -140,6 +140,9 @@
                                 class="fa fa-user"></i>&nbsp;|&nbsp;<i class="fa fa-globe"></i>&nbsp;<i
                                 class="fa fa-caret-up"></i></span>
                         </div>
+                        <div class="pull-left"><span class="hidden-sm hidden-md hidden-lg">
+                            <i class="fa fa-search search-btn"></i></span>
+                        </div>
                     </div>
                     <!--/end Small language login menu-->
                     <!--Full language login menu-->
