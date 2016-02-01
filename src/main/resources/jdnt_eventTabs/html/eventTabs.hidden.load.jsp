@@ -23,8 +23,7 @@
 
 <c:set var="view" value="condensed"/>
 <jsp:useBean id="now" class="java.util.Date"/>
-<fmt:formatDate value="${now}" pattern="YYYY-MM-DD" var="today"/>
-
+<fmt:formatDate value="${now}" pattern="yyyy-MM-dd" var="today"/>
 
 <c:set var="filter" value="${currentNode.properties['filter']}"/>
 <c:if test="${not empty filter}">

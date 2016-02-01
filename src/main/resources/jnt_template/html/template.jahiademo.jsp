@@ -117,7 +117,7 @@
 <%-- get the current year for the copyright --%>
 <%@ page import="java.util.Calendar" %>
 <jsp:useBean id="now" class="java.util.Date"/>
-<fmt:formatDate value="${now}" pattern="YYYY" var="thisYear"/>
+<fmt:formatDate value="${now}" pattern="yyyy" var="thisYear"/>
 
 <body class="header-fixed header-fixed-space-v2 <template:include view="hidden.style"/>" >
 
