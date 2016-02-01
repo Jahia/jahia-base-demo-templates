@@ -1234,6 +1234,10 @@ div.box6-blue {
 	max-width: inherit;
 }
 
+.company-banner-logo{
+	padding: 15px 0;
+
+}
 /* Forum re-skin styles */
 
 #forum-body {
