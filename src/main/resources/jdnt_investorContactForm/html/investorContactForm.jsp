@@ -119,15 +119,35 @@
                     </section>
                   </fieldset>
                   <footer>
-                    <button type="submit" class="btn-u" ${disabled}>Submit</button>
+                    <button type="submit" class="btn-u" id="investor-button-${componentId}" ${disabled}>Submit</button>
                   </footer>
                 </form>
               </template:tokenizedForm>
         <%--/end Tokenized Contact Form --%>
-
-
         </div>
       </div>
     </div>
 
   </div>
+
+<template:addResources type="inline">
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $("#investor-contact-${componentId}").submit(function(e){
+        e.preventDefault();
+
+        $.ajax({type:'POST',
+          url: '<c:url value='${url.base}${currentNode.path}/*'/>',
+          data:$('#investor-contact-${componentId}').serialize(),
+          success: function(response) {
+            $('#investor-contact-${componentId}').closest('form').find("input[type=text], textarea").val("");
+            $('#investor-button-${componentId}').fadeOut("slow", function(){
+              var div = $("<div id='investor-saved-${componentId}'><fmt:message key="jdnt_investorContactForm.submitted"/></div>").hide();
+              $(this).replaceWith(div);
+              $('#investor-saved-${componentId}').fadeIn("slow");
+            });
+        }});
+      });
+    });
+  </script>
+</template:addResources>
