@@ -55,11 +55,9 @@
 
         <template:addResources type="inline">
         <script type="text/javascript">
-            jQuery(document).ready(function () {
-
+            $( window ).load(function() {
                 MSfullWidth.initMSfullWidth("masterslider${id}", "${transition}");
             });
-
         </script>
         </template:addResources>
 
