@@ -24,6 +24,11 @@
     <div class="headline"><h2>${title}</h2></div>
 </c:if>
 
+<c:choose>
+    <c:when test="${renderContext.editMode}">
+        <template:include view="edit"/>
+    </c:when>
+    <c:otherwise>
 <%-- Start Cube-Portfolio Container --%>
 <div class="cube-portfolio margin-bottom-60">
     <div class="content-xs">
@@ -99,13 +104,8 @@
     <template:addResources type="javascript" resources="plugins/cube-portfolio/cube-portfolio-3.js" />
 </c:if>
 
-
-<%-- Add the add new content item button if in edit mode --%>
-<c:if test="${moduleMap.editable and renderContext.editMode && !resourceReadOnly}">
-    <%-- limit to adding jdnt:highlight nodes to the list --%>
-        <template:module path="*" nodeTypes="jdnt:company"/>
-    </c:if>
 <template:include view="hidden.footer"/>
-
+    </c:otherwise>
+</c:choose>
 
 
