@@ -141,9 +141,10 @@
           data:$('#investor-contact-${componentId}').serialize(),
           success: function(response) {
             $('#investor-contact-${componentId}').closest('form').find("input[type=text], textarea").val("");
+            //$('#collapse-${componentId}').collapse('hide');
             $('#investor-button-${componentId}').fadeOut("slow", function(){
               var div = $("<div id='investor-saved-${componentId}'><fmt:message key="jdnt_investorContactForm.submitted"/></div>").hide();
-              $(this).replaceWith(div);
+              $('#investor-contact-${componentId}').closest('form').replaceWith(div);
               $('#investor-saved-${componentId}').fadeIn("slow");
             });
         }});
