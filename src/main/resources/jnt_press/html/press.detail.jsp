@@ -17,7 +17,8 @@
 <div>${currentNode.properties.body.string}</div>
 <jcr:nodeProperty node="${currentNode}" name="pdfVersion" var="pdfVersion"/>
 <c:if test="${not empty pdfVersion}">
-    <div>${pdfVersion.node.name} <a class="view-pdf" href="${pdfVersion.node.url}"><strong><i class="fa fa-fw fa-eye" title="<fmt:message key="label.view"/>"></i></strong></a>&nbsp;<a href="${pdfVersion.node.url}"><strong><i class="fa fa-download" title="<fmt:message key="label.download"/>"></i></strong> </a>
+    <div>${pdfVersion.node.name}
+        <c:if test="${fn:containsIgnoreCase(pdfVersion.node.name, '.pdf')}"> <a class="view-pdf" href="${pdfVersion.node.url}"><strong><i class="fa fa-fw fa-eye" title="<fmt:message key="label.view"/>"></i></strong></a>&nbsp;</c:if> <a href="${pdfVersion.node.url}"><strong><i class="fa fa-download" title="<fmt:message key="label.download"/>"></i></strong> </a>
 
     </div>
     <div class="container">
