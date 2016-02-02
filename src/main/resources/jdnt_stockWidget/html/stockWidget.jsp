@@ -17,6 +17,7 @@
 <%--@elvariable id="renderContext" type="org.jahia.services.render.RenderContext"--%>
 <%--@elvariable id="currentResource" type="org.jahia.services.render.Resource"--%>
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
+<%--@elvariable id="currentAliasUser" type="org.jahia.services.usermanager.JahiaUser"--%>
 <template:addResources type="javascript" resources="plugins/counter/waypoints.min.js"/>
 <template:addResources type="javascript" resources="plugins/counter/jquery.counterup.min.js"/>
 <c:set var="uuid" value="${currentNode.identifier}"/>
@@ -39,7 +40,8 @@
     </div>
     <div class="stock-variable">
     </div>
-    <a href="#" class="btn">Show me more</a>
+    <div class="stock-update"><fmt:message key="jdnt_stockWidget.lastUpdate"/>&nbsp<fmt:formatDate value="${currentNode.properties['jcr:lastModified'].time}"
+                                     pattern="dd/MMM/yyyy HH:mm"/></div>
   </div>
 </div>
 
@@ -51,7 +53,9 @@
       dataType: 'jsonp',
       data: { get_param: 'value' },
       success: function(data){
+      <c:if test="${renderContext.loggedIn && currentAliasUser.username ne 'guest'}">
         saveStock${id}(data[0].l,data[0].c,data[0].e);
+      </c:if>
         updateStock${id}(data[0].l,data[0].c,data[0].e)
       },
       error: function(xhr, ajaxOptions, thrownError){
