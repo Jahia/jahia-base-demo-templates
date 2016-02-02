@@ -36,7 +36,7 @@
 [jdnt:logo] > jnt:content, jdmix:jahiademo, jdmix:headerWidgets
  - logo (weakreference, picker[type='image']) < 'jmix:image'
 
-[jdnt:sliderPanel] > jnt:content, mix:title, jmix:droppableContent
+[jdnt:sliderPanel] > jnt:content, mix:title
  - jcr:title (string) internationalized
  - textColor (string, choicelist[resourceBundle]) = 'light' autocreated < 'light', 'dark'
  - subtitle (string) internationalized
