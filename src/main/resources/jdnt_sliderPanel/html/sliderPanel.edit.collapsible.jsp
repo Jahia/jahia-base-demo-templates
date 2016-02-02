@@ -57,18 +57,6 @@
     <c:set var="textLayout" value="-right"/>
 </c:if>
 
-<div class="panel panel-default">
-    <div class="panel-heading">
-        <h4 class="panel-title">
-            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-1" href="#collapse-${currentNode.identifier}">
-                ${title}
-            </a>
-        </h4>
-    </div>
-    <div id="collapse-${currentNode.identifier}" class="panel-collapse collapse">
-        <div class="panel-body">
-            <div class="row">
-
 
 <div id="slidertab-${currentNode.identifier}" class="slider-tab-content tab-selector-${currentNode.parent.identifier}"
      style="background: url('${backgroundUrl}')">
@@ -76,19 +64,29 @@
 
         <c:if test="${not empty subtitle}">
             <c:choose>
-                <c:when test="${textColor eq 'dark'}"> <div class="first-layer-editslider color-dark">${subtitle}</div></c:when>
-                <c:otherwise><div class="first-layer-editslider">${subtitle}</div></c:otherwise>
+                <c:when test="${textColor eq 'dark'}">
+                    <div class="first-layer-editslider color-dark">${subtitle}</div>
+                </c:when>
+                <c:otherwise>
+                    <div class="first-layer-editslider">${subtitle}</div>
+                </c:otherwise>
             </c:choose>
         </c:if>
-        <c:if test="${not empty title}"><div class="second-layer-editslider">
+        <c:if test="${not empty title}">
+            <div class="second-layer-editslider">
             <%--TODO: Subtitle should always be color-green --%>
         <span class="color-green">${title}</span>
-        </div></c:if>
+            </div>
+        </c:if>
 
         <c:if test="${not empty summary}">
             <c:choose>
-                <c:when test="${textColor eq 'dark'}"> <div class="text-layer-editslider color-dark">${summary}</div></c:when>
-                <c:otherwise><div class="text-layer-editslider">${summary}</div></c:otherwise>
+                <c:when test="${textColor eq 'dark'}">
+                    <div class="text-layer-editslider color-dark">${summary}</div>
+                </c:when>
+                <c:otherwise>
+                    <div class="text-layer-editslider">${summary}</div>
+                </c:otherwise>
             </c:choose>
         </c:if>
 
@@ -103,7 +101,4 @@
 </div>
 
 
-            </div>
-        </div>
-    </div>
-</div>
+
