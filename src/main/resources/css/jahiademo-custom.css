@@ -431,7 +431,10 @@ img.carouselImageFull {
 	text-align: left;
 	line-height: 10px;
 	margin-bottom: -15px;
+}
 
+.stock-update{
+	margin-bottom: 15px;
 }
 
 #error-bg .title{
@@ -496,7 +499,6 @@ img.carouselImageFull {
 }
 
 #advancedSearch .control-group{
-	background: #fff;
 	display: block;
 	padding: 25px 30px 5px;
 	border: none;
@@ -584,7 +586,6 @@ img.carouselImageFull {
 	outline: none;
 	border-style: solid;
 	border-radius: 0;
-	background: #fff;
 	font: 15px/23px 'Open Sans', Helvetica, Arial, sans-serif;
 	-webkit-appearance: none;
 	margin: 0;
