@@ -15,6 +15,35 @@ CKEDITOR.addTemplates('default',
                 '<br/>'
             },
             {
+                title: 'Quote with portrait',
+                description: 'Quote with portrait',
+                html: '<div style="display:inline-block;width=20%;padding-left: 50px;">'+
+                '<img alt="Type alternative text here" class="img-responsive img-bordered rounded-x" src="pathhere" style="width: 200px; height: 200px;">'+
+                '</div>'+
+                '<div style="display:inline-block;width=70%;padding-left: 100px;padding-top: 70px;vertical-align:top;">'+
+                '<blockquote class="bq-text-lg text-right">'+
+                '<p style="text-align: center;">"Type your quote here"<br>'+
+                '<small><em> John Doe, CEO</em></small></p>'+
+                '</blockquote>'+
+                '</div>'+
+                '<div class="clear"></div>'
+            },
+            {
+                title: 'Expandable paragraph',
+                description: 'Expandable paragraph',
+                html: '<h1><span style="font-size:32px;"><font color="#e54d3b">Type a title here</font></span></h1>'+
+                '<h3 class="lead"><span style="font-size:18px;">Type a paragraph here.</span></h3>'+
+                '<p><a class="btn collapsed" data-target="#demo" data-toggle="collapse" type="button" aria-expanded="false">Expand</a></p>'+
+                '<div class="clear"></div>'+
+                '<div class="row">'+
+                '<div class="col-md-12">'+
+                '<div class="collapse" id="demo" aria-expanded="false" style="height: 0px;">'+
+                '<h3 class="lead"><span style="font-size:18px;">Type your extended paragraph here</span></h3>'+
+                '</div>'+
+                '</div>'+
+                '</div>'
+            },
+            {
                 title: 'Grey testimonial',
                 //image: 'list1.png',
                 description: 'Grey testimonial',
