@@ -745,8 +745,6 @@ input#scr_terms{
 
 /*STOCK WIDGET*/
 
-/*STOCK WIDGET*/
-
 .stock-widget .currency-value{
 	font-size: 20px;
 	vertical-align: 20px;
@@ -756,7 +754,6 @@ input#scr_terms{
 	width: 100%;
 	height: auto;
 	position: relative;
-	background: white;
 }
 
 
@@ -826,7 +823,7 @@ input#scr_terms{
 	text-decoration: underline;
 	margin-top: -10px;
 }
-
+/*STOCK WIDGET*/
 
 
 

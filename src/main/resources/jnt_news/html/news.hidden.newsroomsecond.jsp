@@ -24,7 +24,7 @@
 <%-- if the first node for the top level --%>
 <c:if test="${nodePosition == 1}">
     <div class="headline"><h2><fmt:message key="jnt_news.featured"/></h2></div>
-    <div class="news-v3 bg-color-white margin-bottom-20">
+    <div class="news-v3 margin-bottom-20">
 </c:if>
 
 <div class="row margin-bottom-20">

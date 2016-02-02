@@ -21,7 +21,7 @@
     <!-- News Detail -->
 
         <!-- News v3 -->
-        <div class="news-v3 bg-color-white margin-bottom-30">
+        <div class="news-v3 margin-bottom-30">
             <h2>${newsTitle.string}</h2>
             <c:if test="${not empty newsImage}">
                 <img class="img-responsive full-width" src="${newsImage.url}" alt="${newsTitle}">

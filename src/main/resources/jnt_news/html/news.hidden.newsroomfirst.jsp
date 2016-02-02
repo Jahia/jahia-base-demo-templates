@@ -24,7 +24,7 @@
 <%-- if the first node for the top level --%>
 <c:choose>
 <c:when test="${nodePosition == 1 && topLevel == 'first'}">
-<div class="news-v3 bg-color-white margin-bottom-20">
+<div class="news-v3 margin-bottom-20">
     <c:if test="${not empty newsImage}">
     <a href="${detailUrl}"><img class="img-responsive full-width" src="${newsImage.url}" alt="${newsTitle}"></a>
     </c:if>
@@ -65,7 +65,7 @@
 <c:otherwise>
     <%-- if the start of the smaller story view --%>
     <c:if test="${nodePosition == 2}">
-        <div class="news-v3 bg-color-white margin-bottom-20">
+        <div class="news-v3 margin-bottom-20">
     </c:if>
     <%-- if the first in a 3 column row --%>
     <c:if test="${nodePosition%3 == 2}">
