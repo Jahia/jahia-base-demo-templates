@@ -1924,17 +1924,17 @@ https://github.com/videojs/video.js/blob/master/src/css/video-js.less */
 
 .edit-comp-img-cont{
 	position: relative;
-	height: 240px;
+	height: 350px;
 	width: 100%;
 	overflow: hidden;
 }
 
 .edit-comp-img-cont img{
+	display: block;
 	width: 100%;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
+	height: 100%;
+	object-fit: cover;
+
 }
 
 .edit-comp-text-cont{
