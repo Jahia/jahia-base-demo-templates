@@ -201,3 +201,9 @@
 [jdnt:spacer] > jnt:content, jdmix:jahiademo, jdmix:margin
 
 [jdnt:back] > jnt:content, jdmix:jahiademo, jdmix:backLink
+
+[jdmix:videoSlider] mixin
+ extends = jdnt:sliderPanel
+ itemtype = content
+ - webm (weakreference, picker[type='file']) i18n
+ - mp4 (weakreference, picker[type='file']) i18n
