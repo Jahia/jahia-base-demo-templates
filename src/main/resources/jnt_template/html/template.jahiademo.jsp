@@ -59,6 +59,8 @@
     <template:addResources type="css" resources="plugins/cube-portfolio/cubeportfolio/css/cubeportfolio.min.css"/>
     <template:addResources type="css" resources="plugins/cube-portfolio/cubeportfolio/custom/custom-cubeportfolio.css"/>
 
+    <!-- CSS Jahia Theme -->
+    <template:theme/>
 
     <!-- JS Global Compulsory -->
     <template:addResources type="javascript" resources="jquery.min.js"/>

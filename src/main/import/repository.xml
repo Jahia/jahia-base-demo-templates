@@ -26,6 +26,11 @@
                 <files jcr:primaryType="jnt:folder">
                     <themes jcr:primaryType="jnt:folder">
                             <default jcr:primaryType="jnt:folder"/>
+                            <aqua jcr:primaryType="jnt:folder">
+                                <aqua.css jcr:primaryType="jnt:file">
+                                    <jcr:content jcr:mimeType="text/css" jcr:primaryType="jnt:resource"/>
+                                </aqua.css>
+                            </aqua>
                     </themes>
                         <logo1-default.png j:height="39"
                                   j:width="103"
