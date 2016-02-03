@@ -5,7 +5,9 @@ var MSfullWidth = function () {
         //Master Slider - Full Width
         initMSfullWidth: function (id, transition) {
 		    var slider = new MasterSlider();
-		    slider.setup(id , {
+            slider.control('arrows');
+            slider.control('bullets' ,{autohide:false});
+            slider.setup(id , {
 		        width:1024,
 		        height:600,
 		        fullwidth:true,
@@ -14,8 +16,6 @@ var MSfullWidth = function () {
 		        view: transition,
 				loop: true,
 		    });
-		    slider.control('arrows');
-		    slider.control('bullets' ,{autohide:false});
         },
 
     };
