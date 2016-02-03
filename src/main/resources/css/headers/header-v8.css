@@ -970,7 +970,7 @@
 .header-v8 .navbar-nav > .active > a,
 .header-v8 .navbar-nav > .active > a:hover,
 .header-v8 .navbar-nav > .active > a:focus {
-	color: #e74c3c !important;
+	color: #e74c3c;
 }
 .header-v8 .mega-menu .mega-menu-fullwidth .dropdown-link-list li a:hover {
 	color: #e74c3c;
