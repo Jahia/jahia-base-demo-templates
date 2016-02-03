@@ -78,8 +78,8 @@
         </c:if>
         <p>
         <div>
-                ${pdfVersion.node.name} <a class="view-pdf" href="${pdfVersion.node.url}"><strong><i
-                class="fa fa-fw fa-eye" title="<fmt:message key="label.view"/>"></i></strong></a>&nbsp;<a
+                ${pdfVersion.node.name}<c:if test="${fn:containsIgnoreCase(pdfVersion.node.name, '.pdf')}">  <a class="view-pdf" href="${pdfVersion.node.url}"><strong><i
+                class="fa fa-fw fa-eye" title="<fmt:message key="label.view"/>"></i></strong></a></c:if>&nbsp;<a
                 href="${pdfVersion.node.url}"><strong><i class="fa fa-download"
                                                          title="<fmt:message key="label.download"/>"></i></strong> </a>
         </div>
