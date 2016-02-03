@@ -498,6 +498,10 @@ img.carouselImageFull {
 	margin: auto 10px;
 }
 
+#advancedSearch header, #advancedSearch footer{
+	margin: auto 10px;
+}
+
 #advancedSearch .control-group{
 	display: block;
 	padding: 25px 30px 5px;
@@ -634,7 +638,7 @@ img.carouselImageFull {
 	text-align: left;
 	white-space: normal;
 	color: inherit;
-	display: block;
+	display: inherit!important;
 	margin-top: 6px;
 	margin-bottom: 6px;
 	line-height: 19px;
