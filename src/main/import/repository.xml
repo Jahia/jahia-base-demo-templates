@@ -31,11 +31,61 @@
                                     <jcr:content jcr:mimeType="text/css" jcr:primaryType="jnt:resource"/>
                                 </aqua.css>
                             </aqua>
+                            <blue jcr:primaryType="jnt:folder">
+                                <blue.css jcr:primaryType="jnt:file">
+                                    <jcr:content jcr:mimeType="text/css" jcr:primaryType="jnt:resource"/>
+                                </blue.css>
+                            </blue>
+                            <brown jcr:primaryType="jnt:folder">
+                                <brown.css jcr:primaryType="jnt:file">
+                                    <jcr:content jcr:mimeType="text/css" jcr:primaryType="jnt:resource"/>
+                                </brown.css>
+                            </brown>
+                            <dark-blue jcr:primaryType="jnt:folder">
+                                <dark-blue.css jcr:primaryType="jnt:file">
+                                    <jcr:content jcr:mimeType="text/css" jcr:primaryType="jnt:resource"/>
+                                </dark-blue.css>
+                            </dark-blue>
+                            <dark-red jcr:primaryType="jnt:folder">
+                                <dark-red.css jcr:primaryType="jnt:file">
+                                    <jcr:content jcr:mimeType="text/css" jcr:primaryType="jnt:resource"/>
+                                </dark-red.css>
+                            </dark-red>
+                            <green jcr:primaryType="jnt:folder">
+                                <green.css jcr:primaryType="jnt:file">
+                                    <jcr:content jcr:mimeType="text/css" jcr:primaryType="jnt:resource"/>
+                                </green.css>
+                            </green>
+                            <light jcr:primaryType="jnt:folder">
+                                <light.css jcr:primaryType="jnt:file">
+                                    <jcr:content jcr:mimeType="text/css" jcr:primaryType="jnt:resource"/>
+                                </light.css>
+                            </light>
+                            <light-green jcr:primaryType="jnt:folder">
+                                <light-green.css jcr:primaryType="jnt:file">
+                                    <jcr:content jcr:mimeType="text/css" jcr:primaryType="jnt:resource"/>
+                                </light-green.css>
+                            </light-green>
+                            <orange jcr:primaryType="jnt:folder">
+                                <orange.css jcr:primaryType="jnt:file">
+                                    <jcr:content jcr:mimeType="text/css" jcr:primaryType="jnt:resource"/>
+                                </orange.css>
+                            </orange>
                             <purple jcr:primaryType="jnt:folder">
                                 <purple.css jcr:primaryType="jnt:file">
                                     <jcr:content jcr:mimeType="text/css" jcr:primaryType="jnt:resource"/>
                                 </purple.css>
                             </purple>
+                            <red jcr:primaryType="jnt:folder">
+                                <red.css jcr:primaryType="jnt:file">
+                                    <jcr:content jcr:mimeType="text/css" jcr:primaryType="jnt:resource"/>
+                                </red.css>
+                            </red>
+                            <teal jcr:primaryType="jnt:folder">
+                                <teal.css jcr:primaryType="jnt:file">
+                                    <jcr:content jcr:mimeType="text/css" jcr:primaryType="jnt:resource"/>
+                                </teal.css>
+                            </teal>
                     </themes>
                         <logo1-default.png j:height="39"
                                   j:width="103"
