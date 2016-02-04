@@ -1,6 +1,76 @@
 /* Add here all your css styles (customizations) */
 
+/*MAIN COLOR TINTS
+*----------------------------
+* Aqua Color: #27d7e7; 
+* Aqua Hover Color: #26bac8; 
+* Additional color: #d5eef0;
+* rgba(39, 215, 231, 1);
+*----------------------------
+* Blue Color: #3498db; 
+* Blue Hover Color: #2980b9; 
+* Additional color: #deeffc;
+* rgba(52, 152, 219, 1);
+*----------------------------
+* Brown Color: #9c8061; 
+* Brown Hover Color: #81674b; 
+* Additional color: #f5e1cb;
+* rgba(156, 128, 97, 1);
+*----------------------------
+* Dark Blue Color: #4765a0;  
+* Dark Blue Hover Color: #324c80;  
+* Additional color: #cad9f6;
+* rgba(71, 101, 160, 1);
+*----------------------------
+* Dark Red Color: #a10f2b;  
+* Dark Red Hover Color: #b61332;  
+* Additional color: #e6c6cc;
+* rgba(161, 15, 43, 1);
+*----------------------------
+* Default Color 	  : #e74c3c;
+*----------------------------
+* Light Green Color: #79d5b3;  
+* Light Green Hover Color: #59b795;  
+* Additional color: #cff8e9;
+* rgba(121, 213, 179, 1);
+*----------------------------
+* Light Color: #95a5a6; 
+* Light Hover Color: #7f8c8d; 
+* Additional color: #f0f0f0;
+* rgba(149, 165, 166, 1);
+*----------------------------
+* Orange Color: #e67e22; 
+* Orange Hover Color: #d35400; 
+* Additional color: #fcf2de;
+* rgba(230, 126, 34, 1);
+*----------------------------
+* Purple Color: #9b6bcc; 
+* Purple Hover Color: #814fb5; 
+* Additional color: #e9def4;
+* rgba(155, 107, 204, 1);
+*----------------------------
+* Red Color: #e74c3c; 
+* Red Hover Color: #c0392b; 
+* Additional color: #f9e6e6;
+* rgba(231, 76, 60, 1);
+*----------------------------
+* Teal Color: #18ba9b; 
+* Teal Hover Color: #2cd5b6; 
+* Additional color: #d9efeb;
+* rgba(24, 186, 155, 1);
+*----------------------------
+*/
+
+
 /*AUX*/
+
+
+
+
+
+#logo img{
+    background: #e74c3c;
+}
 
 #logo {
 	float: left;
@@ -123,7 +193,6 @@ video, .video-js{
 }
 
 .eventsDateBadge p span {
-	background: #E74C3C!important;
 	font-size: 14px;
 	font-weight: bold;
 	color: #fff;
@@ -157,9 +226,6 @@ video, .video-js{
 	color:#fff;
 	font-weight: bold;
 }
-.fc-state-highlight {
-	background: #E74C3C !important;
-}
 
 .calendar .fc-first.fc-last {
 	background: #CCCCCC;
@@ -167,8 +233,6 @@ video, .video-js{
 
 .wrapper .fc-event-skin {
 	background-color: #FFF;
-	border-color:#E74C3C;
-	color: #E74C3C;
 	font-weight: bold;
 	text-align: center;
 }
@@ -791,7 +855,6 @@ input#scr_terms{
 	text-align: left;
 	font-size: 30px;
 	margin-bottom: 10px;
-	color: #E74C3C;
 	margin-top: -10px;
 }
 
@@ -1646,7 +1709,6 @@ div.rooms, div.topics, div.posts {
 /* Slider title backgrounds */
 
 .ms-layer.ms-promo-info-in.ms-promo-info.color-light span {
-	background: rgba(231, 76, 60, 0.8) !important;
 	padding: 0 20px !important;
 	color: #fff !important;
 }
@@ -1662,7 +1724,6 @@ div.rooms, div.topics, div.posts {
 }
 
 .ms-layer.ms-promo-info-in.ms-promo-info.color-dark span {
-	background: rgba(231, 76, 60, 0.8) !important;
 	padding: 0 20px !important;
 	color: #fff !important;
 	position: fixed !important;
@@ -1716,7 +1777,6 @@ div.rooms, div.topics, div.posts {
 /* Slider Edit Mode */
 
 .second-layer-editslider span {
-	background: rgba(231,76,60,0.8)!important;
 	padding: 0 20px!important;
 	color: #fff!important;
 }
@@ -1741,61 +1801,7 @@ div.rooms, div.topics, div.posts {
 	box-shadow: none!important;
 }
 
-/*!
-Video.js Default Styles (http://videojs.com)
-Version 4.12.0
-Create your own skin at http://designer.videojs.com
-*/
-/* SKIN
-================================================================================
-The main class name for all skin-specific styles. To make your own skin,
-replace all occurrences of 'vjs-default-skin' with a new name. Then add your new
-skin name to your video tag instead of the default skin.
-e.g. <video class="video-js my-skin-name">
-*/
-.vjs-default-skin {
-	color: #e74c3c!important;
-}
 
-/* Base UI Component Classes
---------------------------------------------------------------------------------
-*/
-/* Slider - used for Volume bar and Seek bar */
-.vjs-default-skin .vjs-slider {
-	/* background-color-with-alpha */
-	background-color: #e74c3c!important;
-	background-color: rgba(231, 76, 60, 0.8)!important;
-}
-
-
-/* Control Bar
---------------------------------------------------------------------------------
-The default control bar that is a container for most of the controls.
-*/
-.vjs-default-skin .vjs-control-bar {
-	/* background-color-with-alpha */
-	background-color: #ffffff!important;
-	background-color: rgba(255, 255, 255, 0.8)!important;
-}
-
-
-/* Font button icons */
-.vjs-default-skin .vjs-control:before {
-	text-shadow: 0px 0px 0px!important;
-}
-
-/* Volume/Mute
--------------------------------------------------------------------------------- */
-
-.vjs-default-skin .vjs-volume-level {
-	background: #e74c3c!important;
-}
-
-
-.vjs-default-skin .vjs-play-progress {
-
-	background: rgba(255,255,255,0.6) url(data:image/png!important;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAGCAYAAADgzO9IAAAAP0lEQVQIHWWMAQoAIAgDR/QJ/Ub//04+w7ZICBwcOg5FZi5iBB82AGzixEglJrd4TVK5XUJpskSTEvpdFzX9AB2pGziSQcvAAAAAAElFTkSuQmCC) -50% 0 repeat!important;
-}
 
 
 
@@ -1825,7 +1831,6 @@ easily in the skin designer. http://designer.videojs.com/
 	/* background-color-with-alpha */
 	background-color: #ffffff!important;
 	background-color: rgba(255, 255, 255, 0.8)!important;
-	border: 0.06em solid #e74c3c!important;
 	/* border-radius */
 	-webkit-border-radius: 1.25em!important;
 	-moz-border-radius: 1.25em!important;
@@ -1846,8 +1851,6 @@ easily in the skin designer. http://designer.videojs.com/
 	outline: 0!important;
 	border-color: #fff!important;
 	/* IE8 needs a non-glow hover state */
-	background-color: #c0392b!important;
-	background-color: rgba(192, 57, 43, 0.3)!important;
 	/* box-shadow */
 	-webkit-box-shadow: 0 0 3em #ffffff!important;
 	-moz-box-shadow: 0 0 3em #ffffff!important;
@@ -1948,7 +1951,6 @@ https://github.com/videojs/video.js/blob/master/src/css/video-js.less */
 }
 
 .edit-comp-title{
-	color: #e74c3c ;
 	text-transform: uppercase;
 	font-size: 15px;
 	letter-spacing: 1px;

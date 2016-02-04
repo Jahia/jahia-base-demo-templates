@@ -30,7 +30,7 @@
 
 <div id="stock-widget${uuid}" class="stock-widget">
   <div class="stock-widget-wrapper">
-    <div class="title">${currentNode.properties['stock'].string}</div>
+    <div class="title color-green">${currentNode.properties['stock'].string}</div>
     <div class="description">
       <p></p>
     </div>

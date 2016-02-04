@@ -31,6 +31,11 @@
                                     <jcr:content jcr:mimeType="text/css" jcr:primaryType="jnt:resource"/>
                                 </aqua.css>
                             </aqua>
+                            <purple jcr:primaryType="jnt:folder">
+                                <purple.css jcr:primaryType="jnt:file">
+                                    <jcr:content jcr:mimeType="text/css" jcr:primaryType="jnt:resource"/>
+                                </purple.css>
+                            </purple>
                     </themes>
                         <logo1-default.png j:height="39"
                                   j:width="103"

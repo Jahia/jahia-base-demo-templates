@@ -6,6 +6,120 @@
 * rgba(39, 215, 231, 1);
 */
 
+
+/*CUSTOM COMPONENTS DIGITALL COLOR*/
+
+
+/*LOGO*/
+
+#logo img{
+    background: #27d7e7!important;
+}
+
+/*SLIDER*/
+
+/*edit*/
+
+.second-layer-editslider span{
+    background: rgba(39, 215, 231, 0.8) !important;
+}
+
+.but-layer-editslider{
+    background: #27d7e7!important;
+}
+
+.but-layer-editslider:hover {
+    background: #26bac8!important;
+    color: #fff!important;
+    text-decoration: none!important;
+}
+
+/*preview*/
+
+.ms-layer.ms-promo-info-in.ms-promo-info.color-light span {
+	background: rgba(39, 215, 231, 0.8) !important;
+}
+
+.ms-layer.ms-promo-info-in.ms-promo-info.color-dark span {
+	background: rgba(39, 215, 231, 0.8) !important;
+}
+
+/*COMPANIES*/
+
+/*edit*/
+
+.edit-comp-title{
+    color: #27d7e7;
+}
+
+
+/*VIDEO PLAYER*/
+
+.vjs-default-skin:hover .vjs-big-play-button,
+.vjs-default-skin .vjs-big-play-button:focus {
+	border-color: #fff!important;
+	/* IE8 needs a non-glow hover state */
+	background-color: #27d7e7!important;
+	background-color: rgba(39, 215, 231, 0.3)!important;
+}
+
+
+.vjs-default-skin .vjs-big-play-button {
+	border: 0.06em solid #27d7e7!important;
+
+}
+
+.vjs-default-skin {
+	color: #27d7e7!important;
+}
+
+.vjs-default-skin .vjs-slider {
+	/* background-color-with-alpha */
+	background-color: #27d7e7!important;
+	background-color: rgba(39, 215, 231, 0.8)!important;
+}
+
+.vjs-default-skin .vjs-control-bar {
+	/* background-color-with-alpha */
+	background-color: #ffffff!important;
+	background-color: rgba(255, 255, 255, 0.8)!important;
+}
+
+.vjs-default-skin .vjs-control:before {
+	text-shadow: 0px 0px 0px!important;
+}
+
+.vjs-default-skin .vjs-volume-level {
+	background: #27d7e7!important;
+}
+
+
+.vjs-default-skin .vjs-play-progress {
+	background: rgba(255,255,255,0.6) url(data:image/png!important;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAGCAYAAADgzO9IAAAAP0lEQVQIHWWMAQoAIAgDR/QJ/Ub//04+w7ZICBwcOg5FZi5iBB82AGzixEglJrd4TVK5XUJpskSTEvpdFzX9AB2pGziSQcvAAAAAAElFTkSuQmCC) -50% 0 repeat!important;
+}
+
+
+/*INVESTORS*/
+
+/*Calendar*/
+
+.eventsDateBadge p span {
+    background: #27d7e7!important;
+}
+
+.fc-state-highlight {
+    background: #27d7e7 !important;
+}
+
+.wrapper .fc-event-skin {
+    color: #27d7e7!important;
+    border-color: #27d7e7!important;
+}
+
+/*END OF CUSTOM COMPONENTS DIGITALL COLOR*/
+
+
+
 a {
   color: #27d7e7;
 }
@@ -23,6 +137,7 @@ a.read-more:hover {
 .linked:hover {
 	color:#27d7e7;
 }
+
 
 /* Headers Default
 ------------------------------------*/
