@@ -1973,3 +1973,12 @@ https://github.com/videojs/video.js/blob/master/src/css/video-js.less */
 	left: 50%;
 	transform: translate(-50%, -50%);
 }
+
+/*kill the transitions on any descendant elements of .notransition*/
+.notransition {
+	-webkit-transition: none !important;
+	-moz-transition: none !important;
+	-o-transition: none !important;
+	-ms-transition: none !important;
+	transition: none !important;
+}
