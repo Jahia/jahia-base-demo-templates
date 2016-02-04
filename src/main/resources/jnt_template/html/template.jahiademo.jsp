@@ -50,7 +50,6 @@
     <template:addResources type="css" resources="line-icons.css"/>
     <template:addResources type="css" resources="font-awesome.min.css"/>
     <template:addResources type="css" resources="parallax-slider.css"/>
-    <template:addResources type="css" resources="owl.carousel.css"/>
     <template:addResources type="css" resources="dark.css"/>
     <template:addResources type="css" resources="ie8.css"/>
     <template:addResources type="css" resources="blocks.css"/>
@@ -72,7 +71,6 @@
     <template:addResources type="javascript" resources="modernizr.js"/>
     <template:addResources type="javascript" resources="jquery.parallax.js"/>
     <template:addResources type="javascript" resources="jquery.cslider.js"/>
-    <template:addResources type="javascript" resources="owl.carousel.js"/>
     <template:addResources type="javascript" resources="jquery.counterup.min.js"/>
     <template:addResources type="javascript" resources="waypoints.min.js"/>
 
@@ -84,14 +82,11 @@
     <template:addResources type="javascript" resources="jahiademo-custom.js"/>
     <!-- JS Page Level -->
     <template:addResources type="javascript" resources="app.js"/>
-    <template:addResources type="javascript" resources="owl-carousel.js"/>
     <template:addResources type="javascript" resources="parallax-slider.js" />
     <template:addResources type="inline">
         <script type="text/javascript">
             jQuery(document).ready(function() {
                 App.init();
-                OwlCarousel.initOwlCarousel();
-                <%--         StyleSwitcher.initStyleSwitcher(); --%>
                 ParallaxSlider.initParallaxSlider();
             });
 

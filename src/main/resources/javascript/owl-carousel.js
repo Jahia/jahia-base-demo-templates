@@ -147,3 +147,7 @@ var OwlCarousel = function () {
     };
     
 }();
+
+jQuery(document).ready(function() {
+    OwlCarousel.initOwlCarousel();
+});
