@@ -9,6 +9,76 @@
 
 /*CUSTOM COMPONENTS DIGITALL COLOR*/
 
+/*FORUM*/
+
+#forum-body a.forum-title:hover {
+	color: #27d7e7!important;
+}
+
+#forum-body .forum-list-header {
+	background: #27d7e7!important;
+}
+
+
+#forum-body .currentPage {
+	background: #27d7e7!important;
+}
+
+#forum-body .forum-buttons a, #forum-body .forum-buttons a:link, #forum-body .forum-buttons a:visited {
+	border: 1px solid #27d7e7;
+	color: #27d7e7 !important;
+}
+
+#forum-body .forum-buttons a:hover{
+    color: #26bac8!important;
+}
+
+#forum-body .forum-buttons:hover{
+    color: red!important;
+}
+
+#forum-body .forum-buttons:hover{
+	background-color: #27d7e7!important;
+    background: #27d7e7!important;
+	border: 1px solid #27d7e7;
+}
+
+#forum-body .pageTitle {
+	color: #27d7e7!important;
+}
+
+#forum-body .forum-postprofile p {
+	color: #27d7e7!important;
+}
+
+#forum-body .forum-h4-first {
+	color: #27d7e7!important;
+}
+
+#forum-body ul.forum-profile-icons li a:hover, #forum-body ul.forum-profile-icons li a:active {
+	color: #27d7e7!important;
+}
+
+#forum-body .forum-box .forum-postbody .forum-profile-icons .forum-quote-icon:first-child {
+	background-color: #27d7e7!important;
+	border: 1px solid #27d7e7!important;
+}
+
+#forum-body .forum-box .forum-postbody .forum-profile-icons .forum-quote-icon:nth-child(2) {
+	border: 1px solid #27d7e7!important;
+}
+
+#forum-body .forum-box .forum-postbody .forum-profile-icons .forum-quote-icon:nth-child(2) a {
+	color: #27d7e7!important;
+}
+
+#forum-body .forum-box .forum-postbody .forum-profile-icons .forum-quote-icon:nth-child(2) a:hover {
+	background: #27d7e7!important;
+}
+
+
+/*END OF FORUM STYLES*/
+
 
 /*LOGO*/
 
