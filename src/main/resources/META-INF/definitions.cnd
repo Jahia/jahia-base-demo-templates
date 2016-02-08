@@ -207,3 +207,12 @@
  itemtype = content
  - webm (weakreference, picker[type='file']) i18n
  - mp4 (weakreference, picker[type='file']) i18n
+
+
+[jdmix:cookies] mixin
+ extends = jnt:virtualsite
+ itemtype = options
+ - cookieMessage (string) = 'We use cookies on this' internationalized
+ - cookieAcceptButtonText (string) = 'ACCEPT' internationalized
+ - cookieWhatAreLinkText (string) = 'What are the cookies?' internationalized
+ - cookieWhatAreTheyLink (string) = 'http://www.allaboutcookies.org/' internationalized

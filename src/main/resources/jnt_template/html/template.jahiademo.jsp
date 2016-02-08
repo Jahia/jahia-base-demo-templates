@@ -20,6 +20,7 @@
 <%--@elvariable id="currentResource" type="org.jahia.services.render.Resource"--%>
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
 <%-- TODO: copyright links do not exist --%>
+<c:set var="siteNode" value="${renderContext.site}"/>
 
 <head>
     <title>${fn:escapeXml(renderContext.mainResource.node.displayableName)}</title>
@@ -57,7 +58,7 @@
     <template:addResources type="css" resources="app.css"/>
     <template:addResources type="css" resources="plugins/cube-portfolio/cubeportfolio/css/cubeportfolio.min.css"/>
     <template:addResources type="css" resources="plugins/cube-portfolio/cubeportfolio/custom/custom-cubeportfolio.css"/>
-
+    <template:addResources type="css" resources="cookiecuttr.css"/>
     <!-- CSS Jahia Theme -->
     <template:theme/>
 
@@ -73,7 +74,8 @@
     <template:addResources type="javascript" resources="jquery.cslider.js"/>
     <template:addResources type="javascript" resources="jquery.counterup.min.js"/>
     <template:addResources type="javascript" resources="waypoints.min.js"/>
-
+    <template:addResources type="javascript" resources="jquery.cookie.js"/>
+    <template:addResources type="javascript" resources="jquery.cookiecuttr.js"/>
     <!-- CSS Customization -->
     <template:addResources type="css" resources="jahiademo-custom.css"/>
 
@@ -284,5 +286,31 @@
 </div>
 <!--/wrapper-->
 
+<c:if test="${jcr:isNodeType(siteNode, 'jdmix:cookies')}">
+    <script>
+        $(document).ready(function () {
+            $.cookieCuttr({
+                cookieExpires: 365
+                <c:set var="cookieMessage" value="${siteNode.properties.cookieMessage.string}"/>
+                <c:if test="${! empty cookieMessage}">
+                ,cookieAnalyticsMessage: '${cookieMessage}'
+                </c:if>
+                <c:set var="cookieAcceptButtonText" value="${siteNode.properties.cookieAcceptButtonText.string}"/>
+                <c:if test="${! empty cookieAcceptButtonText}">
+                ,cookieAcceptButtonText: '${fn:escapeXml(cookieAcceptButtonText)}'
+                </c:if>
+                <c:set var="cookieWhatAreLinkText" value="${siteNode.properties.cookieWhatAreLinkText.string}"/>
+                <c:if test="${! empty cookieWhatAreLinkText}">
+                ,cookieWhatAreLinkText: '${fn:escapeXml(cookieWhatAreLinkText)}'
+                </c:if>
+                <c:set var="cookieWhatAreTheyLink" value="${siteNode.properties.cookieWhatAreTheyLink.string}"/>
+                <c:if test="${! empty cookieWhatAreTheyLink}">
+                ,cookieWhatAreTheyLink: '${fn:escapeXml(cookieWhatAreTheyLink)}'
+                </c:if>
+            });
+        });
+
+    </script>
+</c:if>
 </body>
 </html>
