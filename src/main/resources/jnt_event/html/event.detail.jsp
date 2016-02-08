@@ -46,20 +46,7 @@
 </ul>
 <!-- event body -->
 <p>${body}</p>
-<!-- event people if they exist -->
-<%--            <c:if test="${jcr:isNodeType(currentNode, 'jdmix:hasPeople')}">
-                <c:set var="boxTitle" value="${currentNode.properties['boxTitle'].string}"/>
-                <c:if test="${empty boxTitle}">
-                    <c:set var="boxTitle" value="Speakers"/>
-                </c:if>
-                <ul class="list-inline">
-                    <li><i class="fa   fa-users"></i>&nbsp;${boxTitle}:</li>
-                    <template:area path="${currentNode.path}/relatedPeople" nodeTypes="jnt:person">
-                        <template:param name="subNodesView" value="event"/>
-                    </template:area>
-                </ul>
-            </c:if>
-            --%>
+
 <!-- event categories -->
 <jcr:nodeProperty node="${currentNode}" name="j:defaultCategory" var="cat"/>
 <c:if test="${cat != null}">
@@ -77,8 +64,11 @@
             <c:set var="label"><fmt:message key="jdmix_fileAttachment.label"/></c:set>
         </c:if>
         <p>
+
         <div>
-                ${pdfVersion.node.name}<c:if test="${fn:containsIgnoreCase(pdfVersion.node.name, '.pdf')}">  <a class="view-pdf" href="${pdfVersion.node.url}"><strong><i
+                ${pdfVersion.node.name}
+                <c:if test="${fn:containsIgnoreCase(pdfVersion.node.name, '.pdf')}"> <a class="view-pdf"
+                                                                                        href="${pdfVersion.node.url}"><strong><i
                 class="fa fa-fw fa-eye" title="<fmt:message key="label.view"/>"></i></strong></a></c:if>&nbsp;<a
                 href="${pdfVersion.node.url}"><strong><i class="fa fa-download"
                                                          title="<fmt:message key="label.download"/>"></i></strong> </a>
@@ -86,6 +76,13 @@
         </p>
     </c:if>
 </c:if>
+
+<%-- download ICS file --%>
+<c:url var="icsUrl" value="${url.base}${currentNode.path}.ics"/>
+<fmt:message key="jnt_event.ics"/>:&nbsp;
+<a data-placement="top" data-toggle="tooltip" class="ics	tooltips"
+   data-original-title="<fmt:message key="jnt_event.ics"/>" href="${icsUrl}"><i class="fa fa-calendar"></i></a></li>
+<p/>
 <%-- set up the back navigation --%>
 <c:set var="parentUrl">javascript:history.back()</c:set>
 <p>
