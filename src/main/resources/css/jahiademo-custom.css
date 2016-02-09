@@ -2267,6 +2267,7 @@ div.box6-blue {
 /* Slider title backgrounds */
 
 .ms-layer.ms-promo-info-in.ms-promo-info.color-light span {
+	background: rgba(231, 76, 60, 0.8) none repeat scroll 0% 0%;
 	padding: 0 20px !important;
 	color: #fff !important;
 }
