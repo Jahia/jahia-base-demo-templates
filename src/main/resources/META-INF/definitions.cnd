@@ -216,3 +216,8 @@
  - cookieAcceptButtonText (string) = 'ACCEPT' internationalized
  - cookieWhatAreLinkText (string) = 'What are the cookies?' internationalized
  - cookieWhatAreTheyLink (string) = 'http://www.allaboutcookies.org/' internationalized
+
+ [jdmix:siteLogo] mixin
+  extends = jnt:virtualsite
+  itemtype = content
+  - logo (weakreference, picker[type='image']) mandatory < 'jmix:image'

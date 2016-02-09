@@ -164,9 +164,18 @@
             <div class="container">
                 <div class="res-container">
                     <template:area path="toggleNav"/>
+                    <c:choose>
+                        <c:when test="${jcr:isNodeType(siteNode, 'jdmix:siteLogo')}">
+                            <div class="navbar-brand">
+                                <template:module node="${siteNode}" view="default" nodeTypes="jdmix:siteLogo" editable="true"/>
+                            </div>
+                        </c:when>
+                        <c:otherwise>
                     <div id="logo" class="navbar-brand">
                         <template:area path="logo"/>
                     </div>
+                        </c:otherwise>
+                    </c:choose>
                 </div>
                 <div class="collapse navbar-collapse navbar-responsive-collapse">
                 <template:area path="navmenu"/>
