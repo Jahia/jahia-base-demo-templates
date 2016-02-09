@@ -23,7 +23,7 @@
 
 <c:set var="title" value="${currentNode.properties['jcr:title'].string}"/>
 <c:set var="startDate" value="${currentNode.properties['startDate'].time}"/>
-<c:set var="endDate" value="${currentNode.properties['endDate']}"/>
+<c:set var="endDate" value="${currentNode.properties['endDate'].time}"/>
 <c:set var="location" value="${currentNode.properties['location'].string}"/>
 <c:set var="body" value="${currentNode.properties['body'].string}"/>
 <c:url var="detailUrl" value="${url.base}${currentNode.path}.html"/>
@@ -51,7 +51,8 @@
                             </li>
                         </c:if>
                         <li><fmt:formatDate dateStyle="long" type="date"
-                                            value="${currentNode.properties.startDate.time}"/></li>
+                                            value="${startDate}"/>
+                            <c:if test="${not empty endDate}">&nbsp;-&nbsp;<fmt:formatDate dateStyle="long" type="date" value="${endDate}"/></c:if></li>
                         <li><i class="fa  fa-map-marker"></i>&nbsp;${location}</li>
                     </ul>
                     <!-- event body -->

@@ -41,7 +41,7 @@
         </li>
     </c:if>--%>
     <li><strong><fmt:formatDate dateStyle="long" type="date"
-                        value="${currentNode.properties.startDate.time}"/></strong></li>
+                        value="${startDate}"/></strong></li>
     <li><i class="fa  fa-map-marker"></i>&nbsp;${location}</li>
 </ul>
 <!-- event people if they exist -->
