@@ -221,3 +221,6 @@
   extends = jnt:virtualsite
   itemtype = content
   - logo (weakreference, picker[type='image']) mandatory < 'jmix:image'
+
+[jdnt:compCarousel] > jnt:content, jdmix:jahiademo, jmix:list, mix:title
+ - startPage (weakreference, picker[type='page'])
