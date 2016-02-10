@@ -42,19 +42,20 @@
     <c:if test="${empty linkTitle}">
         <c:set var="linkTitle" value="${linkNode.displayableName}"/>
     </c:if>
-    <a href="${linkNode.url}" style="text-decoration: none;">
 </c:if>
-    <!--=== Background v1 ===-->
-    <div class="breadcrumbs-v1 notransition" id="${currentNode.identifier}_parallax" style='background:url("${bannerUrl}") no-repeat  center center / cover;'>
+    <!-- Parallax Section -->
+    <div class="bg-image-v1 parallaxBg" id="${currentNode.identifier}_parallax" style='background:url("${bannerUrl}") no-repeat  center center / cover;'>
         <div class="container">
-            <span>${headline}</span>
-            <h1>${title}</h1>
+            <div class="headline-center headline-light">
+                <h2>${title}</h2>
+                <p>${headline}</p>
+                <c:if test="${jcr:isNodeType(currentNode, 'jdmix:internalLink')}">
+                <a href="${linkNode.url}" style="text-decoration: none;" class="btn-u btn-brd btn-brd-hover btn-u-light">${linkTitle}</a>
+                </c:if>
+            </div>
         </div>
     </div>
-    <!--=== Background v1 ===-->
-<c:if test="${jcr:isNodeType(currentNode, 'jdmix:internalLink')}">
-    </a>
-</c:if>
+    <!-- End Parallax Section -->
 <template:addResources type="inline">
     <script type="text/javascript">
         $(document).ready(function () {
