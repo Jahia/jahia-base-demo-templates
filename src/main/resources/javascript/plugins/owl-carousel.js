@@ -37,20 +37,20 @@ var OwlCarousel = function () {
 
 	        //Owl Slider v3
 			jQuery(".owl-slider-v3").owlCarousel({
-            	items : 7,
+            	items : 5,
             	autoPlay : 5000,
 				itemsDesktop : [1000,5],
 				itemsDesktopSmall : [900,4],
 				itemsTablet: [600,3],
-				itemsMobile : [300,2]
+				itemsMobile : [300,1]
             });
 
 
 	        //Owl Slider v4
 			jQuery(".owl-slider-v4").owlCarousel({
-                items:3,
-                itemsDesktop : [1000,3],
-                itemsTablet : [600,2],
+                items:5,
+                itemsDesktop : [1000,5],
+                itemsTablet : [600,3],
                 itemsMobile : [479,1]
             });
 			 

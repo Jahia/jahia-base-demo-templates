@@ -19,11 +19,10 @@
 
 <%-- get the imageURL to display --%>
 <c:set var="imageUrl" value="${currentNode.properties['thumbnail'].node.url}"/>
+<c:set var="compUrl" value="${currentNode.url}"/>
 
-<div class="item<c:if test="${item.first}"> active</c:if>">
-<div class="owl-item" style="width: 163px;">
-    <div class="item">
+<div class="item" style="width: 163px;">
+    <a href="${compUrl}">
         <img class="img-responsive" src="${imageUrl}" alt=""/>
-    </div>
-</div>
+    </a>
     </div>

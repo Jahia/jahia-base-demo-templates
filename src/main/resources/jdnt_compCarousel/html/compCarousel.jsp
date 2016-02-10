@@ -25,25 +25,18 @@
     <div class="headline"><h2>${title}</h2></div>
 </c:if>
 
-
-<div class="owl-carousel-v1 margin-bottom-50"> <%-- id="${currentNode.identifier}">--%>
-    <!--navigation-->
-    <div class="owl-navigation">
-        <div class="customNavigation">
-            <a class="owl-btn prev-v1"><i class="fa fa-angle-left"></i></a>
-            <a class="owl-btn next-v1"><i class="fa fa-angle-right"></i></a>
-        </div>
-    </div>
-    <!--end navigation-->
-
-    <div class="owl-slider-ap owl-carousel owl-theme">
+<!-- Owl Carousel v4 -->
+<div class="owl-carousel-style-v4 margin-bottom-40">
+    <div class="owl-slider-v3">
         <%-- for each carouselImg display using the carouselImg jsp --%>
         <c:forEach items="${moduleMap.currentList}" var="company" varStatus="item">
             <template:module path="${company.path}" view="owl">
-                <template:param name="last" value="${item.first}"/>
+                <template:param name="first" value="${item.first}"/>
             </template:module>
         </c:forEach>
     </div>
 </div>
-<!-- End Owl Carousel v1 -->
+<!-- End Owl Carousel v4 -->
+
+
 
