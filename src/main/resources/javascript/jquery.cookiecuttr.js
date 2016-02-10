@@ -94,7 +94,7 @@
         };
         // write cookie accept button
         if (cookieAcceptButton) {
-            var cookieAccept = ' <a href="#accept" class="cc-cookie-accept button button-mini button-rounded">' + cookieAcceptButtonText + '</a> ';
+            var cookieAccept = ' <a href="#accept" class="cc-cookie-accept btn btn-success" style="text-decoration: none;">' + cookieAcceptButtonText + '</a> ';
         } else {
             var cookieAccept = "";
         }
