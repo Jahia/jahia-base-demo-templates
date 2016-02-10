@@ -2333,26 +2333,7 @@ div.box6-blue {
 	}
 }
 
-/* Slider Edit Mode */
 
-.second-layer-editslider span {
-	padding: 0 20px!important;
-	color: #fff!important;
-}
-.edit-slider-cont .text-layer-editslider {
-	background: rgba(0,0,0,0.5)!important;
-	padding: 10px 20px!important;
-	color: #fff!important;
-	font-size: 22px!important;
-	margin-top: -9px!important;
-	font-weight: 500!important;
-	display: table;
-}
-.first-layer-editslider.color-dark {
-	background: rgba(231,76,60,0.8)!important;
-	padding: 0 20px!important;
-	color: #fff!important;
-}
 
 /* remove active button bacground */
 .btn:active, .btn.active {
