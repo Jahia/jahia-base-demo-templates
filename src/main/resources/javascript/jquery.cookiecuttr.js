@@ -179,9 +179,43 @@
                 }
             } else if (cookieAnalytics) { // show analytics overlay
                 if (appOrPre) {
-                    $('body').append('<div class="cc-cookies ' + cookieOverlay + '">' + cookieAnalyticsMessage + cookieAccept + cookieDecline + '<a href="' + cookieWhatAreTheyLink + '" title="Visit All about cookies (External link)">' + cookieWhatAreLinkText + '</a></div>');
+                    $('body').append('<div class="cc-cookies ' + cookieOverlay + '">' + cookieAnalyticsMessage + cookieAccept + cookieDecline +
+                            '<a href="#" title="Visit all about cookies (External link)" data-toggle="modal" data-target="#cookieModal">' + cookieWhatAreLinkText + '</a></div>' +
+                        '<div class="modal fade" id="cookieModal" tabindex="-1" role="dialog" aria-labelledby="About Cookies" aria-hidden="true">' +
+                        '<div class="modal-dialog">' +
+                        '<div class="modal-content">' +
+                        '<div class="modal-header">' +
+                        '<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>' +
+                        '</div>' +
+                        '<div class="modal-body"> <iframe src="' + cookieWhatAreTheyLink + '" width="100%" height="380" frameborder="0" allowtransparency="true"></iframe>' +
+                        '</div>' +
+                        '<div class="modal-footer">' +
+                        '<button type="button" class="btn btn-default" data-dismiss="modal">Close</button> ' +
+                        '</div>' +
+                        '</div>' +
+                        '</div>' +
+                        '</div>');
+
+                    //+ '<a href="' + cookieWhatAreTheyLink + '" title="Visit All about cookies (External link)">' + cookieWhatAreLinkText + '</a></div>');
                 } else {
-                    $('body').prepend('<div class="cc-cookies ' + cookieOverlay + '">' + cookieAnalyticsMessage + cookieAccept + cookieDecline + '<a href="' + cookieWhatAreTheyLink + '" title="Visit All about cookies (External link)">' + cookieWhatAreLinkText + '</a></div>');
+                    $('body').prepend('<div class="cc-cookies ' + cookieOverlay + '">' + cookieAnalyticsMessage + cookieAccept + cookieDecline +
+                        '<a href="#" title="Visit all about cookies (External link)" data-toggle="modal" data-target="#cookieModal">' + cookieWhatAreLinkText + '</a></div>' +
+                        '<div class="modal fade" id="cookieModal" tabindex="-1" role="dialog" aria-labelledby="About Cookies" aria-hidden="true">' +
+                        '<div class="modal-dialog">' +
+                        '<div class="modal-content">' +
+                        '<div class="modal-header">' +
+                        '<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>' +
+                        '</div>' +
+                        '<div class="modal-body"> <iframe src="' + cookieWhatAreTheyLink + '" width="100%" height="380" frameborder="0" allowtransparency="true"></iframe>' +
+                        '</div>' +
+                        '<div class="modal-footer">' +
+                        '<button type="button" class="btn btn-default" data-dismiss="modal">Close</button> ' +
+                        '</div>' +
+                        '</div>' +
+                        '</div>' +
+                        '</div>');
+
+                    //'<a href="' + cookieWhatAreTheyLink + '" title="Visit All about cookies (External link)">' + cookieWhatAreLinkText + '</a></div>');
                 }
             }
             if (cookiePolicyPage) { // show policy page overlay
