@@ -1634,3 +1634,36 @@ i.icon-bg-u {
 .blog-trending h3 a:hover {
 	color: #4765a0 !important;
 }
+
+/* Cookies buttons */
+.button {
+	display: inline-block;
+	position: relative;
+	cursor: pointer;
+	outline: none;
+	white-space: normal;
+	max-width: 100%;
+	height: auto !important;
+	text-align: center;
+	margin: 5px;
+	padding: 0 22px;
+	font-size: 14px;
+	height: 40px;
+	line-height: 40px;
+	background-color: #4765a0;
+	color: #FFF;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	border: none;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+}
+
+.button.button-mini {
+	padding: 0 14px;
+	font-size: 11px;
+	height: 28px;
+	line-height: 28px;
+}
+
+.button.button-rounded { border-radius: 3px; }

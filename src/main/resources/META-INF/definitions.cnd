@@ -212,9 +212,9 @@
 [jdmix:cookies] mixin
  extends = jnt:virtualsite
  itemtype = options
- - cookieMessage (string) = 'We use cookies on this' internationalized
+ - cookieMessage (string) = 'This website uses cookies to improve your experience. ' internationalized
  - cookieAcceptButtonText (string) = 'ACCEPT' internationalized
- - cookieWhatAreLinkText (string) = 'What are the cookies?' internationalized
+ - cookieWhatAreLinkText (string) = 'We assume you are ok with this, but you can learn more about cookies by clicking here.' internationalized
  - cookieWhatAreTheyLink (string) = 'http://www.allaboutcookies.org/' internationalized
 
  [jdmix:siteLogo] mixin
