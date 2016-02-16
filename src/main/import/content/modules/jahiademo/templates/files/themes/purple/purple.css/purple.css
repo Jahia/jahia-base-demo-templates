@@ -1659,7 +1659,7 @@ i.icon-bg-u {
 }
 
 /* Cookies buttons */
-.button {
+.cookieButton {
 	display: inline-block;
 	position: relative;
 	cursor: pointer;
@@ -1682,11 +1682,11 @@ i.icon-bg-u {
 	text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
 }
 
-.button.button-mini {
+.cookieButton.button-mini {
 	padding: 0 14px;
 	font-size: 11px;
 	height: 28px;
 	line-height: 28px;
 }
 
-.button.button-rounded { border-radius: 3px; }
+.cookieButton.button-rounded { border-radius: 3px; }
