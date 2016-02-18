@@ -2524,7 +2524,7 @@ https://github.com/videojs/video.js/blob/master/src/css/video-js.less */
 }
 
 /* Cookies buttons */
-.cookieButton {
+/*.cookieButton {
 	display: inline-block;
 	position: relative;
 	cursor: pointer;
@@ -2556,7 +2556,7 @@ https://github.com/videojs/video.js/blob/master/src/css/video-js.less */
 
 .cookieButton.button-rounded { border-radius: 3px; }
 
-
+*/
 /*CUSTOM COMPONENTS DIGITALL COLOR*/
 /* Default theme color values */
 
@@ -2738,3 +2738,29 @@ https://github.com/videojs/video.js/blob/master/src/css/video-js.less */
 }
 
 /*END OF CUSTOM COMPONENTS DIGITALL COLOR*/
+
+/* owl carousel sync */
+#sync1 .item{
+/*	background: #0c83e7;
+	padding: 80px 0px;
+	margin: 5px;
+	color: #FFF;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	text-align: center;*/
+	display:block;
+	width:auto;
+	height: 565px;
+}
+
+#sync2 .item{
+	margin: 3px;
+}
+#sync2 .item img {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+/* end owl carousel sync */
