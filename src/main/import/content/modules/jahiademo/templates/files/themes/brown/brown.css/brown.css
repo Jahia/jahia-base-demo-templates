@@ -988,6 +988,9 @@ ul.blog-tags a:hover {
 .timeline-v1 .timeline-footer .likes:hover i {
 	color: #9c8061;
 }
+.timeline-v1 li:hover .timeline-badge{
+	color: #9c8061 ;
+}
 
 /* Timeline v2 Page
 ------------------------------------*/

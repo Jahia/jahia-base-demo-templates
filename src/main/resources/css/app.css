@@ -3911,3 +3911,13 @@ img.img-center,
 }
 
 .cookieButton.button-rounded { border-radius: 3px; }
+
+/* Timeline v2 Page
+------------------------------------*/
+/* The icons */
+.timeline-v2 > li .cbp_tmicon {
+  background: #e74c3c;
+}
+.timeline-v1 li:hover .timeline-badge{
+  color: #E74C3C ;
+}

@@ -99,9 +99,9 @@
 	*/
 }
 
-.timeline-v1 > li > .timeline-badge i:hover {
+/*.timeline-v1 > li > .timeline-badge i:hover {
 	color: #c0392b;
-}
+}*/
 
 .timeline-v1 > li.timeline-inverted > .timeline-panel {
 	float: right;
@@ -159,9 +159,10 @@
 	color: inherit;
 }
 
+/*
 .timeline-v1 .timeline-footer .likes:hover i {
 	color: #c0392b;
-}
+}*/
 
 .timeline-v1 > li.timeline-inverted{
 	float: right; 
@@ -274,7 +275,7 @@
 	}
 
 }
-
+/*
 .timeline-v1 li:hover .timeline-badge{
 	color: #c0392b ;
-}
+}*/

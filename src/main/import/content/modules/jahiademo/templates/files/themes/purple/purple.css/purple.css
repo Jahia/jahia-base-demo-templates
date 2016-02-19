@@ -1012,6 +1012,9 @@ ul.blog-tags a:hover {
 .timeline-v1 .timeline-footer .likes:hover i {
 	color: #9b6bcc;
 }
+.timeline-v1 li:hover .timeline-badge{
+	color: #9b6bcc ;
+}
 
 /* Timeline v2 Page
 ------------------------------------*/
