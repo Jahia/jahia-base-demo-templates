@@ -41,9 +41,22 @@
         <c:if test="${not empty newsImage}">
 
             <div class="item">
-                    <a href="${newsImage.url}" data-size="${newsImage.properties['j:width'].string}x${newsImage.properties['j:height'].string}">
-                        <img class="img-responsive full-width" src="${newsImage.url}" height="${newsImage.properties['j:height'].string}" width="${newsImage.properties['j:width'].string}"/>
+                <%-- if there is a gallery format for the photoswipe otherwise just display image --%>
+                <c:choose>
+                    <c:when test="${not empty galleryImgs}">
+                        <a href="${newsImage.url}"
+                           data-size="${newsImage.properties['j:width'].string}x${newsImage.properties['j:height'].string}">
+                            <img class="img-responsive full-width" src="${newsImage.url}"
+                                 height="${newsImage.properties['j:height'].string}"
+                                 width="${newsImage.properties['j:width'].string}"/>
                     </a>
+                    </c:when>
+                    <c:otherwise>
+                        <img class="img-responsive full-width" src="${newsImage.url}"
+                             height="${newsImage.properties['j:height'].string}"
+                             width="${newsImage.properties['j:width'].string}"/>
+                    </c:otherwise>
+                </c:choose>
             </div>
 
 
@@ -52,13 +65,19 @@
             <c:forEach var="galleryImg" items="${galleryImgs}" varStatus="status">
 
             <div class="item">
-                    <a href="${galleryImg.node.url}" data-size="${galleryImg.node.properties['j:width'].string}x${galleryImg.node.properties['j:height'].string}"><img class="img-responsive full-width" src="${galleryImg.node.url}" height="${galleryImg.node.properties['j:height'].string}" width="${galleryImg.node.properties['j:height'].string}"/></a>
+                    <a href="${galleryImg.node.url}"
+                       data-size="${galleryImg.node.properties['j:width'].string}x${galleryImg.node.properties['j:height'].string}"><img
+                            class="img-responsive full-width" src="${galleryImg.node.url}"
+                            height="${galleryImg.node.properties['j:height'].string}"
+                            width="${galleryImg.node.properties['j:height'].string}"/></a>
                 </div>
 
             </c:forEach>
         </c:if>
     </div>
 
+    <%-- create thumbnails of news image and gallery images --%>
+    <c:if test="${not empty galleryImgs}">
     <div id="sync2" class="owl-carousel owl-theme">
 
             <c:if test="${not empty newsImage}">
@@ -72,7 +91,7 @@
             </c:forEach>
         </c:if>
     </div>
-
+    </c:if>
             <div class="news-v3-in">
                 <ul class="list-inline posted-info">
             <%-- display tags --%>
@@ -95,7 +114,7 @@
                     </p>
 
 <%-- photoswipe setup --%>
-<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<%-- Root element of PhotoSwipe. Must have class pswp. DO NOT CHANGE --%>
 <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
 
     <!-- Background of PhotoSwipe.
@@ -162,6 +181,8 @@
 </div>
 <%-- end photoswipe setup --%>
 
+
+<%-- owl carousel syncronization --%>
 <script type="text/javascript">
     $(document).ready(function () {
 
@@ -238,6 +259,7 @@
     });
 </script>
 
+<%-- photoswipe generation --%>
 <script>
     $('.picture').each( function() {
         var $pic     = $(this),
@@ -280,52 +302,3 @@
     });
 
 </script>
-<%-- Photoswipe javascript --%>
-<%--<script type="text/javascript">
-    var openPhotoSwipe = function() {
-        var pswpElement = document.querySelectorAll('.pswp')[0];
-
-        // build items array
-        var items = [
-            <c:if test="${not empty newsImage}">
-            {
-                src: '${newsImage.url}',
-                w: ${newsImage.properties['j:width'].string},
-                h: ${newsImage.properties['j:height'].string}
-            },
-            </c:if>
-            <c:forEach var="galleryImg" items="${galleryImgs}" varStatus="status">
-            {
-                src: '${galleryImg.node.url}',
-                w: ${galleryImg.node.properties['j:width'].string},
-                h: ${galleryImg.node.properties['j:height'].string}
-            },
-            </c:forEach>
-        ];
-
-        // define options (if needed)
-        var options = {
-            // history & focus options are disabled on CodePen
-            history: false,
-            focus: false,
-
-            showAnimationDuration: 0,
-            hideAnimationDuration: 0
-
-        };
-
-        var gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, options);
-        gallery.init();
-    };
-
-    openPhotoSwipe();
-
-    <c:if test="${not empty newsImage}">
-        document.getElementById('btn0').onclick = openPhotoSwipe;
-    </c:if>
-    <c:forEach var="galleryImg" items="${galleryImgs}" varStatus="status">
-        document.getElementById('btn'+${status.count}).onclick = openPhotoSwipe;
-    </c:forEach>
-
-</script>--%>
-<%-- end photoswipe javascript --%>

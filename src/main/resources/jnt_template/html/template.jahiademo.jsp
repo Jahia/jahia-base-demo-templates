@@ -32,7 +32,7 @@
     <meta name="author" content="">
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="shortcut icon" href="${url.currentModule}/img/favicon/favicon.ico" type="image/x-icon">
 
     <!-- Web Fonts -->
     <link rel='stylesheet' type='text/css'
