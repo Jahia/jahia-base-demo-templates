@@ -30,7 +30,7 @@
     <c:set var="pageUrl" value="${current.url}"/>
 
     <div class="tab-v1">
-        <ul class="nav nav-tabs">
+        <ul class="nav nav-tabs margin-bottom-10">
         <li <c:if test="${pageView != 'top' && pageView != 'featured'}">class="active"</c:if> ><a href="javascript:void(0)" onclick="reload${id}('all')"><fmt:message key="jdnt_allStories.allNews"/></a></li>
         <li <c:if test="${pageView == 'top'}">class="active"</c:if> ><a href="javascript:void(0)" onclick="reload${id}('top')"><fmt:message key="jdnt_allStories.topNews"/></a></li>
         <li <c:if test="${pageView == 'featured'}">class="active"</c:if> ><a href="javascript:void(0)" onclick="reload${id}('featured')"><fmt:message key="jdnt_allStories.featuredNews"/></a></li>
