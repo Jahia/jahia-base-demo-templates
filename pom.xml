@@ -78,22 +78,22 @@
     <artifactId>jahia-modules</artifactId>
     <version>7.1.0.1</version>
   </parent>
-  <groupId>org.jahia.modules</groupId>
   <artifactId>jahiademo</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>bundle</packaging>
   <name>jahiademo</name>
   <description>This is the custom profile module (jahiademo) for running on a Digital Factory server.</description>
   <scm>
-    <connection>scm:dummy:uri</connection>
-    <developerConnection>scm:dummy:uri</developerConnection>
+    <connection>scm:git:git@github.com:Jahia/dx-base-demo.git</connection>
+    <developerConnection>scm:git:git@github.com:Jahia/dx-base-demo.git</developerConnection>
+    <url>scm:git:git@github.com:Jahia/dx-base-demo.git</url>
   </scm>
   <properties>
     <jahia.modules.importPackage>org.jahia.defaults.config.spring,
       org.jahia.exceptions,
       org.jahia.services,
       org.jahia.services.search</jahia.modules.importPackage>
-    <jahia-depends>default,font-awesome,bootstrap,bootstrap3-components,grid,location,news,person,rating,search,topstories,calendar,event,facets</jahia-depends>
+    <jahia-depends>default,font-awesome,bootstrap,jahia-bootstrap-v3-components,grid,location,news,person,rating,search,topstories,calendar,event,facets</jahia-depends>
   </properties>
   <dependencies>
     <dependency>
@@ -102,11 +102,11 @@
       <version>2.0.0</version>
       <scope>provided</scope>
     </dependency>
-  <dependency>
-          <groupId>org.mnode.ical4j</groupId>
-          <artifactId>ical4j</artifactId>
-          <version>1.0.3</version>
-      </dependency>
+    <dependency>
+      <groupId>org.mnode.ical4j</groupId>
+      <artifactId>ical4j</artifactId>
+      <version>1.0.3</version>
+    </dependency>
   </dependencies>
   <repositories>
     <repository>

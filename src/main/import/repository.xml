@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <content xmlns:j="http://www.jahia.org/jahia/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0">
     <modules jcr:primaryType="jnt:modules">
-        <jahiademo j:dependencies="bootstrap bootstrap3-components calendar default event facets font-awesome grid location news person rating search topstories"
+        <jahiademo j:dependencies="bootstrap calendar default event facets font-awesome grid jahia-bootstrap-v3-components location news person rating search topstories"
                  j:installedModules="jahiademo"
                  j:modulePriority="0"
                  j:moduleType="templatesSet"
@@ -17,6 +17,26 @@
                                 <jcr:content jcr:mimeType="text/css" jcr:primaryType="jnt:resource"/>
                             </bootstrap.css>
                         </css>
+                        <fonts jcr:primaryType="jnt:folder">
+                            <glyphicons-halflings-regular.svg jcr:mixinTypes="jmix:image" jcr:primaryType="jnt:file">
+                                <jcr:content j:lastExtractionDate="2016-02-19T15:27:15.701+01:00"
+                                  jcr:mimeType="image/svg+xml"
+                                  jcr:primaryType="jnt:resource"/>
+                            </glyphicons-halflings-regular.svg>
+                            <glyphicons-halflings-regular.ttf jcr:primaryType="jnt:file">
+                                <jcr:content jcr:mimeType="application/x-font-ttf" jcr:primaryType="jnt:resource"/>
+                            </glyphicons-halflings-regular.ttf>
+                            <glyphicons-halflings-regular.eot jcr:primaryType="jnt:file">
+                                <jcr:content jcr:mimeType="application/vnd.ms-fontobject"
+                                  jcr:primaryType="jnt:resource"/>
+                            </glyphicons-halflings-regular.eot>
+                            <glyphicons-halflings-regular.woff2 jcr:primaryType="jnt:file">
+                                <jcr:content jcr:mimeType="application/binary" jcr:primaryType="jnt:resource"/>
+                            </glyphicons-halflings-regular.woff2>
+                            <glyphicons-halflings-regular.woff jcr:primaryType="jnt:file">
+                                <jcr:content jcr:mimeType="application/x-font-woff" jcr:primaryType="jnt:resource"/>
+                            </glyphicons-halflings-regular.woff>
+                        </fonts>
                     </bootstrap>
                 </files>
             <contents jcr:primaryType="jnt:contentFolder"/>
