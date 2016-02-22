@@ -288,7 +288,7 @@
     $pic.on('click', '.item', function(event) {
         event.preventDefault();
 
-        var $index = $(this).index();
+        var $index = $(this).parent('.owl-item').index();
         var options = {
             index: $index,
             bgOpacity: 0.7,
