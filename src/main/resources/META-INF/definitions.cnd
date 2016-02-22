@@ -216,6 +216,17 @@
  - cookieAcceptButtonText (string) = 'ACCEPT' internationalized
  - cookieWhatAreLinkText (string) = 'We assume you are ok with this, but you can learn more about cookies by clicking here.' internationalized
  - cookieWhatAreTheyLink (string) = 'http://www.allaboutcookies.org/' internationalized
+ - cookieLink (string, choicelist[cookieMessageInitializer,resourceBundle]) = 'none'
+
+[jdmix:cookieLink] > jmix:templateMixin mixin
+ extends = jnt:virtualsite
+ itemtype = options
+ - cookiePageLink (weakreference, picker[type='page']) < 'jnt:page'
+
+[jdmix:cookieModalMessage] > jmix:templateMixin mixin
+ extends = jnt:virtualsite
+ itemtype = options
+ - cookieModalMessage (string, richtext) i18n
 
  [jdmix:siteLogo] mixin
   extends = jnt:virtualsite
