@@ -17,6 +17,7 @@
 <%--@elvariable id="renderContext" type="org.jahia.services.render.RenderContext"--%>
 <%--@elvariable id="currentResource" type="org.jahia.services.render.Resource"--%>
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
+<%-- edit view for the company --%>
 
 <jcr:nodeProperty node="${currentNode}" name="jcr:title" var="title"/>
 <jcr:nodeProperty node="${currentNode}" name="headline" var="headline"/>
@@ -27,15 +28,15 @@
 <%--Set variable for company descriptions and remove HTML tags--%>
 <c:set var="description" value="${functions:removeHtmlTags(currentNode.properties.headline.string)}"/>
 
-<%--div class="col-md-4 col-sm-6 col-xs-12"--%>
     <div >
         <div class="edit-comp-img-cont">
             <img src="${thumbURL}" alt="" />
         </div>
         <div class="edit-comp-text-cont">
-            <a href="<c:url value='${url.base}${currentNode.path}.html'/>" class="edit-comp-title">${fn:escapeXml(title.string)}</a>
+        <a href="<c:url value='${url.base}${currentNode.path}.html'/>"
+           class="edit-comp-title">${fn:escapeXml(title.string)}</a>
             <div class="edit-comp-subtitle">${fn:replace(description, fn:substring(description, 50, fn:length(description)), ' ...')}</div>
         </div>
     </div>
-<%--/div--%>
+
 

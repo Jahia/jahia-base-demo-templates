@@ -52,12 +52,11 @@ printMenu = { node, navMenuLevel ->
                             if ((navMenuLevel > 1 || (navMenuLevel >=1 && index >= 7)) && hasChildren){
                                 //if there are children use dropdown-submenu to display arrow
                                 listItemCssClass = "class=\"dropdown-submenu " + (inpath || active ? "active" : "") + "\"";
-                            }
-
-                            else if (navMenuLevel <= 1 && hasChildren){
+                            } else if (navMenuLevel <= 1 && hasChildren) {
                                 listItemCssClass = "class=\"dropdown " + (inpath || active ? "active" : "") + "\"";
+                            } else {
+                                listItemCssClass = (inpath || active ? "class=\"active\"" : "");
                             }
-                            else { listItemCssClass = (inpath || active ? "class=\"active\"" : "");}
                             description = menuItem.properties['jcr:description'];
                             linkTitle = description ? " title=\"${description.string}\"" : "";
                             if (menuItem.isNodeType('jnt:nodeLink')) {
@@ -85,11 +84,11 @@ printMenu = { node, navMenuLevel ->
                                         homePage = menuItem.parent;
                                         if (homePage.hasProperty("alternateTitle")) {
                                             homeTitle = homePage.getPropertyAsString("alternateTitle");
+                                        } else {
+                                            homeTitle = homePage.displayableName;
                                         }
-                                        else { homeTitle = homePage.displayableName; }
 
                                         println "<li><a href=\"" + homePage.url + "\" class=\"dropdown-toggle\">" + homeTitle + "</a></li>\n";
-
 
 
                                     }

@@ -17,11 +17,12 @@
 <%--@elvariable id="renderContext" type="org.jahia.services.render.RenderContext"--%>
 <%--@elvariable id="currentResource" type="org.jahia.services.render.Resource"--%>
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
+<%-- description view of Company --%>
+
 <jcr:nodeProperty node="${currentNode}" name="overview" var="overview"/>
 <div class="row clients-page margin-bottom-30">
     <br>
 ${overview.string}
 
 <template:area path="${currentNode.path}/Company-Specific-Content" nodeTypes="jmix:droppableContent"/>
-
 </div>

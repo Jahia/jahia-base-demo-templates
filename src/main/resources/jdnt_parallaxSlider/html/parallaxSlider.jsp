@@ -40,6 +40,7 @@
         </div>
     </div>
 </div>
+<template:addResources type="inline">
 <script>
     $(function () { // wait for document ready
         // init
@@ -71,4 +72,5 @@
             }
         }
     });
-</script>
+    </script>
+</template:addResources>

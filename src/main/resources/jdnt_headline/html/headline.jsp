@@ -14,5 +14,6 @@
 
 <c:set var="headline" value="${currentNode.properties['jcr:title'].string}"/>
 
-
-<div class="headline"><h2>${headline}</h2></div>
+<div class="headline">
+    <h2>${headline}</h2>
+</div>

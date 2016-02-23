@@ -29,12 +29,11 @@
     <c:set var="isEmpty" value="true"/>
     <c:forEach items="${moduleMap.currentList}" var="subchild" begin="${moduleMap.begin}" end="${moduleMap.end}" varStatus="item">
         <%-- By setting the li and div tags here this displays properly in edit mode. --%>
-    <li
-            <c:if test="${item.count%2 == 0}">class="timeline-inverted"</c:if> >
+        <li <c:if test="${item.count%2 == 0}">class="timeline-inverted"</c:if> >
             <div class="timeline-badge primary"><i class="glyphicon glyphicon-record"></i></div>
             <div class="timeline-panel">
-
-        <template:module node="${subchild}" view="alternating" editable="${moduleMap.editable && !resourceReadOnly}"/>
+                <template:module node="${subchild}" view="alternating"
+                                 editable="${moduleMap.editable && !resourceReadOnly}"/>
                 </div>
         </li>
 

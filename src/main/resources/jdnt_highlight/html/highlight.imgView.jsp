@@ -17,9 +17,11 @@
 <%--@elvariable id="currentResource" type="org.jahia.services.render.Resource"--%>
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
 
+<%-- get the node properties --%>
 <c:set var="title" value="${currentNode.properties['jcr:title'].string}"/>
 <c:set var="description" value="${currentNode.properties['description'].string}"/>
 <c:set var="image" value="${currentNode.properties['image'].node}"/>
+
 <c:choose>
     <%-- If no image has been supplied for the image view, put a placeholder image in place --%>
     <c:when test="${empty image}">

@@ -17,12 +17,15 @@
 <%--@elvariable id="renderContext" type="org.jahia.services.render.RenderContext"--%>
 <%--@elvariable id="currentResource" type="org.jahia.services.render.Resource"--%>
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
+<%-- Banner view of Company --%>
+
 <jcr:nodeProperty node="${currentNode}" name="jcr:title" var="title"/>
 <jcr:nodeProperty node="${currentNode}" name="bannerImg" var="bannerImg"/>
 <jcr:nodeProperty node="${currentNode}" name="headline" var="headline"/>
 <jcr:nodeProperty node="${currentNode}" name="logo" var="logo"/>
 <c:url value="${url.files}${logo.node.path}" var="logoUrl"/>
 <c:url value="${url.files}${bannerImg.node.path}" var="bannerUrl"/>
+
 <div class="breadcrumbs-v3 img-v1 text-center" style="background-image: url(${bannerUrl})">
     <div class="container">
         <c:choose>

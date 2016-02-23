@@ -23,19 +23,28 @@
 <h3>${currentNode.properties['firstname'].string}&nbsp;${currentNode.properties['lastname'].string}</h3>
     <ul class="list-unstyled">
         <c:if test="${not empty currentNode.properties['email'].string}">
-            <li><a href="#"><i class="fa fa-envelope-o"></i><fmt:message key="jdnt_investorContactForm.email"/>: ${currentNode.properties['email'].string}</a></li>
+            <li><a href="#"><i class="fa fa-envelope-o"></i><fmt:message
+                    key="jdnt_investorContactForm.email"/>: ${currentNode.properties['email'].string}</a></li>
         </c:if>
         <c:if test="${not empty currentNode.properties['phone'].string}">
-            <li><a href="#"><i class="fa fa-phone"></i><fmt:message key="jdnt_investorContactForm.phone"></fmt:message>: ${currentNode.properties['phone'].string}</a></li>
+            <li><a href="#"><i class="fa fa-phone"></i><fmt:message
+                    key="jdnt_investorContactForm.phone"></fmt:message>: ${currentNode.properties['phone'].string}</a>
+            </li>
         </c:if>
         <c:if test="${not empty props['investorType'].string}">
-            <li><a href="#"><fmt:message key="jdnt_investorContactForm.investorType"/>: <fmt:message key="jdnt_investorContactForm.${props['investorType'].definition.name}.${props['investorType'].string}"/></a></li>
+            <li><a href="#"><fmt:message key="jdnt_investorContactForm.investorType"/>: <fmt:message
+                    key="jdnt_investorContactForm.${props['investorType'].definition.name}.${props['investorType'].string}"/></a>
+            </li>
         </c:if>
         <c:if test="${not empty props['contactReason'].string}">
-            <li><a href="#"><fmt:message key="jdnt_investorContactForm.contactReason"/>: <fmt:message key="jdnt_investorContactForm.${props['contactReason'].definition.name}.${props['contactReason'].string}"/></a></li>
+            <li><a href="#"><fmt:message key="jdnt_investorContactForm.contactReason"/>: <fmt:message
+                    key="jdnt_investorContactForm.${props['contactReason'].definition.name}.${props['contactReason'].string}"/></a>
+            </li>
         </c:if>
         <c:if test="${not empty props['subscription'].string}">
-            <li><a href="#"><fmt:message key="jdnt_investorContactForm.subscription"/>: <fmt:message key="jdnt_investorContactForm.${props['subscription'].definition.name}.${props['subscription'].string}"/></a></li>
+            <li><a href="#"><fmt:message key="jdnt_investorContactForm.subscription"/>: <fmt:message
+                    key="jdnt_investorContactForm.${props['subscription'].definition.name}.${props['subscription'].string}"/></a>
+            </li>
         </c:if>
     </ul>
 </div>

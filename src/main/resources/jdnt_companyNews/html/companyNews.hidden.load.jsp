@@ -6,14 +6,18 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="query" uri="http://www.jahia.org/tags/queryLib" %>
 <%@ taglib prefix="uiComponents" uri="http://www.jahia.org/tags/uiComponentsLib" %>
+<%-- query view to locate company news --%>
 
-<c:set var="boundComponent" value="${uiComponents:getBindedComponent(currentNode, renderContext, 'j:bindedComponent')}"/>
+<c:set var="boundComponent"
+       value="${uiComponents:getBindedComponent(currentNode, renderContext, 'j:bindedComponent')}"/>
 <c:set var="limit" value="${currentNode.properties['limit'].string}"/>
 <c:if test="${empty limit}">
     <c:set var="limit" value="3"/>
 </c:if>
 
-<c:set var="lastNewsStatement" value="select * from [jnt:news] as news where desc like '%${boundComponent.properties['jcr:title'].string}%' and ISDESCENDANTNODE(news,'${renderContext.mainResource.node.resolveSite.path}')  order by news.[date] desc"/>
+<%-- set the search query --%>
+<c:set var="lastNewsStatement"
+       value="select * from [jnt:news] as news where desc like '%${boundComponent.properties['jcr:title'].string}%' and ISDESCENDANTNODE(news,'${renderContext.mainResource.node.resolveSite.path}')  order by news.[date] desc"/>
 
 <query:definition var="listQuery" statement="${lastNewsStatement}" limit="${limit}"  />
 

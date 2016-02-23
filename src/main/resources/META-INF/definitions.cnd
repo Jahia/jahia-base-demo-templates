@@ -208,7 +208,6 @@
  - webm (weakreference, picker[type='file']) i18n
  - mp4 (weakreference, picker[type='file']) i18n
 
-
 [jdmix:cookies] mixin
  extends = jnt:virtualsite
  itemtype = options

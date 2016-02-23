@@ -18,6 +18,7 @@
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
 <%--@elvariable id="currentUser" type="org.jahia.services.usermanager.JahiaUser"--%>
 <%--@elvariable id="currentAliasUser" type="org.jahia.services.usermanager.JahiaUser"--%>
+
 <c:if test="${! renderContext.editMode}">
     <c:if test="${! renderContext.loggedIn}">
         <c:set var="siteNode" value="${currentNode.resolveSite}"/>

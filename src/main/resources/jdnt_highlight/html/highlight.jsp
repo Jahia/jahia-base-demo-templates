@@ -17,6 +17,7 @@
 <%--@elvariable id="currentResource" type="org.jahia.services.render.Resource"--%>
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
 
+<%-- get the node properties --%>
 <c:set var="title" value="${currentNode.properties['jcr:title'].string}"/>
 <c:set var="description" value="${currentNode.properties['description'].string}"/>
 <c:set var="icon" value="${currentNode.properties['faIcon'].string}"/>
@@ -41,5 +42,4 @@
             <a href="${linkUrl}" alt="${title}"><fmt:message key="jdnt_highlight.readmore"/></a>
         </c:if>
                 </div>
-
             </div>
