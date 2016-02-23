@@ -56,7 +56,6 @@
     <!-- JS Global Compulsory -->
     <template:addResources type="javascript" resources="jquery.min.js"/>
     <template:addResources type="javascript" resources="jquery-migrate.min.js"/>
-    <template:addResources type="javascript" resources="bootstrap.min.js"/>
     <!-- JS Implementing Plugins -->
     <template:addResources type="javascript" resources="back-to-top.js"/>
     <template:addResources type="javascript" resources="smoothScroll.js"/>

@@ -67,7 +67,18 @@
     <!-- JS Global Compulsory -->
     <template:addResources type="javascript" resources="jquery.min.js"/>
     <template:addResources type="javascript" resources="jquery-migrate.min.js"/>
-    <template:addResources type="javascript" resources="bootstrap.min.js"/>
+    <template:addResources type="javascript" resources="bootstrap3-affix.js" />
+    <template:addResources type="javascript" resources="bootstrap3-alert.js" />
+    <template:addResources type="javascript" resources="bootstrap3-button.js" />
+    <template:addResources type="javascript" resources="bootstrap3-carousel.js" />
+    <template:addResources type="javascript" resources="bootstrap3-collapse.js" />
+    <template:addResources type="javascript" resources="bootstrap3-dropdown.js" />
+    <template:addResources type="javascript" resources="bootstrap3-modal.js" />
+    <template:addResources type="javascript" resources="bootstrap3-scrollspy.js" />
+    <template:addResources type="javascript" resources="bootstrap3-tab.js" />
+    <template:addResources type="javascript" resources="bootstrap3-tooltip.js" />
+    <template:addResources type="javascript" resources="bootstrap3-popover.js" />
+    <template:addResources type="javascript" resources="bootstrap3-transition.js" />
     <!-- JS Implementing Plugins -->
     <template:addResources type="javascript" resources="back-to-top.js"/>
     <template:addResources type="javascript" resources="smoothScroll.js"/>
