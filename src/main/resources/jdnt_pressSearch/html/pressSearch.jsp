@@ -17,15 +17,13 @@
 <%--@elvariable id="renderContext" type="org.jahia.services.render.RenderContext"--%>
 <%--@elvariable id="currentResource" type="org.jahia.services.render.Resource"--%>
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
+<template:include view="hidden.header"/>
 
 <jsp:useBean id="now" class="java.util.Date"/>
 <fmt:formatDate value="${now}" pattern="yyyy" var="thisYear"/>
 
-<%-- get the starting page for the search --%>
-<c:set var="startNodePath" value="${currentNode.properties['startPage'].node.path}"/>
-<c:if test="${empty startNodePath}">
-    <c:set var="startNodePath" value="${currentNode.resolveSite.path}"/>
-</c:if>
+<c:set var="view" value="default"/>
+<c:set var="title" value="${currentNode.properties['jcr:title'].string}"/>
 
 <%-- get the number of tabs to display --%>
 <c:set var="numTabs" value="${currentNode.properties['numTabs'].string}"/>
@@ -33,12 +31,7 @@
     <c:set var="numTabs" value="3"/>
 </c:if>
 
-<c:set var="filter" value="${currentNode.properties['filter']}"/>
-<c:if test="${not empty filter}">
-    <c:set var="filterQuery" value="and press.[j:defaultCategory] = '${filter.string}'"/>
-</c:if>
-
-<%-- get the parameter passed via the URL --%>
+<%-- set componentId variable to make it unique --%>
 <c:set var="yearId" value="year${currentNode.identifier}"/>
 <c:choose>
     <c:when test="${not empty param[yearId]}">
@@ -49,26 +42,38 @@
     </c:otherwise>
 </c:choose>
 
-<c:choose>
-    <c:when test="${yearTab eq 'older'}">
-            <c:set var="sqlQuery"
-                   value="select * from [jnt:press] as press where isdescendantnode(press, ['${startNodePath}'])
-            ${filterQuery}
-         and press.[date] <= CAST('${thisYear-numTabs+1}-01-01T00:00:00.000Z' AS DATE)
-         order by press.[date] desc"/>
-    </c:when>
-    <c:otherwise>
-        <c:set var="sqlQuery"
-               value="select * from [jnt:press] as press where isdescendantnode(press, ['${startNodePath}'])
-                         ${filterQuery}
-         and press.[date] >= CAST('${yearTab}-01-01T00:00:00.000Z' AS DATE)
-            AND press.[date] <= CAST('${yearTab}-12-31T23:59:59.999Z' AS DATE)
-         order by press.[date] desc"/>
-    </c:otherwise>
-</c:choose>
 
-<query:definition var="listQuery" statement="${sqlQuery}"/>
+<c:if test="${not empty title && empty param[yearId]}">
+    <div class="headline"><h2>${title}</h2></div>
+</c:if>
 
-<c:set target="${moduleMap}" property="editable" value="false"/>
-<c:set target="${moduleMap}" property="listQuery" value="${listQuery}"/>
+<div id="pressSearch-content-${currentNode.identifier}" class="tab-v1">
+    <c:set var="id" value="${fn:replace(currentNode.identifier,'-', '')}"/>
+    <%-- generate tabs --%>
+    <ul class="nav nav-tabs">
+        <li
+                <c:if test="${yearTab eq thisYear}">class="active"</c:if> ><a
+                href="javascript:void(0)" onclick="reload${id}('${thisYear}')">${thisYear}</a></li>
+        <c:forEach var="i" begin="1" end="${numTabs-1}">
+            <li
+                    <c:if test="${yearTab eq thisYear-i}">class="active"</c:if> ><a
+                    href="javascript:void(0)" onclick="reload${id}('${thisYear-i}')">${thisYear-i}</a></li>
+        </c:forEach>
+        <li
+                <c:if test="${yearTab eq 'older'}">class="active"</c:if> ><a
+                href="javascript:void(0)" onclick="reload${id}('older')">Older</a></li>
+    </ul>
+    <div id="tab-content-${currentNode.identifier}">
+        <c:forEach items="${moduleMap.currentList}" var="pressRelease" varStatus="item">
+            <template:module view="${view}" path="${pressRelease.path}" editable="false"/>
+        </c:forEach>
+    </div>
+    <template:addResources type="inline">
+        <script type="text/javascript">
+            function reload${id}(param) {
+                $('#pressSearch-content-${currentNode.identifier}').load('<c:url value="${url.base}${currentNode.path}.html.ajax?year${currentNode.identifier}="/>' + param);
+            }
+        </script>
+    </template:addResources>
 
+</div>
