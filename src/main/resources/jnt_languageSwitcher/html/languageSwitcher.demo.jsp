@@ -18,26 +18,30 @@
 <%--@elvariable id="currentResource" type="org.jahia.services.render.Resource"--%>
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
 <template:addResources type="css" resources="languageSwitchingLinks.css"/>
+
+<%-- display the language switcher if more than one language is set on the site --%>
+
 <c:set var="linkKind" value="${currentNode.properties.typeOfDisplay.string}"/>
 
 <ui:initLangBarAttributes activeLanguagesOnly="${renderContext.liveMode}"/>
 <div id="languages" class=" pull-right">
+    <%-- if more than one language --%>
     <c:if test="${fn:length(requestScope.languageCodes) > 1}">
-
-        <a href="javascript:void(0);"><i class="fa fa-globe"></i>&nbsp;<fmt:message
-                key="Languages.loginbutton.label"/><span class="caret"></span></a>
+        <a href="javascript:void(0);"><i class="fa fa-globe"></i>&nbsp;<fmt:message key="Languages.loginbutton.label"/>
+            <span class="caret"></span></a>
         <ul class="languages topbar-dropdown">
+            <%-- loop through each language and add to list --%>
             <c:forEach items="${requestScope.languageCodes}" var="language">
                 <ui:displayLanguageSwitchLink languageCode="${language}" display="false" urlVar="switchUrl"
                                               var="renderedLanguage"
                                               linkKind="${currentNode.properties.typeOfDisplay.string}"/>
                 <c:choose>
+                    <%-- make the currently selected language active on the menu --%>
                     <c:when test="${language eq currentResource.locale}">
                         <li class="active"><a href="#">${renderedLanguage}<i class="fa fa-check"></i></a></li>
                     </c:when>
                     <c:otherwise>
-                        <li><a title="<fmt:message key='switchTo'/>"
-                               href="<c:url context='/' value='${switchUrl}'/>">${renderedLanguage}</a>
+                        <li><a title="<fmt:message key='switchTo'/>" href="<c:url context='/' value='${switchUrl}'/>">${renderedLanguage}</a>
                         </li>
                     </c:otherwise>
                 </c:choose>

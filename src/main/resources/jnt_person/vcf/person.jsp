@@ -20,7 +20,7 @@
 <%--@elvariable id="scriptInfo" type="java.lang.String"--%>
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
 <%--@elvariable id="workspace" type="java.lang.String"--%>
-<%-- TODO: Photo is not being added to the vcard --%>
+<%-- Photo is only added in live mode --%>
 
 
 <c:set var="picture" value="${currentNode.properties.picture}"/>
@@ -36,9 +36,7 @@
 BEGIN:VCARD
 VERSION:3.0
 N:${lastName};${firstName}
-FN:${firstName}
-<c:out value=" "/>
-${lastName}
+FN:${firstName}<c:out value=" "/>${lastName}
 ORG:${businessUnit}
 TITLE:${function}
 <c:if test="${! empty phone}">

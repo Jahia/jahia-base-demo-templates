@@ -44,16 +44,6 @@
             </ul>
             <h2><a href="${detailUrl}">${newsTitle}</a></h2>
             <p>${fn:substring(functions:removeHtmlTags(description), 0, 300)}...</p>
-            <%--          <ul class="post-shares">
-                          <li>
-                              <a href="#">
-                                  <i class="rounded-x icon-speech"></i>
-                                  <span>5</span>
-                              </a>
-                          </li>
-                          <li><a href="#"><i class="rounded-x icon-share"></i></a></li>
-                          <li><a href="#"><i class="rounded-x icon-heart"></i></a></li>
-                      </ul> --%>
         </div>
     </div>
 </div>

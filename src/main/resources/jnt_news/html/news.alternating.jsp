@@ -6,7 +6,6 @@
 <%@ taglib prefix="template" uri="http://www.jahia.org/tags/templateLib" %>
 <%@ taglib prefix="functions" uri="http://www.jahia.org/tags/functions" %>
 <%@ taglib prefix="jahia" uri="http://www.jahia.org/tags/templateLib" %>
-<%-- TODO: current commented out likes and comment counts --%>
 
 <template:addResources type="css" resources="news.css"/>
 <c:set var="language" value="${currentResource.locale.language}"/>
@@ -42,7 +41,5 @@
 <div class="timeline-footer">
     <ul class="list-unstyled list-inline blog-info">
         <li><i class="fa fa-clock-o"></i> ${newsDate}</li>
-        <%--            <li><i class="fa fa-comments-o"></i> <a href="#">7 Comments</a></li> --%>
     </ul>
-    <%--        <a class="likes" href="#"><i class="fa fa-heart"></i>239</a>--%>
 </div>

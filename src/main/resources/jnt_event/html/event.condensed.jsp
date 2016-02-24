@@ -17,7 +17,7 @@
 <%--@elvariable id="renderContext" type="org.jahia.services.render.RenderContext"--%>
 <%--@elvariable id="currentResource" type="org.jahia.services.render.Resource"--%>
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
-
+<%-- condensed view used in tabbed search results --%>
 
 <c:set var="language" value="${currentResource.locale.language}"/>
 <fmt:setLocale value="${language}" scope="session"/>
@@ -34,17 +34,12 @@
 <h4><a href="${detailUrl}">${title}</a></h4>
 <!-- event type, date, location -->
 <ul class="list-inline">
-    <%--    <c:if test="${not empty currentNode.properties.eventsType}">
-            <li>
-                <button class="btn btn-xs rounded btn-primary" type="button"><fmt:message
-                        key='jnt_event.eventsType.${currentNode.properties.eventsType.string}'/></button>
-            </li>
-        </c:if>--%>
     <li><strong><fmt:formatDate dateStyle="long" type="date"
                                 value="${startDate}"/></strong></li>
     <li><i class="fa  fa-map-marker"></i>&nbsp;${location}</li>
 </ul>
-<!-- event people if they exist -->
+
+<%-- event people if they exist --%>
 <c:if test="${jcr:isNodeType(currentNode, 'jdmix:hasPeople')}">
     <c:set var="boxTitle" value="${currentNode.properties['boxTitle'].string}"/>
     <c:if test="${empty boxTitle}">
@@ -52,19 +47,9 @@
     </c:if>
     <ul class="list-inline">
         <li><i class="fa   fa-users"></i>&nbsp;${boxTitle}:</li>
+            <%-- display the sub nodes and pass the selected view as a parameter --%>
         <template:area path="${currentNode.path}/relatedPeople" nodeTypes="jnt:person">
             <template:param name="subNodesView" value="event"/>
         </template:area>
     </ul>
 </c:if>
-<!-- event categories -->
-<%--<jcr:nodeProperty node="${currentNode}" name="j:defaultCategory" var="cat"/>
-<c:if test="${cat != null}">
-    <ul class="list-inline">
-        <c:forEach items="${cat}" var="category">
-            <li><i class="fa fa-tag">&nbsp;${category.node.displayableName}</i></li>
-        </c:forEach>
-    </ul>
-</c:if>
---%>
-

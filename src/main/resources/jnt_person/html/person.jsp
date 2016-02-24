@@ -23,6 +23,7 @@
 <c:set var="title" value="${currentNode.properties.function.string}"/>
 <c:set var="bio" value="${currentNode.properties.biography.string}"/>
 <c:set var="photo" value="${currentNode.properties.picture}"/>
+
 <%-- if social icons were included, get the urls --%>
 <c:if test="${jcr:isNodeType(currentNode, 'jdmix:socialIcons')}">
     <c:set var="facebook" value="${currentNode.properties.facebook.string}"/>

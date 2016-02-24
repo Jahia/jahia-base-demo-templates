@@ -69,6 +69,7 @@
 
 </div>
 
+<template:addResources type="inline">
 <script type="text/javascript">
     $(document).ready(function () {
         // Hide all tabs first
@@ -76,7 +77,6 @@
         // Show the first tab content
         $('.tab-selector-${componentId}').first().show();
     })
-    <%--TODO Currently ONLY one slider will work per page. To fix this we need to name the javascript function unique per slider component; can't use function ${currentNode.properties['j:nodename'].string}Function(element) since the "-" char is an invalid function name --%>
 
     function Function${jsID}(element) {
         var $this = $(element)
@@ -88,3 +88,4 @@
         $(sliderPanel).show();
     }
 </script>
+</template:addResources>

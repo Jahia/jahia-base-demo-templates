@@ -27,6 +27,7 @@
 <%--@elvariable id="currentResource" type="org.jahia.services.render.Resource"--%>
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
 
+<%-- creates an ics file for users to download --%>
 
 <c:set var="language" value="${currentResource.locale.language}"/>
 <fmt:setLocale value="${language}" scope="session"/>
@@ -59,8 +60,6 @@
         int startD = Integer.valueOf((String) pageContext.findAttribute("startDay"));
         int startM = Integer.valueOf((String) pageContext.findAttribute("startMonth"));
         int startY = Integer.valueOf((String) pageContext.findAttribute("startYear"));
-        //   int startH = Integer.valueOf((String) pageContext.findAttribute("startHour"));
-        //   int startMin = Integer.valueOf((String) pageContext.findAttribute("startMin"));
 
         response.setHeader("Content-Disposition", "attachment;filename=\"" + title + ".ics\"");
         response.setContentType("text/calendar");
@@ -75,29 +74,21 @@
         startDate.set(java.util.Calendar.MONTH, startM - 1);
         startDate.set(java.util.Calendar.DAY_OF_MONTH, startD);
         startDate.set(java.util.Calendar.YEAR, startY);
-        //   startDate.set(java.util.Calendar.HOUR_OF_DAY, startH);
-        //   startDate.set(java.util.Calendar.MINUTE, startMin);
-        //   startDate.set(java.util.Calendar.SECOND, 0);
 
         // get the end date and time
         String endDString = (String) pageContext.findAttribute("endDay");
         java.util.Calendar endDate = java.util.Calendar.getInstance();
-        //      int endD, endM, endY, endH, endMin;
-        if (endDString != null) {
+        if (endDString != null)
+        {
             int endD = Integer.valueOf((String) pageContext.findAttribute("endDay"));
             int endM = Integer.valueOf((String) pageContext.findAttribute("endMonth"));
             int endY = Integer.valueOf((String) pageContext.findAttribute("endYear"));
-            //     int endH = Integer.valueOf((String) pageContext.findAttribute("endHour"));
-            //      int endMin = Integer.valueOf((String) pageContext.findAttribute("endMin"));
 
             //Java calendar month count starts with zero
             endDate.set(java.util.Calendar.MONTH, endM - 1);
             // need to end midnight of next day for full day event
             endDate.set(java.util.Calendar.DAY_OF_MONTH, endD + 1);
             endDate.set(java.util.Calendar.YEAR, endY);
-            //    endDate.set(java.util.Calendar.HOUR_OF_DAY, endH);
-            //    endDate.set(java.util.Calendar.MINUTE, endMin);
-            //    endDate.set(java.util.Calendar.SECOND, 0);
         }
         // create the event event..
         Date start = new Date(startDate.getTime());
@@ -105,7 +96,9 @@
         if (endDString != null) {
             Date end = new Date(endDate.getTime());
             meeting = new VEvent(start, end, title);
-        } else {
+        }
+        else
+        {
             meeting = new VEvent(start, title);
         }
 

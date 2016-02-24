@@ -17,7 +17,6 @@
 <%--@elvariable id="renderContext" type="org.jahia.services.render.RenderContext"--%>
 <%--@elvariable id="currentResource" type="org.jahia.services.render.Resource"--%>
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
-<%-- TODO: hover on button rolls over to green regardless of theme --%>
 
 <c:set var="title" value="${currentNode.properties['jcr:title'].string}"/>
 <c:set var="subtitle" value="${currentNode.properties.subtitle.string}"/>
@@ -47,7 +46,6 @@
 </c:choose>
 
 <%-- get pixel layout for text and image --%>
-<%-- TODO: edit this as necessary for best layout options or update to be a parameter --%>
 <c:set var="layout" value="${currentNode.properties.layout.string}"/>
 <c:choose>
     <c:when test="${layout == 'right'}">
@@ -65,7 +63,6 @@
     <img src="${url.currentModule}/img/blank.gif" data-src="${backgroundUrl}" alt=""/>
 
     <%-- if a small photo was provided display it --%>
-    <%-- TODO: Update layout options here for small photo layer placement --%>
     <c:if test="${not empty image}">
         <div class="ms-layer"
              style="bottom: -10px; left: ${photoLayout} width: 400px; height: 562px; margin: 0px; padding: 0px; overflow: hidden;">
@@ -73,7 +70,6 @@
         </div>
     </c:if>
 
-    <%-- TODO: update the following div class to use different styles already provided in the CSS --%>
     <%-- if a subtitle is provided display it --%>
     <c:if test="${not empty subtitle}">
         <div class="ms-layer ms-promo-info-in color-${textColor}" style="left:${textLayout}; top:160px"
@@ -84,7 +80,6 @@
         >${subtitle}</div>
     </c:if>
 
-    <%-- TODO: update the following div class to use different styles already provided in the CSS --%>
     <%-- if a title is provided display it --%>
     <c:if test="${not empty title}">
         <div class="ms-layer ms-promo-info-in ms-promo-info color-${textColor}" style="left:${textLayout}; top:210px"
@@ -95,7 +90,6 @@
         ><span class="color-green">${title}</span></div>
     </c:if>
 
-    <%-- TODO: update the following div class to use different styles already provided in the CSS --%>
     <%-- if a summary is provided display it --%>
     <c:if test="${not empty summary}">
         <div class="ms-layer ms-promo-sub color-${textColor}" style="left:${textLayout}; top:310px"
@@ -107,7 +101,6 @@
     </c:if>
 
 
-    <%-- TODO: update the following classes to use the different button styles provided in the css --%>
     <%-- if a link has been provided display it as a button --%>
     <c:if test="${not empty link}">
         <a class="ms-layer btn-u" style="left:${textLayout} top:390px" href="${link.url}"

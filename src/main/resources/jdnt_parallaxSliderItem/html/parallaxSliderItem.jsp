@@ -17,7 +17,6 @@
 <%--@elvariable id="renderContext" type="org.jahia.services.render.RenderContext"--%>
 <%--@elvariable id="currentResource" type="org.jahia.services.render.Resource"--%>
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
-<%-- TODO: javascript updates the parallax CSS but text color is overwritten by style.css --%>
 
 <c:set var="backgroundImg" value="${currentNode.properties['backgroundImg'].node}"/>
 <c:set var="pause" value="${currentNode.properties['pause'].boolean}"/>
@@ -78,6 +77,7 @@
     </c:otherwise>
 </c:choose>
 
+<template:addResources type="inline">
 <script type="text/javascript">
     $(document).ready(function () {
         $("#parallax${currentNode.identifier}").css("background-image", "url('${backgroundImg.url}')");
@@ -92,5 +92,5 @@
         $("#parallax${currentNode.identifier} p, #parallax${currentNode.identifier} li, #parallax${currentNode.identifier} li a, #parallax${currentNode.identifier} label, #parallax${currentNode.identifier} h1, #parallax${currentNode.identifier} h2, #parallax${currentNode.identifier} h3, #parallax${currentNode.identifier} h4, #parallax${currentNode.identifier} h5, #parallax${currentNode.identifier} h6").css("color", "${textColor}");
     })
 </script>
-
+</template:addResources>
 

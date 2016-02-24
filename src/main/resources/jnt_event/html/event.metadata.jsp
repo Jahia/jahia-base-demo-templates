@@ -17,9 +17,6 @@
 <%--@elvariable id="renderContext" type="org.jahia.services.render.RenderContext"--%>
 <%--@elvariable id="currentResource" type="org.jahia.services.render.Resource"--%>
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
-<jcr:nodeProperty node="${currentNode}" name="phone" var="phone"/>
-<jcr:nodeProperty node="${currentNode}" name="email" var="email"/>
-<jcr:nodeProperty node="${currentNode}" name="website" var="website"/>
 <jcr:nodeProperty node="${currentNode}" name="j:street" var="street"/>
 <jcr:nodeProperty node="${currentNode}" name="j:zipCode" var="zipCode"/>
 <jcr:nodeProperty node="${currentNode}" name="j:town" var="town"/>
@@ -38,14 +35,5 @@
         <br/><i class="fa fa-building-o" style="visibility: hidden;"></i>${town.string}&nbsp;${zipCode.string}&nbsp;-&nbsp;${country.string}
     </a>
         </c:if>
-        <c:if test="${not empty email}">
-    <li><a href="mailto:${email.string}"><i class="fa fa-envelope"></i>${email.string}</a></li>
-    </c:if>
-    <c:if test="${not empty phone}">
-        <li><a href="tel:${phone.string}"><i class="fa fa-phone"></i>${phone.string}</a></li>
-    </c:if>
-    <c:if test="${not empty website.string and website.string != 'http://'}">
-        <li><a href="${website.string}"><i class="fa fa-globe"></i>${website.string}</a></li>
-    </c:if>
 </ul>
 

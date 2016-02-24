@@ -18,6 +18,8 @@
 <%--@elvariable id="currentResource" type="org.jahia.services.render.Resource"--%>
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
 <jcr:nodeProperty node="${currentNode}" name="background" var="bannerImg"/>
+
+<%-- get banner image url. If not provided use default --%>
 <c:choose>
     <c:when test="${not empty bannerImg}">
         <c:url value="${url.files}${bannerImg.node.path}" var="bannerUrl"/>

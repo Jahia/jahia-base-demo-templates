@@ -48,7 +48,7 @@
 <!-- event body -->
 <p>${body}</p>
 
-<!-- event categories -->
+<%-- event categories --%>
 <jcr:nodeProperty node="${currentNode}" name="j:defaultCategory" var="cat"/>
 <c:if test="${cat != null}">
     <ul class="list-inline">
@@ -91,7 +91,8 @@
             class="icon-line-arrow-left"></i><fmt:message key="jdmix_backLink.back"/></span></a>
 </p>
 
-
+<%-- script for previwing a pdf attachment --%>
+<template:addResources type="inline">
 <script type="text/javascript">
 
     (function (a) {
@@ -130,8 +131,6 @@
     $(function () {
         $('.view-pdf').on('click', function () {
             var pdf_link = $(this).attr('href');
-//var iframe = '<div class="iframe-container"><iframe src="'+pdf_link+'"></iframe></div>'
-//var iframe = '<object data="'+pdf_link+'" type="application/pdf"><embed src="'+pdf_link+'" type="application/pdf" /></object>'
             var iframe = '<object type="application/pdf" data="' + pdf_link + '" width="100%" height="500"><fmt:message key="label.pdfView.noSupport"/><br/><a href="${pdfVersion.node.url}"><strong>${pdfVersion.node.name} <i class="fa fa-download" title="<fmt:message key="label.download"/>"></i></strong></a></object>'
             $.createModal({
                 title: '${title}',
@@ -143,3 +142,4 @@
         });
     })
 </script>
+</template:addResources>

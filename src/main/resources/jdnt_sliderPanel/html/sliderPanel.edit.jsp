@@ -10,9 +10,6 @@
 <%@ taglib prefix="utility" uri="http://www.jahia.org/tags/utilityLib" %>
 <%@ taglib prefix="s" uri="http://www.jahia.org/tags/search" %>
 <%-- TODO: live/preview only offer light/dark theme options, not colors as stated here. editSlider.css needs to update to match --%>
-<%-- TODO: edit mode is tiling smaller photos, but live/preview stretches, need to update edit mode --%>
-<%-- TODO: overlay image is a white boxed background, not transparent --%>
-<%-- TODO: update tab naming to be unique --%>
 <%--@elvariable id="currentNode" type="org.jahia.services.content.JCRNodeWrapper"--%>
 <%--@elvariable id="out" type="java.io.PrintWriter"--%>
 <%--@elvariable id="script" type="org.jahia.services.render.scripting.Script"--%>
@@ -50,7 +47,6 @@
 </c:choose>
 
 <%-- get pixel layout for text and image --%>
-<%-- TODO: edit this as necessary for best layout options or update to be a parameter --%>
 <c:set var="layout" value="${currentNode.properties.layout.string}"/>
 
 <c:if test="${layout == 'right'}">
@@ -74,7 +70,6 @@
         </c:if>
         <c:if test="${not empty title}">
             <div class="second-layer-editslider">
-                    <%--TODO: Subtitle should always be color-green --%>
                 <span class="color-green">${title}</span>
             </div>
         </c:if>

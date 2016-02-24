@@ -6,17 +6,17 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="query" uri="http://www.jahia.org/tags/queryLib" %>
 
+<%-- search for the latest news --%>
 
 <jcr:nodeProperty node="${currentNode}" name="maxNews" var="maxNews"/>
 <jcr:nodeProperty node="${currentNode}" name="filter" var="filter"/>
 <c:choose>
+    <%-- check if a filter category was selected and apply to the query --%>
     <c:when test="${empty filter.string}">
-        <c:set var="lastNewsStatement"
-               value="select * from [jnt:news] as news where ISDESCENDANTNODE(news,'${renderContext.mainResource.node.resolveSite.path}') order by news.[date] desc"/>
+        <c:set var="lastNewsStatement" value="select * from [jnt:news] as news where ISDESCENDANTNODE(news,'${renderContext.mainResource.node.resolveSite.path}') order by news.[date] desc"/>
     </c:when>
     <c:otherwise>
-        <c:set var="lastNewsStatement"
-               value="select * from [jnt:news] as news where ISDESCENDANTNODE(news,'${renderContext.mainResource.node.resolveSite.path}') and news.[j:defaultCategory]='${filter.string}' order by news.[date] desc"/>
+        <c:set var="lastNewsStatement" value="select * from [jnt:news] as news where ISDESCENDANTNODE(news,'${renderContext.mainResource.node.resolveSite.path}') and news.[j:defaultCategory]='${filter.string}' order by news.[date] desc"/>
     </c:otherwise>
 </c:choose>
 <query:definition var="listQuery" statement="${lastNewsStatement}" limit="${maxNews.long}"/>

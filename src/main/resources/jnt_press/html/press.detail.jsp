@@ -5,7 +5,7 @@
 <%@ taglib prefix="template" uri="http://www.jahia.org/tags/templateLib" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="ui" uri="http://www.jahia.org/tags/uiComponentsLib" %>
-<%-- TODO: detail content template is not displaying --%>
+
 <c:set var="pressTitle" value="${currentNode.properties['jcr:title'].string}"/>
 <jcr:nodeProperty node="${currentNode}" name="j:defaultCategory" var="pressReleaseContainerCatKeys"/>
 
@@ -48,6 +48,9 @@
 <c:set var="parentUrl">javascript:history.back()</c:set>
 <a href="${parentUrl}" class="button button-mini button-border button-rounded"><span><i
         class="icon-line-arrow-left"></i><fmt:message key="jdmix_backLink.back"/></span></a>
+
+<%-- display attachment in modal --%>
+<template:addResources type="inline">
 <script type="text/javascript">
 
     (function (a) {
@@ -86,8 +89,6 @@
     $(function () {
         $('.view-pdf').on('click', function () {
             var pdf_link = $(this).attr('href');
-//var iframe = '<div class="iframe-container"><iframe src="'+pdf_link+'"></iframe></div>'
-//var iframe = '<object data="'+pdf_link+'" type="application/pdf"><embed src="'+pdf_link+'" type="application/pdf" /></object>'
             var iframe = '<object type="application/pdf" data="' + pdf_link + '" width="100%" height="500"><fmt:message key="label.pdfView.noSupport"/><br/><a href="${pdfVersion.node.url}"><strong>${pdfVersion.node.name} <i class="fa fa-download" title="<fmt:message key="label.download"/>"></i></strong></a></object>'
             $.createModal({
                 title: '${pressTitle}',
@@ -98,4 +99,5 @@
             return false;
         });
     })
-</script>
+    </script>
+</template:addResources>

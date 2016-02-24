@@ -58,7 +58,7 @@
                 </ul>
                 <!-- event body -->
                 <p>${fn:substring(functions:removeHtmlTags(body), 0, 150)}...</p>
-                <!-- event people if they exist -->
+                <%-- event people if they exist --%>
                 <c:if test="${jcr:isNodeType(currentNode, 'jdmix:hasPeople')}">
                     <c:set var="boxTitle" value="${currentNode.properties['boxTitle'].string}"/>
                     <c:if test="${empty boxTitle}">
@@ -71,7 +71,7 @@
                         </template:area>
                     </ul>
                 </c:if>
-                <!-- event categories -->
+                <%-- event categories --%>
                 <jcr:nodeProperty node="${currentNode}" name="j:defaultCategory" var="cat"/>
                 <c:if test="${cat != null}">
                     <ul class="list-inline">

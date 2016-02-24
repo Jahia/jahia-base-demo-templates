@@ -38,26 +38,6 @@
                 </ul>
                 <h2><a href="${detailUrl}">${newsTitle}</a></h2>
                 <p>${fn:substring(functions:removeHtmlTags(description), 0, 300)}...</p>
-                    <%--     <ul class="post-shares">
-                             <li>
-                                 <a href="#">
-                                     <i class="rounded-x icon-speech"></i>
-                                     <span>26</span>
-                                 </a>
-                             </li>
-                             <li>
-                                 <a href="#">
-                                     <i class="rounded-x icon-share"></i>
-                                     <span>98</span>
-                                 </a>
-                             </li>
-                             <li>
-                                 <a href="#">
-                                     <i class="rounded-x icon-heart"></i>
-                                     <span>30</span>
-                                 </a>
-                             </li>
-                         </ul>--%>
             </div>
         </div>
     </c:when>
@@ -73,6 +53,7 @@
         <div class="col-md-4 sm-margin-bottom-20">
             <div class="news-v2-badge">
                 <a href="${detailUrl}"><img class="img-responsive" src="${newsImage.url}" alt="${newsTitle}"></a>
+
                 <p>
                     <span>26</span>
                     <small>Feb</small>
@@ -87,7 +68,6 @@
                         <c:if test="${status.first}"><fmt:message key="jnt_news.in"/></c:if>&nbsp;${tag.string}
                     </c:forEach>
                 </small>
-                    <%--            <small>By Admin | <a class="color-inherit" href="#">16 Comments</a> | In <a href="#">Web Trends</a></small>--%>
             </div>
         </div>
         <%-- if the last in a 3 column row --%>

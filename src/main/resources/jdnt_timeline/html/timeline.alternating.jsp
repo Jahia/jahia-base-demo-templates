@@ -16,7 +16,6 @@
 <%--@elvariable id="renderContext" type="org.jahia.services.render.RenderContext"--%>
 <%--@elvariable id="currentResource" type="org.jahia.services.render.Resource"--%>
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
-<%-- TODO: Layout issues when there is an entry longer than the others. Same issue as on jahia.com --%>
 
 <template:addResources type="css" resources="shortcode_timeline1.css"/>
 

@@ -17,7 +17,6 @@
 <template:addResources type="css" resources="plugins/photoswipe/default-skin/default-skin.css"/>
 <template:addResources type="javascript" resources="plugins/photoswipe/photoswipe.min.js"/>
 <template:addResources type="javascript" resources="plugins/photoswipe/photoswipe-ui-default.min.js"/>
-<%-- TODO: JQuery is not getting the index of the image to open PhotoSwiper at the image instead of the first --%>
 
 
 <c:set var="language" value="${currentResource.locale.language}"/>
@@ -183,6 +182,7 @@
 
 
 <%-- owl carousel syncronization --%>
+<template:addResources type="inline">
 <script type="text/javascript">
     $(document).ready(function () {
 
@@ -258,9 +258,11 @@
 
     });
 </script>
+</template:addResources>
 
 <%-- photoswipe generation --%>
-<script>
+<%-- no template tag used so that script remains after the list creation --%>
+    <script type="text/javascript">
     $('.picture').each(function () {
         var $pic = $(this),
                 getItems = function () {

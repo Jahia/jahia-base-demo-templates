@@ -60,6 +60,5 @@
                 </c:choose>
             </c:otherwise>
         </c:choose>
-
     </div>
 </li>

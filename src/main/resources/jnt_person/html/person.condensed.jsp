@@ -47,6 +47,7 @@
                                 style="width: 80px" alt=""></a></li>
 <li><a href="${personURL}"><c:if test="${not empty title}"><strong>${title}:</strong> </c:if>${name}</a></li>
 <li><p>${fn:replace(bio, fn:substring(bio, 200, fn:length(bio)), '... ')}</p></li>
+
 <!-- Contact Social Icons -->
 <ul class="list-inline who">
     <c:if test="${not empty facebook and facebook != 'http://'}">

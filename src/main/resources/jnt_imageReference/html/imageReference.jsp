@@ -6,6 +6,7 @@
 <jcr:nodeProperty node="${currentNode}" name="j:node" var="reference"/>
 <jcr:nodeProperty node="${currentNode}" name="j:alternateText" var="title"/>
 <c:set var="node" value="${reference.node}"/>
+<%-- display image if referenced image is available --%>
 <c:if test="${not empty node}">
     <jahia:addCacheDependency node="${node}"/>
     <c:url var="url" value="${node.url}" context="/"/>

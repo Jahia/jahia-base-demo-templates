@@ -37,8 +37,7 @@
     </div>
     <div class="news-v2-desc bg-color-light">
         <h3><a href="<c:url value='${url.base}${currentNode.path}.html'/>">${newsTitle.string}</a></h3>
-        <%-- Display the author of the article --%>
-        <%-- <small>By ${creator.string}</small>--%>
+
         <%-- Shorten the description text to 100 characters --%>
         <p>${fn:replace(descriptionTxt, fn:substring(descriptionTxt, 100, fn:length(descriptionTxt)), '... ')}</p>
     </div>
