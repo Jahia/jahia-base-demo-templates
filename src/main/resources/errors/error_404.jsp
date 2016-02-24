@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" href="/modules/jahiademo/css/page_404_error3.css"/>
     <link rel="stylesheet" type="text/css" href="/modules/jahiademo/css/style.css"/>
     <link rel="stylesheet" type="text/css" href="/modules/jahiademo/css/app.css"/>
-    <script type="text/javascript" src="/modules/jahiademo/javascript/jquery.min.js"></script>
+    <script type="text/javascript" src="/modules/jquery/javascript/jquery.min.js"></script>
     <script type="text/javascript" src="/modules/jahiademo/javascript/jquery.backstretch.min.js"></script>
     <!-- Meta -->
     <meta charset="utf-8">
