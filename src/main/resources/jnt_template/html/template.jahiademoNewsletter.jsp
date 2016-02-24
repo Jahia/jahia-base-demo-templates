@@ -28,15 +28,17 @@
     <link rel="shortcut icon" href="favicon.ico">
 
     <!-- Web Fonts -->
-    <link rel='stylesheet' type='text/css' href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600&amp;subset=cyrillic,latin'>
+    <%-- Using local web fonts versus the google resource. If you want to change to google please uncomment this and comment out the local open-sans-webfonts.css
+    <link rel='stylesheet' type='text/css'
+          href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600&amp;subset=cyrillic,latin'> --%>
+
+    <template:addResources type="css" resources="open-sans-webfonts.css"/>
+
+    <template:addResources type="css" resources="newsletter.css"/>
 
     <!-- CSS Global Compulsory -->
     <bootstrap:addCSS/>
     <template:addResources type="css" resources="style.css"/>
-
-    <!-- CSS Header and Footer -->
-    <template:addResources type="css" resources="headers/header-v8.css"/>
-    <template:addResources type="css" resources="footers/footer-v1.css"/>
 
     <!-- CSS Implementing Plugins -->
     <template:addResources type="css" resources="animate.css"/>
@@ -234,7 +236,7 @@
                         </td>
                     </tr>
                 </table>
+    </table>
 </div>
-<template:addResources type="css" resources="newsletter.css"/>
 </body>
 </html>
