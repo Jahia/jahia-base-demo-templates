@@ -18,10 +18,18 @@
 <%--@elvariable id="currentResource" type="org.jahia.services.render.Resource"--%>
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
 
-<%@ page import="java.util.Calendar" %>
+<%-- get the starting page for the search --%>
+<c:set var="startNodePath" value="${currentNode.properties['startPage'].node.path}"/>
+<c:if test="${empty startNodePath}">
+    <c:set var="startNodePath" value="${currentNode.resolveSite.path}"/>
+</c:if>
 
+<%-- get the parameter passed via the URL --%>
+<c:set var="pastEventId" value="pastEvent${currentNode.identifier}"/>
+<c:if test="${not empty param[pastEventId]}">
+    <c:set var="pastEvent" value="${param[pastEventId]}"/>
+</c:if>
 
-<c:set var="view" value="condensed"/>
 <jsp:useBean id="now" class="java.util.Date"/>
 <fmt:formatDate value="${now}" pattern="yyyy-MM-dd" var="today"/>
 
@@ -30,51 +38,24 @@
     <c:set var="filterQuery" value="and event.[j:defaultCategory] = '${filter.string}'"/>
 </c:if>
 
-<c:set var="title" value="${currentNode.properties['jcr:title'].string}"/>
-
-<%-- set componentId variable to in order to make each carousel unique on the page. These will be used to define carousel div id and its nav controls --%>
-<c:set var="componentId" value="${currentNode.identifier}"/>
-
-<%-- get the starting page for the search --%>
-<c:set var="startNodePath" value="${currentNode.properties['startPage'].node.path}"/>
-<c:if test="${empty startNodePath}">
-    <c:set var="startNodePath" value="${currentNode.resolveSite.path}"/>
-</c:if>
-
-<c:if test="${not empty title}">
-    <div class="headline"><h2>${title}</h2></div>
-</c:if>
-
-<div id="${componentId}" class="tab-v1">
-    <ul class="nav nav-tabs">
-        <li class="active"><a href="#upcoming" data-toggle="tab"><fmt:message key="jdnt_eventTabs.upcoming"/></a></li>
-        <li><a href="#past" data-toggle="tab"><fmt:message key="jdnt_eventTabs.past"/></a></li>
-    </ul>
-    <div class="tab-content condensed-list">
-        <div class="tab-pane fade in active" id="upcoming">
-            <c:set var="sqlQuery"
-                   value="select * from [jnt:event] as event where isdescendantnode(event, ['${startNodePath}'])
+<c:choose>
+    <c:when test="${pastEvent != 'past'}">
+        <c:set var="sqlQuery"
+               value="select * from [jnt:event] as event where isdescendantnode(event, ['${startNodePath}'])
             ${filterQuery}
          and event.[startDate] >= CAST('${today}T00:00:00.000Z' AS DATE)
          order by event.[startDate] asc"/>
-            <jcr:sql var="events"
-                     sql="${sqlQuery}"/>
-            <c:forEach items="${events.nodes}" var="event" varStatus="item">
-                <template:module view="${view}" path="${event.path}"/>
-            </c:forEach>
-
-        </div>
-        <div class="tab-pane fade in" id="past">
-            <c:set var="sqlQuery"
-                   value="select * from [jnt:event] as event where isdescendantnode(event, ['${startNodePath}'])
+    </c:when>
+    <c:otherwise>
+        <c:set var="sqlQuery"
+               value="select * from [jnt:event] as event where isdescendantnode(event, ['${startNodePath}'])
             ${filterQuery}
          and event.[startDate] < CAST('${today}T00:00:00.000Z' AS DATE)
          order by event.[startDate] asc"/>
-            <jcr:sql var="events"
-                     sql="${sqlQuery}"/>
-            <c:forEach items="${events.nodes}" var="event" varStatus="item">
-                <template:module view="${view}" path="${event.path}"/>
-            </c:forEach>
-        </div>
-    </div>
-</div>
+    </c:otherwise>
+</c:choose>
+
+<query:definition var="listQuery" statement="${sqlQuery}"/>
+
+<c:set target="${moduleMap}" property="editable" value="false"/>
+<c:set target="${moduleMap}" property="listQuery" value="${listQuery}"/>
