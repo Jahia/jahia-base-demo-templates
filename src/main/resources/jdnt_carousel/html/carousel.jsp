@@ -50,6 +50,7 @@
 
     </div>
 
+    <%-- carousel navigation --%>
     <div class="carousel-arrow">
         <a class="left carousel-control" href="#myCarousel-${componentId}" data-slide="prev">
             <i class="fa fa-angle-left"></i>

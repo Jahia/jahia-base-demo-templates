@@ -16,6 +16,7 @@
 <%--@elvariable id="renderContext" type="org.jahia.services.render.RenderContext"--%>
 <%--@elvariable id="currentResource" type="org.jahia.services.render.Resource"--%>
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
+<%-- edit mode view for companies --%>
 
 <div class="content-xs">
     <%-- Add Cube-Portfolio filters container --%>
@@ -41,11 +42,9 @@
                                                 the view is setting modulemap that we get from the included template header --%>
         <template:include view="hidden.header"/>
         <c:set var="isEmpty" value="true"/>
-        <c:forEach items="${moduleMap.currentList}" var="subchild" begin="${moduleMap.begin}" end="${moduleMap.end}"
-                   varStatus="item">
+        <c:forEach items="${moduleMap.currentList}" var="subchild" begin="${moduleMap.begin}" end="${moduleMap.end}" varStatus="item">
         <div class="col-md-4 col-sm-6 col-xs-12">
-            <template:module node="${subchild}" view="edit"
-                             editable="${moduleMap.editable && !resourceReadOnly}"/>
+            <template:module node="${subchild}" view="edit" editable="${moduleMap.editable && !resourceReadOnly}"/>
             </div>
             <c:set var="isEmpty" value="false"/>
         </c:forEach>
@@ -75,6 +74,3 @@
     <template:module path="*" nodeTypes="jdnt:company"/>
 </c:if>
 <template:include view="hidden.footer"/>
-
-
-

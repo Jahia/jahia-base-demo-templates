@@ -17,6 +17,8 @@
 <%--@elvariable id="renderContext" type="org.jahia.services.render.RenderContext"--%>
 <%--@elvariable id="currentResource" type="org.jahia.services.render.Resource"--%>
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
+<%-- metadata view of company --%>
+
 <jcr:nodeProperty node="${currentNode}" name="phone" var="phone"/>
 <jcr:nodeProperty node="${currentNode}" name="email" var="email"/>
 <jcr:nodeProperty node="${currentNode}" name="website" var="website"/>
@@ -24,6 +26,7 @@
 <jcr:nodeProperty node="${currentNode}" name="j:zipCode" var="zipCode"/>
 <jcr:nodeProperty node="${currentNode}" name="j:town" var="town"/>
 <jcr:nodeProperty node="${currentNode}" name="j:country" var="country"/>
+
 <%-- if social icons were included, get the urls --%>
 <c:if test="${jcr:isNodeType(currentNode, 'jdmix:socialIcons')}">
     <c:set var="facebook" value="${currentNode.properties.facebook.string}"/>
@@ -32,11 +35,14 @@
     <c:set var="googlePlus" value="${currentNode.properties.googlePlus.string}"/>
 </c:if>
 
+<%-- display the headline title, get wording from resource files --%>
 <div class="headline"><h2><fmt:message key="jdnt_company.headlineTitle"/></h2></div>
 <ul class="list-unstyled who">
     <c:if test="${not empty street or not empty  town or not empty country}">
-    <li><a href="https://maps.google.com?q=${street.string}+${town.string}+${zipCode.string}+${country.string}"><i class="fa fa-building-o"></i>${street.string}
-        <br/><i class="fa fa-building-o" style="visibility: hidden;"></i>${town.string}&nbsp;${zipCode.string}&nbsp;-&nbsp;${country.string}</a>
+    <li><a href="https://maps.google.com?q=${street.string}+${town.string}+${zipCode.string}+${country.string}"><i
+            class="fa fa-building-o"></i>${street.string}
+        <br/><i class="fa fa-building-o" style="visibility: hidden;"></i>${town.string}&nbsp;${zipCode.string}&nbsp;-&nbsp;${country.string}
+    </a>
     </c:if>
     <c:if test="${not empty email}">
     <li><a href="mailto:${email.string}"><i class="fa fa-envelope"></i>${email.string}</a></li>

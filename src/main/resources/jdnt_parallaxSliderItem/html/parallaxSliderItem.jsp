@@ -30,7 +30,8 @@
 </c:if>
 
 <section class="parallaxPanel ${effectClass}" id="parallax${currentNode.identifier}"
-         style="background-image: url('${backgroundImg.url}'); <c:if test="${pause}">margin-bottom:400px</c:if> ">
+         style="background-image: url('${backgroundImg.url}');
+         <c:if test="${pause}">margin-bottom:400px</c:if> ">
     <div>${body}</div>
 </section>
 

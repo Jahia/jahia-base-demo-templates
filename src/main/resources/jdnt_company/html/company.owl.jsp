@@ -16,6 +16,7 @@
 <%--@elvariable id="renderContext" type="org.jahia.services.render.RenderContext"--%>
 <%--@elvariable id="currentResource" type="org.jahia.services.render.Resource"--%>
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
+<%-- company view for owl carousel (jdnt:compCarousel) --%>
 
 <%-- get the imageURL to display --%>
 <c:set var="imageUrl" value="${currentNode.properties['thumbnail'].node.url}"/>

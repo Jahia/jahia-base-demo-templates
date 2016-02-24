@@ -9,6 +9,7 @@
 <template:addResources type="javascript" resources="owl.carousel.js"/>
 <template:addResources type="javascript" resources="owl-carousel.js"/>
 <template:addResources type="css" resources="owl.carousel.css"/>
+<%-- query module to create owl carousel view of companies --%>
 
 <%-- get the starting page for the search --%>
 <c:set var="startNodePath" value="${currentNode.properties['startPage'].node.path}"/>
@@ -16,12 +17,9 @@
     <c:set var="startNodePath" value="${currentNode.resolveSite.path}"/>
 </c:if>
 
-<c:set var="searchStatement"
-               value="select * from [jdnt:company] as comp where isdescendantnode(comp, ['${startNodePath}'])"/>
-<%--
-<jcr:sql var="companies"
-         sql="${searchStatement}"/>
---%>
+<%-- generate search query --%>
+<c:set var="searchStatement" value="select * from [jdnt:company] as comp where isdescendantnode(comp, ['${startNodePath}'])"/>
+
 <query:definition var="listQuery" statement="${searchStatement}" />
 
 <c:set target="${moduleMap}" property="editable" value="false" />

@@ -23,17 +23,19 @@
 <c:if test='${not writeable}'>
   <c:set var="disabled" value='disabled="true"' />
 </c:if>
-  <div class="panel-group acc-v1" id="accordion-1">
 
+  <div class="panel-group acc-v1" id="accordion-1">
     <div class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">
             <%-- set componentId variable to in order to make each form panel unique on the page.
             These will be used to define collapsible panel div id and href anchor for the accordion controls --%>
             <c:set var="componentId" value="${currentNode.identifier}"/>
-          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-1" href="#collapse-${componentId}">
-            <span class="tooltips" data-toggle="tooltip" data-original-title="Please fill this form to keep informed">
-                Contact Form</span><span class="pull-right"><i class="fa fa-caret-square-o-down"></i></span>
+                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-1"
+                   href="#collapse-${componentId}">
+                    <span class="tooltips" data-toggle="tooltip"
+                          data-original-title="Please fill this form to keep informed">Contact Form</span>
+                    <span class="pull-right"><i class="fa fa-caret-square-o-down"></i></span>
           </a>
         </h4>
       </div>
@@ -41,9 +43,11 @@
         <div class="panel-body">
         <%-- Tokenized Contact Form --%>
               <template:tokenizedForm>
-                <form action="<c:url value='${url.base}${currentNode.path}/*'/>" class="sky-form" id="investor-contact-${componentId}" method="post">
+                    <form action="<c:url value='${url.base}${currentNode.path}/*'/>" class="sky-form"
+                          id="investor-contact-${componentId}" method="post">
                   <input type="hidden" name="jcrNodeType" value="jdnt:investorContact"/>
-                  <input type="hidden" name="jcrRedirectTo" value="<c:url value='${url.base}${renderContext.mainResource.node.path}'/>"/>
+                        <input type="hidden" name="jcrRedirectTo"
+                               value="<c:url value='${url.base}${renderContext.mainResource.node.path}'/>"/>
                     <%-- Define the output format for the newly created node by default html or by jcrRedirectTo--%>
                   <input type="hidden" name="jcrNewNodeOutputFormat" value="html"/>
                   <jcr:nodeType name="jdnt:investorContact" var="investorContact"/>
@@ -53,41 +57,51 @@
                     <section>
                       <label class="input">
                         <i class="icon-append fa fa-user"></i>
-                        <input type="text" name="firstname" placeholder="<fmt:message key="jdnt_investorContactForm.firstname"/>" ${disabled}>
-                        <b class="tooltip tooltip-bottom-right"><fmt:message key="jdnt_investorContactForm.firstname.tooltip"/></b>
+                                    <input type="text" name="firstname"
+                                           placeholder="<fmt:message key="jdnt_investorContactForm.firstname"/>" ${disabled}>
+                                    <b class="tooltip tooltip-bottom-right"><fmt:message
+                                            key="jdnt_investorContactForm.firstname.tooltip"/></b>
                       </label>
                     </section>
 
                     <section>
                       <label class="input">
                         <i class="icon-append fa fa-user"></i>
-                        <input type="text" name="lastname" placeholder="<fmt:message key="jdnt_investorContactForm.lastname"/>" ${disabled}>
-                        <b class="tooltip tooltip-bottom-right"><fmt:message key="jdnt_investorContactForm.lastname.tooltip"/></b>
+                                    <input type="text" name="lastname"
+                                           placeholder="<fmt:message key="jdnt_investorContactForm.lastname"/>" ${disabled}>
+                                    <b class="tooltip tooltip-bottom-right"><fmt:message
+                                            key="jdnt_investorContactForm.lastname.tooltip"/></b>
                       </label>
                     </section>
 
                     <section>
                       <label class="input">
                         <i class="icon-append fa fa-envelope"></i>
-                        <input type="email" name="email" placeholder="<fmt:message key="jdnt_investorContactForm.email"/>" ${disabled}>
-                        <b class="tooltip tooltip-bottom-right"><fmt:message key="jdnt_investorContactForm.email.tooltip"/></b>
+                                    <input type="email" name="email"
+                                           placeholder="<fmt:message key="jdnt_investorContactForm.email"/>" ${disabled}>
+                                    <b class="tooltip tooltip-bottom-right"><fmt:message
+                                            key="jdnt_investorContactForm.email.tooltip"/></b>
                       </label>
                     </section>
 
                     <section>
                       <label class="input">
                         <i class="icon-append fa fa-phone"></i>
-                        <input type="text" name="phone" placeholder="<fmt:message key="jdnt_investorContactForm.phone"></fmt:message>" ${disabled}>
-                        <b class="tooltip tooltip-bottom-right"><fmt:message key="jdnt_investorContactForm.phone.tooltip"/></b>
+                                    <input type="text" name="phone"
+                                           placeholder="<fmt:message key="jdnt_investorContactForm.phone"></fmt:message>" ${disabled}>
+                                    <b class="tooltip tooltip-bottom-right"><fmt:message
+                                            key="jdnt_investorContactForm.phone.tooltip"/></b>
                       </label>
                     </section>
 
                     <section>
                       <label class="select">
                         <select name="investorType" id="investorType" ${disabled}>
-                          <option value="0" selected="" disabled=""><fmt:message key="jdnt_investorContactForm.investorType"/></option>
+                                        <option value="0" selected="" disabled=""><fmt:message
+                                                key="jdnt_investorContactForm.investorType"/></option>
                           <c:forEach items="${propDefs.investorType.valueConstraints}" var="valueOption">
-                            <option value="${valueOption}"><fmt:message key="jdnt_investorContactForm.investorType.${valueOption}"/></option>
+                                            <option value="${valueOption}"><fmt:message
+                                                    key="jdnt_investorContactForm.investorType.${valueOption}"/></option>
                           </c:forEach>
                         </select>
                         <i></i>
@@ -97,9 +111,11 @@
                     <section>
                       <label class="select">
                         <select name="contactReason" id="contactReason" ${disabled}>
-                          <option value="0" selected="" disabled=""><fmt:message key="jdnt_investorContactForm.contactReason"/></option>
+                                        <option value="0" selected="" disabled=""><fmt:message
+                                                key="jdnt_investorContactForm.contactReason"/></option>
                           <c:forEach items="${propDefs.contactReason.valueConstraints}" var="valueOption">
-                            <option value="${valueOption}"><fmt:message key="jdnt_investorContactForm.contactReason.${valueOption}"/></option>
+                                            <option value="${valueOption}"><fmt:message
+                                                    key="jdnt_investorContactForm.contactReason.${valueOption}"/></option>
                           </c:forEach>
                         </select>
                         <i></i>
@@ -112,14 +128,17 @@
                       </label>
                       <c:forEach items="${propDefs.subscription.valueConstraints}" var="valueOption">
                         <label class="radio">
-                          <input type="radio" name="subscription" ${disabled} value="${valueOption}"><fmt:message key="jdnt_investorContactForm.subscription.${valueOption}" />
+                                        <input type="radio" name="subscription" ${disabled}
+                                               value="${valueOption}"><fmt:message
+                                            key="jdnt_investorContactForm.subscription.${valueOption}"/>
                           <i></i>
                         </label>
                       </c:forEach>
                     </section>
                   </fieldset>
                   <footer>
-                    <button type="submit" class="btn-u" id="investor-button-${componentId}" ${disabled}>Submit</button>
+                            <button type="submit" class="btn-u" id="investor-button-${componentId}" ${disabled}>Submit
+                            </button>
                   </footer>
                 </form>
               </template:tokenizedForm>
@@ -136,7 +155,8 @@
       $("#investor-contact-${componentId}").submit(function(e){
         e.preventDefault();
 
-        $.ajax({type:'POST',
+                $.ajax({
+                    type: 'POST',
           url: '<c:url value='${url.base}${currentNode.path}/*'/>',
           data:$('#investor-contact-${componentId}').serialize(),
           success: function(response) {
@@ -147,7 +167,8 @@
               $('#investor-contact-${componentId}').closest('form').replaceWith(div);
               $('#investor-saved-${componentId}').fadeIn("slow");
             });
-        }});
+                    }
+                });
       });
     });
   </script>

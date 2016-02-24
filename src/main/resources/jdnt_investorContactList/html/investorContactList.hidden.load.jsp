@@ -7,8 +7,10 @@
 <%@ taglib prefix="query" uri="http://www.jahia.org/tags/queryLib" %>
 
 <jcr:nodeProperty node="${currentNode}" name="maxItems" var="maxItems"/>
-<c:set var="lastNewsStatement" value="select * from [jdnt:investorContact] as investorContact where ISDESCENDANTNODE(investorContact,'${currentNode.resolveSite.path}') order by investorContact.[date] desc"/>
+<c:set var="lastNewsStatement"
+       value="select * from [jdnt:investorContact] as investorContact where ISDESCENDANTNODE(investorContact,'${currentNode.resolveSite.path}') order by investorContact.[date] desc"/>
 <query:definition var="listQuery" statement="${lastNewsStatement}" limit="${maxItems.long}"  />
+
 <c:set target="${moduleMap}" property="editable" value="false" />
 <c:set target="${moduleMap}" property="emptyListMessage"><fmt:message key="label.noContactFound"/></c:set>
 <c:set target="${moduleMap}" property="listQuery" value="${listQuery}" />

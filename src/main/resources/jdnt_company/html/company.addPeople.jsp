@@ -17,8 +17,10 @@
 <%--@elvariable id="renderContext" type="org.jahia.services.render.RenderContext"--%>
 <%--@elvariable id="currentResource" type="org.jahia.services.render.Resource"--%>
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
+<%-- addPeople view of Company --%>
 
 <jcr:nodeProperty node="${currentNode}" name="boxTitle" var="boxTitle"/>
+<%-- if the hasPeople Mixin has been selected show people--%>
 <c:if test="${jcr:isNodeType(currentNode, 'jdmix:hasPeople')}">
 
 <div class="tag-box tag-box-v2 box-shadow shadow-effect-1">
@@ -32,7 +34,8 @@
 
    </c:if>
 
+<%-- if in edit mode show new node button --%>
 <c:if test="${moduleMap.editable and renderContext.editMode && !resourceReadOnly}">
-    <%-- limit to adding jdnt:highlight nodes to the list --%>
+    <%-- limit to adding jnt:person nodes to the list --%>
     <template:module path="*" nodeTypes="jnt:person"/>
 </c:if>

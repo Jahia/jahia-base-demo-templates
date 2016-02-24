@@ -34,7 +34,7 @@
     <div class="content-xs">
         <%-- Add Cube-Portfolio filters container --%>
         <%-- Get filter categories from the choice list of industries --%>
-        <jcr:propertyInitializers var="options" nodeType="jdnt:company" name="industryCat" node="${currentNode}"/>
+                <jcr:propertyInitializers var="options" nodeType="jdnt:company" name="industryCat" node="${currentNode}"/>
 
         <div id="filters-container" class="cbp-l-filters-text content-xs">
             <div data-filter="*" class="cbp-filter-item-active cbp-filter-item"> All</div>
@@ -54,13 +54,11 @@
                                         the view is setting modulemap that we get from the included template header --%>
 <template:include view="hidden.header"/>
 <c:set var="isEmpty" value="true"/>
-        <c:forEach items="${moduleMap.currentList}" var="subchild" begin="${moduleMap.begin}" end="${moduleMap.end}"
-                   varStatus="item">
+                <c:forEach items="${moduleMap.currentList}" var="subchild" begin="${moduleMap.begin}" end="${moduleMap.end}" varStatus="item">
     <c:if test="${renderContext.editMode}">
         <div class="cbp-item">
     </c:if>
-        <template:module node="${subchild}" view="${moduleMap.subNodesView}"
-                         editable="${moduleMap.editable && !resourceReadOnly}"/>
+                    <template:module node="${subchild}" view="${moduleMap.subNodesView}" editable="${moduleMap.editable && !resourceReadOnly}"/>
         <c:set var="isEmpty" value="false"/>
     <c:if test="${renderContext.editMode}">
         </div>
@@ -80,8 +78,7 @@
                     <div class="cbp-l-caption-body">
                         <ul class="link-captions no-bottom-space">
                             <li><a href="#"><i class="rounded-x fa fa-link"></i></a></li>
-                                    <li><a href="${url.currentModule}/img/background.jpg" class="cbp-lightbox"
-                                           data-title="Company"><i class="rounded-x fa fa-search"></i></a></li>
+                                            <li><a href="${url.currentModule}/img/background.jpg" class="cbp-lightbox" data-title="Company"><i class="rounded-x fa fa-search"></i></a></li>
                         </ul>
                     </div>
                 </div>
@@ -89,7 +86,7 @@
         </div>
         <div class="cbp-title-dark">
             <div class="cbp-l-grid-agency-title"><fmt:message key="jdnt_companies.company"/></div>
-            <div class="cbp-l-grid-agency-desc"><fmt:message key="jdnt_companies.company_description"/></div>
+                            <div class="cbp-l-grid-agency-desc"><fmt:message key="jdnt_companies.company_description"/></div>
         </div>
     </div>
 </c:if>

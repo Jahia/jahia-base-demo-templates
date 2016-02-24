@@ -17,8 +17,10 @@
 <%--@elvariable id="renderContext" type="org.jahia.services.render.RenderContext"--%>
 <%--@elvariable id="currentResource" type="org.jahia.services.render.Resource"--%>
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
+<%-- format view for results of compCarousel search --%>
 
 <template:include view="hidden.header"/>
+
 <%-- Get the title of the carousel, if exists display above carousel --%>
 <c:set var="title" value="${currentNode.properties['jcr:title'].string}"/>
 <c:if test="${not empty title}">

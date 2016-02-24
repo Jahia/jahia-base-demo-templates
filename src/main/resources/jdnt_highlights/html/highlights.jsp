@@ -45,15 +45,13 @@
                                         the view is setting modulemap that we get from the included template header --%>
 <template:include view="hidden.header"/>
 <c:set var="isEmpty" value="true"/>
-<c:forEach items="${moduleMap.currentList}" var="subchild" begin="${moduleMap.begin}" end="${moduleMap.end}"
-           varStatus="item">
+<c:forEach items="${moduleMap.currentList}" var="subchild" begin="${moduleMap.begin}" end="${moduleMap.end}" varStatus="item">
     <%-- if this is the start of a new row create a new row div --%>
         <c:if test="${item.count%numColumns == 1}">
         <div class="row${marginClass}">
         </c:if>
         <div class="col-md-${colWidth}">
-        <template:module node="${subchild}" view="${moduleMap.subNodesView}"
-                         editable="${moduleMap.editable && !resourceReadOnly}"/>
+        <template:module node="${subchild}" view="${moduleMap.subNodesView}" editable="${moduleMap.editable && !resourceReadOnly}"/>
         </div>
     <%-- if this is the end of a row or the last highlight in the list, close the row div --%>
         <c:if test="${item.count%numColumns == 0 or item.last}">

@@ -932,8 +932,8 @@ h3.heading-xs {
 .pager li > a:hover, 
 .pager li > a:focus {
    color: #fff;
-   background: #c0392b;
-   border-color: #c0392b;   
+   background: #e74c3c;
+   border-color: #e74c3c;
 }
 
 /*Pager v2 and v3

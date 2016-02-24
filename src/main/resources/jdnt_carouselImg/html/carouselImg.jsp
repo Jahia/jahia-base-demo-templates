@@ -17,14 +17,13 @@
 <%--@elvariable id="currentResource" type="org.jahia.services.render.Resource"--%>
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
 
+<%-- get the image url and the caption --%>
 <c:set var="imageUrl" value="${currentNode.properties['image'].node.url}"/>
 <c:set var="caption" value="${currentNode.properties['caption'].string}"/>
 
-<%--div class="item"--%>
     <img class="carouselImageFull" src="${imageUrl}" alt="${caption}">
     <c:if test="${not empty caption}">
         <div class="carousel-caption">
             <p>${caption}</p>
         </div>
     </c:if>
-<%--/div--%>
