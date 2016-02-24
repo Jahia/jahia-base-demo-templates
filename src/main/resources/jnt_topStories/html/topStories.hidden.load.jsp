@@ -17,15 +17,13 @@
 <%--@elvariable id="renderContext" type="org.jahia.services.render.RenderContext"--%>
 <%--@elvariable id="currentResource" type="org.jahia.services.render.Resource"--%>
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
-
-<c:set var="pageView"><%= ((String) request.getParameter("pageView"))%>
-</c:set>
-
+<c:set var="pageView" value="${param['pageView']}"/>
 <c:set var="topLevel" value="${currentNode.properties['j:level'].string}"/>
 <c:if test="${jcr:isNodeType(currentNode, 'jdmix:topViews')}">
     <c:set var="view" value="${currentNode.properties['view'].string}"/>
     <c:set target="${moduleMap}" property="subNodesView" value="${view}"/>
 </c:if>
+
 <c:if test="${jcr:isNodeType(currentNode, 'jdmix:searchArea')}">
     <c:set var="startNodePath" value="${currentNode.properties['startPage'].node.path}"/>
 </c:if>
@@ -36,98 +34,44 @@
 <jsp:useBean id="now" class="java.util.Date"/>
 <fmt:formatDate value="${now}" pattern="yyyy-MM-dd" var="today"/>
 
-<c:if test="${renderContext.editMode}"><h4><fmt:message key="label.topStoriesArea"/></h4>
 
-    <p><fmt:message key="label.componentDescription"/></p>
-</c:if>
+<c:set var="endDateConstraint" value="true"/>
 
 <c:choose>
     <c:when test="${view == 'newsroom'}">
-
-        <jcr:sql var="topStories"
-                 sql="select * from [jmix:topStory] as story where isdescendantnode(story, ['${startNodePath}'])
-         and story.[j:level]='${topLevel}' and (story.[j:endDate] is null or story.[j:endDate] > CAST('+${today}T00:00:00.000' as date)) order by story.[date] desc"
-                 limit="${currentNode.properties['j:limit'].long}"/>
-
-        <c:forEach items="${topStories.nodes}" var="topStory" varStatus="item">
-            <template:module view="hidden.newsroom${topLevel}" path="${topStory.path}">
-                <%-- pass count to subnode view --%>
-                <template:param name="nodePosition" value="${item.count}"/>
-                <%-- pass chosen levelto subnode view --%>
-                <template:param name="topLevel" value="${topLevel}"/>
-                <template:param name="last" value="${item.last}"/>
-            </template:module>
-
-        </c:forEach>
-        <c:if test="${jcr:isNodeType(currentNode, 'jdmix:internalLink')}">
-            <c:set var="linkNode" value="${currentNode.properties.internalLink.node}"/>
-            <c:set var="linkTitle" value="${currentNode.properties.linkTitle.string}"/>
-            <c:if test="${empty linkTitle}">
-                <c:set var="linkTitle" value="${linkNode.displayableName}"/>
-            </c:if>
-            <c:if test="${not empty linkNode}">
-                <c:set var="pageUrl">
-                    ${linkNode.url}?pageView=<c:choose><c:when test="${topLevel == 'first'}">top</c:when>
-                    <c:when test="${topLevel == 'second'}">featured</c:when>
-                    <c:otherwise>all</c:otherwise>
-                </c:choose>
-                </c:set>
-
-                <ul class="pager">
-
-                    <c:url var="moreStories" value=""/>
-                    <li class="next"><a href="${pageUrl}">${linkTitle} <i
-                            class="fa fa-angle-right"></i></a></li>
-                </ul>
-            </c:if>
-        </c:if>
+        <c:set var="jlevel" value="${topLevel}"/>
+        <c:set var="limit" value="${currentNode.properties['j:limit'].long}"/>
     </c:when>
     <c:when test="${pageView == 'top'}">
-        <jcr:sql var="topStories"
-                 sql="select * from [jmix:topStory] as story where isdescendantnode(story, ['${startNodePath}'])
-         and story.[j:level]='first' and (story.[j:endDate] is null or story.[j:endDate] > CAST('+${today}T00:00:00.000' as date)) order by story.[date] desc"/>
-
-        <c:forEach items="${topStories.nodes}" var="topStory" varStatus="item">
-            <template:module view="default" path="${topStory.path}">
-                <template:param name="last" value="${item.last}"/>
-            </template:module>
-        </c:forEach>
-
+        <c:set var="jlevel" value="first"/>
     </c:when>
     <c:when test="${pageView == 'featured'}">
-        <jcr:sql var="topStories"
-                 sql="select * from [jmix:topStory] as story where isdescendantnode(story, ['${startNodePath}'])
-         and story.[j:level]='second' and (story.[j:endDate] is null or story.[j:endDate] > CAST('+${today}T00:00:00.000' as date)) order by story.[date] desc"/>
-
-        <c:forEach items="${topStories.nodes}" var="topStory" varStatus="item">
-            <template:module view="default" path="${topStory.path}">
-                <template:param name="last" value="${item.last}"/>
-            </template:module>
-        </c:forEach>
-
+        <c:set var="jlevel" value="second"/>
     </c:when>
     <c:when test="${pageView == 'all'}">
-        <jcr:sql var="topStories"
-                 sql="select * from [jmix:topStory] as story where isdescendantnode(story, ['${startNodePath}']) order by story.[date] desc"/>
-
-        <c:forEach items="${topStories.nodes}" var="topStory" varStatus="item">
-            <template:module view="default" path="${topStory.path}">
-                <template:param name="last" value="${item.last}"/>
-            </template:module>
-        </c:forEach>
-
+        <c:set var="endDateConstraint" value="false"/>
     </c:when>
     <c:otherwise>
-
-        <c:if test="${currentNode.properties['j:limit'].long gt 0}">
-
-            <query:definition var="listQuery"
-                              statement="select * from [jmix:topStory] as story where isdescendantnode(story, ['${startNodePath}'])
-         and story.[j:level]='${topLevel}' and (story.[j:endDate] is null or story.[j:endDate] > CAST('+${today}T00:00:00.000' as date)) order by story.[date] desc"
-                              limit="${currentNode.properties['j:limit'].long}"/>
-
-            <c:set target="${moduleMap}" property="editable" value="false"/>
-            <c:set target="${moduleMap}" property="listQuery" value="${listQuery}"/>
-        </c:if>
+        <c:set var="jlevel" value="${topLevel}"/>
+        <c:set var="limit" value="${currentNode.properties['j:limit'].long}"/>
     </c:otherwise>
 </c:choose>
+
+
+<c:set var="statement" value="select * from [jmix:topStory] as story where isdescendantnode(story, ['${startNodePath}'])"/>
+<c:if test="${not empty jlevel}">
+    <c:set var="statement" value="${statement} and story.[j:level]='${jlevel}'"/>
+</c:if>
+<c:if test="${not empty endDateConstraint}">
+    <c:set var="statement" value="${statement} and (story.[j:endDate] is null or story.[j:endDate] > CAST('+${today}T00:00:00.000' as date)) order by story.[date] desc"/>
+</c:if>
+
+<c:set var="searchStatement" value="${statement}"/>
+
+<query:definition var="listQuery" statement="${searchStatement}"  limit="${limit}"/>
+
+<c:set target="${moduleMap}" property="editable" value="false"/>
+<c:set target="${moduleMap}" property="listQuery" value="${listQuery}"/>
+
+
+
