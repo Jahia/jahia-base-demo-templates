@@ -26,4 +26,4 @@
     <a href="${compUrl}">
         <img class="img-responsive" src="${imageUrl}" alt=""/>
     </a>
-    </div>
+</div>

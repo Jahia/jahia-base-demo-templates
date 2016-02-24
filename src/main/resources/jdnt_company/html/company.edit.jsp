@@ -28,15 +28,15 @@
 <%--Set variable for company descriptions and remove HTML tags--%>
 <c:set var="description" value="${functions:removeHtmlTags(currentNode.properties.headline.string)}"/>
 
-    <div >
-        <div class="edit-comp-img-cont">
-            <img src="${thumbURL}" alt="" />
-        </div>
-        <div class="edit-comp-text-cont">
+<div>
+    <div class="edit-comp-img-cont">
+        <img src="${thumbURL}" alt=""/>
+    </div>
+    <div class="edit-comp-text-cont">
         <a href="<c:url value='${url.base}${currentNode.path}.html'/>"
            class="edit-comp-title">${fn:escapeXml(title.string)}</a>
-            <div class="edit-comp-subtitle">${fn:replace(description, fn:substring(description, 50, fn:length(description)), ' ...')}</div>
-        </div>
+        <div class="edit-comp-subtitle">${fn:replace(description, fn:substring(description, 50, fn:length(description)), ' ...')}</div>
     </div>
+</div>
 
 

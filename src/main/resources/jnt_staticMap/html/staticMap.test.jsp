@@ -22,6 +22,6 @@
 
 <c:if test="${not empty bindedComponent && jcr:isNodeType(bindedComponent, 'jmix:geotagged,jmix:locationAware,jnt:location')}">
     <div class="map map-box map-box-space1 margin-bottom-30 overflow-hidden">
-    <template:module node="${currentNode}" view="default"/>
+        <template:module node="${currentNode}" view="default"/>
     </div>
 </c:if>

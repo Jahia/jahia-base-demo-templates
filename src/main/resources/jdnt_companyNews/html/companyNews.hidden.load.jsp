@@ -19,9 +19,9 @@
 <c:set var="lastNewsStatement"
        value="select * from [jnt:news] as news where desc like '%${boundComponent.properties['jcr:title'].string}%' and ISDESCENDANTNODE(news,'${renderContext.mainResource.node.resolveSite.path}')  order by news.[date] desc"/>
 
-<query:definition var="listQuery" statement="${lastNewsStatement}" limit="${limit}"  />
+<query:definition var="listQuery" statement="${lastNewsStatement}" limit="${limit}"/>
 
-<c:set target="${moduleMap}" property="editable" value="false" />
+<c:set target="${moduleMap}" property="editable" value="false"/>
 <c:set target="${moduleMap}" property="emptyListMessage"><fmt:message key="label.noNewsFound"/></c:set>
-<c:set target="${moduleMap}" property="listQuery" value="${listQuery}" />
-<c:set target="${moduleMap}" property="subNodesView" value="company" />
+<c:set target="${moduleMap}" property="listQuery" value="${listQuery}"/>
+<c:set target="${moduleMap}" property="subNodesView" value="company"/>

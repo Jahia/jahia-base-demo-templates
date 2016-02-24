@@ -46,17 +46,18 @@
                 <div class="item active">
                     <div class="owl-item" style="width: 163px;">
                         <div class="item">
-                            <img class="img-responsive" src="${url.currentModule}/img/background.jpg" alt="placeholder"/>
+                            <img class="img-responsive" src="${url.currentModule}/img/background.jpg"
+                                 alt="placeholder"/>
                         </div>
                     </div>
                 </div>
             </c:when>
             <c:otherwise>
-        <c:forEach items="${images}" var="image" varStatus="item">
-            <div class="item<c:if test="${item.first}"> active</c:if>">
-                <template:module node="${image}" view="owl" nodeTypes="jdnt:carouselImg" editable="true"/>
-            </div>
-        </c:forEach>
+                <c:forEach items="${images}" var="image" varStatus="item">
+                    <div class="item<c:if test="${item.first}"> active</c:if>">
+                        <template:module node="${image}" view="owl" nodeTypes="jdnt:carouselImg" editable="true"/>
+                    </div>
+                </c:forEach>
             </c:otherwise>
         </c:choose>
     </div>

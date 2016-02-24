@@ -23,16 +23,16 @@
 <%-- if the hasPeople Mixin has been selected show people--%>
 <c:if test="${jcr:isNodeType(currentNode, 'jdmix:hasPeople')}">
 
-<div class="tag-box tag-box-v2 box-shadow shadow-effect-1">
-    <div class="headline"><h2>${boxTitle.string}</h2></div>
-    <ul class="list-unstyled margin-bottom-30">
-        <template:area path="relatedPeople" nodeTypes="jnt:person">
-            <template:param name="subNodesView" value="condensed"/>
-        </template:area>
-    </ul>
-</div>
+    <div class="tag-box tag-box-v2 box-shadow shadow-effect-1">
+        <div class="headline"><h2>${boxTitle.string}</h2></div>
+        <ul class="list-unstyled margin-bottom-30">
+            <template:area path="relatedPeople" nodeTypes="jnt:person">
+                <template:param name="subNodesView" value="condensed"/>
+            </template:area>
+        </ul>
+    </div>
 
-   </c:if>
+</c:if>
 
 <%-- if in edit mode show new node button --%>
 <c:if test="${moduleMap.editable and renderContext.editMode && !resourceReadOnly}">

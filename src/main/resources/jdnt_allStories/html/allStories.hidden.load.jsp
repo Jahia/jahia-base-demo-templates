@@ -36,11 +36,11 @@
         <c:set var="topStoriesStatement"
                value="select * from [jnt:news] as story where isdescendantnode(story, ['${startNodePath}']) order by story.[date] desc"/>
     </c:otherwise>
- </c:choose>
+</c:choose>
 
-<query:definition var="listQuery" statement="${topStoriesStatement}" />
+<query:definition var="listQuery" statement="${topStoriesStatement}"/>
 
-<c:set target="${moduleMap}" property="editable" value="false" />
-<c:set target="${moduleMap}" property="listQuery" value="${listQuery}" />
-<c:set target="${moduleMap}" property="subNodesView" value="default" />
-<c:set target="${moduleMap}" property="pageView" value="pageView" />
+<c:set target="${moduleMap}" property="editable" value="false"/>
+<c:set target="${moduleMap}" property="listQuery" value="${listQuery}"/>
+<c:set target="${moduleMap}" property="subNodesView" value="default"/>
+<c:set target="${moduleMap}" property="pageView" value="pageView"/>

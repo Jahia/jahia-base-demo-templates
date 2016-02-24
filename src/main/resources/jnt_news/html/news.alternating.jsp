@@ -14,35 +14,35 @@
 
 <c:set var="newsImage" value="${currentNode.properties['image']}"/>
 <c:set var="newsTitle" value="${currentNode.properties['jcr:title'].string}"/>
-<c:set var="description" value="${currentNode.properties['desc'].string}" />
+<c:set var="description" value="${currentNode.properties['desc'].string}"/>
 <fmt:formatDate dateStyle="long" value="${currentNode.properties['date'].time}" var="newsDate"/>
 
 <c:url var="detailUrl" value="${url.base}${currentNode.path}.html"/>
 
 <c:if test="${not empty newsImage}">
-    <jahia:addCacheDependency node="${newsImage.node}" />
+    <jahia:addCacheDependency node="${newsImage.node}"/>
     <c:url value="${url.files}${newsImage.node.path}" var="imageUrl"/>
     <div class="timeline-heading">
         <img class="img-responsive" src="${imageUrl}" alt=""/>
     </div>
 </c:if>
-    <div class="timeline-body text-justify">
-        <h2><a href="#">${fn:escapeXml(newsTitle)}</a></h2>
-        <c:choose>
+<div class="timeline-body text-justify">
+    <h2><a href="#">${fn:escapeXml(newsTitle)}</a></h2>
+    <c:choose>
         <c:when test="${not jcr:isNodeType(currentNode, 'jdmix:hasReadMore')}">
             <p>${fn:substring(functions:removeHtmlTags(description), 0, 150)}...</p>
             <a class="btn-u btn-u-sm" href="${detailUrl}"><fmt:message key="jdnt_news.read_more"/></a>
         </c:when>
-            <c:otherwise>
-                <p>${description}</p>
-            </c:otherwise>
-        </c:choose>
+        <c:otherwise>
+            <p>${description}</p>
+        </c:otherwise>
+    </c:choose>
 
-    </div>
-    <div class="timeline-footer">
-        <ul class="list-unstyled list-inline blog-info">
-            <li><i class="fa fa-clock-o"></i> ${newsDate}</li>
-<%--            <li><i class="fa fa-comments-o"></i> <a href="#">7 Comments</a></li> --%>
-        </ul>
-<%--        <a class="likes" href="#"><i class="fa fa-heart"></i>239</a>--%>
-    </div>
+</div>
+<div class="timeline-footer">
+    <ul class="list-unstyled list-inline blog-info">
+        <li><i class="fa fa-clock-o"></i> ${newsDate}</li>
+        <%--            <li><i class="fa fa-comments-o"></i> <a href="#">7 Comments</a></li> --%>
+    </ul>
+    <%--        <a class="likes" href="#"><i class="fa fa-heart"></i>239</a>--%>
+</div>

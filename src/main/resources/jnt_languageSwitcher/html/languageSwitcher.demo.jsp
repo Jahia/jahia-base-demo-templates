@@ -24,23 +24,24 @@
 <div id="languages" class=" pull-right">
     <c:if test="${fn:length(requestScope.languageCodes) > 1}">
 
-    <a href="javascript:void(0);"><i class="fa fa-globe"></i>&nbsp;<fmt:message key="Languages.loginbutton.label"/><span class="caret"></span></a>
-    <ul class="languages topbar-dropdown">
-        <c:forEach items="${requestScope.languageCodes}" var="language">
-            <ui:displayLanguageSwitchLink languageCode="${language}" display="false" urlVar="switchUrl"
-                                          var="renderedLanguage"
-                                          linkKind="${currentNode.properties.typeOfDisplay.string}"/>
-            <c:choose>
-                <c:when test="${language eq currentResource.locale}">
-                    <li class="active"><a href="#">${renderedLanguage}<i class="fa fa-check"></i></a></li>
-                </c:when>
-                <c:otherwise>
-                    <li><a title="<fmt:message key='switchTo'/>"
-                           href="<c:url context='/' value='${switchUrl}'/>">${renderedLanguage}</a>
-                    </li>
-                </c:otherwise>
-            </c:choose>
-        </c:forEach>
-    </ul>
+        <a href="javascript:void(0);"><i class="fa fa-globe"></i>&nbsp;<fmt:message
+                key="Languages.loginbutton.label"/><span class="caret"></span></a>
+        <ul class="languages topbar-dropdown">
+            <c:forEach items="${requestScope.languageCodes}" var="language">
+                <ui:displayLanguageSwitchLink languageCode="${language}" display="false" urlVar="switchUrl"
+                                              var="renderedLanguage"
+                                              linkKind="${currentNode.properties.typeOfDisplay.string}"/>
+                <c:choose>
+                    <c:when test="${language eq currentResource.locale}">
+                        <li class="active"><a href="#">${renderedLanguage}<i class="fa fa-check"></i></a></li>
+                    </c:when>
+                    <c:otherwise>
+                        <li><a title="<fmt:message key='switchTo'/>"
+                               href="<c:url context='/' value='${switchUrl}'/>">${renderedLanguage}</a>
+                        </li>
+                    </c:otherwise>
+                </c:choose>
+            </c:forEach>
+        </ul>
     </c:if>
 </div>

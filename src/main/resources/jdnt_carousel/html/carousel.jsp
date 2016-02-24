@@ -29,24 +29,24 @@
 <div id="myCarousel-${componentId}" class="carousel slide carousel-v1">
     <div class="carousel-inner">
         <c:set var="images" value="${jcr:getChildrenOfType(currentNode, 'jdnt:carouselImg')}"/>
-      	<%-- Test to see if carousel is empty, if so insert placeholder image --%>
-     	<c:choose>
-          <c:when test="${fn:length(images) == 0}">
-            		<div class="item active">
-    					<img src="${url.currentModule}/img/background.jpg" alt="placeholder">
-                      	<%-- use resource bundle to display a placeholder caption --%>
-                      	<div class="carousel-caption"><p><fmt:message key="jdnt_carousel.placeholderCaption"/> </p></div>
-					</div>
-          </c:when>
-	    	<c:otherwise>
+        <%-- Test to see if carousel is empty, if so insert placeholder image --%>
+        <c:choose>
+            <c:when test="${fn:length(images) == 0}">
+                <div class="item active">
+                    <img src="${url.currentModule}/img/background.jpg" alt="placeholder">
+                        <%-- use resource bundle to display a placeholder caption --%>
+                    <div class="carousel-caption"><p><fmt:message key="jdnt_carousel.placeholderCaption"/></p></div>
+                </div>
+            </c:when>
+            <c:otherwise>
                 <%-- for each image in the carousel display using the carouselImg jsp --%>
-		        <c:forEach items="${images}" var="image" varStatus="item">
-      		  		<div class="item<c:if test="${item.first}"> active</c:if>">
-           			 <template:module node="${image}" nodeTypes="jdnt:carouselImg" editable="true"/>
-            		</div>
-        		</c:forEach>
-          </c:otherwise>
-		</c:choose>
+                <c:forEach items="${images}" var="image" varStatus="item">
+                    <div class="item<c:if test="${item.first}"> active</c:if>">
+                        <template:module node="${image}" nodeTypes="jdnt:carouselImg" editable="true"/>
+                    </div>
+                </c:forEach>
+            </c:otherwise>
+        </c:choose>
 
     </div>
 
@@ -63,7 +63,7 @@
 
 <%--  if edit mode display button to add more images to the carousel --%>
 <c:if test="${renderContext.editMode}">
-    <template:module path="*" />
+    <template:module path="*"/>
 </c:if>
 
 

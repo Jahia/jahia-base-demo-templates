@@ -43,19 +43,21 @@
         <c:set var="linkTitle" value="${linkNode.displayableName}"/>
     </c:if>
 </c:if>
-    <!-- Parallax Section -->
-    <div class="bg-image-v1 parallaxBg" id="${currentNode.identifier}_parallax" style='background:url("${bannerUrl}") no-repeat  center center / cover;'>
-        <div class="container">
-            <div class="headline-center headline-light">
-                <h2>${title}</h2>
-                <p>${headline}</p>
-                <c:if test="${jcr:isNodeType(currentNode, 'jdmix:internalLink')}">
-                <a href="${linkNode.url}" style="text-decoration: none;" class="btn-u btn-brd btn-brd-hover btn-u-light">${linkTitle}</a>
-                </c:if>
-            </div>
+<!-- Parallax Section -->
+<div class="bg-image-v1 parallaxBg" id="${currentNode.identifier}_parallax"
+     style='background:url("${bannerUrl}") no-repeat  center center / cover;'>
+    <div class="container">
+        <div class="headline-center headline-light">
+            <h2>${title}</h2>
+            <p>${headline}</p>
+            <c:if test="${jcr:isNodeType(currentNode, 'jdmix:internalLink')}">
+                <a href="${linkNode.url}" style="text-decoration: none;"
+                   class="btn-u btn-brd btn-brd-hover btn-u-light">${linkTitle}</a>
+            </c:if>
         </div>
     </div>
-    <!-- End Parallax Section -->
+</div>
+<!-- End Parallax Section -->
 <template:addResources type="inline">
     <script type="text/javascript">
         $(document).ready(function () {

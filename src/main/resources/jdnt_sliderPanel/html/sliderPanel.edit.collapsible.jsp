@@ -74,8 +74,8 @@
         </c:if>
         <c:if test="${not empty title}">
             <div class="second-layer-editslider">
-            <%--TODO: Subtitle should always be color-green --%>
-        <span class="color-green">${title}</span>
+                    <%--TODO: Subtitle should always be color-green --%>
+                <span class="color-green">${title}</span>
             </div>
         </c:if>
 
@@ -91,13 +91,13 @@
         </c:if>
 
         <c:if test="${not empty link}">
-        <a class="but-layer-editslider" href="${link.url}" alt="${title}">${linkText}</a>
-</c:if>
+            <a class="but-layer-editslider" href="${link.url}" alt="${title}">${linkText}</a>
+        </c:if>
     </div>
     <%-- second image if exists --%>
     <c:if test="${not empty image}">
-    <img class="ms-img-bordered edit-slider-img" src="${image.url}" alt="">
-</c:if>
+        <img class="ms-img-bordered edit-slider-img" src="${image.url}" alt="">
+    </c:if>
 </div>
 
 

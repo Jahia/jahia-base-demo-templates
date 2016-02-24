@@ -26,7 +26,7 @@
             <div class="hidden-sm hidden-md hidden-lg"><a id="login" href="#loginForm" role="button" data-toggle="modal"
                                                           data-target="#loginForm"><i class="fa fa-user"></i>
                 <fmt:message
-                    key="loginForm.loginbutton.label"/></a>
+                        key="loginForm.loginbutton.label"/></a>
             </div>
         </c:if>
     </c:if>
@@ -34,14 +34,14 @@
 <c:if test="${renderContext.loggedIn}">
     <div class="user-box dropdown hidden-sm hidden-md hidden-lg">
 
-        <jcr:node var="userNode" path="${currentUser.localPath}" />
+        <jcr:node var="userNode" path="${currentUser.localPath}"/>
         <jcr:nodeProperty var="picture" node="${userNode}" name="j:picture"/>
         <c:set var="firstname" value="${userNode.properties['j:firstName'].string}"/>
         <c:set var="lastname" value="${userNode.properties['j:lastName'].string}"/>
 
         <a href="javascript:void(0);">
-        <i class="fa fa-user"></i>&nbsp;${fn:escapeXml(empty firstname and empty lastname ? userNode.name : firstname)}&nbsp;${fn:escapeXml(lastname)}
-        <span class="caret"></span>
+            <i class="fa fa-user"></i>&nbsp;${fn:escapeXml(empty firstname and empty lastname ? userNode.name : firstname)}&nbsp;${fn:escapeXml(lastname)}
+            <span class="caret"></span>
         </a>
         <ul class="topbar-dropdown">
             <c:if test="${!renderContext.settings.distantPublicationServerMode
@@ -81,7 +81,7 @@ and not jcr:isNodeType(renderContext.mainResource.node.resolveSite, 'jmix:remote
                     </li>
                 </c:if>
 
-    </c:if>
+            </c:if>
             <li>
                 <a href="<c:url value='${url.logout}'/>">
                     <i class="fa fa-fw fa-power-off"></i>

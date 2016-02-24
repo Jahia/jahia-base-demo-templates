@@ -8,14 +8,13 @@
 <%@ taglib prefix="jahia" uri="http://www.jahia.org/tags/templateLib" %>
 
 
-
 <template:addResources type="css" resources="news.css"/>
 <c:set var="language" value="${currentResource.locale.language}"/>
 <fmt:setLocale value="${language}" scope="session"/>
 
 <c:set var="newsImage" value="${currentNode.properties['image'].node}"/>
 <c:set var="newsTitle" value="${currentNode.properties['jcr:title'].string}"/>
-<c:set var="description" value="${currentNode.properties['desc'].string}" />
+<c:set var="description" value="${currentNode.properties['desc'].string}"/>
 <c:url var="detailUrl" value="${url.base}${currentNode.path}.html"/>
 
 <fmt:formatDate pattern="MMMM dd, yyyy" dateStyle="short" value="${currentNode.properties['date'].time}"
@@ -45,23 +44,25 @@
             </ul>
             <h2><a href="${detailUrl}">${newsTitle}</a></h2>
             <p>${fn:substring(functions:removeHtmlTags(description), 0, 300)}...</p>
-  <%--          <ul class="post-shares">
-                <li>
-                    <a href="#">
-                        <i class="rounded-x icon-speech"></i>
-                        <span>5</span>
-                    </a>
-                </li>
-                <li><a href="#"><i class="rounded-x icon-share"></i></a></li>
-                <li><a href="#"><i class="rounded-x icon-heart"></i></a></li>
-            </ul> --%>
+            <%--          <ul class="post-shares">
+                          <li>
+                              <a href="#">
+                                  <i class="rounded-x icon-speech"></i>
+                                  <span>5</span>
+                              </a>
+                          </li>
+                          <li><a href="#"><i class="rounded-x icon-share"></i></a></li>
+                          <li><a href="#"><i class="rounded-x icon-heart"></i></a></li>
+                      </ul> --%>
         </div>
     </div>
 </div>
 <%-- if not the last item put a separator in place --%>
 <c:if test="${not last}">
-    <div class="clearfix margin-bottom-20"><hr></div>
+    <div class="clearfix margin-bottom-20">
+        <hr>
+    </div>
 </c:if>
 <c:if test="${last}">
     </div>
-    </c:if>
+</c:if>

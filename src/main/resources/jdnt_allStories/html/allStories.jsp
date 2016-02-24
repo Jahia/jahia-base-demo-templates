@@ -22,7 +22,7 @@
 <template:include view="hidden.header"/>
 
 <div id="allStories-content-${currentNode.identifier}">
-    <c:set var="id" value="${fn:replace(currentNode.identifier,'-', '')}" />
+    <c:set var="id" value="${fn:replace(currentNode.identifier,'-', '')}"/>
     <c:set var="pageView" value="${param['pageView']}"/>
 
     <c:if test="${renderContext.editMode}">
@@ -30,7 +30,7 @@
 
         <p><fmt:message key="label.componentDescription"/></p>
     </c:if>
-    <c:set var="current" value="${jcr:getMeAndParentsOfType(renderContext.mainResource.node, 'jnt:page')[0]}" />
+    <c:set var="current" value="${jcr:getMeAndParentsOfType(renderContext.mainResource.node, 'jnt:page')[0]}"/>
     <c:set var="pageUrl" value="${current.url}"/>
 
     <div class="tab-v1">
@@ -54,16 +54,16 @@
                 <template:module path="${topStory.path}">
                     <template:param name="last" value="${item.last}"/>
                 </template:module>
-               </c:forEach>
+            </c:forEach>
         </div>
     </div>
 
     <template:addResources type="inline">
-    <script type="text/javascript">
-        function reload${id}(param) {
-            history.pushState(null, null, window.location.href.split('?')[0]+'?pageView='+param);
-            $('#allStories-content-${currentNode.identifier}').load('<c:url value="${currentNode.path}.html.ajax?pageView="/>'+param);
-        }
-    </script>
+        <script type="text/javascript">
+            function reload${id}(param) {
+                history.pushState(null, null, window.location.href.split('?')[0] + '?pageView=' + param);
+                $('#allStories-content-${currentNode.identifier}').load('<c:url value="${currentNode.path}.html.ajax?pageView="/>' + param);
+            }
+        </script>
     </template:addResources>
 </div>

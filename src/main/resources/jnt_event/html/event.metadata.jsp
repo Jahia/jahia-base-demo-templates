@@ -33,17 +33,19 @@
         <li>${location.string}</li>
     </c:if>
     <c:if test="${not empty street or not empty  town or not empty country}">
-    <li><a href="https://maps.google.com?q=${street.string}+${town.string}+${zipCode.string}+${country.string}"><i class="fa fa-building-o"></i>${street.string}
-        <br/><i class="fa fa-building-o" style="visibility: hidden;"></i>${town.string}&nbsp;${zipCode.string}&nbsp;-&nbsp;${country.string}</a>
-    </c:if>
-    <c:if test="${not empty email}">
+    <li><a href="https://maps.google.com?q=${street.string}+${town.string}+${zipCode.string}+${country.string}"><i
+            class="fa fa-building-o"></i>${street.string}
+        <br/><i class="fa fa-building-o" style="visibility: hidden;"></i>${town.string}&nbsp;${zipCode.string}&nbsp;-&nbsp;${country.string}
+    </a>
+        </c:if>
+        <c:if test="${not empty email}">
     <li><a href="mailto:${email.string}"><i class="fa fa-envelope"></i>${email.string}</a></li>
     </c:if>
     <c:if test="${not empty phone}">
-    <li><a href="tel:${phone.string}"><i class="fa fa-phone"></i>${phone.string}</a></li>
+        <li><a href="tel:${phone.string}"><i class="fa fa-phone"></i>${phone.string}</a></li>
     </c:if>
     <c:if test="${not empty website.string and website.string != 'http://'}">
-    <li><a href="${website.string}"><i class="fa fa-globe"></i>${website.string}</a></li>
+        <li><a href="${website.string}"><i class="fa fa-globe"></i>${website.string}</a></li>
     </c:if>
 </ul>
 

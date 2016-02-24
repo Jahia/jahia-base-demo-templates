@@ -17,7 +17,6 @@
 <%--@elvariable id="renderContext" type="org.jahia.services.render.RenderContext"--%>
 <%--@elvariable id="currentResource" type="org.jahia.services.render.Resource"--%>
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
-<%@ page import="java.util.Calendar" %>
 
 <c:set var="pageView"><%= ((String) request.getParameter("pageView"))%>
 </c:set>
@@ -50,16 +49,16 @@
          and story.[j:level]='${topLevel}' and (story.[j:endDate] is null or story.[j:endDate] > CAST('+${today}T00:00:00.000' as date)) order by story.[date] desc"
                  limit="${currentNode.properties['j:limit'].long}"/>
 
-            <c:forEach items="${topStories.nodes}" var="topStory" varStatus="item">
-                    <template:module view="hidden.newsroom${topLevel}" path="${topStory.path}">
-                        <%-- pass count to subnode view --%>
-                        <template:param name="nodePosition" value="${item.count}"/>
-                        <%-- pass chosen levelto subnode view --%>
-                        <template:param name="topLevel" value="${topLevel}"/>
-                        <template:param name="last" value="${item.last}"/>
-                    </template:module>
+        <c:forEach items="${topStories.nodes}" var="topStory" varStatus="item">
+            <template:module view="hidden.newsroom${topLevel}" path="${topStory.path}">
+                <%-- pass count to subnode view --%>
+                <template:param name="nodePosition" value="${item.count}"/>
+                <%-- pass chosen levelto subnode view --%>
+                <template:param name="topLevel" value="${topLevel}"/>
+                <template:param name="last" value="${item.last}"/>
+            </template:module>
 
-            </c:forEach>
+        </c:forEach>
         <c:if test="${jcr:isNodeType(currentNode, 'jdmix:internalLink')}">
             <c:set var="linkNode" value="${currentNode.properties.internalLink.node}"/>
             <c:set var="linkTitle" value="${currentNode.properties.linkTitle.string}"/>
@@ -120,15 +119,15 @@
     </c:when>
     <c:otherwise>
 
-<c:if test="${currentNode.properties['j:limit'].long gt 0}">
+        <c:if test="${currentNode.properties['j:limit'].long gt 0}">
 
-    <query:definition var="listQuery"
+            <query:definition var="listQuery"
                               statement="select * from [jmix:topStory] as story where isdescendantnode(story, ['${startNodePath}'])
          and story.[j:level]='${topLevel}' and (story.[j:endDate] is null or story.[j:endDate] > CAST('+${today}T00:00:00.000' as date)) order by story.[date] desc"
-                      limit="${currentNode.properties['j:limit'].long}"/>
+                              limit="${currentNode.properties['j:limit'].long}"/>
 
-    <c:set target="${moduleMap}" property="editable" value="false" />
-    <c:set target="${moduleMap}" property="listQuery" value="${listQuery}" />
-    </c:if>
+            <c:set target="${moduleMap}" property="editable" value="false"/>
+            <c:set target="${moduleMap}" property="listQuery" value="${listQuery}"/>
+        </c:if>
     </c:otherwise>
 </c:choose>

@@ -9,20 +9,15 @@
 <%@ taglib prefix="query" uri="http://www.jahia.org/tags/queryLib" %>
 <%@ taglib prefix="utility" uri="http://www.jahia.org/tags/utilityLib" %>
 <%@ taglib prefix="s" uri="http://www.jahia.org/tags/search" %>
-<%@page import="net.fortuna.ical4j.model.property.Method"%>
-<%@page import="java.text.SimpleDateFormat"%>
-<%@page import="java.text.DateFormat"%>
-<%@page import="java.io.IOException"%>
-<%@page import="java.io.*"%>
-<%@page import="net.fortuna.ical4j.model.*"%>
-<%@page import="net.fortuna.ical4j.model.property.*"%>
-<%@page import="net.fortuna.ical4j.model.component.*"%>
-<%@page import="net.fortuna.ical4j.data.*"%>
-<%@page import="net.fortuna.ical4j.util.*"%>
-<%@ page import="java.util.*" %>
-<%@ page import="net.fortuna.ical4j.model.Date" %>
-<%@ page import="net.fortuna.ical4j.model.Calendar" %>
-<%@ page import="java.util.TimeZone" %>
+<%@page import="net.fortuna.ical4j.data.CalendarOutputter" %>
+<%@page import="net.fortuna.ical4j.model.Calendar" %>
+<%@page import="net.fortuna.ical4j.model.Date" %>
+<%@page import="net.fortuna.ical4j.model.ValidationException" %>
+<%@page import="net.fortuna.ical4j.model.component.VEvent" %>
+<%@page import="net.fortuna.ical4j.model.property.CalScale" %>
+<%@page import="net.fortuna.ical4j.model.property.ProdId" %>
+<%@page import="net.fortuna.ical4j.model.property.Version" %>
+<%@page import="net.fortuna.ical4j.util.UidGenerator" %>
 <%--@elvariable id="currentNode" type="org.jahia.services.content.JCRNodeWrapper"--%>
 <%--@elvariable id="out" type="java.io.PrintWriter"--%>
 <%--@elvariable id="script" type="org.jahia.services.render.scripting.Script"--%>
@@ -31,7 +26,6 @@
 <%--@elvariable id="renderContext" type="org.jahia.services.render.RenderContext"--%>
 <%--@elvariable id="currentResource" type="org.jahia.services.render.Resource"--%>
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
-
 
 
 <c:set var="language" value="${currentResource.locale.language}"/>
@@ -65,10 +59,10 @@
         int startD = Integer.valueOf((String) pageContext.findAttribute("startDay"));
         int startM = Integer.valueOf((String) pageContext.findAttribute("startMonth"));
         int startY = Integer.valueOf((String) pageContext.findAttribute("startYear"));
-     //   int startH = Integer.valueOf((String) pageContext.findAttribute("startHour"));
-     //   int startMin = Integer.valueOf((String) pageContext.findAttribute("startMin"));
+        //   int startH = Integer.valueOf((String) pageContext.findAttribute("startHour"));
+        //   int startMin = Integer.valueOf((String) pageContext.findAttribute("startMin"));
 
-        response.setHeader ("Content-Disposition", "attachment;filename=\"" + title + ".ics\"");
+        response.setHeader("Content-Disposition", "attachment;filename=\"" + title + ".ics\"");
         response.setContentType("text/calendar");
 
         Calendar calendar = new Calendar();
@@ -78,33 +72,32 @@
 
         java.util.Calendar startDate = java.util.Calendar.getInstance();
         //Java calendar month count starts with zero
-        startDate.set(java.util.Calendar.MONTH, startM-1);
+        startDate.set(java.util.Calendar.MONTH, startM - 1);
         startDate.set(java.util.Calendar.DAY_OF_MONTH, startD);
         startDate.set(java.util.Calendar.YEAR, startY);
-     //   startDate.set(java.util.Calendar.HOUR_OF_DAY, startH);
-     //   startDate.set(java.util.Calendar.MINUTE, startMin);
-     //   startDate.set(java.util.Calendar.SECOND, 0);
+        //   startDate.set(java.util.Calendar.HOUR_OF_DAY, startH);
+        //   startDate.set(java.util.Calendar.MINUTE, startMin);
+        //   startDate.set(java.util.Calendar.SECOND, 0);
 
         // get the end date and time
         String endDString = (String) pageContext.findAttribute("endDay");
         java.util.Calendar endDate = java.util.Calendar.getInstance();
-  //      int endD, endM, endY, endH, endMin;
-        if (endDString != null)
-        {
-           int endD = Integer.valueOf((String) pageContext.findAttribute("endDay"));
-           int endM = Integer.valueOf((String) pageContext.findAttribute("endMonth"));
-           int endY = Integer.valueOf((String) pageContext.findAttribute("endYear"));
-      //     int endH = Integer.valueOf((String) pageContext.findAttribute("endHour"));
-      //      int endMin = Integer.valueOf((String) pageContext.findAttribute("endMin"));
+        //      int endD, endM, endY, endH, endMin;
+        if (endDString != null) {
+            int endD = Integer.valueOf((String) pageContext.findAttribute("endDay"));
+            int endM = Integer.valueOf((String) pageContext.findAttribute("endMonth"));
+            int endY = Integer.valueOf((String) pageContext.findAttribute("endYear"));
+            //     int endH = Integer.valueOf((String) pageContext.findAttribute("endHour"));
+            //      int endMin = Integer.valueOf((String) pageContext.findAttribute("endMin"));
 
             //Java calendar month count starts with zero
             endDate.set(java.util.Calendar.MONTH, endM - 1);
             // need to end midnight of next day for full day event
-            endDate.set(java.util.Calendar.DAY_OF_MONTH, endD+1);
+            endDate.set(java.util.Calendar.DAY_OF_MONTH, endD + 1);
             endDate.set(java.util.Calendar.YEAR, endY);
-        //    endDate.set(java.util.Calendar.HOUR_OF_DAY, endH);
-        //    endDate.set(java.util.Calendar.MINUTE, endMin);
-        //    endDate.set(java.util.Calendar.SECOND, 0);
+            //    endDate.set(java.util.Calendar.HOUR_OF_DAY, endH);
+            //    endDate.set(java.util.Calendar.MINUTE, endMin);
+            //    endDate.set(java.util.Calendar.SECOND, 0);
         }
         // create the event event..
         Date start = new Date(startDate.getTime());
@@ -112,9 +105,7 @@
         if (endDString != null) {
             Date end = new Date(endDate.getTime());
             meeting = new VEvent(start, end, title);
-        }
-        else
-        {
+        } else {
             meeting = new VEvent(start, title);
         }
 
@@ -129,7 +120,7 @@
 
         fout.flush();
 
-    }catch (ValidationException e) {
+    } catch (ValidationException e) {
 
         e.printStackTrace();
     }

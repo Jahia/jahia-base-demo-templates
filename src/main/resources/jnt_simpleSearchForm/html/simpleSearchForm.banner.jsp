@@ -25,31 +25,36 @@
 <%@ taglib prefix="s" uri="http://www.jahia.org/tags/search" %>
 <%@ taglib prefix="template" uri="http://www.jahia.org/tags/templateLib" %>
 
-<template:addResources type="css" resources="pages/page_search.css" />
+<template:addResources type="css" resources="pages/page_search.css"/>
 <template:addCacheDependency uuid="${currentNode.properties.result.string}"/>
 <c:if test="${not empty currentNode.properties.result.node}">
-<c:url value='${url.base}${currentNode.properties.result.node.path}.html' var="searchUrl"/>
-	<div class="search-block parallaxBg" style="background-position: 50% 16px;">
-		<div class="container">
-			<div class="col-md-6 col-md-offset-3">
-				<h1>Discover <span class="color-green">new</span> things</h1>
+    <c:url value='${url.base}${currentNode.properties.result.node.path}.html' var="searchUrl"/>
+    <div class="search-block parallaxBg" style="background-position: 50% 16px;">
+        <div class="container">
+            <div class="col-md-6 col-md-offset-3">
+                <h1>Discover <span class="color-green">new</span> things</h1>
 
-				<div class="input-group">
-					<s:form method="post" action="${searchUrl}">
-						<fmt:message key='search.startSearching' var="startSearching"/>
-						<s:term match="all_words" id="searchTerm" value="${startSearching}" searchIn="siteContent,tags,files" onfocus="if(this.value=='${startSearching}')this.value='';" onblur="if(this.value=='')this.value='${startSearching}';" class="form-control" placeholder="${startSearching}"/>
-						<s:site value="${renderContext.site.name}" includeReferencesFrom="systemsite" display="false"/>
-						<s:language value="${renderContext.mainResource.locale}" display="false" />
+                <div class="input-group">
+                    <s:form method="post" action="${searchUrl}">
+                        <fmt:message key='search.startSearching' var="startSearching"/>
+                        <s:term match="all_words" id="searchTerm" value="${startSearching}"
+                                searchIn="siteContent,tags,files"
+                                onfocus="if(this.value=='${startSearching}')this.value='';"
+                                onblur="if(this.value=='')this.value='${startSearching}';" class="form-control"
+                                placeholder="${startSearching}"/>
+                        <s:site value="${renderContext.site.name}" includeReferencesFrom="systemsite" display="false"/>
+                        <s:language value="${renderContext.mainResource.locale}" display="false"/>
 					<span class="input-group-btn">
                         	<button class="btn-u btn-u-lg" type="submit"><i class="fa fa-search"></i></button>
                     </span>
-					</s:form>
-				</div>
-				<a class="accordion-toggle collapsed" id="search-options" data-toggle="collapse" href="#advancedSearch" aria-expanded="false">Advanced Search
-					<div class="arrow"></div>
-				</a>
-			</div>
-		</div>
-	</div>
+                    </s:form>
+                </div>
+                <a class="accordion-toggle collapsed" id="search-options" data-toggle="collapse" href="#advancedSearch"
+                   aria-expanded="false">Advanced Search
+                    <div class="arrow"></div>
+                </a>
+            </div>
+        </div>
+    </div>
 </c:if>
 

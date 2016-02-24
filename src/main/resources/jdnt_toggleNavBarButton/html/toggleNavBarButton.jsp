@@ -19,8 +19,8 @@
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
 
 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-  <span class="sr-only">Toggle navigation</span>
-  <span class="icon-bar"></span>
-  <span class="icon-bar"></span>
-  <span class="icon-bar"></span>
+    <span class="sr-only">Toggle navigation</span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
 </button>

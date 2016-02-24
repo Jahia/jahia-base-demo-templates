@@ -27,14 +27,16 @@
     <%-- must set the Sub Nodes View to "alternating" when setting the layout --%>
     <template:include view="hidden.header"/>
     <c:set var="isEmpty" value="true"/>
-    <c:forEach items="${moduleMap.currentList}" var="subchild" begin="${moduleMap.begin}" end="${moduleMap.end}" varStatus="item">
+    <c:forEach items="${moduleMap.currentList}" var="subchild" begin="${moduleMap.begin}" end="${moduleMap.end}"
+               varStatus="item">
         <%-- By setting the li and div tags here this displays properly in edit mode. --%>
-        <li <c:if test="${item.count%2 == 0}">class="timeline-inverted"</c:if> >
+        <li
+                <c:if test="${item.count%2 == 0}">class="timeline-inverted"</c:if> >
             <div class="timeline-badge primary"><i class="glyphicon glyphicon-record"></i></div>
             <div class="timeline-panel">
                 <template:module node="${subchild}" view="alternating"
                                  editable="${moduleMap.editable && !resourceReadOnly}"/>
-                </div>
+            </div>
         </li>
 
         <c:set var="isEmpty" value="false"/>
@@ -49,8 +51,8 @@
     <template:include view="hidden.footer"/>
     <li class="clearfix" style="float: none;"></li>
 </ul>
-    <%-- Add the add new content item button if in edit mode --%>
-    <c:if test="${moduleMap.editable and renderContext.editMode && !resourceReadOnly}">
-        <%-- limit to adding jnt:news nodes to the list --%>
-        <template:module path="*" nodeTypes="jnt:news"/>
-    </c:if>
+<%-- Add the add new content item button if in edit mode --%>
+<c:if test="${moduleMap.editable and renderContext.editMode && !resourceReadOnly}">
+    <%-- limit to adding jnt:news nodes to the list --%>
+    <template:module path="*" nodeTypes="jnt:news"/>
+</c:if>

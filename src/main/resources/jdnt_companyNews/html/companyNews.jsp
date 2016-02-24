@@ -21,12 +21,12 @@
 
 <template:include view="hidden.header"/>
 <div class="row clients-page margin-bottom-30" >
-    <div class="row news-v2">
-    <c:forEach items="${moduleMap.currentList}" var="subchild" varStatus="status">
-        <template:module node="${subchild}" view="${moduleMap.subNodesView}" editable="${moduleMap.editable}"/>
-        <c:if test="${status.index == 2}">
-    </div></div><div class="row clients-page margin-bottom-30"><div class="row news-v2">
-        </c:if>
-    </c:forEach>
+<div class="row news-v2">
+<c:forEach items="${moduleMap.currentList}" var="subchild" varStatus="status">
+    <template:module node="${subchild}" view="${moduleMap.subNodesView}" editable="${moduleMap.editable}"/>
+    <c:if test="${status.index == 2}">
+        </div></div><div class="row clients-page margin-bottom-30"><div class="row news-v2">
+    </c:if>
+</c:forEach>
 </div>
 </div>

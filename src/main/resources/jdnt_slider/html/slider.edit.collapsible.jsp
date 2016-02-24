@@ -42,7 +42,7 @@
                 <h4 class="panel-title">
                     <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-1"
                        href="#collapse-${subchild.identifier}">
-                         Slider # ${item.count} - ${subchild.properties['jcr:title'].string}
+                        Slider # ${item.count} - ${subchild.properties['jcr:title'].string}
                     </a>
                 </h4>
             </div>
@@ -50,9 +50,9 @@
                  class="panel-collapse collapse <c:if test="${item.count == 1}">in</c:if> ">
                 <div class="panel-body">
                     <div class="row">
-        <template:module node="${subchild}" view="edit.collapsible"
-                         editable="${moduleMap.editable && !resourceReadOnly}"/>
-            </div>
+                        <template:module node="${subchild}" view="edit.collapsible"
+                                         editable="${moduleMap.editable && !resourceReadOnly}"/>
+                    </div>
                 </div>
             </div>
         </div>

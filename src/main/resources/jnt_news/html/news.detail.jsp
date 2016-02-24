@@ -31,17 +31,17 @@
                 var="newsDate"/>
 
 
-    <!-- News Detail -->
+<!-- News Detail -->
 
-        <!-- News v3 -->
-        <div class="news-v3 margin-bottom-30">
-            <h2>${newsTitle.string}</h2>
+<!-- News v3 -->
+<div class="news-v3 margin-bottom-30">
+    <h2>${newsTitle.string}</h2>
 
     <div id="sync1" class="owl-carousel picture">
         <c:if test="${not empty newsImage}">
 
             <div class="item">
-                <%-- if there is a gallery format for the photoswipe otherwise just display image --%>
+                    <%-- if there is a gallery format for the photoswipe otherwise just display image --%>
                 <c:choose>
                     <c:when test="${not empty galleryImgs}">
                         <a href="${newsImage.url}"
@@ -49,7 +49,7 @@
                             <img class="img-responsive full-width" src="${newsImage.url}"
                                  height="${newsImage.properties['j:height'].string}"
                                  width="${newsImage.properties['j:width'].string}"/>
-                    </a>
+                        </a>
                     </c:when>
                     <c:otherwise>
                         <img class="img-responsive full-width" src="${newsImage.url}"
@@ -64,7 +64,7 @@
         <c:if test="${not empty galleryImgs}">
             <c:forEach var="galleryImg" items="${galleryImgs}" varStatus="status">
 
-            <div class="item">
+                <div class="item">
                     <a href="${galleryImg.node.url}"
                        data-size="${galleryImg.node.properties['j:width'].string}x${galleryImg.node.properties['j:height'].string}"><img
                             class="img-responsive full-width" src="${galleryImg.node.url}"
@@ -78,40 +78,40 @@
 
     <%-- create thumbnails of news image and gallery images --%>
     <c:if test="${not empty galleryImgs}">
-    <div id="sync2" class="owl-carousel owl-theme">
+        <div id="sync2" class="owl-carousel owl-theme">
 
             <c:if test="${not empty newsImage}">
-            <div class="item"><img class="img-responsive full-width" src="${newsImage.url}?t=thumbnail2"/></div>
+                <div class="item"><img class="img-responsive full-width" src="${newsImage.url}?t=thumbnail2"/></div>
             </c:if>
-        <c:if test="${not empty galleryImgs}">
-            <c:forEach var="galleryImg" items="${galleryImgs}" varStatus="status">
-                <div class="item">
-                    <img src="${galleryImg.node.url}?t=thumbnail2"/>
-                </div>
-            </c:forEach>
-        </c:if>
-    </div>
+            <c:if test="${not empty galleryImgs}">
+                <c:forEach var="galleryImg" items="${galleryImgs}" varStatus="status">
+                    <div class="item">
+                        <img src="${galleryImg.node.url}?t=thumbnail2"/>
+                    </div>
+                </c:forEach>
+            </c:if>
+        </div>
     </c:if>
-            <div class="news-v3-in">
-                <ul class="list-inline posted-info">
+    <div class="news-v3-in">
+        <ul class="list-inline posted-info">
             <%-- display tags --%>
             <jcr:nodeProperty node="${currentNode}" name="j:tagList" var="tags"/>
             <c:forEach items="${tags}" var="tag" varStatus="status">
                 <li><c:if test="${status.first}"><fmt:message key="jnt_news.in"/></c:if>&nbsp;${tag.string}</li>
             </c:forEach>
-                    <li>Posted ${newsDate}</li>
-                </ul>
-                ${description.string}
-            </div>
+            <li>Posted ${newsDate}</li>
+        </ul>
+        ${description.string}
+    </div>
 
-                    </div>
+</div>
 
 <%-- set up the back navigation --%>
-        <c:set var="parentUrl">javascript:history.back()</c:set>
-                    <p>
+<c:set var="parentUrl">javascript:history.back()</c:set>
+<p>
     <a href="${parentUrl}" class="button button-mini button-border button-rounded"><span><i
             class="icon-line-arrow-left"></i><fmt:message key="jdnt_news.back"/></span></a>
-                    </p>
+</p>
 
 <%-- photoswipe setup --%>
 <%-- Root element of PhotoSwipe. Must have class pswp. DO NOT CHANGE --%>
@@ -261,20 +261,20 @@
 
 <%-- photoswipe generation --%>
 <script>
-    $('.picture').each( function() {
-        var $pic     = $(this),
-                getItems = function() {
+    $('.picture').each(function () {
+        var $pic = $(this),
+                getItems = function () {
                     var items = [];
-                    $pic.find('a').each(function() {
-                        var $href   = $(this).attr('href'),
-                                $size   = $(this).data('size').split('x'),
-                                $width  = $size[0],
+                    $pic.find('a').each(function () {
+                        var $href = $(this).attr('href'),
+                                $size = $(this).data('size').split('x'),
+                                $width = $size[0],
                                 $height = $size[1];
 
                         var item = {
-                            src : $href,
-                            w   : $width,
-                            h   : $height
+                            src: $href,
+                            w: $width,
+                            h: $height
                         }
 
                         items.push(item);
@@ -284,21 +284,21 @@
 
         var items = getItems();
 
-    var $pswp = $('.pswp')[0];
-    $pic.on('click', '.item', function(event) {
-        event.preventDefault();
+        var $pswp = $('.pswp')[0];
+        $pic.on('click', '.item', function (event) {
+            event.preventDefault();
 
-        var $index = $(this).parent('.owl-item').index();
-        var options = {
-            index: $index,
-            bgOpacity: 0.7,
-            showHideOpacity: true
-        }
+            var $index = $(this).parent('.owl-item').index();
+            var options = {
+                index: $index,
+                bgOpacity: 0.7,
+                showHideOpacity: true
+            }
 
-        // Initialize PhotoSwipe
-        var lightBox = new PhotoSwipe($pswp, PhotoSwipeUI_Default, items, options);
-        lightBox.init();
-    });
+            // Initialize PhotoSwipe
+            var lightBox = new PhotoSwipe($pswp, PhotoSwipeUI_Default, items, options);
+            lightBox.init();
+        });
     });
 
 </script>

@@ -25,18 +25,21 @@
 <%@ taglib prefix="s" uri="http://www.jahia.org/tags/search" %>
 <%@ taglib prefix="template" uri="http://www.jahia.org/tags/templateLib" %>
 
-<template:addResources type="css" resources="simplesearchform.css" />
+<template:addResources type="css" resources="simplesearchform.css"/>
 
 <template:addCacheDependency uuid="${currentNode.properties.result.string}"/>
 <c:if test="${not empty currentNode.properties.result.node}">
-<c:url value='${url.base}${currentNode.properties.result.node.path}.html' var="searchUrl"/>
-<div class="container">
-	<s:form method="post" action="${searchUrl}">
-			<fmt:message key='search.startSearching' var="startSearching"/>
-			<s:term match="all_words" id="searchTerm" value="${startSearching}" searchIn="siteContent,tags,files" onfocus="if(this.value=='${startSearching}')this.value='';" onblur="if(this.value=='')this.value='${startSearching}';" class="form-control" placeholder="${startSearching}"/>
-			<s:site value="${renderContext.site.name}" includeReferencesFrom="systemsite" display="false"/>
-			<s:language value="${renderContext.mainResource.locale}" display="false" />
-		<div class="search-close"><i class="icon-close"></i></div>
-	</s:form>
-</div>
+    <c:url value='${url.base}${currentNode.properties.result.node.path}.html' var="searchUrl"/>
+    <div class="container">
+        <s:form method="post" action="${searchUrl}">
+            <fmt:message key='search.startSearching' var="startSearching"/>
+            <s:term match="all_words" id="searchTerm" value="${startSearching}" searchIn="siteContent,tags,files"
+                    onfocus="if(this.value=='${startSearching}')this.value='';"
+                    onblur="if(this.value=='')this.value='${startSearching}';" class="form-control"
+                    placeholder="${startSearching}"/>
+            <s:site value="${renderContext.site.name}" includeReferencesFrom="systemsite" display="false"/>
+            <s:language value="${renderContext.mainResource.locale}" display="false"/>
+            <div class="search-close"><i class="icon-close"></i></div>
+        </s:form>
+    </div>
 </c:if>

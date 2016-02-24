@@ -28,16 +28,16 @@
 <template:include view="hidden.header"/>
 <!-- Main container -->
 <c:set var="componentId" value="${currentNode.identifier}"/>
-<c:set var="jsID" value="${fn:replace(currentNode.identifier, '-','' )}" />
+<c:set var="jsID" value="${fn:replace(currentNode.identifier, '-','' )}"/>
 <div class="slider-tab-container" id="sliderEdit-${componentId}">
     <div class="slider-tab-navigation">
         <div class="dropdown">
             <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Select slider
                 <span class="caret"></span></button>
             <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
-            <c:forEach items="${moduleMap.currentList}" var="subchild">
+                <c:forEach items="${moduleMap.currentList}" var="subchild">
                     <template:module node="${subchild}" view="select" editable="false"/>
-            </c:forEach>
+                </c:forEach>
             </ul>
 
         </div>
@@ -69,22 +69,22 @@
 
 </div>
 
-    <script type="text/javascript">
-        $(document).ready(function () {
-            // Hide all tabs first
-             $('.tab-selector-${componentId}').hide();
-            // Show the first tab content
-           $('.tab-selector-${componentId}').first().show();
-        })
-<%--TODO Currently ONLY one slider will work per page. To fix this we need to name the javascript function unique per slider component; can't use function ${currentNode.properties['j:nodename'].string}Function(element) since the "-" char is an invalid function name --%>
+<script type="text/javascript">
+    $(document).ready(function () {
+        // Hide all tabs first
+        $('.tab-selector-${componentId}').hide();
+        // Show the first tab content
+        $('.tab-selector-${componentId}').first().show();
+    })
+    <%--TODO Currently ONLY one slider will work per page. To fix this we need to name the javascript function unique per slider component; can't use function ${currentNode.properties['j:nodename'].string}Function(element) since the "-" char is an invalid function name --%>
 
-        function Function${jsID}(element) {
-            var $this = $(element)
-            debugger;
-            sliderPanel = "#"+$this.parent().attr("tab");
-            // First hide all tabs again when a new option is selected
-            $('.tab-selector-${componentId}').hide();
-            // Then show the tab content of whatever option value was selected
-            $(sliderPanel).show();
-        }
-    </script>
+    function Function${jsID}(element) {
+        var $this = $(element)
+        debugger;
+        sliderPanel = "#" + $this.parent().attr("tab");
+        // First hide all tabs again when a new option is selected
+        $('.tab-selector-${componentId}').hide();
+        // Then show the tab content of whatever option value was selected
+        $(sliderPanel).show();
+    }
+</script>

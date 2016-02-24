@@ -34,14 +34,14 @@
 <h4><a href="${detailUrl}">${title}</a></h4>
 <!-- event type, date, location -->
 <ul class="list-inline">
-<%--    <c:if test="${not empty currentNode.properties.eventsType}">
-        <li>
-            <button class="btn btn-xs rounded btn-primary" type="button"><fmt:message
-                    key='jnt_event.eventsType.${currentNode.properties.eventsType.string}'/></button>
-        </li>
-    </c:if>--%>
+    <%--    <c:if test="${not empty currentNode.properties.eventsType}">
+            <li>
+                <button class="btn btn-xs rounded btn-primary" type="button"><fmt:message
+                        key='jnt_event.eventsType.${currentNode.properties.eventsType.string}'/></button>
+            </li>
+        </c:if>--%>
     <li><strong><fmt:formatDate dateStyle="long" type="date"
-                        value="${startDate}"/></strong></li>
+                                value="${startDate}"/></strong></li>
     <li><i class="fa  fa-map-marker"></i>&nbsp;${location}</li>
 </ul>
 <!-- event people if they exist -->

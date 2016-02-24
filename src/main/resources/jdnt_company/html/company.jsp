@@ -29,32 +29,32 @@
 <c:set var="description" value="${functions:removeHtmlTags(currentNode.properties.headline.string)}"/>
 
 <%--Start Item Container--%>
-        <div class="cbp-item ${category.string}">
-            <div class="cbp-caption margin-bottom-20">
-                <div class="cbp-caption-defaultWrap">
+<div class="cbp-item ${category.string}">
+    <div class="cbp-caption margin-bottom-20">
+        <div class="cbp-caption-defaultWrap">
             <%-- company thumbnail image --%>
-                    <img src="${thumbURL}" alt="">
-                </div>
-                <div class="cbp-caption-activeWrap">
-                    <div class="cbp-l-caption-alignCenter">
-                        <div class="cbp-l-caption-body">
+            <img src="${thumbURL}" alt="">
+        </div>
+        <div class="cbp-caption-activeWrap">
+            <div class="cbp-l-caption-alignCenter">
+                <div class="cbp-l-caption-body">
                     <%-- link to more information --%>
-                            <ul class="link-captions no-bottom-space">
+                    <ul class="link-captions no-bottom-space">
                         <li><a href="<c:url value='${url.base}${currentNode.path}.html'/>"><i
                                 class="rounded-x fa fa-link"></i></a></li>
                         <li><a href="${thumbURL}" class="cbp-lightbox" data-title="${fn:escapeXml(title.string)}"><i
                                 class="rounded-x fa fa-search"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
+                    </ul>
                 </div>
             </div>
-            <div class="cbp-title-dark">
+        </div>
+    </div>
+    <div class="cbp-title-dark">
         <div class="cbp-l-grid-agency-title"><a
                 href="<c:url value='${url.base}${currentNode.path}.html'/>">${fn:escapeXml(title.string)}</a></div>
-                <%--Shorten Company Description to 100 char --%>
-                <div class="cbp-l-grid-agency-desc">${fn:replace(description, fn:substring(description, 50, fn:length(description)), ' ...')}</div>
-            </div>
-        </div>
+        <%--Shorten Company Description to 100 char --%>
+        <div class="cbp-l-grid-agency-desc">${fn:replace(description, fn:substring(description, 50, fn:length(description)), ' ...')}</div>
+    </div>
+</div>
 <%--/end Item Container--%>
 

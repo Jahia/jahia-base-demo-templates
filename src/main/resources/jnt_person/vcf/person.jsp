@@ -1,11 +1,11 @@
 <%@ page language="java" contentType="text/vcard;charset=UTF-8" %>
+<%@ page import="org.apache.commons.codec.binary.Base64" %>
+<%@ page import="org.apache.commons.io.IOUtils" %>
+<%@ page import="java.io.BufferedInputStream" %>
+<%@ page import="java.io.IOException" %>
+<%@ page import="java.net.URL" %>
 <%@ page import="java.text.SimpleDateFormat" %>
 <%@ page import="java.util.Date" %>
-<%@ page import="org.apache.commons.io.IOUtils" %>
-<%@ page import="org.apache.commons.codec.binary.Base64" %>
-<%@ page import="java.io.IOException" %>
-<%@ page import="java.io.BufferedInputStream" %>
-<%@ page import="java.net.URL" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
@@ -36,28 +36,30 @@
 BEGIN:VCARD
 VERSION:3.0
 N:${lastName};${firstName}
-FN:${firstName}<c:out value=" "/>${lastName}
+FN:${firstName}
+<c:out value=" "/>
+${lastName}
 ORG:${businessUnit}
 TITLE:${function}
 <c:if test="${! empty phone}">
     <c:set var="phone" value="${fn:replace(phone,' ','' )}"/>
     <c:set var="phone" value="${fn:replace(phone,'-','' )}"/>
     <c:set var="phone" value="${fn:replace(phone,'.','' )}"/>
-TEL;TYPE=WORK,VOICE:${phone}
+    TEL;TYPE=WORK,VOICE:${phone}
 </c:if>
 <c:if test="${! empty mobile}">
     <c:set var="mobile" value="${fn:replace(mobile,' ','' )}"/>
     <c:set var="mobile" value="${fn:replace(mobile,'-','' )}"/>
     <c:set var="mobile" value="${fn:replace(mobile,'.','' )}"/>
 
-TEL;TYPE=WORK,CELL:${mobile}
+    TEL;TYPE=WORK,CELL:${mobile}
 </c:if>
 <c:if test="${! empty fax}">
     <c:set var="fax" value="${fn:replace(fax,' ','' )}"/>
     <c:set var="fax" value="${fn:replace(fax,'-','' )}"/>
     <c:set var="fax" value="${fn:replace(fax,'.','' )}"/>
 
-TEL;TYPE=WORK,FAX:${fax}
+    TEL;TYPE=WORK,FAX:${fax}
 </c:if>
 ADR;TYPE=WORK:;;${adresse};${zip};${country}
 LABEL;TYPE=WORK:${adresse}\n${zip}\n${country}
@@ -81,7 +83,7 @@ REV:<%=new SimpleDateFormat("yyyyMMdd'T'HHmmss'Z'").format(new Date()) %>
         %>
         <c:if test="${! empty base64}">
             <c:set var="extension" value="${fn:toUpperCase(functions:fileExtension(picture.node.path))}"/>
-PHOTO;ENCODING=BASE64;TYPE=${extension}:<%=base64%>
+            PHOTO;ENCODING=BASE64;TYPE=${extension}:<%=base64%>
         </c:if>
     </c:if>
 </c:catch>

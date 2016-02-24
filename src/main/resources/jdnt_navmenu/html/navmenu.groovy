@@ -17,7 +17,7 @@ printMenu = { node, navMenuLevel ->
 
         children.eachWithIndex() { menuItem, index ->
             if (menuItem != null) {
-                if (! menuItem.isNodeType("jdmix:hidePage")) {
+                if (!menuItem.isNodeType("jdmix:hidePage")) {
                     def itemPath = menuItem.path;
                     def correctType = true;
                     if (menuItem.isNodeType("jmix:navMenu")) {
@@ -49,7 +49,7 @@ printMenu = { node, navMenuLevel ->
                             // if this is not the top level of the menu
                             // or it's a top level item that has been pushed down a level
                             // and they have children
-                            if ((navMenuLevel > 1 || (navMenuLevel >=1 && index >= 7)) && hasChildren){
+                            if ((navMenuLevel > 1 || (navMenuLevel >= 1 && index >= 7)) && hasChildren) {
                                 //if there are children use dropdown-submenu to display arrow
                                 listItemCssClass = "class=\"dropdown-submenu " + (inpath || active ? "active" : "") + "\"";
                             } else if (navMenuLevel <= 1 && hasChildren) {
@@ -70,7 +70,7 @@ printMenu = { node, navMenuLevel ->
                             }
 
                             //get the display name
-                            if (menuItem.hasProperty('alternateTitle')){
+                            if (menuItem.hasProperty('alternateTitle')) {
                                 displayName = menuItem.getPropertyAsString('alternateTitle');
                             } else {
                                 displayName = menuItem.displayableName;
@@ -96,7 +96,7 @@ printMenu = { node, navMenuLevel ->
                                     ulIsOpen = true;
                                 }
                                 // if this is the 8th item on the top level menu item put it in a new top level menu item
-                                if (index == 7){
+                                if (index == 7) {
                                     //start new menu
                                     println "<li class=\"dropdown\"><a href=\"javascript:void(0)\">▼</a>"
                                     println "<ul class=\"dropdown-menu pull-right dropdown-menu-alt-side\">"
@@ -117,7 +117,7 @@ printMenu = { node, navMenuLevel ->
                                 if (!ulIsOpen) {
                                     println "<ul class=\"dropdown-menu\">"
                                     ulIsOpen = true;
-                               /*  This displays the parent top level page as a link under itself. If used formatting of <li> will need to be revisted and updated */
+                                    /*  This displays the parent top level page as a link under itself. If used formatting of <li> will need to be revisted and updated */
 /*                                    if (firstEntry && navMenuLevel == 2) {
                                         parentPage = menuItem.parent;
                                         title = parentPage.displayableName;

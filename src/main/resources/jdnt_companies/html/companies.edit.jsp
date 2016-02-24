@@ -42,9 +42,10 @@
                                                 the view is setting modulemap that we get from the included template header --%>
         <template:include view="hidden.header"/>
         <c:set var="isEmpty" value="true"/>
-        <c:forEach items="${moduleMap.currentList}" var="subchild" begin="${moduleMap.begin}" end="${moduleMap.end}" varStatus="item">
-        <div class="col-md-4 col-sm-6 col-xs-12">
-            <template:module node="${subchild}" view="edit" editable="${moduleMap.editable && !resourceReadOnly}"/>
+        <c:forEach items="${moduleMap.currentList}" var="subchild" begin="${moduleMap.begin}" end="${moduleMap.end}"
+                   varStatus="item">
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <template:module node="${subchild}" view="edit" editable="${moduleMap.editable && !resourceReadOnly}"/>
             </div>
             <c:set var="isEmpty" value="false"/>
         </c:forEach>
@@ -54,7 +55,7 @@
             <div class="col-md-4 col-sm-6 col-xs-12">
                 <div class="edit-comp-wrapper">
                     <div class="edit-comp-img-cont">
-                        <img src="${url.currentModule}/img/background.jpg" alt="" />
+                        <img src="${url.currentModule}/img/background.jpg" alt=""/>
                     </div>
                     <div class="edit-comp-text-cont">
                         <a href="#" class="edit-comp-title"><fmt:message key="jdnt_companies.company"/></a>

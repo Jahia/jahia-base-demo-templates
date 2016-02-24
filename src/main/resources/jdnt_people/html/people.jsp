@@ -40,15 +40,15 @@
 
     <%-- If the list is empty then we will display a sample person --%>
     <c:if test="${not empty moduleMap.emptyListMessage and (renderContext.editMode or moduleMap.forceEmptyListMessageDisplay) and isEmpty}">
-            <div class="row content-xs">
-                <div class="col-md-3">
-                    <div class="portrait">
-                        <div class="portrait-bg">
-                            <img src="${url.currentModule}/img/default_person_img.jpg" alt="" />
-                        </div>
+        <div class="row content-xs">
+            <div class="col-md-3">
+                <div class="portrait">
+                    <div class="portrait-bg">
+                        <img src="${url.currentModule}/img/default_person_img.jpg" alt=""/>
                     </div>
                 </div>
-                <div class="col-md-9">
+            </div>
+            <div class="col-md-9">
                 <div class="title"><fmt:message key="jdnt_people.sampleName"/></div>
                 <div class="subtitle color-green"><fmt:message key="jdnt_people.sampleTitle"/></div>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
@@ -58,7 +58,7 @@
                 <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia <strong>deserunt</strong>
                     mollit anim id est laborum.</p>
 
-                    <ul class="list-inline team-social">
+                <ul class="list-inline team-social">
                     <li><a data-placement="top" data-toggle="tooltip" class="fb tooltips" data-original-title="Facebook"
                            href="#"><i class="fa fa-facebook"></i></a></li>
                     <li><a data-placement="top" data-toggle="tooltip" class="tw tooltips" data-original-title="Twitter"
@@ -69,17 +69,17 @@
                            data-original-title="Linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
                     <li><a data-placement="top" data-toggle="tooltip" class="vcard	tooltips"
                            data-original-title="Download vCard" href="#"><i class="fa fa-vcard"></i></a></li>
-                    </ul>
-                </div>
-                <div class="col-md-12">
-                    <hr class="devider devider-dotted">
-                </div>
+                </ul>
             </div>
+            <div class="col-md-12">
+                <hr class="devider devider-dotted">
+            </div>
+        </div>
     </c:if>
     <%-- Add the add new content item button if in edit mode --%>
     <c:if test="${moduleMap.editable and renderContext.editMode && !resourceReadOnly}">
         <%-- limit to adding jnt:person nodes to the list --%>
-    <template:module path="*" nodeTypes="jnt:person"/>
-</c:if>
+        <template:module path="*" nodeTypes="jnt:person"/>
+    </c:if>
     <template:include view="hidden.footer"/>
 </div>

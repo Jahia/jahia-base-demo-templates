@@ -38,50 +38,51 @@
         </div>
     </div>
     <div class="eventsBody"><!--start eventsBody -->
-            <div class=" shadow-wrapper">
-                <div class="tag-box tag-box-v2 box-shadow shadow-effect-4">
-                    <!-- event title -->
-                    <h2><a href="${detailUrl}">${title}</a></h2>
-                    <!-- event type, date, location -->
+        <div class=" shadow-wrapper">
+            <div class="tag-box tag-box-v2 box-shadow shadow-effect-4">
+                <!-- event title -->
+                <h2><a href="${detailUrl}">${title}</a></h2>
+                <!-- event type, date, location -->
+                <ul class="list-inline">
+                    <c:if test="${not empty currentNode.properties.eventsType}">
+                        <li>
+                            <button class="btn btn-xs rounded btn-primary" type="button"><fmt:message
+                                    key='jnt_event.eventsType.${currentNode.properties.eventsType.string}'/></button>
+                        </li>
+                    </c:if>
+                    <li><fmt:formatDate dateStyle="long" type="date"
+                                        value="${startDate}"/>
+                        <c:if test="${not empty endDate}">&nbsp;-&nbsp;<fmt:formatDate dateStyle="long" type="date"
+                                                                                       value="${endDate}"/></c:if></li>
+                    <li><i class="fa  fa-map-marker"></i>&nbsp;${location}</li>
+                </ul>
+                <!-- event body -->
+                <p>${fn:substring(functions:removeHtmlTags(body), 0, 150)}...</p>
+                <!-- event people if they exist -->
+                <c:if test="${jcr:isNodeType(currentNode, 'jdmix:hasPeople')}">
+                    <c:set var="boxTitle" value="${currentNode.properties['boxTitle'].string}"/>
+                    <c:if test="${empty boxTitle}">
+                        <c:set var="boxTitle" value="Speakers"/>
+                    </c:if>
                     <ul class="list-inline">
-                        <c:if test="${not empty currentNode.properties.eventsType}">
-                            <li>
-                                <button class="btn btn-xs rounded btn-primary" type="button"><fmt:message
-                                        key='jnt_event.eventsType.${currentNode.properties.eventsType.string}'/></button>
-                            </li>
-                        </c:if>
-                        <li><fmt:formatDate dateStyle="long" type="date"
-                                            value="${startDate}"/>
-                            <c:if test="${not empty endDate}">&nbsp;-&nbsp;<fmt:formatDate dateStyle="long" type="date" value="${endDate}"/></c:if></li>
-                        <li><i class="fa  fa-map-marker"></i>&nbsp;${location}</li>
+                        <li><i class="fa   fa-users"></i>&nbsp;${boxTitle}:</li>
+                        <template:area path="${currentNode.path}/relatedPeople" nodeTypes="jnt:person">
+                            <template:param name="subNodesView" value="event"/>
+                        </template:area>
                     </ul>
-                    <!-- event body -->
-                    <p>${fn:substring(functions:removeHtmlTags(body), 0, 150)}...</p>
-                    <!-- event people if they exist -->
-                    <c:if test="${jcr:isNodeType(currentNode, 'jdmix:hasPeople')}">
-                        <c:set var="boxTitle" value="${currentNode.properties['boxTitle'].string}"/>
-                        <c:if test="${empty boxTitle}">
-                            <c:set var="boxTitle" value="Speakers"/>
-                        </c:if>
-                        <ul class="list-inline">
-                            <li><i class="fa   fa-users"></i>&nbsp;${boxTitle}:</li>
-                            <template:area path="${currentNode.path}/relatedPeople" nodeTypes="jnt:person">
-                                <template:param name="subNodesView" value="event"/>
-                            </template:area>
-                        </ul>
-                    </c:if>
-                    <!-- event categories -->
-                    <jcr:nodeProperty node="${currentNode}" name="j:defaultCategory" var="cat"/>
-                    <c:if test="${cat != null}">
-                        <ul class="list-inline">
-                            <c:forEach items="${cat}" var="category">
-                                <li><i class="fa fa-tag">&nbsp;${category.node.displayableName}</i></li>
-                            </c:forEach>
-                        </ul>
-                    </c:if>
+                </c:if>
+                <!-- event categories -->
+                <jcr:nodeProperty node="${currentNode}" name="j:defaultCategory" var="cat"/>
+                <c:if test="${cat != null}">
+                    <ul class="list-inline">
+                        <c:forEach items="${cat}" var="category">
+                            <li><i class="fa fa-tag">&nbsp;${category.node.displayableName}</i></li>
+                        </c:forEach>
+                    </ul>
+                </c:if>
 
-                </div>
             </div>
+        </div>
     </div>
 
 </div>

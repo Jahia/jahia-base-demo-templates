@@ -24,27 +24,27 @@
     <div class="headline"><h2>${title}</h2></div>
 </c:if>
 
-    <ul class="timeline-v2">
+<ul class="timeline-v2">
 
-        <c:set var="resourceReadOnly" value="${currentResource.moduleParams.readOnly}"/>
-        <%-- Displaying the view of inherited nodetype jnt:contentList and this view is loading all subnodes,
-                                        the view is setting modulemap that we get from the included template header --%>
-        <%-- must set the Sub Nodes View to "timeline" when setting the layout --%>
-        <template:include view="hidden.header"/>
-        <c:set var="isEmpty" value="true"/>
-                <c:forEach items="${moduleMap.currentList}" var="subchild" begin="${moduleMap.begin}" end="${moduleMap.end}">
-                    <template:module node="${subchild}" view="timeline" editable="${moduleMap.editable && !resourceReadOnly}"/>
-                    <c:set var="isEmpty" value="false"/>
-                </c:forEach>
+    <c:set var="resourceReadOnly" value="${currentResource.moduleParams.readOnly}"/>
+    <%-- Displaying the view of inherited nodetype jnt:contentList and this view is loading all subnodes,
+                                    the view is setting modulemap that we get from the included template header --%>
+    <%-- must set the Sub Nodes View to "timeline" when setting the layout --%>
+    <template:include view="hidden.header"/>
+    <c:set var="isEmpty" value="true"/>
+    <c:forEach items="${moduleMap.currentList}" var="subchild" begin="${moduleMap.begin}" end="${moduleMap.end}">
+        <template:module node="${subchild}" view="timeline" editable="${moduleMap.editable && !resourceReadOnly}"/>
+        <c:set var="isEmpty" value="false"/>
+    </c:forEach>
 
-                <%-- If the list is empty then we will display the default contentList message for empty list --%>
-                <c:if test="${not empty moduleMap.emptyListMessage and (renderContext.editMode or moduleMap.forceEmptyListMessageDisplay) and isEmpty}">
-                    ${moduleMap.emptyListMessage}
-                </c:if>
-                <%-- Add the add new content item button if in edit mode --%>
-                <c:if test="${moduleMap.editable and renderContext.editMode && !resourceReadOnly}">
-                    <%-- limit to adding jnt:news nodes to the list --%>
-                    <template:module path="*" nodeTypes="jnt:news"/> 
-                </c:if>
-                <template:include view="hidden.footer"/>
-    </ul>
+    <%-- If the list is empty then we will display the default contentList message for empty list --%>
+    <c:if test="${not empty moduleMap.emptyListMessage and (renderContext.editMode or moduleMap.forceEmptyListMessageDisplay) and isEmpty}">
+        ${moduleMap.emptyListMessage}
+    </c:if>
+    <%-- Add the add new content item button if in edit mode --%>
+    <c:if test="${moduleMap.editable and renderContext.editMode && !resourceReadOnly}">
+        <%-- limit to adding jnt:news nodes to the list --%>
+        <template:module path="*" nodeTypes="jnt:news"/>
+    </c:if>
+    <template:include view="hidden.footer"/>
+</ul>

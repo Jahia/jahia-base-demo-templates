@@ -13,7 +13,7 @@
 
 <c:set var="newsImage" value="${currentNode.properties['image']}"/>
 <c:set var="newsTitle" value="${currentNode.properties['jcr:title'].string}"/>
-<c:set var="description" value="${currentNode.properties['desc'].string}" />
+<c:set var="description" value="${currentNode.properties['desc'].string}"/>
 <fmt:formatDate dateStyle="long" value="${currentNode.properties['date'].time}" var="newsDate"/>
 
 <c:url var="detailUrl" value="${url.base}${currentNode.path}.html"/>
@@ -21,9 +21,9 @@
 <div class="row margin-bottom-20">
     <div class="col-sm-5 sm-margin-bottom-20">
         <c:if test="${not empty newsImage.node}">
-            <jahia:addCacheDependency node="${newsImage.node}" />
+            <jahia:addCacheDependency node="${newsImage.node}"/>
             <c:url value="${url.files}${newsImage.node.path}" var="imageUrl"/>
-        <img class="img-responsive" src="${imageUrl}" alt="">
+            <img class="img-responsive" src="${imageUrl}" alt="">
         </c:if>
     </div>
     <div class="col-sm-7 news-v3">

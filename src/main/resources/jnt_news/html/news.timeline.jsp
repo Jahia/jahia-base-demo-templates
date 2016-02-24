@@ -13,7 +13,7 @@
 
 <c:set var="newsImage" value="${currentNode.properties['image']}"/>
 <c:set var="newsTitle" value="${currentNode.properties['jcr:title'].string}"/>
-<c:set var="description" value="${currentNode.properties['desc'].string}" />
+<c:set var="description" value="${currentNode.properties['desc'].string}"/>
 <fmt:formatDate pattern="MMMM" dateStyle="long" value="${currentNode.properties['date'].time}" var="newsMonth"/>
 <fmt:formatDate pattern="d/M/yy" dateStyle="short" value="${currentNode.properties['date'].time}" var="newsDate"/>
 <c:url var="detailUrl" value="${url.base}${currentNode.path}.html"/>
@@ -25,28 +25,29 @@
         <h2>${fn:escapeXml(newsTitle)}</h2>
         <c:choose>
 
-        <c:when test="${not empty newsImage}">
-            <div class="row">
-                <div class="col-md-4">
-                        <jahia:addCacheDependency node="${newsImage.node}" />
+            <c:when test="${not empty newsImage}">
+                <div class="row">
+                    <div class="col-md-4">
+                        <jahia:addCacheDependency node="${newsImage.node}"/>
                         <c:url value="${url.files}${newsImage.node.path}" var="imageUrl"/>
                         <img class="img-responsive" src="${imageUrl}" alt=""/>
 
-                <div class="md-margin-bottom-20"></div>
-            </div>
-            <div class="col-md-8">
-                <c:choose>
-                    <c:when test="${not jcr:isNodeType(currentNode, 'jdmix:hasReadMore')}">
-                        <p>${fn:substring(functions:removeHtmlTags(description), 0, 150)}...</p>
-                        <a class="btn-u btn-u-sm" href="${detailUrl}"><fmt:message key="jdnt_news.read_more"/></a>
-                    </c:when>
-                    <c:otherwise>
-                        <p>${description}</p>
-                    </c:otherwise>
-                </c:choose>
-            </div>
-        </div>
-        </c:when>
+                        <div class="md-margin-bottom-20"></div>
+                    </div>
+                    <div class="col-md-8">
+                        <c:choose>
+                            <c:when test="${not jcr:isNodeType(currentNode, 'jdmix:hasReadMore')}">
+                                <p>${fn:substring(functions:removeHtmlTags(description), 0, 150)}...</p>
+                                <a class="btn-u btn-u-sm" href="${detailUrl}"><fmt:message
+                                        key="jdnt_news.read_more"/></a>
+                            </c:when>
+                            <c:otherwise>
+                                <p>${description}</p>
+                            </c:otherwise>
+                        </c:choose>
+                    </div>
+                </div>
+            </c:when>
             <c:otherwise>
                 <c:choose>
                     <c:when test="${not jcr:isNodeType(currentNode, 'jdmix:hasReadMore')}">

@@ -25,4 +25,5 @@
     <c:set var="bottomMargin" value="30"/>
 </c:if>
 
-<div class="row margin-bottom-${bottomMargin}"><c:if test="${renderContext.editMode}"><fmt:message key="jdnt_spacer.editText"/>${bottomMargin}</c:if></div>
+<div class="row margin-bottom-${bottomMargin}"><c:if test="${renderContext.editMode}"><fmt:message
+        key="jdnt_spacer.editText"/>${bottomMargin}</c:if></div>

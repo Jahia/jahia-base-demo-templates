@@ -18,9 +18,7 @@
 <%--@elvariable id="currentResource" type="org.jahia.services.render.Resource"--%>
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
 
-<%@ page import="java.util.Calendar" %>
-
-    <c:set var="view" value="default"/>
+<c:set var="view" value="default"/>
 <jsp:useBean id="now" class="java.util.Date"/>
 <fmt:formatDate value="${now}" pattern="yyyy" var="thisYear"/>
 
@@ -54,13 +52,14 @@
     <ul class="nav nav-tabs">
         <li class="active"><a href="#${componentId}-${thisYear}" data-toggle="tab">${thisYear}</a></li>
         <c:forEach var="i" begin="1" end="${numTabs-1}">
-        <li><a href="#${componentId}-${thisYear-i}" data-toggle="tab">${thisYear-i}</a></li>
+            <li><a href="#${componentId}-${thisYear-i}" data-toggle="tab">${thisYear-i}</a></li>
         </c:forEach>
         <li><a href="#${componentId}-Older" data-toggle="tab">Older</a></li>
     </ul>
     <div class="tab-content condensed-list">
         <div class="tab-pane fade in active" id="${componentId}-${thisYear}">
-            <c:set var="sqlQuery" value="select * from [jnt:press] as press where isdescendantnode(press, ['${startNodePath}'])
+            <c:set var="sqlQuery"
+                   value="select * from [jnt:press] as press where isdescendantnode(press, ['${startNodePath}'])
             ${filterQuery}
          and press.[date] >= CAST('${thisYear}-01-01T00:00:00.000Z' AS DATE)
             AND press.[date] <= CAST('${thisYear}-12-31T23:59:59.999Z' AS DATE)
@@ -68,28 +67,28 @@
             <jcr:sql var="pressReleases"
                      sql="${sqlQuery}"/>
             <c:forEach items="${pressReleases.nodes}" var="pressRelease" varStatus="item">
-                    <template:module view="${view}" path="${pressRelease.path}">
-                        <template:param name="last" value="${item.last}"/>
-                    </template:module>
+                <template:module view="${view}" path="${pressRelease.path}">
+                    <template:param name="last" value="${item.last}"/>
+                </template:module>
             </c:forEach>
 
         </div>
         <%-- create tab for each year --%>
         <c:forEach var="i" begin="1" end="${numTabs-1}">
             <div class="tab-pane fade in" id="${componentId}-${thisYear-i}">
-            <jcr:sql var="pressReleases"
-                     sql="select * from [jnt:press] as press where isdescendantnode(press, ['${startNodePath}'])
+                <jcr:sql var="pressReleases"
+                         sql="select * from [jnt:press] as press where isdescendantnode(press, ['${startNodePath}'])
                          ${filterQuery}
          and press.[date] >= CAST('${thisYear-i}-01-01T00:00:00.000Z' AS DATE)
             AND press.[date] <= CAST('${thisYear-i}-12-31T23:59:59.999Z' AS DATE)
          order by press.[date] desc"/>
-            <c:forEach items="${pressReleases.nodes}" var="pressRelease" varStatus="item">
+                <c:forEach items="${pressReleases.nodes}" var="pressRelease" varStatus="item">
                     <template:module view="${view}" path="${pressRelease.path}">
                         <template:param name="last" value="${item.last}"/>
                     </template:module>
-            </c:forEach>
-                  </div>
-            </c:forEach>
+                </c:forEach>
+            </div>
+        </c:forEach>
         <%-- create tab for items older than the last year tab --%>
         <div class="tab-pane fade in" id="${componentId}-Older">
             <jcr:sql var="pressReleases"
@@ -98,9 +97,9 @@
          and press.[date] <= CAST('${thisYear-numTabs+1}-01-01T00:00:00.000Z' AS DATE)
          order by press.[date] desc"/>
             <c:forEach items="${pressReleases.nodes}" var="pressRelease" varStatus="item">
-                    <template:module view="${view}" path="${pressRelease.path}">
-                        <template:param name="last" value="${item.last}"/>
-                    </template:module>
+                <template:module view="${view}" path="${pressRelease.path}">
+                    <template:param name="last" value="${item.last}"/>
+                </template:module>
             </c:forEach>
 
         </div>

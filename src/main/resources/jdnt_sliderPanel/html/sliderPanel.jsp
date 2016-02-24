@@ -60,63 +60,64 @@
     </c:otherwise>
 </c:choose>
 
-        <div class="ms-slide" style="z-index: 10">
+<div class="ms-slide" style="z-index: 10">
     <%-- loading image, this is a part of the original templates --%>
     <img src="${url.currentModule}/img/blank.gif" data-src="${backgroundUrl}" alt=""/>
 
     <%-- if a small photo was provided display it --%>
     <%-- TODO: Update layout options here for small photo layer placement --%>
-            <c:if test="${not empty image}">
-                <div class="ms-layer" style="bottom: -10px; left: ${photoLayout} width: 400px; height: 562px; margin: 0px; padding: 0px; overflow: hidden;">
-                    <img src="${image.url}" alt="" style="height: 100%;">
-                </div>
-            </c:if>
+    <c:if test="${not empty image}">
+        <div class="ms-layer"
+             style="bottom: -10px; left: ${photoLayout} width: 400px; height: 562px; margin: 0px; padding: 0px; overflow: hidden;">
+            <img src="${image.url}" alt="" style="height: 100%;">
+        </div>
+    </c:if>
 
     <%-- TODO: update the following div class to use different styles already provided in the CSS --%>
     <%-- if a subtitle is provided display it --%>
     <c:if test="${not empty subtitle}">
-            <div class="ms-layer ms-promo-info-in color-${textColor}" style="left:${textLayout}; top:160px"
-                 data-effect="bottom(40)"
-                 data-duration="2000"
-                 data-delay="700"
-                 data-ease="easeOutExpo"
-                    >${subtitle}</div>
+        <div class="ms-layer ms-promo-info-in color-${textColor}" style="left:${textLayout}; top:160px"
+             data-effect="bottom(40)"
+             data-duration="2000"
+             data-delay="700"
+             data-ease="easeOutExpo"
+        >${subtitle}</div>
     </c:if>
 
     <%-- TODO: update the following div class to use different styles already provided in the CSS --%>
     <%-- if a title is provided display it --%>
     <c:if test="${not empty title}">
-            <div class="ms-layer ms-promo-info-in ms-promo-info color-${textColor}" style="left:${textLayout}; top:210px"
-                 data-effect="bottom(40)"
-                 data-duration="2000"
-                 data-delay="1000"
-                 data-ease="easeOutExpo"
-                    ><span class="color-green">${title}</span></div>
+        <div class="ms-layer ms-promo-info-in ms-promo-info color-${textColor}" style="left:${textLayout}; top:210px"
+             data-effect="bottom(40)"
+             data-duration="2000"
+             data-delay="1000"
+             data-ease="easeOutExpo"
+        ><span class="color-green">${title}</span></div>
     </c:if>
 
     <%-- TODO: update the following div class to use different styles already provided in the CSS --%>
     <%-- if a summary is provided display it --%>
     <c:if test="${not empty summary}">
-            <div class="ms-layer ms-promo-sub color-${textColor}" style="left:${textLayout}; top:310px"
-                 data-effect="bottom(40)"
-                 data-duration="2000"
-                 data-delay="1300"
-                 data-ease="easeOutExpo"
-                >${summary}</div>
+        <div class="ms-layer ms-promo-sub color-${textColor}" style="left:${textLayout}; top:310px"
+             data-effect="bottom(40)"
+             data-duration="2000"
+             data-delay="1300"
+             data-ease="easeOutExpo"
+        >${summary}</div>
     </c:if>
 
 
     <%-- TODO: update the following classes to use the different button styles provided in the css --%>
     <%-- if a link has been provided display it as a button --%>
-            <c:if test="${not empty link}">
-            <a class="ms-layer btn-u" style="left:${textLayout} top:390px" href="${link.url}"
-               data-effect="bottom(40)"
-               data-duration="2000"
-               data-delay="1300"
-               data-ease="easeOutExpo"
+    <c:if test="${not empty link}">
+        <a class="ms-layer btn-u" style="left:${textLayout} top:390px" href="${link.url}"
+           data-effect="bottom(40)"
+           data-duration="2000"
+           data-delay="1300"
+           data-ease="easeOutExpo"
            alt="${title}"
-                    >${linkText}</a>
-            </c:if>
+        >${linkText}</a>
+    </c:if>
 
     <c:if test="${jcr:isNodeType(currentNode, 'jdmix:videoSlider')}">
         <jcr:nodeProperty node="${currentNode}" name="mp4" var="mp4"/>
@@ -130,7 +131,7 @@
             </c:if>
         </video>
     </c:if>
-        </div>
+</div>
 
 
 

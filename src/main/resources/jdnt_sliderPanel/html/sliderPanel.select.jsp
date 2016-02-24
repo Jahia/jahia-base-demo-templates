@@ -18,9 +18,10 @@
 <%--@elvariable id="currentResource" type="org.jahia.services.render.Resource"--%>
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
 <c:set var="title" value="${currentNode.properties['jcr:title'].string}"/>
-<c:set var="jsID" value="${fn:replace(currentNode.parent.identifier, '-','' )}" />
+<c:set var="jsID" value="${fn:replace(currentNode.parent.identifier, '-','' )}"/>
 
-<li role="presentation" class="sliderSelect"  tab="slidertab-${currentNode.identifier}" id="sliderselect-${currentNode.identifier}" href="#">
+<li role="presentation" class="sliderSelect" tab="slidertab-${currentNode.identifier}"
+    id="sliderselect-${currentNode.identifier}" href="#">
     <%--TODO Currently ONLY one slider will work per page. To fix this we need to name the javascript function unique per slider component; can't use function ${currentNode.properties['j:nodename'].string}Function(element) since the "-" char is an invalid function name --%>
     <a role="menuitem" tabindex="-1" href="#" onclick="Function${jsID}(this)">${title}</a>
 </li>

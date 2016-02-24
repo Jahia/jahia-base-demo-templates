@@ -14,7 +14,7 @@
 
 <c:set var="node" value="${reference.node}"/>
 <c:if test="${not empty node}">
-    <jahia:addCacheDependency node="${node}" />
+    <jahia:addCacheDependency node="${node}"/>
     <c:url var="imageUrl" value="${node.url}" context="/"/>
     <c:if test="${not empty target.string}"><c:set var="target"> target="${target.string}"</c:set></c:if>
     <c:set var="linknode" value="${linkreference.node}"/>
@@ -23,7 +23,8 @@
         <c:set var="linkTitle"> title="${linknode.displayableName}"</c:set>
     </c:if>
     <c:if test="${empty linkUrl and not empty externalUrl}">
-        <c:if test="${!functions:matches('^[A-Za-z]*:.*', externalUrl.string)}"><c:set var="protocol">http://</c:set></c:if>
+        <c:if test="${!functions:matches('^[A-Za-z]*:.*', externalUrl.string)}"><c:set
+                var="protocol">http://</c:set></c:if>
         <c:url var="linkUrl" value="${protocol}${externalUrl.string}"/>
         <c:if test="${not empty linkTitle.string}"><c:set var="linkTitle"> title="${linkTitle.string}"</c:set></c:if>
     </c:if>
@@ -31,14 +32,15 @@
         <a href="${linkUrl}" ${target} ${linkTitle}>
     </c:if>
 
-    <img src="${imageUrl}" alt="${fn:escapeXml(not empty title.string ? title.string : currentNode.name)}"  width="100%" height="auto" />
+    <img src="${imageUrl}" alt="${fn:escapeXml(not empty title.string ? title.string : currentNode.name)}" width="100%"
+         height="auto"/>
     <c:if test="${!empty linkUrl}">
         </a>
     </c:if>
 </c:if>
 <c:if test="${empty node}">
     <c:if test="${not empty reference}">
-        <jahia:addCacheDependency path="${reference.string}" />
+        <jahia:addCacheDependency path="${reference.string}"/>
     </c:if>
     <c:if test="${renderContext.editMode}">
         <fmt:message key="label.empty"/>

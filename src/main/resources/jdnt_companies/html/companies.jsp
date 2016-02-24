@@ -29,79 +29,84 @@
         <template:include view="edit"/>
     </c:when>
     <c:otherwise>
-<%-- Start Cube-Portfolio Container --%>
-<div class="cube-portfolio margin-bottom-60">
-    <div class="content-xs">
-        <%-- Add Cube-Portfolio filters container --%>
-        <%-- Get filter categories from the choice list of industries --%>
-                <jcr:propertyInitializers var="options" nodeType="jdnt:company" name="industryCat" node="${currentNode}"/>
+        <%-- Start Cube-Portfolio Container --%>
+        <div class="cube-portfolio margin-bottom-60">
+            <div class="content-xs">
+                    <%-- Add Cube-Portfolio filters container --%>
+                    <%-- Get filter categories from the choice list of industries --%>
+                <jcr:propertyInitializers var="options" nodeType="jdnt:company" name="industryCat"
+                                          node="${currentNode}"/>
 
-        <div id="filters-container" class="cbp-l-filters-text content-xs">
-            <div data-filter="*" class="cbp-filter-item-active cbp-filter-item"> All</div>
-            |
-            <c:forEach items="${options}" var="option" varStatus="items">
-                <div data-filter=".${option.value.string}" class="cbp-filter-item">${option.displayName}</div>
-                <c:if test="${not items.last}"> |</c:if>
-            </c:forEach>
-        </div>
-        <%--/end Filters Container--%>
-    </div>
-    <%--start Agency Grid Container--%>
-    <div id="grid-container" class="cbp-l-grid-agency">
-
-<c:set var="resourceReadOnly" value="${currentResource.moduleParams.readOnly}"/>
-<%-- Displaying the view of inherited nodetype jnt:contentList and this view is loading all subnodes,
-                                        the view is setting modulemap that we get from the included template header --%>
-<template:include view="hidden.header"/>
-<c:set var="isEmpty" value="true"/>
-                <c:forEach items="${moduleMap.currentList}" var="subchild" begin="${moduleMap.begin}" end="${moduleMap.end}" varStatus="item">
-    <c:if test="${renderContext.editMode}">
-        <div class="cbp-item">
-    </c:if>
-                    <template:module node="${subchild}" view="${moduleMap.subNodesView}" editable="${moduleMap.editable && !resourceReadOnly}"/>
-        <c:set var="isEmpty" value="false"/>
-    <c:if test="${renderContext.editMode}">
-        </div>
-    </c:if>
-</c:forEach>
-
-<%-- If the list is empty then we will display a sample imgView and default view Highlight --%>
-<c:if test="${not empty moduleMap.emptyListMessage and (renderContext.editMode or moduleMap.forceEmptyListMessageDisplay) and isEmpty}">
-    <%-- Sample company --%>
-    <div class="cbp-item logos">
-        <div class="cbp-caption margin-bottom-20">
-            <div class="cbp-caption-defaultWrap">
-                <img src="${url.currentModule}/img/background.jpg" alt="">
-            </div>
-            <div class="cbp-caption-activeWrap">
-                <div class="cbp-l-caption-alignCenter">
-                    <div class="cbp-l-caption-body">
-                        <ul class="link-captions no-bottom-space">
-                            <li><a href="#"><i class="rounded-x fa fa-link"></i></a></li>
-                                            <li><a href="${url.currentModule}/img/background.jpg" class="cbp-lightbox" data-title="Company"><i class="rounded-x fa fa-search"></i></a></li>
-                        </ul>
-                    </div>
+                <div id="filters-container" class="cbp-l-filters-text content-xs">
+                    <div data-filter="*" class="cbp-filter-item-active cbp-filter-item"> All</div>
+                    |
+                    <c:forEach items="${options}" var="option" varStatus="items">
+                        <div data-filter=".${option.value.string}" class="cbp-filter-item">${option.displayName}</div>
+                        <c:if test="${not items.last}"> |</c:if>
+                    </c:forEach>
                 </div>
+                    <%--/end Filters Container--%>
             </div>
-        </div>
-        <div class="cbp-title-dark">
-            <div class="cbp-l-grid-agency-title"><fmt:message key="jdnt_companies.company"/></div>
-                            <div class="cbp-l-grid-agency-desc"><fmt:message key="jdnt_companies.company_description"/></div>
-        </div>
-    </div>
-</c:if>
-    </div>
+                <%--start Agency Grid Container--%>
+            <div id="grid-container" class="cbp-l-grid-agency">
 
-    <%--/end Agency Grid Container--%>
-</div>
-<%--/end Cube-Portfolio Container--%>
-<c:if test="${not renderContext.editMode}">
-    <!-- JS Page Level -->
-    <template:addResources type="javascript" resources="plugins/cube-portfolio/jquery.cubeportfolio.js" />
-    <template:addResources type="javascript" resources="plugins/cube-portfolio/cube-portfolio-3.js" />
-</c:if>
+                <c:set var="resourceReadOnly" value="${currentResource.moduleParams.readOnly}"/>
+                    <%-- Displaying the view of inherited nodetype jnt:contentList and this view is loading all subnodes,
+                                                            the view is setting modulemap that we get from the included template header --%>
+                <template:include view="hidden.header"/>
+                <c:set var="isEmpty" value="true"/>
+                <c:forEach items="${moduleMap.currentList}" var="subchild" begin="${moduleMap.begin}"
+                           end="${moduleMap.end}" varStatus="item">
+                    <c:if test="${renderContext.editMode}">
+                        <div class="cbp-item">
+                    </c:if>
+                    <template:module node="${subchild}" view="${moduleMap.subNodesView}"
+                                     editable="${moduleMap.editable && !resourceReadOnly}"/>
+                    <c:set var="isEmpty" value="false"/>
+                    <c:if test="${renderContext.editMode}">
+                        </div>
+                    </c:if>
+                </c:forEach>
 
-<template:include view="hidden.footer"/>
+                    <%-- If the list is empty then we will display a sample imgView and default view Highlight --%>
+                <c:if test="${not empty moduleMap.emptyListMessage and (renderContext.editMode or moduleMap.forceEmptyListMessageDisplay) and isEmpty}">
+                    <%-- Sample company --%>
+                    <div class="cbp-item logos">
+                        <div class="cbp-caption margin-bottom-20">
+                            <div class="cbp-caption-defaultWrap">
+                                <img src="${url.currentModule}/img/background.jpg" alt="">
+                            </div>
+                            <div class="cbp-caption-activeWrap">
+                                <div class="cbp-l-caption-alignCenter">
+                                    <div class="cbp-l-caption-body">
+                                        <ul class="link-captions no-bottom-space">
+                                            <li><a href="#"><i class="rounded-x fa fa-link"></i></a></li>
+                                            <li><a href="${url.currentModule}/img/background.jpg" class="cbp-lightbox"
+                                                   data-title="Company"><i class="rounded-x fa fa-search"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cbp-title-dark">
+                            <div class="cbp-l-grid-agency-title"><fmt:message key="jdnt_companies.company"/></div>
+                            <div class="cbp-l-grid-agency-desc"><fmt:message
+                                    key="jdnt_companies.company_description"/></div>
+                        </div>
+                    </div>
+                </c:if>
+            </div>
+
+                <%--/end Agency Grid Container--%>
+        </div>
+        <%--/end Cube-Portfolio Container--%>
+        <c:if test="${not renderContext.editMode}">
+            <!-- JS Page Level -->
+            <template:addResources type="javascript" resources="plugins/cube-portfolio/jquery.cubeportfolio.js"/>
+            <template:addResources type="javascript" resources="plugins/cube-portfolio/cube-portfolio-3.js"/>
+        </c:if>
+
+        <template:include view="hidden.footer"/>
     </c:otherwise>
 </c:choose>
 

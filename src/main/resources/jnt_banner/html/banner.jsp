@@ -44,14 +44,14 @@
     </c:if>
     <a href="${linkNode.url}" style="text-decoration: none;">
 </c:if>
-    <!--=== Breadcrumbs v1 ===-->
-    <div class="breadcrumbs-v1" style='background:url("${bannerUrl}") no-repeat scroll center center / cover;'>
-        <div class="container">
-            <span>${headline}</span>
-            <h1>${title}</h1>
-        </div>
+<!--=== Breadcrumbs v1 ===-->
+<div class="breadcrumbs-v1" style='background:url("${bannerUrl}") no-repeat scroll center center / cover;'>
+    <div class="container">
+        <span>${headline}</span>
+        <h1>${title}</h1>
     </div>
-    <!--=== End Breadcrumbs v1 ===-->
+</div>
+<!--=== End Breadcrumbs v1 ===-->
 <c:if test="${jcr:isNodeType(currentNode, 'jdmix:internalLink')}">
     </a>
 </c:if>

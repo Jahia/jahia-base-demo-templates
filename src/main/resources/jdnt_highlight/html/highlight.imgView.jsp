@@ -37,25 +37,26 @@
     <c:set var="linkUrl" value="${currentNode.properties['internalLink'].node.url}"/>
 </c:if>
 
-    <div class="thumbnails thumbnail-style thumbnail-kenburn">
-        <div class="thumbnail-img">
-            <div class="overflow-hidden">
-                <img class="img-responsive" src="${imageUrl}" alt="">
-            </div>
-            <%-- only display the read more text if a link has been provided --%>
-            <c:if test="${not empty linkUrl}">
-                <a class="btn-more hover-effect" href="${linkUrl}" alt="${title}"><fmt:message key="jdnt_highlight.readmore"/> +</a>
-            </c:if>
+<div class="thumbnails thumbnail-style thumbnail-kenburn">
+    <div class="thumbnail-img">
+        <div class="overflow-hidden">
+            <img class="img-responsive" src="${imageUrl}" alt="">
         </div>
-        <div class="caption">
-            <c:choose>
-            <c:when test="${not empty linkUrl}">
-            <h3><a class="hover-effect" href="${linkUrl}">${title}</a></h3>
-            </c:when>
-                <c:otherwise>
-                    <h3><a class="hover-effect" href="#">${title}</a></h3>
-                </c:otherwise>
-            </c:choose>
-            <p>${description}</p>
-        </div>
+        <%-- only display the read more text if a link has been provided --%>
+        <c:if test="${not empty linkUrl}">
+            <a class="btn-more hover-effect" href="${linkUrl}" alt="${title}"><fmt:message
+                    key="jdnt_highlight.readmore"/> +</a>
+        </c:if>
     </div>
+    <div class="caption">
+        <c:choose>
+            <c:when test="${not empty linkUrl}">
+                <h3><a class="hover-effect" href="${linkUrl}">${title}</a></h3>
+            </c:when>
+            <c:otherwise>
+                <h3><a class="hover-effect" href="#">${title}</a></h3>
+            </c:otherwise>
+        </c:choose>
+        <p>${description}</p>
+    </div>
+</div>

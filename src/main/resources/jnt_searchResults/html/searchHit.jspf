@@ -1,6 +1,9 @@
 <div class="inner-results">
     <h3><a href="${hit.link}">${fn:escapeXml(functions:abbreviate(hit.title, 100,120,'...'))}</a></h3>
-    <ul class="list-inline up-ul"><li>${hit.link}</li>‎</ul>
+    <ul class="list-inline up-ul">
+        <li>${hit.link}</li>
+        ‎
+    </ul>
     <p>${hit.excerpt}</p>
     <ul class="list-inline down-ul">
         <li>${hit.contentType}</li>

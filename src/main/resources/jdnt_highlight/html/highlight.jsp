@@ -26,20 +26,20 @@
 </c:if>
 
 <div class="service">
-<c:choose>
+    <c:choose>
         <%-- if there is a link display, make the icon clickable --%>
         <c:when test="${jcr:isNodeType(currentNode, 'jdmix:hasLink')}">
             <a href="${linkUrl}"><i class="fa ${icon} service-icon"></i></a>
-</c:when>
-                <c:otherwise><i class="fa ${icon} service-icon"></i></c:otherwise>
-            </c:choose>
-                <div class="desc">
-                    <h4>${title}</h4>
+        </c:when>
+        <c:otherwise><i class="fa ${icon} service-icon"></i></c:otherwise>
+    </c:choose>
+    <div class="desc">
+        <h4>${title}</h4>
 
-                    <p>${description}</p>
+        <p>${description}</p>
         <%-- display a read more text link if a link has been provided --%>
         <c:if test="${jcr:isNodeType(currentNode, 'jdmix:hasLink')}">
             <a href="${linkUrl}" alt="${title}"><fmt:message key="jdnt_highlight.readmore"/></a>
         </c:if>
-                </div>
-            </div>
+    </div>
+</div>

@@ -67,18 +67,18 @@
     <!-- JS Global Compulsory -->
     <template:addResources type="javascript" resources="jquery.min.js"/>
     <template:addResources type="javascript" resources="jquery-migrate.min.js"/>
-    <template:addResources type="javascript" resources="bootstrap3-affix.js" />
-    <template:addResources type="javascript" resources="bootstrap3-alert.js" />
-    <template:addResources type="javascript" resources="bootstrap3-button.js" />
-    <template:addResources type="javascript" resources="bootstrap3-carousel.js" />
-    <template:addResources type="javascript" resources="bootstrap3-collapse.js" />
-    <template:addResources type="javascript" resources="bootstrap3-dropdown.js" />
-    <template:addResources type="javascript" resources="bootstrap3-modal.js" />
-    <template:addResources type="javascript" resources="bootstrap3-scrollspy.js" />
-    <template:addResources type="javascript" resources="bootstrap3-tab.js" />
-    <template:addResources type="javascript" resources="bootstrap3-tooltip.js" />
-    <template:addResources type="javascript" resources="bootstrap3-popover.js" />
-    <template:addResources type="javascript" resources="bootstrap3-transition.js" />
+    <template:addResources type="javascript" resources="bootstrap3-affix.js"/>
+    <template:addResources type="javascript" resources="bootstrap3-alert.js"/>
+    <template:addResources type="javascript" resources="bootstrap3-button.js"/>
+    <template:addResources type="javascript" resources="bootstrap3-carousel.js"/>
+    <template:addResources type="javascript" resources="bootstrap3-collapse.js"/>
+    <template:addResources type="javascript" resources="bootstrap3-dropdown.js"/>
+    <template:addResources type="javascript" resources="bootstrap3-modal.js"/>
+    <template:addResources type="javascript" resources="bootstrap3-scrollspy.js"/>
+    <template:addResources type="javascript" resources="bootstrap3-tab.js"/>
+    <template:addResources type="javascript" resources="bootstrap3-tooltip.js"/>
+    <template:addResources type="javascript" resources="bootstrap3-popover.js"/>
+    <template:addResources type="javascript" resources="bootstrap3-transition.js"/>
     <!-- JS Implementing Plugins -->
     <template:addResources type="javascript" resources="back-to-top.js"/>
     <template:addResources type="javascript" resources="smoothScroll.js"/>
@@ -96,20 +96,20 @@
     <template:addResources type="javascript" resources="jahiademo-custom.js"/>
     <!-- JS Page Level -->
     <template:addResources type="javascript" resources="app.js"/>
-    <template:addResources type="javascript" resources="parallax-slider.js" />
+    <template:addResources type="javascript" resources="parallax-slider.js"/>
     <template:addResources type="inline">
         <script type="text/javascript">
-            jQuery(document).ready(function() {
+            jQuery(document).ready(function () {
                 App.init();
                 ParallaxSlider.initParallaxSlider();
             });
 
             <%-- Fix the bootstrap menu behavior in the mobile view --%>
-            $(function(){
-                $('.dropdown').hover(function() {
+            $(function () {
+                $('.dropdown').hover(function () {
                             $(this).addClass('open');
                         },
-                        function() {
+                        function () {
                             $(this).removeClass('open');
                         });
             });
@@ -134,7 +134,7 @@
 <jsp:useBean id="now" class="java.util.Date"/>
 <fmt:formatDate value="${now}" pattern="yyyy" var="thisYear"/>
 
-<body class="header-fixed header-fixed-space-v2 <template:include view="hidden.style"/>" >
+<body class="header-fixed header-fixed-space-v2 <template:include view="hidden.style"/>">
 
 <div class="wrapper">
     <!--=== Header v8 ===-->
@@ -149,7 +149,7 @@
                     <!--Small language login menu-->
                     <div class="col-sm-6 col-xs-6">
                         <div class="topbar-list topbar-menu">
-                        <template:area path="languageLoginMini"/>
+                            <template:area path="languageLoginMini"/>
                         </div>
                         <div class="topbar-toggler"><span class="user-box hidden-sm hidden-md hidden-lg"> <i
                                 class="fa fa-user"></i>&nbsp;|&nbsp;<i class="fa fa-globe"></i>&nbsp;<i
@@ -183,18 +183,19 @@
                     <c:choose>
                         <c:when test="${jcr:isNodeType(siteNode, 'jdmix:siteLogo')}">
                             <div class="navbar-brand">
-                                <template:module node="${siteNode}" view="default" nodeTypes="jdmix:siteLogo" editable="true"/>
+                                <template:module node="${siteNode}" view="default" nodeTypes="jdmix:siteLogo"
+                                                 editable="true"/>
                             </div>
                         </c:when>
                         <c:otherwise>
-                    <div id="logo" class="navbar-brand">
-                        <template:area path="logo"/>
-                    </div>
+                            <div id="logo" class="navbar-brand">
+                                <template:area path="logo"/>
+                            </div>
                         </c:otherwise>
                     </c:choose>
                 </div>
                 <div class="collapse navbar-collapse navbar-responsive-collapse">
-                <template:area path="navmenu"/>
+                    <template:area path="navmenu"/>
                 </div>
             </div>
         </div>
@@ -208,7 +209,7 @@
         <template:area path="pagecontent"/>
     </div>
     <!-- End Content Part -->
-<br/>
+    <br/>
     <!--=== Footer Version 1 ===-->
     <div class="footer-v1">
         <div class="footer">
@@ -249,7 +250,8 @@
                     <div class="col-md-6">
                         <p>
                             ${thisYear} &copy; <fmt:message key="footer.copyrights"/>
-                            <a href="#"><fmt:message key="footer.privacy"/></a> | <a href="#"><fmt:message key="footer.terms"/></a>
+                            <a href="#"><fmt:message key="footer.privacy"/></a> | <a href="#"><fmt:message
+                                key="footer.terms"/></a>
                         </p>
                     </div>
 

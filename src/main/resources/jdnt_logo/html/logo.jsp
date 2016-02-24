@@ -20,5 +20,5 @@
     <c:url var="logoUrl" value="${logo.url}"/>
     <c:url var="homePageURL" value="${renderContext.site.home.url}"/>
 
-        <a href="${homePageURL}" class="logo"><img src="${logoUrl}" alt="Logo"></a>
+    <a href="${homePageURL}" class="logo"><img src="${logoUrl}" alt="Logo"></a>
 </c:if>

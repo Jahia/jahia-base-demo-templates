@@ -43,30 +43,30 @@
             class="fa fa-building-o"></i>${street.string}
         <br/><i class="fa fa-building-o" style="visibility: hidden;"></i>${town.string}&nbsp;${zipCode.string}&nbsp;-&nbsp;${country.string}
     </a>
-    </c:if>
-    <c:if test="${not empty email}">
+        </c:if>
+        <c:if test="${not empty email}">
     <li><a href="mailto:${email.string}"><i class="fa fa-envelope"></i>${email.string}</a></li>
     </c:if>
     <c:if test="${not empty phone}">
-    <li><a href="tel:${phone.string}"><i class="fa fa-phone"></i>${phone.string}</a></li>
+        <li><a href="tel:${phone.string}"><i class="fa fa-phone"></i>${phone.string}</a></li>
     </c:if>
     <c:if test="${not empty website.string and website.string != 'http://'}">
-    <li><a href="${website.string}"><i class="fa fa-globe"></i>${website.string}</a></li>
+        <li><a href="${website.string}"><i class="fa fa-globe"></i>${website.string}</a></li>
     </c:if>
 </ul>
 
-    <!-- Company Social Icons -->
-    <ul class="list-inline who margin-bottom-30">
-        <c:if test="${not empty facebook and facebook != 'http://'}">
-            <li><a href="${facebook}"><i class="fa fa-facebook-official"></i></a></li>
-        </c:if>
-        <c:if test="${not empty twitter and twitter != 'http://'}">
-            <li><a href="${twitter}"><i class="fa fa-twitter-square"></i></a></li>
-        </c:if>
-        <c:if test="${not empty googlePlus and googlePlus != 'http://'}">
-            <li><a href="${googlePlus}"><i class="fa fa-google-plus-square"></i></a></li>
-        </c:if>
-        <c:if test="${not empty linkedin and linkedin != 'http://'}">
-            <li><a href="${linkedin}"><i class="fa fa-linkedin-square"></i></a></li>
-        </c:if>
-    </ul>
+<!-- Company Social Icons -->
+<ul class="list-inline who margin-bottom-30">
+    <c:if test="${not empty facebook and facebook != 'http://'}">
+        <li><a href="${facebook}"><i class="fa fa-facebook-official"></i></a></li>
+    </c:if>
+    <c:if test="${not empty twitter and twitter != 'http://'}">
+        <li><a href="${twitter}"><i class="fa fa-twitter-square"></i></a></li>
+    </c:if>
+    <c:if test="${not empty googlePlus and googlePlus != 'http://'}">
+        <li><a href="${googlePlus}"><i class="fa fa-google-plus-square"></i></a></li>
+    </c:if>
+    <c:if test="${not empty linkedin and linkedin != 'http://'}">
+        <li><a href="${linkedin}"><i class="fa fa-linkedin-square"></i></a></li>
+    </c:if>
+</ul>

@@ -22,7 +22,7 @@
 <jcr:nodeProperty node="${currentNode}" name="overview" var="overview"/>
 <div class="row clients-page margin-bottom-30">
     <br>
-${overview.string}
+    ${overview.string}
 
-<template:area path="${currentNode.path}/Company-Specific-Content" nodeTypes="jmix:droppableContent"/>
+    <template:area path="${currentNode.path}/Company-Specific-Content" nodeTypes="jmix:droppableContent"/>
 </div>

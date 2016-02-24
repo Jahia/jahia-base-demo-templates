@@ -9,11 +9,11 @@
 <c:set var="language" value="${currentResource.locale.language}"/>
 <fmt:setLocale value="${language}" scope="session"/>
 
-<c:set var="creator" value="${currentNode.properties['jcr:createdBy']}" />
+<c:set var="creator" value="${currentNode.properties['jcr:createdBy']}"/>
 <c:set var="newsImage" value="${currentNode.properties['image']}"/>
 <c:set var="newsTitle" value="${currentNode.properties['jcr:title']}"/>
 <%-- set descriptionTxt variable as plain text by stripping the rich text html tags from it --%>
-<c:set var="descriptionTxt" value="${functions:removeHtmlTags(currentNode.properties['desc'].string)}" />
+<c:set var="descriptionTxt" value="${functions:removeHtmlTags(currentNode.properties['desc'].string)}"/>
 
 <fmt:formatDate pattern="MMM" dateStyle="long" value="${currentNode.properties['date'].time}" var="newsMonth"/>
 <fmt:formatDate pattern="d" dateStyle="short" value="${currentNode.properties['date'].time}" var="newsDate"/>

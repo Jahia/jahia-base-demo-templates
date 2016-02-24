@@ -42,22 +42,22 @@
         <%-- get the child sliderPanels --%>
 
         <c:set var="panels" value="${jcr:getChildrenOfType(currentNode, 'jdnt:sliderPanel')}"/>
-<div class="ms-layers-template">
+        <div class="ms-layers-template">
             <div class="master-slider ms-skin-black-2 round-skin" id="masterslider${id}">
                     <%-- for each slider panel specified, use the sliderPanel jsp to display --%>
-        <c:forEach items="${panels}" var="panel" varStatus="item">
-            <template:module node="${panel}" nodeTypes="jdnt:sliderPanel" editable="true"/>
-        </c:forEach>
-    </div>
-</div>
+                <c:forEach items="${panels}" var="panel" varStatus="item">
+                    <template:module node="${panel}" nodeTypes="jdnt:sliderPanel" editable="true"/>
+                </c:forEach>
+            </div>
+        </div>
     </c:otherwise>
 </c:choose>
 
-        <template:addResources type="inline">
-        <script type="text/javascript">
-            $( window ).load(function() {
-                MSfullWidth.initMSfullWidth("masterslider${id}", "${transition}");
-            });
-        </script>
-        </template:addResources>
+<template:addResources type="inline">
+    <script type="text/javascript">
+        $(window).load(function () {
+            MSfullWidth.initMSfullWidth("masterslider${id}", "${transition}");
+        });
+    </script>
+</template:addResources>
 

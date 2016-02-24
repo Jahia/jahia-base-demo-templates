@@ -79,16 +79,16 @@
 </c:choose>
 
 <script type="text/javascript">
-    $(document).ready(function(){
+    $(document).ready(function () {
         $("#parallax${currentNode.identifier}").css("background-image", "url('${backgroundImg.url}')");
     })
-    $(document).ready(function(){
+    $(document).ready(function () {
         $("#parallax${currentNode.identifier}").css("background-color", "${backgroundColor}");
     })
-    $(document).ready(function(){
+    $(document).ready(function () {
         $("#parallax${currentNode.identifier} div").width("${width}");
     })
-    $(document).ready(function(){
+    $(document).ready(function () {
         $("#parallax${currentNode.identifier} p, #parallax${currentNode.identifier} li, #parallax${currentNode.identifier} li a, #parallax${currentNode.identifier} label, #parallax${currentNode.identifier} h1, #parallax${currentNode.identifier} h2, #parallax${currentNode.identifier} h3, #parallax${currentNode.identifier} h4, #parallax${currentNode.identifier} h5, #parallax${currentNode.identifier} h6").css("color", "${textColor}");
     })
 </script>

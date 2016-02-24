@@ -64,30 +64,40 @@
 
         <c:if test="${not empty subtitle}">
             <c:choose>
-                <c:when test="${textColor eq 'dark'}"> <div class="first-layer-editslider color-dark">${subtitle}</div></c:when>
-                <c:otherwise><div class="first-layer-editslider">${subtitle}</div></c:otherwise>
+                <c:when test="${textColor eq 'dark'}">
+                    <div class="first-layer-editslider color-dark">${subtitle}</div>
+                </c:when>
+                <c:otherwise>
+                    <div class="first-layer-editslider">${subtitle}</div>
+                </c:otherwise>
             </c:choose>
         </c:if>
-        <c:if test="${not empty title}"><div class="second-layer-editslider">
-            <%--TODO: Subtitle should always be color-green --%>
-        <span class="color-green">${title}</span>
-        </div></c:if>
+        <c:if test="${not empty title}">
+            <div class="second-layer-editslider">
+                    <%--TODO: Subtitle should always be color-green --%>
+                <span class="color-green">${title}</span>
+            </div>
+        </c:if>
 
         <c:if test="${not empty summary}">
             <c:choose>
-                <c:when test="${textColor eq 'dark'}"> <div class="text-layer-editslider color-dark">${summary}</div></c:when>
-                <c:otherwise><div class="text-layer-editslider">${summary}</div></c:otherwise>
+                <c:when test="${textColor eq 'dark'}">
+                    <div class="text-layer-editslider color-dark">${summary}</div>
+                </c:when>
+                <c:otherwise>
+                    <div class="text-layer-editslider">${summary}</div>
+                </c:otherwise>
             </c:choose>
         </c:if>
 
         <c:if test="${not empty link}">
-        <a class="but-layer-editslider" href="${link.url}" alt="${title}">${linkText}</a>
-</c:if>
+            <a class="but-layer-editslider" href="${link.url}" alt="${title}">${linkText}</a>
+        </c:if>
     </div>
     <%-- second image if exists --%>
     <c:if test="${not empty image}">
-    <img class="ms-img-bordered edit-slider-img" src="${image.url}" alt="">
-</c:if>
+        <img class="ms-img-bordered edit-slider-img" src="${image.url}" alt="">
+    </c:if>
 </div>
 
 

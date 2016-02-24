@@ -38,10 +38,10 @@
 
 <c:if test="${jcr:isNodeType(currentNode, 'jdmix:internalLink')}">
     <c:set var="linkNode" value="${currentNode.properties.internalLink.node}"/>
-        <c:set var="linkTitle" value="${currentNode.properties.linkTitle.string}"/>
-        <c:if test="${empty linkTitle}">
-            <c:set var="linkTitle" value="${linkNode.displayableName}"/>
-        </c:if>
+    <c:set var="linkTitle" value="${currentNode.properties.linkTitle.string}"/>
+    <c:if test="${empty linkTitle}">
+        <c:set var="linkTitle" value="${linkNode.displayableName}"/>
+    </c:if>
     <a href="${linkNode.url}" style="text-decoration: none;">
 </c:if>
 <!--=== Breadcrumbs v3 ===-->

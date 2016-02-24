@@ -18,10 +18,11 @@
 </c:if>
 
 <%-- generate search query --%>
-<c:set var="searchStatement" value="select * from [jdnt:company] as comp where isdescendantnode(comp, ['${startNodePath}'])"/>
+<c:set var="searchStatement"
+       value="select * from [jdnt:company] as comp where isdescendantnode(comp, ['${startNodePath}'])"/>
 
-<query:definition var="listQuery" statement="${searchStatement}" />
+<query:definition var="listQuery" statement="${searchStatement}"/>
 
-<c:set target="${moduleMap}" property="editable" value="false" />
-<c:set target="${moduleMap}" property="listQuery" value="${listQuery}" />
-<c:set target="${moduleMap}" property="subNodesView" value="default" />
+<c:set target="${moduleMap}" property="editable" value="false"/>
+<c:set target="${moduleMap}" property="listQuery" value="${listQuery}"/>
+<c:set target="${moduleMap}" property="subNodesView" value="default"/>

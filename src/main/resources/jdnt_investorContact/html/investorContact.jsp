@@ -20,7 +20,7 @@
 <c:set var="props" value="${currentNode.properties}"/>
 
 <div class="who">
-<h3>${currentNode.properties['firstname'].string}&nbsp;${currentNode.properties['lastname'].string}</h3>
+    <h3>${currentNode.properties['firstname'].string}&nbsp;${currentNode.properties['lastname'].string}</h3>
     <ul class="list-unstyled">
         <c:if test="${not empty currentNode.properties['email'].string}">
             <li><a href="#"><i class="fa fa-envelope-o"></i><fmt:message

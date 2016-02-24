@@ -21,9 +21,9 @@
 <c:set var="imageUrl" value="${currentNode.properties['image'].node.url}"/>
 <c:set var="caption" value="${currentNode.properties['caption'].string}"/>
 
-    <img class="carouselImageFull" src="${imageUrl}" alt="${caption}">
-    <c:if test="${not empty caption}">
-        <div class="carousel-caption">
-            <p>${caption}</p>
-        </div>
-    </c:if>
+<img class="carouselImageFull" src="${imageUrl}" alt="${caption}">
+<c:if test="${not empty caption}">
+    <div class="carousel-caption">
+        <p>${caption}</p>
+    </div>
+</c:if>
