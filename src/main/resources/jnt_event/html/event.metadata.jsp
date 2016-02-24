@@ -30,10 +30,12 @@
         <li>${location.string}</li>
     </c:if>
     <c:if test="${not empty street or not empty  town or not empty country}">
-    <li><a href="https://maps.google.com?q=${street.string}+${town.string}+${zipCode.string}+${country.string}"><i
+        <li>
+            <a href="https://maps.google.com?q=${street.string}+${town.string}+${zipCode.string}+${country.string}"><i
             class="fa fa-building-o"></i>${street.string}
         <br/><i class="fa fa-building-o" style="visibility: hidden;"></i>${town.string}&nbsp;${zipCode.string}&nbsp;-&nbsp;${country.string}
     </a>
+        </li>
         </c:if>
 </ul>
 
