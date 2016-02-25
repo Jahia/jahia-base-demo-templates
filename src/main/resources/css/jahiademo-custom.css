@@ -309,7 +309,7 @@
 	font-size: 15px!important;
 }
 #forum-body .negativeVote:hover, #forum-body .positiveVote:hover {
-	color: #e74c3c!important!important;
+	color: #e74c3c!important;
 }
 #forum-body .negativeVote {
 	background: none!important;
@@ -425,7 +425,7 @@ div.rooms, div.topics, div.posts {
 }
 
 #forum-body ul.forum-profile-icons li a, #forum-body ul.forum-profile-icons li a {
-	color: #cccccc!important;;
+	color: #cccccc!important;
 }
 
 #forum-body ul.forum-profile-icons li a:hover, #forum-body ul.forum-profile-icons li a:active {
@@ -489,7 +489,7 @@ div.rooms, div.topics, div.posts {
 #forum-body .topics .forum-box .forum-list .forum-list-header .icon .forum-profile-icons li:first-child a{
     color: red!important;
     width: 100%!important;
-    text-align: center!important!
+    text-align: center!important;
 }
 
 #forum-body .topics .forum-box .forum-list .forum-list-header .icon .forum-profile-icons li:nth-child(2){
@@ -499,7 +499,7 @@ div.rooms, div.topics, div.posts {
 #forum-body .topics .forum-box .forum-list .forum-list-header .icon .forum-profile-icons li:nth-child(2) a{
     background: white!important;
     width: 100%!important;
-    text-align: center!important!
+    text-align: center!important;
 }
 
 
@@ -512,7 +512,7 @@ div.rooms, div.topics, div.posts {
 #forum-body .topics .forum-box .forums .icontopic .forum-profile-icons .delete-post-icon a {
     color: red!important;
     width: 100%!important;
-    text-align: center!important!
+    text-align: center!important;
 }
 
 #forum-body .forum-box .forum-postbody .forum-profile-icons .delete-post-icon a{
@@ -801,7 +801,7 @@ div.rooms, div.topics, div.posts {
 	font-size: 15px!important;
 }
 #forum-body .negativeVote:hover, #forum-body .positiveVote:hover {
-	color: #e74c3c!important!important;
+	color: #e74c3c!important;
 }
 #forum-body .negativeVote {
 	background: none!important;
@@ -991,7 +991,7 @@ div.rooms, div.topics, div.posts {
 #forum-body .topics .forum-box .forum-list .forum-list-header .icon .forum-profile-icons li:first-child a{
     color: red!important;
     width: 100%!important;
-    text-align: center!important!
+    text-align: center!important;
 }
 
 #forum-body .topics .forum-box .forum-list .forum-list-header .icon .forum-profile-icons li:nth-child(2){
@@ -1001,7 +1001,7 @@ div.rooms, div.topics, div.posts {
 #forum-body .topics .forum-box .forum-list .forum-list-header .icon .forum-profile-icons li:nth-child(2) a{
     background: white!important;
     width: 100%!important;
-    text-align: center!important!
+    text-align: center!important;
 }
 
 
@@ -1014,7 +1014,7 @@ div.rooms, div.topics, div.posts {
 #forum-body .topics .forum-box .forums .icontopic .forum-profile-icons .delete-post-icon a {
     color: red!important;
     width: 100%!important;
-    text-align: center!important!
+    text-align: center!important;
 }
 */
 
@@ -2105,7 +2105,7 @@ ul.idTabs {
 	clear:both!important;
 	list-style-type:none!important;
 	overflow:hidden!important;
-	background:#FFF none repeat scroll 0% 0%!important;!important;
+	background:#FFF none repeat scroll 0% 0%!important;
 	margin:0 0 0 0!important;
 	padding:10px!important;
 	font-size: 14px!important;
@@ -2136,7 +2136,7 @@ ul.idTabs {
 .idTabs li a.selected {
 	color: #fff!important;
 	border: none!important;
-	background: #72c02cimportant!important;!important;
+	background: #72c02c!important;
 }
 
 
