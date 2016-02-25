@@ -49,7 +49,7 @@
 <template:addResources type="inline">
     <script type="text/javascript">
         $.ajax({
-            timeout: 500,
+            timeout: 2000,
             url: 'http://finance.google.com/finance/info?client=ig&q=${currentNode.properties['stock'].string}',
             dataType: 'jsonp',
             data: {get_param: 'value'},
