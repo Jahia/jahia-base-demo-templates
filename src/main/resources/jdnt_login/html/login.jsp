@@ -22,13 +22,10 @@
 <c:if test="${! renderContext.editMode}">
     <c:if test="${! renderContext.loggedIn}">
         <c:set var="siteNode" value="${currentNode.resolveSite}"/>
-
-        <c:if test="${! jcr:isNodeType(siteNode, 'genericmix:hideLoginButton')}">
-            <div class="pull-right"><a id="login" href="#loginForm" role="button" data-toggle="modal"
-                                       data-target="#loginForm"><i class="fa fa-user"></i> <fmt:message
-                    key="loginForm.loginbutton.label"/></a>
-            </div>
-        </c:if>
+        <div class="pull-right"><a id="login" href="#loginForm" role="button" data-toggle="modal"
+                                   data-target="#loginForm"><i class="fa fa-user"></i> <fmt:message
+                key="loginForm.loginbutton.label"/></a>
+        </div>
     </c:if>
 </c:if>
 <c:if test="${renderContext.loggedIn}">
