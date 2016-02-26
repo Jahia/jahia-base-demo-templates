@@ -25,7 +25,7 @@
                     </property>
                 </bean>
                 <bean class="org.jahia.services.content.nodetypes.initializers.ChoiceListValue">
-                    <property name="displayName" value="Link"/>
+                    <property name="displayName" value="Internal Link"/>
                     <property name="stringValue" value="link"/>
                     <property name="properties">
                         <map>
