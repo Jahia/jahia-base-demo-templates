@@ -16,6 +16,15 @@
                     </property>
                 </bean>
                 <bean class="org.jahia.services.content.nodetypes.initializers.ChoiceListValue">
+                    <property name="displayName" value="External Link"/>
+                    <property name="stringValue" value="externalLink"/>
+                    <property name="properties">
+                        <map>
+                            <entry key="addMixin" value="jdmix:cookieExternalLink"/>
+                        </map>
+                    </property>
+                </bean>
+                <bean class="org.jahia.services.content.nodetypes.initializers.ChoiceListValue">
                     <property name="displayName" value="Link"/>
                     <property name="stringValue" value="link"/>
                     <property name="properties">

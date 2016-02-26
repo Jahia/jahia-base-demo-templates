@@ -39,6 +39,12 @@
                 <c:if test="${! empty cookieWhatAreLinkText}">
                 , cookieWhatAreLinkText: '${fn:escapeXml(cookieWhatAreLinkText)}'
                 </c:if>
+                <c:if test="${jcr:isNodeType(currentNode, 'jdmix:cookieExternalLink')}">
+                    <c:url var="cookieWhatAreTheyLink" value="${currentNode.properties.cookiePageExternalLink.string}" />
+                    <c:if test="${! empty cookieWhatAreTheyLink}">
+                    ,cookieWhatAreTheyLink: '${fn:escapeXml(cookieWhatAreTheyLink)}'
+                    </c:if>
+                </c:if>
                 <c:if test="${jcr:isNodeType(currentNode, 'jdmix:cookieLink')}">
                 <c:url var="cookieWhatAreTheyLink" value="${currentNode.properties.cookiePageLink.node.url}" />
                 <c:if test="${! empty cookieWhatAreTheyLink}">

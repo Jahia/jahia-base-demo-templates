@@ -8,7 +8,7 @@
                  j:title="jahiademo"
                  jcr:mixinTypes="jmix:hasExternalProviderExtension"
                  jcr:primaryType="jnt:module">
-
+                
 <portlets jcr:primaryType="jnt:portletFolder"/>
                 <files jcr:primaryType="jnt:folder">
                     <bootstrap jcr:primaryType="jnt:folder">
@@ -18,11 +18,12 @@
                             </bootstrap.css>
                         </css>
                         <fonts jcr:primaryType="jnt:folder">
-                            <glyphicons-halflings-regular.svg jcr:mixinTypes="jmix:image" jcr:primaryType="jnt:file">
+                            <glyphicons-halflings-regular.svg jcr:mixinTypes="jmix:image"
+jcr:primaryType="jnt:file">
                                 <jcr:content j:lastExtractionDate="2016-02-19T15:27:15.701+01:00"
                                   jcr:mimeType="image/svg+xml"
                                   jcr:primaryType="jnt:resource"/>
-                            </glyphicons-halflings-regular.svg>
+                                </glyphicons-halflings-regular.svg>
                             <glyphicons-halflings-regular.ttf jcr:primaryType="jnt:file">
                                 <jcr:content jcr:mimeType="application/x-font-ttf" jcr:primaryType="jnt:resource"/>
                             </glyphicons-halflings-regular.ttf>
@@ -151,14 +152,6 @@
                   j:view="jahiademo"
                   jcr:mixinTypes="jmix:theme"
                   jcr:primaryType="jnt:template">
-                        <simple jcr:primaryType="jnt:pageTemplate">
-                            <pagecontent jcr:primaryType="jnt:contentList">
-                                <bootstrap-container jcr:mixinTypes="jmix:bootstrap3FullComponentRowPredefined"
-                                     jcr:primaryType="jnt:bootstrap3FullComponent"
-                                     layout="12"
-                                     rowType="predefined"/>
-                            </pagecontent>
-                        </simple>
                         <navmenu jcr:primaryType="jnt:contentList">
                             <navigation-menu jcr:primaryType="jdnt:navmenu"/>
                         </navmenu>
@@ -265,7 +258,7 @@
                                     <bootstrap-container-side1 jcr:primaryType="jnt:contentList">
                                         <main-resource-display j:mainResourceView="metadata" jcr:primaryType="jnt:mainResourceDisplay"/>
                                         <map-static j:bindedComponent="/modules/jahiademo/templates/base/company-content-template/pagecontent/bootstrap-container/bootstrap-container/main-resource-display"
-                                       j:classname="map map-box map-box-space1 margin-bottom-30 overflow-hidden"
+                                       j:classname="demodxmap margin-bottom-30 overflow-hidden"
                                        j:height="255"
                                        j:imageType="png8"
                                        j:mapType="roadmap"
@@ -501,7 +494,7 @@
                                     </bootstrap-container>
                                     <bootstrap-container-side1 jcr:primaryType="jnt:contentList">
                                         <main-resource-display j:mainResourceView="metadata" jcr:primaryType="jnt:mainResourceDisplay"/>
-                                        <map-static j:classname="map map-box map-box-space1 margin-bottom-30 overflow-hidden"
+                                        <map-static j:classname="demodxmap margin-bottom-30 overflow-hidden"
                                        j:height="255"
                                 j:imageType="png8"
                                        j:mapType="roadmap"
@@ -510,7 +503,7 @@
                                        j:skin="skins.custom"
                                 j:width="325"
                                 j:zoom="auto"
-                                jcr:mixinTypes="jmix:customSkin jmix:skinnable"
+                                       jcr:mixinTypes="jmix:customSkin jmix:skinnable"
                                 jcr:primaryType="jnt:staticMap"/>
                                         <main-resource-display-1 j:mainResourceView="addPeople"
                                                     jcr:primaryType="jnt:mainResourceDisplay"/>
