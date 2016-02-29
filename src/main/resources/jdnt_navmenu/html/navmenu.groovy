@@ -5,8 +5,10 @@ import org.jahia.services.render.RenderService
 import org.jahia.services.render.Resource
 import org.jahia.taglibs.jcr.node.JCRTagUtils
 
-/* udpate this to increase or decrease the menu level allowed */
+/* update this to increase or decrease the menu level allowed */
 def maxDepth = 4;
+/* update this to increase or decrease the max menu items on top level before putting them under the last menu item caret */
+def maxTopLevel = 5;
 def printMenu;
 printMenu = { node, navMenuLevel ->
     if (node != null) {
@@ -95,8 +97,8 @@ printMenu = { node, navMenuLevel ->
                                     /* end add home page as menu item */
                                     ulIsOpen = true;
                                 }
-                                // if this is the 8th item on the top level menu item put it in a new top level menu item
-                                if (index == 7) {
+                                // if this is the maxTopLevel item on the top level menu item put it in a new top level menu item
+                                if (index == maxTopLevel) {
                                     //start new menu
                                     println "<li class=\"dropdown\"><a href=\"javascript:void(0)\">▼</a>"
                                     println "<ul class=\"dropdown-menu pull-right dropdown-menu-alt-side\">"
