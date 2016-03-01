@@ -39,7 +39,7 @@
 
 <div class="sticky-footer">
     <p class="copyright-space">
-        2013 © Unify Template. ALL Rights Reserved.
+        <script>document.write(new Date().getFullYear())</script> © ALL Rights Reserved.
     </p>
 </div>
 
