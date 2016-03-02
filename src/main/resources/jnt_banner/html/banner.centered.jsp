@@ -47,7 +47,7 @@
     <a href="${linkNode.url}" style="text-decoration: none;">
 </c:if>
 <!--=== Breadcrumbs v3 ===-->
-<div class="breadcrumbs-v3 img-v1 text-center" style="background-image: url(${bannerUrl})">
+<div class="breadcrumbs-v3 img-v1 text-center" style='background-image: url("${bannerUrl}")'>
     <div class="container">
         <h1>${title}</h1>
         <p>${headline}</p>
