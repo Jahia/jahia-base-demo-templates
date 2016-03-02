@@ -8,7 +8,7 @@ import org.jahia.taglibs.jcr.node.JCRTagUtils
 /* update this to increase or decrease the menu level allowed */
 def maxDepth = 4;
 /* update this to increase or decrease the max menu items on top level before putting them under the last menu item caret */
-def maxTopLevel = 5;
+def maxTopLevel = 4;
 def printMenu;
 printMenu = { node, navMenuLevel ->
     if (node != null) {
