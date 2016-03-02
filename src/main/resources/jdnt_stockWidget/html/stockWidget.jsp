@@ -20,17 +20,34 @@
 <%--@elvariable id="currentAliasUser" type="org.jahia.services.usermanager.JahiaUser"--%>
 <template:addResources type="javascript" resources="plugins/counter/waypoints.min.js"/>
 <template:addResources type="javascript" resources="plugins/counter/jquery.counterup.min.js"/>
+<template:addResources type="javascript" resources="plugins/flip/jquery.flip.js"/>
+
+
 <c:set var="uuid" value="${currentNode.identifier}"/>
 <c:set var="id" value="${fn:replace(uuid,'-', '')}"/>
-<%-- Get the title of the carousel, if exists display above carousel --%>
+<c:set var="stock" value="${fn:toUpperCase(currentNode.properties['stock'].string)}"/>
+<c:set var="exchange" value="${fn:toUpperCase(currentNode.properties['stockExchange'].string)}"/>
+
+<c:set var="interval" value="${currentNode.properties['interval'].string}"/>
+<c:if test="${empty interval}">
+    <c:set var="interval" value="86400"/>
+</c:if>
+
+<c:set var="period" value="${currentNode.properties['period'].string}"/>
+<c:if test="${empty period}">
+    <c:set var="period" value="3M"/>
+</c:if>
+
+<%-- Get the title, if exists display --%>
 <c:set var="title" value="${currentNode.properties['jcr:title'].string}"/>
 <c:if test="${not empty title}">
     <div class="headline"><h2>${title}</h2></div>
 </c:if>
 
-<div id="stock-widget${uuid}" class="stock-widget">
+<div id="stock-widget${uuid}" class="card stock-widget">
+    <div class="front">
     <div class="stock-widget-wrapper">
-        <div class="title color-green">${currentNode.properties['stock'].string}</div>
+        <div class="title color-green">${stock}</div>
         <div class="description">
             <p></p>
         </div>
@@ -42,7 +59,14 @@
         </div>
         <div class="stock-update"><fmt:message key="jdnt_stockWidget.lastUpdate"/>&nbsp<fmt:formatDate
                 value="${currentNode.properties['jcr:lastModified'].time}"
-                pattern="dd/MMM/yyyy HH:mm"/></div>
+                pattern="dd/MMM/yyyy HH:mm"/>
+        </div>
+    </div>
+        <i class="fa fa-area-chart" title="<fmt:message key="jdnt_stockWidget.flipToChart"/>"></i>
+    </div>
+    <div class="back">
+        <img src="https://www.google.com/finance/getchart?q=${stock}&i=${interval}&p=${period}<c:if test="${not empty exchange}">&x=${exchange}</c:if> ">
+        <i class="fa fa-rotate-left" title="<fmt:message key="jdnt_stockWidget.flipToPrice"/>"></i>
     </div>
 </div>
 
@@ -50,7 +74,7 @@
     <script type="text/javascript">
         $.ajax({
             timeout: 2000,
-            url: 'http://finance.google.com/finance/info?client=ig&q=${currentNode.properties['stock'].string}',
+            url: 'http://finance.google.com/finance/info?client=ig&q=${stock}',
             dataType: 'jsonp',
             data: {get_param: 'value'},
             success: function (data) {
@@ -110,3 +134,18 @@
 </template:addResources>
 
 
+<template:addResources type="inline">
+    <script type="text/javascript">
+        $(function () {
+            $("#stock-widget${uuid}").flip({
+                axis: 'y',
+                trigger: 'click',
+                forceWidth: false,
+                forceHeight: false
+            }).find('.front, .back').css({
+                'width': '100%',
+                'height': '100%'
+            });
+        });
+    </script>
+</template:addResources>

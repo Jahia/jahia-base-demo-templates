@@ -117,6 +117,9 @@
 - value (string) hidden
 - variation (string) hidden
 - description (string) hidden
+ - stockExchange (string)
+ - interval (long) = 86400
+ - period (string) = '3M'
 
 [jdnt:companies] > jnt:contentList, mix:title, jdmix:jahiademo, jmix:manuallyOrderable, jmix:list orderable
   + * (jdnt:company)
