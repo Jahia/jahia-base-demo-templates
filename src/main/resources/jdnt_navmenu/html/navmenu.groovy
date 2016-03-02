@@ -51,7 +51,7 @@ printMenu = { node, navMenuLevel ->
                             // if this is not the top level of the menu
                             // or it's a top level item that has been pushed down a level
                             // and they have children
-                            if ((navMenuLevel > 1 || (navMenuLevel >= 1 && index >= 7)) && hasChildren) {
+                            if ((navMenuLevel > 1 || (navMenuLevel >= 1 && index >= maxTopLevel)) && hasChildren) {
                                 //if there are children use dropdown-submenu to display arrow
                                 listItemCssClass = "class=\"dropdown-submenu " + (inpath || active ? "active" : "") + "\"";
                             } else if (navMenuLevel <= 1 && hasChildren) {
