@@ -135,11 +135,16 @@
 <jsp:useBean id="now" class="java.util.Date"/>
 <fmt:formatDate value="${now}" pattern="yyyy" var="thisYear"/>
 
-<body class="header-fixed header-fixed-space-v2 <template:include view="hidden.style"/>">
+<c:if test="${not renderContext.editMode}">
+    <c:set var="headerSpace" value="header-fixed-space-v2"/>
+    <c:set var="stickyHeader" value="header-sticky"/>
+</c:if>
+
+<body class="header-fixed ${headerSpace} <template:include view="hidden.style"/>">
 
 <div class="wrapper">
     <!--=== Header v8 ===-->
-    <div class="header-v8 header-sticky">
+    <div class="header-v8 ${stickyHeader}">
         <!-- Topbar blog -->
         <div class="blog-topbar">
             <div class="topbar-search-block">
