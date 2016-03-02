@@ -15,7 +15,7 @@ printMenu = { node, navMenuLevel ->
         children = JCRContentUtils.getChildrenOfType(node, "jmix:navMenuItem")
         def ulIsOpen = false;
         boolean firstEntry = true;
-
+        def pageIndex = 0;
 
         children.eachWithIndex() { menuItem, index ->
             if (menuItem != null) {
@@ -51,7 +51,7 @@ printMenu = { node, navMenuLevel ->
                             // if this is not the top level of the menu
                             // or it's a top level item that has been pushed down a level
                             // and they have children
-                            if ((navMenuLevel > 1 || (navMenuLevel >= 1 && index >= maxTopLevel)) && hasChildren) {
+                            if ((navMenuLevel > 1 || (navMenuLevel >= 1 && pageIndex >= maxTopLevel)) && hasChildren) {
                                 //if there are children use dropdown-submenu to display arrow
                                 listItemCssClass = "class=\"dropdown-submenu " + (inpath || active ? "active" : "") + "\"";
                             } else if (navMenuLevel <= 1 && hasChildren) {
@@ -98,7 +98,7 @@ printMenu = { node, navMenuLevel ->
                                     ulIsOpen = true;
                                 }
                                 // if this is the maxTopLevel item on the top level menu item put it in a new top level menu item
-                                if (index == maxTopLevel) {
+                                if (pageIndex == maxTopLevel) {
                                     //start new menu
                                     println "<li class=\"dropdown\"><a href=\"javascript:void(0)\">▼</a>"
                                     println "<ul class=\"dropdown-menu pull-right dropdown-menu-alt-side\">"
@@ -145,6 +145,7 @@ printMenu = { node, navMenuLevel ->
                             }
                         }
                     }
+                    pageIndex++;
                 }
             }
         }
