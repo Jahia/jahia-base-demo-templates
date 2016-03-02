@@ -26,7 +26,7 @@
 <c:url value="${url.files}${logo.node.path}" var="logoUrl"/>
 <c:url value="${url.files}${bannerImg.node.path}" var="bannerUrl"/>
 
-<div class="breadcrumbs-v3 img-v1 text-center" style="background-image: url(${bannerUrl})">
+<div class="breadcrumbs-v3 img-v1 text-center" style='background-image: url("${bannerUrl}")'>
     <div class="container">
         <c:choose>
             <c:when test="${not empty logo}">
