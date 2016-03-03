@@ -51,15 +51,11 @@
                 <c:set var="linkTitle" value="${linkNode.displayableName}"/>
             </c:if>
             <c:if test="${not empty linkNode}">
-                <c:set var="pageUrl">
-                    ${linkNode.url}?pageView=
                     <c:choose>
-                        <c:when test="${topLevel == 'first'}">top</c:when>
-                        <c:when test="${topLevel == 'second'}">featured</c:when>
-                        <c:otherwise>all</c:otherwise>
+                    <c:when test="${topLevel == 'first'}"><c:set var="pageUrl" value="${linkNode.url}?pageView=top"/></c:when>
+                    <c:when test="${topLevel == 'second'}"><c:set var="pageUrl" value="${linkNode.url}?pageView=featured"/></c:when>
+                    <c:otherwise><c:set var="pageUrl" value="${linkNode.url}?pageView=all"/></c:otherwise>
                     </c:choose>
-                </c:set>
-
                 <ul class="pager">
 
                     <c:url var="moreStories" value=""/>

@@ -152,6 +152,14 @@ jcr:primaryType="jnt:file">
                   j:view="jahiademo"
                   jcr:mixinTypes="jmix:theme"
                   jcr:primaryType="jnt:template">
+                        <simple jcr:primaryType="jnt:pageTemplate">
+                                                        <pagecontent jcr:primaryType="jnt:contentList">
+                                                            <bootstrap-container jcr:mixinTypes="jmix:bootstrap3FullComponentRowPredefined"
+                                                                 jcr:primaryType="jnt:bootstrap3FullComponent"
+                                                                 layout="12"
+                                                                 rowType="predefined"/>
+                                                        </pagecontent>
+                                                    </simple>
                         <navmenu jcr:primaryType="jnt:contentList">
                             <navigation-menu jcr:primaryType="jdnt:navmenu"/>
                         </navmenu>

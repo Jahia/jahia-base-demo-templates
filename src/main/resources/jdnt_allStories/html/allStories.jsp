@@ -23,7 +23,7 @@
 
 <div id="allStories-content-${currentNode.identifier}">
     <c:set var="id" value="${fn:replace(currentNode.identifier,'-', '')}"/>
-    <c:set var="pageView" value="${param['pageView']}"/>
+    <c:set var="pageView" value="${fn:trim(param['pageView'])}"/>
 
     <c:if test="${renderContext.editMode}">
         <h4><fmt:message key="label.topStoriesArea"/></h4>
