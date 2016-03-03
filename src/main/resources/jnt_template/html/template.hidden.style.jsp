@@ -17,7 +17,7 @@
     <jcr:nodeProperty var="layout" node="${siteNode}" name="layout"/>
     <jcr:nodeProperty var="colorTheme" node="${siteNode}" name="colorTheme"/>
 
-    <c:if test="${colorTheme.string == 'Dark'}">dark</c:if>
+    <c:if test="${colorTheme.string == 'Dark'}"> dark</c:if>
     <c:if test="${layout.string == 'Boxed'}"> boxed-layout container</c:if>
 </c:if>
 

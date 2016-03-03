@@ -136,7 +136,7 @@
 <fmt:formatDate value="${now}" pattern="yyyy" var="thisYear"/>
 
 <c:if test="${not renderContext.editMode}">
-    <c:set var="headerSpace" value="header-fixed-space-v2"/>
+    <c:set var="headerSpace" value="header-fixed-space-v2 "/>
     <c:set var="stickyHeader" value="header-sticky"/>
 </c:if>
 
