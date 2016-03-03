@@ -52,6 +52,11 @@ jcr:primaryType="jnt:file">
                                     <jcr:content jcr:mimeType="text/css" jcr:primaryType="jnt:resource"/>
                                 </aqua.css>
                             </aqua>
+                            <aqua-alt jcr:primaryType="jnt:folder">
+                                <aqua-alt.css jcr:primaryType="jnt:file">
+                                    <jcr:content jcr:mimeType="text/css" jcr:primaryType="jnt:resource"/>
+                                </aqua-alt.css>
+                            </aqua-alt>
                             <blue jcr:primaryType="jnt:folder">
                                 <blue.css jcr:primaryType="jnt:file">
                                     <jcr:content jcr:mimeType="text/css" jcr:primaryType="jnt:resource"/>
