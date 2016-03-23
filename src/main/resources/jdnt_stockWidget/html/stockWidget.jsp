@@ -21,12 +21,16 @@
 <template:addResources type="javascript" resources="plugins/counter/waypoints.min.js"/>
 <template:addResources type="javascript" resources="plugins/counter/jquery.counterup.min.js"/>
 <template:addResources type="javascript" resources="plugins/flip/jquery.flip.js"/>
+<template:addResources type="javascript" resources="custom/widget.js"/>
 
 
 <c:set var="uuid" value="${currentNode.identifier}"/>
 <c:set var="id" value="${fn:replace(uuid,'-', '')}"/>
 <c:set var="stock" value="${fn:toUpperCase(currentNode.properties['stock'].string)}"/>
 <c:set var="exchange" value="${fn:toUpperCase(currentNode.properties['stockExchange'].string)}"/>
+<c:set var="value" value="${currentNode.properties['value'].string}"/>
+<c:set var="variation" value="${currentNode.properties['variation'].string}"/>
+<c:set var="description" value="${currentNode.properties['description'].string}"/>
 
 <c:set var="interval" value="${currentNode.properties['interval'].string}"/>
 <c:if test="${empty interval}">
@@ -44,16 +48,16 @@
     <div class="headline"><h2>${title}</h2></div>
 </c:if>
 
-<div id="stock-widget${uuid}" class="card stock-widget">
+<div id="stock-widget${uuid}" class="card stock-widget" stock="${stock}">
     <div class="front">
     <div class="stock-widget-wrapper">
         <div class="title color-green">${stock}</div>
         <div class="description">
-            <p></p>
+            <p style="display: none"><fmt:message key="jdnt_stockWidget.unavailable"/></p>
         </div>
         <div class="stock-price">
             <span class="currency-value"></span>
-            <span class="counter"></span>
+            <span <c:if test="${not renderContext.editMode}">class="counter"</c:if>></span>
         </div>
         <div class="stock-variable">
         </div>
@@ -79,73 +83,13 @@
             data: {get_param: 'value'},
             success: function (data) {
                 <c:if test="${renderContext.loggedIn && currentAliasUser.username ne 'guest'}">
-                saveStock${id}(data[0].l, data[0].c, data[0].e);
+                saveStock(data[0].l, data[0].c, data[0].e,'${url.base}${currentNode.path}');
                 </c:if>
-                updateStock${id}(data[0].l, data[0].c, data[0].e)
+                updateStock($("#stock-widget${uuid}"),data[0].l, data[0].c, data[0].e)
             },
             error: function (xhr, ajaxOptions, thrownError) {
-                updateStock${id}('${currentNode.properties['value'].string}', '${currentNode.properties['variation'].string}', '${currentNode.properties['description'].string}')
+                updateStock($("#stock-widget${uuid}"),'${value}', '${variation}', '${description}')
             }
-        });
-
-
-        function saveStock${id}(value, variation, description) {
-            $.ajax({
-                type: "POST",
-                url: '${url.base}${currentNode.path}',
-                data: {
-                    "jcrMethodToCall": "put",
-                    "value": value,
-                    "variation": variation,
-                    "description": description
-                },
-                success: function (data) {
-                }
-            });
-        }
-
-        function updateStock${id}(value, variation, description) {
-            if (description) {
-                $("#stock-widget${uuid} .stock-widget-wrapper .description p").text(description);
-            } else {
-                $("#stock-widget${uuid} .stock-widget-wrapper .description p").text("<fmt:message key="jdnt_stockWidget.unavailable"/>");
-            }
-            $("#stock-widget${uuid} .stock-price .counter").text(value);
-            if (value) {
-                $("#stock-widget${uuid} .stock-price .currency-value").text("$")
-            }
-            if (variation.indexOf("0") == 0) {
-                $("#stock-widget${uuid} .stock-variable").append("+" + variation);
-            }
-            if (variation.indexOf("+") >= 0) {
-                $("#stock-widget${uuid} .stock-variable").append("<div class='arrow'></div>" + variation);
-            }
-            if (variation.indexOf("-") >= 0) {
-                $("#stock-widget${uuid} .stock-variable").append("<div class='arrow-down'></div>" + variation);
-            }
-            <c:if test="${not renderContext.editMode}">
-            jQuery('#stock-widget${uuid} .counter').counterUp({
-                delay: 10,
-                time: 1000
-            });
-            </c:if>
-        }
-    </script>
-</template:addResources>
-
-
-<template:addResources type="inline">
-    <script type="text/javascript">
-        $(function () {
-            $("#stock-widget${uuid}").flip({
-                axis: 'y',
-                trigger: 'click',
-                forceWidth: false,
-                forceHeight: false
-            }).find('.front, .back').css({
-                'width': '100%',
-                'height': '100%'
-            });
         });
     </script>
 </template:addResources>
