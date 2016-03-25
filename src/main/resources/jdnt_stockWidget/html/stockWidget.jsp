@@ -61,7 +61,7 @@
         </div>
         <div class="stock-variable">
         </div>
-        <div class="stock-update"><fmt:message key="jdnt_stockWidget.lastUpdate"/>&nbsp<fmt:formatDate
+        <div class="stock-update"><fmt:message key="jdnt_stockWidget.lastUpdate"/>&nbsp;<fmt:formatDate
                 value="${currentNode.properties['jcr:lastModified'].time}"
                 pattern="dd/MMM/yyyy HH:mm"/>
         </div>
@@ -83,7 +83,7 @@
             data: {get_param: 'value'},
             success: function (data) {
                 <c:if test="${renderContext.loggedIn && currentAliasUser.username ne 'guest'}">
-                saveStock(data[0].l, data[0].c, data[0].e,'${url.base}${currentNode.path}');
+                saveStock(data[0].l, data[0].c, data[0].e,'${url.context}${url.base}${currentNode.path}');
                 </c:if>
                 updateStock($("#stock-widget${uuid}"),data[0].l, data[0].c, data[0].e)
             },

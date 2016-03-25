@@ -10,7 +10,6 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="jcr" uri="http://www.jahia.org/tags/jcr" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<%@ taglib prefix="bootstrap" uri="http://www.jahia.org/tags/bootstrapLib" %>
 <%--@elvariable id="currentNode" type="org.jahia.services.content.JCRNodeWrapper"--%>
 <%--@elvariable id="out" type="java.io.PrintWriter"--%>
 <%--@elvariable id="script" type="org.jahia.services.render.scripting.Script"--%>
@@ -33,7 +32,7 @@
     <meta name="author" content="">
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="${url.currentModule}/img/favicon/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="${url.context}${url.currentModule}/img/favicon/favicon.ico" type="image/x-icon">
 
     <!-- Web Fonts -->
     <%-- Using local web fonts versus the google resource. If you want to change to google please uncomment this and comment out the local open-sans-webfonts.css
@@ -43,7 +42,7 @@
     <template:addResources type="css" resources="open-sans-webfonts.css"/>
 
     <!-- CSS Global Compulsory -->
-    <bootstrap:addCSS/>
+    <template:addResources type="css" resources="bootstrap.min.css"/>
     <template:addResources type="css" resources="style.css"/>
 
     <!-- CSS Header and Footer -->
@@ -68,18 +67,7 @@
     <!-- JS Global Compulsory -->
     <template:addResources type="javascript" resources="jquery.min.js"/>
     <template:addResources type="javascript" resources="jquery-migrate.min.js"/>
-    <template:addResources type="javascript" resources="bootstrap3-affix.js"/>
-    <template:addResources type="javascript" resources="bootstrap3-alert.js"/>
-    <template:addResources type="javascript" resources="bootstrap3-button.js"/>
-    <template:addResources type="javascript" resources="bootstrap3-carousel.js"/>
-    <template:addResources type="javascript" resources="bootstrap3-collapse.js"/>
-    <template:addResources type="javascript" resources="bootstrap3-dropdown.js"/>
-    <template:addResources type="javascript" resources="bootstrap3-modal.js"/>
-    <template:addResources type="javascript" resources="bootstrap3-scrollspy.js"/>
-    <template:addResources type="javascript" resources="bootstrap3-tab.js"/>
-    <template:addResources type="javascript" resources="bootstrap3-tooltip.js"/>
-    <template:addResources type="javascript" resources="bootstrap3-popover.js"/>
-    <template:addResources type="javascript" resources="bootstrap3-transition.js"/>
+    <template:addResources type="javascript" resources="bootstrap.min.js"/>
     <!-- JS Implementing Plugins -->
     <template:addResources type="javascript" resources="back-to-top.js"/>
     <template:addResources type="javascript" resources="smoothScroll.js"/>

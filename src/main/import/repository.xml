@@ -1,28 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <content xmlns:j="http://www.jahia.org/jahia/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0">
     <modules jcr:primaryType="jnt:modules">
-        <jahiademo j:dependencies="bootstrap bootstrap3-components calendar default event facets font-awesome grid jahia-bootstrap-v3-components jquery location news person rating search topstories"
+        <jahiademo j:dependencies="bootstrap3-components bootstrap3-core calendar default event facets font-awesome grid jquery location news person rating search topstories"
                  j:installedModules="jahiademo"
                  j:modulePriority="0"
                  j:moduleType="templatesSet"
                  j:title="jahiademo"
                  jcr:mixinTypes="jmix:hasExternalProviderExtension"
                  jcr:primaryType="jnt:module">
-                <sources jcr:mixinTypes="jmix:hasExternalProviderExtension jmix:sourceControl"
-                  jcr:primaryType="jnt:moduleVersionFolder"
-                  j:staticMountPointProviderKey="module-jahiademo-1.0-SNAPSHOT">
-                    <src jcr:mixinTypes="jmix:sourceControl" jcr:primaryType="jnt:folder">
-                        <main jcr:mixinTypes="jmix:sourceControl" jcr:primaryType="jnt:folder">
-                            <resources jcr:primaryType="jnt:folder">
-                                <jdnt_navmenu jcr:primaryType="jnt:nodeTypeFolder">
-                                    <html jcr:primaryType="jnt:templateTypeFolder">
-                                        <navmenu.groovy jcr:primaryType="jnt:viewFile"/>
-                                    </html>
-                                </jdnt_navmenu>
-                            </resources>
-                        </main>
-                    </src>
-                </sources>
                 
 <portlets jcr:primaryType="jnt:portletFolder"/>
                 <files jcr:primaryType="jnt:folder">
@@ -34,7 +19,7 @@
                         </css>
                         <fonts jcr:primaryType="jnt:folder">
                             <glyphicons-halflings-regular.svg jcr:mixinTypes="jmix:image" jcr:primaryType="jnt:file">
-                                <jcr:content j:lastExtractionDate="2016-03-24T18:30:11.035+01:00"
+                                <jcr:content j:lastExtractionDate="2016-03-25T17:39:33.741+01:00"
                                   jcr:mimeType="image/svg+xml"
                                   jcr:primaryType="jnt:resource"/>
                                 </glyphicons-halflings-regular.svg>
@@ -55,9 +40,7 @@
                     </bootstrap>
                 </files>
             <contents jcr:primaryType="jnt:contentFolder"/>
-                <templates bootstrapVersion="less3"
-                    jcr:mixinTypes="jmix:bootstrapVersion"
-                    jcr:primaryType="jnt:templatesFolder">
+                <templates jcr:primaryType="jnt:templatesFolder">
                 <files jcr:primaryType="jnt:folder">
                     <themes jcr:primaryType="jnt:folder">
                             <default jcr:primaryType="jnt:folder"/>

@@ -5,12 +5,12 @@
 <head>
     <meta charset="utf-8">
     <meta name="robots" content="noindex, nofollow"/>
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/errors.css" type="text/css"/>
-    <link rel="stylesheet" type="text/css" href="/modules/jahiademo/css/page_404_error3.css"/>
-    <link rel="stylesheet" type="text/css" href="/modules/jahiademo/css/style.css"/>
-    <link rel="stylesheet" type="text/css" href="/modules/jahiademo/css/app.css"/>
-    <script type="text/javascript" src="/modules/jquery/javascript/jquery.min.js"></script>
-    <script type="text/javascript" src="/modules/jahiademo/javascript/jquery.backstretch.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="<c:url value="${pageContext.request.contextPath}/css/errors.css"/>"/>
+    <link rel="stylesheet" type="text/css" href="<c:url value="/modules/jahiademo/css/page_404_error3.css"/>"/>
+    <link rel="stylesheet" type="text/css" href="<c:url value="/modules/jahiademo/css/style.css"/>"/>
+    <link rel="stylesheet" type="text/css" href="<c:url value="/modules/jahiademo/css/app.css"/>"/>
+    <script type="text/javascript" src="<c:url value="/modules/jquery/javascript/jquery.min.js"/>"></script>
+    <script type="text/javascript" src="<c:url value="/modules/jahiademo/javascript/jquery.backstretch.min.js"/>"></script>
     <!-- Meta -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,7 +22,7 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="error-v4">
-                <a href="#"><img src="/modules/jahiademo/css/404/logo_red.png" alt=""></a>
+                <a href="#"><img src="<c:url value="/modules/jahiademo/css/404/logo_red.png"/>" alt=""></a>
                 <h1><span class="color-green">404</h1>
                 <span class="sorry">Hmm, it seems you took a wrong turn somewhere.<br/>Sorry, the page you were looking for could not be found!</span>
                 <div class="row">
@@ -45,7 +45,7 @@
 
 <script type="text/javascript">
     $.backstretch([
-        "/modules/jahiademo/css/404/404-bg.jpg"
+        '<c:url value="/modules/jahiademo/css/404/404-bg.jpg" />'
     ])
 </script>
 

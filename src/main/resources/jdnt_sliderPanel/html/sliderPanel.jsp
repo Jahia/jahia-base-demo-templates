@@ -41,7 +41,7 @@
         <c:url var="backgroundUrl" value="${url.currentModule}/img/background.jpg"/>
     </c:when>
     <c:otherwise>
-        <c:url var="backgroundUrl" value="${background.url}"/>
+        <c:set var="backgroundUrl" value="${background.url}"/>
     </c:otherwise>
 </c:choose>
 
@@ -60,7 +60,7 @@
 
 <div class="ms-slide" style="z-index: 10">
     <%-- loading image, this is a part of the original templates --%>
-    <img src="${url.currentModule}/img/blank.gif" data-src="${backgroundUrl}" alt=""/>
+    <img src="<c:url value="${url.currentModule}/img/blank.gif"/>" data-src="${backgroundUrl}" alt=""/>
 
     <%-- if a small photo was provided display it --%>
     <c:if test="${not empty image}">

@@ -28,13 +28,13 @@
         <c:url var="imageUrl" value="${url.currentModule}/img/background.jpg"/>
     </c:when>
     <c:otherwise>
-        <c:url var="imageUrl" value="${image.url}"/>
+        <c:url var="imageUrl" value="${image.url}" context="/"/>
     </c:otherwise>
 </c:choose>
 
 <%-- check if the link property has been used on this content --%>
 <c:if test="${jcr:isNodeType(currentNode, 'jdmix:hasLink')}">
-    <c:set var="linkUrl" value="${currentNode.properties['internalLink'].node.url}"/>
+    <c:url var="linkUrl" value="${currentNode.properties['internalLink'].node.url}" context="/"/>
 </c:if>
 
 <div class="thumbnails thumbnail-style thumbnail-kenburn">

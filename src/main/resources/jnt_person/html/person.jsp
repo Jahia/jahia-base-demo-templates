@@ -38,7 +38,7 @@
         <c:set var="photoUrl" value="${url.currentModule}/img/default_person_img.jpg"/>
     </c:when>
     <c:otherwise>
-        <c:url var="photoUrl" value="${photo.node.url}"/>
+        <c:url var="photoUrl" value="${photo.node.url}" context="/"/>
     </c:otherwise>
 </c:choose>
 

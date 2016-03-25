@@ -24,7 +24,7 @@
 <%-- set bio variable as plain text by stripping the rich text html tags from it --%>
 <c:set var="bio" value="${functions:removeHtmlTags(currentNode.properties.biography.string)}"/>
 <c:set var="photo" value="${currentNode.properties.picture}"/>
-<c:url var="personURL" value="${currentNode.url}"/>
+<c:url var="personURL" value="${currentNode.url}" context="/"/>
 <%-- if social icons were included, get the urls --%>
 <c:if test="${jcr:isNodeType(currentNode, 'jdmix:socialIcons')}">
     <c:set var="facebook" value="${currentNode.properties.facebook.string}"/>
@@ -39,7 +39,7 @@
         <c:set var="photoUrl" value="${url.currentModule}/img/default_person_img.jpg"/>
     </c:when>
     <c:otherwise>
-        <c:url var="photoUrl" value="${photo.node.url}"/>
+        <c:url var="photoUrl" value="${photo.node.url}" context="/"/>
     </c:otherwise>
 </c:choose>
 

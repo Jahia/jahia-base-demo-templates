@@ -43,7 +43,7 @@
         <c:url var="backgroundUrl" value="${url.currentModule}/img/background.jpg"/>
     </c:when>
     <c:otherwise>
-        <c:url var="backgroundUrl" value="${background.url}"/>
+        <c:url var="backgroundUrl" value="${background.url}" context="/"/>
     </c:otherwise>
 </c:choose>
 
