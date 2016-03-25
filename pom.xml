@@ -86,13 +86,13 @@
   <scm>
     <connection>scm:dummy:uri</connection>
     <developerConnection>scm:dummy:uri</developerConnection>
-    </scm>
+  </scm>
   <properties>
     <jahia.modules.importPackage>org.jahia.defaults.config.spring,
       org.jahia.exceptions,
       org.jahia.services,
       org.jahia.services.search</jahia.modules.importPackage>
-    <jahia-depends>default,font-awesome,bootstrap,jahia-bootstrap-v3-components,calendar,event,facets,grid,jquery,location,news,person,rating,search,topstories</jahia-depends>
+    <jahia-depends>bootstrap3-components,default,font-awesome,bootstrap,jahia-bootstrap-v3-components,calendar,event,facets,grid,jquery,location,news,person,rating,search,topstories</jahia-depends>
   </properties>
   <dependencies>
     <dependency>
