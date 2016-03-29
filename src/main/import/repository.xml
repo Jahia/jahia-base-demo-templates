@@ -19,7 +19,7 @@
                         </css>
                         <fonts jcr:primaryType="jnt:folder">
                             <glyphicons-halflings-regular.svg jcr:mixinTypes="jmix:image" jcr:primaryType="jnt:file">
-                                <jcr:content j:lastExtractionDate="2016-03-25T17:39:33.741+01:00"
+                                <jcr:content j:lastExtractionDate="2016-03-29T16:46:58.805+02:00"
                                   jcr:mimeType="image/svg+xml"
                                   jcr:primaryType="jnt:resource"/>
                                 </glyphicons-halflings-regular.svg>
@@ -380,11 +380,7 @@
                                     jcr:primaryType="jnt:translation"
                                     jcr:title="person bio content template"/>
                             <pagecontent jcr:primaryType="jnt:contentList">
-                                <bootstrap-breadcrumb displayCurrentPage="true"
-                                           displayHome="true"
-                                           displayLinkOnCurrentPage="false"
-                                           displayOnFirstLevel="false"
-                                           jcr:primaryType="jnt:bootstrap3Breadcrumb"/>
+                                <bootstrap-breadcrumb jcr:primaryType="bootstrap3nt:breadcrumb"/>
                                 <main-resource-display j:mainResourceView="default" jcr:primaryType="jnt:mainResourceDisplay"/>
                                 <back-to-parent-page jcr:primaryType="jnt:backToParentPage"/>
                             </pagecontent>
