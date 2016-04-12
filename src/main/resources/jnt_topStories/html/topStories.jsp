@@ -51,11 +51,12 @@
                 <c:set var="linkTitle" value="${linkNode.displayableName}"/>
             </c:if>
             <c:if test="${not empty linkNode}">
-                    <c:choose>
+                <template:addCacheDependency node="${linkNode}"/>
+                <c:choose>
                     <c:when test="${topLevel == 'first'}"><c:set var="pageUrl" value="${linkNode.url}?pageView=top"/></c:when>
                     <c:when test="${topLevel == 'second'}"><c:set var="pageUrl" value="${linkNode.url}?pageView=featured"/></c:when>
                     <c:otherwise><c:set var="pageUrl" value="${linkNode.url}?pageView=all"/></c:otherwise>
-                    </c:choose>
+                </c:choose>
                 <ul class="pager">
 
                     <c:url var="moreStories" value=""/>

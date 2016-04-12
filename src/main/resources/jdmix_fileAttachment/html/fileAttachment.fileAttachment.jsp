@@ -20,6 +20,7 @@
 
 <jcr:nodeProperty node="${currentNode}" name="pdfVersion" var="pdfVersion"/>
 <c:if test="${not empty pdfVersion}">
+    <template:addCacheDependency node="${pdfVersion.node}"/>
     <c:set var="label" value="${currentNode.properties.downloadTitle.string}"/>
     <c:if test="${empty label}">
         <c:set var="label"><fmt:message key="jdmix_fileAttachment.label"/></c:set>

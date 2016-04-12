@@ -39,12 +39,13 @@
         <c:set var="photoUrl" value="${url.currentModule}/img/default_person_img.jpg"/>
     </c:when>
     <c:otherwise>
+        <template:addCacheDependency node="${photo.node}"/>
         <c:url var="photoUrl" value="${photo.node.url}"/>
     </c:otherwise>
 </c:choose>
 
-<li><a href="${personURL}"><img class="rounded-x center-block margin-bottom-20 margin-top-20" src="${photoUrl}"
-                                style="width: 80px" alt=""></a></li>
+<li><a href="${personURL}"><img class="rounded-x center-block margin-bottom-20 margin-top-20 photo80" src="${photoUrl}"
+                                 alt=""></a></li>
 <li><a href="${personURL}"><c:if test="${not empty title}"><strong>${title}:</strong> </c:if>${name}</a></li>
 <li><p>${fn:replace(bio, fn:substring(bio, 200, fn:length(bio)), '... ')}</p></li>
 

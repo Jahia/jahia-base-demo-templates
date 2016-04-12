@@ -28,6 +28,7 @@
     <c:when test="${nodePosition == 1 && topLevel == 'first'}">
         <div class="news-v3 margin-bottom-20">
             <c:if test="${not empty newsImage}">
+                <template:addCacheDependency node="${newsImage}"/>
                 <a href="${detailUrl}"><img class="img-responsive full-width" src="${newsImage.url}" alt="${newsTitle}"></a>
             </c:if>
             <div class="news-v3-in">

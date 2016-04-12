@@ -2806,3 +2806,7 @@ https://github.com/videojs/video.js/blob/master/src/css/video-js.less */
 .nofloat{
 	float: none;
 }
+
+.photo80{
+	width: 80px;
+}

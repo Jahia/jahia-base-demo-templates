@@ -15,15 +15,31 @@
 <h4 class="pressRealeseDate"><fmt:formatDate value="${currentNode.properties.date.time}" dateStyle="long"/></h4>
 
 <div>${currentNode.properties.body.string}</div>
+<c:if test="${jcr:isNodeType(currentNode, 'jdmix:fileAttachment')}">
+    <template:include view="fileAttachment"/>
+</c:if>
 <jcr:nodeProperty node="${currentNode}" name="pdfVersion" var="pdfVersion"/>
 <c:if test="${not empty pdfVersion}">
-    <div>${pdfVersion.node.name}
-        <c:if test="${fn:containsIgnoreCase(pdfVersion.node.name, '.pdf')}"> <a class="view-pdf"
-                                                                                href="${pdfVersion.node.url}"><strong><i
-                class="fa fa-fw fa-eye" title="<fmt:message key="label.view"/>"></i></strong></a></c:if>&nbsp;<a
-                href="${pdfVersion.node.url}"><strong><i class="fa fa-download"
-                                                         title="<fmt:message key="label.download"/>"></i></strong> </a>
-
+    <template:addCacheDependency node="${pdfVersion.node}"/>
+    <c:set var="label" value="${currentNode.properties.downloadTitle.string}"/>
+    <c:if test="${empty label}">
+        <c:set var="label"><fmt:message key="jdmix_fileAttachment.label"/></c:set>
+    </c:if>
+    <div>
+            ${pdfVersion.node.name}
+        <c:if test="${fn:containsIgnoreCase(pdfVersion.node.name, '.pdf')}">
+            <a class="view-pdf" href="${pdfVersion.node.url}">
+                <strong>
+                    <i class="fa fa-fw fa-eye" title="<fmt:message key="label.view"/>"></i>
+                </strong>
+            </a>
+        </c:if>
+        &nbsp;
+        <a href="${pdfVersion.node.url}">
+            <strong>
+                <i class="fa fa-download" title="<fmt:message key="label.download"/>"></i>
+            </strong>
+        </a>
     </div>
     <div class="container">
         <div class="row">
