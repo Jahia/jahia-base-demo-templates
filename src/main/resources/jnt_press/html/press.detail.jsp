@@ -34,12 +34,10 @@
 <c:if test="${!empty pressReleaseContainerCatKeys }">
             <span class="pressReleaseCategory"><strong>
                 <fmt:message key='label.categories'/> :</strong>
-                 <c:forEach items="${pressReleaseContainerCatKeys}" var="category" varStatus="status">
-                     <c:if test="${not status.first}">,</c:if><jcr:nodeProperty node="${category.node}" name="jcr:title"
-                                                                                var="title"/>
-                     <c:choose><c:when
-                             test="${not empty title}">${title.string}</c:when><c:otherwise>${category.node.name}</c:otherwise>
-                     </c:choose></c:forEach>
+                   <c:forEach items="${pressReleaseContainerCatKeys}" var="category" varStatus="status">
+                       <c:if test="${not status.first}">,&nbsp</c:if>
+                       <template:module path="${category.node.path}" view="pressCategory" editable="false"/>
+                   </c:forEach>
             </span>
 </c:if>
 <br/>

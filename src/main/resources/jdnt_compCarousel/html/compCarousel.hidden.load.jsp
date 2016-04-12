@@ -26,3 +26,5 @@
 <c:set target="${moduleMap}" property="editable" value="false"/>
 <c:set target="${moduleMap}" property="listQuery" value="${listQuery}"/>
 <c:set target="${moduleMap}" property="subNodesView" value="default"/>
+
+<template:addCacheDependency flushOnPathMatchingRegexp="${startNodePath.path}/.*"/>

@@ -69,7 +69,7 @@
                 <c:if test="${cat != null}">
                     <ul class="list-inline">
                         <c:forEach items="${cat}" var="category">
-                            <li><i class="fa fa-tag">&nbsp;${category.node.displayableName}</i></li>
+                            <template:module path="${category.node.path}" view="eventCategory" editable="false"/>
                         </c:forEach>
                     </ul>
                 </c:if>

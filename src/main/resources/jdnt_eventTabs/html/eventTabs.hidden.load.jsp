@@ -59,3 +59,5 @@
 
 <c:set target="${moduleMap}" property="editable" value="false"/>
 <c:set target="${moduleMap}" property="listQuery" value="${listQuery}"/>
+
+<template:addCacheDependency flushOnPathMatchingRegexp="${startNodePath.path}/.*"/>

@@ -16,7 +16,7 @@
 <%-- only display if image is available --%>
 <c:if test="${not empty node}">
     <jahia:addCacheDependency node="${node}"/>
-    <c:url var="imageUrl" value="${node.url}" context="/"/>
+    <c:url var="imageUrl" value="${node.url}"/>
 
     <%-- check that the url is valie --%>
     <c:if test="${not empty target.string}"><c:set var="target"> target="${target.string}"</c:set></c:if>

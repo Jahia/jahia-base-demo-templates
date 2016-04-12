@@ -9,7 +9,7 @@
 <%-- get the starting page for the search --%>
 <c:set var="startNodePath" value="${currentNode.properties['startPage'].node.path}"/>
 
-<%-- if user entered a starting node, override default --%>
+<%-- if user did not enter start node, use site --%>
 <c:if test="${empty startNodePath}">
     <c:set var="startNodePath" value="${currentNode.resolveSite.path}"/>
 </c:if>
@@ -44,3 +44,4 @@
 <c:set target="${moduleMap}" property="listQuery" value="${listQuery}"/>
 <c:set target="${moduleMap}" property="subNodesView" value="default"/>
 <c:set target="${moduleMap}" property="pageView" value="pageView"/>
+<template:addCacheDependency flushOnPathMatchingRegexp="${startNodePath.path}/.*"/>

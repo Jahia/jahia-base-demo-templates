@@ -53,29 +53,12 @@
 <c:if test="${cat != null}">
     <ul class="list-inline">
         <c:forEach items="${cat}" var="category">
-            <li><i class="fa fa-tag">&nbsp;${category.node.displayableName}</i></li>
+            <template:module path="${category.node.path}" view="eventCategory" editable="false"/>
         </c:forEach>
     </ul>
 </c:if>
 <c:if test="${jcr:isNodeType(currentNode, 'jdmix:fileAttachment')}">
-    <jcr:nodeProperty node="${currentNode}" name="pdfVersion" var="pdfVersion"/>
-    <c:if test="${not empty pdfVersion}">
-        <c:set var="label" value="${currentNode.properties.downloadTitle.string}"/>
-        <c:if test="${empty label}">
-            <c:set var="label"><fmt:message key="jdmix_fileAttachment.label"/></c:set>
-        </c:if>
-        <p>
-
-        <div>
-                ${pdfVersion.node.name}
-            <c:if test="${fn:containsIgnoreCase(pdfVersion.node.name, '.pdf')}"> <a class="view-pdf"
-                                                                                    href="${pdfVersion.node.url}"><strong><i
-                    class="fa fa-fw fa-eye" title="<fmt:message key="label.view"/>"></i></strong></a></c:if>&nbsp;<a
-                href="${pdfVersion.node.url}"><strong><i class="fa fa-download"
-                                                         title="<fmt:message key="label.download"/>"></i></strong> </a>
-        </div>
-        </p>
-    </c:if>
+    <template:include view="fileAttachment"/>
 </c:if>
 
 <%-- download ICS file --%>
