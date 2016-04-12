@@ -12,10 +12,15 @@
 <%-- query module to create owl carousel view of companies --%>
 
 <%-- get the starting page for the search --%>
-<c:set var="startNodePath" value="${currentNode.properties['startPage'].node.path}"/>
-<c:if test="${empty startNodePath}">
-    <c:set var="startNodePath" value="${currentNode.resolveSite.path}"/>
-</c:if>
+<c:choose>
+    <c:when test="${not empty currentNode.properties['startPage']}">
+        <c:set var="startNodePath" value="${currentNode.properties['startPage'].node.path}"/>
+    </c:when>
+    <c:otherwise>
+        <c:set var="startNodePath" value="${currentNode.resolveSite.path}"/>
+    </c:otherwise>
+</c:choose>
+
 
 <%-- generate search query --%>
 <c:set var="searchStatement"
@@ -27,4 +32,4 @@
 <c:set target="${moduleMap}" property="listQuery" value="${listQuery}"/>
 <c:set target="${moduleMap}" property="subNodesView" value="default"/>
 
-<template:addCacheDependency flushOnPathMatchingRegexp="${startNodePath.path}/.*"/>
+<template:addCacheDependency flushOnPathMatchingRegexp="${startNodePath}/.*"/>

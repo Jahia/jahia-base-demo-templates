@@ -7,12 +7,15 @@
 <%@ taglib prefix="query" uri="http://www.jahia.org/tags/queryLib" %>
 <%@ taglib prefix="uiComponents" uri="http://www.jahia.org/tags/uiComponentsLib" %>
 <%-- get the starting page for the search --%>
-<c:set var="startNodePath" value="${currentNode.properties['startPage'].node.path}"/>
-
 <%-- if user did not enter start node, use site --%>
-<c:if test="${empty startNodePath}">
-    <c:set var="startNodePath" value="${currentNode.resolveSite.path}"/>
-</c:if>
+<c:choose>
+    <c:when test="${not empty currentNode.properties['startPage']}">
+        <c:set var="startNodePath" value="${currentNode.properties['startPage'].node.path}"/>
+    </c:when>
+    <c:otherwise>
+        <c:set var="startNodePath" value="${currentNode.resolveSite.path}"/>
+    </c:otherwise>
+</c:choose>
 
 <%-- get the parameter passed via the URL --%>
 <c:set var="pageView" value="${param['pageView']}"/>
@@ -44,4 +47,4 @@
 <c:set target="${moduleMap}" property="listQuery" value="${listQuery}"/>
 <c:set target="${moduleMap}" property="subNodesView" value="default"/>
 <c:set target="${moduleMap}" property="pageView" value="pageView"/>
-<template:addCacheDependency flushOnPathMatchingRegexp="${startNodePath.path}/.*"/>
+<template:addCacheDependency flushOnPathMatchingRegexp="${startNodePath}/.*"/>

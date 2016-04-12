@@ -48,7 +48,7 @@
 
 
     <template:include view="hidden.footer"/>
-    <li class="clearfix" style="float: none;"></li>
+    <li class="clearfix nofloat"></li>
 </ul>
 <%-- Add the add new content item button if in edit mode --%>
 <c:if test="${moduleMap.editable and renderContext.editMode && !resourceReadOnly}">

@@ -19,10 +19,15 @@
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
 
 <%-- get the starting page for the search --%>
-<c:set var="startNodePath" value="${currentNode.properties['startPage'].node.path}"/>
-<c:if test="${empty startNodePath}">
-    <c:set var="startNodePath" value="${currentNode.resolveSite.path}"/>
-</c:if>
+<c:choose>
+    <c:when test="${not empty currentNode.properties['startPage']}">
+        <c:set var="startNodePath" value="${currentNode.properties['startPage'].node.path}"/>
+    </c:when>
+    <c:otherwise>
+        <c:set var="startNodePath" value="${currentNode.resolveSite.path}"/>
+    </c:otherwise>
+</c:choose>
+
 
 <%-- get the parameter passed via the URL --%>
 <c:set var="pastEventId" value="pastEvent${currentNode.identifier}"/>
@@ -60,4 +65,4 @@
 <c:set target="${moduleMap}" property="editable" value="false"/>
 <c:set target="${moduleMap}" property="listQuery" value="${listQuery}"/>
 
-<template:addCacheDependency flushOnPathMatchingRegexp="${startNodePath.path}/.*"/>
+<template:addCacheDependency flushOnPathMatchingRegexp="${startNodePath}/.*"/>

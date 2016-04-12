@@ -35,6 +35,7 @@
 <%-- check if the link property has been used on this content --%>
 <c:if test="${jcr:isNodeType(currentNode, 'jdmix:hasLink')}">
     <c:url var="linkUrl" value="${currentNode.properties['internalLink'].node.url}"/>
+    <template:addCacheDependency node="${currentNode.properties['internalLink'].node}"/>
 </c:if>
 
 <div class="thumbnails thumbnail-style thumbnail-kenburn">
