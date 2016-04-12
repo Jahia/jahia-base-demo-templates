@@ -58,19 +58,12 @@
                 </ul>
                 <!-- event body -->
                 <p>${fn:substring(functions:removeHtmlTags(body), 0, 150)}...</p>
+
                 <%-- event people if they exist --%>
                 <c:if test="${jcr:isNodeType(currentNode, 'jdmix:hasPeople')}">
-                    <c:set var="boxTitle" value="${currentNode.properties['boxTitle'].string}"/>
-                    <c:if test="${empty boxTitle}">
-                        <c:set var="boxTitle" value="Speakers"/>
-                    </c:if>
-                    <ul class="list-inline">
-                        <li><i class="fa   fa-users"></i>&nbsp;${boxTitle}:</li>
-                        <template:area path="${currentNode.path}/relatedPeople" nodeTypes="jnt:person">
-                            <template:param name="subNodesView" value="event"/>
-                        </template:area>
-                    </ul>
+                    <template:include view="eventPeople"/>
                 </c:if>
+
                 <%-- event categories --%>
                 <jcr:nodeProperty node="${currentNode}" name="j:defaultCategory" var="cat"/>
                 <c:if test="${cat != null}">

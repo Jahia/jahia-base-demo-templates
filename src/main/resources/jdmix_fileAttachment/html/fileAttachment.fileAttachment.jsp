@@ -17,29 +17,29 @@
 <%--@elvariable id="renderContext" type="org.jahia.services.render.RenderContext"--%>
 <%--@elvariable id="currentResource" type="org.jahia.services.render.Resource"--%>
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
-<%-- condensed view used in tabbed search results --%>
 
-<c:set var="language" value="${currentResource.locale.language}"/>
-<fmt:setLocale value="${language}" scope="session"/>
-
-<c:set var="title" value="${currentNode.properties['jcr:title'].string}"/>
-<c:set var="startDate" value="${currentNode.properties['startDate'].time}"/>
-<c:set var="endDate" value="${currentNode.properties['endDate']}"/>
-<c:set var="location" value="${currentNode.properties['location'].string}"/>
-<c:set var="body" value="${currentNode.properties['body'].string}"/>
-<c:url var="detailUrl" value="${url.base}${currentNode.path}.html"/>
-
-
-<!-- event title -->
-<h4><a href="${detailUrl}">${title}</a></h4>
-<!-- event type, date, location -->
-<ul class="list-inline">
-    <li><strong><fmt:formatDate dateStyle="long" type="date"
-                                value="${startDate}"/></strong></li>
-    <li><i class="fa  fa-map-marker"></i>&nbsp;${location}</li>
-</ul>
-
-<%-- event people if they exist --%>
-<c:if test="${jcr:isNodeType(currentNode, 'jdmix:hasPeople')}">
-    <template:include view="eventPeople"/>
+<jcr:nodeProperty node="${currentNode}" name="pdfVersion" var="pdfVersion"/>
+<c:if test="${not empty pdfVersion}">
+    <c:set var="label" value="${currentNode.properties.downloadTitle.string}"/>
+    <c:if test="${empty label}">
+        <c:set var="label"><fmt:message key="jdmix_fileAttachment.label"/></c:set>
+    </c:if>
+    <p>
+        <div>
+        ${pdfVersion.node.name}
+            <c:if test="${fn:containsIgnoreCase(pdfVersion.node.name, '.pdf')}">
+                <a class="view-pdf" href="${pdfVersion.node.url}">
+                    <strong>
+                        <i class="fa fa-fw fa-eye" title="<fmt:message key="label.view"/>"></i>
+                    </strong>
+                </a>
+            </c:if>
+            &nbsp;
+            <a href="${pdfVersion.node.url}">
+                <strong>
+                    <i class="fa fa-download" title="<fmt:message key="label.download"/>"></i>
+                </strong>
+            </a>
+        </div>
+    </p>
 </c:if>

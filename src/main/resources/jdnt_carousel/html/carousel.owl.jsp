@@ -44,7 +44,7 @@
         <c:choose>
             <c:when test="${fn:length(images) == 0}">
                 <div class="item active">
-                    <div class="owl-item" style="width: 163px;">
+                    <div class="owl-item owl-fix-width">
                         <div class="item">
                             <img class="img-responsive" src="${url.currentModule}/img/background.jpg"
                                  alt="placeholder"/>

@@ -23,14 +23,17 @@
 <jcr:nodeProperty node="${currentNode}" name="headline" var="headline"/>
 <jcr:nodeProperty node="${currentNode}" name="industryCat" var="category"/>
 <jcr:nodeProperty node="${currentNode}" name="thumbnail" var="thumb"/>
-<c:url value="${url.files}${thumb.node.path}" var="thumbURL"/>
+
 
 <%--Set variable for company descriptions and remove HTML tags--%>
 <c:set var="description" value="${functions:removeHtmlTags(currentNode.properties.headline.string)}"/>
 
 <div>
     <div class="edit-comp-img-cont">
-        <img src="${thumbURL}" alt=""/>
+        <c:if test="${not empty thumb}">
+            <c:url value="${url.files}${thumb.node.path}" var="thumbURL"/>
+            <img src="${thumbURL}" alt=""/>
+        </c:if>
     </div>
     <div class="edit-comp-text-cont">
         <a href="<c:url value='${url.base}${currentNode.path}.html'/>"

@@ -17,43 +17,19 @@
 <%--@elvariable id="renderContext" type="org.jahia.services.render.RenderContext"--%>
 <%--@elvariable id="currentResource" type="org.jahia.services.render.Resource"--%>
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
-<jcr:nodeProperty node="${currentNode}" name="background" var="bannerImg"/>
-
-<%-- get banner image url. If not provided use default --%>
-<c:choose>
-    <c:when test="${not empty bannerImg}">
-        <c:url value="${url.files}${bannerImg.node.path}" var="bannerUrl"/>
-    </c:when>
-    <c:otherwise>
-        <c:url value="${url.currentModule}/img/default_banner_img.jpg" var="bannerUrl"/>
-    </c:otherwise>
-</c:choose>
-
-<c:set var="title" value="${currentNode.properties['jcr:title'].string}"/>
-<%--If no title is set with banner then use the current page title--%>
-<c:if test="${empty currentNode.properties['jcr:title'].string}">
-    <c:set var="title" value="${renderContext.mainResource.node.displayableName}"/>
-</c:if>
-
-<%--Set variable for banner headline and remove HTML tags--%>
-<c:set var="headline" value="${functions:removeHtmlTags(currentNode.properties.cast.string)}"/>
+<template:include view="hidden.bannerHeader"/>
 
 <c:if test="${jcr:isNodeType(currentNode, 'jdmix:internalLink')}">
-    <c:set var="linkNode" value="${currentNode.properties.internalLink.node}"/>
-    <c:set var="linkTitle" value="${currentNode.properties.linkTitle.string}"/>
-    <c:if test="${empty linkTitle}">
-        <c:set var="linkTitle" value="${linkNode.displayableName}"/>
-    </c:if>
-    <a href="${linkNode.url}" style="text-decoration: none;">
+    <a href="${currentNode.properties.internalLink.node.url}" style="text-decoration: none;">
 </c:if>
-<!--=== Breadcrumbs v3 ===-->
-<div class="breadcrumbs-v3 img-v1 text-center" style='background-image: url("${bannerUrl}")'>
-    <div class="container">
-        <h1>${title}</h1>
-        <p>${headline}</p>
+    <!--=== Breadcrumbs v3 ===-->
+    <div class="breadcrumbs-v3 img-v1 text-center" style='background-image: url("${moduleMap.bannerUrl}")'>
+        <div class="container">
+            <h1>${moduleMap.title}</h1>
+            <p>${moduleMap.headline}</p>
+        </div>
     </div>
-</div>
-<!--=== End Breadcrumbs v1 ===-->
+    <!--=== End Breadcrumbs v3 ===-->
 <c:if test="${jcr:isNodeType(currentNode, 'jdmix:internalLink')}">
     </a>
 </c:if>

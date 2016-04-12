@@ -17,29 +17,25 @@
 <%--@elvariable id="renderContext" type="org.jahia.services.render.RenderContext"--%>
 <%--@elvariable id="currentResource" type="org.jahia.services.render.Resource"--%>
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
-<%-- condensed view used in tabbed search results --%>
+<jcr:nodeProperty node="${currentNode}" name="background" var="bannerImg"/>
+<c:set target="${moduleMap}" property="bannerImg" value="${bannerImg}"/>
 
-<c:set var="language" value="${currentResource.locale.language}"/>
-<fmt:setLocale value="${language}" scope="session"/>
+<%-- get banner image url. If not provided use default --%>
+<c:choose>
+    <c:when test="${not empty bannerImg}">
+        <c:url value="${url.files}${bannerImg.node.path}" var="bannerUrl"/>
+    </c:when>
+    <c:otherwise>
+        <c:url value="${url.currentModule}/img/default_banner_img.jpg" var="bannerUrl"/>
+    </c:otherwise>
+</c:choose>
+<c:set target="${moduleMap}" property="bannerUrl" value="${bannerUrl}"/>
 
-<c:set var="title" value="${currentNode.properties['jcr:title'].string}"/>
-<c:set var="startDate" value="${currentNode.properties['startDate'].time}"/>
-<c:set var="endDate" value="${currentNode.properties['endDate']}"/>
-<c:set var="location" value="${currentNode.properties['location'].string}"/>
-<c:set var="body" value="${currentNode.properties['body'].string}"/>
-<c:url var="detailUrl" value="${url.base}${currentNode.path}.html"/>
-
-
-<!-- event title -->
-<h4><a href="${detailUrl}">${title}</a></h4>
-<!-- event type, date, location -->
-<ul class="list-inline">
-    <li><strong><fmt:formatDate dateStyle="long" type="date"
-                                value="${startDate}"/></strong></li>
-    <li><i class="fa  fa-map-marker"></i>&nbsp;${location}</li>
-</ul>
-
-<%-- event people if they exist --%>
-<c:if test="${jcr:isNodeType(currentNode, 'jdmix:hasPeople')}">
-    <template:include view="eventPeople"/>
+<c:set  target="${moduleMap}" property="title" value="${currentNode.properties['jcr:title'].string}"/>
+<%--If no title is set with banner then use the current page title--%>
+<c:if test="${empty currentNode.properties['jcr:title'].string}">
+    <c:set target="${moduleMap}" property="title" value="${renderContext.mainResource.node.displayableName}"/>
 </c:if>
+
+<%--Set variable for banner headline and remove HTML tags--%>
+<c:set target="${moduleMap}" property="headline" value="${functions:removeHtmlTags(currentNode.properties.cast.string)}"/>

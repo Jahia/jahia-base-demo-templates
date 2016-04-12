@@ -18,10 +18,10 @@
 <%--@elvariable id="currentResource" type="org.jahia.services.render.Resource"--%>
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
 <%-- display the search results for the allStories query --%>
-
+<template:addResources type="javascript" resources="custom/allStories.js"/>
 <template:include view="hidden.header"/>
 
-<div id="allStories-content-${currentNode.identifier}">
+<div id="allStories-content-${currentNode.identifier}" class="allStories" path="${currentNode.path}">
     <c:set var="id" value="${fn:replace(currentNode.identifier,'-', '')}"/>
     <c:set var="pageView" value="${fn:trim(param['pageView'])}"/>
 
@@ -30,23 +30,24 @@
 
         <p><fmt:message key="label.componentDescription"/></p>
     </c:if>
-    <c:set var="current" value="${jcr:getMeAndParentsOfType(renderContext.mainResource.node, 'jnt:page')[0]}"/>
-    <c:set var="pageUrl" value="${current.url}"/>
 
     <div class="tab-v1">
         <ul class="nav nav-tabs margin-bottom-10">
-            <li
-                    <c:if test="${pageView != 'top' && pageView != 'featured'}">class="active"</c:if> ><a
-                    href="javascript:void(0)" onclick="reload${id}('all')"><fmt:message
-                    key="jdnt_allStories.allNews"/></a></li>
-            <li
-                    <c:if test="${pageView == 'top'}">class="active"</c:if> ><a href="javascript:void(0)"
-                                                                                onclick="reload${id}('top')"><fmt:message
-                    key="jdnt_allStories.topNews"/></a></li>
-            <li
-                    <c:if test="${pageView == 'featured'}">class="active"</c:if> ><a href="javascript:void(0)"
-                                                                                     onclick="reload${id}('featured')"><fmt:message
-                    key="jdnt_allStories.featuredNews"/></a></li>
+            <li class="all">
+                <a href="javascript:void(0)" onclick="reload${id}('all')"><fmt:message
+                    key="jdnt_allStories.allNews"/>
+                </a>
+            </li>
+            <li class="top">
+                <a href="javascript:void(0)" onclick="reload${id}('top')">
+                    <fmt:message key="jdnt_allStories.topNews"/>
+                </a>
+            </li>
+            <li class="featured">
+                <a href="javascript:void(0)" onclick="reload${id}('featured')">
+                    <fmt:message key="jdnt_allStories.featuredNews"/>
+                </a>
+            </li>
         </ul>
 
         <div id="tab-content-${currentNode.identifier}">
@@ -63,6 +64,7 @@
             function reload${id}(param) {
                 history.pushState(null, null, window.location.href.split('?')[0] + '?pageView=' + param);
                 $('#allStories-content-${currentNode.identifier}').load('<c:url value="${currentNode.path}.html.ajax?pageView="/>' + param);
+                activePageViewTab();
             }
         </script>
     </template:addResources>

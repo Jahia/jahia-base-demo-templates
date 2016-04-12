@@ -20,7 +20,7 @@
 <%-- get the url of the image to display --%>
 <c:set var="imageUrl" value="${currentNode.properties['image'].node.url}"/>
 
-<div class="owl-item" style="width: 163px;">
+<div class="owl-item owl-fix-width">
     <div class="item">
         <img class="img-responsive" src="${imageUrl}" alt=""/>
     </div>

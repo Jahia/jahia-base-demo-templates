@@ -17,44 +17,17 @@
 <%--@elvariable id="renderContext" type="org.jahia.services.render.RenderContext"--%>
 <%--@elvariable id="currentResource" type="org.jahia.services.render.Resource"--%>
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
-<jcr:nodeProperty node="${currentNode}" name="background" var="bannerImg"/>
+<template:include view="hidden.bannerHeader"/>
 
-<%-- get banner image url. If not provided use default --%>
-<c:choose>
-    <c:when test="${not empty bannerImg}">
-        <c:url value="${url.files}${bannerImg.node.path}" var="bannerUrl"/>
-    </c:when>
-    <c:otherwise>
-        <c:url value="${url.currentModule}/img/default_banner_img.jpg" var="bannerUrl"/>
-    </c:otherwise>
-</c:choose>
-
-<c:set var="title" value="${currentNode.properties['jcr:title'].string}"/>
-<%--If no title is set with banner then use the current page title--%>
-<c:if test="${empty currentNode.properties['jcr:title'].string}">
-    <c:set var="title" value="${renderContext.mainResource.node.displayableName}"/>
-</c:if>
-
-<%--Set variable for banner headline and remove HTML tags--%>
-<c:set var="headline" value="${functions:removeHtmlTags(currentNode.properties.cast.string)}"/>
-
-<c:if test="${jcr:isNodeType(currentNode, 'jdmix:internalLink')}">
-    <c:set var="linkNode" value="${currentNode.properties.internalLink.node}"/>
-    <c:set var="linkTitle" value="${currentNode.properties.linkTitle.string}"/>
-    <c:if test="${empty linkTitle}">
-        <c:set var="linkTitle" value="${linkNode.displayableName}"/>
-    </c:if>
-</c:if>
 <!-- Parallax Section -->
 <div class="bg-image-v1 parallaxBg" id="${currentNode.identifier}_parallax"
-     style='background:url("${bannerUrl}") no-repeat  center center / cover;'>
+     style='background:url("${moduleMap.bannerUrl}") no-repeat  center center / cover;'>
     <div class="container">
         <div class="headline-center headline-light">
-            <h2>${title}</h2>
-            <p>${headline}</p>
+            <h2>${moduleMap.title}</h2>
+            <p>${moduleMap.headline}</p>
             <c:if test="${jcr:isNodeType(currentNode, 'jdmix:internalLink')}">
-                <a href="${linkNode.url}" style="text-decoration: none;"
-                   class="btn-u btn-brd btn-brd-hover btn-u-light">${linkTitle}</a>
+                <template:include view="parallaxLink"/>
             </c:if>
         </div>
     </div>

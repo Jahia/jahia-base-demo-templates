@@ -51,13 +51,8 @@
             <div class="col-md-9">
                 <div class="title"><fmt:message key="jdnt_people.sampleName"/></div>
                 <div class="subtitle color-green"><fmt:message key="jdnt_people.sampleTitle"/></div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
-                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                    aliquip ex ea commodo consequat.</p>
-
-                <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia <strong>deserunt</strong>
-                    mollit anim id est laborum.</p>
-
+                <p><fmt:message key="jdnt_people.sampleBio"/></p>
+                <p><fmt:message key="jdnt_people.sampleBio2"/></p>
                 <ul class="list-inline team-social">
                     <li><a data-placement="top" data-toggle="tooltip" class="fb tooltips" data-original-title="Facebook"
                            href="#"><i class="fa fa-facebook"></i></a></li>

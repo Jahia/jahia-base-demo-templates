@@ -113,16 +113,7 @@
     </c:if>
 
     <c:if test="${jcr:isNodeType(currentNode, 'jdmix:videoSlider')}">
-        <jcr:nodeProperty node="${currentNode}" name="mp4" var="mp4"/>
-        <jcr:nodeProperty node="${currentNode}" name="webm" var="webm"/>
-        <video data-autopause="false" data-mute="true" data-loop="true" data-fill-mode="fill">
-            <c:if test="${not empty mp4.node}">
-                <source src="${mp4.node.url}" type="video/mp4"/>
-            </c:if>
-            <c:if test="${not empty webm.node}">
-                <source src="${webm.node.url}" type="video/webm"/>
-            </c:if>
-        </video>
+        <template:include view="backgroundVideo" />
     </c:if>
 </div>
 

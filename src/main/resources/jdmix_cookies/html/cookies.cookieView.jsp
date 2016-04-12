@@ -21,21 +21,21 @@
 <template:addResources type="javascript" resources="jquery.cookiecuttr.js"/>
 
 <c:set var="cookieModalMessage" value="${currentNode.properties.cookieModalMessage.string}"/>
+<c:set var="cookieMessage" value="${currentNode.properties.cookieMessage.string}"/>
+<c:set var="cookieWhatAreLinkText" value="${currentNode.properties.cookieWhatAreLinkText.string}"/>
+<c:set var="cookieAcceptButtonText" value="${currentNode.properties.cookieAcceptButtonText.string}"/>
 
 <template:addResources type="inline">
     <script>
         $(document).ready(function () {
             $.cookieCuttr({
                 cookieExpires: 365
-                <c:set var="cookieMessage" value="${currentNode.properties.cookieMessage.string}"/>
                 <c:if test="${! empty cookieMessage}">
                 , cookieAnalyticsMessage: '${cookieMessage}'
                 </c:if>
-                <c:set var="cookieAcceptButtonText" value="${currentNode.properties.cookieAcceptButtonText.string}"/>
                 <c:if test="${! empty cookieAcceptButtonText}">
                 , cookieAcceptButtonText: '${fn:escapeXml(cookieAcceptButtonText)}'
                 </c:if>
-                <c:set var="cookieWhatAreLinkText" value="${currentNode.properties.cookieWhatAreLinkText.string}"/>
                 <c:if test="${! empty cookieWhatAreLinkText}">
                 , cookieWhatAreLinkText: '${fn:escapeXml(cookieWhatAreLinkText)}'
                 </c:if>

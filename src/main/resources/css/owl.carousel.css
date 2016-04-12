@@ -229,3 +229,9 @@
 @keyframes scaleUpTo {
   to { opacity: 0; transform: scale(1.5); }
 }
+
+/* custom */
+
+.owl-carousel .owl-fix-width{
+    width: 163px;
+}

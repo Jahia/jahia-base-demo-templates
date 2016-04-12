@@ -34,7 +34,7 @@
                 <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-1"
                    href="#collapse-${componentId}">
                     <span class="tooltips" data-toggle="tooltip"
-                          data-original-title="Please fill this form to keep informed">Contact Form</span>
+                          data-original-title="Please fill this form to keep informed"><fmt:message key="jdnt_investorContactForm.label"/></span>
                     <span class="pull-right"><i class="fa fa-caret-square-o-down"></i></span>
                 </a>
             </h4>

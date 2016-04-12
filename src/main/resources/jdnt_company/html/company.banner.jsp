@@ -23,13 +23,17 @@
 <jcr:nodeProperty node="${currentNode}" name="bannerImg" var="bannerImg"/>
 <jcr:nodeProperty node="${currentNode}" name="headline" var="headline"/>
 <jcr:nodeProperty node="${currentNode}" name="logo" var="logo"/>
-<c:url value="${url.files}${logo.node.path}" var="logoUrl"/>
-<c:url value="${url.files}${bannerImg.node.path}" var="bannerUrl"/>
 
-<div class="breadcrumbs-v3 img-v1 text-center" style='background-image: url("${bannerUrl}")'>
+<div class="breadcrumbs-v3 img-v1 text-center"
+    <c:if test="${not empty bannerImg}">
+        <c:url value="${url.files}${bannerImg.node.path}" var="bannerUrl"/>
+        style='background-image: url("${bannerUrl}")'
+    </c:if>
+>
     <div class="container">
         <c:choose>
             <c:when test="${not empty logo}">
+                <c:url value="${url.files}${logo.node.path}" var="logoUrl"/>
                 <img src="${logoUrl}" class="company-banner-logo"/>
             </c:when>
             <c:otherwise>

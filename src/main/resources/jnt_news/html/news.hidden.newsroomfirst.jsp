@@ -19,7 +19,10 @@
 
 <fmt:formatDate pattern="MMMM dd, yyyy" dateStyle="short" value="${currentNode.properties['date'].time}"
                 var="newsDate"/>
-
+<fmt:formatDate pattern="dd" dateStyle="short" value="${currentNode.properties['date'].time}"
+                var="newsDay"/>
+<fmt:formatDate pattern="MMM" dateStyle="short" value="${currentNode.properties['date'].time}"
+                var="newsMonth"/>
 <%-- if the first node for the top level --%>
 <c:choose>
     <c:when test="${nodePosition == 1 && topLevel == 'first'}">
@@ -35,6 +38,7 @@
                         <li><c:if test="${status.first}"><fmt:message key="jnt_news.in"/></c:if>&nbsp;${tag.string}</li>
                     </c:forEach>
                     <li>Posted ${newsDate}</li>
+
                 </ul>
                 <h2><a href="${detailUrl}">${newsTitle}</a></h2>
                 <p>${fn:substring(functions:removeHtmlTags(description), 0, 300)}...</p>
@@ -53,10 +57,9 @@
         <div class="col-md-4 sm-margin-bottom-20">
             <div class="news-v2-badge">
                 <a href="${detailUrl}"><img class="img-responsive" src="${newsImage.url}" alt="${newsTitle}"></a>
-
                 <p>
-                    <span>26</span>
-                    <small>Feb</small>
+                    <span>${newsDay}</span>
+                    <small>${newsMonth}</small>
                 </p>
             </div>
             <div class="news-v2-desc bg-color-light">
