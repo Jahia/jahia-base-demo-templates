@@ -57,7 +57,7 @@
         </div>
         <div class="stock-price">
             <span class="currency-value"></span>
-            <span <c:if test="${not renderContext.editMode}">class="counter"</c:if>></span>
+            <span class="<c:if test="${not renderContext.editMode}">counter</c:if> stockvalue"></span>
         </div>
         <div class="stock-variable">
         </div>

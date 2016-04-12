@@ -22,7 +22,7 @@ function updateStock(element,value, variation, description) {
     }
     element.find(".stock-widget-wrapper .description p").show();
 
-    element.find(".stock-price .counter").text(value);
+    element.find(".stock-price .stockvalue").text(value);
     if (value) {
         element.find(".stock-price .currency-value").text("$")
     }
