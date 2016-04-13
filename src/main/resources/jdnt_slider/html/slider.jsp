@@ -22,6 +22,7 @@
 <template:addResources type="javascript" resources="masterslider/masterslider.min.js"/>
 <template:addResources type="javascript" resources="masterslider/jquery.easing.min.js"/>
 <template:addResources type="javascript" resources="master-slider-fw.js"/>
+<template:addResources type="javascript" resources="custom/slider.js"/>
 <%-- TODO: remove slider arrows if only one panel --%>
 <%-- TODO: update list processing --%>
 <c:set var="uuid" value="${currentNode.identifier}"/>
@@ -37,13 +38,10 @@
         <template:module path="*" nodeTypes="jdnt:sliderPanel"/>
     </c:when>
     <c:otherwise>
-
-
         <%-- get the child sliderPanels --%>
-
         <c:set var="panels" value="${jcr:getChildrenOfType(currentNode, 'jdnt:sliderPanel')}"/>
         <div class="ms-layers-template">
-            <div class="master-slider ms-skin-black-2 round-skin" id="masterslider${id}">
+            <div class="master-slider ms-skin-black-2 round-skin master-slider-jahia" id="masterslider${id}" transition="${transition}">
                     <%-- for each slider panel specified, use the sliderPanel jsp to display --%>
                 <c:forEach items="${panels}" var="panel" varStatus="item">
                     <template:module node="${panel}" nodeTypes="jdnt:sliderPanel" editable="true"/>
@@ -53,11 +51,4 @@
     </c:otherwise>
 </c:choose>
 
-<template:addResources type="inline">
-    <script type="text/javascript">
-        $(window).load(function () {
-            MSfullWidth.initMSfullWidth("masterslider${id}", "${transition}");
-        });
-    </script>
-</template:addResources>
 

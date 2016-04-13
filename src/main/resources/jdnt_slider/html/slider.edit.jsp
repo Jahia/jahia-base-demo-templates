@@ -22,6 +22,7 @@
 <template:addResources type="javascript" resources="masterslider/masterslider.min.js"/>
 <template:addResources type="javascript" resources="masterslider/jquery.easing.min.js"/>
 <template:addResources type="javascript" resources="master-slider-fw.js"/>
+<template:addResources type="javascript"  resources="custom/slider.edit.js"/>
 
 <!-- Main style -->
 <template:addResources type="css" resources="editSlider.css"/>
@@ -68,24 +69,3 @@
     </c:if>
 
 </div>
-
-<template:addResources type="inline">
-<script type="text/javascript">
-    $(document).ready(function () {
-        // Hide all tabs first
-        $('.tab-selector-${componentId}').hide();
-        // Show the first tab content
-        $('.tab-selector-${componentId}').first().show();
-    })
-
-    function Function${jsID}(element) {
-        var $this = $(element)
-        debugger;
-        sliderPanel = "#" + $this.parent().attr("tab");
-        // First hide all tabs again when a new option is selected
-        $('.tab-selector-${componentId}').hide();
-        // Then show the tab content of whatever option value was selected
-        $(sliderPanel).show();
-    }
-</script>
-</template:addResources>

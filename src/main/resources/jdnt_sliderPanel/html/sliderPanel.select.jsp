@@ -17,10 +17,12 @@
 <%--@elvariable id="renderContext" type="org.jahia.services.render.RenderContext"--%>
 <%--@elvariable id="currentResource" type="org.jahia.services.render.Resource"--%>
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
+<template:addResources type="javascript"  resources="custom/slider.edit.js"/>
+
 <c:set var="title" value="${currentNode.properties['jcr:title'].string}"/>
 <c:set var="jsID" value="${fn:replace(currentNode.parent.identifier, '-','' )}"/>
 
 <li role="presentation" class="sliderSelect" tab="slidertab-${currentNode.identifier}"
     id="sliderselect-${currentNode.identifier}" href="#">
-    <a role="menuitem" tabindex="-1" href="#" onclick="Function${jsID}(this)">${title}</a>
+    <a role="menuitem" class="sliderSelectItem" tabindex="-1" href="#" onclick="selectSliderPanel(this)">${title}</a>
 </li>
