@@ -29,15 +29,12 @@
         <c:set var="startNodePath" value="${currentNode.properties['startPage'].node.path}"/>
     </c:when>
     <c:otherwise>
-        <c:set var="startNodePath" value="${currentNode.resolveSite.path}"/>
+        <c:set var="startNodePath" value="${renderContext.mainResource.node.resolveSite.path}"/>
     </c:otherwise>
 </c:choose>
 
 <jsp:useBean id="now" class="java.util.Date"/>
 <fmt:formatDate value="${now}" pattern="yyyy-MM-dd" var="today"/>
-
-
-<c:set var="endDateConstraint" value="true"/>
 
 <c:choose>
     <c:when test="${view == 'newsroom'}">
@@ -51,7 +48,6 @@
         <c:set var="jlevel" value="second"/>
     </c:when>
     <c:when test="${pageView == 'all'}">
-        <c:set var="endDateConstraint" value="false"/>
     </c:when>
     <c:otherwise>
         <c:set var="jlevel" value="${topLevel}"/>
@@ -59,20 +55,24 @@
     </c:otherwise>
 </c:choose>
 
-
-<c:set var="statement" value="select * from [jmix:topStory] as story where isdescendantnode(story, ['${startNodePath}'])"/>
-<c:if test="${not empty jlevel}">
-    <c:set var="statement" value="${statement} and story.[j:level]='${jlevel}'"/>
-</c:if>
-<c:if test="${not empty endDateConstraint}">
-    <c:set var="statement" value="${statement} and (story.[j:endDate] is null or story.[j:endDate] > CAST('+${today}T00:00:00.000' as date)) order by story.[date] desc"/>
-</c:if>
-
-<c:set var="searchStatement" value="${statement}"/>
-
-<query:definition var="listQuery" statement="${searchStatement}"  limit="${limit}"/>
+<query:definition var="topStoryQuery" limit="${limit}">
+    <query:selector nodeTypeName="jmix:topStory" selectorName="story"/>
+    <query:descendantNode path="${startNodePath}" selectorName="story"/>
+    <c:if test="${not empty jlevel}">
+        <query:equalTo propertyName="j:level" value="${jlevel}"/>
+    </c:if>
+    <c:if test="${pageView != 'all'}">
+        <query:or>
+            <query:not>
+                <query:propertyExistence propertyName="j:endDate"/>
+            </query:not>
+            <query:greaterThan propertyName="j:endDate" value="${today}T00:00:00.000"/>
+        </query:or>
+    </c:if>
+    <query:sortBy propertyName="date"  order="desc"/>
+</query:definition>
 
 <c:set target="${moduleMap}" property="editable" value="false"/>
-<c:set target="${moduleMap}" property="listQuery" value="${listQuery}"/>
+<c:set target="${moduleMap}" property="listQuery" value="${topStoryQuery}"/>
 
 <template:addCacheDependency flushOnPathMatchingRegexp="${startNodePath}/.*"/>

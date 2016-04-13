@@ -24,7 +24,7 @@
         <c:set var="startNodePath" value="${currentNode.properties['startPage'].node.path}"/>
     </c:when>
     <c:otherwise>
-        <c:set var="startNodePath" value="${currentNode.resolveSite.path}"/>
+        <c:set var="startNodePath" value="${renderContext.mainResource.node.resolveSite.path}"/>
     </c:otherwise>
 </c:choose>
 
@@ -39,30 +39,26 @@
 <fmt:formatDate value="${now}" pattern="yyyy-MM-dd" var="today"/>
 
 <c:set var="filter" value="${currentNode.properties['filter']}"/>
-<c:if test="${not empty filter}">
-    <c:set var="filterQuery" value="and event.[j:defaultCategory] = '${filter.string}'"/>
-</c:if>
 
-<c:choose>
-    <c:when test="${pastEvent != 'past'}">
-        <c:set var="sqlQuery"
-               value="select * from [jnt:event] as event where isdescendantnode(event, ['${startNodePath}'])
-            ${filterQuery}
-         and event.[startDate] >= CAST('${today}T00:00:00.000Z' AS DATE)
-         order by event.[startDate] asc"/>
-    </c:when>
-    <c:otherwise>
-        <c:set var="sqlQuery"
-               value="select * from [jnt:event] as event where isdescendantnode(event, ['${startNodePath}'])
-            ${filterQuery}
-         and event.[startDate] < CAST('${today}T00:00:00.000Z' AS DATE)
-         order by event.[startDate] asc"/>
-    </c:otherwise>
-</c:choose>
 
-<query:definition var="listQuery" statement="${sqlQuery}"/>
+<query:definition var="eventsQuery">
+    <query:selector nodeTypeName="jnt:event" selectorName="event"/>
+    <query:descendantNode path="${startNodePath}" selectorName="event"/>
+    <c:if test="${not empty filter}">
+        <query:equalTo propertyName="j:defaultCategory" value="${filter.string}"/>
+    </c:if>
+    <c:choose>
+        <c:when test="${pastEvent != 'past'}">
+            <query:greaterThanOrEqualTo propertyName="startDate" value="${today}T00:00:00.000Z"/>
+        </c:when>
+        <c:otherwise>
+            <query:lessThan propertyName="startDate" value="${today}T00:00:00.000Z"/>
+        </c:otherwise>
+    </c:choose>
+    <query:sortBy propertyName="startDate"  order="asc"/>
+</query:definition>
 
 <c:set target="${moduleMap}" property="editable" value="false"/>
-<c:set target="${moduleMap}" property="listQuery" value="${listQuery}"/>
+<c:set target="${moduleMap}" property="listQuery" value="${eventsQuery}"/>
 
 <template:addCacheDependency flushOnPathMatchingRegexp="${startNodePath}/.*"/>

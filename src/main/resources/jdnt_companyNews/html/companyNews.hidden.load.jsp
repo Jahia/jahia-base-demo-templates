@@ -26,5 +26,5 @@
 <c:set target="${moduleMap}" property="listQuery" value="${listQuery}"/>
 <c:set target="${moduleMap}" property="subNodesView" value="company"/>
 
-<template:addCacheDependency flushOnPathMatchingRegexp="${currentNode.resolveSite.path}/.*"/>
+<template:addCacheDependency flushOnPathMatchingRegexp="${renderContext.mainResource.node.resolveSite.path}/.*"/>
 <template:addCacheDependency node="${boundComponent}"/>

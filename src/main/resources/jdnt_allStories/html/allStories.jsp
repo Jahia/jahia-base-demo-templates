@@ -63,7 +63,7 @@
         <script type="text/javascript">
             function reload${id}(param) {
                 history.pushState(null, null, window.location.href.split('?')[0] + '?pageView=' + param);
-                $('#allStories-content-${currentNode.identifier}').load('<c:url value="${currentNode.path}.html.ajax?pageView="/>' + param);
+                $('#allStories-content-${currentNode.identifier}').load('<c:url value="${url.base}${currentNode.path}.html.ajax?pageView="/>' + param);
                 activePageViewTab();
             }
         </script>

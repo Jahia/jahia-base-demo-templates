@@ -27,7 +27,7 @@
         <c:set var="startNodePath" value="${currentNode.properties['startPage'].node.path}"/>
     </c:when>
     <c:otherwise>
-        <c:set var="startNodePath" value="${currentNode.resolveSite.path}"/>
+        <c:set var="startNodePath" value="${renderContext.mainResource.node.resolveSite.path}"/>
     </c:otherwise>
 </c:choose>
 
@@ -39,9 +39,6 @@
 </c:if>
 
 <c:set var="filter" value="${currentNode.properties['filter']}"/>
-<c:if test="${not empty filter}">
-    <c:set var="filterQuery" value="and press.[j:defaultCategory] = '${filter.string}'"/>
-</c:if>
 
 <%-- get the parameter passed via the URL --%>
 <c:set var="yearId" value="year${currentNode.identifier}"/>
@@ -54,28 +51,26 @@
     </c:otherwise>
 </c:choose>
 
-<c:choose>
-    <c:when test="${yearTab eq 'older'}">
-            <c:set var="sqlQuery"
-                   value="select * from [jnt:press] as press where isdescendantnode(press, ['${startNodePath}'])
-            ${filterQuery}
-         and press.[date] <= CAST('${thisYear-numTabs+1}-01-01T00:00:00.000Z' AS DATE)
-         order by press.[date] desc"/>
-    </c:when>
-    <c:otherwise>
-        <c:set var="sqlQuery"
-               value="select * from [jnt:press] as press where isdescendantnode(press, ['${startNodePath}'])
-                         ${filterQuery}
-         and press.[date] >= CAST('${yearTab}-01-01T00:00:00.000Z' AS DATE)
-            AND press.[date] <= CAST('${yearTab}-12-31T23:59:59.999Z' AS DATE)
-         order by press.[date] desc"/>
-    </c:otherwise>
-</c:choose>
-
-<query:definition var="listQuery" statement="${sqlQuery}"/>
+<query:definition var="pressQuery">
+    <query:selector nodeTypeName="jnt:press" selectorName="press"/>
+    <query:descendantNode path="${startNodePath}" selectorName="press"/>
+    <c:if test="${not empty filter}">
+        <query:equalTo propertyName="j:defaultCategory" value="${filter.string}"/>
+    </c:if>
+    <c:choose>
+        <c:when test="${yearTab eq 'older'}">
+            <query:lessThanOrEqualTo propertyName="date" value="${thisYear-numTabs+1}-01-01T00:00:00.000Z"/>
+        </c:when>
+        <c:otherwise>
+            <query:greaterThanOrEqualTo propertyName="date" value="${yearTab}-01-01T00:00:00.000Z"/>
+            <query:lessThanOrEqualTo propertyName="date" value="${yearTab}-12-31T23:59:59.999Z"/>
+        </c:otherwise>
+    </c:choose>
+    <query:sortBy propertyName="date"  order="desc"/>
+</query:definition>
 
 <c:set target="${moduleMap}" property="editable" value="false"/>
-<c:set target="${moduleMap}" property="listQuery" value="${listQuery}"/>
+<c:set target="${moduleMap}" property="listQuery" value="${pressQuery}"/>
 
 <template:addCacheDependency flushOnPathMatchingRegexp="${startNodePath}/.*"/>
 

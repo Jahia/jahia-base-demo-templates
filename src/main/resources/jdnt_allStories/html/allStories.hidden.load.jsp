@@ -13,7 +13,7 @@
         <c:set var="startNodePath" value="${currentNode.properties['startPage'].node.path}"/>
     </c:when>
     <c:otherwise>
-        <c:set var="startNodePath" value="${currentNode.resolveSite.path}"/>
+        <c:set var="startNodePath" value="${renderContext.mainResource.node.resolveSite.path}"/>
     </c:otherwise>
 </c:choose>
 
@@ -24,27 +24,38 @@
 <fmt:formatDate value="${now}" pattern="yyyy-MM-dd" var="today"/>
 
 <%-- set search query based on pageView selected --%>
-<c:choose>
-    <c:when test="${pageView == 'top'}">
-        <c:set var="topStoriesStatement"
-               value="select * from [jmix:topStory] as story where isdescendantnode(story, ['${startNodePath}'])
-         and story.[j:level]='first' and (story.[j:endDate] is null or story.[j:endDate] > CAST('+${today}T00:00:00.000' as date)) order by story.[date] desc"/>
-    </c:when>
-    <c:when test="${pageView == 'featured'}">
-        <c:set var="topStoriesStatement"
-               value="select * from [jmix:topStory] as story where isdescendantnode(story, ['${startNodePath}'])
-         and story.[j:level]='second' and (story.[j:endDate] is null or story.[j:endDate] > CAST('+${today}T00:00:00.000' as date)) order by story.[date] desc"/>
-    </c:when>
-    <c:otherwise>
-        <c:set var="topStoriesStatement"
-               value="select * from [jnt:news] as story where isdescendantnode(story, ['${startNodePath}']) order by story.[date] desc"/>
-    </c:otherwise>
-</c:choose>
+<query:definition var="topStoryQuery">
+    <query:selector nodeTypeName="jmix:topStory" selectorName="story"/>
+    <query:descendantNode path="${startNodePath}" selectorName="story"/>
 
-<query:definition var="listQuery" statement="${topStoriesStatement}"/>
+    <c:choose>
+        <c:when test="${pageView == 'top'}">
+            <query:equalTo propertyName="j:level" value="first"/>
+            <query:or>
+                <query:not>
+                    <query:propertyExistence propertyName="j:endDate"/>
+                </query:not>
+                <query:greaterThan propertyName="j:endDate" value="${today}T00:00:00.000"/>
+            </query:or>
+        </c:when>
+        <c:when test="${pageView == 'featured'}">
+            <query:equalTo propertyName="j:level" value="second"/>
+            <query:or>
+                <query:not>
+                    <query:propertyExistence propertyName="j:endDate"/>
+                </query:not>
+                <query:greaterThan propertyName="j:endDate" value="${today}T00:00:00.000"/>
+            </query:or>
+        </c:when>
+        <c:otherwise>
+        </c:otherwise>
+    </c:choose>
+    <query:sortBy propertyName="date"  order="desc"/>
+</query:definition>
+
 
 <c:set target="${moduleMap}" property="editable" value="false"/>
-<c:set target="${moduleMap}" property="listQuery" value="${listQuery}"/>
+<c:set target="${moduleMap}" property="listQuery" value="${topStoryQuery}"/>
 <c:set target="${moduleMap}" property="subNodesView" value="default"/>
 <c:set target="${moduleMap}" property="pageView" value="pageView"/>
 <template:addCacheDependency flushOnPathMatchingRegexp="${startNodePath}/.*"/>

@@ -7,23 +7,22 @@
 <%@ taglib prefix="query" uri="http://www.jahia.org/tags/queryLib" %>
 
 <%-- search for the latest news --%>
-
 <jcr:nodeProperty node="${currentNode}" name="maxNews" var="maxNews"/>
 <jcr:nodeProperty node="${currentNode}" name="filter" var="filter"/>
-<c:choose>
+
+<query:definition var="lastNewsQuery" limit="${maxNews.long}">
+    <query:selector nodeTypeName="jnt:news" selectorName="news"/>
+    <query:descendantNode path="${renderContext.mainResource.node.resolveSite.path}" selectorName="news"/>
     <%-- check if a filter category was selected and apply to the query --%>
-    <c:when test="${empty filter.string}">
-        <c:set var="lastNewsStatement" value="select * from [jnt:news] as news where ISDESCENDANTNODE(news,'${renderContext.mainResource.node.resolveSite.path}') order by news.[date] desc"/>
-    </c:when>
-    <c:otherwise>
-        <c:set var="lastNewsStatement" value="select * from [jnt:news] as news where ISDESCENDANTNODE(news,'${renderContext.mainResource.node.resolveSite.path}') and news.[j:defaultCategory]='${filter.string}' order by news.[date] desc"/>
-    </c:otherwise>
-</c:choose>
-<query:definition var="listQuery" statement="${lastNewsStatement}" limit="${maxNews.long}"/>
+    <c:if test="${not empty filter.string}">
+        <query:equalTo propertyName="j:defaultCategory" value="${filter.string}"/>
+    </c:if>
+    <query:sortBy propertyName="date"  order="desc"/>
+</query:definition>
 
 <c:set target="${moduleMap}" property="editable" value="false"/>
 <c:set target="${moduleMap}" property="emptyListMessage"><fmt:message key="label.noNewsFound"/></c:set>
-<c:set target="${moduleMap}" property="listQuery" value="${listQuery}"/>
+<c:set target="${moduleMap}" property="listQuery" value="${lastNewsQuery}"/>
 <c:set target="${moduleMap}" property="subNodesView" value="${currentNode.properties['j:subNodesView'].string}"/>
 
 

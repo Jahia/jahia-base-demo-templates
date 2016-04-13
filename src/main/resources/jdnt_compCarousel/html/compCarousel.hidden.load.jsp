@@ -17,7 +17,7 @@
         <c:set var="startNodePath" value="${currentNode.properties['startPage'].node.path}"/>
     </c:when>
     <c:otherwise>
-        <c:set var="startNodePath" value="${currentNode.resolveSite.path}"/>
+        <c:set var="startNodePath" value="${renderContext.mainResource.node.resolveSite.path}"/>
     </c:otherwise>
 </c:choose>
 
