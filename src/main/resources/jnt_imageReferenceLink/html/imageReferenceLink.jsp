@@ -23,6 +23,7 @@
     <c:set var="linknode" value="${linkreference.node}"/>
 
     <c:if test="${not empty linknode}">
+        <jahia:addCacheDependency node="${linknode}"/>
         <c:url var="linkUrl" value="${url.base}${linknode.path}.html"/>
         <c:set var="linkTitle"> title="${linknode.displayableName}"</c:set>
     </c:if>
