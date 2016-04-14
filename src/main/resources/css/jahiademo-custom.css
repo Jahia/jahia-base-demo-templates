@@ -2828,6 +2828,11 @@ https://github.com/videojs/video.js/blob/master/src/css/video-js.less */
 	top:390px;
 }
 
+.scrollableModal{
+	max-height: 420px;
+	overflow-y: auto;
+}
+
 
 
 

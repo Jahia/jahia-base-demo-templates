@@ -18,7 +18,9 @@
 <%--@elvariable id="currentResource" type="org.jahia.services.render.Resource"--%>
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
 
-<template:include view="hidden.base">
-    <template:param name="divClass" value=" pull-right"/>
-    <template:param name="ulClass" value="languages topbar-dropdown"/>
-</template:include>
+<c:url var="detailUrl" value="${url.base}${currentNode.path}.html"/>
+<c:set var="description" value="${currentNode.properties['desc'].string}"/>
+
+<p>${fn:substring(functions:removeHtmlTags(description), 0, 150)}...</p>
+<a class="btn-u btn-u-sm" href="${detailUrl}"><fmt:message
+        key="jdnt_news.read_more"/></a>

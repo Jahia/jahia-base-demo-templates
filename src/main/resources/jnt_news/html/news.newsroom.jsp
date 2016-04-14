@@ -19,7 +19,7 @@
     <li>
         <template:include view="hidden.smallView"/>
         <c:choose>
-            <c:when test="${not jcr:isNodeType(currentNode, 'jdmix:hasReadMore')}">
+            <c:when test="${jcr:isNodeType(currentNode, 'jdmix:hasReadMore')}">
                 <p>${fn:substring(functions:removeHtmlTags(description), 0, 150)}...</p>
                 <a class="btn-u btn-u-sm" href="${detailUrl}"><fmt:message key="jdnt_news.read_more"/></a>
             </c:when>

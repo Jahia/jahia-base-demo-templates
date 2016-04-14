@@ -21,24 +21,25 @@
         <fmt:message key="jnt_video.source.empty" />
     </c:when>
     <c:otherwise>
-<%-- Include the VideoJS Library --%>
-<template:addResources type="css" resources="video-js.css"/>
-<template:addResources type="javascript" resources="video.js"/>
+        <template:addCacheDependency node="${source}"/>
+        <%-- Include the VideoJS Library --%>
+        <template:addResources type="css" resources="video-js.css"/>
+        <template:addResources type="javascript" resources="video.js"/>
 
-<template:addResources>
-<script type="text/javascript">
-    videojs.options.flash.swf = '<c:url value="${url.server}${url.context}/modules/assets/swf/video-js.swf" />';
-</script>
-</template:addResources>
+        <template:addResources>
+        <script type="text/javascript">
+            videojs.options.flash.swf = '<c:url value="${url.server}${url.context}/modules/assets/swf/video-js.swf" />';
+        </script>
+        </template:addResources>
 
-<jcr:node path="${source.path}/jcr:content" var="sourceContent" />
-<jcr:nodeProperty node="${sourceContent}" name="jcr:mimeType" var="mimeType" />
+        <jcr:node path="${source.path}/jcr:content" var="sourceContent" />
+        <jcr:nodeProperty node="${sourceContent}" name="jcr:mimeType" var="mimeType" />
 
-<video id="video-${currentNode.identifier}" class="video-js vjs-default-skin" controls <c:if test="${currentNode.properties.autoplay.boolean}">autoplay</c:if>
-       preload="${renderContext.editMode ? "metadata" : "auto"}"
-       width="${currentNode.properties.width.string}" height="${currentNode.properties.height.string}"
-       data-setup='{<c:if test="${currentNode.properties.forceFlashPlayer.boolean}">"techOrder":["flash", "html5"]</c:if>}'>
-  <source src="${source.url}" type='${mimeType.string == "video/x-f4v" ? "video/mp4" : mimeType.string}' />
-</video>
+        <video id="video-${currentNode.identifier}" class="video-js vjs-default-skin" controls <c:if test="${currentNode.properties.autoplay.boolean}">autoplay</c:if>
+               preload="${renderContext.editMode ? "metadata" : "auto"}"
+               width="${currentNode.properties.width.string}" height="${currentNode.properties.height.string}"
+               data-setup='{<c:if test="${currentNode.properties.forceFlashPlayer.boolean}">"techOrder":["flash", "html5"]</c:if>}'>
+          <source src="${source.url}" type='${mimeType.string == "video/x-f4v" ? "video/mp4" : mimeType.string}' />
+        </video>
     </c:otherwise>
 </c:choose>

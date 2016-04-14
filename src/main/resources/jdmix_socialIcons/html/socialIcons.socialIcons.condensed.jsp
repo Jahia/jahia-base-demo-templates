@@ -18,7 +18,24 @@
 <%--@elvariable id="currentResource" type="org.jahia.services.render.Resource"--%>
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
 
-<template:include view="hidden.base">
-    <template:param name="divClass" value=" pull-right"/>
-    <template:param name="ulClass" value="languages topbar-dropdown"/>
-</template:include>
+
+<%-- if social icons were included, get the urls --%>
+    <c:set var="facebook" value="${currentNode.properties.facebook.string}"/>
+    <c:set var="linkedin" value="${currentNode.properties.linkedIn.string}"/>
+    <c:set var="twitter" value="${currentNode.properties.twitter.string}"/>
+    <c:set var="googlePlus" value="${currentNode.properties.googlePlus.string}"/>
+<!-- Contact Social Icons -->
+<ul class="list-inline who">
+    <c:if test="${not empty facebook and facebook != 'http://'}">
+        <li><a href="${facebook}"><i class="fa fa-facebook-official"></i></a></li>
+    </c:if>
+    <c:if test="${not empty twitter and twitter != 'http://'}">
+        <li><a href="${twitter}"><i class="fa fa-twitter-square"></i></a></li>
+    </c:if>
+    <c:if test="${not empty googlePlus and googlePlus != 'http://'}">
+        <li><a href="${googlePlus}"><i class="fa fa-google-plus-square"></i></a></li>
+    </c:if>
+    <c:if test="${not empty linkedin and linkedin != 'http://'}">
+        <li><a href="${linkedin}"><i class="fa fa-linkedin-square"></i></a></li>
+    </c:if>
+</ul>

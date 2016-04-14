@@ -17,7 +17,6 @@
 <%--@elvariable id="renderContext" type="org.jahia.services.render.RenderContext"--%>
 <%--@elvariable id="currentResource" type="org.jahia.services.render.Resource"--%>
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
-<template:addResources type="javascript" resources="custom/modal.js"/>
 
 <c:set var="language" value="${currentResource.locale.language}"/>
 <fmt:setLocale value="${language}" scope="session"/>
@@ -73,22 +72,3 @@
     <a href="${parentUrl}" class="button button-mini button-border button-rounded"><span><i
             class="icon-line-arrow-left"></i><fmt:message key="jdmix_backLink.back"/></span></a>
 </p>
-
-<%-- script for previwing a pdf attachment --%>
-<template:addResources type="inline">
-<script type="text/javascript">
-    $(function () {
-        $('.view-pdf').on('click', function () {
-            var pdf_link = $(this).attr('href');
-            var iframe = '<object type="application/pdf" data="' + pdf_link + '" width="100%" height="500"><fmt:message key="label.pdfView.noSupport"/><br/><a href="${pdfVersion.node.url}"><strong>${pdfVersion.node.name} <i class="fa fa-download" title="<fmt:message key="label.download"/>"></i></strong></a></object>'
-            $.createModal({
-                title: '${title}',
-                message: iframe,
-                closeButton: true,
-                scrollable: false
-            });
-            return false;
-        });
-    })
-</script>
-</template:addResources>

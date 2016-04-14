@@ -25,13 +25,7 @@
 <c:set var="bio" value="${functions:removeHtmlTags(currentNode.properties.biography.string)}"/>
 <c:set var="photo" value="${currentNode.properties.picture}"/>
 <c:url var="personURL" value="${currentNode.url}"/>
-<%-- if social icons were included, get the urls --%>
-<c:if test="${jcr:isNodeType(currentNode, 'jdmix:socialIcons')}">
-    <c:set var="facebook" value="${currentNode.properties.facebook.string}"/>
-    <c:set var="linkedin" value="${currentNode.properties.linkedIn.string}"/>
-    <c:set var="twitter" value="${currentNode.properties.twitter.string}"/>
-    <c:set var="googlePlus" value="${currentNode.properties.googlePlus.string}"/>
-</c:if>
+
 
 <%-- get default photo if one was not provided --%>
 <c:choose>
@@ -49,19 +43,8 @@
 <li><a href="${personURL}"><c:if test="${not empty title}"><strong>${title}:</strong> </c:if>${name}</a></li>
 <li><p>${fn:replace(bio, fn:substring(bio, 200, fn:length(bio)), '... ')}</p></li>
 
-<!-- Contact Social Icons -->
-<ul class="list-inline who">
-    <c:if test="${not empty facebook and facebook != 'http://'}">
-        <li><a href="${facebook}"><i class="fa fa-facebook-official"></i></a></li>
-    </c:if>
-    <c:if test="${not empty twitter and twitter != 'http://'}">
-        <li><a href="${twitter}"><i class="fa fa-twitter-square"></i></a></li>
-    </c:if>
-    <c:if test="${not empty googlePlus and googlePlus != 'http://'}">
-        <li><a href="${googlePlus}"><i class="fa fa-google-plus-square"></i></a></li>
-    </c:if>
-    <c:if test="${not empty linkedin and linkedin != 'http://'}">
-        <li><a href="${linkedin}"><i class="fa fa-linkedin-square"></i></a></li>
-    </c:if>
-</ul>
+<c:if test="${jcr:isNodeType(currentNode, 'jdmix:socialIcons')}">
+    <template:include view="socialIcons.condensed"/>
+</c:if>
+
 <p></p>
