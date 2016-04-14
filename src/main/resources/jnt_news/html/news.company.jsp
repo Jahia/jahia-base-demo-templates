@@ -24,6 +24,7 @@
     </c:when>
     <c:otherwise>
         <c:url var="imageUrl" value="${url.files}${newsImage.node.path}"/>
+        <jahia:addCacheDependency node="${newsImage.node}"/>
     </c:otherwise>
 </c:choose>
 

@@ -32,8 +32,7 @@
             <h2><a href="${detailUrl}">${newsTitle}</a></h2>
             <c:choose>
                 <c:when test="${jcr:isNodeType(currentNode, 'jdmix:hasReadMore')}">
-                    <p>${fn:substring(functions:removeHtmlTags(description), 0, 150)}...</p>
-                    <a class="btn-u btn-u-sm" href="${detailUrl}"><fmt:message key="jdnt_news.read_more"/></a>
+                    <template:include view="readMoreButton"/>
                 </c:when>
                 <c:otherwise>
                     <p>${description}</p>

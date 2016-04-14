@@ -47,11 +47,14 @@
  - smallPhoto (weakreference, picker[type='image']) < 'jmix:image'
  - layout (string, choicelist[resourceBundle]) < 'left', 'right'
 
+// jmix:list provides additional default views to preload and display a list of items
+// orderable allows you to reorder the content items of your component
+
 [jdnt:slider] > jnt:content, jdmix:jahiademo, jmix:manuallyOrderable, jmix:list orderable
  - transition (string, choicelist[resourceBundle]) < 'basic', 'fade', 'mask', 'wave', 'flow', 'stack', 'scale', 'focus', 'parallaxMask', 'partialWave', 'fadeBasic', 'fadeWave', 'fadeFlow'
  + * (jdnt:sliderPanel)
 
-[jdnt:highlights] > jnt:contentList, mix:title, jdmix:jahiademo, jdmix:margin, jmix:manuallyOrderable, jmix:list orderable
+[jdnt:highlights] > jnt:content, mix:title, jdmix:jahiademo, jdmix:margin, jmix:manuallyOrderable, jmix:list orderable
  - numColumns (string, choicelist[resourceBundle]) = '3' autocreated < '1', '2', '3', '4'
   + * (jdnt:highlight)
 
@@ -77,7 +80,7 @@
  - image (weakreference, picker[type='image']) mandatory < 'jmix:image'
  - caption (string) internationalized
 
-[jdnt:timeline] > jnt:contentList, jdmix:jahiademo orderable
+[jdnt:timeline] > jnt:content, jdmix:jahiademo, jmix:list orderable
  + * (jnt:news)
 
 [jdnt:login] > jnt:content, jdmix:jahiademo, jdmix:headerWidgets, jmix:studioOnly
@@ -121,7 +124,7 @@
  - interval (long) = 86400
  - period (string) = '3M'
 
-[jdnt:companies] > jnt:contentList, mix:title, jdmix:jahiademo, jmix:manuallyOrderable, jmix:list orderable
+[jdnt:companies] > jnt:content, mix:title, jdmix:jahiademo, jmix:manuallyOrderable, jmix:list orderable
   + * (jdnt:company)
 
 [jdnt:company] > jnt:content, jdmix:jahiademo, mix:title orderable
@@ -141,7 +144,7 @@
  - boxTitle (string)  = 'Leadership' i18n
  + relatedPeople (jdnt:personList) = jdnt:personList autocreated
 
-[jdnt:personList] > jnt:contentList
+[jdnt:personList] > jnt:content, jmix:list orderable
  + * (jnt:person)
 
 [jdnt:companyNews] > jnt:content, jmix:list, mix:title, jdmix:jahiademo, jmix:bindedComponent

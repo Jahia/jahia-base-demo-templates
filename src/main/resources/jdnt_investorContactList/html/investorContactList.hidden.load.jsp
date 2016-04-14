@@ -9,7 +9,7 @@
 <jcr:nodeProperty node="${currentNode}" name="maxItems" var="maxItems"/>
 <%-- TODO Need to debug the where statement below, for now it is taken out in next statement
 <c:set var="lastinvestorContact"
-       value="select * from [jdnt:investorContact] as investorContact where ISDESCENDANTNODE(investorContact,'${currentNode.resolveSite.path}') order by investorContact.[date] desc"/> --%>
+       value="select * from [jdnt:investorContact] as investorContact where ISDESCENDANTNODE(investorContact,'${renderContext.mainResource.node.resolveSite.path}') order by investorContact.[date] desc"/> --%>
 <c:set var="lastinvestorContact"
        value="select * from [jdnt:investorContact] as investorContact order by investorContact.[date] desc"/>
 <query:definition var="listQuery" statement="${lastinvestorContact}" limit="${maxItems.long}"/>

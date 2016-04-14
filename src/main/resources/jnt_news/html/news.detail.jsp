@@ -39,7 +39,7 @@
 
     <div id="sync1" class="owl-carousel newsPicture">
         <c:if test="${not empty newsImage}">
-
+            <jahia:addCacheDependency node="${newsImage}"/>
             <div class="item">
                     <%-- if there is a gallery format for the photoswipe otherwise just display image --%>
                 <c:choose>
@@ -63,7 +63,7 @@
         </c:if>
         <c:if test="${not empty galleryImgs}">
             <c:forEach var="galleryImg" items="${galleryImgs}" varStatus="status">
-
+                <jahia:addCacheDependency node="${galleryImg.node}"/>
                 <div class="item">
                     <a href="${galleryImg.node.url}"
                        data-size="${galleryImg.node.properties['j:width'].string}x${galleryImg.node.properties['j:height'].string}"><img

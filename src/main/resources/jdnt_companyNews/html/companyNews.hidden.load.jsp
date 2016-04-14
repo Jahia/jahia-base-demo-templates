@@ -17,7 +17,7 @@
 
 <%-- set the search query --%>
 <c:set var="lastNewsStatement"
-       value="select * from [jnt:news] as news where desc like '%${boundComponent.properties['jcr:title'].string}%' and ISDESCENDANTNODE(news,'${currentNode.resolveSite.path}')  order by news.[date] desc"/>
+       value="select * from [jnt:news] as news where desc like '%${boundComponent.properties['jcr:title'].string}%' and ISDESCENDANTNODE(news,'${renderContext.mainResource.node.resolveSite.path}')  order by news.[date] desc"/>
 
 <query:definition var="listQuery" statement="${lastNewsStatement}" limit="${limit}"/>
 
