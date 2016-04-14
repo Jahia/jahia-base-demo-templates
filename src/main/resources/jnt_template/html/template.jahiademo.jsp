@@ -115,9 +115,7 @@
 
 <c:set var="siteNode" value="${renderContext.site}"/>
 
-<c:if test="${jcr:isNodeType(siteNode, 'jdmix:cookies')}">
-    <template:module node="${siteNode}" view="cookieView" editable="false"/>
-</c:if>
+
 
 <%-- get the current year for the copyright --%>
 <jsp:useBean id="now" class="java.util.Date"/>
@@ -129,7 +127,9 @@
 </c:if>
 
 <body class="header-fixed ${headerSpace} <template:include view="hidden.style"/>">
-
+<c:if test="${jcr:isNodeType(siteNode, 'jdmix:cookies')}">
+    <template:module node="${siteNode}" view="cookieView" editable="false"/>
+</c:if>
 <div class="wrapper">
     <!--=== Header v8 ===-->
     <div class="header-v8 ${stickyHeader}">

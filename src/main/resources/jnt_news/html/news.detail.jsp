@@ -93,15 +93,8 @@
         </div>
     </c:if>
     <div class="news-v3-in">
-        <ul class="list-inline posted-info">
-            <%-- display tags --%>
-            <jcr:nodeProperty node="${currentNode}" name="j:tagList" var="tags"/>
-            <c:forEach items="${tags}" var="tag" varStatus="status">
-                <li><c:if test="${status.first}"><fmt:message key="jnt_news.in"/></c:if>&nbsp;${tag.string}</li>
-            </c:forEach>
-            <li>Posted ${newsDate}</li>
-        </ul>
-        ${description.string}
+        <template:include view="hidden.tagListView"/>
+    ${description.string}
     </div>
 
 </div>

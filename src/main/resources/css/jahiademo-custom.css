@@ -2810,3 +2810,26 @@ https://github.com/videojs/video.js/blob/master/src/css/video-js.less */
 .photo80{
 	width: 80px;
 }
+
+.sidePanelPhoto{
+	bottom: -10px;  width: 400px; height: 562px; margin: 0px; padding: 0px; overflow: hidden;
+}
+
+.top160{
+	top:160px;
+}
+.top210{
+	top:210px;
+}
+.top310{
+	top:310px;
+}
+.top390{
+	top:390px;
+}
+
+
+
+
+
+

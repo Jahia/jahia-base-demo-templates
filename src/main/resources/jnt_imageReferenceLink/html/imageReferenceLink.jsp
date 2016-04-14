@@ -47,7 +47,7 @@
 </c:if>
 <c:if test="${empty node}">
     <c:if test="${not empty reference}">
-        <jahia:addCacheDependency path="${reference.string}"/>
+        <jahia:addCacheDependency node="${reference.node}"/>
     </c:if>
     <c:if test="${renderContext.editMode}">
         <fmt:message key="label.empty"/>

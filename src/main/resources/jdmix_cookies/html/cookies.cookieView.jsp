@@ -17,48 +17,10 @@
 <%--@elvariable id="renderContext" type="org.jahia.services.render.RenderContext"--%>
 <%--@elvariable id="currentResource" type="org.jahia.services.render.Resource"--%>
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
-<template:addResources type="css" resources="cookiecuttr.css"/>
-<template:addResources type="javascript" resources="jquery.cookiecuttr.js"/>
-
 <c:set var="cookieModalMessage" value="${currentNode.properties.cookieModalMessage.string}"/>
-<c:set var="cookieMessage" value="${currentNode.properties.cookieMessage.string}"/>
-<c:set var="cookieWhatAreLinkText" value="${currentNode.properties.cookieWhatAreLinkText.string}"/>
-<c:set var="cookieAcceptButtonText" value="${currentNode.properties.cookieAcceptButtonText.string}"/>
 
-<template:addResources type="inline">
-    <script>
-        $(document).ready(function () {
-            $.cookieCuttr({
-                cookieExpires: 365
-                <c:if test="${! empty cookieMessage}">
-                , cookieAnalyticsMessage: '${cookieMessage}'
-                </c:if>
-                <c:if test="${! empty cookieAcceptButtonText}">
-                , cookieAcceptButtonText: '${fn:escapeXml(cookieAcceptButtonText)}'
-                </c:if>
-                <c:if test="${! empty cookieWhatAreLinkText}">
-                , cookieWhatAreLinkText: '${fn:escapeXml(cookieWhatAreLinkText)}'
-                </c:if>
-                <c:if test="${jcr:isNodeType(currentNode, 'jdmix:cookieExternalLink')}">
-                    <c:url var="cookieWhatAreTheyLink" value="${currentNode.properties.cookiePageExternalLink.string}" />
-                    <c:if test="${! empty cookieWhatAreTheyLink}">
-                    ,cookieWhatAreTheyLink: '${fn:escapeXml(cookieWhatAreTheyLink)}'
-                    </c:if>
-                </c:if>
-                <c:if test="${jcr:isNodeType(currentNode, 'jdmix:cookieLink')}">
-                <c:url var="cookieWhatAreTheyLink" value="${currentNode.properties.cookiePageLink.node.url}" />
-                <c:if test="${! empty cookieWhatAreTheyLink}">
-                , cookieWhatAreTheyLink: '${fn:escapeXml(cookieWhatAreTheyLink)}'
-                </c:if>
-                </c:if>
-                <c:if test="${jcr:isNodeType(currentNode, 'jdmix:cookieModalMessage')}">
-                , cookieModal: true
-                </c:if>
-            });
-        });
-    </script>
-</template:addResources>
+<template:include view="cookieView.js"/>
 
 <c:if test="${! empty cookieModalMessage}">
-    <div id="cookieModalPanel" style="display: none">${currentNode.properties.cookieModalMessage.string} </div>
+    <div id="cookieModalPanel" style="display: none">${cookieModalMessage} </div>
 </c:if>

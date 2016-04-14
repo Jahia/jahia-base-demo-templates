@@ -49,12 +49,12 @@
 <c:set var="layout" value="${currentNode.properties.layout.string}"/>
 <c:choose>
     <c:when test="${layout == 'right'}">
-        <c:set var="textLayout" value="450px;"/>
-        <c:set var="photoLayout" value="15px;"/>
+        <c:set var="textLayout" value="450px"/>
+        <c:set var="photoLayout" value="15px"/>
     </c:when>
     <c:otherwise>
-        <c:set var="textLayout" value="15px;"/>
-        <c:set var="photoLayout" value="550px;"/>
+        <c:set var="textLayout" value="15px"/>
+        <c:set var="photoLayout" value="550px"/>
     </c:otherwise>
 </c:choose>
 
@@ -64,15 +64,15 @@
 
     <%-- if a small photo was provided display it --%>
     <c:if test="${not empty image}">
-        <div class="ms-layer"
-             style="bottom: -10px; left: ${photoLayout} width: 400px; height: 562px; margin: 0px; padding: 0px; overflow: hidden;">
+        <div class="ms-layer sidePanelPhoto"
+             style="left: ${photoLayout};">
             <img src="${image.url}" alt="" style="height: 100%;">
         </div>
     </c:if>
 
     <%-- if a subtitle is provided display it --%>
     <c:if test="${not empty subtitle}">
-        <div class="ms-layer ms-promo-info-in color-${textColor}" style="left:${textLayout}; top:160px"
+        <div class="ms-layer ms-promo-info-in top160 color-${textColor}" style="left:${textLayout};"
              data-effect="bottom(40)"
              data-duration="2000"
              data-delay="700"
@@ -82,7 +82,7 @@
 
     <%-- if a title is provided display it --%>
     <c:if test="${not empty title}">
-        <div class="ms-layer ms-promo-info-in ms-promo-info color-${textColor}" style="left:${textLayout}; top:210px"
+        <div class="ms-layer ms-promo-info-in ms-promo-info top210 color-${textColor}" style="left:${textLayout};"
              data-effect="bottom(40)"
              data-duration="2000"
              data-delay="1000"
@@ -92,7 +92,7 @@
 
     <%-- if a summary is provided display it --%>
     <c:if test="${not empty summary}">
-        <div class="ms-layer ms-promo-sub color-${textColor}" style="left:${textLayout}; top:310px"
+        <div class="ms-layer ms-promo-sub top310 color-${textColor}" style="left:${textLayout};"
              data-effect="bottom(40)"
              data-duration="2000"
              data-delay="1300"
@@ -103,7 +103,7 @@
 
     <%-- if a link has been provided display it as a button --%>
     <c:if test="${not empty link}">
-        <a class="ms-layer btn-u" style="left:${textLayout} top:390px" href="${link.url}"
+        <a class="ms-layer btn-u top390" style="left:${textLayout}" href="${link.url}"
            data-effect="bottom(40)"
            data-duration="2000"
            data-delay="1300"

@@ -32,15 +32,7 @@
                 <a href="${detailUrl}"><img class="img-responsive full-width" src="${newsImage.url}" alt="${newsTitle}"></a>
             </c:if>
             <div class="news-v3-in">
-                <ul class="list-inline posted-info">
-                        <%-- display tags --%>
-                    <jcr:nodeProperty node="${currentNode}" name="j:tagList" var="tags"/>
-                    <c:forEach items="${tags}" var="tag" varStatus="status">
-                        <li><c:if test="${status.first}"><fmt:message key="jnt_news.in"/></c:if>&nbsp;${tag.string}</li>
-                    </c:forEach>
-                    <li>Posted ${newsDate}</li>
-
-                </ul>
+                <template:include view="hidden.tagListView"/>
                 <h2><a href="${detailUrl}">${newsTitle}</a></h2>
                 <p>${fn:substring(functions:removeHtmlTags(description), 0, 300)}...</p>
             </div>
@@ -64,14 +56,7 @@
                 </p>
             </div>
             <div class="news-v2-desc bg-color-light">
-                <h3><a href="${detailUrl}">${newsTitle}</a></h3>
-                <small>
-                        <%-- display tags --%>
-                    <jcr:nodeProperty node="${currentNode}" name="j:tagList" var="tags"/>
-                    <c:forEach items="${tags}" var="tag" varStatus="status">
-                        <c:if test="${status.first}"><fmt:message key="jnt_news.in"/></c:if>&nbsp;${tag.string}
-                    </c:forEach>
-                </small>
+                <template:include view="hidden.smallView"/>
             </div>
         </div>
         <%-- if the last in a 3 column row --%>
