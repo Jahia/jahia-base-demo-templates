@@ -28,9 +28,6 @@
 <c:set var="id" value="${fn:replace(uuid,'-', '')}"/>
 <c:set var="stock" value="${fn:toUpperCase(currentNode.properties['stock'].string)}"/>
 <c:set var="exchange" value="${fn:toUpperCase(currentNode.properties['stockExchange'].string)}"/>
-<c:set var="value" value="${currentNode.properties['value'].string}"/>
-<c:set var="variation" value="${currentNode.properties['variation'].string}"/>
-<c:set var="description" value="${currentNode.properties['description'].string}"/>
 
 <c:set var="interval" value="${currentNode.properties['interval'].string}"/>
 <c:if test="${empty interval}">
@@ -48,18 +45,19 @@
     <div class="headline"><h2>${title}</h2></div>
 </c:if>
 
-<div id="stock-widget${uuid}" class="card stock-widget" stock="${stock}">
+<div id="stock-widget${uuid}" class="card stock-widget">
     <div class="front">
     <div class="stock-widget-wrapper">
         <div class="title color-green">${stock}</div>
         <div class="description">
-            <p style="display: none"><fmt:message key="jdnt_stockWidget.unavailable"/></p>
+            <p>%%StockDescription%%</p>
         </div>
         <div class="stock-price">
             <span class="currency-value"></span>
-            <span class="<c:if test="${not renderContext.editMode}">counter</c:if> stockvalue"></span>
+            <span class="<c:if test="${not renderContext.editMode}">counter</c:if> stockvalue">%%StockValue%%</span>
         </div>
         <div class="stock-variable">
+            %%StockVariation%%
         </div>
         <div class="stock-update"><fmt:message key="jdnt_stockWidget.lastUpdate"/>&nbsp;<fmt:formatDate
                 value="${currentNode.properties['jcr:lastModified'].time}"
@@ -73,23 +71,3 @@
         <i class="fa fa-rotate-left" title="<fmt:message key="jdnt_stockWidget.flipToPrice"/>"></i>
     </div>
 </div>
-
-<template:addResources type="inline">
-    <script type="text/javascript">
-        $.ajax({
-            timeout: 2000,
-            url: 'http://finance.google.com/finance/info?client=ig&q=${stock}',
-            dataType: 'jsonp',
-            data: {get_param: 'value'},
-            success: function (data) {
-                <c:if test="${renderContext.loggedIn && currentAliasUser.username ne 'guest'}">
-                saveStock(data[0].l, data[0].c, data[0].e,'${url.context}${url.base}${currentNode.path}');
-                </c:if>
-                updateStock($("#stock-widget${uuid}"),data[0].l, data[0].c, data[0].e)
-            },
-            error: function (xhr, ajaxOptions, thrownError) {
-                updateStock($("#stock-widget${uuid}"),'${value}', '${variation}', '${description}')
-            }
-        });
-    </script>
-</template:addResources>

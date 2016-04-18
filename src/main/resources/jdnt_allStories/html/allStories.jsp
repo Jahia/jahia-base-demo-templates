@@ -23,7 +23,7 @@
 
 <div id="allStories-content-${currentNode.identifier}" class="allStories" path="${currentNode.path}">
     <c:set var="id" value="${fn:replace(currentNode.identifier,'-', '')}"/>
-    <c:set var="pageView" value="${fn:trim(param['pageView'])}"/>
+    <c:set var="allStoriesTab" value="${fn:trim(param['allStoriesTab'])}"/>
 
     <c:if test="${renderContext.editMode}">
         <h4><fmt:message key="label.topStoriesArea"/></h4>
@@ -62,8 +62,8 @@
     <template:addResources type="inline">
         <script type="text/javascript">
             function reload${id}(param) {
-                history.pushState(null, null, window.location.href.split('?')[0] + '?pageView=' + param);
-                $('#allStories-content-${currentNode.identifier}').load('<c:url value="${url.base}${currentNode.path}.html.ajax?pageView="/>' + param);
+                history.pushState(null, null, window.location.href.split('?')[0] + '?allStoriesTab=' + param);
+                $('#allStories-content-${currentNode.identifier}').load('<c:url value="${url.base}${currentNode.path}.html.ajax?allStoriesTab="/>' + param);
                 activePageViewTab();
             }
         </script>

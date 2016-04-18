@@ -17,6 +17,7 @@
 <%--@elvariable id="renderContext" type="org.jahia.services.render.RenderContext"--%>
 <%--@elvariable id="currentResource" type="org.jahia.services.render.Resource"--%>
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
+<template:addResources type="javascript" resources="custom/pressSearch.js"/>
 <template:include view="hidden.header"/>
 
 <jsp:useBean id="now" class="java.util.Date"/>
@@ -41,39 +42,39 @@
         <c:set var="yearTab" value="${thisYear}"/>
     </c:otherwise>
 </c:choose>
+<div class="pressContainer">
+    <div id="pressSearch-content-${currentNode.identifier}" class="tab-v1 pressSearch" yearTab="${yearTab}">
+        <c:if test="${not empty title}">
+            <div class="headline"><h2>${title}</h2></div>
+        </c:if>
+        <c:set var="id" value="${fn:replace(currentNode.identifier,'-', '')}"/>
+        <%-- generate tabs --%>
+        <ul class="nav nav-tabs">
+            <li class="${thisYear}">
+                <a href="javascript:void(0)" onclick="reload${id}('${thisYear}')">${thisYear}</a>
+            </li>
+            <c:forEach var="i" begin="1" end="${numTabs-1}">
+                <li class="${thisYear-i}">
+                    <a href="javascript:void(0)" onclick="reload${id}('${thisYear-i}')">${thisYear-i}</a>
+                </li>
+            </c:forEach>
+            <li class="older">
+                <a href="javascript:void(0)" onclick="reload${id}('older')"> <fmt:message key='jdnt_pressSearch.older'/></a>
+            </li>
+        </ul>
+        <div id="tab-content-${currentNode.identifier}">
+            <c:forEach items="${moduleMap.currentList}" var="pressRelease" varStatus="item">
+                <template:module view="${view}" path="${pressRelease.path}" editable="false"/>
+            </c:forEach>
+        </div>
+        <template:addResources type="inline">
+            <script type="text/javascript">
+                function reload${id}(param) {
+                    $('#pressSearch-content-${currentNode.identifier}').parent().load('<c:url value="${url.base}${currentNode.path}.html.ajax?${yearId}="/>' + param+' #pressSearch-content-${currentNode.identifier}');
+                    activePressSearchTab();
+                }
+            </script>
+        </template:addResources>
 
-
-<c:if test="${not empty title && empty param[yearId]}">
-    <div class="headline"><h2>${title}</h2></div>
-</c:if>
-
-<div id="pressSearch-content-${currentNode.identifier}" class="tab-v1">
-    <c:set var="id" value="${fn:replace(currentNode.identifier,'-', '')}"/>
-    <%-- generate tabs --%>
-    <ul class="nav nav-tabs">
-        <li
-                <c:if test="${yearTab eq thisYear}">class="active"</c:if> ><a
-                href="javascript:void(0)" onclick="reload${id}('${thisYear}')">${thisYear}</a></li>
-        <c:forEach var="i" begin="1" end="${numTabs-1}">
-            <li
-                    <c:if test="${yearTab eq thisYear-i}">class="active"</c:if> ><a
-                    href="javascript:void(0)" onclick="reload${id}('${thisYear-i}')">${thisYear-i}</a></li>
-        </c:forEach>
-        <li
-                <c:if test="${yearTab eq 'older'}">class="active"</c:if> ><a
-                href="javascript:void(0)" onclick="reload${id}('older')">Older</a></li>
-    </ul>
-    <div id="tab-content-${currentNode.identifier}">
-        <c:forEach items="${moduleMap.currentList}" var="pressRelease" varStatus="item">
-            <template:module view="${view}" path="${pressRelease.path}" editable="false"/>
-        </c:forEach>
     </div>
-    <template:addResources type="inline">
-        <script type="text/javascript">
-            function reload${id}(param) {
-                $('#pressSearch-content-${currentNode.identifier}').load('<c:url value="${url.base}${currentNode.path}.html.ajax?year${currentNode.identifier}="/>' + param);
-            }
-        </script>
-    </template:addResources>
-
 </div>

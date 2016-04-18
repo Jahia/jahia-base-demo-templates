@@ -18,18 +18,18 @@
 </c:choose>
 
 <%-- get the parameter passed via the URL --%>
-<c:set var="pageView" value="${param['pageView']}"/>
+<c:set var="allStoriesTab" value="${param['allStoriesTab']}"/>
 
 <jsp:useBean id="now" class="java.util.Date"/>
 <fmt:formatDate value="${now}" pattern="yyyy-MM-dd" var="today"/>
 
-<%-- set search query based on pageView selected --%>
+<%-- set search query based on allStoriesTab selected --%>
 <query:definition var="topStoryQuery">
     <query:selector nodeTypeName="jmix:topStory" selectorName="story"/>
     <query:descendantNode path="${startNodePath}" selectorName="story"/>
 
     <c:choose>
-        <c:when test="${pageView == 'top'}">
+        <c:when test="${allStoriesTab == 'top'}">
             <query:equalTo propertyName="j:level" value="first"/>
             <query:or>
                 <query:not>
@@ -38,7 +38,7 @@
                 <query:greaterThan propertyName="j:endDate" value="${today}T00:00:00.000"/>
             </query:or>
         </c:when>
-        <c:when test="${pageView == 'featured'}">
+        <c:when test="${allStoriesTab == 'featured'}">
             <query:equalTo propertyName="j:level" value="second"/>
             <query:or>
                 <query:not>
@@ -57,5 +57,5 @@
 <c:set target="${moduleMap}" property="editable" value="false"/>
 <c:set target="${moduleMap}" property="listQuery" value="${topStoryQuery}"/>
 <c:set target="${moduleMap}" property="subNodesView" value="default"/>
-<c:set target="${moduleMap}" property="pageView" value="pageView"/>
+<c:set target="${moduleMap}" property="allStoriesTab" value="allStoriesTab"/>
 <template:addCacheDependency flushOnPathMatchingRegexp="${startNodePath}/.*"/>
