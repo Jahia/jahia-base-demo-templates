@@ -9,7 +9,7 @@
                  jcr:mixinTypes="jmix:hasExternalProviderExtension"
                  jcr:primaryType="jnt:module">
                 
-<portlets jcr:primaryType="jnt:portletFolder"/>
+                <portlets jcr:primaryType="jnt:portletFolder"/>
                 <files jcr:primaryType="jnt:folder">
                     <bootstrap jcr:primaryType="jnt:folder">
                         <css jcr:primaryType="jnt:folder">
@@ -19,10 +19,10 @@
                         </css>
                         <fonts jcr:primaryType="jnt:folder">
                             <glyphicons-halflings-regular.svg jcr:mixinTypes="jmix:image" jcr:primaryType="jnt:file">
-                                <jcr:content j:lastExtractionDate="2016-03-29T16:46:58.805+02:00"
+                                <jcr:content j:lastExtractionDate="2016-04-13T16:30:34.633+02:00"
                                   jcr:mimeType="image/svg+xml"
                                   jcr:primaryType="jnt:resource"/>
-                                </glyphicons-halflings-regular.svg>
+                            </glyphicons-halflings-regular.svg>
                             <glyphicons-halflings-regular.ttf jcr:primaryType="jnt:file">
                                 <jcr:content jcr:mimeType="application/x-font-ttf" jcr:primaryType="jnt:resource"/>
                             </glyphicons-halflings-regular.ttf>
@@ -39,10 +39,10 @@
                         </fonts>
                     </bootstrap>
                 </files>
-            <contents jcr:primaryType="jnt:contentFolder"/>
+                <contents jcr:primaryType="jnt:contentFolder"/>
                 <templates jcr:primaryType="jnt:templatesFolder">
-                <files jcr:primaryType="jnt:folder">
-                    <themes jcr:primaryType="jnt:folder">
+                    <files jcr:primaryType="jnt:folder">
+                        <themes jcr:primaryType="jnt:folder">
                             <default jcr:primaryType="jnt:folder"/>
                             <aqua jcr:primaryType="jnt:folder">
                                 <aqua.css jcr:primaryType="jnt:file">
@@ -109,7 +109,7 @@
                                     <jcr:content jcr:mimeType="text/css" jcr:primaryType="jnt:resource"/>
                                 </teal.css>
                             </teal>
-                    </themes>
+                        </themes>
                         <logo1-default.png j:height="39"
                                   j:width="103"
                                   jcr:mixinTypes="jmix:image"
@@ -148,21 +148,21 @@
                                 <thumbnail2 jcr:mimeType="image/jpeg" jcr:primaryType="jnt:resource"/>
                             </newsroom-bg.jpg>
                         </img>
-                </files>
-                <contents jcr:primaryType="jnt:contentFolder"/>
+                    </files>
+                    <contents jcr:primaryType="jnt:contentFolder"/>
                     <base j:theme="/modules/jahiademo/templates/files/themes/default"
                   j:view="jahiademo"
                   jcr:mixinTypes="jmix:theme"
                   jcr:primaryType="jnt:template">
                         <simple jcr:primaryType="jnt:pageTemplate">
-                                                        <pagecontent jcr:primaryType="jnt:contentList">
+                            <pagecontent jcr:primaryType="jnt:contentList">
                                 <section--container--row--grid columnsType="predefinedColumns"
                                                     grid="12"
                                                     gridLayout="full-width"
                                                     jcr:mixinTypes="bootstrap3mix:createContainer bootstrap3mix:createRow bootstrap3mix:predefinedColumns"
                                                     jcr:primaryType="bootstrap3nt:columns"/>
-                                                        </pagecontent>
-                                                    </simple>
+                            </pagecontent>
+                        </simple>
                         <navmenu jcr:primaryType="jnt:contentList">
                             <navigation-menu jcr:primaryType="jdnt:navmenu"/>
                         </navmenu>
@@ -182,7 +182,7 @@
                                                     jcr:mixinTypes="bootstrap3mix:createContainer bootstrap3mix:createRow bootstrap3mix:predefinedColumns"
                                                     jcr:primaryType="bootstrap3nt:columns"/>
                             </pagecontent>
-                            </_x0032_-column>
+                        </_x0032_-column>
                         <_x0033_-column j:hiddenTemplate="false" jcr:primaryType="jnt:pageTemplate">
                             <j:translation_en jcr:language="en"
                                     jcr:mixinTypes="mix:title"
@@ -251,7 +251,7 @@
                                          j:defaultTemplate="true"
                                          j:hiddenTemplate="true"
                                          j:priority="30"
-                     jcr:primaryType="jnt:contentTemplate">
+                                         jcr:primaryType="jnt:contentTemplate">
                             <j:translation_en jcr:language="en"
                                     jcr:mixinTypes="mix:title"
                                     jcr:primaryType="jnt:translation"
@@ -314,8 +314,8 @@
                                                 text="&lt;div class=&#34;headline-v2 tag-box-v2&#34;&gt;&#xA;&lt;h2&gt;Top Rated&lt;/h2&gt;&#xA;&lt;/div&gt;&#xA;"/>
                                         </rich-text>
                                         <top-rated j:minNbOfVotes="5"
-                                        j:typeOfContent="jnt:news"
-                                        jcr:primaryType="jnt:topRated"/>
+                                      j:typeOfContent="jnt:news"
+                                      jcr:primaryType="jnt:topRated"/>
                                         <rich-text-1 jcr:primaryType="jnt:bigText">
                                             <j:translation_en jcr:language="en"
                                                 jcr:primaryType="jnt:translation"
@@ -333,24 +333,24 @@
                                     </section--container--row--grid-side>
                                 </section--container--row--grid>
                             </pagecontent>
-                        <news-detail j:applyOn="jnt:news"
-                                   j:defaultTemplate="true"
-                                   j:hiddenTemplate="false"
-                                   j:priority="100"
-                                   jcr:primaryType="jnt:contentTemplate">
-                            <j:translation_en jcr:language="en"
-                                    jcr:mixinTypes="mix:title"
+                            <news-detail j:applyOn="jnt:news"
+                               j:defaultTemplate="true"
+                               j:hiddenTemplate="false"
+                               j:priority="100"
+                               jcr:primaryType="jnt:contentTemplate">
+                                <j:translation_en jcr:language="en"
+                                       jcr:mixinTypes="mix:title"
                                        jcr:primaryType="jnt:translation"
                                        jcr:title="news detail"/>
                                 <section--container--row--grid-main jcr:primaryType="jnt:contentList">
-                                        <main-resource-display j:mainResourceView="detail" jcr:primaryType="jnt:mainResourceDisplay"/>
+                                    <main-resource-display j:mainResourceView="detail" jcr:primaryType="jnt:mainResourceDisplay"/>
                                     <rating j:bindedComponent="/modules/jahiademo/templates/base/news/news-detail/section--container--row--grid-main/main-resource-display"
                                 jcr:primaryType="jnt:rateable"/>
-                                        <display-comments jcr:primaryType="jnt:commentsList"/>
-                                            <commentable jcr:primaryType="jnt:addComment"/>
+                                    <display-comments jcr:primaryType="jnt:commentsList"/>
+                                    <commentable jcr:primaryType="jnt:addComment"/>
                                 </section--container--row--grid-main>
-                                </news-detail>
-                        <landing jcr:primaryType="jnt:contentList">
+                            </news-detail>
+                            <landing jcr:primaryType="jnt:contentList">
                                 <banner jcr:primaryType="jnt:banner">
                                     <j:translation_en background="/modules/jahiademo/templates/files/img/newsroom-bg.jpg"
                                           cast="&lt;p&gt;Learn About Us&lt;/p&gt;&#xA;"
@@ -489,10 +489,10 @@
                             </pagecontent>
                         </events>
                         <event-content-template j:applyOn="jnt:event"
-                                           j:defaultTemplate="true"
-                                           j:hiddenTemplate="true"
-                                           j:priority="30"
-                                           jcr:primaryType="jnt:contentTemplate">
+                                       j:defaultTemplate="true"
+                                       j:hiddenTemplate="true"
+                                       j:priority="30"
+                                       jcr:primaryType="jnt:contentTemplate">
                             <j:translation_en jcr:language="en"
                                     jcr:mixinTypes="mix:title"
                                     jcr:primaryType="jnt:translation"
@@ -510,43 +510,43 @@
                                         <main-resource-display j:mainResourceView="metadata" jcr:primaryType="jnt:mainResourceDisplay"/>
                                         <map-static j:classname="demodxmap margin-bottom-30 overflow-hidden"
                                        j:height="255"
-                                j:imageType="png8"
+                                       j:imageType="png8"
                                        j:mapType="roadmap"
-                                j:markerColor="normal"
+                                       j:markerColor="normal"
                                        j:markerSize="normal"
                                        j:skin="skins.custom"
-                                j:width="325"
-                                j:zoom="auto"
+                                       j:width="325"
+                                       j:zoom="auto"
                                        jcr:mixinTypes="jmix:customSkin jmix:skinnable"
-                                jcr:primaryType="jnt:staticMap"/>
+                                       jcr:primaryType="jnt:staticMap"/>
                                         <main-resource-display-1 j:mainResourceView="addPeople"
                                                     jcr:primaryType="jnt:mainResourceDisplay"/>
                                     </section--container--row--grid-side>
                                 </section--container--row--grid>
                             </pagecontent>
-                            </event-content-template>
+                        </event-content-template>
                         <pressdetail j:applyOn="jnt:press"
-                                              j:defaultTemplate="true"
-                                              j:hiddenTemplate="false"
-                                              j:priority="100"
-                                              jcr:primaryType="jnt:contentTemplate">
+                            j:defaultTemplate="true"
+                            j:hiddenTemplate="false"
+                            j:priority="100"
+                            jcr:primaryType="jnt:contentTemplate">
                             <j:translation_en jcr:language="en"
                                     jcr:mixinTypes="mix:title"
                                     jcr:primaryType="jnt:translation"
                                     jcr:title="press detail content template"/>
                             <pagecontent jcr:primaryType="jnt:contentList">
-                                        <main-resource-display j:mainResourceView="detail" jcr:primaryType="jnt:mainResourceDisplay"/>
+                                <main-resource-display j:mainResourceView="detail" jcr:primaryType="jnt:mainResourceDisplay"/>
                             </pagecontent>
                         </pressdetail>
-                        </base>
+                    </base>
                     <newsletter-issue j:applyOn="jnt:newsletterIssue"
                               j:defaultTemplate="true"
                               j:hiddenTemplate="false"
                               j:priority="20"
                               j:view="jahiademoNewsletter"
                               jcr:primaryType="jnt:contentTemplate"/>
-            </templates>
-
+                </templates>
+                
                 <home j:isHomePage="true"
                j:templateName="home"
                jcr:primaryType="jnt:page">
@@ -561,14 +561,14 @@
                                  jcr:mixinTypes="mix:title"
                                  jcr:primaryType="jnt:translation"
                                  jcr:title="Search Results"/>
-                    <bootstrap-container jcr:primaryType="jnt:contentList">
+                        <bootstrap-container jcr:primaryType="jnt:contentList">
                             <advanced-search-form jcr:primaryType="jnt:advancedSearchForm"/>
-                        <search-results autoSuggest="true"
-                               autoSuggestHitCount="2"
-                               autoSuggestMaxTermCount="1"
-                               autoSuggestMinimumHitCount="2"
-                               jcr:primaryType="jnt:searchResults"/>
-                    </bootstrap-container>
+                            <search-results autoSuggest="true"
+                                  autoSuggestHitCount="2"
+                                  autoSuggestMaxTermCount="1"
+                                  autoSuggestMinimumHitCount="2"
+                                  jcr:primaryType="jnt:searchResults"/>
+                        </bootstrap-container>
                         <landing jcr:primaryType="jnt:contentList">
                             <simple-search-form j:view="banner"
                                       jcr:mixinTypes="jmix:renderable"
@@ -577,6 +577,6 @@
                         </landing>
                     </search-results>
                 </home>
-        </jahiademo>
+            </jahiademo>
     </modules>
 </content>
