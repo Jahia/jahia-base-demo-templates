@@ -6,6 +6,8 @@
 <mix = 'http://www.jcp.org/jcr/mix/1.0'>
 
 [jdnt:navmenu] > jnt:content, jdmix:jahiademo, jmix:studioOnly, jmix:navMenuComponent
+ - maxDepth (long) = 4
+ - maxTopLevel (long) = 4
 
 [jdmix:hidePage] mixin
  extends = jmix:navMenuItem

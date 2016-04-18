@@ -6,9 +6,13 @@ import org.jahia.services.render.Resource
 import org.jahia.taglibs.jcr.node.JCRTagUtils
 
 /* update this to increase or decrease the menu level allowed */
-def maxDepth = 4;
+def maxDepth = currentNode.properties['maxDepth']
+maxDepthValue = maxDepth ? maxDepth.long : 4
+
 /* update this to increase or decrease the max menu items on top level before putting them under the last menu item caret */
-def maxTopLevel = 4;
+def maxTopLevel = currentNode.properties['maxTopLevel']
+maxTopLevelValue = maxTopLevel ? maxTopLevel.long-1 : 4
+
 def printMenu;
 printMenu = { node, navMenuLevel ->
     if (node != null) {
@@ -39,7 +43,7 @@ printMenu = { node, navMenuLevel ->
                         def numHiddenChilds = hiddenChildren.size();
 
                         // check that there are actually visible children
-                        hasChildren = navMenuLevel < maxDepth && totalChilds > 0 && totalChilds > numHiddenChilds;
+                        hasChildren = navMenuLevel < maxDepthValue && totalChilds > 0 && totalChilds > numHiddenChilds;
 
                         Resource resource = new Resource(menuItem, "html", "menuElement", currentResource.getContextConfiguration());
                         def render = RenderService.getInstance().render(resource, renderContext)
@@ -51,7 +55,7 @@ printMenu = { node, navMenuLevel ->
                             // if this is not the top level of the menu
                             // or it's a top level item that has been pushed down a level
                             // and they have children
-                            if ((navMenuLevel > 1 || (navMenuLevel >= 1 && pageIndex >= maxTopLevel)) && hasChildren) {
+                            if ((navMenuLevel > 1 || (navMenuLevel >= 1 && pageIndex >= maxTopLevelValue)) && hasChildren) {
                                 //if there are children use dropdown-submenu to display arrow
                                 listItemCssClass = "class=\"dropdown-submenu " + (inpath || active ? "active" : "") + "\"";
                             } else if (navMenuLevel <= 1 && hasChildren) {
@@ -98,7 +102,7 @@ printMenu = { node, navMenuLevel ->
                                     ulIsOpen = true;
                                 }
                                 // if this is the maxTopLevel item on the top level menu item put it in a new top level menu item
-                                if (pageIndex == maxTopLevel) {
+                                if (pageIndex == maxTopLevelValue) {
                                     //start new menu
                                     println "<li class=\"dropdown\"><a class=\"dropdown-toggle\" href=\"javascript:void(0)\">&nbsp;<i class=\"fa fa-caret-down fa-lg\"></i></a>"
                                     println "<ul class=\"dropdown-menu pull-right dropdown-menu-alt-side\">"
@@ -107,7 +111,7 @@ printMenu = { node, navMenuLevel ->
 
                                     print "<li ${listItemCssClass}>";
                                     print "    <a href=\"${link}\" ${linkTitle} class=\"dropdown-toggle\">" + displayName + "</a>\n";
-                                    if (hasChildren && navMenuLevel < maxDepth) {
+                                    if (hasChildren && navMenuLevel < maxDepthValue) {
                                         printMenu(menuItem, navMenuLevel + 1);
                                     }
                                     println "</li>\n";
@@ -137,7 +141,7 @@ printMenu = { node, navMenuLevel ->
                                 }
                                 println "<li ${listItemCssClass}>";
                                 print "<a href=\"${link}\" ${linkTitle}>" + displayName + "   </a>";
-                                if (hasChildren && navMenuLevel < maxDepth) {
+                                if (hasChildren && navMenuLevel < maxDepthValue) {
                                     printMenu(menuItem, navMenuLevel + 1);
                                 }
 

@@ -20,52 +20,39 @@
 <%-- display the search results for the allStories query --%>
 <template:addResources type="javascript" resources="custom/allStories.js"/>
 <template:include view="hidden.header"/>
+<div class="allStoriesContainer">
+    <div id="allStories-content-${currentNode.identifier}" class="allStories" url="<c:url value='${url.base}${currentNode.path}.html'/>">
+        <c:if test="${renderContext.editMode}">
+            <h4><fmt:message key="label.topStoriesArea"/></h4>
+            <p><fmt:message key="label.componentDescription"/></p>
+        </c:if>
 
-<div id="allStories-content-${currentNode.identifier}" class="allStories" path="${currentNode.path}">
-    <c:set var="id" value="${fn:replace(currentNode.identifier,'-', '')}"/>
-    <c:set var="allStoriesTab" value="${fn:trim(param['allStoriesTab'])}"/>
+        <div class="tab-v1">
+            <ul class="nav nav-tabs margin-bottom-10">
+                <li class="all">
+                    <a class="allStoriesTabItem" view="all" href="javascript:void(0)">
+                        <fmt:message key="jdnt_allStories.allNews"/>
+                    </a>
+                </li>
+                <li class="top">
+                    <a class="allStoriesTabItem" view="top" href="javascript:void(0)">
+                        <fmt:message key="jdnt_allStories.topNews"/>
+                    </a>
+                </li>
+                <li class="featured">
+                    <a  class="allStoriesTabItem" view="featured" href="javascript:void(0)">
+                        <fmt:message key="jdnt_allStories.featuredNews"/>
+                    </a>
+                </li>
+            </ul>
 
-    <c:if test="${renderContext.editMode}">
-        <h4><fmt:message key="label.topStoriesArea"/></h4>
-
-        <p><fmt:message key="label.componentDescription"/></p>
-    </c:if>
-
-    <div class="tab-v1">
-        <ul class="nav nav-tabs margin-bottom-10">
-            <li class="all">
-                <a href="javascript:void(0)" onclick="reload${id}('all')"><fmt:message
-                    key="jdnt_allStories.allNews"/>
-                </a>
-            </li>
-            <li class="top">
-                <a href="javascript:void(0)" onclick="reload${id}('top')">
-                    <fmt:message key="jdnt_allStories.topNews"/>
-                </a>
-            </li>
-            <li class="featured">
-                <a href="javascript:void(0)" onclick="reload${id}('featured')">
-                    <fmt:message key="jdnt_allStories.featuredNews"/>
-                </a>
-            </li>
-        </ul>
-
-        <div id="tab-content-${currentNode.identifier}">
-            <c:forEach items="${moduleMap.currentList}" var="topStory" varStatus="item">
-                <template:module path="${topStory.path}">
-                    <template:param name="last" value="${item.last}"/>
-                </template:module>
-            </c:forEach>
+            <div id="tab-content-${currentNode.identifier}">
+                <c:forEach items="${moduleMap.currentList}" var="topStory" varStatus="item">
+                    <template:module path="${topStory.path}">
+                        <template:param name="last" value="${item.last}"/>
+                    </template:module>
+                </c:forEach>
+            </div>
         </div>
     </div>
-
-    <template:addResources type="inline">
-        <script type="text/javascript">
-            function reload${id}(param) {
-                history.pushState(null, null, window.location.href.split('?')[0] + '?allStoriesTab=' + param);
-                $('#allStories-content-${currentNode.identifier}').load('<c:url value="${url.base}${currentNode.path}.html.ajax?allStoriesTab="/>' + param);
-                activePageViewTab();
-            }
-        </script>
-    </template:addResources>
 </div>
