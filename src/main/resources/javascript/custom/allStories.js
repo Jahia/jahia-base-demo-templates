@@ -14,10 +14,13 @@ function activateStoriesTabAjax(){
         $(this).closest(".allStories")
     });
 }
+
 $(document).ready(function () {
+    // After an ajax call has been done, we need to rerun the JS on the HTML fragment that has been reloaded
     $(document).bind('DOMNodeInserted', function (e) {
         activePageViewTab();
         activateStoriesTabAjax();
     });
+
     activateStoriesTabAjax();
 })

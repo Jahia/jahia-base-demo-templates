@@ -15,6 +15,8 @@
 <c:set var="logo" value="${currentNode.properties['logo'].node}"/>
 
 <c:if test="${! empty logo}">
+    <%-- ${logo.url} already adds the context the url
+    so we need to tell the tag <c:url> not add the context a second time by specifying context="/" --%>
     <c:url var="logoUrl" value="${logo.url}" context="/"/>
     <c:url var="homePageURL" value="${renderContext.site.home.url}" context="/"/>
 

@@ -20,6 +20,9 @@
 <%-- display the search results for the allStories query --%>
 <template:addResources type="javascript" resources="custom/allStories.js"/>
 <template:include view="hidden.header"/>
+
+<%-- allStories.js does some handle some ajax calls for allStories.jsp.
+     The parameters needed for the ajax call are present in the DOM of this view (attributes url and view)--%>
 <div class="allStoriesContainer">
     <div id="allStories-content-${currentNode.identifier}" class="allStories" url="<c:url value='${url.base}${currentNode.path}.html'/>">
         <c:if test="${renderContext.editMode}">
