@@ -29,7 +29,8 @@
         <div class="news-v3 margin-bottom-20">
             <c:if test="${not empty newsImage}">
                 <template:addCacheDependency node="${newsImage}"/>
-                <a href="${detailUrl}"><img class="img-responsive full-width" src="${newsImage.url}" alt="${newsTitle}"></a>
+                <c:url var="newsImageUrl" value="${newsImage.url}" context="/"/>
+                <a href="${detailUrl}"><img class="img-responsive full-width" src="${newsImageUrl}" alt="${newsTitle}"></a>
             </c:if>
             <div class="news-v3-in">
                 <template:include view="hidden.tagListView"/>
@@ -49,7 +50,8 @@
         </c:if>
         <div class="col-md-4 sm-margin-bottom-20">
             <div class="news-v2-badge">
-                <a href="${detailUrl}"><img class="img-responsive" src="${newsImage.url}" alt="${newsTitle}"></a>
+                <c:url var="newsImageUrl" value="${newsImage.url}" context="/"/>
+                <a href="${detailUrl}"><img class="img-responsive" src="${newsImageUrl}" alt="${newsTitle}"></a>
                 <p>
                     <span>${newsDay}</span>
                     <small>${newsMonth}</small>

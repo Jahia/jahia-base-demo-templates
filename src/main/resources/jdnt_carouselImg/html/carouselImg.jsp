@@ -18,7 +18,7 @@
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
 
 <%-- get the image url and the caption --%>
-<c:set var="imageUrl" value="${currentNode.properties['image'].node.url}"/>
+<c:url var="imageUrl" value="${currentNode.properties['image'].node.url}"  context="/"/>
 <c:set var="caption" value="${currentNode.properties['caption'].string}"/>
 
 <img class="carouselImageFull" src="${imageUrl}" alt="${caption}">

@@ -52,10 +52,11 @@
             </c:if>
             <c:if test="${not empty linkNode}">
                 <template:addCacheDependency node="${linkNode}"/>
+                <c:url var="linkNodeUrl" value="${linkNode.url}" context="/"/>
                 <c:choose>
-                    <c:when test="${topLevel == 'first'}"><c:set var="pageUrl" value="${linkNode.url}?pageView=top"/></c:when>
-                    <c:when test="${topLevel == 'second'}"><c:set var="pageUrl" value="${linkNode.url}?pageView=featured"/></c:when>
-                    <c:otherwise><c:set var="pageUrl" value="${linkNode.url}?pageView=all"/></c:otherwise>
+                    <c:when test="${topLevel == 'first'}"><c:set var="pageUrl" value="${linkNodeUrl}?pageView=top"/></c:when>
+                    <c:when test="${topLevel == 'second'}"><c:set var="pageUrl" value="${linkNodeUrl}?pageView=featured"/></c:when>
+                    <c:otherwise><c:set var="pageUrl" value="${linkNodeUrl}?pageView=all"/></c:otherwise>
                 </c:choose>
                 <ul class="pager">
 

@@ -41,7 +41,7 @@
         <c:url var="backgroundUrl" value="${url.currentModule}/img/background.jpg"/>
     </c:when>
     <c:otherwise>
-        <c:set var="backgroundUrl" value="${background.url}"/>
+        <c:url var="backgroundUrl" value="${background.url}" context="/"/>
     </c:otherwise>
 </c:choose>
 
@@ -66,7 +66,7 @@
     <c:if test="${not empty image}">
         <div class="ms-layer sidePanelPhoto"
              style="left: ${photoLayout};">
-            <img src="${image.url}" alt="" style="height: 100%;">
+            <img src=""<c:url value="${image.url}" context="/"/>" alt="" style="height: 100%;">
         </div>
     </c:if>
 
@@ -103,7 +103,7 @@
 
     <%-- if a link has been provided display it as a button --%>
     <c:if test="${not empty link}">
-        <a class="ms-layer btn-u top390" style="left:${textLayout}" href="${link.url}"
+        <a class="ms-layer btn-u top390" style="left:${textLayout}" href="<c:url value="${link.url}" context="/"/>"
            data-effect="bottom(40)"
            data-duration="2000"
            data-delay="1300"

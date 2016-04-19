@@ -9,6 +9,12 @@
         <property name="applyOnNodeTypes" value="jdnt:stockWidget"/>
     </bean>
 
+
+    <bean class="org.jahia.modules.jahiademo.actions.GenerateEventIcs">
+        <property name="name" value="generateEventIcs"/>
+        <property name="requireAuthenticatedUser" value="false"/>
+    </bean>
+
     <bean id="cookieMessageInitializer" class="org.jahia.services.content.nodetypes.initializers.FixedListChoiceListInitializer">
         <property name="key" value="cookieMessageInitializer"/>
         <property name="items">

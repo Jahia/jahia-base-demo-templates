@@ -46,7 +46,7 @@
                     </c:if>
                 </c:if>
                 <c:if test="${jcr:isNodeType(currentNode, 'jdmix:cookieLink')}">
-                <c:url var="cookieWhatAreTheyLink" value="${currentNode.properties.cookiePageLink.node.url}" />
+                <c:url var="cookieWhatAreTheyLink" value="${currentNode.properties.cookiePageLink.node.url}" context="/"/>
                 <c:if test="${! empty cookieWhatAreTheyLink}">
                 , cookieWhatAreTheyLink: '${fn:escapeXml(cookieWhatAreTheyLink)}'
                 </c:if>

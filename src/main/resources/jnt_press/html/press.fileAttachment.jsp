@@ -23,6 +23,7 @@
 <jcr:nodeProperty node="${currentNode}" name="pdfVersion" var="pdfVersion"/>
 <c:if test="${not empty pdfVersion}">
     <template:addCacheDependency node="${pdfVersion.node}"/>
+    <c:url var="pdfVersionUrl" value="${pdfVersion.node.url}" context="/"/>
     <c:set var="label" value="${currentNode.properties.downloadTitle.string}"/>
     <c:if test="${empty label}">
         <c:set var="label"><fmt:message key="jdmix_fileAttachment.label"/></c:set>
@@ -31,17 +32,17 @@
         <div>
         ${pdfVersion.node.name}
             <c:if test="${fn:containsIgnoreCase(pdfVersion.node.name, '.pdf')}">
-                <a class="view-pdf" href="${pdfVersion.node.url}" title="${title}">
+                <a class="view-pdf" href="${pdfVersionUrl}" title="${title}">
                     <strong>
                         <i class="fa fa-fw fa-eye" title="<fmt:message key="label.view"/>"></i>
                     </strong>
                     <div class="pdf-preview" style="display: none;">
-                        <object type="application/pdf" data="${pdfVersion.node.url}" width="100%" height="500"><fmt:message key="label.pdfView.noSupport"/><br/><a href="${pdfVersion.node.url}"><strong>${pdfVersion.node.name} <i class="fa fa-download" title="<fmt:message key="label.download"/>"></i></strong></a></object>
+                        <object type="application/pdf" data="${pdfVersionUrl}" width="100%" height="500"><fmt:message key="label.pdfView.noSupport"/><br/><a href="${pdfVersionUrl}"><strong>${pdfVersion.node.name} <i class="fa fa-download" title="<fmt:message key="label.download"/>"></i></strong></a></object>
                     </div>
                 </a>
             </c:if>
             &nbsp;
-            <a href="${pdfVersion.node.url}">
+            <a href="${pdfVersionUrl}">
                 <strong>
                     <i class="fa fa-download" title="<fmt:message key="label.download"/>"></i>
                 </strong>

@@ -9,7 +9,7 @@
 <%-- display image if referenced image is available --%>
 <c:if test="${not empty node}">
     <jahia:addCacheDependency node="${node}"/>
-    <c:url var="url" value="${node.url}"/>
+    <c:url var="url" value="${node.url}" context="/"/>
     <img src="${url}" alt="${fn:escapeXml(not empty title.string ? title.string : currentNode.name)}" width="100%"
          height="auto"/> />
 </c:if>

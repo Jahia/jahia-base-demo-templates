@@ -20,7 +20,7 @@
 <template:include view="hidden.bannerHeader"/>
 
 <c:if test="${jcr:isNodeType(currentNode, 'jdmix:internalLink')}">
-    <a href="${currentNode.properties.internalLink.node.url}" style="text-decoration: none;">
+    <a href="<c:url value="${currentNode.properties.internalLink.node.url}" context="/"/>" style="text-decoration: none;">
 </c:if>
     <!--=== Breadcrumbs v1 ===-->
     <div class="breadcrumbs-v1" style='background:url("${moduleMap.bannerUrl}") no-repeat scroll center center / cover;'>

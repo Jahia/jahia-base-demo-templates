@@ -22,7 +22,7 @@
 <c:set var="description" value="${currentNode.properties['description'].string}"/>
 <c:set var="icon" value="${currentNode.properties['faIcon'].string}"/>
 <c:if test="${jcr:isNodeType(currentNode, 'jdmix:hasLink')}">
-    <c:set var="linkUrl" value="${currentNode.properties['internalLink'].node.url}"/>
+    <c:url var="linkUrl" value="${currentNode.properties['internalLink'].node.url}" context="/"/>
 </c:if>
 
 <div class="service">

@@ -24,7 +24,7 @@
 <%-- set bio variable as plain text by stripping the rich text html tags from it --%>
 <c:set var="bio" value="${functions:removeHtmlTags(currentNode.properties.biography.string)}"/>
 <c:set var="photo" value="${currentNode.properties.picture}"/>
-<c:url var="personURL" value="${currentNode.url}"/>
+<c:url var="personURL" value="${currentNode.url}" context="/"/>
 
 
 <%-- get default photo if one was not provided --%>
@@ -34,7 +34,7 @@
     </c:when>
     <c:otherwise>
         <template:addCacheDependency node="${photo.node}"/>
-        <c:url var="photoUrl" value="${photo.node.url}"/>
+        <c:url var="photoUrl" value="${photo.node.url}" context="/"/>
     </c:otherwise>
 </c:choose>
 

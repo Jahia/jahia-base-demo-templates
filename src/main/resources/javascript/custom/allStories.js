@@ -14,8 +14,10 @@ function activateStoriesTabAjax(){
         $(this).closest(".allStories")
     });
 }
-
-$(document).bind('DOMNodeInserted', function (e) {
-    activePageViewTab();
+$(document).ready(function () {
+    $(document).bind('DOMNodeInserted', function (e) {
+        activePageViewTab();
+        activateStoriesTabAjax();
+    });
     activateStoriesTabAjax();
-});
+})

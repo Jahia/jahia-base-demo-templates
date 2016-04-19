@@ -43,7 +43,7 @@
         <c:url var="backgroundUrl" value="${url.currentModule}/img/background.jpg"/>
     </c:when>
     <c:otherwise>
-        <c:url var="backgroundUrl" value="${background.url}"/>
+        <c:url var="backgroundUrl" value="${background.url}" context="/"/>
     </c:otherwise>
 </c:choose>
 
@@ -87,12 +87,12 @@
         </c:if>
 
         <c:if test="${not empty link}">
-            <a class="but-layer-editslider" href="${link.url}" alt="${title}">${linkText}</a>
+            <a class="but-layer-editslider" href="<c:url value="${link.url}" context="/"/>" alt="${title}">${linkText}</a>
         </c:if>
     </div>
     <%-- second image if exists --%>
     <c:if test="${not empty image}">
-        <img class="ms-img-bordered edit-slider-img" src="${image.url}" alt="">
+        <img class="ms-img-bordered edit-slider-img" src="<c:url value="${image.url}" context="/"/>" alt="">
     </c:if>
 </div>
 

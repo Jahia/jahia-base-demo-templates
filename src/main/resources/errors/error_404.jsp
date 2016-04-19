@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="robots" content="noindex, nofollow"/>
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/errors.css" type="text/css"/>
+    <link rel="stylesheet" href="/css/errors.css" type="text/css"/>
     <link rel="stylesheet" type="text/css" href="/modules/jahiademo/css/page_404_error3.css"/>
     <link rel="stylesheet" type="text/css" href="/modules/jahiademo/css/style.css"/>
     <link rel="stylesheet" type="text/css" href="/modules/jahiademo/css/app.css"/>

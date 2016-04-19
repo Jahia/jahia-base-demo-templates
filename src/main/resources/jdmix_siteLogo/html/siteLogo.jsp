@@ -15,8 +15,8 @@
 <c:set var="logo" value="${currentNode.properties['logo'].node}"/>
 
 <c:if test="${! empty logo}">
-    <c:url var="logoUrl" value="${logo.url}"/>
-    <c:url var="homePageURL" value="${renderContext.site.home.url}"/>
+    <c:url var="logoUrl" value="${logo.url}" context="/"/>
+    <c:url var="homePageURL" value="${renderContext.site.home.url}" context="/"/>
 
     <a href="${homePageURL}" class="logo"><img src="${logoUrl}" alt="Logo"></a>
 </c:if>

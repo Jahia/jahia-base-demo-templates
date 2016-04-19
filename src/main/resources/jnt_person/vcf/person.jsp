@@ -65,7 +65,7 @@ EMAIL;TYPE=PREF,INTERNET:${email}
 REV:<%=new SimpleDateFormat("yyyyMMdd'T'HHmmss'Z'").format(new Date()) %>
 <c:catch var="error">
     <c:if test="${not empty picture.node}">
-        <c:set var="pictureUrl" value="${url.server}${picture.node.url}"/>
+        <c:url var="pictureUrl" value="${picture.node.url}" context="/"/>
         <%
             String base64 = "";
             String pictureUrl = (String) pageContext.findAttribute("pictureUrl");

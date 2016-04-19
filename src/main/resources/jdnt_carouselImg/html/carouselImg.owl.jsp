@@ -18,7 +18,7 @@
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
 
 <%-- get the url of the image to display --%>
-<c:set var="imageUrl" value="${currentNode.properties['image'].node.url}"/>
+<c:url var="imageUrl" value="${currentNode.properties['image'].node.url}" context="/"/>
 
 <div class="owl-item owl-fix-width">
     <div class="item">

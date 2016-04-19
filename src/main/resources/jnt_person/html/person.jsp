@@ -39,7 +39,7 @@
     </c:when>
     <c:otherwise>
         <template:addCacheDependency node="${photo.node}"/>
-        <c:url var="photoUrl" value="${photo.node.url}"/>
+        <c:url var="photoUrl" value="${photo.node.url}" context="/"/>
     </c:otherwise>
 </c:choose>
 

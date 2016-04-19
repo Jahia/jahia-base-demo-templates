@@ -22,6 +22,7 @@
     </c:when>
     <c:otherwise>
         <template:addCacheDependency node="${source}"/>
+        <c:url var="sourceUrl" value="${source.url}" context="/"/>
         <%-- Include the VideoJS Library --%>
         <template:addResources type="css" resources="video-js.css"/>
         <template:addResources type="javascript" resources="video.js"/>
@@ -39,7 +40,7 @@
                preload="${renderContext.editMode ? "metadata" : "auto"}"
                width="${currentNode.properties.width.string}" height="${currentNode.properties.height.string}"
                data-setup='{<c:if test="${currentNode.properties.forceFlashPlayer.boolean}">"techOrder":["flash", "html5"]</c:if>}'>
-          <source src="${source.url}" type='${mimeType.string == "video/x-f4v" ? "video/mp4" : mimeType.string}' />
+          <source src="<c:url value="${sourceUrl}" context="/"/>" type='${mimeType.string == "video/x-f4v" ? "video/mp4" : mimeType.string}' />
         </video>
     </c:otherwise>
 </c:choose>

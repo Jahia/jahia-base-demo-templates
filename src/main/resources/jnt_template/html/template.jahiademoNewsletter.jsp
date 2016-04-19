@@ -137,7 +137,7 @@
                                 </fmt:message>
                                 <br/>
                                 <fmt:message key="newsletter.intro.2"/>
-                                <a href="${renderContext.mainResource.node.url}" target="_blank"
+                                <a href="<c:url value="${renderContext.mainResource.node.url}" context="/"/>" target="_blank"
                                    style="color: #0066ff;text-decoration: none;">
                                     <fmt:message key="newsletter.intro.3"/></a>.</p></td>
                     </tr>
@@ -294,7 +294,7 @@
                             <p style="font-size: 11px;font-weight: normal;font-style: italic;color: #333;text-align: center;">
                                 <fmt:message key="label.manageSubscriptions1"
                                 />&nbsp;<a
-                                    href="${renderContext.mainResource.node.parent.properties['j:subscriptionPage'].node.url}"
+                                    href="<c:url value="${renderContext.mainResource.node.parent.properties['j:subscriptionPage'].node.url}" context="/"/>"
                                     target="_blank"
                                     style="color: #0066ff;text-decoration: none; border: none;margin: 0;padding: 0;"><fmt:message
                                     key="label.manageSubscriptions2"/></a>

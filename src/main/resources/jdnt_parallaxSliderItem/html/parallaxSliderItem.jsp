@@ -19,6 +19,9 @@
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
 
 <c:set var="backgroundImg" value="${currentNode.properties['backgroundImg'].node}"/>
+<c:if test="${not empty backgroundImg}">
+    <c:url var="backgroundImgUrl" value="${backgroundImg.url}" context="/"/>
+</c:if>
 <c:set var="pause" value="${currentNode.properties['pause'].boolean}"/>
 <c:set var="width" value="${currentNode.properties['width'].string}"/>
 <c:set var="body" value="${currentNode.properties['body'].string}"/>
@@ -29,7 +32,7 @@
 </c:if>
 
 <section class="parallaxPanel ${effectClass}" id="parallax${currentNode.identifier}"
-         style="background-image: url('${backgroundImg.url}');
+         style="background-image: url('${backgroundImgUrl}');
          <c:if test="${pause}">margin-bottom:400px</c:if> ">
     <div>${body}</div>
 </section>
@@ -80,7 +83,7 @@
 <template:addResources type="inline">
 <script type="text/javascript">
     $(document).ready(function () {
-        $("#parallax${currentNode.identifier}").css("background-image", "url('${backgroundImg.url}')");
+        $("#parallax${currentNode.identifier}").css("background-image", "url('${backgroundImgUrl}')");
         $("#parallax${currentNode.identifier}").css("background-color", "${backgroundColor}");
         $("#parallax${currentNode.identifier} div").width("${width}");
         $("#parallax${currentNode.identifier} p, #parallax${currentNode.identifier} li, #parallax${currentNode.identifier} li a, #parallax${currentNode.identifier} label, #parallax${currentNode.identifier} h1, #parallax${currentNode.identifier} h2, #parallax${currentNode.identifier} h3, #parallax${currentNode.identifier} h4, #parallax${currentNode.identifier} h5, #parallax${currentNode.identifier} h6").css("color", "${textColor}");

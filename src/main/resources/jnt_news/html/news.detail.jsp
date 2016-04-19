@@ -39,20 +39,21 @@
 
     <div id="sync1" class="owl-carousel newsPicture">
         <c:if test="${not empty newsImage}">
+            <c:url var="newsImageUrl" value="${newsImage.url}" context="/"/>
             <jahia:addCacheDependency node="${newsImage}"/>
             <div class="item">
                     <%-- if there is a gallery format for the photoswipe otherwise just display image --%>
                 <c:choose>
                     <c:when test="${not empty galleryImgs}">
-                        <a href="${newsImage.url}"
+                        <a href="${newsImageUrl}"
                            data-size="${newsImage.properties['j:width'].string}x${newsImage.properties['j:height'].string}">
-                            <img class="img-responsive full-width" src="${newsImage.url}"
+                            <img class="img-responsive full-width" src="${newsImageUrl}"
                                  height="${newsImage.properties['j:height'].string}"
                                  width="${newsImage.properties['j:width'].string}"/>
                         </a>
                     </c:when>
                     <c:otherwise>
-                        <img class="img-responsive full-width" src="${newsImage.url}"
+                        <img class="img-responsive full-width" src="${newsImageUrl}"
                              height="${newsImage.properties['j:height'].string}"
                              width="${newsImage.properties['j:width'].string}"/>
                     </c:otherwise>
@@ -64,10 +65,11 @@
         <c:if test="${not empty galleryImgs}">
             <c:forEach var="galleryImg" items="${galleryImgs}" varStatus="status">
                 <jahia:addCacheDependency node="${galleryImg.node}"/>
+                <c:url var="galleryImgUrl" value="${galleryImg.node.url}" context="/"/>
                 <div class="item">
-                    <a href="${galleryImg.node.url}"
+                    <a href="${galleryImgUrl}"
                        data-size="${galleryImg.node.properties['j:width'].string}x${galleryImg.node.properties['j:height'].string}"><img
-                            class="img-responsive full-width" src="${galleryImg.node.url}"
+                            class="img-responsive full-width" src="${galleryImgUrl}"
                             height="${galleryImg.node.properties['j:height'].string}"
                             width="${galleryImg.node.properties['j:height'].string}"/></a>
                 </div>
@@ -81,12 +83,14 @@
         <div id="sync2" class="owl-carousel owl-theme">
 
             <c:if test="${not empty newsImage}">
-                <div class="item"><img class="img-responsive full-width" src="${newsImage.url}?t=thumbnail2"/></div>
+                <c:url var="newsImageUrl" value="${newsImage.url}" context="/"/>
+                <div class="item"><img class="img-responsive full-width" src="${newsImageUrl}?t=thumbnail2"/></div>
             </c:if>
             <c:if test="${not empty galleryImgs}">
                 <c:forEach var="galleryImg" items="${galleryImgs}" varStatus="status">
+                    <c:url var="galleryImgUrl" value="${galleryImg.node.url}" context="/"/>
                     <div class="item">
-                        <img src="${galleryImg.node.url}?t=thumbnail2"/>
+                        <img src="${galleryImgUrl}?t=thumbnail2"/>
                     </div>
                 </c:forEach>
             </c:if>

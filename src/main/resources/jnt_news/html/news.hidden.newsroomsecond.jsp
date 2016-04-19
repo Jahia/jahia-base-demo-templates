@@ -30,7 +30,8 @@
     <div class="col-sm-5 sm-margin-bottom-20">
         <c:if test="${not empty newsImage}">
             <template:addCacheDependency node="${newsImage}"/>
-            <a href="${detailUrl}"><img class="img-responsive" src="${newsImage.url}" alt="${newsTitle}"></a>
+            <c:url var="newsImageUrl" value="${newsImage.url}" context="/"/>
+            <a href="${detailUrl}"><img class="img-responsive" src="${newsImageUrl}" alt="${newsTitle}"></a>
         </c:if>
     </div>
     <div class="col-sm-7 news-v3">

@@ -91,7 +91,7 @@
 
 [jdnt:toggleSearchButton] > jnt:content, jdmix:jahiademo, jdmix:headerWidgets, jmix:studioOnly
 
-[jdnt:people] > jnt:contentList, jdmix:jahiademo orderable
+[jdnt:people] > jnt:contentList, jdmix:jahiademo
 
 [jdmix:socialIcons] mixin
  extends = jnt:person, jdnt:company
@@ -139,7 +139,7 @@
  - bannerImg (weakreference, picker[type='image']) < 'jmix:image'
  - thumbnail (weakreference, picker[type='image']) < 'jmix:image'
  - logo (weakreference, picker[type='image']) < 'jmix:image'
- + * (jnt:content) autocreated
+ + Company-Specific-Content (jnt:contentList)
 
 [jdmix:hasPeople] mixin
  extends = jnt:event, jdnt:company

@@ -20,11 +20,14 @@
 
 <jcr:nodeProperty node="${currentNode}" name="mp4" var="mp4"/>
 <jcr:nodeProperty node="${currentNode}" name="webm" var="webm"/>
+<c:url var="mp4Url" value="${mp4.node.url}" context="/"/>
+<c:url var="webmUrl" value="${webm.node.url}" context="/"/>
+
 <video data-autopause="false" data-mute="true" data-loop="true" data-fill-mode="fill">
     <c:if test="${not empty mp4.node}">
-        <source src="${mp4.node.url}" type="video/mp4"/>
+        <source src="${mp4Url}" type="video/mp4"/>
     </c:if>
     <c:if test="${not empty webm.node}">
-        <source src="${webm.node.url}" type="video/webm"/>
+        <source src="${webmUrl}" type="video/webm"/>
     </c:if>
 </video>

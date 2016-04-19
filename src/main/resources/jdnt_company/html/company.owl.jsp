@@ -19,8 +19,11 @@
 <%-- company view for owl carousel (jdnt:compCarousel) --%>
 
 <%-- get the imageURL to display --%>
-<c:set var="imageUrl" value="${currentNode.properties['thumbnail'].node.url}"/>
-<c:set var="compUrl" value="${currentNode.url}"/>
+<c:if test="${not empty currentNode.properties['thumbnail'].node}">
+    <c:url var="imageUrl" value="${currentNode.properties['thumbnail'].node.url}" context="/"/>
+</c:if>
+
+<c:url var="compUrl" value="${currentNode.url}" context="/"/>
 
 <div class="item" style="width: 163px;">
     <a href="${compUrl}">
