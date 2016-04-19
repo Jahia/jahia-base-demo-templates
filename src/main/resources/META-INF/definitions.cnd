@@ -139,7 +139,7 @@
  - bannerImg (weakreference, picker[type='image']) < 'jmix:image'
  - thumbnail (weakreference, picker[type='image']) < 'jmix:image'
  - logo (weakreference, picker[type='image']) < 'jmix:image'
- + Company-Specific-Content (jnt:contentList)
+ + companySpecificContent (jnt:contentList)
 
 [jdmix:hasPeople] mixin
  extends = jnt:event, jdnt:company
