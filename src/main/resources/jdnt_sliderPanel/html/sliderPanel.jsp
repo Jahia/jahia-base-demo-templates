@@ -87,7 +87,7 @@
              data-duration="2000"
              data-delay="1000"
              data-ease="easeOutExpo"
-        ><span class="color-green">${title}</span></div>
+        ><span class="color-theme">${title}</span></div>
     </c:if>
 
     <%-- if a summary is provided display it --%>

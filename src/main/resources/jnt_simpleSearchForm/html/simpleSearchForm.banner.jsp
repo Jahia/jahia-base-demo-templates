@@ -32,7 +32,7 @@
     <div class="search-block parallaxBg" style="background-position: 50% 16px;">
         <div class="container">
             <div class="col-md-6 col-md-offset-3">
-                <h1>Discover <span class="color-green">new</span> things</h1>
+                <h1>Discover <span class="color-theme">new</span> things</h1>
 
                 <div class="input-group">
                     <s:form method="post" action="${searchUrl}">

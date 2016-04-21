@@ -48,7 +48,7 @@
 <div id="stock-widget${uuid}" class="card stock-widget">
     <div class="front">
     <div class="stock-widget-wrapper">
-        <div class="title color-green">${stock}</div>
+        <div class="title color-theme">${stock}</div>
         <div class="description">
             <p>%%StockDescription%%</p>
         </div>
