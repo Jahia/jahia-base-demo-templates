@@ -50,7 +50,7 @@
             </div>
             <div class="col-md-9">
                 <div class="title"><fmt:message key="jdnt_people.sampleName"/></div>
-                <div class="subtitle color-green"><fmt:message key="jdnt_people.sampleTitle"/></div>
+                <div class="subtitle color-theme"><fmt:message key="jdnt_people.sampleTitle"/></div>
                 <p><fmt:message key="jdnt_people.sampleBio"/></p>
                 <p><fmt:message key="jdnt_people.sampleBio2"/></p>
                 <ul class="list-inline team-social">

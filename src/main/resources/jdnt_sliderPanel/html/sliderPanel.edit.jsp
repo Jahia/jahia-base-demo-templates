@@ -70,7 +70,7 @@
         </c:if>
         <c:if test="${not empty title}">
             <div class="second-layer-editslider">
-                <span class="color-green">${title}</span>
+                <span class="color-theme">${title}</span>
             </div>
         </c:if>
 

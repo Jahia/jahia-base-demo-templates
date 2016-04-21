@@ -31,7 +31,7 @@ CKEDITOR.addTemplates('default',
             {
                 title: 'Expandable paragraph',
                 description: 'Expandable paragraph',
-                html: '<h1><span style="font-size:32px;" class="color-green">Type a title here</span></h1>'+
+                html: '<h1><span style="font-size:32px;" class="color-theme">Type a title here</span></h1>'+
                 '<h3 class="lead"><span style="font-size:18px;">Type a paragraph here.</span></h3>'+
                 '<p><a class="btn collapsed" data-target="#demo" data-toggle="collapse" type="button" aria-expanded="false">Expand</a></p>'+
                 '<div class="clear"></div>'+

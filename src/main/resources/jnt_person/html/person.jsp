@@ -54,7 +54,7 @@
     </div>
     <div class="col-md-9">
         <div class="title">${name}</div>
-        <div class="subtitle color-green">${title}</div>
+        <div class="subtitle color-theme">${title}</div>
         ${bio}
         <c:if test="${jcr:isNodeType(currentNode, 'jdmix:socialIcons')}">
             <template:include view="socialIcons"/>
