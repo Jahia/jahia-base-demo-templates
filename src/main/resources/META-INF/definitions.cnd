@@ -144,10 +144,7 @@
 [jdmix:hasPeople] mixin
  extends = jnt:event, jdnt:company
  - boxTitle (string)  = 'Leadership' i18n
- + relatedPeople (jdnt:personList) = jdnt:personList autocreated
-
-[jdnt:personList] > jnt:content, jmix:list orderable
- + * (jnt:person)
+ + relatedPeople (jnt:contentList)
 
 [jdnt:companyNews] > jnt:content, jmix:list, mix:title, jdmix:jahiademo, jmix:bindedComponent
  - limit (long) = 3
