@@ -17,32 +17,22 @@
 <%--@elvariable id="renderContext" type="org.jahia.services.render.RenderContext"--%>
 <%--@elvariable id="currentResource" type="org.jahia.services.render.Resource"--%>
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
+<template:addResources type="javascript" resources="custom/eventTabs.js"/>
 <template:include view="hidden.header"/>
 
 <c:set var="view" value="condensed"/>
 <c:set var="title" value="${currentNode.properties['jcr:title'].string}"/>
 
-<%-- get the parameter passed via the URL --%>
-<c:set var="pastEventId" value="pastEvent${currentNode.identifier}"/>
-<c:if test="${not empty param[pastEventId]}">
-    <c:set var="pastEvent" value="${param[pastEventId]}"/>
-</c:if>
-
-<c:if test="${not empty title && empty pastEvent}">
+<div class="eventTabContainer">
+<c:if test="${not empty title}">
     <div class="headline"><h2>${title}</h2></div>
 </c:if>
-
-<div id="eventTabs-content-${currentNode.identifier}">
-    <c:set var="id" value="${fn:replace(currentNode.identifier,'-', '')}"/>
+    <div id="eventTabs-content-${currentNode.identifier}" class="eventTabs" url="<c:url value='${url.base}${currentNode.path}.html'/>" >
     <div class="tab-v1">
         <ul class="nav nav-tabs">
-            <li
-                    <c:if test="${pastEvent != 'past'}">class="active"</c:if> ><a
-                    href="javascript:void(0)" onclick="reload${id}('upcoming')">
+                <li class="upcoming"><a class="eventTabItem" view="upcoming" href="javascript:void(0)">
                     <fmt:message key="jdnt_eventTabs.upcoming"/></a></li>
-            <li
-                    <c:if test="${pastEvent == 'past'}">class="active"</c:if> ><a href="javascript:void(0)"
-                                                                                onclick="reload${id}('past')">
+                <li class="past"><a class="eventTabItem" view="past" href="javascript:void(0)">
                     <fmt:message key="jdnt_eventTabs.past"/></a></li>
         </ul>
         <div id="tab-content-${currentNode.identifier}">
@@ -52,11 +42,5 @@
         </div>
     </div>
 
-    <template:addResources type="inline">
-        <script type="text/javascript">
-            function reload${id}(param) {
-                $('#eventTabs-content-${currentNode.identifier}').load('<c:url value="${url.base}${currentNode.path}.html.ajax?pastEvent${currentNode.identifier}="/>' + param);
-            }
-        </script>
-    </template:addResources>
+    </div>
 </div>

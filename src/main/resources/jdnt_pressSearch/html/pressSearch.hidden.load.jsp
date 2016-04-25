@@ -41,15 +41,10 @@
 <c:set var="filter" value="${currentNode.properties['filter']}"/>
 
 <%-- get the parameter passed via the URL --%>
-<c:set var="yearId" value="year${currentNode.identifier}"/>
-<c:choose>
-    <c:when test="${not empty param[yearId]}">
-        <c:set var="yearTab" value="${param[yearId]}"/>
-    </c:when>
-    <c:otherwise>
-        <c:set var="yearTab" value="${thisYear}"/>
-    </c:otherwise>
-</c:choose>
+<c:set var="yearTab" value="${param['yearTab']}"/>
+<c:if test="${empty yearTab}">
+    <c:set var="yearTab" value="${thisYear}"/>
+</c:if>
 
 <query:definition var="pressQuery">
     <query:selector nodeTypeName="jnt:press" selectorName="press"/>

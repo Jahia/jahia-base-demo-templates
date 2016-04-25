@@ -16,6 +16,8 @@ function activateStoriesTabAjax(){
 }
 
 $(document).ready(function () {
+    // Initialize to first tab being active
+    $(".allStories").find("." + "all").addClass("active");
     // After an ajax call has been done, we need to rerun the JS on the HTML fragment that has been reloaded
     $(document).bind('DOMNodeInserted', function (e) {
         activePageViewTab();

@@ -32,49 +32,33 @@
     <c:set var="numTabs" value="3"/>
 </c:if>
 
-<%-- set componentId variable to make it unique --%>
-<c:set var="yearId" value="year${currentNode.identifier}"/>
-<c:choose>
-    <c:when test="${not empty param[yearId]}">
-        <c:set var="yearTab" value="${param[yearId]}"/>
-    </c:when>
-    <c:otherwise>
-        <c:set var="yearTab" value="${thisYear}"/>
-    </c:otherwise>
-</c:choose>
 <div class="pressContainer">
-    <div id="pressSearch-content-${currentNode.identifier}" class="tab-v1 pressSearch" yearTab="${yearTab}">
-        <c:if test="${not empty title}">
-            <div class="headline"><h2>${title}</h2></div>
-        </c:if>
-        <c:set var="id" value="${fn:replace(currentNode.identifier,'-', '')}"/>
+    <c:if test="${not empty title}">
+        <div class="headline"><h2>${title}</h2></div>
+    </c:if>
+    <div id="pressSearch-content-${currentNode.identifier}" class="pressSearch"
+         url="<c:url value='${url.base}${currentNode.path}.html'/>">
         <%-- generate tabs --%>
-        <ul class="nav nav-tabs">
-            <li class="${thisYear}">
-                <a href="javascript:void(0)" onclick="reload${id}('${thisYear}')">${thisYear}</a>
-            </li>
-            <c:forEach var="i" begin="1" end="${numTabs-1}">
-                <li class="${thisYear-i}">
-                    <a href="javascript:void(0)" onclick="reload${id}('${thisYear-i}')">${thisYear-i}</a>
+        <div class="tab-v1">
+            <ul class="nav nav-tabs">
+                <li class="${thisYear}">
+                    <a class="pressTabItem" view="${thisYear}" href="javascript:void(0)">${thisYear}</a>
                 </li>
-            </c:forEach>
-            <li class="older">
-                <a href="javascript:void(0)" onclick="reload${id}('older')"> <fmt:message key='jdnt_pressSearch.older'/></a>
-            </li>
-        </ul>
-        <div id="tab-content-${currentNode.identifier}">
-            <c:forEach items="${moduleMap.currentList}" var="pressRelease" varStatus="item">
-                <template:module view="${view}" path="${pressRelease.path}" editable="false"/>
-            </c:forEach>
+                <c:forEach var="i" begin="1" end="${numTabs-1}">
+                    <li class="${thisYear-i}">
+                        <a class="pressTabItem" view="${thisYear-i}" href="javascript:void(0)">${thisYear-i}</a>
+                    </li>
+                </c:forEach>
+                <li class="older">
+                    <a class="pressTabItem" view="older" href="javascript:void(0)"> <fmt:message
+                            key='jdnt_pressSearch.older'/></a>
+                </li>
+            </ul>
+            <div id="tab-content-${currentNode.identifier}">
+                <c:forEach items="${moduleMap.currentList}" var="pressRelease" varStatus="item">
+                    <template:module view="${view}" path="${pressRelease.path}" editable="false"/>
+                </c:forEach>
+            </div>
         </div>
-        <template:addResources type="inline">
-            <script type="text/javascript">
-                function reload${id}(param) {
-                    $('#pressSearch-content-${currentNode.identifier}').parent().load('<c:url value="${url.base}${currentNode.path}.html.ajax?${yearId}="/>' + param+' #pressSearch-content-${currentNode.identifier}');
-                    activePressSearchTab();
-                }
-            </script>
-        </template:addResources>
-
     </div>
 </div>

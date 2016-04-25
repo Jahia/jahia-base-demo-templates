@@ -9,16 +9,9 @@
 <%@ taglib prefix="query" uri="http://www.jahia.org/tags/queryLib" %>
 <%@ taglib prefix="utility" uri="http://www.jahia.org/tags/utilityLib" %>
 <%@ taglib prefix="s" uri="http://www.jahia.org/tags/search" %>
-<%--@elvariable id="currentNode" type="org.jahia.services.content.JCRNodeWrapper"--%>
-<%--@elvariable id="out" type="java.io.PrintWriter"--%>
-<%--@elvariable id="script" type="org.jahia.services.render.scripting.Script"--%>
-<%--@elvariable id="scriptInfo" type="java.lang.String"--%>
-<%--@elvariable id="workspace" type="java.lang.String"--%>
-<%--@elvariable id="renderContext" type="org.jahia.services.render.RenderContext"--%>
-<%--@elvariable id="currentResource" type="org.jahia.services.render.Resource"--%>
-<%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
 
 <%-- get the starting page for the search --%>
+<%-- if user did not enter start node, use site --%>
 <c:choose>
     <c:when test="${not empty currentNode.properties['startPage']}">
         <c:set var="startNodePath" value="${currentNode.properties['startPage'].node.path}"/>
@@ -30,25 +23,22 @@
 
 
 <%-- get the parameter passed via the URL --%>
-<c:set var="pastEventId" value="pastEvent${currentNode.identifier}"/>
-<c:if test="${not empty param[pastEventId]}">
-    <c:set var="pastEvent" value="${param[pastEventId]}"/>
-</c:if>
+<c:set var="eventTab" value="${param['eventTab']}"/>
 
 <jsp:useBean id="now" class="java.util.Date"/>
 <fmt:formatDate value="${now}" pattern="yyyy-MM-dd" var="today"/>
 
 <c:set var="filter" value="${currentNode.properties['filter']}"/>
 
-
 <query:definition var="eventsQuery">
     <query:selector nodeTypeName="jnt:event" selectorName="event"/>
     <query:descendantNode path="${startNodePath}" selectorName="event"/>
+
     <c:if test="${not empty filter}">
         <query:equalTo propertyName="j:defaultCategory" value="${filter.string}"/>
     </c:if>
     <c:choose>
-        <c:when test="${pastEvent != 'past'}">
+        <c:when test="${eventTab != 'past'}">
             <query:greaterThanOrEqualTo propertyName="startDate" value="${today}T00:00:00.000Z"/>
         </c:when>
         <c:otherwise>
