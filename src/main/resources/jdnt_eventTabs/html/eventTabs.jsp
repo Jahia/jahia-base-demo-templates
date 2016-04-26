@@ -24,10 +24,10 @@
 <c:set var="title" value="${currentNode.properties['jcr:title'].string}"/>
 
 <div class="eventTabContainer">
-<c:if test="${not empty title}">
-    <div class="headline"><h2>${title}</h2></div>
-</c:if>
     <div id="eventTabs-content-${currentNode.identifier}" class="eventTabs" url="<c:url value='${url.base}${currentNode.path}.html'/>" >
+    <c:if test="${not empty title}">
+        <div class="headline"><h2>${title}</h2></div>
+    </c:if>
     <div class="tab-v1">
         <ul class="nav nav-tabs">
                 <li class="upcoming"><a class="eventTabItem" view="upcoming" href="javascript:void(0)">
