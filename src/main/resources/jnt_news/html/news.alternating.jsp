@@ -19,7 +19,7 @@
 <c:url var="detailUrl" value="${url.base}${currentNode.path}.html"/>
 
 <c:if test="${not empty newsImage}">
-    <jahia:addCacheDependency node="${newsImage.node}"/>
+    <template:addCacheDependency node="${newsImage.node}"/>
     <c:url value="${url.files}${newsImage.node.path}" var="imageUrl"/>
     <div class="timeline-heading">
         <img class="img-responsive" src="${imageUrl}" alt=""/>

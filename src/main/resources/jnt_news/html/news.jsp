@@ -21,7 +21,7 @@
 <div class="row margin-bottom-20">
     <div class="col-sm-5 sm-margin-bottom-20">
         <c:if test="${not empty newsImage.node}">
-            <jahia:addCacheDependency node="${newsImage.node}"/>
+            <template:addCacheDependency node="${newsImage.node}"/>
             <c:url value="${url.files}${newsImage.node.path}" var="imageUrl"/>
             <img class="img-responsive" src="${imageUrl}" alt="">
         </c:if>

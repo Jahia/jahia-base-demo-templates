@@ -15,7 +15,7 @@
 <c:set var="node" value="${reference.node}"/>
 <%-- only display if image is available --%>
 <c:if test="${not empty node}">
-    <jahia:addCacheDependency node="${node}"/>
+    <template:addCacheDependency node="${node}"/>
     <c:url var="imageUrl" value="${node.url}" context="/"/>
 
     <%-- check that the url is valie --%>
@@ -23,7 +23,7 @@
     <c:set var="linknode" value="${linkreference.node}"/>
 
     <c:if test="${not empty linknode}">
-        <jahia:addCacheDependency node="${linknode}"/>
+        <template:addCacheDependency node="${linknode}"/>
         <c:url var="linkUrl" value="${url.base}${linknode.path}.html"/>
         <c:set var="linkTitle"> title="${linknode.displayableName}"</c:set>
     </c:if>
@@ -48,7 +48,7 @@
 </c:if>
 <c:if test="${empty node}">
     <c:if test="${not empty reference}">
-        <jahia:addCacheDependency node="${reference.node}"/>
+        <template:addCacheDependency node="${reference.node}"/>
     </c:if>
     <c:if test="${renderContext.editMode}">
         <fmt:message key="label.empty"/>
