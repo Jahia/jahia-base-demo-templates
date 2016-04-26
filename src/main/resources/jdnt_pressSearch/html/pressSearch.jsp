@@ -33,15 +33,16 @@
 </c:if>
 
 <div class="pressContainer">
-    <c:if test="${not empty title}">
-        <div class="headline"><h2>${title}</h2></div>
-    </c:if>
+
     <div id="pressSearch-content-${currentNode.identifier}" class="pressSearch"
          url="<c:url value='${url.base}${currentNode.path}.html'/>">
+        <c:if test="${not empty title}">
+            <div class="headline"><h2>${title}</h2></div>
+        </c:if>
         <%-- generate tabs --%>
         <div class="tab-v1">
             <ul class="nav nav-tabs">
-                <li class="${thisYear}">
+                <li class="${thisYear} defaultYear">
                     <a class="pressTabItem" view="${thisYear}" href="javascript:void(0)">${thisYear}</a>
                 </li>
                 <c:forEach var="i" begin="1" end="${numTabs-1}">
