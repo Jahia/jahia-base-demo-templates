@@ -85,8 +85,7 @@
  - image (weakreference, picker[type='image']) mandatory < 'jmix:image'
  - caption (string) internationalized
 
-[jdnt:timeline] > jnt:content, jdmix:jahiademo, jmix:list orderable
- + * (jnt:news)
+[jdnt:timeline] > jnt:contentList, jdmix:jahiademo
 
 [jdnt:login] > jnt:content, jdmix:jahiademo, jdmix:headerWidgets, jmix:studioOnly
 
