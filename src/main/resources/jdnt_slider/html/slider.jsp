@@ -46,7 +46,7 @@
 
 <c:choose>
     <c:when test="${renderContext.editMode}">
-      <template:include view="${currentNode.properties.editview.string}"/>
+      <template:include view="${editview}"/>
         <template:module path="*" nodeTypes="jdnt:sliderPanel"/>
     </c:when>
     <c:otherwise>
