@@ -73,5 +73,3 @@
     </c:if>
 
 </div>
-
-<template:module path="*" nodeTypes="jdnt:sliderPanel"/>
