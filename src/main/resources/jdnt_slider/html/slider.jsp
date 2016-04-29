@@ -28,20 +28,28 @@
 <c:set var="uuid" value="${currentNode.identifier}"/>
 <c:set var="id" value="${fn:replace(uuid,'-', '')}"/>
 <c:set var="transition" value="${currentNode.properties.transition.string}"/>
+<c:set var="layout" value="${currentNode.properties.layout.string}"/>
+<c:set var="editview" value="${currentNode.properties.editview.string}"/>
 <c:if test="${empty transition}">
     <c:set var="transition" value="flow"/>
+</c:if>
+<c:if test="${empty layout}">
+    <c:set var="layout" value="boxed"/>
+</c:if>
+<c:if test="${empty editview}">
+    <c:set var="editview" value="edit"/>
 </c:if>
 
 <c:choose>
     <c:when test="${renderContext.editMode}">
-        <template:include view="edit"/>
+      <template:include view="${currentNode.properties.editview.string}"/>
         <template:module path="*" nodeTypes="jdnt:sliderPanel"/>
     </c:when>
     <c:otherwise>
         <%-- get the child sliderPanels --%>
         <c:set var="panels" value="${jcr:getChildrenOfType(currentNode, 'jdnt:sliderPanel')}"/>
         <div class="ms-layers-template">
-            <div class="master-slider ms-skin-black-2 round-skin master-slider-jahia" id="masterslider${id}" transition="${transition}">
+            <div class="master-slider ms-skin-black-2 round-skin master-slider-jahia" id="masterslider${id}" transition="${transition}" layout="${layout}">
                     <%-- for each slider panel specified, use the sliderPanel jsp to display --%>
                 <c:forEach items="${panels}" var="panel" varStatus="item">
                     <template:module node="${panel}" nodeTypes="jdnt:sliderPanel" editable="true"/>

@@ -54,6 +54,8 @@
 
 [jdnt:slider] > jnt:content, jdmix:jahiademo, jmix:manuallyOrderable, jmix:list orderable
  - transition (string, choicelist[resourceBundle]) < 'basic', 'fade', 'mask', 'wave', 'flow', 'stack', 'scale', 'focus', 'parallaxMask', 'partialWave', 'fadeBasic', 'fadeWave', 'fadeFlow'
+ - layout (string, choicelist[resourceBundle]) < 'boxed', 'fullwidth', 'fullscreen', 'fillwidth', 'autofill', 'partialview'
+ - editview (string, choicelist[resourceBundle]) < 'edit','edit.collapsible'
  + * (jdnt:sliderPanel)
 
 [jdnt:highlights] > jnt:content, mix:title, jdmix:jahiademo, jdmix:margin, jmix:manuallyOrderable, jmix:list orderable
