@@ -23,7 +23,8 @@
 
 
 <%-- get the parameter passed via the URL --%>
-<c:set var="eventTab" value="${param['eventTab']}"/>
+<c:set var="eventTabParam" value="eventTab${currentNode.identifier}"/>
+<c:set var="eventTab" value="${param[eventTabParam]}"/>
 
 <jsp:useBean id="now" class="java.util.Date"/>
 <fmt:formatDate value="${now}" pattern="yyyy-MM-dd" var="today"/>

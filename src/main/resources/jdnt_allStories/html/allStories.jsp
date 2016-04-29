@@ -24,7 +24,7 @@
 <%-- allStories.js does some handle some ajax calls for allStories.jsp.
      The parameters needed for the ajax call are present in the DOM of this view (attributes url and view)--%>
 <div class="allStoriesContainer">
-    <div id="allStories-content-${currentNode.identifier}" class="allStories" url="<c:url value='${url.base}${currentNode.path}.html'/>">
+    <div id="allStories-content-${currentNode.identifier}" class="allStories" url="<c:url value='${url.base}${currentNode.path}.html'/>" uuid="${currentNode.identifier}">
         <c:if test="${renderContext.editMode}">
             <h4><fmt:message key="label.topStoriesArea"/></h4>
             <p><fmt:message key="label.componentDescription"/></p>

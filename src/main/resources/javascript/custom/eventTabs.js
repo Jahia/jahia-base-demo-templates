@@ -1,18 +1,23 @@
 
 function activeEventViewTab() {
-    var eventTab = GetURLParameter('eventTab');
-    if (eventTab == null){
-        eventTab = "upcoming";
-    }
-    $(".eventTabs").find("." + eventTab).addClass("active");
+    $('.eventTabs').each(function () {
+        $(this).attr('uuid');
+        var eventTab = GetURLParameter('eventTab'+$(this).attr('uuid'));
+        if (eventTab == null){
+            eventTab = "upcoming";
+        }
+        if (!$(this).find(".active")[0]){
+            $(this).find("." + eventTab).addClass("active");
+        }
+    });
 }
 
 function activateEventTabAjax(){
     $(".eventTabItem").click(function () {
         var view = $(this).attr('view');
-        history.pushState(null, null, window.location.href.split('?')[0] + '?eventTab=' + view);
         var eventTabs = $(this).closest(".eventTabs");
-        eventTabs.parent().load(eventTabs.attr('url') + '.ajax?eventTab=' + view+ ' #'+eventTabs.attr('id'), function() {
+        history.pushState(null, null, window.location.href.split('?')[0] + '?eventTab'+eventTabs.attr('uuid')+'=' + view);
+        eventTabs.parent().load(eventTabs.attr('url') + '.ajax?eventTab'+eventTabs.attr('uuid')+'=' + view+ ' #'+eventTabs.attr('id'), function() {
             activateEventTabAjax();
             activeEventViewTab();
         });
@@ -24,4 +29,3 @@ $(document).ready(function () {
     activeEventViewTab();
     activateEventTabAjax();
 })
-

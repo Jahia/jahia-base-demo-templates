@@ -39,9 +39,10 @@
 </c:if>
 
 <c:set var="filter" value="${currentNode.properties['filter']}"/>
+<c:set var="yearParm" value="yearTab${currentNode.identifier}"/>
 
 <%-- get the parameter passed via the URL --%>
-<c:set var="yearTab" value="${param['yearTab']}"/>
+<c:set var="yearTab" value="${param[yearParm]}"/>
 <c:if test="${empty yearTab}">
     <c:set var="yearTab" value="${thisYear}"/>
 </c:if>

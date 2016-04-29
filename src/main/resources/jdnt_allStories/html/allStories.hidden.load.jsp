@@ -18,7 +18,8 @@
 </c:choose>
 
 <%-- get the parameter passed via the URL --%>
-<c:set var="allStoriesTab" value="${param['allStoriesTab']}"/>
+<c:set var="allStoriesTabParam" value="allStoriesTab${currentNode.identifier}"/>
+<c:set var="allStoriesTab" value="${param[allStoriesTabParam]}"/>
 
 <jsp:useBean id="now" class="java.util.Date"/>
 <fmt:formatDate value="${now}" pattern="yyyy-MM-dd" var="today"/>

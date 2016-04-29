@@ -1,18 +1,23 @@
 
 function activePageViewTab() {
-    var allStoriesTab = GetURLParameter('allStoriesTab');
-    if (allStoriesTab == null){
-        allStoriesTab = "all";
-    }
-    $(".allStories").find("." + allStoriesTab).addClass("active");
+    $('.allStories').each(function () {
+        $(this).attr('uuid');
+        var allStoriesTab = GetURLParameter('allStoriesTab'+$(this).attr('uuid'));
+        if (allStoriesTab == null){
+            allStoriesTab = "all";
+        }
+        if (!$(this).find(".active")[0]){
+            $(this).find("." + allStoriesTab).addClass("active");
+        }
+    });
 }
 
 function activateStoriesTabAjax(){
     $(".allStoriesTabItem").click(function () {
         var view = $(this).attr('view');
-        history.pushState(null, null, window.location.href.split('?')[0] + '?allStoriesTab=' + view);
         var allStories = $(this).closest(".allStories");
-        allStories.parent().load(allStories.attr('url') + '.ajax?allStoriesTab=' + view+ ' #'+allStories.attr('id'), function() {
+        history.pushState(null, null, window.location.href.split('?')[0] + '?allStoriesTab'+allStories.attr('uuid')+'=' + view);
+        allStories.parent().load(allStories.attr('url') + '.ajax?allStoriesTab'+allStories.attr('uuid')+'=' + view+ ' #'+allStories.attr('id'), function() {
             activateStoriesTabAjax();
             activePageViewTab();
         });
@@ -20,7 +25,9 @@ function activateStoriesTabAjax(){
     });
 }
 
+
 $(document).ready(function () {
-    activateStoriesTabAjax();
+    // Initialize to first tab being active
     activePageViewTab();
+    activateStoriesTabAjax();
 })

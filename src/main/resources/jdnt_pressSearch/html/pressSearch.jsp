@@ -35,7 +35,7 @@
 <div class="pressContainer">
 
     <div id="pressSearch-content-${currentNode.identifier}" class="pressSearch"
-         url="<c:url value='${url.base}${currentNode.path}.html'/>">
+         url="<c:url value='${url.base}${currentNode.path}.html'/>" uuid="${currentNode.identifier}">
         <c:if test="${not empty title}">
             <div class="headline"><h2>${title}</h2></div>
         </c:if>
