@@ -3,6 +3,6 @@ $(window).load(function () {
 
     for (var i = 0; i < sliders.length; i++) {
 
-        MSfullWidth.initMSfullWidth(sliders[i].id, sliders[i].getAttribute('transition'), sliders[i].getAttribute('layout'));
+        MSfullWidth.initMSfullWidth(sliders[i].id, sliders[i].getAttribute('transition'), sliders[i].getAttribute('layout'), sliders[i].getAttribute('autoplay')=="true");
     }
 });

@@ -3,7 +3,7 @@ var MSfullWidth = function () {
     return {
         
         //Master Slider - Full Width
-        initMSfullWidth: function (id, transition, layout) {
+        initMSfullWidth: function (id, transition, layout, autoplay) {
 		    var slider = new MasterSlider();
             slider.control('arrows');
             slider.control('bullets' ,{autohide:false});
@@ -16,6 +16,7 @@ var MSfullWidth = function () {
 		        view: transition,
 			loop: true,
 			layout: layout,
+              autoplay: autoplay,
 		    });
         },
 
