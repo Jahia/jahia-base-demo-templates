@@ -66,7 +66,7 @@
     <c:if test="${not empty image}">
         <div class="ms-layer sidePanelPhoto"
              style="left: ${photoLayout};">
-            <img src=""<c:url value="${image.url}" context="/"/>" alt="" style="height: 100%;">
+            <img src="<c:url value="${image.url}" context="/"/>" alt="">
         </div>
     </c:if>
 
