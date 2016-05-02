@@ -26,10 +26,12 @@
 <c:set var="newsImage" value="${currentNode.properties['image'].node}"/>
 <c:set var="newsTitle" value="${currentNode.properties['jcr:title']}"/>
 <c:set var="description" value="${currentNode.properties['desc']}"/>
-<c:set var="galleryImgs" value="${currentNode.properties['galleryImg']}"/>
 <fmt:formatDate pattern="MMMM dd, yyyy" dateStyle="short" value="${currentNode.properties['date'].time}"
                 var="newsDate"/>
 
+<c:if test="${jcr:isNodeType(currentNode, 'jdmix:imgGallery')}">
+    <c:set var="galleryImgs" value="${currentNode.properties['galleryImg']}"/>
+</c:if>
 
 <!-- News Detail -->
 
@@ -42,60 +44,34 @@
             <c:url var="newsImageUrl" value="${newsImage.url}" context="/"/>
             <template:addCacheDependency node="${newsImage}"/>
             <div class="item">
-                    <%-- if there is a gallery format for the photoswipe otherwise just display image --%>
-                <c:choose>
-                    <c:when test="${not empty galleryImgs}">
-                        <a href="${newsImageUrl}"
-                           data-size="${newsImage.properties['j:width'].string}x${newsImage.properties['j:height'].string}">
-                            <img class="img-responsive full-width" src="${newsImageUrl}"
-                                 height="${newsImage.properties['j:height'].string}"
-                                 width="${newsImage.properties['j:width'].string}"/>
-                        </a>
-                    </c:when>
-                    <c:otherwise>
-                        <img class="img-responsive full-width" src="${newsImageUrl}"
-                             height="${newsImage.properties['j:height'].string}"
-                             width="${newsImage.properties['j:width'].string}"/>
-                    </c:otherwise>
-                </c:choose>
+                <%-- if there is a gallery format for the photoswipe otherwise just display image --%>
+            <c:if test="${not empty galleryImgs}"><a href="${newsImageUrl}"
+                   data-size="${newsImage.properties['j:width'].string}x${newsImage.properties['j:height'].string}">
+            </c:if>
+                <img class="img-responsive full-width" src="${newsImageUrl}"
+                     height="${newsImage.properties['j:height'].string}"
+                     width="${newsImage.properties['j:width'].string}"/>
+            <c:if test="${not empty galleryImgs}"></a></c:if>
+
             </div>
-
-
         </c:if>
-        <c:if test="${not empty galleryImgs}">
-            <c:forEach var="galleryImg" items="${galleryImgs}" varStatus="status">
-                <template:addCacheDependency node="${galleryImg.node}"/>
-                <c:url var="galleryImgUrl" value="${galleryImg.node.url}" context="/"/>
-                <div class="item">
-                    <a href="${galleryImgUrl}"
-                       data-size="${galleryImg.node.properties['j:width'].string}x${galleryImg.node.properties['j:height'].string}"><img
-                            class="img-responsive full-width" src="${galleryImgUrl}"
-                            height="${galleryImg.node.properties['j:height'].string}"
-                            width="${galleryImg.node.properties['j:height'].string}"/></a>
-                </div>
 
-            </c:forEach>
+        <c:if test="${not empty galleryImgs}">
+            <template:include view="hidden.galleryItems"/>
         </c:if>
     </div>
 
     <%-- create thumbnails of news image and gallery images --%>
     <c:if test="${not empty galleryImgs}">
         <div id="sync2" class="owl-carousel owl-theme">
-
             <c:if test="${not empty newsImage}">
                 <c:url var="newsImageUrl" value="${newsImage.url}" context="/"/>
                 <div class="item"><img class="img-responsive full-width" src="${newsImageUrl}?t=thumbnail2"/></div>
             </c:if>
-            <c:if test="${not empty galleryImgs}">
-                <c:forEach var="galleryImg" items="${galleryImgs}" varStatus="status">
-                    <c:url var="galleryImgUrl" value="${galleryImg.node.url}" context="/"/>
-                    <div class="item">
-                        <img src="${galleryImgUrl}?t=thumbnail2"/>
-                    </div>
-                </c:forEach>
-            </c:if>
+            <template:include view="hidden.galleryThumbnails"/>
         </div>
     </c:if>
+
     <div class="news-v3-in">
         <template:include view="hidden.tagListView"/>
     ${description.string}
