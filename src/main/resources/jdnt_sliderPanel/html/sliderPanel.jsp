@@ -72,7 +72,7 @@
 
     <%-- if a subtitle is provided display it --%>
     <c:if test="${not empty subtitle}">
-        <div class="ms-layer ms-promo-info-in top160 color-${textColor}" style="left:${textLayout};"
+        <div class="ms-layer ms-promo-subtitle top160 color-${textColor}" style="left:${textLayout};"
              data-effect="bottom(40)"
              data-duration="2000"
              data-delay="700"
