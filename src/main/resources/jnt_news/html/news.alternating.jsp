@@ -28,8 +28,8 @@
 <div class="timeline-body text-justify">
     <h2><a href="#">${fn:escapeXml(newsTitle)}</a></h2>
     <c:choose>
-        <c:when test="${jcr:isNodeType(currentNode, 'jdmix:hasReadMore')}">
-            <template:include view="readMoreButton"/>
+        <c:when test="${not jcr:isNodeType(currentNode, 'jdmix:removeReadMore')}">
+            <template:include view="hidden.readMoreButton"/>
         </c:when>
         <c:otherwise>
             <p>${description}</p>

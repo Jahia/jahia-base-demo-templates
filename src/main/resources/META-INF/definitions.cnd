@@ -166,7 +166,7 @@
  extends = jnt:topStories
  - view (string, choicelist[templates='jnt:news'])
 
-[jdmix:hasReadMore] mixin
+[jdmix:removeReadMore] mixin
  extends = jnt:news
  itemtype = content
  - agree (boolean)
