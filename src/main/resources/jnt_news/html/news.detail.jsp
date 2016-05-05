@@ -62,15 +62,13 @@
     </div>
 
     <%-- create thumbnails of news image and gallery images --%>
-    <c:if test="${not empty galleryImgs}">
         <div id="sync2" class="owl-carousel owl-theme">
-            <c:if test="${not empty newsImage}">
+            <c:if test="${not empty galleryImgs and not empty newsImage}">
                 <c:url var="newsImageUrl" value="${newsImage.url}" context="/"/>
                 <div class="item"><img class="img-responsive full-width" src="${newsImageUrl}?t=thumbnail2"/></div>
-            </c:if>
             <template:include view="hidden.galleryThumbnails"/>
+            </c:if>
         </div>
-    </c:if>
 
     <div class="news-v3-in">
         <template:include view="hidden.tagListView"/>
