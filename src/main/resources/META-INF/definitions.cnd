@@ -59,7 +59,7 @@
  - editview (string, choicelist[resourceBundle]) < 'edit','edit.collapsible'
  + * (jdnt:sliderPanel)
 
-[jdnt:highlights] > jnt:content, mix:title, jdmix:jahiademo, jdmix:margin, jmix:manuallyOrderable, jmix:list orderable
+[jdnt:highlights] > jnt:content, mix:title, jdmix:jahiademo, jdmix:margin, jmix:manuallyOrderable, jmix:list, jmix:renderableList orderable
  - numColumns (string, choicelist[resourceBundle]) = '3' autocreated < '1', '2', '3', '4'
   + * (jdnt:highlight)
 
