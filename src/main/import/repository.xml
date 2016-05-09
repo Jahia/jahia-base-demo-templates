@@ -313,7 +313,7 @@
                                                 jcr:primaryType="jnt:translation"
                                                 text="&lt;div class=&#34;headline-v2 tag-box-v2&#34;&gt;&#xA;&lt;h2&gt;Top Rated&lt;/h2&gt;&#xA;&lt;/div&gt;&#xA;"/>
                                         </rich-text>
-                                        <top-rated j:minNbOfVotes="5"
+                                        <top-rated j:minNbOfVotes="0"
                                       j:typeOfContent="jnt:news"
                                       jcr:primaryType="jnt:topRated"/>
                                         <rich-text-1 jcr:primaryType="jnt:bigText">
