@@ -27,10 +27,6 @@
  - layout (string, choicelist[resourceBundle]) = 'Wide' autocreated < 'Boxed', 'Wide'
  - colorTheme (string, choicelist[resourceBundle]) = 'Light' autocreated < 'Dark', 'Light'
 
-[jdnt:menuLevel] > jnt:content, jdmix:jahiademo, jmix:navMenuComponent
- - baseLevel (long) = '0' hidden
- - hideParentMenu (boolean) = 'false'
-
 [jdmix:headerWidgets] mixin
 
 [jdmix:footerWidgets] mixin
