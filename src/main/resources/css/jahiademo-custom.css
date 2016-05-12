@@ -2775,7 +2775,7 @@ https://github.com/videojs/video.js/blob/master/src/css/video-js.less */
 	text-align: center;*/
 	display:block;
 	width:auto;
-	height: 565px;
+	max-height: 565px;
 }
 
 #sync2 .item{
