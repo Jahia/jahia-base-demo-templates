@@ -239,6 +239,17 @@
   itemtype = content
   - logo (weakreference, picker[type='image']) mandatory < 'jmix:image'
 
+ [jdmix:siteSocialLinks] mixin
+  extends = jnt:virtualsite
+  itemtype = content
+ - facebookLink (string) = 'http://'
+ - googlePlusLink (string) = 'http://'
+ - twitterLink (string) = 'http://'
+ - youtubeLink (string) = 'http://'
+ - instagramLink (string) = 'http://'
+ - linkedinLink (string) = 'http://'
+ - pinterestLink (string) = 'http://'
+
 [jdnt:compCarousel] > jnt:content, jdmix:jahiademo, jmix:list, mix:title
  - startPage (weakreference, picker[type='page'])
 

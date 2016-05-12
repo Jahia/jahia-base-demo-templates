@@ -209,29 +209,11 @@
         <div class="footer">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-3 md-margin-bottom-40">
+                    <div class="col-md-12 md-margin-bottom-40">
                         <template:area path="footer-1" nodeTypes="jdmix:footerWidgets" moduleType="absoluteArea"
                                        level="0"/>
                     </div>
-                    <!--/col-md-3-->
-
-                    <div class="col-md-3 md-margin-bottom-40">
-                        <template:area path="footer-2" nodeTypes="jdmix:footerWidgets" moduleType="absoluteArea"
-                                       level="0"/>
-                    </div>
-                    <!--/col-md-3-->
-
-                    <div class="col-md-3 md-margin-bottom-40">
-                        <template:area path="footer-3" nodeTypes="jdmix:footerWidgets" moduleType="absoluteArea"
-                                       level="0"/>
-                    </div>
-                    <!--/col-md-3-->
-
-                    <div class="col-md-3 map-img md-margin-bottom-40">
-                        <template:area path="footer-4" nodeTypes="jdmix:footerWidgets" moduleType="absoluteArea"
-                                       level="0"/>
-                    </div>
-                    <!--/col-md-3-->
+                    <!--/col-md-12-->
 
                 </div>
             </div>
@@ -241,6 +223,7 @@
         <div class="copyright">
             <div class="container">
                 <div class="row">
+                    <!-- Footer Message  -->
                     <div class="col-md-6">
                         <p>
                             ${thisYear} &copy; <fmt:message key="footer.copyrights"/>
@@ -248,53 +231,12 @@
                                 key="footer.terms"/></a>
                         </p>
                     </div>
-
+                    <!-- End Footer Message  -->
                     <!-- Social Links -->
                     <div class="col-md-6">
-                        <ul class="footer-socials list-inline">
-                            <li>
-                                <a href="#" class="tooltips" data-toggle="tooltip" data-placement="top" title=""
-                                   data-original-title="Facebook">
-                                    <i class="fa fa-facebook"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="tooltips" data-toggle="tooltip" data-placement="top" title=""
-                                   data-original-title="Skype">
-                                    <i class="fa fa-skype"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="tooltips" data-toggle="tooltip" data-placement="top" title=""
-                                   data-original-title="Google Plus">
-                                    <i class="fa fa-google-plus"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="tooltips" data-toggle="tooltip" data-placement="top" title=""
-                                   data-original-title="Linkedin">
-                                    <i class="fa fa-linkedin"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="tooltips" data-toggle="tooltip" data-placement="top" title=""
-                                   data-original-title="Pinterest">
-                                    <i class="fa fa-pinterest"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="tooltips" data-toggle="tooltip" data-placement="top" title=""
-                                   data-original-title="Twitter">
-                                    <i class="fa fa-twitter"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="tooltips" data-toggle="tooltip" data-placement="top" title=""
-                                   data-original-title="Dribbble">
-                                    <i class="fa fa-dribbble"></i>
-                                </a>
-                            </li>
-                        </ul>
+                    <c:if test="${jcr:isNodeType(renderContext.site, 'jdmix:siteSocialLinks')}">
+                        <template:module path="${renderContext.site.path}" view="siteSocialLinks" />
+                    </c:if>
                     </div>
                     <!-- End Social Links -->
                 </div>
