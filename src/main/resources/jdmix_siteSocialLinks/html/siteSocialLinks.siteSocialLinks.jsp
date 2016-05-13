@@ -21,7 +21,7 @@
 
 <%-- if social icons were included, get the urls --%>
     <c:set var="facebookLink" value="${renderContext.site.properties.facebookLink.string}"/>
-    <c:set var="googlePlusLink" value="${renderContext.site.properties.facebookLink.string}"/>
+    <c:set var="googlePlusLink" value="${renderContext.site.properties.googlePlusLink.string}"/>
     <c:set var="twitterLink" value="${renderContext.site.properties.twitterLink.string}"/>
     <c:set var="youtubeLink" value="${renderContext.site.properties.youtubeLink.string}"/>
     <c:set var="instagramLink" value="${renderContext.site.properties.instagramLink.string}"/>
