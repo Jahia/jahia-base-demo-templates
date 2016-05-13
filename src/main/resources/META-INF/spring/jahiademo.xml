@@ -58,4 +58,90 @@
             </list>
         </property>
     </bean>
+    <bean id="privacyMessageInitializer" class="org.jahia.services.content.nodetypes.initializers.FixedListChoiceListInitializer">
+        <property name="key" value="privacyMessageInitializer"/>
+        <property name="items">
+            <list>
+                <bean class="org.jahia.services.content.nodetypes.initializers.ChoiceListValue">
+                    <property name="displayName" value="None"/>
+                    <property name="stringValue" value="none"/>
+                    <property name="properties">
+                        <map>
+                            <entry key="defaultProperty" value="true"/>
+                        </map>
+                    </property>
+                </bean>
+                <bean class="org.jahia.services.content.nodetypes.initializers.ChoiceListValue">
+                    <property name="displayName" value="External Link"/>
+                    <property name="stringValue" value="externalLink"/>
+                    <property name="properties">
+                        <map>
+                            <entry key="addMixin" value="jdmix:privacyExternalLink"/>
+                        </map>
+                    </property>
+                </bean>
+                <bean class="org.jahia.services.content.nodetypes.initializers.ChoiceListValue">
+                    <property name="displayName" value="Internal Link"/>
+                    <property name="stringValue" value="link"/>
+                    <property name="properties">
+                        <map>
+                            <entry key="addMixin" value="jdmix:privacyLink"/>
+                        </map>
+                    </property>
+                </bean>
+                <bean class="org.jahia.services.content.nodetypes.initializers.ChoiceListValue">
+                    <property name="displayName" value="Modal"/>
+                    <property name="stringValue" value="modal"/>
+                    <property name="properties">
+                        <map>
+                            <entry key="addMixin" value="jdmix:privacyModalMessage"/>
+                        </map>
+                    </property>
+                </bean>
+            </list>
+        </property>
+    </bean>
+    <bean id="termsMessageInitializer" class="org.jahia.services.content.nodetypes.initializers.FixedListChoiceListInitializer">
+        <property name="key" value="termsMessageInitializer"/>
+        <property name="items">
+            <list>
+                <bean class="org.jahia.services.content.nodetypes.initializers.ChoiceListValue">
+                    <property name="displayName" value="None"/>
+                    <property name="stringValue" value="none"/>
+                    <property name="properties">
+                        <map>
+                            <entry key="defaultProperty" value="true"/>
+                        </map>
+                    </property>
+                </bean>
+                <bean class="org.jahia.services.content.nodetypes.initializers.ChoiceListValue">
+                    <property name="displayName" value="External Link"/>
+                    <property name="stringValue" value="externalLink"/>
+                    <property name="properties">
+                        <map>
+                            <entry key="addMixin" value="jdmix:termsExternalLink"/>
+                        </map>
+                    </property>
+                </bean>
+                <bean class="org.jahia.services.content.nodetypes.initializers.ChoiceListValue">
+                    <property name="displayName" value="Internal Link"/>
+                    <property name="stringValue" value="link"/>
+                    <property name="properties">
+                        <map>
+                            <entry key="addMixin" value="jdmix:termsLink"/>
+                        </map>
+                    </property>
+                </bean>
+                <bean class="org.jahia.services.content.nodetypes.initializers.ChoiceListValue">
+                    <property name="displayName" value="Modal"/>
+                    <property name="stringValue" value="modal"/>
+                    <property name="properties">
+                        <map>
+                            <entry key="addMixin" value="jdmix:termsModalMessage"/>
+                        </map>
+                    </property>
+                </bean>
+            </list>
+        </property>
+    </bean>
 </beans>

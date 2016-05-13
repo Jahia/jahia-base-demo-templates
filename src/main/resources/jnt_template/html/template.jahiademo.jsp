@@ -225,11 +225,18 @@
                 <div class="row">
                     <!-- Footer Message  -->
                     <div class="col-md-6">
+                        <c:choose>
+                            <c:when test="${jcr:isNodeType(renderContext.site, 'jdmix:siteFooterMessage')}">
+                                <template:module path="${renderContext.site.path}" view="siteFooterMessage" />
+                            </c:when>
+                            <c:otherwise>
                         <p>
                             ${thisYear} &copy; <fmt:message key="footer.copyrights"/>
                             <a href="#"><fmt:message key="footer.privacy"/></a> | <a href="#"><fmt:message
                                 key="footer.terms"/></a>
                         </p>
+                            </c:otherwise>
+                        </c:choose>
                     </div>
                     <!-- End Footer Message  -->
                     <!-- Social Links -->

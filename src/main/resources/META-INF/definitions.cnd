@@ -250,6 +250,46 @@
  - linkedinLink (string) = 'http://'
  - pinterestLink (string) = 'http://'
 
+ [jdmix:siteFooterMessage] mixin
+  extends = jnt:virtualsite
+  itemtype = options
+  - footerMessage (string) = '© All Rights Reserved.' internationalized
+  - privacyPolicyLinkText (string) = 'Privacy Policy' internationalized
+  - privacyLink (string, choicelist[privacyMessageInitializer,resourceBundle]) = 'none'
+  - termsLinkText (string) = 'Terms of Service' internationalized
+  - termsLink (string, choicelist[termsMessageInitializer,resourceBundle]) = 'none'
+
+ [jdmix:privacyLink] > jmix:templateMixin mixin
+  extends = jnt:virtualsite
+  itemtype = options
+  - privacyPageLink (weakreference, picker[type='page']) < 'jnt:page'
+
+ [jdmix:privacyExternalLink] > jmix:templateMixin mixin
+  extends = jnt:virtualsite
+  itemtype = options
+  - privacyPageExternalLink (string) internationalized
+
+ [jdmix:privacyModalMessage] > jmix:templateMixin mixin
+  extends = jnt:virtualsite
+  itemtype = options
+  - privacyModalMessage (string, richtext) i18n
+
+
+ [jdmix:termsLink] > jmix:templateMixin mixin
+  extends = jnt:virtualsite
+  itemtype = options
+  - termsPageLink (weakreference, picker[type='page']) < 'jnt:page'
+
+ [jdmix:termsExternalLink] > jmix:templateMixin mixin
+  extends = jnt:virtualsite
+  itemtype = options
+  - termsPageExternalLink (string) internationalized
+
+ [jdmix:termsModalMessage] > jmix:templateMixin mixin
+  extends = jnt:virtualsite
+  itemtype = options
+  - termsModalMessage (string, richtext) i18n
+
 [jdnt:compCarousel] > jnt:content, jdmix:jahiademo, jmix:list, mix:title
  - startPage (weakreference, picker[type='page'])
 
