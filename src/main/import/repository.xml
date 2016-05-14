@@ -104,6 +104,11 @@
                                     <jcr:content jcr:mimeType="text/css" jcr:primaryType="jnt:resource"/>
                                 </red.css>
                             </red>
+                            <spm jcr:primaryType="jnt:folder">
+                                <spm.css jcr:primaryType="jnt:file">
+                                    <jcr:content jcr:mimeType="text/css" jcr:primaryType="jnt:resource"/>
+                                </spm.css>
+                            </spm>
                             <teal jcr:primaryType="jnt:folder">
                                 <teal.css jcr:primaryType="jnt:file">
                                     <jcr:content jcr:mimeType="text/css" jcr:primaryType="jnt:resource"/>

@@ -9,6 +9,13 @@
  - maxDepth (long) = 4
  - maxTopLevel (long) = 4
 
+[jdmix:menuLimits] mixin
+ extends = jnt:virtualsite
+ itemtype = content
+ - menuDepth (long) = 4
+ - numTopLevel (long) = 4
+ - hideHome (string, choicelist[resourceBundle]) = 'Yes' autocreated < 'Yes', 'No'
+
 [jdmix:hidePage] mixin
  extends = jmix:navMenuItem
  itemtype = content

@@ -23,7 +23,6 @@
 <template:addResources type="javascript" resources="masterslider/jquery.easing.min.js"/>
 <template:addResources type="javascript" resources="master-slider-fw.js"/>
 <template:addResources type="javascript" resources="custom/slider.js"/>
-<%-- TODO: remove slider arrows if only one panel --%>
 <%-- TODO: update list processing --%>
 <c:set var="uuid" value="${currentNode.identifier}"/>
 <c:set var="id" value="${fn:replace(uuid,'-', '')}"/>
@@ -53,7 +52,7 @@
         <%-- get the child sliderPanels --%>
         <c:set var="panels" value="${jcr:getChildrenOfType(currentNode, 'jdnt:sliderPanel')}"/>
         <div class="ms-layers-template">
-            <div class="master-slider ms-skin-black-2 round-skin master-slider-jahia" id="masterslider${id}" transition="${transition}" layout="${layout}" autoplay="${autoplay}">
+            <div class="master-slider ms-skin-black-2 round-skin master-slider-jahia" id="masterslider${id}" transition="${transition}" layout="${layout}" autoplay="${autoplay}" panelcount="${fn:length(panels)}">
                     <%-- for each slider panel specified, use the sliderPanel jsp to display --%>
                 <c:forEach items="${panels}" var="panel" varStatus="item">
                     <template:module node="${panel}" nodeTypes="jdnt:sliderPanel" editable="true"/>

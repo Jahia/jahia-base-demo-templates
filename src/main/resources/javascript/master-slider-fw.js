@@ -3,10 +3,13 @@ var MSfullWidth = function () {
     return {
         
         //Master Slider - Full Width
-        initMSfullWidth: function (id, transition, layout, autoplay) {
+        initMSfullWidth: function (id, transition, layout, autoplay, panelcount) {
 		    var slider = new MasterSlider();
+            if (parseInt(panelcount) > 1)
+            {
             slider.control('arrows');
             slider.control('bullets' ,{autohide:false});
+            }
             slider.setup(id , {
 		        width:1024,
 		        height:600,
