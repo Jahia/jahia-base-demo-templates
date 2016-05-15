@@ -11,7 +11,7 @@
 
 [jdmix:menuLimits] mixin
  extends = jnt:virtualsite
- itemtype = content
+ itemtype = options
  - menuDepth (long) = 4
  - numTopLevel (long) = 4
  - hideHome (string, choicelist[resourceBundle]) = 'Yes' autocreated < 'Yes', 'No'
