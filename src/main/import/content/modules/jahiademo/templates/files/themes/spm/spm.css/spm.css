@@ -1923,3 +1923,13 @@ body.dark .news-v3 .news-v3-in {
 }
 
 .cookieButton.button-rounded { border-radius: 3px; }
+
+body.header-fixed-space-v2 {
+	padding-top: 100px;
+}
+
+.header-v8 .blog-topbar{    display: none;}
+
+body.header-fixed-space-v2 {
+	padding-top: 0px;
+}
