@@ -18,61 +18,53 @@
 <%--@elvariable id="currentResource" type="org.jahia.services.render.Resource"--%>
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
 
-
 <%-- if social icons were included, get the urls --%>
-    <c:set var="facebookLink" value="${renderContext.site.properties.facebookLink.string}"/>
-    <c:set var="googlePlusLink" value="${renderContext.site.properties.googlePlusLink.string}"/>
-    <c:set var="twitterLink" value="${renderContext.site.properties.twitterLink.string}"/>
-    <c:set var="youtubeLink" value="${renderContext.site.properties.youtubeLink.string}"/>
-    <c:set var="instagramLink" value="${renderContext.site.properties.instagramLink.string}"/>
-    <c:set var="linkedinLink" value="${renderContext.site.properties.linkedinLink.string}"/>
-    <c:set var="pinterestLink" value="${renderContext.site.properties.pinterestLink.string}"/>
+<c:set var="facebookLink" value="${renderContext.site.properties.facebookLink.string}"/>
+<c:set var="googlePlusLink" value="${renderContext.site.properties.googlePlusLink.string}"/>
+<c:set var="twitterLink" value="${renderContext.site.properties.twitterLink.string}"/>
+<c:set var="youtubeLink" value="${renderContext.site.properties.youtubeLink.string}"/>
+<c:set var="instagramLink" value="${renderContext.site.properties.instagramLink.string}"/>
+<c:set var="linkedinLink" value="${renderContext.site.properties.linkedinLink.string}"/>
+<c:set var="pinterestLink" value="${renderContext.site.properties.pinterestLink.string}"/>
 
 <!-- Site Social Links -->
 
-    <ul class="footer-socials list-inline">
-        <c:if test="${not empty facebookLink and facebookLink != 'http://'}">
-            <li><a href="${facebookLink}" class="tooltips" data-toggle="tooltip" data-placement="top" title=""
-                data-original-title="Facebook">
-                <i class="fa fa-facebook"></i></a>
-            </li>
-        </c:if>
-        <c:if test="${not empty googlePlusLink and googlePlusLink != 'http://'}">
-            <li><a href="${googlePlusLink}" class="tooltips" data-toggle="tooltip" data-placement="top" title=""
-                data-original-title="Google Plus">
-                <i class="fa fa-google-plus"></i></a>
-            </li>
-        </c:if>
-        <c:if test="${not empty twitterLink and twitterLink != 'http://'}">
-            <li><a href="${twitterLink}" class="tooltips" data-toggle="tooltip" data-placement="top" title=""
-                data-original-title="Twitter">
-                <i class="fa fa-twitter"></i></a>
-            </li>
-        </c:if>
-        <c:if test="${not empty youtubeLink and youtubeLink != 'http://'}">
-            <li><a href="${youtubeLink}" class="tooltips" data-toggle="tooltip" data-placement="top" title=""
-                data-original-title="YouTube">
-                <i class="fa fa-youtube"></i></a>
-            </li>
-        </c:if>
-        <c:if test="${not empty instagramLink and instagramLink != 'http://'}">
-            <li><a href="${instagramLink}" class="tooltips" data-toggle="tooltip" data-placement="top" title=""
-                data-original-title="Instagram">
-                <i class="fa fa-instagram"></i></a>
-            </li>
-        </c:if>
-        <c:if test="${not empty linkedinLink and linkedinLink != 'http://'}">
-            <li><a href="${linkedinLink}" class="tooltips" data-toggle="tooltip" data-placement="top" title=""
-                data-original-title="LinkedIn">
-                <i class="fa fa-linkedin"></i></a>
-            </li>
-        </c:if>
-        <c:if test="${not empty pinterestLink and pinterestLink != 'http://'}">
-            <li><a href="${pinterestLink}" class="tooltips" data-toggle="tooltip" data-placement="top" title=""
-                data-original-title="Pinterest">
-                <i class="fa fa-pinterest"></i></a>
-            </li>
-        </c:if>
-    </ul>
+<ul class="footer-socials list-inline">
+    <c:if test="${not empty facebookLink and facebookLink != 'http://'}">
+        <li><a href="${facebookLink}" title="Facebook">
+            <i class="fa fa-facebook"></i></a>
+        </li>
+    </c:if>
+    <c:if test="${not empty googlePlusLink and googlePlusLink != 'http://'}">
+        <li><a href="${googlePlusLink}" title="Google Plus">
+            <i class="fa fa-google-plus"></i></a>
+        </li>
+    </c:if>
+    <c:if test="${not empty twitterLink and twitterLink != 'http://'}">
+        <li><a href="${twitterLink}" title="Twitter">
+            <i class="fa fa-twitter"></i></a>
+        </li>
+    </c:if>
+    <c:if test="${not empty youtubeLink and youtubeLink != 'http://'}">
+        <li><a href="${youtubeLink}" title="YouTube">
+            <i class="fa fa-youtube"></i></a>
+        </li>
+    </c:if>
+    <c:if test="${not empty instagramLink and instagramLink != 'http://'}">
+        <li><a href="${instagramLink}" title="Instagram">
+            <i class="fa fa-instagram"></i></a>
+        </li>
+    </c:if>
+    <c:if test="${not empty linkedinLink and linkedinLink != 'http://'}">
+        <li><a href="${linkedinLink}" title="LinkedIn">
+            <i class="fa fa-linkedin"></i></a>
+        </li>
+    </c:if>
+    <c:if test="${not empty pinterestLink and pinterestLink != 'http://'}">
+        <li><a href="${pinterestLink}" title="Pinterest">
+            <i class="fa fa-pinterest"></i></a>
+        </li>
+    </c:if>
+</ul>
 
 
