@@ -353,6 +353,10 @@ div.facets .activefacetsList {
     font-weight: 600;
 }
 
+.header-v8 .navbar-brand img {
+    margin-top: -9px;
+}
+
 .header-v8 .dropdown-menu .active > a, .header-v8 .dropdown-menu li > a:hover {
 	color: #B5121B!important;
 }
@@ -1750,6 +1754,18 @@ i.icon-bg-u {
 ------------------------------------*/
 .owl-work-v1 .item a:hover span {
   border-bottom-color: #B5121B;
+}
+
+.owl-wrapper-outer .owl-item a img {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+
+.owl-carousel-style-v4 .item {
+    height: 164px;
+    position: relative;
 }
 
 /* Footer Default
