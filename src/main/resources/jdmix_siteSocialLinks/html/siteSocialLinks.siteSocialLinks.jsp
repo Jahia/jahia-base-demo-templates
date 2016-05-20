@@ -29,7 +29,7 @@
 
 <!-- Site Social Links -->
 
-<ul class="footer-socials list-inline">
+<ul class="footer-socials list-inline pull-right">
     <c:if test="${not empty facebookLink and facebookLink != 'http://'}">
         <li><a href="${facebookLink}" title="Facebook">
             <i class="fa fa-facebook"></i></a>
