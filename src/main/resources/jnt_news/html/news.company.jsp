@@ -5,7 +5,7 @@
 <%@ taglib prefix="utility" uri="http://www.jahia.org/tags/utilityLib" %>
 <%@ taglib prefix="template" uri="http://www.jahia.org/tags/templateLib" %>
 <%@ taglib prefix="functions" uri="http://www.jahia.org/tags/functions" %>
-<%@ taglib prefix="jahia" uri="http://www.jahia.org/tags/templateLib" %>
+
 <c:set var="language" value="${currentResource.locale.language}"/>
 <fmt:setLocale value="${language}" scope="session"/>
 

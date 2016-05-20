@@ -5,7 +5,6 @@
 <%@ taglib prefix="utility" uri="http://www.jahia.org/tags/utilityLib" %>
 <%@ taglib prefix="template" uri="http://www.jahia.org/tags/templateLib" %>
 <%@ taglib prefix="functions" uri="http://www.jahia.org/tags/functions" %>
-<%@ taglib prefix="jahia" uri="http://www.jahia.org/tags/templateLib" %>
 
 <template:addResources type="css" resources="news.css"/>
 <c:set var="language" value="${currentResource.locale.language}"/>

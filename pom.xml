@@ -84,8 +84,8 @@
   <name>jahiademo</name>
   <description>This is the custom profile module (jahiademo) for running on a Digital Factory server.</description>
   <scm>
-    <connection>scm:dummy:uri</connection>
-    <developerConnection>scm:dummy:uri</developerConnection>
+    <connection>scm:git:git@github.com:Jahia/dx-base-demo.git</connection>
+    <developerConnection>scm:git:git@github.com:Jahia/dx-base-demo.git</developerConnection>
   </scm>
   <properties>
     <jahia.modules.importPackage>org.jahia.defaults.config.spring,
