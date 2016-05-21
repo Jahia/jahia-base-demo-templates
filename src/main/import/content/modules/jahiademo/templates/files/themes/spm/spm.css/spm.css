@@ -1933,3 +1933,7 @@ body.header-fixed-space-v2 {
 body.header-fixed-space-v2 {
 	padding-top: 0px;
 }
+
+.header-fixed .header-v8.header-sticky{
+    position: static;
+}
