@@ -2358,6 +2358,120 @@ div.box6-blue {
 }
 
 
+/* Slider title backgrounds */
+
+.ms-layer.ms-promo-info-in.ms-promo-info.color-light span {
+	background: rgba(231, 76, 60, 0.8) none repeat scroll 0% 0%;
+	padding: 0 20px !important;
+	color: #fff !important;
+}
+
+
+.ms-layer.ms-promo-info-in.ms-promo-info.color-dark span {
+	background: rgba(231, 76, 60, 0.8) none repeat scroll 0% 0%;
+	padding: 0 20px !important;
+	color: #fff !important;
+}
+
+
+.ms-layer.ms-promo-sub.color-light {
+	background: rgba(0,0,0,0.5) !important;
+	padding: 10px 20px !important;
+	color: #fff !important;
+	font-size: 22px !important;
+	margin-top: -14px !important;
+	font-weight: 500 !important;
+}
+
+.ms-layer.ms-promo-subtitle.color-light {
+	background: rgba(0,0,0,0.5) !important;
+	padding: 10px 20px !important;
+	color: #fff !important;
+	font-size: 30px !important;
+	text-transform: uppercase;
+	margin-top: 0px !important;
+	margin-top: -14px !important;
+	font-weight: 500 !important;
+}
+
+.ms-layer.ms-promo-sub.color-dark {
+	background: rgba(255,255,255,0.5) !important;
+	padding: 10px 20px !important;
+	color: #000000 !important;
+	font-size: 22px !important;
+	margin-top: -14px !important;
+	font-weight: 500 !important;
+}
+
+.ms-layer.ms-promo-subtitle.color-dark {
+	background: rgba(255,255,255,0.5) !important;
+	padding: 10px 20px !important;
+	color: #000000 !important;
+	font-size: 30px !important;
+	text-transform: uppercase;
+	margin-top: 0px !important;
+	margin-top: -14px !important;
+	font-weight: 500 !important;
+}
+
+@media only screen and (max-width: 930px){
+	.ms-layer.ms-promo-info-in.ms-promo-info.color-dark span {
+		margin-top: 41px!important;
+	}
+	.ms-layer.ms-promo-sub.color-light {
+		margin-top: -9px!important;
+	}
+	.ms-layer.ms-promo-info-in.ms-promo-info.color-dark span {
+		margin-top: 41px!important;
+	}
+	.ms-layer.ms-promo-sub.color-light {
+		margin-top: -9px!important;
+	}
+	.ms-layer.ms-promo-subtitle.color-light, .ms-layer.ms-promo-subtitle.color-light {
+		font-size: 18px !important;
+		margin-top: 4px !important;
+	}
+	.ms-layer.ms-promo-info-in.ms-promo-info.color-light span, .ms-layer.ms-promo-info-in.ms-promo-info.color-dark span {
+		font-size: 24px !important;
+	}
+	.ms-container .ms-layer.ms-promo-sub.color-light , 	.ms-container .ms-layer.ms-promo-sub.color-dark {
+		margin-top: 0px !important;
+		font-size: 14px !important;
+		line-height: 110%!important;
+
+	}
+	.ms-layer.btn-u {
+		margin-top: 90px !important;
+	}
+}
+
+@media only screen and (max-width: 590px){
+	.ms-layer.ms-promo-info-in.ms-promo-info.color-dark span {
+		margin-top: 27px!important;
+	}
+	.ms-layer.ms-promo-info-in.ms-promo-info.color-dark span {
+		margin-top: 27px!important;
+	}
+	.ms-layer.ms-promo-subtitle.color-light, .ms-layer.ms-promo-subtitle.color-dark {
+		font-size: 16px !important;
+		margin-top: -14px !important;
+	}
+	.ms-layer.ms-promo-info-in.ms-promo-info.color-light span, .ms-layer.ms-promo-info-in.ms-promo-info.color-dark span {
+		font-size: 20px !important;
+	}
+	.ms-container .ms-layer.ms-promo-sub.color-light, 	.ms-container .ms-layer.ms-promo-sub.color-dark {
+		margin-top: -6px !important;
+		font-size: 12px !important;
+		line-height: 110%!important;
+
+	}
+	.ms-layer.btn-u {
+		margin-top: 55px !important;
+	}
+
+}
+
+
 
 /* remove active button bacground */
 .btn:active, .btn.active {
