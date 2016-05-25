@@ -32,8 +32,14 @@
     <meta name="author" content="">
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="${url.context}${url.currentModule}/img/favicon/favicon.ico" type="image/x-icon">
-
+    <c:choose>
+        <c:when test="${jcr:isNodeType(renderContext.site, 'jdmix:favicon')}">
+            <template:module path="${renderContext.site.path}" view="default" />
+        </c:when>
+        <c:otherwise>
+            <link rel="shortcut icon" href="${url.context}${url.currentModule}/img/favicon/favicon.ico" type="image/x-icon">
+        </c:otherwise>
+    </c:choose>
     <!-- Web Fonts -->
     <%-- Using local web fonts versus the google resource. If you want to change to google please uncomment this and comment out the local open-sans-webfonts.css
     <link rel='stylesheet' type='text/css'

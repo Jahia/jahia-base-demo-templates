@@ -304,3 +304,8 @@
  extends = jnt:news
  itemtype = content
  - galleryImg (weakreference, picker[type='image']) multiple i18n
+
+[jdmix:favicon] mixin
+ extends = jnt:virtualsite
+ itemtype = content
+ - icon (weakreference, picker[type='image']) mandatory < 'jmix:image'
