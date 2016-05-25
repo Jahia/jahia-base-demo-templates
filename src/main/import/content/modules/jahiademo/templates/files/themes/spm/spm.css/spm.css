@@ -354,7 +354,9 @@ div.facets .activefacetsList {
 }
 
 .header-v8 .navbar-brand img {
-    margin-top: -9px;
+    margin-top: -21px;
+    width: 65%;
+    max-height: initial;
 }
 
 .header-v8 .dropdown-menu .active > a, .header-v8 .dropdown-menu li > a:hover {
