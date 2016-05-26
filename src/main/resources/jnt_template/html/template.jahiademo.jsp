@@ -31,6 +31,8 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
+    <meta http-equiv="cache-control" content="must-revalidate" />
+
     <!-- Favicon -->
     <c:choose>
         <c:when test="${jcr:isNodeType(renderContext.site, 'jdmix:favicon')}">
