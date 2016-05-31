@@ -18,7 +18,9 @@
 
 <c:if test="${not empty logo}">
     <c:url var="logoUrl" value="${logo.url}" context="/"/>
-    <c:url var="homePageURL" value="${renderContext.site.home.url}" context="/"/>
+    <c:if test="${not empty renderContext.site.home.url}">
+        <c:url var="homePageURL" value="${renderContext.site.home.url}" context="/"/>
+    </c:if>
 
     <a href="${homePageURL}" class="logo"><img src="${logoUrl}" alt="Logo"></a>
 </c:if>
