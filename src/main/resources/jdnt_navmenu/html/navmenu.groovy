@@ -1,11 +1,9 @@
 package jdnt_navmenu.html
 
 import org.jahia.services.content.JCRContentUtils
-import org.jahia.services.content.decorator.JCRSiteNode
 import org.jahia.services.render.RenderService
 import org.jahia.services.render.Resource
 import org.jahia.taglibs.jcr.node.JCRTagUtils
-
 
 /* if menuLimits mixin is enabled, get site level properties otherwise use template settings*/
 def hideHomeValue = false;
@@ -19,9 +17,6 @@ if (renderContext.site.isNodeType("jdmix:menuLimits")){
     def hideHome = renderContext.site.properties.hideHome.string
     if (hideHome == "Yes") {
         hideHomeValue = true
-    }
-    else {
-        hideHomeValue = false
     }
 
     /* increase maxTopLevel since home is no longer shown */
@@ -37,8 +32,6 @@ maxDepthValue = maxDepth ? maxDepth.long : 4
 /* update this to increase or decrease the max menu items on top level before putting them under the last menu item caret */
 def maxTopLevel = currentNode.properties['maxTopLevel']
 maxTopLevelValue = maxTopLevel ? maxTopLevel.long-1 : 4
-
-    hideHomeValue = false
 }
 
 
