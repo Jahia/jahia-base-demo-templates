@@ -36,9 +36,7 @@
     <!-- Favicon -->
     <c:choose>
         <c:when test="${jcr:isNodeType(renderContext.site, 'jdmix:favicon')}">
-            <c:set var="icon" value="${siteNode.properties['icon'].node}"/>
-            <c:url var="iconURL" value="${icon.url}" context="/"/>
-            <link rel="shortcut icon" href="${iconURL}" type="image/x-icon">
+            <template:module path="${renderContext.site.path}" view="favicon" />
         </c:when>
         <c:otherwise>
             <link rel="shortcut icon" href="${url.context}${url.currentModule}/img/favicon/favicon.ico" type="image/x-icon">
