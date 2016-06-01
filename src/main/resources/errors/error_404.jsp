@@ -26,7 +26,11 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="error-v4">
-                <a href="#"><img src="<c:url value='/modules/jahiademo/css/404/logo_red.png'/>" alt=""></a>
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3">
+                        <a class="btn-u btn-brd btn-brd-hover btn-u-dark" href="/"> Go Back to Main Page</a>
+                    </div>
+                </div>
                 <h1><span class="color-theme">404</h1>
                 <span class="sorry">Hmm, it seems you took a wrong turn somewhere.<br/>Sorry, the page you were looking for could not be found!</span>
                 <div class="row">
