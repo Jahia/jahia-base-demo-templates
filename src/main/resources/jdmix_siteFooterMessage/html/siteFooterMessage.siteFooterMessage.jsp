@@ -17,36 +17,43 @@
 <%--@elvariable id="renderContext" type="org.jahia.services.render.RenderContext"--%>
 <%--@elvariable id="currentResource" type="org.jahia.services.render.Resource"--%>
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
+<template:addResources type="javascript" resources="custom/modal.js"/>
 
-<c:set var="footerMessage" value="${renderContext.site.properties.footerMessage.string}"/>
-<c:set var="privacyPolicyLinkText" value="${renderContext.site.properties.privacyPolicyLinkText.string}"/>
-<c:set var="privacyLink" value="${renderContext.site.properties.privacyLink.string}"/>
-<c:set var="termsLinkText" value="${renderContext.site.properties.termsLinkText.string}"/>
-<c:set var="termsLink" value="${renderContext.site.properties.termsLink.string}"/>
+<c:set var="privacyModalMessage" value="${currentNode.properties.privacyModalMessage.string}"/>
+<c:set var="termsModalMessage" value="${currentNode.properties.termsModalMessage.string}"/>
 
-<p>
-    <c:if test="${not empty footerMessage}">
-        ${footerMessage}&nbsp;
-    </c:if>
-    <c:choose>
-        <c:when test="${privacyLink == 'none'}">
-            ${privacyPolicyLinkText}&nbsp;
-        </c:when>
-        <c:when test="${privacyLink == 'externalLink'}">
-            <a href="${renderContext.site.properties.privacyPageExternalLink.string}">${privacyPolicyLinkText}</a>
-        </c:when>
-        <%-- TODO: add conditions for internal link and modal --%>
-    </c:choose>
-    <c:if test="${not empty privacyPolicyLinkText and not empty termsLinkText}">
-        |&nbsp;
-    </c:if>
-    <c:choose>
-        <c:when test="${termsLink == 'none'}">
-            ${termsLinkText}
-        </c:when>
-        <c:when test="${privacyLink == 'externalLink'}">
-            <a href="${renderContext.site.properties.privacyPageExternalLink.string}">${privacyPolicyLinkText}</a>
-        </c:when>
-        <%-- TODO: add conditions for internal link and modal --%>
-    </c:choose>
-</p>
+<template:include view="siteFooterMessage.js"/>
+
+<c:if test="${! empty privacyModalMessage}">
+    <div id="myPrivacyModal" class="modal fade" role="dialog" style="display: none">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">${renderContext.site.properties.privacyPolicyLinkText.string}</h4>
+                </div>
+                <div class="modal-body">
+                        ${privacyModalMessage}
+                </div>
+            </div>
+        </div>
+    </div>
+</c:if>
+
+<c:if test="${! empty termsModalMessage}">
+    <div id="myTermsModal" class="modal fade" role="dialog" style="display: none">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">${renderContext.site.properties.termsLinkText.string}</h4>
+                </div>
+                <div class="modal-body">
+                        ${termsModalMessage}
+                </div>
+            </div>
+        </div>
+    </div>
+</c:if>
