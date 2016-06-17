@@ -309,3 +309,14 @@
  extends = jnt:virtualsite
  itemtype = content
  - icon (weakreference, picker[type='image']) mandatory < 'jmix:image'
+
+[jdmix:buttonText] mixin
+ extends = jdnt:highlight
+ - buttonTxt (string) = 'Read More' internationalized
+
+[jdnt:photoGallery] > jnt:content, mix:title, jdmix:jahiademo
+ + * (jdnt:galleryImg)
+
+[jdnt:galleryImg] > jnt:content, mix:title
+ - jcr:title (string) internationalized
+ - image (weakreference, picker[type='image']) < 'jmix:image'

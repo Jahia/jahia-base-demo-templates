@@ -45,8 +45,16 @@
         </div>
         <%-- only display the read more text if a link has been provided --%>
         <c:if test="${not empty linkUrl}">
-            <a class="btn-more hover-effect" href="${linkUrl}" alt="${title}"><fmt:message
-                    key="jdnt_highlight.readmore"/> +</a>
+            <a class="btn-more hover-effect" href="${linkUrl}" alt="${title}">
+                <c:choose>
+                    <c:when test="${jcr:isNodeType(currentNode, 'jdmix:buttonText')}">
+                        <template:include view="hidden.buttonText"/>
+                    </c:when>
+                    <c:otherwise>
+                        <fmt:message key="jdnt_highlight.readmore"/>
+                    </c:otherwise>
+                </c:choose>
+                &nbsp;+</a>
         </c:if>
     </div>
     <div class="caption">

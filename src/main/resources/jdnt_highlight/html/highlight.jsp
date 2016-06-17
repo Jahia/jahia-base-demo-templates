@@ -39,7 +39,16 @@
         <p>${description}</p>
         <%-- display a read more text link if a link has been provided --%>
         <c:if test="${jcr:isNodeType(currentNode, 'jdmix:hasLink')}">
-            <a href="${linkUrl}" alt="${title}"><fmt:message key="jdnt_highlight.readmore"/></a>
+            <a href="${linkUrl}" alt="${title}">
+                <c:choose>
+                    <c:when test="${jcr:isNodeType(currentNode, 'jdmix:buttonText')}">
+                        <template:include view="hidden.buttonText"/>
+                    </c:when>
+                    <c:otherwise>
+                        <fmt:message key="jdnt_highlight.readmore"/>
+                    </c:otherwise>
+                </c:choose>
+            </a>
         </c:if>
     </div>
 </div>
