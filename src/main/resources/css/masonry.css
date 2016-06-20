@@ -1,0 +1,197 @@
+/******************************************************/
+/*
+/* Masonry highlights (card) and highlight's subviews */
+/*
+/******************************************************/
+
+/* clear fix */
+.grid:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+/* ---- .grid-item ---- */
+.grid-sizer,
+.grid-item {
+    width: 50%;
+}
+.grid-item {
+    float: left;
+}
+.grid-item img {
+    display: block;
+    max-width: 100%;
+}
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+    .grid-sizer,
+    .grid-item {
+        width: 50% !important;
+    }
+}
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px) {
+    .grid-sizer,
+    .grid-item {
+        width: 100% !important;
+    }
+}
+/**********************************************/
+/*
+/*--- (jdnt_highlight ) masonry overlay view ---*/
+/*
+/**********************************************/
+
+.caption-items
+{
+    width: 90%;
+    height: 50%;
+    margin: auto;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+    z-index: 9;
+    display: none;
+}
+.caption-items:only-child
+{
+    z-index: 9;
+}
+/*Link Captions*/
+.masonry-overlay .link-captions {
+    padding-left: 0;
+    margin: 0 0 20px;
+    list-style: none;
+    text-align: center;
+    cursor: pointer;
+}
+.masonry-overlay .link-captions li {
+    padding: 0 2px;
+    display: inline-block;
+}
+.masonry-overlay .link-captions li i {
+    color: #444;
+    width: 30px;
+    height: 30px;
+    padding: 8px;
+    font-size: 14px;
+    background: #fff;
+    text-align: center;
+    display: inline-block;
+}
+.masonry-overlay .link-captions li i:hover {
+    color: #fff;
+    background: #e74c3c;
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+.thumbnail h3 a, .thumbnail-style h3 a {
+    color: #000;
+    font-size: 16px;
+
+}
+.link-captions.no-bottom-space > p {
+    color: #000;
+}
+
+.masonry-overlay img:hover {
+    opacity: 0.6;
+}
+.pswp{display:none;}
+
+/**********************************************/
+/*
+/*--- (jdnt_highlight ) masonry flip view ---*/
+/*
+/**********************************************/
+
+.flip-container {
+    perspective: 1000px;
+}
+/* flip the pane when hovered */
+.flip-container .flipper, .flip-container .flipper {
+    transform: rotateY(180deg);
+}
+
+/* flip speed goes here */
+.flipper {
+    transition: 0.6s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+
+}
+/* hide back of pane during swap */
+.flip-container .front, .flip-container .back {
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    top: 0;
+    right: 0;
+}
+/* front pane, placed above back */
+.flip-container .front {
+    z-index: 2;
+    /* for firefox 31 */
+    transform: rotateY(0deg);
+}
+/* back, initially hidden pane */
+.flip-container .back {
+    transform: rotateY(180deg);
+    position: absolute;
+}
+
+/* IE FIX */
+@media screen\0 {
+    /* entire container, keeps perspective */
+    .flip-container {
+        perspective: 1000px;
+        transform-style: preserve-3d;
+    }
+    /*  UPDATED! flip the pane when hovered */
+    .flip-container .back {
+        transform: rotateY(0deg);
+    }
+    .flip-container .back .caption {
+        transform: rotateY(180deg);
+    }
+    .flip-container .front {
+        transform: rotateY(180deg);
+    }
+    /* flip speed goes here */
+    .flipper {
+        transition: 0.6s;
+        transform-style: preserve-3d;
+        position: relative;
+    }
+    /* hide back of pane during swap */
+    .flip-container .front, .flip-container .back {
+        backface-visibility: hidden;
+        transition: 0.6s;
+        transform-style: preserve-3d;
+        top: 0;
+        left: 0;
+    }
+    /*  UPDATED! front pane, placed above back */
+    .front {
+        z-index: 2;
+        transform: rotateY(0deg);
+    }
+    /* back, initially hidden pane */
+    .back {
+        transform: rotateY(-180deg);
+    }
+}
+
+.thumbnail-style a.btn-more-2 {
+    background: #e74c3c none repeat scroll 0 0;
+    color: #fff;
+    display: inline-block;
+    padding: 1px 6px;
+}
+.flipper .caption {
+    padding: 12px;
+}
+.flip-card .caption{
+    display: none;
+}
+
