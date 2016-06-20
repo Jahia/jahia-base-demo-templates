@@ -2976,3 +2976,22 @@ https://github.com/videojs/video.js/blob/master/src/css/video-js.less */
 }
 
 
+.myPhotoGallery {
+	width: 90%;
+	float: left;
+}
+
+.myPhotoGallery img {
+	width: 100%;
+	height: auto;
+}
+
+.myPhotoGallery galleryfigure {
+	display: block;
+	float: left;
+	margin: 0 5px 5px 0;
+}
+
+.myPhotoGallery figcaption {
+	display: none;
+}

@@ -316,6 +316,7 @@
 
 [jdnt:photoGallery] > jnt:content, mix:title, jdmix:jahiademo
  + * (jdnt:galleryImg)
+ - photosWidth (long) = 250 indexed=no mandatory
 
 [jdnt:galleryImg] > jnt:content, mix:title
  - jcr:title (string) internationalized
