@@ -21,7 +21,28 @@
 <c:set var="title" value="${currentNode.properties['jcr:title'].string}"/>
 <c:set var="description" value="${currentNode.properties['description'].string}"/>
 <c:set var="image" value="${currentNode.properties['image'].node}"/>
-
+<%-- not in edit mode --%>
+<c:if test="${not renderContext.editMode}">
+    <template:addResources>
+        <style>
+            .flip-container:hover .flipper, .flip-container.hover .flipper {
+                transform: rotateY(180deg);
+            }
+            /* IE FIX */
+            @media screen\0 {
+                .flip-container:hover .back {
+                    transform: rotateY(0deg);
+                }
+                .flip-container .back .caption {
+                    transform: rotateY(180deg);
+                }
+                .flip-container:hover .front {
+                    transform: rotateY(180deg);
+                }
+            }
+        </style>
+    </template:addResources>
+</c:if>
 <c:choose>
     <%-- If no image has been supplied for the image view, put a placeholder image in place --%>
     <c:when test="${empty image}">
@@ -39,14 +60,10 @@
 </c:if>
 
 <%-- add ontouchstart for touch devices compatibility --%>
-<div class="grid-item thumbnails thumbnail-style flip-card "   ontouchstart="this.classList.toggle('hover');">
+<div class="grid-item thumbnails thumbnail-style flip-container  "   >
     <div class="flipper">
         <div class="front">
-            <div class="thumbnail-img">
-                <div class="overflow-hidden">
-                    <img class="img-responsive" src="${imageUrl}" alt="">
-                </div>
-            </div>
+            <img class="img-responsive" src="${imageUrl}" alt="">
         </div>
         <div class="back">
             <div class="caption">

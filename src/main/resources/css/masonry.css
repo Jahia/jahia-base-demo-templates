@@ -108,9 +108,12 @@
 
 .flip-container {
     perspective: 1000px;
+    transform-style: preserve-3d;
 }
 /* flip the pane when hovered */
-.flip-container .flipper, .flip-container .flipper {
+
+
+.flip-container.flip .flipper {
     transform: rotateY(180deg);
 }
 
@@ -140,6 +143,7 @@
     position: absolute;
 }
 
+
 /* IE FIX */
 @media screen\0 {
     /* entire container, keeps perspective */
@@ -148,13 +152,7 @@
         transform-style: preserve-3d;
     }
     /*  UPDATED! flip the pane when hovered */
-    .flip-container .back {
-        transform: rotateY(0deg);
-    }
-    .flip-container .back .caption {
-        transform: rotateY(180deg);
-    }
-    .flip-container .front {
+    .flip-container.flip .flipper {
         transform: rotateY(180deg);
     }
     /* flip speed goes here */
@@ -191,7 +189,5 @@
 .flipper .caption {
     padding: 12px;
 }
-.flip-card .caption{
-    display: none;
-}
+
 

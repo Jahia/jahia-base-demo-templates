@@ -10,12 +10,6 @@ $(document).ready(function() {
     $grid.imagesLoaded().progress( function() {
         $grid.masonry();
     });
-
-    $(".flip-card").click(function() {
-        $(this).toggleClass("flip-container");
-        $(this).find(".caption").toggle();
-
-    });
 });
 
 $(document).ready(function() {

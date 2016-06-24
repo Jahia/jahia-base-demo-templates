@@ -17,7 +17,7 @@
 <%--@elvariable id="currentResource" type="org.jahia.services.render.Resource"--%>
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
 <%-- Check if the current subview uses the masonry script --%>
-<c:if test="${(currentNode.properties['j:subNodesView'].string == 'cards-flip') || (currentNode.properties['j:subNodesView'].string == 'cards-overlay') || (currentNode.properties['j:subNodesView'].string == 'cards-card') }">
+<c:if test="${(currentNode.properties['j:subNodesView'].string == 'cards-flip-click') || (currentNode.properties['j:subNodesView'].string == 'cards-flip-hover') || (currentNode.properties['j:subNodesView'].string == 'cards-overlay') || (currentNode.properties['j:subNodesView'].string == 'cards-card') }">
     <c:set var="isMasonryView" value="true"/>
 </c:if>
 
@@ -72,8 +72,6 @@
         <style>.grid-item {height: 100%; clear: both; display: inline-block}</style>
     </c:if>
 
-
-
     <div class="row${marginClass}">
         <div class="grid picture" itemscope itemtype="http://schema.org/ImageGallery">
             <div class="grid-sizer"></div>
@@ -84,7 +82,6 @@
             </c:forEach>
         </div>
     </div>
-
 
     <%-- will show only for edit mode --%>
     <c:if test="${not renderContext.editMode}">
@@ -137,7 +134,6 @@
         </div>
         <%-- end photoswipe setup --%>
     </c:if>
-
     <%-- end masonry --%>
 </c:if>
 
@@ -199,14 +195,12 @@
                         <p><fmt:message key="jdnt_highlight.sampleBody"/></p>
                         <a href="#" alt=""><fmt:message key="jdnt_highlight.readmore"/></a>
                     </div>
-
                 </div>
             </div>
         </div>
     </c:if>
     <%-- end  --%>
 </c:if>
-
 
     <%-- Add the add new content item button if in edit mode --%>
 <c:if test="${moduleMap.editable and renderContext.editMode && !resourceReadOnly}">
