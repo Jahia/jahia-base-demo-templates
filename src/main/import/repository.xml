@@ -371,7 +371,25 @@
                                        jcr:primaryType="jnt:translation"
                                        jcr:title="news entry"/>
                                 <section--container--row--grid-main jcr:primaryType="jnt:contentList">
+                                    <pager align="center-block"
+                               displayPager="false"
+                               j:bindedComponent="/modules/jahiademo/templates/base/news/news-entry/section--container--row--grid-main/article"
+                               jcr:mixinTypes="bootstrap3mix:advancedPagination"
+                               jcr:primaryType="bootstrap3nt:pagination"
+                               layout="default"
+                               nbOfPages="10"
+                               nbOfPagesInEdit="100"
+                               pageSize="2"/>
                                     <article j:allowedTypes="jnt:news" jcr:primaryType="jnt:area"/>
+                                <pager-1 align="center-block"
+                                 displayPager="true"
+                                 j:bindedComponent="/modules/jahiademo/templates/base/news/news-entry/section--container--row--grid-main/article"
+                                 jcr:mixinTypes="bootstrap3mix:advancedPagination"
+                                 jcr:primaryType="bootstrap3nt:pagination"
+                                 layout="default"
+                                 nbOfPages="10"
+                                 nbOfPagesInEdit="100"
+                                 pageSize="2"/>
                                 </section--container--row--grid-main>
                             </news-entry>
                         </news>
