@@ -33,7 +33,8 @@
 </c:choose>
 
 <%-- check if the link property has been used on this content --%>
-<c:if test="${jcr:isNodeType(currentNode, 'jdmix:hasLink')}">
+<c:if test="${jcr:isNodeType(currentNode, 'jdmix:hasLink') and not empty currentNode.properties['internalLink']
+and not empty currentNode.properties['internalLink'].node}">
     <c:url var="linkUrl" value="${currentNode.properties['internalLink'].node.url}" context="/"/>
     <template:addCacheDependency node="${currentNode.properties['internalLink'].node}"/>
 </c:if>

@@ -25,7 +25,8 @@
 </c:if>
 
 <c:choose>
-    <c:when test="${jcr:isNodeType(currentNode, 'jdmix:searchArea') and not empty currentNode.properties['startPage']}">
+    <c:when test="${jcr:isNodeType(currentNode, 'jdmix:searchArea') and not empty currentNode.properties['startPage']
+    and not empty currentNode.properties['startPage'].node}">
         <c:set var="startNodePath" value="${currentNode.properties['startPage'].node.path}"/>
     </c:when>
     <c:otherwise>

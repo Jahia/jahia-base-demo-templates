@@ -23,7 +23,7 @@
 
 <%-- get the starting page for the search --%>
 <c:choose>
-    <c:when test="${not empty currentNode.properties['startPage']}">
+    <c:when test="${not empty currentNode.properties['startPage'] and not empty currentNode.properties['startPage'].node}">
         <c:set var="startNodePath" value="${currentNode.properties['startPage'].node.path}"/>
     </c:when>
     <c:otherwise>
