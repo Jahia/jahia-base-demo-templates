@@ -16,7 +16,7 @@ function activateEventTabAjax(){
     $(".eventTabItem").click(function () {
         var view = $(this).attr('view');
         var eventTabs = $(this).closest(".eventTabs");
-        history.pushState(null, null, window.location.href.split('?')[0] + '?eventTab'+eventTabs.attr('uuid')+'=' + view);
+        history.pushState(null, null,updateQueryStringParameter(window.location.href,'eventTab'+eventTabs.attr('uuid'),view));
         eventTabs.parent().load(eventTabs.attr('url') + '.ajax?eventTab'+eventTabs.attr('uuid')+'=' + view+ ' #'+eventTabs.attr('id'), function() {
             activateEventTabAjax();
             activeEventViewTab();

@@ -16,7 +16,8 @@ function activatePressSearchTabAjax(){
     $(".pressTabItem").click(function () {
         var yearTab = $(this).attr('view');
         var yearTabs = $(this).closest(".pressSearch");
-        history.pushState(null, null, window.location.href.split('?')[0] + '?yearTab'+yearTabs.attr('uuid')+'=' + yearTab);
+        history.pushState(null, null,updateQueryStringParameter(window.location.href,'yearTab'+yearTabs.attr('uuid'),yearTab));
+
         yearTabs.parent().load(yearTabs.attr('url') + '.ajax?yearTab'+yearTabs.attr('uuid')+'=' + yearTab+ ' #'+yearTabs.attr('id'), function() {
             activatePressSearchTabAjax();
             activePressSearchTab();
