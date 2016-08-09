@@ -322,6 +322,28 @@
  - jcr:title (string) internationalized
  - image (weakreference, picker[type='image']) < 'jmix:image'
 
+[jdnt:mediaGallery] > jnt:content, mix:title, jdmix:jahiademo
+ + * (jdnt:mediaGalleryItem)
+ - itemWidth (long) = 250 indexed=no mandatory
+
+[jdnt:mediaGalleryItem] > jnt:content, mix:title
+ - itemType (string, choicelist[mediaGalleryItemInitializer,resourceBundle]) = 'image'
+
+[jdmix:mediaGalleryImg] > jmix:templateMixin mixin
+ extends = jdnt:mediaGalleryItem
+ - image (weakreference, picker[type='image']) < 'jmix:image'
+
+[jdmix:mediaGalleryInternalVideo] > jmix:templateMixin mixin
+ extends = jdnt:mediaGalleryItem
+ - video (weakreference, picker[type='file']) i18n
+ - videoPoster (weakreference, picker[type='image']) < 'jmix:image'
+
+[jdmix:mediaGalleryExternalVideo] > jmix:templateMixin mixin
+ extends = jdnt:mediaGalleryItem
+ - videoService(string, choicelist[resourceBundle]) = 'youtube' mandatory < youtube, vimeo
+ - videoId (string) i18n
+ - videoPoster (weakreference, picker[type='image']) < 'jmix:image'
+
 [jdnt:infiniteScroller] > jnt:content, jdmix:jahiademo, jmix:bindedComponent
  - pageSize (long) = '10' mandatory autocreated
  - loadItems (long) = '1' mandatory autocreated
