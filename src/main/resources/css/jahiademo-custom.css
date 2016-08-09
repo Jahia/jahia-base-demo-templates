@@ -3007,3 +3007,12 @@ https://github.com/videojs/video.js/blob/master/src/css/video-js.less */
 	padding-left: 15px;
 	padding-right: 15px;
 }
+
+.fullMap{
+	width:100%;
+	height:100%;
+}
+
+.map_wrapper{
+	width:100%;
+}
