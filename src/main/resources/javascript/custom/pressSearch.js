@@ -1,27 +1,22 @@
 
 function activePressSearchTab(){
-    $('.pressSearch').each(function () {
-        $(this).attr('uuid');
-        var yearTab = GetURLParameter('yearTab'+$(this).attr('uuid'));
-        if (yearTab == null){
-            yearTab = "defaultYear";
-        }
-        if (!$(this).find(".active")[0]){
-            $(this).find("." + yearTab).addClass("active");
-        }
-    });
+    initializeActiveTab('.pressSearch','yearTab', 'defaultYear');
 }
 
 function activatePressSearchTabAjax(){
     $(".pressTabItem").click(function () {
         var yearTab = $(this).attr('view');
         var yearTabs = $(this).closest(".pressSearch");
-        history.pushState(null, null,updateQueryStringParameter(window.location.href,'yearTab'+yearTabs.attr('uuid'),yearTab));
-
-        yearTabs.parent().load(yearTabs.attr('url') + '.ajax?yearTab'+yearTabs.attr('uuid')+'=' + yearTab+ ' #'+yearTabs.attr('id'), function() {
-            activatePressSearchTabAjax();
-            activePressSearchTab();
-        });
+        var newUrl = updateQueryStringParameter(window.location.href,'yearTab'+yearTabs.attr('uuid'),yearTab);
+        if (yearTabs.attr('disableAjax') == 'true'){
+            window.location.replace(newUrl);
+        }else{
+            history.pushState(null, null,newUrl);
+            yearTabs.parent().load(yearTabs.attr('url') + '.ajax?yearTab'+yearTabs.attr('uuid')+'=' + yearTab+ ' #'+yearTabs.attr('id'), function() {
+                activatePressSearchTabAjax();
+                activePressSearchTab();
+            });
+        }
     });
 }
 

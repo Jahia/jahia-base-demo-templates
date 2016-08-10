@@ -22,9 +22,13 @@
 
 <c:set var="view" value="condensed"/>
 <c:set var="title" value="${currentNode.properties['jcr:title'].string}"/>
+<c:if test="${currentNode.properties.disableAjax.boolean}">
+    <c:set var="disableAjax" value="disableAjax=true"/>
+</c:if>
 
 <div class="eventTabContainer">
-    <div id="eventTabs-content-${currentNode.identifier}" class="eventTabs" url="<c:url value='${url.base}${currentNode.path}.html'/>" uuid="${currentNode.identifier}" >
+    <div id="eventTabs-content-${currentNode.identifier}" class="eventTabs" url="<c:url value='${url.base}${currentNode.path}.html'/>"
+        uuid="${currentNode.identifier}" ${disableAjax}>
     <c:if test="${not empty title}">
         <div class="headline"><h2>${title}</h2></div>
     </c:if>

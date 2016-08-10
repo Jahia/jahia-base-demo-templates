@@ -21,3 +21,20 @@ function updateQueryStringParameter(uri, key, value) {
         return uri + separator + key + "=" + value;
     }
 }
+
+function initializeActiveTab(tabClass,urlParamPrefix,defaultTab){
+    $(tabClass).each(function () {
+        var activetab = GetURLParameter(urlParamPrefix+$(this).attr('uuid'));
+        if (activetab == null){
+            activetab = defaultTab;
+        }
+        if (!$(this).find(".active")[0]){
+            $(this).find("." + activetab).addClass("active");
+        }
+    });
+}
+
+
+
+
+

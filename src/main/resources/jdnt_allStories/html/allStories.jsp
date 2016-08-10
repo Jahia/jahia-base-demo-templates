@@ -20,11 +20,14 @@
 <%-- display the search results for the allStories query --%>
 <template:addResources type="javascript" resources="custom/allStories.js"/>
 <template:include view="hidden.header"/>
-
+<c:if test="${currentNode.properties.disableAjax.boolean}">
+    <c:set var="disableAjax" value="disableAjax=true"/>
+</c:if>
 <%-- allStories.js does some handle some ajax calls for allStories.jsp.
      The parameters needed for the ajax call are present in the DOM of this view (attributes url and view)--%>
 <div class="allStoriesContainer">
-    <div id="allStories-content-${currentNode.identifier}" class="allStories" url="<c:url value='${url.base}${currentNode.path}.html'/>" uuid="${currentNode.identifier}">
+    <div id="allStories-content-${currentNode.identifier}" class="allStories" url="<c:url value='${url.base}${currentNode.path}.html'/>"
+         uuid="${currentNode.identifier}" ${disableAjax}>
         <c:if test="${renderContext.editMode}">
             <h4><fmt:message key="label.topStoriesArea"/></h4>
             <p><fmt:message key="label.componentDescription"/></p>

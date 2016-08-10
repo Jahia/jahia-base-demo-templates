@@ -19,6 +19,9 @@
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
 <template:addResources type="javascript" resources="custom/pressSearch.js"/>
 <template:include view="hidden.header"/>
+<c:if test="${currentNode.properties.disableAjax.boolean}">
+    <c:set var="disableAjax" value="disableAjax=true"/>
+</c:if>
 
 <jsp:useBean id="now" class="java.util.Date"/>
 <fmt:formatDate value="${now}" pattern="yyyy" var="thisYear"/>
@@ -35,7 +38,8 @@
 <div class="pressContainer">
 
     <div id="pressSearch-content-${currentNode.identifier}" class="pressSearch"
-         url="<c:url value='${url.base}${currentNode.path}.html'/>" uuid="${currentNode.identifier}">
+         url="<c:url value='${url.base}${currentNode.path}.html'/>"
+         uuid="${currentNode.identifier}" ${disableAjax}>
         <c:if test="${not empty title}">
             <div class="headline"><h2>${title}</h2></div>
         </c:if>

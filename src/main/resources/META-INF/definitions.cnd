@@ -184,15 +184,18 @@
  itemtype = content
  - startPage (weakreference, picker[type='page'])
 
-[jdnt:allStories] > jnt:content, jdmix:jahiademo, jmix:list, mix:title
+[jdnt:allStories] > jnt:content, jdmix:jahiademo, jmix:list, mix:title, jdmix:ajaxComponent
  - startPage (weakreference, picker[type='page'])
 
-[jdnt:pressSearch] > jnt:content, jdmix:jahiademo, jmix:list, mix:title
+[jdnt:pressSearch] > jnt:content, jdmix:jahiademo, jmix:list, mix:title, jdmix:ajaxComponent
  - startPage (weakreference, picker[type='page'])
  - filter (weakreference, choicelist[nodes='/sites/systemsite/categories/;jnt:category',sort])
  - numTabs (long)
 
 [jdmix:backLink] mixin
+
+[jdmix:ajaxComponent] mixin
+ - disableAjax (boolean)
 
 [jdmix:fileAttachment] mixin
  extends = jnt:event
@@ -200,7 +203,7 @@
  - downloadTitle (string) internationalized
  - pdfVersion (weakreference, picker[type='file']) i18n
 
-[jdnt:eventTabs] > jnt:content, jdmix:jahiademo, jmix:list, mix:title
+[jdnt:eventTabs] > jnt:content, jdmix:jahiademo, jmix:list, mix:title, jdmix:ajaxComponent
  - startPage (weakreference, picker[type='page'])
  - filter (weakreference, choicelist[nodes='/sites/systemsite/categories/;jnt:category',sort])
 
