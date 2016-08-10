@@ -37,7 +37,7 @@ In the folder of skin CSS file there are also:
 <c:set var="itemWidth" value="${currentNode.properties['itemWidth'].string}"/>
 
 <%-- get the child galleryImgs --%>
-<c:set var="images" value="${jcr:getChildrenOfType(currentNode, 'jdnt:mediaGalleryItem')}"/>
+<c:set var="images" value="${jcr:getChildrenOfType(currentNode, 'jdnt:mediaGalleryImg')}"/>
 
 <c:if test="${not empty title}">
     <h2>${title}</h2>
@@ -46,7 +46,7 @@ In the folder of skin CSS file there are also:
 <div class="myPhotoGallery" itemscope itemtype="http://schema.org/ImageGallery">
     <c:forEach items="${images}" var="galImage" varStatus="item">
         <galleryfigure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject" style="width: ${itemWidth}px">
-            <template:module node="${galImage}" nodeTypes="jdnt:mediaGalleryItem" editable="true"/>
+            <template:module node="${galImage}" nodeTypes="jdnt:mediaGalleryImg" editable="true"/>
         </galleryfigure>
     </c:forEach>
 </div>

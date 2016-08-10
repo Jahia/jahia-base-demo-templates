@@ -144,38 +144,4 @@
             </list>
         </property>
     </bean>
-    <bean id="mediaGalleryItemInitializer" class="org.jahia.services.content.nodetypes.initializers.FixedListChoiceListInitializer">
-        <property name="key" value="mediaGalleryItemInitializer"/>
-        <property name="items">
-            <list>
-                <bean class="org.jahia.services.content.nodetypes.initializers.ChoiceListValue">
-                    <property name="displayName" value="Image"/>
-                    <property name="stringValue" value="image"/>
-                    <property name="properties">
-                        <map>
-                            <entry key="addMixin" value="jdmix:mediaGalleryImg"/>
-                        </map>
-                    </property>
-                </bean>
-                <bean class="org.jahia.services.content.nodetypes.initializers.ChoiceListValue">
-                    <property name="displayName" value="External Video"/>
-                    <property name="stringValue" value="externalVideo"/>
-                    <property name="properties">
-                        <map>
-                            <entry key="addMixin" value="jdmix:mediaGalleryExternalVideo"/>
-                        </map>
-                    </property>
-                </bean>
-                <bean class="org.jahia.services.content.nodetypes.initializers.ChoiceListValue">
-                    <property name="displayName" value="Internal Video"/>
-                    <property name="stringValue" value="link"/>
-                    <property name="properties">
-                        <map>
-                            <entry key="addMixin" value="jdmix:mediaGalleryInternalVideo"/>
-                        </map>
-                    </property>
-                </bean>
-            </list>
-        </property>
-    </bean>
 </beans>

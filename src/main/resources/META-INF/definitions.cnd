@@ -326,23 +326,19 @@
  - image (weakreference, picker[type='image']) < 'jmix:image'
 
 [jdnt:mediaGallery] > jnt:content, mix:title, jdmix:jahiademo
- + * (jdnt:mediaGalleryItem)
+ + * (jdnt:mediaGalleryImg)
+ + * (jdnt:mediaGalleryInternalVideo)
+ + * (jdnt:mediaGalleryExternalVideo)
  - itemWidth (long) = 250 indexed=no mandatory
 
-[jdnt:mediaGalleryItem] > jnt:content, mix:title
- - itemType (string, choicelist[mediaGalleryItemInitializer,resourceBundle]) = 'image'
-
-[jdmix:mediaGalleryImg] > jmix:templateMixin mixin
- extends = jdnt:mediaGalleryItem
+[jdnt:mediaGalleryImg] > jnt:content, mix:title
  - image (weakreference, picker[type='image']) < 'jmix:image'
 
-[jdmix:mediaGalleryInternalVideo] > jmix:templateMixin mixin
- extends = jdnt:mediaGalleryItem
+[jdnt:mediaGalleryInternalVideo] > jnt:content, mix:title
  - video (weakreference, picker[type='file']) i18n
  - videoPoster (weakreference, picker[type='image']) < 'jmix:image'
 
-[jdmix:mediaGalleryExternalVideo] > jmix:templateMixin mixin
- extends = jdnt:mediaGalleryItem
+[jdnt:mediaGalleryExternalVideo] > jnt:content, mix:title
  - videoService(string, choicelist[resourceBundle]) = 'youtube' mandatory < youtube, vimeo
  - videoId (string) i18n
  - videoPoster (weakreference, picker[type='image']) < 'jmix:image'
