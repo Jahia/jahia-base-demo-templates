@@ -28,11 +28,18 @@ var initPhotoSwipeFromDOM = function (gallerySelector) {
             size = linkEl.getAttribute('data-size').split('x');
 
             // create slide object
-            item = {
-                src: linkEl.getAttribute('href'),
-                w: parseInt(size[0], 10),
-                h: parseInt(size[1], 10)
-            };
+            // create slide object
+            if ($(linkEl).data('type') == 'video') {
+                item = {
+                    html: $(linkEl).data('video')
+                };
+            } else {
+                item = {
+                    src: linkEl.getAttribute('href'),
+                    w: parseInt(size[0], 10),
+                    h: parseInt(size[1], 10)
+                };
+            }
 
 
             if (figureEl.children.length > 1) {
@@ -185,6 +192,22 @@ var initPhotoSwipeFromDOM = function (gallerySelector) {
         // Pass data to PhotoSwipe and initialize it
         gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, options);
         gallery.init();
+
+        gallery.listen('beforeChange', function() {
+            var currItem = $(gallery.currItem.container);
+            $('.pswp__video').removeClass('active');
+            var currItemIframe = currItem.find('.pswp__video').addClass('active');
+            $('.pswp__video').each(function() {
+                if (!$(this).hasClass('active')) {
+                    $(this).attr('src', $(this).attr('src'));
+                }
+            });
+        });
+        gallery.listen('close', function() {
+            $('.pswp__video').each(function() {
+                $(this).attr('src', $(this).attr('src'));
+            });
+        });
     };
 
     // loop through all gallery elements and bind events

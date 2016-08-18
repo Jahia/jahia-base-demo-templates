@@ -12,21 +12,39 @@
 <%--@elvariable id="currentResource" type="org.jahia.services.render.Resource"--%>
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
 
-<c:set var="image" value="${currentNode.properties['image']}"/>
+<c:set var="image" value="${currentNode.properties['videoPoster']}"/>
 <c:set var="caption" value="${currentNode.properties['jcr:title'].string}"/>
 <c:set var="itemWidth" value="${currentNode.parent.properties['itemWidth'].string}"/>
+<c:set var="videoID" value="${currentNode.properties['videoId'].string}"/>
+<c:set var="videoSource" value="${currentNode.properties['videoService'].string}"/>
+
+<%-- set the url of the video based on the service hosting the video --%>
+<c:choose>
+    <c:when test="${fn:toLowerCase(videoSource) == 'vimeo'}">
+        <c:set var="videoURL" value="http://player.vimeo.com/video/${videoID}"/>
+    </c:when>
+    <c:otherwise>
+        <c:set var="videoURL" value="http://www.youtube.com/embed/${videoID}"/>
+    </c:otherwise>
+</c:choose>
+
 <c:choose>
     <c:when test="${renderContext.editMode}">
+        <%-- if in edit mode, do not link to the photoswipe preview --%>
         <img src="${image.node.url}" itemprop="thumbnail" alt="${caption}" style="width: ${itemWidth}px"/>
         <br>
     </c:when>
     <c:otherwise>
-        <a href="${image.node.url}" itemprop="contentUrl"
-           data-size="${image.node.properties['j:width'].string}x${image.node.properties['j:height'].string}">
-            <img src="${image.node.url}" itemprop="thumbnail" alt="${caption}" style="width: ${itemWidth}px"/>
-            <br>
+        <a href="#" itemprop="contentUrl"
+           data-size="${image.node.properties['j:width'].string}x${image.node.properties['j:height'].string}"
+           data-type="video"
+           data-video='<div class="pswp_wrapper"><div class="pswp_video-wrapper"><iframe class="pswp__video" width="960" height="640" src="${videoURL}" frameborder="0" allowfullscreen></iframe></div></div>'
+        >
+            <img src="${image.node.url}" itemprop="thumbnail" alt="${caption}" style="width: ${itemWidth}px" class="img-responsive">
+            <br/>
         </a>
+        <figcaption itemprop="caption description">${caption}</figcaption>
     </c:otherwise>
 </c:choose>
-<figcaption itemprop="caption description">${caption}</figcaption>
+
 
