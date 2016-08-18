@@ -1661,3 +1661,64 @@ img.img-mouse {
 .team-v1 li > h3 {
 	color: #555;
 }
+
+/* Mega footer */
+#mega-footer .container {
+	padding: 45px 0;
+}
+
+#mega-footer .title a {
+	text-transform: uppercase;
+	font-size: 14px;
+	text-decoration: none;
+}
+
+#mega-footer ul li a {
+	font-size: 14px;
+	text-decoration: none;
+}
+
+#mega-footer ul {
+	list-style: none;
+	padding: 0;
+}
+
+/* end mega footer */
+
+/*########## SITE MAP #########*/
+
+ul.sitemap-list{
+	list-style: none;
+	padding: 0;
+	margin: 25px 0;
+}
+
+p.address{
+	margin-top: 0;
+}
+
+ul.sitemap-list a{
+	text-decoration: none;
+	text-transform: uppercase;
+	font-size: 15px;
+	text-align: left;
+}
+
+ul.sitemap-list li{
+	margin: 10px 0;
+}
+
+ul.sitemap-list li ul{
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+ul.sitemap-list ul li a{
+	text-transform: none;
+	text-decoration: none;
+	font-size: 15px;
+	font-family: "Univers Light";
+	text-align: left;
+}
+/* end sitemap list */
