@@ -330,6 +330,7 @@
  + * (jdnt:mediaGalleryInternalVideo)
  + * (jdnt:mediaGalleryExternalVideo)
  - itemWidth (long) = 250 indexed=no mandatory
+ - autoPlay (boolean)
 
 [jdnt:mediaGalleryImg] > jnt:content, mix:title
  - image (weakreference, picker[type='image']) < 'jmix:image'
