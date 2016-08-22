@@ -3,61 +3,13 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
-    <bean id="stockWidgetFilter" class="org.jahia.modules.jahiademo.filter.StockWidgetFilter">
-        <property name="priority" value="17"/>
-        <property name="applyOnConfigurations" value="module"/>
-        <property name="applyOnNodeTypes" value="jdnt:stockWidget"/>
-    </bean>
-
 
     <bean class="org.jahia.modules.jahiademo.actions.GenerateEventIcs">
         <property name="name" value="generateEventIcs"/>
         <property name="requireAuthenticatedUser" value="false"/>
     </bean>
 
-    <bean id="cookieMessageInitializer" class="org.jahia.services.content.nodetypes.initializers.FixedListChoiceListInitializer">
-        <property name="key" value="cookieMessageInitializer"/>
-        <property name="items">
-            <list>
-                <bean class="org.jahia.services.content.nodetypes.initializers.ChoiceListValue">
-                    <property name="displayName" value="None"/>
-                    <property name="stringValue" value="none"/>
-                    <property name="properties">
-                        <map>
-                            <entry key="defaultProperty" value="true"/>
-                        </map>
-                    </property>
-                </bean>
-                <bean class="org.jahia.services.content.nodetypes.initializers.ChoiceListValue">
-                    <property name="displayName" value="External Link"/>
-                    <property name="stringValue" value="externalLink"/>
-                    <property name="properties">
-                        <map>
-                            <entry key="addMixin" value="jdmix:cookieExternalLink"/>
-                        </map>
-                    </property>
-                </bean>
-                <bean class="org.jahia.services.content.nodetypes.initializers.ChoiceListValue">
-                    <property name="displayName" value="Internal Link"/>
-                    <property name="stringValue" value="link"/>
-                    <property name="properties">
-                        <map>
-                            <entry key="addMixin" value="jdmix:cookieLink"/>
-                        </map>
-                    </property>
-                </bean>
-                <bean class="org.jahia.services.content.nodetypes.initializers.ChoiceListValue">
-                    <property name="displayName" value="Modal"/>
-                    <property name="stringValue" value="modal"/>
-                    <property name="properties">
-                        <map>
-                            <entry key="addMixin" value="jdmix:cookieModalMessage"/>
-                        </map>
-                    </property>
-                </bean>
-            </list>
-        </property>
-    </bean>
+
     <bean id="privacyMessageInitializer" class="org.jahia.services.content.nodetypes.initializers.FixedListChoiceListInitializer">
         <property name="key" value="privacyMessageInitializer"/>
         <property name="items">

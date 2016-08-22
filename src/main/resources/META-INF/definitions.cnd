@@ -300,13 +300,6 @@
   itemtype = options
   - termsModalMessage (string, richtext) i18n
 
-[jdnt:compCarousel] > jnt:content, jdmix:jahiademo, jmix:list, mix:title
- - startPage (weakreference, picker[type='page'])
-
-[jdmix:imgGallery] mixin
- extends = jnt:news
- itemtype = content
- - galleryImg (weakreference, picker[type='image']) multiple i18n
 
 [jdmix:favicon] mixin
  extends = jnt:virtualsite
