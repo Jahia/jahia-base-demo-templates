@@ -23,4 +23,4 @@
 
 <p>${fn:substring(functions:removeHtmlTags(description), 0, 150)}...</p>
 <a class="btn-u btn-u-sm" href="${detailUrl}"><fmt:message
-        key="jdnt_news.read_more"/></a>
+        key="jnt_news.read_more"/></a>

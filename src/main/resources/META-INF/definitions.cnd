@@ -28,12 +28,6 @@
 
 [jdmix:jahiademo] > jmix:droppableContent, jmix:editorialContent mixin
 
-[jdmix:style] mixin
- extends = jnt:virtualsite
- itemtype = content
- - layout (string, choicelist[resourceBundle]) = 'Wide' autocreated < 'Boxed', 'Wide'
- - colorTheme (string, choicelist[resourceBundle]) = 'Light' autocreated < 'Dark', 'Light'
-
 [jdmix:headerWidgets] mixin
 
 [jdmix:footerWidgets] mixin
@@ -41,208 +35,22 @@
 [jdnt:logo] > jnt:content, jdmix:jahiademo, jdmix:headerWidgets
  - logo (weakreference, picker[type='image']) < 'jmix:image'
 
-[jdnt:sliderPanel] > jnt:content, mix:title
- - jcr:title (string) internationalized
- - textColor (string, choicelist[resourceBundle]) = 'light' autocreated < 'light', 'dark'
- - subtitle (string) internationalized
- - body (string) internationalized
- - internalLink (weakreference, picker[type='editoriallink']) < 'jmix:droppableContent', 'jnt:page', 'jnt:contentFolder', 'jnt:folder'
- - linkText (string) internationalized
- - backgroundImg (weakreference, picker[type='image']) < 'jmix:image'
- - smallPhoto (weakreference, picker[type='image']) < 'jmix:image'
- - layout (string, choicelist[resourceBundle]) < 'left', 'right'
+[jdmix:style] mixin
+ extends = jnt:virtualsite
+ itemtype = content
+ - layout (string, choicelist[resourceBundle]) = 'Wide' autocreated < 'Boxed', 'Wide'
+ - colorTheme (string, choicelist[resourceBundle]) = 'Light' autocreated < 'Dark', 'Light'
 
-// jmix:list provides additional default views to preload and display a list of items
-// orderable allows you to reorder the content items of your component
-
-[jdnt:slider] > jnt:content, jdmix:jahiademo, jmix:manuallyOrderable, jmix:list orderable
- - transition (string, choicelist[resourceBundle]) < 'basic', 'fade', 'mask', 'wave', 'flow', 'stack', 'scale', 'focus', 'parallaxMask', 'partialWave', 'fadeBasic', 'fadeWave', 'fadeFlow'
- - layout (string, choicelist[resourceBundle]) < 'boxed', 'fullwidth', 'fullscreen', 'fillwidth', 'autofill', 'partialview'
- - autoplay (string, choicelist[resourceBundle]) < 'false', 'true'
- - editview (string, choicelist[resourceBundle]) < 'edit','edit.collapsible'
- + * (jdnt:sliderPanel)
-
-[jdnt:highlights] > jnt:content, mix:title, jdmix:jahiademo, jdmix:margin, jmix:manuallyOrderable, jmix:list, jmix:renderableList orderable
- - numColumns (string, choicelist[resourceBundle]) = '3' autocreated < '1', '2', '3', '4'
-  + * (jdnt:highlight)
-
-[jdnt:highlight] > jnt:content, mix:title, jdmix:jahiademo, famix:faIcon
- - jcr:title (string) internationalized primary
- - description (string, textarea) internationalized
-
-[jdmix:imgView] mixin
- extends = jdnt:highlight
- - image (weakreference, picker[type='image']) mandatory < 'jmix:image'
-
-[jdmix:hasLink] mixin
- extends = jdnt:highlight
- - internalLink (weakreference, picker[type='editoriallink']) mandatory < 'jmix:droppableContent', 'jnt:page', 'jnt:contentFolder', 'jnt:folder'
-
-[jdnt:headline] > jnt:content, mix:title, jdmix:jahiademo
-
-[jdnt:carousel] > jnt:content, mix:title, jdmix:jahiademo, jmix:manuallyOrderable, jmix:list orderable
- - jcr:title (string) internationalized primary
- + * (jdnt:carouselImg)
-
-[jdnt:carouselImg] > jnt:content
- - image (weakreference, picker[type='image']) mandatory < 'jmix:image'
- - caption (string) internationalized
-
-[jdnt:timeline] > jnt:contentList, jdmix:jahiademo
+[jdmix:favicon] mixin
+ extends = jnt:virtualsite
+ itemtype = content
+ - icon (weakreference, picker[type='image']) mandatory < 'jmix:image'
 
 [jdnt:login] > jnt:content, jdmix:jahiademo, jdmix:headerWidgets, jmix:studioOnly
 
 [jdnt:toggleNavBarButton] > jnt:content, jdmix:jahiademo, jdmix:headerWidgets, jmix:studioOnly
 
 [jdnt:toggleSearchButton] > jnt:content, jdmix:jahiademo, jdmix:headerWidgets, jmix:studioOnly
-
-[jdnt:people] > jnt:contentList, jdmix:jahiademo
-
-[jdmix:socialIcons] mixin
- extends = jnt:person, jdnt:company
- itemtype = content
- - facebook (string) = 'http://'
- - linkedIn (string) = 'http://'
- - twitter (string) = 'http://'
- - googlePlus (string) = 'http://'
-
-[jdnt:investorContact] > jnt:content
- - firstname (string) i18n
- - lastname (string) i18n
- - email (string) i18n
- - phone (string) i18n
- - investorType (string, choicelist[resourceBundle]) analyzer='keyword' < 'institutional', 'individual','other'
- - contactReason (string, choicelist[resourceBundle]) analyzer='keyword' < 'general', 'stockholderaccount', 'comment', 'other'
- - message (string) i18n
- - subscription (string, choicelist[resourceBundle]) analyzer='keyword' < 'bulletins', 'annual', 'quarterly'
-
-[jdnt:investorContactForm] > jnt:content, jdmix:jahiademo
- + * (jdnt:investorContact)
-
-[jdnt:investorContactList] > jnt:content, jmix:list, jmix:cache, jdmix:jahiademo
-- maxItems (long) = 10 indexed=no
-
-[jdnt:stockWidget] > jnt:content, mix:title, jdmix:jahiademo
-- stock (string)
-- value (string) hidden
-- variation (string) hidden
-- description (string) hidden
- - stockExchange (string)
- - interval (long) = 86400
- - period (string) = '3M'
-
-[jdnt:companies] > jnt:content, mix:title, jdmix:jahiademo, jmix:manuallyOrderable, jmix:list orderable
-  + * (jdnt:company)
-
-[jdnt:company] > jnt:content, jdmix:jahiademo, mix:title orderable
- - industryCat (string, choicelist[resourceBundle]) < 'media', 'technology','retail','goods','healthcare'
- - headline (string, richtext) i18n
- - overview (string, richtext) i18n
- - phone (string) i18n
- - email (string) i18n
- - website (string) = 'http://' i18n
- - bannerImg (weakreference, picker[type='image']) < 'jmix:image'
- - thumbnail (weakreference, picker[type='image']) < 'jmix:image'
- - logo (weakreference, picker[type='image']) < 'jmix:image'
- + companySpecificContent (jnt:contentList)
-
-[jdmix:hasPeople] mixin
- extends = jnt:event, jdnt:company
- - boxTitle (string)  = 'Leadership' i18n
- + relatedPeople (jnt:contentList)
-
-[jdnt:companyNews] > jnt:content, jmix:list, mix:title, jdmix:jahiademo, jmix:bindedComponent
- - limit (long) = 3
-
-[jdnt:parallaxSlider] > jnt:content, jdmix:jahiademo orderable
- + * (jdnt:parallaxSliderItem)
-
-[jdnt:parallaxSliderItem] > jnt:content
- - backgroundImg (weakreference, picker[type='image']) < 'jmix:image'
- - slideTheme(string, choicelist[resourceBundle]) < option1, option2, option3, option4, option5, option6, option7, option8, option9
- - pause (boolean)
- - width (string, choicelist[resourceBundle]) = '100%' < '10%', '20%','30%','40%','50%','60%','70%','80%','90%', '100%'
- - body (string, richtext) i18n
- - effect (boolean) = true autocreated
-
-[jdmix:topViews] mixin
- extends = jnt:topStories
- - view (string, choicelist[templates='jnt:news'])
-
-[jdmix:removeReadMore] mixin
- extends = jnt:news
- itemtype = content
- - agree (boolean)
-
-[jdmix:internalLink] mixin
- extends = jnt:topStories, jnt:banner
- - linkTitle (string) internationalized
- - internalLink (weakreference, picker[type='editoriallink']) < jmix:droppableContent, jnt:page, jnt:contentFolder, jnt:folder
-
-[jdmix:searchArea] mixin
- extends = jnt:topStories
- itemtype = content
- - startPage (weakreference, picker[type='page'])
-
-[jdnt:allStories] > jnt:content, jdmix:jahiademo, jmix:list, mix:title, jdmix:ajaxComponent
- - startPage (weakreference, picker[type='page'])
-
-[jdnt:pressSearch] > jnt:content, jdmix:jahiademo, jmix:list, mix:title, jdmix:ajaxComponent
- - startPage (weakreference, picker[type='page'])
- - filter (weakreference, choicelist[nodes='/sites/systemsite/categories/;jnt:category',sort])
- - numTabs (long)
-
-[jdmix:backLink] mixin
-
-[jdmix:ajaxComponent] mixin
- - disableAjax (boolean)
-
-[jdmix:fileAttachment] mixin
- extends = jnt:event
- itemtype = content
- - downloadTitle (string) internationalized
- - pdfVersion (weakreference, picker[type='file']) i18n
-
-[jdnt:eventTabs] > jnt:content, jdmix:jahiademo, jmix:list, mix:title, jdmix:ajaxComponent
- - startPage (weakreference, picker[type='page'])
- - filter (weakreference, choicelist[nodes='/sites/systemsite/categories/;jnt:category',sort])
-
-[jdmix:margin] mixin
- itemtype=content
- - bottomMargin (string, choicelist[resourceBundle]) < '5', '10', '15', '20', '25', '30', '35', '40', '45', '50', '55', '60', '100'
-
-[jdnt:spacer] > jnt:content, jdmix:jahiademo, jdmix:margin
-
-[jdnt:back] > jnt:content, jdmix:jahiademo, jdmix:backLink
-
-[jdmix:videoSlider] mixin
- extends = jdnt:sliderPanel
- itemtype = content
- - webm (weakreference, picker[type='file']) i18n
- - mp4 (weakreference, picker[type='file']) i18n
-
-[jdmix:cookies] mixin
- extends = jnt:virtualsite
- itemtype = options
- - cookieMessage (string) = 'This website uses cookies to improve your experience. ' internationalized
- - cookieAcceptButtonText (string) = 'ACCEPT' internationalized
- - cookieWhatAreLinkText (string) = 'We assume you are ok with this, but you can learn more about cookies by clicking here.' internationalized
- - cookieLink (string, choicelist[cookieMessageInitializer,resourceBundle]) = 'none'
-
-[jdmix:cookieLink] > jmix:templateMixin mixin
- extends = jnt:virtualsite
- itemtype = options
- - cookiePageLink (weakreference, picker[type='page']) < 'jnt:page'
-
-[jdmix:cookieExternalLink] > jmix:templateMixin mixin
- extends = jnt:virtualsite
- itemtype = options
- - cookiePageExternalLink (string) = 'http://www.allaboutcookies.org/' internationalized
-
-[jdmix:cookieModalMessage] > jmix:templateMixin mixin
- extends = jnt:virtualsite
- itemtype = options
- - cookieModalMessage (string, richtext) i18n
 
  [jdmix:siteLogo] mixin
   extends = jnt:virtualsite
@@ -284,7 +92,6 @@
   itemtype = options
   - privacyModalMessage (string, richtext) i18n
 
-
  [jdmix:termsLink] > jmix:templateMixin mixin
   extends = jnt:virtualsite
   itemtype = options
@@ -300,46 +107,25 @@
   itemtype = options
   - termsModalMessage (string, richtext) i18n
 
-
 [jdmix:favicon] mixin
  extends = jnt:virtualsite
  itemtype = content
  - icon (weakreference, picker[type='image']) mandatory < 'jmix:image'
 
-[jdmix:buttonText] mixin
- extends = jdnt:highlight
- - buttonTxt (string) = 'Read More' internationalized
+[jdnt:companies] > jnt:content, mix:title, jdmix:jahiademo, jmix:manuallyOrderable, jmix:list orderable
+  + * (jdnt:company)
 
-[jdnt:photoGallery] > jnt:content, mix:title, jdmix:jahiademo
- + * (jdnt:galleryImg)
- - photosWidth (long) = 250 indexed=no mandatory
+[jdnt:company] > jnt:content, jdmix:jahiademo, mix:title orderable
+ - industryCat (string, choicelist[resourceBundle]) < 'media', 'technology','retail','goods','healthcare'
+ - headline (string, richtext) i18n
+ - overview (string, richtext) i18n
+ - phone (string) i18n
+ - email (string) i18n
+ - website (string) = 'http://' i18n
+ - bannerImg (weakreference, picker[type='image']) < 'jmix:image'
+ - thumbnail (weakreference, picker[type='image']) < 'jmix:image'
+ - logo (weakreference, picker[type='image']) < 'jmix:image'
+ + companySpecificContent (jnt:contentList)
 
-[jdnt:galleryImg] > jnt:content, mix:title
- - jcr:title (string) internationalized
- - image (weakreference, picker[type='image']) < 'jmix:image'
-
-[jdnt:mediaGallery] > jnt:content, mix:title, jdmix:jahiademo
- + * (jdnt:mediaGalleryImg)
- + * (jdnt:mediaGalleryInternalVideo)
- + * (jdnt:mediaGalleryExternalVideo)
- - itemWidth (long) = 250 indexed=no mandatory
- - autoPlay (boolean)
-
-[jdnt:mediaGalleryImg] > jnt:content, mix:title
- - image (weakreference, picker[type='image']) < 'jmix:image'
-
-[jdnt:mediaGalleryInternalVideo] > jnt:content, mix:title
- - video (weakreference, picker[type='file']) i18n
- - videoPoster (weakreference, picker[type='image']) < 'jmix:image'
-
-[jdnt:mediaGalleryExternalVideo] > jnt:content, mix:title
- - videoService(string, choicelist[resourceBundle]) = 'youtube' mandatory < youtube, vimeo
- - videoId (string) i18n
- - videoPoster (weakreference, picker[type='image']) < 'jmix:image'
-
-[jdnt:infiniteScroller] > jnt:content, jdmix:jahiademo, jmix:bindedComponent
- - pageSize (long) = '10' mandatory autocreated
- - loadItems (long) = '1' mandatory autocreated
-
-[jdnt:infiniteScrollerLoader] > jnt:content, jdmix:jahiademo, jmix:bindedComponent
-
+[jdnt:companyNews] > jnt:content, jmix:list, mix:title, jdmix:jahiademo, jmix:bindedComponent
+ - limit (long) = 3
