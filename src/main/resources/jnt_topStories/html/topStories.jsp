@@ -44,19 +44,21 @@
             </template:module>
 
         </c:forEach>
-        <c:if test="${jcr:isNodeType(currentNode, 'jdmix:internalLink')}">
+        <c:if test="${jcr:isNodeType(currentNode, 'jdmix:topStoriesLink')}">
             <c:set var="linkNode" value="${currentNode.properties.internalLink.node}"/>
+            <c:set var="pageNode" value="${jcr:findDisplayableNode(linkNode,renderContext)}"/>
             <c:set var="linkTitle" value="${currentNode.properties.linkTitle.string}"/>
             <c:if test="${empty linkTitle}">
                 <c:set var="linkTitle" value="${linkNode.displayableName}"/>
             </c:if>
-            <c:if test="${not empty linkNode}">
+            <c:if test="${not empty linkNode and not empty pageNode}">
                 <template:addCacheDependency node="${linkNode}"/>
-                <c:url var="linkNodeUrl" value="${linkNode.url}" context="/"/>
+                <template:addCacheDependency node="${pageNode}"/>
+                <c:url var="pageNodeUrl" value="${pageNode.url}" context="/"/>
                 <c:choose>
-                    <c:when test="${topLevel == 'first'}"><c:set var="pageUrl" value="${linkNodeUrl}?pageView=top"/></c:when>
-                    <c:when test="${topLevel == 'second'}"><c:set var="pageUrl" value="${linkNodeUrl}?pageView=featured"/></c:when>
-                    <c:otherwise><c:set var="pageUrl" value="${linkNodeUrl}?pageView=all"/></c:otherwise>
+                    <c:when test="${topLevel == 'first'}"><c:set var="pageUrl" value="${pageNodeUrl}?allStoriesTab${linkNode.identifier}=top"/></c:when>
+                    <c:when test="${topLevel == 'second'}"><c:set var="pageUrl" value="${pageNodeUrl}?allStoriesTab${linkNode.identifier}=featured"/></c:when>
+                    <c:otherwise><c:set var="pageUrl" value="${pageNodeUrl}?allStoriesTab${linkNode.identifier}=all"/></c:otherwise>
                 </c:choose>
                 <ul class="pager">
 
