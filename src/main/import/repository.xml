@@ -54,6 +54,11 @@
                                     <jcr:content jcr:mimeType="text/css" jcr:primaryType="jnt:resource"/>
                                 </aqua-alt.css>
                             </aqua-alt>
+                            <aqua-hotel jcr:primaryType="jnt:folder">
+                                <aqua-hotel.css jcr:primaryType="jnt:file">
+                                    <jcr:content jcr:mimeType="text/css" jcr:primaryType="jnt:resource"/>
+                                </aqua-hotel.css>
+                            </aqua-hotel>
                             <blue jcr:primaryType="jnt:folder">
                                 <blue.css jcr:primaryType="jnt:file">
                                     <jcr:content jcr:mimeType="text/css" jcr:primaryType="jnt:resource"/>
@@ -109,6 +114,11 @@
                                     <jcr:content jcr:mimeType="text/css" jcr:primaryType="jnt:resource"/>
                                 </spm.css>
                             </spm>
+                            <tan-hotel jcr:primaryType="jnt:folder">
+                                <tan-hotel.css jcr:primaryType="jnt:file">
+                                    <jcr:content jcr:mimeType="text/css" jcr:primaryType="jnt:resource"/>
+                                </tan-hotel.css>
+                            </tan-hotel>
                             <teal jcr:primaryType="jnt:folder">
                                 <teal.css jcr:primaryType="jnt:file">
                                     <jcr:content jcr:mimeType="text/css" jcr:primaryType="jnt:resource"/>

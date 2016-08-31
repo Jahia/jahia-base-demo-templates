@@ -1722,3 +1722,26 @@ ul.sitemap-list ul li a{
 	text-align: left;
 }
 /* end sitemap list */
+
+/* media gallery play button overlay */
+.videos img {
+	width:100%;
+}
+.videos > a {
+	float: left;
+	position: relative;
+}
+.videos > a > .play-button {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	background: url("../img/play-btn.png") no-repeat;
+	background-position: 50% 50%;
+	background-size: 300%;
+}
+@media screen and (max-width: 480px) {
+	.videos > a > .play-button {
+		background-size: 400%;
+	}
+}
+/* end media gallery play button overlay */
