@@ -70,8 +70,6 @@
     <template:addResources type="javascript" resources="modernizr.js"/>
     <template:addResources type="javascript" resources="jquery.parallax.js"/>
     <template:addResources type="javascript" resources="jquery.cslider.js"/>
-    <!-- JS Customization -->
-    <template:addResources type="javascript" resources="jahiademo-custom.js"/>
     <!-- JS Page Level -->
     <template:addResources type="javascript" resources="app.js"/>
     <template:addResources type="javascript" resources="parallax-slider.js"/>

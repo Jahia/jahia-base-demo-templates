@@ -88,9 +88,6 @@
     <!-- CSS Customization -->
     <template:addResources type="css" resources="jahiademo-custom.css"/>
 
-
-    <!-- JS Customization -->
-    <template:addResources type="javascript" resources="jahiademo-custom.js"/>
     <!-- JS Page Level -->
     <template:addResources type="javascript" resources="app.js"/>
     <template:addResources type="javascript" resources="parallax-slider.js"/>
