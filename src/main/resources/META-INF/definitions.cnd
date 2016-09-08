@@ -111,21 +111,3 @@
  extends = jnt:virtualsite
  itemtype = content
  - icon (weakreference, picker[type='image']) mandatory < 'jmix:image'
-
-[jdnt:companies] > jnt:content, mix:title, jdmix:jahiademo, jmix:manuallyOrderable, jmix:list orderable
-  + * (jdnt:company)
-
-[jdnt:company] > jnt:content, jdmix:jahiademo, mix:title orderable
- - industryCat (string, choicelist[resourceBundle]) < 'media', 'technology','retail','goods','healthcare'
- - headline (string, richtext) i18n
- - overview (string, richtext) i18n
- - phone (string) i18n
- - email (string) i18n
- - website (string) = 'http://' i18n
- - bannerImg (weakreference, picker[type='image']) < 'jmix:image'
- - thumbnail (weakreference, picker[type='image']) < 'jmix:image'
- - logo (weakreference, picker[type='image']) < 'jmix:image'
- + companySpecificContent (jnt:contentList)
-
-[jdnt:companyNews] > jnt:content, jmix:list, mix:title, jdmix:jahiademo, jmix:bindedComponent
- - limit (long) = 3

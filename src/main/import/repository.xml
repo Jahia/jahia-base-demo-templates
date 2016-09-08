@@ -262,52 +262,6 @@
                          jcr:mixinTypes="jmix:renderable"
                          jcr:primaryType="jdnt:login"/>
                         </modals>
-                        <company-content-template j:applyOn="jdnt:company"
-                                         j:defaultTemplate="true"
-                                         j:hiddenTemplate="true"
-                                         j:priority="30"
-                                         jcr:primaryType="jnt:contentTemplate">
-                            <j:translation_en jcr:language="en"
-                                    jcr:mixinTypes="mix:title"
-                                    jcr:primaryType="jnt:translation"
-                                    jcr:title="company content template"/>
-                            <pagecontent jcr:primaryType="jnt:contentList">
-                                <section--container--row--grid columnsType="predefinedColumns"
-                                                    grid="9_3"
-                                                    gridLayout="full-width"
-                                                    jcr:mixinTypes="bootstrap3mix:createContainer bootstrap3mix:createRow bootstrap3mix:predefinedColumns"
-                                                    jcr:primaryType="bootstrap3nt:columns">
-                                    <section--container--row--grid-main jcr:primaryType="jnt:contentList">
-                                        <main-resource-display j:mainResourceView="body" jcr:primaryType="jnt:mainResourceDisplay"/>
-                                        <companynews jcr:primaryType="jdnt:companyNews" limit="3">
-                                            <j:translation_en jcr:language="en"
-                                                jcr:mixinTypes="mix:title"
-                                                jcr:primaryType="jnt:translation"/>
-                                        </companynews>
-                                    </section--container--row--grid-main>
-                                    <section--container--row--grid-side jcr:primaryType="jnt:contentList">
-                                        <main-resource-display j:mainResourceView="metadata" jcr:primaryType="jnt:mainResourceDisplay"/>
-                                        <map-static j:bindedComponent="/modules/jahiademo/templates/base/company-content-template/pagecontent/section--container--row--grid/section--container--row--grid-main/main-resource-display"
-                                       j:classname="demodxmap margin-bottom-30 overflow-hidden"
-                                       j:height="255"
-                                       j:imageType="png8"
-                                       j:mapType="roadmap"
-                                       j:markerColor="normal"
-                                       j:markerSize="normal"
-                                       j:skin="skins.custom"
-                                       j:width="400"
-                                       j:zoom="auto"
-                                       jcr:mixinTypes="jmix:customSkin jmix:skinnable"
-                                       jcr:primaryType="jnt:staticMap"/>
-                                        <main-resource-display-1 j:mainResourceView="addPeople"
-                                                    jcr:primaryType="jnt:mainResourceDisplay"/>
-                                    </section--container--row--grid-side>
-                                </section--container--row--grid>
-                            </pagecontent>
-                            <landing jcr:primaryType="jnt:contentList">
-                                <main-resource-display j:mainResourceView="banner" jcr:primaryType="jnt:mainResourceDisplay"/>
-                            </landing>
-                        </company-content-template>
                         <news j:hiddenTemplate="false" jcr:primaryType="jnt:pageTemplate">
                             <j:translation_en jcr:language="en"
                                     jcr:mixinTypes="mix:title"
