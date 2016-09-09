@@ -91,24 +91,9 @@
     <!-- JS Page Level -->
     <template:addResources type="javascript" resources="app.js"/>
     <template:addResources type="javascript" resources="parallax-slider.js"/>
-    <template:addResources type="inline">
-        <script type="text/javascript">
-            jQuery(document).ready(function () {
-                App.init();
-                ParallaxSlider.initParallaxSlider();
-            });
 
-            <%-- Fix the bootstrap menu behavior in the mobile view --%>
-            $(function () {
-                $('.dropdown').hover(function () {
-                            $(this).addClass('open');
-                        },
-                        function () {
-                            $(this).removeClass('open');
-                        });
-            });
-        </script>
-    </template:addResources>
+    <!-- Custom Javascript -->
+    <template:addResources type="javascript" resources="template.js"/>
 
 
     <!--[if lt IE 9]>
