@@ -15,6 +15,7 @@
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
 <%--@elvariable id="acl" type="java.lang.String"--%>
 
+<%-- Query to select the top rated stories --%>
 <query:definition var="listQuery" limit="5"
          statement="select * from [jmix:rating] as rating inner join [${currentNode.properties['j:typeOfContent'].string}] as rated on issamenode(rating,rated)
              where rating.[j:nbOfVotes] > ${currentNode.properties['j:minNbOfVotes'].long}

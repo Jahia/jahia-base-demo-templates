@@ -16,5 +16,5 @@
     <c:forEach items="${tags}" var="tag" varStatus="status">
         <li><c:if test="${status.first}"><fmt:message key="jnt_news.in"/></c:if>&nbsp;${tag.string}</li>
     </c:forEach>
-    <li>Posted ${newsDate}</li>
+    <li><fmt:message key="jnt_news.posted"/> ${newsDate}</li>
 </ul>

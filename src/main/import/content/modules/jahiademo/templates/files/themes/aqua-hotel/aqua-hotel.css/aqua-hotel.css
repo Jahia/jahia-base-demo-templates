@@ -816,7 +816,7 @@ a.read-more:hover {
 /* Buttons
 ------------------------------------*/
 .btn-u {
-	background: #cccccc;
+	background: rgb(255, 152, 0);
 }
 .btn-u:hover, 
 .btn-u:focus, 

@@ -18,7 +18,6 @@
 <%--@elvariable id="renderContext" type="org.jahia.services.render.RenderContext"--%>
 <%--@elvariable id="currentResource" type="org.jahia.services.render.Resource"--%>
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
-<%-- TODO: copyright links not populated --%>
 
 <c:set var="siteNode" value="${renderContext.site}"/>
 
