@@ -21,12 +21,13 @@
 <template:addResources type="css" resources="plugins/login-signup-modal-window/style.css"/>
 <template:addResources type="javascript" resources="modernizr.js"/>
 <template:addResources type="javascript" resources="plugins/login-signup-modal-window/main.js"/>
+<c:set var="modalOption" value="${empty param['loginError'] ? 'hide' : 'show'}"/>
 
 <c:if test="${! renderContext.editMode}">
     <c:if test="${! renderContext.loggedIn}">
         <c:set var="siteNode" value="${currentNode.resolveSite}"/>
         <!-- Modal -->
-        <div id="loginForm" class="modal fade" role="dialog">
+        <div id="loginForm" class="modal fade loginFormModal" role="dialog" modalOption="${modalOption}">
             <div class="cd-user-modal-container">
                 <!-- Modal content-->
                 <div id="cd-login" class="is-selected cd-form"> <!-- log in form -->
@@ -62,18 +63,9 @@
                             <input class="full-width btn btn-primary" type="submit" value="<fmt:message
                                     key='loginForm.loginbutton.label'/>"/>
                         </p>
-
-
                     </ui:loginArea>
                 </div>
             </div>
         </div>
-        <script type="text/javascript">
-            $(document).ready(function () {
-                <c:set var="modalOption" value="${empty param['loginError'] ? 'hide' : 'show'}"/>
-                $('#loginForm').modal('${modalOption}');
-
-            })
-        </script>
     </c:if>
 </c:if>

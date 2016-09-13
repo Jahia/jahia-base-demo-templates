@@ -204,6 +204,7 @@ var App = function () {
             jQuery(window).load(function() {
                 jQuery('.parallaxBg').parallax("50%", 0.2);
                 jQuery('.parallaxBg1').parallax("50%", 0.4);
+                jQuery('.parallaxBg2').parallax("50%", -0.4);
             });
         },
 

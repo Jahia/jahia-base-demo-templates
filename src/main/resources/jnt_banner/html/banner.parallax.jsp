@@ -20,7 +20,7 @@
 <template:include view="hidden.bannerHeader"/>
 
 <!-- Parallax Section -->
-<div class="bg-image-v1 parallaxBg" id="${currentNode.identifier}_parallax"
+<div class="bg-image-v1 parallaxBg2" id="${currentNode.identifier}_parallax"
      style='background:url("${moduleMap.bannerUrl}") no-repeat  center center / cover;'>
     <div class="container">
         <div class="headline-center headline-light">
@@ -33,13 +33,3 @@
     </div>
 </div>
 <!-- End Parallax Section -->
-<template:addResources type="inline">
-    <script type="text/javascript">
-        $(document).ready(function () {
-            jQuery('#${currentNode.identifier}_parallax').parallax("50%", -0.4);
-        });
-    </script>
-</template:addResources>
-
-
-

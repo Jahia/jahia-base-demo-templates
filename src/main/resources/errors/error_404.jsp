@@ -15,6 +15,7 @@
     <link rel="stylesheet" type="text/css" href="<c:url value='/modules/jahiademo/css/app.css'/>"/>
     <script type="text/javascript" src="<c:url value='/modules/jquery/javascript/jquery.min.js'/>"></script>
     <script type="text/javascript" src="<c:url value='/modules/jahiademo/javascript/jquery.backstretch.min.js'/>"></script>
+    <script type="text/javascript" src="<c:url value='/modules/jahiademo/javascript/custom/error_404.js'/>"></script>
     <!-- Meta -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -46,15 +47,7 @@
 <!--End Error Block-->
 
 <div class="sticky-footer">
-    <p class="copyright-space">
-        <script>document.write(new Date().getFullYear())</script> © ALL Rights Reserved.
-    </p>
+    <p class="copyright-space"> © ALL Rights Reserved.</p>
 </div>
-
-<script type="text/javascript">
-    $.backstretch([
-        "<c:url value='/modules/jahiademo/css/404/404-bg.jpg'/>"
-    ])
-</script>
-
+<div class="404_backstretch" backstretch="<c:url value='/modules/jahiademo/css/404/404-bg.jpg'/>"/>
 </body>
