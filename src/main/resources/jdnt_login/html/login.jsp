@@ -21,7 +21,6 @@
 
 <c:if test="${! renderContext.editMode}">
     <c:if test="${! renderContext.loggedIn}">
-        <c:set var="siteNode" value="${currentNode.resolveSite}"/>
         <div class="pull-right"><a id="login" href="#loginForm" role="button" data-toggle="modal"
                                    data-target="#loginForm"><i class="fa fa-user"></i> <fmt:message
                 key="loginForm.loginbutton.label"/></a>
