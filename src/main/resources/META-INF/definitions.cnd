@@ -60,13 +60,13 @@
  [jdmix:siteSocialLinks] mixin
   extends = jnt:virtualsite
   itemtype = content
- - facebookLink (string) = 'http://'
- - googlePlusLink (string) = 'http://'
- - twitterLink (string) = 'http://'
- - youtubeLink (string) = 'http://'
- - instagramLink (string) = 'http://'
- - linkedinLink (string) = 'http://'
- - pinterestLink (string) = 'http://'
+ - facebookLink (string) = 'https://'
+ - googlePlusLink (string) = 'https://'
+ - twitterLink (string) = 'https://'
+ - youtubeLink (string) = 'https://'
+ - instagramLink (string) = 'https://'
+ - linkedinLink (string) = 'https://'
+ - pinterestLink (string) = 'https://'
 
  [jdmix:siteFooterMessage] mixin
   extends = jnt:virtualsite
