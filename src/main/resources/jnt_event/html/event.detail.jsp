@@ -29,9 +29,11 @@
 <c:url var="detailUrl" value="${url.base}${currentNode.path}.html"/>
 
 
-<!-- event title -->
-<h2><a href="${detailUrl}">${title}</a></h2>
-<!-- event type, date, location -->
+<%-- event title --%>
+<h2>
+    <a href="${detailUrl}">${title}</a>
+</h2>
+<%-- event type, date, location --%>
 <ul class="list-inline">
     <c:if test="${not empty currentNode.properties.eventsType}">
         <li>
@@ -39,12 +41,16 @@
                     key='jnt_event.eventsType.${currentNode.properties.eventsType.string}'/></button>
         </li>
     </c:if>
-    <li><fmt:formatDate dateStyle="long" type="date"
+    <li>
+        <fmt:formatDate dateStyle="long" type="date"
                         value="${startDate}"/>
-        <c:if test="${not empty endDate}">&nbsp;-&nbsp;<fmt:formatDate dateStyle="long" type="date" value="${endDate}"/></c:if></li>
-    <li><i class="fa  fa-map-marker"></i>&nbsp;${location}</li>
+        <c:if test="${not empty endDate}">&nbsp;-&nbsp;<fmt:formatDate dateStyle="long" type="date" value="${endDate}"/>
+        </c:if>
+    </li>
+    <li><i class="fa  fa-map-marker"></i>&nbsp;${location}
+    </li>
 </ul>
-<!-- event body -->
+<%-- event body --%>
 <p>${body}</p>
 
 <%-- event categories --%>
@@ -56,16 +62,19 @@
         </c:forEach>
     </ul>
 </c:if>
+
+<%-- event attachment --%>
 <c:if test="${jcr:isNodeType(currentNode, 'jdmix:fileAttachment')}">
     <template:include view="fileAttachment"/>
 </c:if>
 
+<%-- add to calendar --%>
 <c:if test="${not empty startDate}">
     <%-- download ICS file --%>
     <c:url var="icsUrl" value="${url.base}${currentNode.path}.generateEventIcs.do"/>
     <fmt:message key="jnt_event.ics"/>:&nbsp;
     <a data-placement="top" data-toggle="tooltip" class="ics	tooltips"
-       data-original-title="<fmt:message key="jnt_event.ics"/>" href="${icsUrl}"><i class="fa fa-calendar"></i></a></li>
+       data-original-title="<fmt:message key="jnt_event.ics"/>" href="${icsUrl}"><i class="fa fa-calendar"></i></a>
     <p/>
 </c:if>
 
