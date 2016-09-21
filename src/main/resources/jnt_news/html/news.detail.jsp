@@ -135,10 +135,10 @@
                 <div class="pswp__share-tooltip"></div>
             </div>
 
-            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            <button class="pswp__button pswp__button--arrow--left" title="<fmt:message key="jnt_news.pswpButtonPrev"/>">
             </button>
 
-            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            <button class="pswp__button pswp__button--arrow--right" title="<fmt:message key="jnt_news.pswpButtonNext"/>">
             </button>
 
             <div class="pswp__caption">
