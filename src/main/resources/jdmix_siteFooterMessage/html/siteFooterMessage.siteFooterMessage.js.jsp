@@ -33,10 +33,12 @@
         ${privacyPolicyLinkText}&nbsp;
     </c:when>
     <c:when test="${privacyLink == 'externalLink'}">
+        <template:addCacheDependency node="${renderContext.site.properties.privacyPageExternalLink.node}"/>
         <a href="${renderContext.site.properties.privacyPageExternalLink.string}">${privacyPolicyLinkText}</a>
     </c:when>
     <c:when test="${privacyLink == 'link'}">
         <c:if test="${! empty privacyLink}">
+            <template:addCacheDependency node="${renderContext.site.properties.privacyPageLink.node}"/>
             <a href="${renderContext.site.properties.privacyPageLink.node.url}">${privacyPolicyLinkText}</a>
         </c:if>
     </c:when>
@@ -53,10 +55,12 @@
         ${termsLinkText}
     </c:when>
     <c:when test="${termsLink == 'externalLink'}">
+
         <a href="${renderContext.site.properties.termsPageExternalLink.string}">${termsLinkText}</a>
     </c:when>
     <c:when test="${termsLink == 'link'}">
         <c:if test="${! empty privacyLink}">
+            <template:addCacheDependency node="${renderContext.site.properties.termsPageLink.node}"/>
             <a href="${renderContext.site.properties.termsPageLink.node.url}">${termsLinkText}</a>
         </c:if>
     </c:when>
