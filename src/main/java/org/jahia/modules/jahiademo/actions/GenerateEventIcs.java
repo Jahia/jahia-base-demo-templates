@@ -14,6 +14,7 @@ import net.fortuna.ical4j.model.property.Version;
 import net.fortuna.ical4j.util.UidGenerator;
 import org.jahia.bin.Action;
 import org.jahia.bin.ActionResult;
+import org.jahia.services.content.JCRNodeWrapper;
 import org.jahia.services.content.JCRSessionWrapper;
 import org.jahia.services.render.RenderContext;
 import org.jahia.services.render.Resource;
@@ -36,20 +37,21 @@ public class GenerateEventIcs extends Action {
     public ActionResult doExecute(HttpServletRequest httpServletRequest, RenderContext renderContext, Resource resource, JCRSessionWrapper jcrSessionWrapper, Map<String, List<String>> map, URLResolver urlResolver) throws Exception {
 
         try {
+            JCRNodeWrapper node = resource.getNode();
             HttpServletResponse response = renderContext.getResponse();
             java.util.Calendar endDate = null;
             java.util.Calendar startDate = null;
-            String title = resource.getNode().getProperty("jcr:title").getString();
+            String title = (node.getProperty("jcr:title").getString() != null) ? node.getProperty("jcr:title").getString() : node.getName();
 
-            if (resource.getNode().hasProperty("startDate")) {
-                startDate = resource.getNode().getProperty("startDate").getDate();
+            if (node.hasProperty("startDate")) {
+                startDate = node.getProperty("startDate").getDate();
                 //Java calendar month count starts with zero
                 startDate.add(Calendar.MONTH, -1);
             }
 
-            if (resource.getNode().hasProperty("endDate")) {
+            if (node.hasProperty("endDate")) {
             // get the end date and time
-            endDate = resource.getNode().getProperty("endDate").getDate();
+            endDate = node.getProperty("endDate").getDate();
             endDate.add(Calendar.MONTH, -1);
             endDate.add(Calendar.DAY_OF_MONTH, +1);
             }
