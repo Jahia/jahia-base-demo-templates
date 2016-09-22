@@ -19,13 +19,13 @@
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
 
 <%-- if social icons were included, get the urls --%>
-<c:set var="facebookLink" value="${renderContext.site.properties.facebookLink.string}"/>
-<c:set var="googlePlusLink" value="${renderContext.site.properties.googlePlusLink.string}"/>
-<c:set var="twitterLink" value="${renderContext.site.properties.twitterLink.string}"/>
-<c:set var="youtubeLink" value="${renderContext.site.properties.youtubeLink.string}"/>
-<c:set var="instagramLink" value="${renderContext.site.properties.instagramLink.string}"/>
-<c:set var="linkedinLink" value="${renderContext.site.properties.linkedinLink.string}"/>
-<c:set var="pinterestLink" value="${renderContext.site.properties.pinterestLink.string}"/>
+<c:set var="facebookLink" value="${currentNode.properties.facebookLink.string}"/>
+<c:set var="googlePlusLink" value="${currentNode.properties.googlePlusLink.string}"/>
+<c:set var="twitterLink" value="${currentNode.properties.twitterLink.string}"/>
+<c:set var="youtubeLink" value="${currentNode.properties.youtubeLink.string}"/>
+<c:set var="instagramLink" value="${currentNode.properties.instagramLink.string}"/>
+<c:set var="linkedinLink" value="${currentNode.properties.linkedinLink.string}"/>
+<c:set var="pinterestLink" value="${currentNode.properties.pinterestLink.string}"/>
 
 <!-- Site Social Links -->
 
