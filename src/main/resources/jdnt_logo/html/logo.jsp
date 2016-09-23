@@ -20,6 +20,7 @@
     <c:url var="logoUrl" value="${logo.url}" context="/"/>
     <c:if test="${not empty renderContext.site.home.url}">
         <c:url var="homePageURL" value="${renderContext.site.home.url}" context="/"/>
+        <template:addCacheDependency node="${renderContext.site.home}"/>
     </c:if>
 
     <a href="${homePageURL}" class="logo"><img src="${logoUrl}" alt="Logo"></a>
