@@ -31,10 +31,11 @@
     <div class="user-box dropdown pull-right">
 
         <jcr:node var="userNode" path="${currentUser.localPath}"/>
+        <template:addCacheDependency node="${userNode}"/>
+
         <jcr:nodeProperty var="picture" node="${userNode}" name="j:picture"/>
         <c:set var="firstname" value="${userNode.properties['j:firstName'].string}"/>
         <c:set var="lastname" value="${userNode.properties['j:lastName'].string}"/>
-
         <a class="dropdown-toggle" data-toggle="dropdown" href="#">
             <i class="fa fa-user"></i>&nbsp;${fn:escapeXml(empty firstname and empty lastname ? userNode.name : firstname)}&nbsp;${fn:escapeXml(lastname)}
             <span class="caret"></span>
