@@ -92,7 +92,7 @@
     <template:addResources type="javascript" resources="parallax-slider.js"/>
 
     <!-- Custom Javascript -->
-    <template:addResources type="javascript" resources="template.js"/>
+    <template:addResources type="javascript" resources="custom/template.js"/>
 
 
     <!--[if lt IE 9]>
