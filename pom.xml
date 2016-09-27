@@ -70,7 +70,8 @@
         please contact the sales department at sales@jahia.com.
 
 -->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>org.jahia.modules</groupId>
@@ -86,14 +87,13 @@
     <connection>scm:git:git@github.com:Jahia/dx-base-demo.git</connection>
     <developerConnection>scm:git:git@github.com:Jahia/dx-base-demo.git</developerConnection>
     <url>scm:git:git@github.com:Jahia/dx-base-demo.git</url>
-    <tag>HEAD</tag>
   </scm>
   <properties>
     <jahia.modules.importPackage>org.jahia.defaults.config.spring,
       org.jahia.exceptions,
       org.jahia.services,
       org.jahia.services.search</jahia.modules.importPackage>
-    <jahia-depends>bootstrap3-components,bootstrap3-core,default,font-awesome,calendar,event,facets,grid,jquery,location,news,person,rating,search,topstories</jahia-depends>
+    <jahia-depends>bootstrap3-components,bootstrap3-core,default,font-awesome,calendar,event,facets,grid,jquery,location,news,person,rating,search,topstories,press</jahia-depends>
   </properties>
   <dependencies>
     <dependency>
@@ -129,9 +129,6 @@
   </repositories>
   <pluginRepositories>
     <pluginRepository>
-      <id>jahia-public</id>
-      <name>Jahia Public Repository</name>
-      <url>https://devtools.jahia.com/nexus/content/groups/public</url>
       <releases>
         <enabled>true</enabled>
         <updatePolicy>never</updatePolicy>
@@ -139,6 +136,9 @@
       <snapshots>
         <enabled>true</enabled>
       </snapshots>
+      <id>jahia-public</id>
+      <name>Jahia Public Repository</name>
+      <url>https://devtools.jahia.com/nexus/content/groups/public</url>
     </pluginRepository>
   </pluginRepositories>
   <build>
