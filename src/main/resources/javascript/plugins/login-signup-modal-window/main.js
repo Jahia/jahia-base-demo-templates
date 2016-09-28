@@ -127,7 +127,7 @@ jQuery(document).ready(function($) {
   }
 
 */
-  $('.loginFormModal').modal($(this).attr('modalOption'));
+  // $('.loginFormModal').modal($(this).attr('modalOption'));
 })
 
 
