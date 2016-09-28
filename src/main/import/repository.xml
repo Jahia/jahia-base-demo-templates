@@ -2,10 +2,10 @@
 <content xmlns:j="http://www.jahia.org/jahia/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0">
     <modules jcr:primaryType="jnt:modules">
         <dx-base-demo-templates j:dependencies="bootstrap3-components bootstrap3-core calendar default event facets font-awesome grid jquery location news person rating search topstories press"
-                 j:installedModules="jahiademo"
+                 j:installedModules="dx-base-demo-templates"
                  j:modulePriority="0"
                  j:moduleType="templatesSet"
-                 j:title="jahiademo"
+                 j:title="dx-base-demo-templates"
                  jcr:mixinTypes="jmix:hasExternalProviderExtension"
                  jcr:primaryType="jnt:module">
                 
@@ -165,8 +165,8 @@
                         </img>
                     </files>
                     <contents jcr:primaryType="jnt:contentFolder"/>
-                    <base j:theme="/modules/jahiademo/templates/files/themes/default"
-                  j:view="jahiademo"
+                    <base j:theme="/modules/dx-base-demo-templates/templates/files/themes/default"
+                  j:view="dx-base-demo-templates"
                   jcr:mixinTypes="jmix:theme"
                   jcr:primaryType="jnt:template">
                         <simple jcr:primaryType="jnt:pageTemplate">
@@ -183,7 +183,7 @@
                         </navmenu>
                         <logo jcr:primaryType="jnt:contentList">
                             <logo jcr:primaryType="jdnt:logo"
-                        logo="/modules/jahiademo/templates/files/logo1-default.png"/>
+                        logo="/modules/dx-base-demo-templates/templates/files/logo1-default.png"/>
                         </logo>
                         <_x0032_-column j:hiddenTemplate="false" jcr:primaryType="jnt:pageTemplate">
                             <j:translation_en jcr:language="en"
@@ -252,7 +252,7 @@
                             <simple-search-form j:view="demo"
                                       jcr:mixinTypes="jmix:renderable"
                                       jcr:primaryType="jnt:simpleSearchForm"
-                                      result="/modules/jahiademo/home/search-results"/>
+                                      result="/modules/dx-base-demo-templates/home/search-results"/>
                         </search>
                         <toggleNav jcr:primaryType="jnt:contentList">
                             <togglenavbarbutton jcr:primaryType="jdnt:toggleNavBarButton"/>
@@ -313,7 +313,7 @@
                                        jcr:title="news detail"/>
                                 <section--container--row--grid-main jcr:primaryType="jnt:contentList">
                                     <main-resource-display j:mainResourceView="detail" jcr:primaryType="jnt:mainResourceDisplay"/>
-                                    <rating j:bindedComponent="/modules/jahiademo/templates/base/news/news-detail/section--container--row--grid-main/main-resource-display"
+                                    <rating j:bindedComponent="/modules/dx-base-demo-templates/templates/base/news/news-detail/section--container--row--grid-main/main-resource-display"
                                 jcr:primaryType="jnt:rateable"/>
                                     <display-comments jcr:primaryType="jnt:commentsList"/>
                                     <commentable jcr:primaryType="jnt:addComment"/>
@@ -321,7 +321,7 @@
                             </news-detail>
                             <landing jcr:primaryType="jnt:contentList">
                                 <banner jcr:primaryType="jnt:banner">
-                                    <j:translation_en background="/modules/jahiademo/templates/files/img/newsroom-bg.jpg"
+                                    <j:translation_en background="/modules/dx-base-demo-templates/templates/files/img/newsroom-bg.jpg"
                                           cast="&lt;p&gt;Learn About Us&lt;/p&gt;&#xA;"
                                           jcr:language="en"
                                           jcr:mixinTypes="mix:title"
@@ -337,7 +337,7 @@
                                 <section--container--row--grid-main jcr:primaryType="jnt:contentList">
                                     <pager align="center-block"
                                displayPager="false"
-                               j:bindedComponent="/modules/jahiademo/templates/base/news/news-entry/section--container--row--grid-main/article"
+                               j:bindedComponent="/modules/dx-base-demo-templates/templates/base/news/news-entry/section--container--row--grid-main/article"
                                jcr:mixinTypes="bootstrap3mix:advancedPagination"
                                jcr:primaryType="bootstrap3nt:pagination"
                                layout="default"
@@ -347,7 +347,7 @@
                                     <article j:allowedTypes="jnt:news" jcr:primaryType="jnt:area"/>
                                 <pager-1 align="center-block"
                                  displayPager="true"
-                                 j:bindedComponent="/modules/jahiademo/templates/base/news/news-entry/section--container--row--grid-main/article"
+                                 j:bindedComponent="/modules/dx-base-demo-templates/templates/base/news/news-entry/section--container--row--grid-main/article"
                                  jcr:mixinTypes="bootstrap3mix:advancedPagination"
                                  jcr:primaryType="bootstrap3nt:pagination"
                                  layout="default"
@@ -385,10 +385,10 @@
                                                     jcr:primaryType="bootstrap3nt:columns">
                                     <section--container--row--grid-side jcr:primaryType="jnt:contentList">
                                         <calendar endDateProperty="endDate"
-                                     j:bindedComponent="/modules/jahiademo/templates/base/events/pagecontent/section--container--row--grid/section--container--row--grid-main/Events"
+                                     j:bindedComponent="/modules/dx-base-demo-templates/templates/base/events/pagecontent/section--container--row--grid/section--container--row--grid-main/Events"
                                      jcr:primaryType="jnt:calendar"
                                      startDateProperty="startDate"/>
-                                        <facets j:bindedComponent="/modules/jahiademo/templates/base/events/pagecontent/section--container--row--grid/section--container--row--grid-main/Events"
+                                        <facets j:bindedComponent="/modules/dx-base-demo-templates/templates/base/events/pagecontent/section--container--row--grid/section--container--row--grid-main/Events"
                                    j:type="jnt:event"
                                    jcr:primaryType="jnt:facets">
                                             <fieldFacet facet="type"
@@ -552,7 +552,7 @@
                             <simple-search-form j:view="banner"
                                       jcr:mixinTypes="jmix:renderable"
                                       jcr:primaryType="jnt:simpleSearchForm"
-                                      result="/modules/jahiademo/home/search-results"/>
+                                      result="/modules/dx-base-demo-templates/home/search-results"/>
                         </landing>
                         <section--container--row--grid-main jcr:primaryType="jnt:contentList">
                             <advanced-search-form jcr:primaryType="jnt:advancedSearchForm"/>
