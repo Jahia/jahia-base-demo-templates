@@ -82,7 +82,7 @@
   <version>1.0-SNAPSHOT</version>
   <packaging>bundle</packaging>
   <name>dx-base-demo-templates</name>
-  <description>This is the custom profile module (jahiademo) for running on a Digital Factory server.</description>
+  <description>This is the custom profile module (dx-base-demo-templates) for running on a Digital Factory server.</description>
   <scm>
     <connection>scm:git:git@github.com:Jahia/dx-base-demo.git</connection>
     <developerConnection>scm:git:git@github.com:Jahia/dx-base-demo.git</developerConnection>

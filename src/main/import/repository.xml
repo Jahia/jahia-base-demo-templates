@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <content xmlns:j="http://www.jahia.org/jahia/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0">
     <modules jcr:primaryType="jnt:modules">
-        <jahiademo j:dependencies="bootstrap3-components bootstrap3-core calendar default event facets font-awesome grid jquery location news person rating search topstories press"
+        <dx-base-demo-templates j:dependencies="bootstrap3-components bootstrap3-core calendar default event facets font-awesome grid jquery location news person rating search topstories press"
                  j:installedModules="jahiademo"
                  j:modulePriority="0"
                  j:moduleType="templatesSet"
@@ -564,6 +564,6 @@
                         </section--container--row--grid-main>
                     </search-results>
                 </home>
-            </jahiademo>
+            </dx-base-demo-templates>
     </modules>
 </content>
