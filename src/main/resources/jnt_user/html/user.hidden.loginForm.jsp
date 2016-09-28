@@ -18,8 +18,12 @@
 <%--@elvariable id="currentResource" type="org.jahia.services.render.Resource"--%>
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
 
-<c:set var="siteNode" value="${renderContext.site}"/>
-<c:set var="icon" value="${siteNode.properties['icon'].node}"/>
-<template:module node='${icon}' editable='false' view='hidden.contentURL' var="iconUrl"/>
 
-<link rel="shortcut icon" href="${iconURL}" type="image/x-icon">
+<jcr:nodeProperty var="picture" node="${currentNode}" name="j:picture"/>
+<c:set var="firstname" value="${currentNode.properties['j:firstName'].string}"/>
+<c:set var="lastname" value="${currentNode.properties['j:lastName'].string}"/>
+<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+    <i class="fa fa-user"></i>&nbsp;${fn:escapeXml(empty firstname and empty lastname ? currentNode.name : firstname)}&nbsp;${fn:escapeXml(lastname)}
+    <span class="caret"></span>
+</a>
+<ul class="topbar-dropdown">

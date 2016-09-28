@@ -10,8 +10,7 @@
 <c:set var="node" value="${reference.node}"/>
 <%-- display image if referenced image is available --%>
 <c:if test="${not empty node}">
-    <template:addCacheDependency node="${node}"/>
-    <c:url var="url" value="${node.url}" context="/"/>
+    <template:module node='${node}' editable='false' view='hidden.contentURL' var="url"/>
     <img src="${url}" alt="${fn:escapeXml(not empty title.string ? title.string : currentNode.name)}" width="100%"
          height="auto"/> />
 </c:if>

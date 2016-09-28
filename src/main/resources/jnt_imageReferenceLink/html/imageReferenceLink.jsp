@@ -22,11 +22,11 @@
     <c:set var="linknode" value="${linkreference.node}"/>
 
     <c:if test="${not empty linknode}">
-        <template:addCacheDependency node="${linknode}"/>
         <template:module node='${linknode}' editable='false' view='hidden.contentURL' var="imageUrl"/>
+        <template:module node='${linknode}' editable='false' view='hidden.displayableName' var="imageDisplayableName"/>
 
-        <c:url var="linkUrl" value="${url.base}${linknode.path}.html"/>
-        <c:set var="linkTitle"> title="${linknode.displayableName}"</c:set>
+        <c:set var="linkUrl" value="${imageUrl}"/>
+        <c:set var="linkTitle"> title="${imageDisplayableName}"</c:set>
     </c:if>
     <c:if test="${empty linkUrl and not empty externalUrl}">
         <c:if test="${!functions:matches('^[A-Za-z]*:.*', externalUrl.string)}">
@@ -49,7 +49,6 @@
 </c:if>
 <c:if test="${empty node}">
     <c:if test="${not empty reference}">
-        <template:addCacheDependency node="${reference.node}"/>
     </c:if>
     <c:if test="${renderContext.editMode}">
         <fmt:message key="label.empty"/>

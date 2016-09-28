@@ -17,9 +17,4 @@
 <%--@elvariable id="renderContext" type="org.jahia.services.render.RenderContext"--%>
 <%--@elvariable id="currentResource" type="org.jahia.services.render.Resource"--%>
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
-
-<c:set var="siteNode" value="${renderContext.site}"/>
-<c:set var="icon" value="${siteNode.properties['icon'].node}"/>
-<template:module node='${icon}' editable='false' view='hidden.contentURL' var="iconUrl"/>
-
-<link rel="shortcut icon" href="${iconURL}" type="image/x-icon">
+${currentNode.displayableName}
