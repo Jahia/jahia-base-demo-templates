@@ -32,23 +32,24 @@
     <c:set var="googlePlus" value="${currentNode.properties.googlePlus.string}"/>
 </c:if>
 
-<%-- get default photo if one was not provided --%>
-<c:choose>
-    <c:when test="${empty photo.node}">
-        <c:set var="photoUrl" value="${url.currentModule}/img/default_person_img.jpg"/>
-    </c:when>
-    <c:otherwise>
-        <template:addCacheDependency node="${photo.node}"/>
-        <c:url var="photoUrl" value="${photo.node.url}" context="/"/>
-    </c:otherwise>
-</c:choose>
+
 
 
 <div class="row content-xs">
     <div class="col-md-3">
         <div class="portrait">
             <div class="portrait-bg">
-                <img src="${photoUrl}" alt="${name}"/>
+                <%-- get default photo if one was not provided --%>
+                <c:choose>
+                    <c:when test="${empty photo.node}">
+                        <c:set var="photoUrl" value="${url.currentModule}/img/default_person_img.jpg"/>
+                        <img src="${photoUrl}" alt="${name}"/>
+                    </c:when>
+                    <c:otherwise>
+                        <img src="<template:module node='${photo.node}' editable='false' view='hidden.contentURL' />" alt="${name}"/>
+                    </c:otherwise>
+                </c:choose>
+
             </div>
         </div>
     </div>

@@ -41,8 +41,7 @@
 
     <div id="sync1" class="owl-carousel newsPicture">
         <c:if test="${not empty newsImage}">
-            <c:url var="newsImageUrl" value="${newsImage.url}" context="/"/>
-            <template:addCacheDependency node="${newsImage}"/>
+            <template:module node='${newsImage}' editable='false' view='hidden.contentURL' var="newsImageUrl"/>
             <div class="item">
                 <%-- if there is a gallery format for the photoswipe otherwise just display image --%>
             <c:if test="${not empty galleryImgs}"><a href="${newsImageUrl}"

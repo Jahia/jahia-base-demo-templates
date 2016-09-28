@@ -15,14 +15,11 @@
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
 
 <c:set var="source" value="${currentNode.properties.source.node}"/>
-
 <c:choose>
     <c:when test="${empty source}">
         <fmt:message key="jnt_video.source.empty" />
     </c:when>
     <c:otherwise>
-        <template:addCacheDependency node="${source}"/>
-        <c:url var="sourceUrl" value="${source.url}" context="/"/>
         <%-- Include the VideoJS Library --%>
         <template:addResources type="css" resources="video-js.css"/>
         <template:addResources type="javascript" resources="video.js"/>
@@ -40,7 +37,7 @@
                preload="${renderContext.editMode ? "metadata" : "auto"}"
                width="${currentNode.properties.width.string}" height="${currentNode.properties.height.string}"
                data-setup='{<c:if test="${currentNode.properties.forceFlashPlayer.boolean}">"techOrder":["flash", "html5"]</c:if>}'>
-          <source src="<c:url value="${sourceUrl}" context="/"/>" type='${mimeType.string == "video/x-f4v" ? "video/mp4" : mimeType.string}' />
+          <source src="<template:module node='${currentNode.properties.source.node}' editable='false' view='hidden.contentURL' />" type='${mimeType.string == "video/x-f4v" ? "video/mp4" : mimeType.string}' />
         </video>
     </c:otherwise>
 </c:choose>

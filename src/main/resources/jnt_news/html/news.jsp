@@ -20,9 +20,8 @@
 <div class="row margin-bottom-20">
     <div class="col-sm-5 sm-margin-bottom-20">
         <c:if test="${not empty newsImage.node}">
-            <template:addCacheDependency node="${newsImage.node}"/>
-            <c:url value="${url.files}${newsImage.node.path}" var="imageUrl"/>
-            <img class="img-responsive" src="${imageUrl}" alt="">
+
+            <img class="img-responsive" src="<template:module node='${newsImage.node}' editable='false' view='hidden.contentURL' />" alt="">
         </c:if>
     </div>
     <div class="col-sm-7 news-v3">

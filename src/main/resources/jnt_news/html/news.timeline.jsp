@@ -27,9 +27,8 @@
             <c:when test="${not empty newsImage}">
                 <div class="row">
                     <div class="col-md-4">
-                        <template:addCacheDependency node="${newsImage.node}"/>
-                        <c:url value="${url.files}${newsImage.node.path}" var="imageUrl"/>
-                        <img class="img-responsive" src="${imageUrl}" alt=""/>
+
+                        <img class="img-responsive" src="<template:module node='${newsImage.node}' editable='false' view='hidden.contentURL' />" alt=""/>
 
                         <div class="md-margin-bottom-20"></div>
                     </div>
