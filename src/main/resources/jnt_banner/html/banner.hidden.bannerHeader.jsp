@@ -34,6 +34,7 @@
 <c:set  target="${moduleMap}" property="title" value="${currentNode.properties['jcr:title'].string}"/>
 <%--If no title is set with banner then use the current page title--%>
 <c:if test="${empty currentNode.properties['jcr:title'].string}">
+    <template:addCacheDependency node="${renderContext.mainResource.node}"/>
     <c:set target="${moduleMap}" property="title" value="${renderContext.mainResource.node.displayableName}"/>
 </c:if>
 
