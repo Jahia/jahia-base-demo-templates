@@ -33,7 +33,7 @@
         <c:set var="photoUrl" value="${url.currentModule}/img/default_person_img.jpg"/>
     </c:when>
     <c:otherwise>
-        <c:url var="photoUrl" value="<template:module node='${photo.node}' editable='false' view='hidden.contentURL' />" context="/"/>
+        <template:module node='${photo.node}' editable='false' view='hidden.contentURL' var="photoUrl" />
     </c:otherwise>
 </c:choose>
 
