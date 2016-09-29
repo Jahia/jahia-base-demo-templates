@@ -73,12 +73,12 @@ CKEDITOR.editorConfig = function (config) {
 
     // Load CSS also in CKEditor
     config.contentsCss = [
-        ((typeof contextJsParameters != 'undefined') ? contextJsParameters.contextPath : '') + '/modules/jahiademo/css/app.css'
+        ((typeof contextJsParameters != 'undefined') ? contextJsParameters.contextPath : '') + '/modules/dx-base-demo-templates/css/app.css'
     ];
 
 
     // Loading custom templates
-    config.templates_files = [((typeof contextJsParameters != 'undefined') ? contextJsParameters.contextPath : '') + '/modules/jahiademo/javascript/ckeditor_templates.js'];
+    config.templates_files = [((typeof contextJsParameters != 'undefined') ? contextJsParameters.contextPath : '') + '/modules/dx-base-demo-templates/javascript/ckeditor_templates.js'];
 }
 
 

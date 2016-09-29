@@ -25,7 +25,7 @@ a {
 
 
 body.dark .wrapper {
-    background: url("/modules/jahiademo/img/cf_bg.png");	/*path to the background image*/
+    background: url("/modules/dx-base-demo-templates/img/cf_bg.png");	/*path to the background image*/
 }
 
 body.dark .dropdown-menu > li > a:hover, body.dark .dropdown-menu > li > a:focus {

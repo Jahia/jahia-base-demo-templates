@@ -12,14 +12,14 @@
 /* Example of overriding the background image for the boxed mode */
 
 body.dark.boxed-layout {
-	background-image: url("/modules/jahiademo/img/patterns/island-bg.jpg");
+	background-image: url("/modules/dx-base-demo-templates/img/patterns/island-bg.jpg");
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-position: 50% 50%;
 }
 
 body.boxed-layout {
-	background-image: url("/modules/jahiademo/img/patterns/island-bg.jpg");
+	background-image: url("/modules/dx-base-demo-templates/img/patterns/island-bg.jpg");
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-position: 50% 50%;

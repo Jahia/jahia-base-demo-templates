@@ -10,12 +10,12 @@
     <meta charset="utf-8">
     <meta name="robots" content="noindex, nofollow"/>
     <link rel="stylesheet" href="<c:url value='/css/errors.css'/>" type="text/css"/>
-    <link rel="stylesheet" type="text/css" href="<c:url value='/modules/jahiademo/css/page_404_error3.css'/>"/>
-    <link rel="stylesheet" type="text/css" href="<c:url value='/modules/jahiademo/css/style.css'/>"/>
-    <link rel="stylesheet" type="text/css" href="<c:url value='/modules/jahiademo/css/app.css'/>"/>
+    <link rel="stylesheet" type="text/css" href="<c:url value='/modules/dx-base-demo-templates/css/page_404_error3.css'/>"/>
+    <link rel="stylesheet" type="text/css" href="<c:url value='/modules/dx-base-demo-templates/css/style.css'/>"/>
+    <link rel="stylesheet" type="text/css" href="<c:url value='/modules/dx-base-demo-templates/css/app.css'/>"/>
     <script type="text/javascript" src="<c:url value='/modules/jquery/javascript/jquery.min.js'/>"></script>
-    <script type="text/javascript" src="<c:url value='/modules/jahiademo/javascript/jquery.backstretch.min.js'/>"></script>
-    <script type="text/javascript" src="<c:url value='/modules/jahiademo/javascript/custom/error_404.js'/>"></script>
+    <script type="text/javascript" src="<c:url value='/modules/dx-base-demo-templates/javascript/jquery.backstretch.min.js'/>"></script>
+    <script type="text/javascript" src="<c:url value='/modules/dx-base-demo-templates/javascript/custom/error_404.js'/>"></script>
     <!-- Meta -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -49,5 +49,5 @@
 <div class="sticky-footer">
     <p class="copyright-space"> © ALL Rights Reserved.</p>
 </div>
-<div class="404_backstretch" backstretch="<c:url value='/modules/jahiademo/css/404/404-bg.jpg'/>"/>
+<div class="404_backstretch" backstretch="<c:url value='/modules/dx-base-demo-templates/css/404/404-bg.jpg'/>"/>
 </body>

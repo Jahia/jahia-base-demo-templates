@@ -1,7 +1,7 @@
 CKEDITOR.addTemplates('default',
     {
         // The name of the subfolder that contains the preview images of the templates.
-        imagesPath: ((typeof contextJsParameters != 'undefined') ? contextJsParameters.contextPath : '') + '/modules/jahiademo/images/ckeditor/',
+        imagesPath: ((typeof contextJsParameters != 'undefined') ? contextJsParameters.contextPath : '') + '/modules/dx-base-demo-templates/images/ckeditor/',
         // Template definitions.
         templates: [
             {
