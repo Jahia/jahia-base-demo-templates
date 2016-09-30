@@ -20,7 +20,7 @@
 
 <c:choose>
     <c:when test="${empty newsImage}">
-        <c:set var="imageUrl" value="${url.currentModule}/img/img12.jpg"/>
+        <c:set var="imageUrl" value="${url.currentModule}/img/default_img.jpg"/>
     </c:when>
     <c:otherwise>
         <template:module node='${newsImage.node}' editable='false' view='hidden.contentURL' var="imageUrl"/>
