@@ -10,7 +10,7 @@
 <c:set var="language" value="${currentResource.locale.language}"/>
 <fmt:setLocale value="${language}" scope="session"/>
 
-<c:set var="newsImage" value="${currentNode.properties['image']}"/>
+<c:set var="newsImage" value="${currentNode.properties['image'].node}"/>
 <c:set var="newsTitle" value="${currentNode.properties['jcr:title'].string}"/>
 <c:set var="description" value="${currentNode.properties['desc'].string}"/>
 <fmt:formatDate dateStyle="long" value="${currentNode.properties['date'].time}" var="newsDate"/>
