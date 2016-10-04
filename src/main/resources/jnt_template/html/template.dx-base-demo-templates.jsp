@@ -83,7 +83,6 @@
     <template:addResources type="javascript" resources="jquery.cslider.js"/>
     <template:addResources type="javascript" resources="jquery.counterup.min.js"/>
     <template:addResources type="javascript" resources="waypoints.min.js"/>
-    <template:addResources type="javascript" resources="jquery.cookie.js"/>
     <!-- CSS Customization -->
     <template:addResources type="css" resources="jahiademo-custom.css"/>
 

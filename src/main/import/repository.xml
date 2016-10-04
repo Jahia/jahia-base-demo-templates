@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <content xmlns:j="http://www.jahia.org/jahia/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0">
     <modules jcr:primaryType="jnt:modules">
-        <dx-base-demo-templates j:dependencies="bootstrap3-components bootstrap3-core calendar default event facets font-awesome grid jquery location news person rating search topstories press"
-                 j:installedModules="dx-base-demo-templates"
-                 j:modulePriority="0"
-                 j:moduleType="templatesSet"
-                 j:title="dx-base-demo-templates"
-                 jcr:mixinTypes="jmix:hasExternalProviderExtension"
-                 jcr:primaryType="jnt:module">
+        <dx-base-demo-templates j:dependencies="bootstrap3-components bootstrap3-core calendar default dx-base-demo-core event facets font-awesome grid jquery location news person press rating search topstories"
+                              j:installedModules="dx-base-demo-templates"
+                              j:modulePriority="0"
+                              j:moduleType="templatesSet"
+                              j:title="dx-base-demo-templates"
+                              jcr:mixinTypes="jmix:hasExternalProviderExtension"
+                              jcr:primaryType="jnt:module">
                 
                 <portlets jcr:primaryType="jnt:portletFolder"/>
                 <files jcr:primaryType="jnt:folder">
@@ -182,8 +182,7 @@
                             <navigation-menu jcr:primaryType="jdnt:navmenu"/>
                         </navmenu>
                         <logo jcr:primaryType="jnt:contentList">
-                            <logo jcr:primaryType="jdnt:logo"
-                        logo="/modules/dx-base-demo-templates/templates/files/logo1-default.png"/>
+                            <logo jcr:primaryType="jdnt:logo"/>
                         </logo>
                         <_x0032_-column j:hiddenTemplate="false" jcr:primaryType="jnt:pageTemplate">
                             <j:translation_en jcr:language="en"
@@ -321,8 +320,7 @@
                             </news-detail>
                             <landing jcr:primaryType="jnt:contentList">
                                 <banner jcr:primaryType="jnt:banner">
-                                    <j:translation_en background="/modules/dx-base-demo-templates/templates/files/img/newsroom-bg.jpg"
-                                          cast="&lt;p&gt;Learn About Us&lt;/p&gt;&#xA;"
+                                    <j:translation_en cast="&lt;p&gt;Learn About Us&lt;/p&gt;&#xA;"
                                           jcr:language="en"
                                           jcr:mixinTypes="mix:title"
                                           jcr:primaryType="jnt:translation"
@@ -345,7 +343,7 @@
                                nbOfPagesInEdit="100"
                                pageSize="2"/>
                                     <article j:allowedTypes="jnt:news" jcr:primaryType="jnt:area"/>
-                                <pager-1 align="center-block"
+                                    <pager-1 align="center-block"
                                  displayPager="true"
                                  j:bindedComponent="/modules/dx-base-demo-templates/templates/base/news/news-entry/section--container--row--grid-main/article"
                                  jcr:mixinTypes="bootstrap3mix:advancedPagination"

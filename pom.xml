@@ -93,7 +93,7 @@
       org.jahia.exceptions,
       org.jahia.services,
       org.jahia.services.search</jahia.modules.importPackage>
-    <jahia-depends>bootstrap3-components,bootstrap3-core,default,font-awesome,calendar,event,facets,grid,jquery,location,news,person,rating,search,topstories,press</jahia-depends>
+    <jahia-depends>bootstrap3-components,bootstrap3-core,default,dx-base-demo-core,font-awesome,calendar,event,facets,grid,jquery,location,news,person,press,rating,search,topstories</jahia-depends>
   </properties>
   <dependencies>
     <dependency>
@@ -103,9 +103,9 @@
       <scope>provided</scope>
     </dependency>
     <dependency>
-      <groupId>org.mnode.ical4j</groupId>
-      <artifactId>ical4j</artifactId>
-      <version>1.0.3</version>
+      <groupId>org.jahia.modules</groupId>
+      <artifactId>dx-base-demo-core</artifactId>
+      <version>1.0-SNAPSHOT</version>
     </dependency>
     <dependency>
       <groupId>org.apache.httpcomponents</groupId>
