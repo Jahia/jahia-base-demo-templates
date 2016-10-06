@@ -7,3 +7,5 @@
 target
 .DS_Store
 *.ffs_db
+
+src/main/import/repository.xml.generated
