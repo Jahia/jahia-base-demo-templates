@@ -163,6 +163,7 @@
                 <div class="res-container">
                     <template:area path="toggleNav"/>
                     <c:choose>
+                        <%-- check to see if the site has site logo specified, if not then use the logo area as defined in the template definition--%>
                         <c:when test="${jcr:isNodeType(siteNode, 'jdmix:siteLogo')}">
                             <div class="navbar-brand">
                                 <template:module node="${siteNode}" view="default" nodeTypes="jdmix:siteLogo"
