@@ -162,6 +162,14 @@
                                 <thumbnail jcr:mimeType="image/jpeg" jcr:primaryType="jnt:resource"/>
                                 <thumbnail2 jcr:mimeType="image/jpeg" jcr:primaryType="jnt:resource"/>
                             </newsroom-bg.jpg>
+                            <logo1-default.png j:height="39"
+                                     j:width="103"
+                                     jcr:mixinTypes="jmix:image"
+                                     jcr:primaryType="jnt:file">
+                                <jcr:content jcr:mimeType="image/png" jcr:primaryType="jnt:resource"/>
+                                <thumbnail jcr:mimeType="image/png" jcr:primaryType="jnt:resource"/>
+                                <thumbnail2 jcr:mimeType="image/png" jcr:primaryType="jnt:resource"/>
+                            </logo1-default.png>
                         </img>
                     </files>
                     <contents jcr:primaryType="jnt:contentFolder"/>
@@ -182,7 +190,8 @@
                             <navigation-menu jcr:primaryType="jdnt:navmenu"/>
                         </navmenu>
                         <logo jcr:primaryType="jnt:contentList">
-                            <logo jcr:primaryType="jdnt:logo"/>
+                            <logo jcr:primaryType="jdnt:logo"
+                        logo="/modules/dx-base-demo-templates/templates/files/img/logo1-default.png"/>
                         </logo>
                         <_x0032_-column j:hiddenTemplate="false" jcr:primaryType="jnt:pageTemplate">
                             <j:translation_en jcr:language="en"
