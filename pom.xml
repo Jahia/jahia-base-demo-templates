@@ -78,7 +78,7 @@
     <version>7.1.2.0</version>
   </parent>
   <artifactId>dx-base-demo-templates</artifactId>
-  <version>1.0</version>
+  <version>1.1-SNAPSHOT</version>
   <packaging>bundle</packaging>
   <name>dx-base-demo-templates</name>
   <description>This is the custom profile module (dx-base-demo-templates) for running on a Digital Factory server.</description>
@@ -86,7 +86,7 @@
     <connection>scm:git:git@github.com:Jahia/dx-base-demo.git</connection>
     <developerConnection>scm:git:git@github.com:Jahia/dx-base-demo.git</developerConnection>
     <url>scm:git:git@github.com:Jahia/dx-base-demo.git</url>
-    <tag>dx-base-demo-templates-1.0</tag>
+    <tag>HEAD</tag>
   </scm>
   <properties>
     <jahia.modules.importPackage>org.jahia.defaults.config.spring,
@@ -105,7 +105,7 @@
     <dependency>
       <groupId>org.jahia.modules</groupId>
       <artifactId>dx-base-demo-core</artifactId>
-      <version>1.0</version>
+      <version>1.1-SNAPSHOT</version>
     </dependency>
     <dependency>
       <groupId>org.apache.httpcomponents</groupId>
