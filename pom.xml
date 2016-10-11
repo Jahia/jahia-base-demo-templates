@@ -70,8 +70,7 @@
         please contact the sales department at sales@jahia.com.
 
 -->
-<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>org.jahia.modules</groupId>
@@ -79,7 +78,7 @@
     <version>7.1.2.0</version>
   </parent>
   <artifactId>dx-base-demo-templates</artifactId>
-  <version>1.0-SNAPSHOT</version>
+  <version>1.0</version>
   <packaging>bundle</packaging>
   <name>dx-base-demo-templates</name>
   <description>This is the custom profile module (dx-base-demo-templates) for running on a Digital Factory server.</description>
@@ -87,6 +86,7 @@
     <connection>scm:git:git@github.com:Jahia/dx-base-demo.git</connection>
     <developerConnection>scm:git:git@github.com:Jahia/dx-base-demo.git</developerConnection>
     <url>scm:git:git@github.com:Jahia/dx-base-demo.git</url>
+    <tag>dx-base-demo-templates-1.0</tag>
   </scm>
   <properties>
     <jahia.modules.importPackage>org.jahia.defaults.config.spring,
@@ -105,7 +105,7 @@
     <dependency>
       <groupId>org.jahia.modules</groupId>
       <artifactId>dx-base-demo-core</artifactId>
-      <version>1.0-SNAPSHOT</version>
+      <version>1.0</version>
     </dependency>
     <dependency>
       <groupId>org.apache.httpcomponents</groupId>
