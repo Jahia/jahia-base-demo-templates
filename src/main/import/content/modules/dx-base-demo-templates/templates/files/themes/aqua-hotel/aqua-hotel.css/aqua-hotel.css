@@ -72,7 +72,7 @@ p {
 }
 
 .ms-layers-template {
-	border-bottom: solid 10px #7E716B;
+	border-bottom: solid 10px #1997ae;
 }
 
 .ms-skin-black-2 .ms-bullets.ms-dir-h {
@@ -823,25 +823,25 @@ a.read-more:hover {
 .btn-u:active, 
 .btn-u.active, 
 .open .dropdown-toggle.btn-u {
-	background: #81674b;
+	background: #1997AE;
 	color: #fff;
 }
 
 /* Buttons Color */
 .btn-u-split.dropdown-toggle {
-   border-left: solid 1px #81674b;
+   border-left: solid 1px #1997AE;
 }
 
 /* Bordered Buttons */
 .btn-u.btn-brd {
-  border-color: #cccccc;
+  border-color: #BADBDC;
 }
 .btn-u.btn-brd:hover {
-  color: #81674b;
-  border-color: #81674b;
+  color: #1997AE;
+  border-color: #1997AE;
 }
 .btn-u.btn-brd.btn-brd-hover:hover {
-  background: #81674b;   
+  background: #1997AE;
 }
 
 /* Service
@@ -858,13 +858,13 @@ a.read-more:hover {
 /* Thumbnail (Recent Work)
 ------------------------------------*/
 .thumbnail-style h3 a:hover {
-	color:#cccccc;
+	color: #BADBDC;
 }
 .thumbnail-style a.btn-more {
-	background:#cccccc;
+	background: #BADBDC;
 }
 .thumbnail-style a.btn-more:hover {
-	box-shadow:0 0 0 2px #81674b;
+	box-shadow:0 0 0 2px #1997AE;
 }
 
 /* Typography
@@ -895,16 +895,16 @@ a.read-more:hover {
 
 /* Blockquote */
 blockquote:hover {
-	border-left-color:#cccccc; 
+	border-left-color:#BADBDC;
 }
 .hero {
-	border-left-color: #cccccc;
+	border-left-color: #BADBDC;
 }
 blockquote.hero.hero-default {
-  background: #cccccc;
+  background: #BADBDC;
 }
 blockquote.hero.hero-default:hover {
-  background: #81674b;
+  background: #1997AE;
 }
 
 /* Carousel
@@ -968,8 +968,8 @@ blockquote.hero.hero-default:hover {
 /* Tabs v3 */
 .tab-v3 .nav-pills li a:hover,
 .tab-v3 .nav-pills li.active a {
-	background: #cccccc;
-	border: solid 1px #81674b;
+	background: #BADBDC;
+	border: solid 1px #1997AE;
 }
 
 /* Accardion
@@ -2235,46 +2235,6 @@ i.icon-bg-u {
 	margin: 0 20px;
 }
 
-
-.containerwhite {
-	background-color: white;
-	margin-right: auto;
-	margin-left: auto;
-	padding-left: 15px;
-	padding-right: 15px;
-}
-
-.containertan, .containerteal {
-	margin-right: 0px;
-	margin-left: 0px;
-	padding-left: 135px;
-	padding-right: 135px;
-}
-
-.containertan {
-	background: #c4bead;
-}
-.containerteal {
-	background: #1997ae;
-}
-
-@media (min-width: 768px) {
-	.containerwhite {
-		width: 750px;
-	}
-}
-@media (min-width: 992px) {
-	.containerwhite {
-		width: 970px;
-	}
-}
-
-@media (min-width: 1200px) {
-	.containerwhite {
-		width: 1170px;
-	}
-}
-
 .order_button {
 	background-position: 0px 0px;
 	box-sizing: border-box;
@@ -2318,4 +2278,8 @@ i.icon-bg-u {
 	font: normal normal normal normal 16px / 24px 'Titillium Web', sans-serif;
 	margin: 15px 0px 0px;
 	outline: rgb(67, 67, 67) none 0px;
+}
+
+.containerwide {
+	background: #1997ae;
 }

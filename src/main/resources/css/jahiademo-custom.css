@@ -2996,16 +2996,22 @@ https://github.com/videojs/video.js/blob/master/src/css/video-js.less */
 	display: none;
 }
 
-.containerwhite {
-	background-color: white;
-	width: 1170px;
-}
-
-.container, .containerwhite {
+.container {
 	margin-right: auto;
 	margin-left: auto;
 	padding-left: 15px;
 	padding-right: 15px;
+}
+
+.containerwhite {
+	background-color: white;
+}
+
+.containertan {
+	background: #c4bead;
+}
+.containerteal {
+	background: #1997ae;
 }
 
 .fullMap{

@@ -1,4 +1,4 @@
-/* 
+/*
 * Version: 1.7
 * Brown Color: #cccccc; 
 * Brown Hover Color: #81674b; 
@@ -2237,41 +2237,6 @@ i.icon-bg-u {
 	margin: 0 20px;
 }
 
-.containerwhite {
-	background-color: white;
-	margin-right: auto;
-	margin-left: auto;
-	padding-left: 15px;
-	padding-right: 15px;
-}
-
-.containertan, .containerteal {
-	margin-right: 0px;
-	margin-left: 0px;
-	padding-left: 135px;
-	padding-right: 135px;
-}
-
-.containertan {
+.containerwide {
 	background: #c4bead;
-}
-.containerteal {
-	background: #1997ae;
-}
-
-@media (min-width: 768px) {
-	.containerwhite {
-		width: 750px;
-	}
-}
-@media (min-width: 992px) {
-	.containerwhite {
-		width: 970px;
-	}
-}
-
-@media (min-width: 1200px) {
-	.containerwhite {
-		width: 1170px;
-	}
 }
