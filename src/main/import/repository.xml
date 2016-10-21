@@ -19,7 +19,7 @@
                         </css>
                         <fonts jcr:primaryType="jnt:folder">
                             <glyphicons-halflings-regular.svg jcr:mixinTypes="jmix:image" jcr:primaryType="jnt:file">
-                                <jcr:content j:lastExtractionDate="2016-04-13T16:30:34.633+02:00"
+                                <jcr:content j:lastExtractionDate="2016-10-20T14:56:05.531-04:00"
                                   jcr:mimeType="image/svg+xml"
                                   jcr:primaryType="jnt:resource"/>
                             </glyphicons-halflings-regular.svg>
@@ -124,6 +124,11 @@
                                     <jcr:content jcr:mimeType="text/css" jcr:primaryType="jnt:resource"/>
                                 </teal.css>
                             </teal>
+                            <electric-green jcr:primaryType="jnt:folder">
+                                <electric-green.css jcr:primaryType="jnt:file">
+                                    <jcr:content jcr:mimeType="text/css" jcr:primaryType="jnt:resource"/>
+                                </electric-green.css>
+                            </electric-green>
                         </themes>
                         <logo1-default.png j:height="39"
                                   j:width="103"
@@ -538,7 +543,7 @@
                               j:defaultTemplate="true"
                               j:hiddenTemplate="false"
                               j:priority="20"
-                              j:view="jahiademoNewsletter"
+                              j:view="dx-base-demo-templates-newsletter"
                               jcr:primaryType="jnt:contentTemplate"/>
                 </templates>
                 
