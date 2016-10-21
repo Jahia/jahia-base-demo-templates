@@ -19,7 +19,7 @@
                         </css>
                         <fonts jcr:primaryType="jnt:folder">
                             <glyphicons-halflings-regular.svg jcr:mixinTypes="jmix:image" jcr:primaryType="jnt:file">
-                                <jcr:content j:lastExtractionDate="2016-10-20T14:51:25.226-04:00"
+                                <jcr:content j:lastExtractionDate="2016-10-20T14:56:05.531-04:00"
                                   jcr:mimeType="image/svg+xml"
                                   jcr:primaryType="jnt:resource"/>
                             </glyphicons-halflings-regular.svg>
@@ -543,7 +543,7 @@
                               j:defaultTemplate="true"
                               j:hiddenTemplate="false"
                               j:priority="20"
-                              j:view="jahiademoNewsletter"
+                              j:view="dx-base-demo-templates-newsletter"
                               jcr:primaryType="jnt:contentTemplate"/>
                 </templates>
                 
