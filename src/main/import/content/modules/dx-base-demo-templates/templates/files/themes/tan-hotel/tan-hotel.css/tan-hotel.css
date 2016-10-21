@@ -817,6 +817,12 @@ a.read-more:hover {
 
 /* Buttons
 ------------------------------------*/
+
+.search-block .btn-u-lg, a.btn-u-lg {
+	background: #81674b;
+	color: #fff;
+}
+
 .btn-u {
 	background: #cccccc;
 }
