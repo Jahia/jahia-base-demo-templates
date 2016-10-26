@@ -3,8 +3,6 @@
 <jmix = 'http://www.jahia.org/jahia/mix/1.0'>
 <jnt = 'http://www.jahia.org/jahia/nt/1.0'>
 
-[jdmix:jahiademo] > jmix:droppableContent, jmix:editorialContent mixin
-
 [jdnt:navmenu] > jnt:content, jdmix:jahiademo, jmix:droppableContent, jmix:navMenuComponent, jdmix:footerWidgets
  - maxDepth (long) = '4'
  - maxTopLevel (long) = '4'
