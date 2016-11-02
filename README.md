@@ -1,2 +1,2 @@
-# dx-base-demo
-Base demo for the Jahia DX
+# dx-base-demo-templates
+Base demo templates for the Jahia DX
