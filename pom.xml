@@ -55,7 +55,7 @@
   <version>1.0.1-SNAPSHOT</version>
   <packaging>bundle</packaging>
   <name>DX Base Demo Templates</name>
-  <description>This is the custom profile module (dx-base-demo-templates) for running on a DX server.</description>
+  <description>Base demo templates set for Jahia DX</description>
   <scm>
     <connection>scm:git:git@github.com:Jahia/dx-base-demo-templates.git</connection>
     <developerConnection>scm:git:git@github.com:Jahia/dx-base-demo-templates.git</developerConnection>
