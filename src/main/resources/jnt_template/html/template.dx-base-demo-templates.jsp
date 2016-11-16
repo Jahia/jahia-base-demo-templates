@@ -230,7 +230,8 @@
                     <!-- End Footer Message  -->
                     <!-- Social Links -->
                     <div class="col-md-6">
-                        <a href="http://www.jahia.com" title="Powered by Jahia" target="_blank"><img src="/modules/dx-base-demo-templates/img/poweredByJahia.png" alt="Powered by Jahia"></a>
+                        <a href="http://www.jahia.com" title="Powered by Jahia" target="_blank"><img
+                                src="<c:url value="${url.currentModule}/img/poweredByJahia.png"/>" alt="Powered by Jahia"></a>
                     <c:if test="${jcr:isNodeType(renderContext.site, 'jdmix:siteSocialLinks')}">
                         <template:module path="${renderContext.site.path}" view="siteSocialLinks" />
                     </c:if>
