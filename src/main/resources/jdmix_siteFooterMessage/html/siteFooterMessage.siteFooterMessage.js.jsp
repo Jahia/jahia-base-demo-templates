@@ -39,7 +39,8 @@
     <c:when test="${privacyLink == 'link'}">
         <c:if test="${! empty privacyLink}">
             <template:addCacheDependency node="${renderContext.site.properties.privacyPageLink.node}"/>
-            <a href="${renderContext.site.properties.privacyPageLink.node.url}">${privacyPolicyLinkText}</a>
+            <c:url var="privacyPolicyLinkTextUrl" value="${renderContext.site.properties.privacyPageLink.node.url}" context="/"/>
+            <a href="${privacyPolicyLinkTextUrl}">${privacyPolicyLinkText}</a>
         </c:if>
     </c:when>
     <c:when test="${privacyLink == 'modal'}">
@@ -61,7 +62,9 @@
     <c:when test="${termsLink == 'link'}">
         <c:if test="${! empty privacyLink}">
             <template:addCacheDependency node="${renderContext.site.properties.termsPageLink.node}"/>
-            <a href="${renderContext.site.properties.termsPageLink.node.url}">${termsLinkText}</a>
+            <c:url var="termsLinkUrl" value="${renderContext.site.properties.termsPageLink.node.url}" context="/"/>
+
+            <a href="${termsLinkUrl}">${termsLinkText}</a>
         </c:if>
     </c:when>
     <c:when test="${termsLink == 'modal'}">
