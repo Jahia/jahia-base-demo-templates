@@ -61,6 +61,18 @@ printMenu = { node, navMenuLevel ->
                                 correctType |= (it.string.equals(currentNode.name))
                             }
                         }
+                        if (menuItem.isNodeType("jmix:nodeReference")){
+                            try {
+                                currentResource.dependencies.add(menuItem.properties['j:node'].string);
+                                if (menuItem.properties['j:node'].node != null) {
+                                    correctType = true;
+                                } else {
+                                    correctType = false;
+                                }
+                            } catch (ItemNotFoundException e) {
+                                correctType = false;
+                            }
+                        }
 
                         if (correctType) {
                             children = JCRTagUtils.getChildrenOfType(menuItem, "jnt:page,jnt:nodeLink,jnt:externalLink,jnt:navMenuText");
