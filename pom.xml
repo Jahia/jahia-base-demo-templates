@@ -52,7 +52,7 @@
     <version>7.1.2.0</version>
   </parent>
   <artifactId>dx-base-demo-templates</artifactId>
-  <version>1.0.2-SNAPSHOT</version>
+  <version>1.0.1</version>
   <packaging>bundle</packaging>
   <name>DX Base Demo Templates</name>
   <description>Base demo templates set for Jahia DX</description>
@@ -60,7 +60,7 @@
     <connection>scm:git:git@github.com:Jahia/dx-base-demo-templates.git</connection>
     <developerConnection>scm:git:git@github.com:Jahia/dx-base-demo-templates.git</developerConnection>
     <url>https://github.com/Jahia/dx-base-demo-templates</url>
-    <tag>HEAD</tag>
+    <tag>1_0_1</tag>
   </scm>
   <properties>
     <jahia-module-type>templatesSet</jahia-module-type>
