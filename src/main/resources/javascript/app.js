@@ -191,14 +191,6 @@ var App = function () {
             handleEqualHeightColumns();
         },
 
-        //Counters 
-        initCounter: function () {
-            jQuery('.counter').counterUp({
-                delay: 10,
-                time: 1000
-            });
-        },
-
         //Parallax Backgrounds
         initParallaxBg: function () {
             jQuery(window).load(function() {

@@ -81,8 +81,6 @@
     <template:addResources type="javascript" resources="modernizr.js"/>
     <template:addResources type="javascript" resources="jquery.parallax.js"/>
     <template:addResources type="javascript" resources="jquery.cslider.js"/>
-    <template:addResources type="javascript" resources="jquery.counterup.min.js"/>
-    <template:addResources type="javascript" resources="waypoints.min.js"/>
     <!-- CSS Customization -->
     <template:addResources type="css" resources="jahiademo-custom.css"/>
 
