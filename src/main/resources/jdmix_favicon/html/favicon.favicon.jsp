@@ -22,4 +22,4 @@
 <c:set var="icon" value="${siteNode.properties['icon'].node}"/>
 <template:module node='${icon}' editable='false' view='hidden.contentURL' var="iconUrl"/>
 
-<link rel="shortcut icon" href="${iconURL}" type="image/x-icon">
+<link rel="shortcut icon" href="${iconUrl}" type="image/x-icon">
