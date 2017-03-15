@@ -19,7 +19,7 @@
                         </css>
                         <fonts jcr:primaryType="jnt:folder">
                             <glyphicons-halflings-regular.svg jcr:mixinTypes="jmix:image" jcr:primaryType="jnt:file">
-                                <jcr:content j:lastExtractionDate="2016-10-20T14:56:05.531-04:00"
+                                <jcr:content j:lastExtractionDate="2017-03-15T18:14:52.122+01:00"
                                   jcr:mimeType="image/svg+xml"
                                   jcr:primaryType="jnt:resource"/>
                             </glyphicons-halflings-regular.svg>
@@ -176,13 +176,72 @@
                                 <thumbnail2 jcr:mimeType="image/png" jcr:primaryType="jnt:resource"/>
                             </logo1-default.png>
                         </img>
+                        <thumbnails jcr:primaryType="jnt:folder">
+                            <news-entry.png j:height="100"
+                                  j:width="120"
+                                  jcr:mixinTypes="jmix:image"
+                                  jcr:primaryType="jnt:file">
+                                <jcr:content jcr:mimeType="image/png" jcr:primaryType="jnt:resource"/>
+                                <thumbnail jcr:mimeType="image/png" jcr:primaryType="jnt:resource"/>
+                                <thumbnail2 jcr:mimeType="image/png" jcr:primaryType="jnt:resource"/>
+                            </news-entry.png>
+                            <events.png j:height="100"
+                              j:width="120"
+                              jcr:mixinTypes="jmix:image"
+                              jcr:primaryType="jnt:file">
+                                <jcr:content jcr:mimeType="image/png" jcr:primaryType="jnt:resource"/>
+                                <thumbnail jcr:mimeType="image/png" jcr:primaryType="jnt:resource"/>
+                                <thumbnail2 jcr:mimeType="image/png" jcr:primaryType="jnt:resource"/>
+                            </events.png>
+                            <_x0033_-col.png j:height="100"
+                                   j:width="120"
+                                   jcr:mixinTypes="jmix:image"
+                                   jcr:primaryType="jnt:file">
+                                <jcr:content jcr:mimeType="image/png" jcr:primaryType="jnt:resource"/>
+                                <thumbnail jcr:mimeType="image/png" jcr:primaryType="jnt:resource"/>
+                                <thumbnail2 jcr:mimeType="image/png" jcr:primaryType="jnt:resource"/>
+                            </_x0033_-col.png>
+                            <simple.png j:height="100"
+                              j:width="120"
+                              jcr:mixinTypes="jmix:image"
+                              jcr:primaryType="jnt:file">
+                                <jcr:content jcr:mimeType="image/png" jcr:primaryType="jnt:resource"/>
+                                <thumbnail jcr:mimeType="image/png" jcr:primaryType="jnt:resource"/>
+                                <thumbnail2 jcr:mimeType="image/png" jcr:primaryType="jnt:resource"/>
+                            </simple.png>
+                            <no-preview.png j:height="100"
+                                  j:width="120"
+                                  jcr:mixinTypes="jmix:image"
+                                  jcr:primaryType="jnt:file">
+                                <jcr:content jcr:mimeType="image/png" jcr:primaryType="jnt:resource"/>
+                                <thumbnail jcr:mimeType="image/png" jcr:primaryType="jnt:resource"/>
+                                <thumbnail2 jcr:mimeType="image/png" jcr:primaryType="jnt:resource"/>
+                            </no-preview.png>
+                            <news.png j:height="100"
+                            j:width="120"
+                            jcr:mixinTypes="jmix:image"
+                            jcr:primaryType="jnt:file">
+                                <jcr:content jcr:mimeType="image/png" jcr:primaryType="jnt:resource"/>
+                                <thumbnail jcr:mimeType="image/png" jcr:primaryType="jnt:resource"/>
+                                <thumbnail2 jcr:mimeType="image/png" jcr:primaryType="jnt:resource"/>
+                            </news.png>
+                            <_x0032_-col.png j:height="100"
+                                   j:width="120"
+                                   jcr:mixinTypes="jmix:image"
+                                   jcr:primaryType="jnt:file">
+                                <jcr:content jcr:mimeType="image/png" jcr:primaryType="jnt:resource"/>
+                                <thumbnail jcr:mimeType="image/png" jcr:primaryType="jnt:resource"/>
+                                <thumbnail2 jcr:mimeType="image/png" jcr:primaryType="jnt:resource"/>
+                            </_x0032_-col.png>
+                        </thumbnails>
                     </files>
                     <contents jcr:primaryType="jnt:contentFolder"/>
                     <base j:theme="/modules/dx-base-demo-templates/templates/files/themes/default"
                   j:view="dx-base-demo-templates"
                   jcr:mixinTypes="jmix:theme"
                   jcr:primaryType="jnt:template">
-                        <simple jcr:primaryType="jnt:pageTemplate">
+                        <simple j:templateThumbnail="/modules/dx-base-demo-templates/templates/files/thumbnails/simple.png"
+                       jcr:primaryType="jnt:pageTemplate">
                             <pagecontent jcr:primaryType="jnt:contentList">
                                 <section--container--row--grid columnsType="predefinedColumns"
                                                     grid="12"
@@ -198,7 +257,9 @@
                             <logo jcr:primaryType="jdnt:logo"
                         logo="/modules/dx-base-demo-templates/templates/files/img/logo1-default.png"/>
                         </logo>
-                        <_x0032_-column j:hiddenTemplate="false" jcr:primaryType="jnt:pageTemplate">
+                        <_x0032_-column j:hiddenTemplate="false"
+                               j:templateThumbnail="/modules/dx-base-demo-templates/templates/files/thumbnails/2-col.png"
+                               jcr:primaryType="jnt:pageTemplate">
                             <j:translation_en jcr:language="en"
                                     jcr:mixinTypes="mix:title"
                                     jcr:primaryType="jnt:translation"
@@ -211,7 +272,9 @@
                                                     jcr:primaryType="bootstrap3nt:columns"/>
                             </pagecontent>
                         </_x0032_-column>
-                        <_x0033_-column j:hiddenTemplate="false" jcr:primaryType="jnt:pageTemplate">
+                        <_x0033_-column j:hiddenTemplate="false"
+                               j:templateThumbnail="/modules/dx-base-demo-templates/templates/files/thumbnails/3-col.png"
+                               jcr:primaryType="jnt:pageTemplate">
                             <j:translation_en jcr:language="en"
                                     jcr:mixinTypes="mix:title"
                                     jcr:primaryType="jnt:translation"
@@ -224,7 +287,8 @@
                                                     jcr:primaryType="bootstrap3nt:columns"/>
                             </pagecontent>
                         </_x0033_-column>
-                        <home jcr:primaryType="jnt:pageTemplate">
+                        <home j:templateThumbnail="/modules/dx-base-demo-templates/templates/files/thumbnails/simple.png"
+                     jcr:primaryType="jnt:pageTemplate">
                             <j:translation_en jcr:language="en"
                                     jcr:mixinTypes="mix:title"
                                     jcr:primaryType="jnt:translation"
@@ -275,7 +339,9 @@
                          jcr:mixinTypes="jmix:renderable"
                          jcr:primaryType="jdnt:login"/>
                         </modals>
-                        <news j:hiddenTemplate="false" jcr:primaryType="jnt:pageTemplate">
+                        <news j:hiddenTemplate="false"
+                     j:templateThumbnail="/modules/dx-base-demo-templates/templates/files/thumbnails/news.png"
+                     jcr:primaryType="jnt:pageTemplate">
                             <j:translation_en jcr:language="en"
                                     jcr:mixinTypes="mix:title"
                                     jcr:primaryType="jnt:translation"
@@ -342,7 +408,9 @@
                                           jcr:title="Newsroom"/>
                                 </banner>
                             </landing>
-                            <news-entry j:hiddenTemplate="false" jcr:primaryType="jnt:pageTemplate">
+                            <news-entry j:hiddenTemplate="false"
+                              j:templateThumbnail="/modules/dx-base-demo-templates/templates/files/thumbnails/news-entry.png"
+                              jcr:primaryType="jnt:pageTemplate">
                                 <j:translation_en jcr:language="en"
                                        jcr:mixinTypes="mix:title"
                                        jcr:primaryType="jnt:translation"
@@ -385,7 +453,9 @@
                                 <back-to-parent-page jcr:primaryType="jnt:backToParentPage"/>
                             </pagecontent>
                         </person-bio-content-template>
-                        <events j:hiddenTemplate="false" jcr:primaryType="jnt:pageTemplate">
+                        <events j:hiddenTemplate="false"
+                       j:templateThumbnail="/modules/dx-base-demo-templates/templates/files/thumbnails/events.png"
+                       jcr:primaryType="jnt:pageTemplate">
                             <j:translation_en jcr:language="en"
                                     jcr:mixinTypes="mix:title"
                                     jcr:primaryType="jnt:translation"
