@@ -197,7 +197,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 md-margin-bottom-40">
-                        <template:area path="footer-1" nodeTypes="jdmix:footerWidgets" moduleType="absoluteArea"
+                        <template:area path="footer-1" moduleType="absoluteArea"
                                        level="0"/>
                     </div>
                     <!--/col-md-12-->
