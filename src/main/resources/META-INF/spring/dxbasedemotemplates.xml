@@ -89,4 +89,38 @@
             </list>
         </property>
     </bean>
+    <bean id="headerCustomInitializer" class="org.jahia.services.content.nodetypes.initializers.FixedListChoiceListInitializer">
+        <property name="key" value="headerCustomInitializer"/>
+        <property name="items">
+            <list>
+                <bean class="org.jahia.services.content.nodetypes.initializers.ChoiceListValue">
+                    <property name="displayName" value="None"/>
+                    <property name="stringValue" value="none"/>
+                    <property name="properties">
+                        <map>
+                            <entry key="defaultProperty" value="true"/>
+                        </map>
+                    </property>
+                </bean>
+                <bean class="org.jahia.services.content.nodetypes.initializers.ChoiceListValue">
+                    <property name="displayName" value="Background Color"/>
+                    <property name="stringValue" value="backgroundColor"/>
+                    <property name="properties">
+                        <map>
+                            <entry key="addMixin" value="jdmix:backgroundColor"/>
+                        </map>
+                    </property>
+                </bean>
+                <bean class="org.jahia.services.content.nodetypes.initializers.ChoiceListValue">
+                    <property name="displayName" value="Background Image"/>
+                    <property name="stringValue" value="backgroundImage"/>
+                    <property name="properties">
+                        <map>
+                            <entry key="addMixin" value="jdmix:backgroundImage"/>
+                        </map>
+                    </property>
+                </bean>
+            </list>
+        </property>
+    </bean>
 </beans>

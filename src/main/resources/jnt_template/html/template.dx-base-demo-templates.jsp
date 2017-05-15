@@ -112,7 +112,15 @@
     <c:set var="stickyHeader" value="header-sticky"/>
 </c:if>
 
+<c:choose>
+<c:when test="${jcr:isNodeType(siteNode, 'jdmix:backgroundColor') && not empty siteNode.properties.headerBackgroundColor}">
+<body class="header-fixed ${headerSpace} <template:include view="hidden.style"/>" style="background : ${siteNode.properties.headerBackgroundColor.string};">
+</c:when>
+<c:otherwise>
 <body class="header-fixed ${headerSpace} <template:include view="hidden.style"/>">
+</c:otherwise>
+</c:choose>
+
 <c:if test="${jcr:isNodeType(siteNode, 'jdmix:cookies')}">
     <template:module node="${siteNode}" view="cookieView" editable="false"/>
 </c:if>
@@ -155,95 +163,107 @@
         <!-- End Topbar blog -->
 
         <!-- Navbar -->
-        <div class="navbar mega-menu" role="navigation">
 
-            <div class="container">
-                <div class="res-container">
-                    <template:area path="toggleNav"/>
-                    <c:choose>
-                        <%-- check to see if the site has site logo specified, if not then use the logo area as defined in the template definition--%>
-                        <c:when test="${jcr:isNodeType(siteNode, 'jdmix:siteLogo')}">
-                            <div class="navbar-brand">
-                                <template:module node="${siteNode}" view="default" nodeTypes="jdmix:siteLogo"
-                                                 editable="true"/>
-                            </div>
-                        </c:when>
-                        <c:otherwise>
-                            <div id="logo" class="navbar-brand">
-                                <template:area path="logo"/>
-                            </div>
-                        </c:otherwise>
+        <c:choose>
+        <c:when test="${jcr:isNodeType(siteNode, 'jdmix:backgroundImage') && not empty siteNode.properties.headerBackgroundImage}">
+            <c:url var="backgoundImageUrl" value="${siteNode.properties.headerBackgroundImage.node.url}" context="/"/>
+        <div class="navbar mega-menu" role="navigation" style="background : ${siteNode.properties.headerBackgroundColor.string};background: url(${backgoundImageUrl}) no-repeat scroll center center / cover;">
+            </c:when>
+            <c:when test="${jcr:isNodeType(siteNode, 'jdmix:backgroundColor') && not empty siteNode.properties.headerBackgroundColor}">
+            <div class="navbar mega-menu" role="navigation" style="background : ${siteNode.properties.headerBackgroundColor.string};">
+                </c:when>
+                <c:otherwise>
+                <div class="navbar mega-menu" role="navigation">
+                    </c:otherwise>
                     </c:choose>
-                </div>
-                <div class="collapse navbar-collapse navbar-responsive-collapse">
-                    <template:area path="navmenu"/>
-                </div>
-            </div>
-        </div>
-        <!-- End Navbar -->
-    </div>
-    <!--=== End Header v8 ===-->
 
-    <template:area path="landing"/>
-    <!--=== Content Part ===-->
-    <div class="container margin-top-20">
-        <template:area path="pagecontent"/>
-    </div>
-    <!-- End Content Part -->
-    <br/>
-    <!--=== Footer Version 1 ===-->
-    <div class="footer-v1">
-        <div class="footer">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12 md-margin-bottom-40">
-                        <template:area path="footer-1" moduleType="absoluteArea"
-                                       level="0"/>
+                    <div class="container">
+                        <div class="res-container">
+                            <template:area path="toggleNav"/>
+                            <c:choose>
+                                <%-- check to see if the site has site logo specified, if not then use the logo area as defined in the template definition--%>
+                                <c:when test="${jcr:isNodeType(siteNode, 'jdmix:siteLogo')}">
+                                    <div class="navbar-brand">
+                                        <template:module node="${siteNode}" view="default" nodeTypes="jdmix:siteLogo"
+                                                         editable="true"/>
+                                    </div>
+                                </c:when>
+                                <c:otherwise>
+                                    <div id="logo" class="navbar-brand">
+                                        <template:area path="logo"/>
+                                    </div>
+                                </c:otherwise>
+                            </c:choose>
+                        </div>
+                        <div class="collapse navbar-collapse navbar-responsive-collapse">
+                            <template:area path="navmenu"/>
+                        </div>
                     </div>
-                    <!--/col-md-12-->
-
                 </div>
+                <!-- End Navbar -->
             </div>
-        </div>
-        <!--/footer-->
+            <!--=== End Header v8 ===-->
 
-        <div class="copyright">
-            <div class="container">
-                <div class="row">
-                    <!-- Footer Message  -->
-                    <div class="col-md-6">
-                        <c:choose>
-                            <c:when test="${jcr:isNodeType(renderContext.site, 'jdmix:siteFooterMessage')}">
-                                <template:module path="${renderContext.site.path}" view="siteFooterMessage" />
-                            </c:when>
-                            <c:otherwise>
-                        <p>
-                            ${thisYear} &copy; <fmt:message key="footer.copyrights"/>
-                            <a href="#"><fmt:message key="footer.privacy"/></a> | <a href="#"><fmt:message
-                                key="footer.terms"/></a>
-                        </p>
-                            </c:otherwise>
-                        </c:choose>
-                    </div>
-                    <!-- End Footer Message  -->
-                    <!-- Social Links -->
-                    <div class="col-md-6">
-                        <a href="http://www.jahia.com" title="Powered by Jahia" target="_blank"><img
-                                src="<c:url value="${url.currentModule}/img/poweredByJahia.png"/>" alt="Powered by Jahia"></a>
-                    <c:if test="${jcr:isNodeType(renderContext.site, 'jdmix:siteSocialLinks')}">
-                        <template:module path="${renderContext.site.path}" view="siteSocialLinks" />
-                    </c:if>
-                    </div>
-                    <!-- End Social Links -->
-                </div>
+            <template:area path="landing"/>
+            <!--=== Content Part ===-->
+            <div class="container margin-top-20">
+                <template:area path="pagecontent"/>
             </div>
+            <!-- End Content Part -->
+            <br/>
+            <!--=== Footer Version 1 ===-->
+            <div class="footer-v1">
+                <div class="footer">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12 md-margin-bottom-40">
+                                <template:area path="footer-1" moduleType="absoluteArea"
+                                               level="0"/>
+                            </div>
+                            <!--/col-md-12-->
+
+                        </div>
+                    </div>
+                </div>
+                <!--/footer-->
+
+                <div class="copyright">
+                    <div class="container">
+                        <div class="row">
+                            <!-- Footer Message  -->
+                            <div class="col-md-6">
+                                <c:choose>
+                                    <c:when test="${jcr:isNodeType(renderContext.site, 'jdmix:siteFooterMessage')}">
+                                        <template:module path="${renderContext.site.path}" view="siteFooterMessage" />
+                                    </c:when>
+                                    <c:otherwise>
+                                        <p>
+                                                ${thisYear} &copy; <fmt:message key="footer.copyrights"/>
+                                            <a href="#"><fmt:message key="footer.privacy"/></a> | <a href="#"><fmt:message
+                                                key="footer.terms"/></a>
+                                        </p>
+                                    </c:otherwise>
+                                </c:choose>
+                            </div>
+                            <!-- End Footer Message  -->
+                            <!-- Social Links -->
+                            <div class="col-md-6">
+                                <a href="http://www.jahia.com" title="Powered by Jahia" target="_blank"><img
+                                        src="<c:url value="${url.currentModule}/img/poweredByJahia.png"/>" alt="Powered by Jahia"></a>
+                                <c:if test="${jcr:isNodeType(renderContext.site, 'jdmix:siteSocialLinks')}">
+                                    <template:module path="${renderContext.site.path}" view="siteSocialLinks" />
+                                </c:if>
+                            </div>
+                            <!-- End Social Links -->
+                        </div>
+                    </div>
+                </div>
+                <!--/copyright-->
+            </div>
+            <!--=== End Footer Version 1 ===-->
+            <template:area path="modals"/>
         </div>
-        <!--/copyright-->
-    </div>
-    <!--=== End Footer Version 1 ===-->
-    <template:area path="modals"/>
-</div>
-<!--/wrapper-->
+        <!--/wrapper-->
 
 </body>
 </html>

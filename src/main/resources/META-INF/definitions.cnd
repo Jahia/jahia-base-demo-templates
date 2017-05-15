@@ -103,3 +103,17 @@
  itemtype = options
  - termsModalMessage (string, richtext) internationalized
 
+[jdmix:headerCustomisations] mixin
+ extends = jnt:virtualsite
+ itemtype = options
+ - headerCustomisation (string, choicelist[headerCustomInitializer,resourceBundle]) = 'none' internationalized
+
+[jdmix:backgroundColor] > jmix:templateMixin mixin
+ extends = jnt:virtualsite
+ itemtype = options
+ - headerBackgroundColor (string, color) internationalized
+
+[jdmix:backgroundImage] > jmix:templateMixin mixin
+ extends = jnt:virtualsite
+ itemtype = options
+ - headerBackgroundImage (weakreference, picker[type='image']) internationalized
