@@ -26,7 +26,7 @@ body.header-fixed-space {
   padding-top: 94px;
 }
 body.header-fixed-space-v2 {
-	padding-top: 135px;
+	padding-top: 134px;
 }
 
 @media (max-width: 991px) {
@@ -61,6 +61,14 @@ a:hover {
    color: #e74c3c;
    text-decoration: underline;
 }
+
+
+/*Navigation Layout
+------------------------------------*/
+body div.navbar{
+	border: none;
+}
+
 
 /*Boxed Layout
 ------------------------------------*/

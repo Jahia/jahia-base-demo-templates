@@ -2473,7 +2473,7 @@ div.box6-blue {
 
 
 
-/* remove active button bacground */
+/* remove active button background */
 .btn:active, .btn.active {
 	-webkit-box-shadow: none!important;
 	box-shadow: none!important;

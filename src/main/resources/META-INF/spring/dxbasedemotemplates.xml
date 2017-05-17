@@ -89,8 +89,8 @@
             </list>
         </property>
     </bean>
-    <bean id="headerCustomInitializer" class="org.jahia.services.content.nodetypes.initializers.FixedListChoiceListInitializer">
-        <property name="key" value="headerCustomInitializer"/>
+    <bean id="topHeaderCustomInitializer" class="org.jahia.services.content.nodetypes.initializers.FixedListChoiceListInitializer">
+        <property name="key" value="topHeaderCustomInitializer"/>
         <property name="items">
             <list>
                 <bean class="org.jahia.services.content.nodetypes.initializers.ChoiceListValue">
@@ -104,19 +104,121 @@
                 </bean>
                 <bean class="org.jahia.services.content.nodetypes.initializers.ChoiceListValue">
                     <property name="displayName" value="Background Color"/>
-                    <property name="stringValue" value="backgroundColor"/>
+                    <property name="stringValue" value="topBackgroundColor"/>
                     <property name="properties">
                         <map>
-                            <entry key="addMixin" value="jdmix:backgroundColor"/>
+                            <entry key="addMixin" value="jdmix:topBackgroundColor"/>
                         </map>
                     </property>
                 </bean>
                 <bean class="org.jahia.services.content.nodetypes.initializers.ChoiceListValue">
                     <property name="displayName" value="Background Image"/>
-                    <property name="stringValue" value="backgroundImage"/>
+                    <property name="stringValue" value="topBackgroundImage"/>
                     <property name="properties">
                         <map>
-                            <entry key="addMixin" value="jdmix:backgroundImage"/>
+                            <entry key="addMixin" value="jdmix:topBackgroundImage"/>
+                        </map>
+                    </property>
+                </bean>
+            </list>
+        </property>
+    </bean>
+    <bean id="bottomHeaderCustomInitializer" class="org.jahia.services.content.nodetypes.initializers.FixedListChoiceListInitializer">
+        <property name="key" value="bottomHeaderCustomInitializer"/>
+        <property name="items">
+            <list>
+                <bean class="org.jahia.services.content.nodetypes.initializers.ChoiceListValue">
+                    <property name="displayName" value="None"/>
+                    <property name="stringValue" value="none"/>
+                    <property name="properties">
+                        <map>
+                            <entry key="defaultProperty" value="true"/>
+                        </map>
+                    </property>
+                </bean>
+                <bean class="org.jahia.services.content.nodetypes.initializers.ChoiceListValue">
+                    <property name="displayName" value="Background Color"/>
+                    <property name="stringValue" value="bottomBackgroundColor"/>
+                    <property name="properties">
+                        <map>
+                            <entry key="addMixin" value="jdmix:bottomBackgroundColor"/>
+                        </map>
+                    </property>
+                </bean>
+                <bean class="org.jahia.services.content.nodetypes.initializers.ChoiceListValue">
+                    <property name="displayName" value="Background Image"/>
+                    <property name="stringValue" value="bottomBackgroundImage"/>
+                    <property name="properties">
+                        <map>
+                            <entry key="addMixin" value="jdmix:bottomBackgroundImage"/>
+                        </map>
+                    </property>
+                </bean>
+            </list>
+        </property>
+    </bean>
+    <bean id="topFooterCustomInitializer" class="org.jahia.services.content.nodetypes.initializers.FixedListChoiceListInitializer">
+        <property name="key" value="topFooterCustomInitializer"/>
+        <property name="items">
+            <list>
+                <bean class="org.jahia.services.content.nodetypes.initializers.ChoiceListValue">
+                    <property name="displayName" value="None"/>
+                    <property name="stringValue" value="none"/>
+                    <property name="properties">
+                        <map>
+                            <entry key="defaultProperty" value="true"/>
+                        </map>
+                    </property>
+                </bean>
+                <bean class="org.jahia.services.content.nodetypes.initializers.ChoiceListValue">
+                    <property name="displayName" value="Background Color"/>
+                    <property name="stringValue" value="footerTopBackgroundColor"/>
+                    <property name="properties">
+                        <map>
+                            <entry key="addMixin" value="jdmix:topFooterBackgroundColor"/>
+                        </map>
+                    </property>
+                </bean>
+                <bean class="org.jahia.services.content.nodetypes.initializers.ChoiceListValue">
+                    <property name="displayName" value="Background Image"/>
+                    <property name="stringValue" value="footertopBackgroundImage"/>
+                    <property name="properties">
+                        <map>
+                            <entry key="addMixin" value="jdmix:topFooterBackgroundImage"/>
+                        </map>
+                    </property>
+                </bean>
+            </list>
+        </property>
+    </bean>
+    <bean id="bottomFooterCustomInitializer" class="org.jahia.services.content.nodetypes.initializers.FixedListChoiceListInitializer">
+        <property name="key" value="bottomFooterCustomInitializer"/>
+        <property name="items">
+            <list>
+                <bean class="org.jahia.services.content.nodetypes.initializers.ChoiceListValue">
+                    <property name="displayName" value="None"/>
+                    <property name="stringValue" value="none"/>
+                    <property name="properties">
+                        <map>
+                            <entry key="defaultProperty" value="true"/>
+                        </map>
+                    </property>
+                </bean>
+                <bean class="org.jahia.services.content.nodetypes.initializers.ChoiceListValue">
+                    <property name="displayName" value="Background Color"/>
+                    <property name="stringValue" value="footerBottomBackgroundColor"/>
+                    <property name="properties">
+                        <map>
+                            <entry key="addMixin" value="jdmix:bottomFooterBackgroundColor"/>
+                        </map>
+                    </property>
+                </bean>
+                <bean class="org.jahia.services.content.nodetypes.initializers.ChoiceListValue">
+                    <property name="displayName" value="Background Image"/>
+                    <property name="stringValue" value="footerBottomBackgroundImage"/>
+                    <property name="properties">
+                        <map>
+                            <entry key="addMixin" value="jdmix:bottomFooterBackgroundImage"/>
                         </map>
                     </property>
                 </bean>

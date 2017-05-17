@@ -103,17 +103,63 @@
  itemtype = options
  - termsModalMessage (string, richtext) internationalized
 
-[jdmix:headerCustomisations] mixin
+[jdmix:topHeaderCustomization] mixin
  extends = jnt:virtualsite
  itemtype = options
- - headerCustomisation (string, choicelist[headerCustomInitializer,resourceBundle]) = 'none' internationalized
+ - topHeaderCustomization (string, choicelist[topHeaderCustomInitializer,resourceBundle]) = 'none' internationalized
 
-[jdmix:backgroundColor] > jmix:templateMixin mixin
+[jdmix:topBackgroundColor] > jmix:templateMixin mixin
  extends = jnt:virtualsite
  itemtype = options
- - headerBackgroundColor (string, color) internationalized
+ - topHeaderBackgroundColor (string) internationalized
 
-[jdmix:backgroundImage] > jmix:templateMixin mixin
+[jdmix:topBackgroundImage] > jmix:templateMixin mixin
  extends = jnt:virtualsite
  itemtype = options
- - headerBackgroundImage (weakreference, picker[type='image']) internationalized
+ - topHeaderBackgroundImage (weakreference, picker[type='image']) internationalized
+
+[jdmix:bottomHeaderCustomization] mixin
+ extends = jnt:virtualsite
+ itemtype = options
+ - bottomHeaderCustomization (string, choicelist[bottomHeaderCustomInitializer,resourceBundle]) = 'none' internationalized
+
+[jdmix:bottomBackgroundColor] > jmix:templateMixin mixin
+ extends = jnt:virtualsite
+ itemtype = options
+ - bottomHeaderBackgroundColor (string) internationalized
+
+[jdmix:bottomBackgroundImage] > jmix:templateMixin mixin
+ extends = jnt:virtualsite
+ itemtype = options
+ - bottomHeaderBackgroundImage (weakreference, picker[type='image']) internationalized
+
+[jdmix:topFooterCustomization] mixin
+ extends = jnt:virtualsite
+ itemtype = options
+ - topFooterCustomization (string, choicelist[topFooterCustomInitializer,resourceBundle]) = 'none' internationalized
+
+[jdmix:topFooterBackgroundColor] > jmix:templateMixin mixin
+ extends = jnt:virtualsite
+ itemtype = options
+ - topFooterBackgroundColor (string) internationalized
+
+[jdmix:topFooterBackgroundImage] > jmix:templateMixin mixin
+ extends = jnt:virtualsite
+ itemtype = options
+ - topFooterBackgroundImage (weakreference, picker[type='image']) internationalized
+
+[jdmix:bottomFooterCustomization] mixin
+ extends = jnt:virtualsite
+ itemtype = options
+ - bottomFooterCustomization (string, choicelist[bottomFooterCustomInitializer,resourceBundle]) = 'none' internationalized
+
+[jdmix:bottomFooterBackgroundColor] > jmix:templateMixin mixin
+ extends = jnt:virtualsite
+ itemtype = options
+ - bottomFooterBackgroundColor (string) internationalized
+
+[jdmix:bottomFooterBackgroundImage] > jmix:templateMixin mixin
+ extends = jnt:virtualsite
+ itemtype = options
+ - bottomFooterBackgroundImage (weakreference, picker[type='image']) internationalized
+

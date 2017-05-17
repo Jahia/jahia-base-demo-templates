@@ -112,15 +112,43 @@
     <c:set var="stickyHeader" value="header-sticky"/>
 </c:if>
 
-<c:choose>
-<c:when test="${jcr:isNodeType(siteNode, 'jdmix:backgroundColor') && not empty siteNode.properties.headerBackgroundColor}">
-<body class="header-fixed ${headerSpace} <template:include view="hidden.style"/>" style="background : ${siteNode.properties.headerBackgroundColor.string};">
-</c:when>
-<c:otherwise>
-<body class="header-fixed ${headerSpace} <template:include view="hidden.style"/>">
-</c:otherwise>
-</c:choose>
 
+<c:if test="${jcr:isNodeType(siteNode, 'jdmix:topBackgroundColor') && not empty siteNode.properties.topHeaderBackgroundColor}">
+    <c:set var="bodyTopBackgroundColor" value="style='background : ${siteNode.properties.topHeaderBackgroundColor.string};'"/>
+    <c:set var="bodyNavBackground" value="style='background : ${siteNode.properties.topHeaderBackgroundColor.string};'"/>
+</c:if>
+<c:if test="${jcr:isNodeType(siteNode, 'jdmix:topBackgroundImage') && not empty siteNode.properties.topHeaderBackgroundImage}">
+    <c:url var="topBackgoundImageUrl" value="${siteNode.properties.topHeaderBackgroundImage.node.url}" context="/"/>
+    <c:set var="bodyNavBackground" value="style='background : url(${topBackgoundImageUrl}) no-repeat scroll center center / cover;'"/>
+</c:if>
+
+<c:if test="${jcr:isNodeType(siteNode, 'jdmix:bottomBackgroundColor') && not empty siteNode.properties.bottomHeaderBackgroundColor}">
+    <c:set var="blogTopbarBackground" value="style='background : ${siteNode.properties.bottomHeaderBackgroundColor.string};'"/>
+</c:if>
+<c:if test="${jcr:isNodeType(siteNode, 'jdmix:bottomBackgroundImage') && not empty siteNode.properties.bottomHeaderBackgroundImage}">
+    <c:url var="bottomBackgoundImageUrl" value="${siteNode.properties.bottomHeaderBackgroundImage.node.url}" context="/"/>
+    <c:set var="blogTopbarBackground" value="style='background : url(${bottomBackgoundImageUrl}) no-repeat scroll center center / cover;'"/>
+</c:if>
+
+
+<c:if test="${jcr:isNodeType(siteNode, 'jdmix:topFooterBackgroundColor') && not empty siteNode.properties.topFooterBackgroundColor}">
+    <c:set var="topFooterBackground" value="style='background : ${siteNode.properties.topFooterBackgroundColor.string};'"/>
+</c:if>
+<c:if test="${jcr:isNodeType(siteNode, 'jdmix:topFooterBackgroundImage') && not empty siteNode.properties.topFooterBackgroundImage}">
+    <c:url var="topFooterBackgoundImageUrl" value="${siteNode.properties.topFooterBackgroundImage.node.url}" context="/"/>
+    <c:set var="topFooterBackground" value="style='background : url(${topFooterBackgoundImageUrl}) no-repeat scroll center center / cover;'"/>
+</c:if>
+
+<c:if test="${jcr:isNodeType(siteNode, 'jdmix:bottomFooterBackgroundColor') && not empty siteNode.properties.bottomFooterBackgroundColor}">
+    <c:set var="bottomFooterBackground" value="style='background : ${siteNode.properties.bottomFooterBackgroundColor.string};'"/>
+</c:if>
+<c:if test="${jcr:isNodeType(siteNode, 'jdmix:bottomFooterBackgroundImage') && not empty siteNode.properties.bottomFooterBackgroundImage}">
+    <c:url var="bottomFooterBackgoundImageUrl" value="${siteNode.properties.bottomFooterBackgroundImage.node.url}" context="/"/>
+    <c:set var="bottomFooterBackground" value="style='background : url(${bottomFooterBackgoundImageUrl}) no-repeat scroll center center / cover;'"/>
+</c:if>
+
+
+<body class="header-fixed ${headerSpace} <template:include view="hidden.style"/>" ${bodyTopBackgroundColor}>
 <c:if test="${jcr:isNodeType(siteNode, 'jdmix:cookies')}">
     <template:module node="${siteNode}" view="cookieView" editable="false"/>
 </c:if>
@@ -128,7 +156,7 @@
     <!--=== Header v8 ===-->
     <div class="header-v8 ${stickyHeader}">
         <!-- Topbar blog -->
-        <div class="blog-topbar">
+        <div class="blog-topbar" ${blogTopbarBackground}>
             <div class="topbar-search-block">
                 <template:area path="search"/>
             </div>
@@ -164,19 +192,7 @@
 
         <!-- Navbar -->
 
-        <c:choose>
-        <c:when test="${jcr:isNodeType(siteNode, 'jdmix:backgroundImage') && not empty siteNode.properties.headerBackgroundImage}">
-            <c:url var="backgoundImageUrl" value="${siteNode.properties.headerBackgroundImage.node.url}" context="/"/>
-        <div class="navbar mega-menu" role="navigation" style="background : ${siteNode.properties.headerBackgroundColor.string};background: url(${backgoundImageUrl}) no-repeat scroll center center / cover;">
-            </c:when>
-            <c:when test="${jcr:isNodeType(siteNode, 'jdmix:backgroundColor') && not empty siteNode.properties.headerBackgroundColor}">
-            <div class="navbar mega-menu" role="navigation" style="background : ${siteNode.properties.headerBackgroundColor.string};">
-                </c:when>
-                <c:otherwise>
-                <div class="navbar mega-menu" role="navigation">
-                    </c:otherwise>
-                    </c:choose>
-
+        <div class="navbar mega-menu" role="navigation" ${bodyNavBackground}>
                     <div class="container">
                         <div class="res-container">
                             <template:area path="toggleNav"/>
@@ -213,7 +229,7 @@
             <br/>
             <!--=== Footer Version 1 ===-->
             <div class="footer-v1">
-                <div class="footer">
+                <div class="footer" ${topFooterBackground}>
                     <div class="container">
                         <div class="row">
                             <div class="col-md-12 md-margin-bottom-40">
@@ -227,7 +243,7 @@
                 </div>
                 <!--/footer-->
 
-                <div class="copyright">
+                <div class="copyright" ${bottomFooterBackground}>
                     <div class="container">
                         <div class="row">
                             <!-- Footer Message  -->
