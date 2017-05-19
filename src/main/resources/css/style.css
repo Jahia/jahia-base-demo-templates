@@ -82,6 +82,8 @@ body div.navbar{
   margin-left: auto !important;
   margin-right: auto !important;
   background: url(../img/patterns/15.png) repeat;
+	padding-left: 0 !important;
+	padding-right: 0 !important;
 }
 
 /*Main Styles
