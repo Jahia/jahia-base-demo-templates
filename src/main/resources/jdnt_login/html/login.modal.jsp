@@ -49,7 +49,7 @@
                             <label class="image-replace cd-password" for="signin-password">
                                 <fmt:message key="label.password"/></label>
                             <input class="full-width has-padding has-border" name="password" id="password"
-                                   type="password" placeholder="<fmt:message key="label.password"/>"/>
+                                   type="password" placeholder="<fmt:message key="label.password"/>" autocomplete="off"/>
                             <a href="javascript:void(0);" class="hide-password">Show</a>
                             <span class="cd-error-message">Error message here!</span>
                         </p>
