@@ -1755,3 +1755,50 @@ ul.sitemap-list ul li a{
 	}
 }
 /* end media gallery play button overlay */
+
+#bookmark {
+	background-color: transparent;
+	border: 0px solid;
+}
+
+.btn-bookmark {
+	box-shadow: none;
+	border-radius: 0;
+	font-weight: 400;
+	display: inline-block;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	margin-bottom: 0;
+	touch-action: manipulation;
+	cursor: pointer;
+	user-select: none;
+	background-image: none;
+	border: 1px solid transparent;
+	position: relative;
+	display: inline-block;
+}
+
+.btn-bookmark input,
+.btn-bookmark i {
+	color: #eee;
+	font-size: 10px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+}
+
+.btn-bookmark input {
+	padding: 7px 12px 7px 0px;
+}
+
+.btn-bookmark i {
+	padding: 7px 0px 7px 12px;
+}
+
+a.userMyBookmarksListIcon {
+	background: none !important;
+}
+
+.userMyBookmarksList .floatright {
+	float: right;
+}

@@ -66,6 +66,7 @@
     <template:addResources type="css" resources="blocks.css"/>
     <template:addResources type="css" resources="plugins.css"/>
     <template:addResources type="css" resources="app.css"/>
+    <template:addResources type="css" resources="toastr.min.css"/>
     <template:addResources type="css" resources="plugins/cube-portfolio/cubeportfolio/css/cubeportfolio.min.css"/>
     <template:addResources type="css" resources="plugins/cube-portfolio/cubeportfolio/custom/custom-cubeportfolio.css"/>
     <!-- CSS Jahia Theme -->
@@ -81,6 +82,7 @@
     <template:addResources type="javascript" resources="modernizr.js"/>
     <template:addResources type="javascript" resources="jquery.parallax.js"/>
     <template:addResources type="javascript" resources="jquery.cslider.js"/>
+    <template:addResources type="javascript" resources="toastr.min.js"/>
     <!-- CSS Customization -->
     <template:addResources type="css" resources="jahiademo-custom.css"/>
 
@@ -264,6 +266,7 @@
                             <!-- End Footer Message  -->
                             <!-- Social Links -->
                             <div class="col-md-6">
+                                <template:area path="bookmarksArea"/>
                                 <a href="http://www.jahia.com" title="Powered by Jahia" target="_blank"><img
                                         src="<c:url value="${url.currentModule}/img/poweredByJahia.png"/>" alt="Powered by Jahia"></a>
                                 <c:if test="${jcr:isNodeType(renderContext.site, 'jdmix:siteSocialLinks')}">

@@ -44,7 +44,8 @@
         please contact the sales department at sales@jahia.com.
 
 -->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>org.jahia.modules</groupId>
@@ -60,11 +61,10 @@
     <connection>scm:git:git@github.com:Jahia/dx-base-demo-templates.git</connection>
     <developerConnection>scm:git:git@github.com:Jahia/dx-base-demo-templates.git</developerConnection>
     <url>https://github.com/Jahia/dx-base-demo-templates</url>
-    <tag>HEAD</tag>
   </scm>
   <properties>
     <jahia-module-type>templatesSet</jahia-module-type>
-    <jahia-depends>bootstrap3-components,bootstrap3-core,default,dx-base-demo-core,font-awesome,calendar,event,facets,grid,jquery,location,news,person,press,rating,search,topstories</jahia-depends>
+    <jahia-depends>bootstrap3-components,bootstrap3-core,default,dx-base-demo-core,font-awesome,calendar,event,facets,grid,jquery,location,bookmarks,news,person,press,rating,search,topstories</jahia-depends>
   </properties>
   <repositories>
     <repository>
@@ -94,22 +94,20 @@
       <url>https://devtools.jahia.com/nexus/content/groups/public</url>
     </pluginRepository>
   </pluginRepositories>
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.felix</groupId>
-                <artifactId>maven-bundle-plugin</artifactId>
-                <extensions>true</extensions>
-                <configuration>
-                    <instructions>
-                        <Import-Package>
-                            org.jahia.services.search,
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.felix</groupId>
+        <artifactId>maven-bundle-plugin</artifactId>
+        <extensions>true</extensions>
+        <configuration>
+          <instructions>
+            <Import-Package>org.jahia.services.search,
                             ${jahia.plugin.projectPackageImport},
-                            *
-                        </Import-Package>
-                    </instructions>
-                </configuration>
-            </plugin>            
-        </plugins>
-    </build>
+                            *</Import-Package>
+          </instructions>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 </project>
