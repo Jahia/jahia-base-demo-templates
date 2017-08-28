@@ -225,4 +225,13 @@
             </list>
         </property>
     </bean>
+
+    <bean id="cleanUpAssetsAMPFilter" class="org.jahia.modules.digitall.filters.AssetsAMPFilter">
+        <property name="priority" value="-1"/>
+        <property name="applyOnEditMode" value="false"/>
+        <property name="applyOnConfigurations" value="page"/>
+        <!-- If adding any new "amp" views for a nodetype, the nodetype should also be defined in the following filter
+         -->
+        <property name="applyOnNodeTypes" value="jnt:news"/>
+    </bean>
 </beans>
