@@ -44,8 +44,7 @@
         please contact the sales department at sales@jahia.com.
 
 -->
-<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>org.jahia.modules</groupId>
@@ -53,7 +52,7 @@
     <version>7.2.0.2</version>
   </parent>
   <artifactId>dx-base-demo-templates</artifactId>
-  <version>2.0.2-SNAPSHOT</version>
+  <version>2.0.2</version>
   <packaging>bundle</packaging>
   <name>DX Base Demo Templates</name>
   <description>Base demo templates set for Jahia DX</description>
@@ -61,6 +60,7 @@
     <connection>scm:git:git@github.com:Jahia/dx-base-demo-templates.git</connection>
     <developerConnection>scm:git:git@github.com:Jahia/dx-base-demo-templates.git</developerConnection>
     <url>https://github.com/Jahia/dx-base-demo-templates</url>
+    <tag>2_0_2</tag>
   </scm>
   <properties>
     <jahia-module-type>templatesSet</jahia-module-type>
