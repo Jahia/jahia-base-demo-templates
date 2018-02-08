@@ -49,7 +49,10 @@
     <!-- CSS Implementing Plugins -->
     <template:addResources type="css" resources="animate.css"/>
     <template:addResources type="css" resources="line-icons.css"/>
-    <template:addResources type="css" resources="font-awesome.min.css"/>
+    <template:addResources type="javascript" resources="fa-v4-shims.min.js"/>
+    <template:addResources type="javascript" resources="fontawesome-all.min.js"/>
+    <template:addResources type="javascript" resources="fa-v4-shims.min.js"/>
+    <template:addResources type="javascript" resources="fontawesome-all.min.js"/>
     <template:addResources type="css" resources="parallax-slider.css"/>
     <template:addResources type="css" resources="dark.css"/>
     <template:addResources type="css" resources="ie8.css"/>

@@ -21,6 +21,9 @@
 <template:addResources type="css" resources="bookmarks.css"/>
 <template:addResources type="javascript" resources="jquery.min.js"/>
 <template:addResources type="javascript" resources="ajaxreplace.js"/>
+<template:addResources type="javascript" resources="fa-v4-shims.min.js"/>
+<template:addResources type="javascript" resources="fontawesome-all.min.js"/>
+
 <c:set var="user" value="${uiComponents:getBindedComponent(currentNode, renderContext, 'j:bindedComponent')}"/>
 
 <c:if test="${empty user or not jcr:isNodeType(user, 'jnt:user')}">
