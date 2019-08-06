@@ -60,7 +60,7 @@
     <connection>scm:git:git@github.com:Jahia/dx-base-demo-templates.git</connection>
     <developerConnection>scm:git:git@github.com:Jahia/dx-base-demo-templates.git</developerConnection>
     <url>https://github.com/Jahia/dx-base-demo-templates</url>
-    <tag>HEAD</tag>
+    <tag>2_1_x</tag>
   </scm>
   <properties>
     <jahia-module-type>templatesSet</jahia-module-type>
