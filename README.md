@@ -1,4 +1,4 @@
-DX Base demo Templates set
+Jahia Base demo Templates set
 ===
 
 This is the templates set used for the sample demo site [Digitall](https://github.com/Jahia/digitall) 
@@ -30,7 +30,7 @@ Use maven to compile the module
 
     mvn clean install
 
-How to install on DX 
+How to install on Jahia 
 ---
 Ensure that all the dependencies are installed and started.
-Copy the build jar (dx-base-demo-templates-X.X.X[-SNAPSHOT].jar) from the target folder to DX (digital-factory-data/modules) or use the module manager from DX Administration to upload it.
+Copy the build jar (dx-base-demo-templates-X.X.X[-SNAPSHOT].jar) from the target folder to Jahia (digital-factory-data/modules) or use the module manager from Jahia Administration to upload it.
