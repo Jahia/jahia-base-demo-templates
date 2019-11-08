@@ -27,7 +27,14 @@
     <!-- Meta -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
+    <c:if test="${not empty renderContext.mainResource.node.properties['jcr:description']}">
+        <meta name="description" content="${fn:escapeXml(renderContext.mainResource.node.properties['jcr:description'].string)}"/>
+    </c:if>
+
+    <c:if test="${not empty renderContext.mainResource.node.properties['j:keywords']}">
+        <meta name="keywords" content="${fn:escapeXml(jcr:getKeywords(renderContext.mainResource.node,true))}"/>
+    </c:if>
+
     <meta name="author" content="">
 
     <meta http-equiv="cache-control" content="must-revalidate" />
