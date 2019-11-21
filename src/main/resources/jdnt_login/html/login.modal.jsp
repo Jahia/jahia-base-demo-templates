@@ -33,8 +33,19 @@
                 <div id="cd-login" class="is-selected cd-form"> <!-- log in form -->
                     <ui:loginArea>
                         <c:if test="${not empty param['loginError']}">
-                            <div class="alert alert-error"><fmt:message
-                                    key="${param['loginError'] == 'account_locked' ? 'message.accountLocked' : 'message.invalidLogin'}"/></div>
+                            <div class="alert alert-error">
+                                <c:choose>
+                                    <c:when test="${param['loginError'] == 'account_locked'}">
+                                        <fmt:message key="message.accountLocked"/>
+                                    </c:when>
+                                    <c:when test="${param['loginError'] == 'logged_in_users_limit_reached'}">
+                                        <fmt:message key="message.loggedInUsersLimitReached"/>
+                                    </c:when>
+                                    <c:otherwise>
+                                        <fmt:message key="message.invalidLogin"/>
+                                    </c:otherwise>
+                                </c:choose>
+                            </div>
                         </c:if>
 
                         <p class="fieldset">
