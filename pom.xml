@@ -49,10 +49,10 @@
   <parent>
     <groupId>org.jahia.modules</groupId>
     <artifactId>jahia-modules</artifactId>
-    <version>7.2.0.2</version>
+    <version>7.5.0.0-SNAPSHOT</version>
   </parent>
   <artifactId>dx-base-demo-templates</artifactId>
-  <version>2.2.0-SNAPSHOT</version>
+  <version>3.0.0-SNAPSHOT</version>
   <packaging>bundle</packaging>
   <name>Jahia Base Demo Templates</name>
   <description>Base demo templates set for Jahia</description>
@@ -65,6 +65,8 @@
   <properties>
     <jahia-module-type>templatesSet</jahia-module-type>
     <jahia-depends>bootstrap3-components,bootstrap3-core,default,dx-base-demo-core,font-awesome,calendar,event,facets,grid,jquery,location,bookmarks,news,person,press,rating,search,topstories</jahia-depends>
+    <jahia-module-signature>MCwCFGqb4Rrj9jvhb76ZfPINHDYVZNroAhQsaeKCdAkBNESTldNRZc5t4L9PbQ==</jahia-module-signature>
+    <require-capability>osgi.extender;filter:="(osgi.extender=org.jahia.bundles.blueprint.extender.config)"</require-capability>
   </properties>
   <repositories>
     <repository>
