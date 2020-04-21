@@ -45,7 +45,7 @@ and not jcr:isNodeType(renderContext.mainResource.node.resolveSite, 'jmix:remote
                         </a>
                     </li>
                 </c:if>
-                <c:if test="${! renderContext.previewMode && jcr:hasPermission(renderContext.mainResource.node, 'editModeAccess')}">
+                <c:if test="${! renderContext.previewMode && jcr:hasPermission(renderContext.mainResource.node, 'jContentAccess')}">
                     <li>
                         <a href="<c:url value='${url.preview}'/>">
                             <i class="fa fa-fw fa-eye-slash"></i>
@@ -53,7 +53,7 @@ and not jcr:isNodeType(renderContext.mainResource.node.resolveSite, 'jmix:remote
                         </a>
                     </li>
                 </c:if>
-                <c:if test="${! renderContext.editMode && jcr:hasPermission(renderContext.mainResource.node, 'editModeAccess')}">
+                <c:if test="${! renderContext.editMode && jcr:hasPermission(renderContext.mainResource.node, 'jContentAccess')}">
                     <li>
                         <a href="<c:url value='${url.edit}'/>">
                             <i class="fa fa-fw fa-edit"></i>
@@ -61,7 +61,7 @@ and not jcr:isNodeType(renderContext.mainResource.node.resolveSite, 'jmix:remote
                         </a>
                     </li>
                 </c:if>
-                <c:if test="${! renderContext.editMode && !jcr:hasPermission(renderContext.mainResource.node, 'editModeAccess') && jcr:hasPermission(renderContext.mainResource.node, 'contributeModeAccess')}">
+                <c:if test="${! renderContext.editMode && !jcr:hasPermission(renderContext.mainResource.node, 'jContentAccess') && jcr:hasPermission(renderContext.mainResource.node, 'contributeModeAccess')}">
                     <li>
                         <a href="<c:url value='${url.contribute}'/>">
                             <i class="fa fa-fw fa-edit"></i>
