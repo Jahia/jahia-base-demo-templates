@@ -61,6 +61,15 @@
 							value="${url.baseLive}${currentNode.path}.html.ajax${ps}"/>');
 						}, 'json');
 			}
+
+			$(document).ready(function() {
+				var bookMarks = document.getElementsByClassName("deleteBookmark");
+				for (var i = 0; i < bookMarks.length; i++) {
+					bookMarks[i].addEventListener("click", function(e) {
+						deleteBookmark(e.currentTarget.id);
+					});
+				}
+			});
 		</script>
 
 		<c:if test="${moduleMap.listTotalSize eq 0}">
@@ -80,7 +89,7 @@
 							value="${bookmark.properties['date'].date.time}" dateStyle="short" type="both"/></span>
 						<div class="floatright">
 							&nbsp;
-							<span onclick="deleteBookmark('${bookmark.path}')"><i class="fa fa-trash"
+							<span class="deleteBookmark" id="${bookmark.path}"><i class="fa fa-trash"
 																				  aria-hidden="true"></i></span>
 						</div>
 						<div class="clear"></div>
