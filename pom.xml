@@ -65,7 +65,7 @@
   <properties>
     <jahia-module-type>templatesSet</jahia-module-type>
     <jahia-depends>bootstrap3-components,bootstrap3-core,default,dx-base-demo-core,font-awesome,calendar,event,facets,grid,jquery,location,bookmarks,news,person,press,rating,search,topstories</jahia-depends>
-    <jahia-module-signature>MC0CFQCUwGy/KGfxUd75J/r0YNJTFDwTfwIUevoqScIlUMbwxrwwUq6ceAtRn6A=</jahia-module-signature>
+    <jahia-module-signature>MC0CFHQ0cx+vrslF4mR9Mdamfy7O6vzFAhUAgbmXWAmMlXEDx6Z3lVezxN2O+6M=</jahia-module-signature>
     <require-capability>osgi.extender;filter:="(osgi.extender=org.jahia.bundles.blueprint.extender.config)"</require-capability>
   </properties>
   <repositories>
