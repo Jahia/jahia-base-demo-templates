@@ -8,6 +8,8 @@ import org.slf4j.LoggerFactory
 
 import javax.jcr.ItemNotFoundException
 
+import static org.apache.commons.lang.StringEscapeUtils.escapeXml
+
 /* if menuLimits mixin is enabled, get site level properties otherwise use template settings*/
 def hideHomeValue = false;
 if (renderContext.site.isNodeType("jdmix:menuLimits")){
@@ -36,7 +38,6 @@ maxDepthValue = maxDepth ? maxDepth.long : 4
 def maxTopLevel = currentNode.properties['maxTopLevel']
 maxTopLevelValue = maxTopLevel ? maxTopLevel.long-1 : 4
 }
-
 
 def printMenu;
 printMenu = { node, navMenuLevel ->
@@ -105,7 +106,7 @@ printMenu = { node, navMenuLevel ->
                                     listItemCssClass = (inpath || active ? "class=\"active\"" : "");
                                 }
                                 description = menuItem.properties['jcr:description'];
-                                linkTitle = description ? " title=\"${description.string}\"" : "";
+                                linkTitle = description ? escapeXml(" title=\"${description.string}\"") : "";
                                 if (menuItem.isNodeType('jnt:nodeLink')) {
                                     link = menuItem.properties['j:node'].node.url;
                                 } else if (menuItem.isNodeType('jnt:externalLink')) {
@@ -115,6 +116,7 @@ printMenu = { node, navMenuLevel ->
                                 } else {
                                     link = menuItem.url;
                                 }
+                                link = escapeXml(link);
 
                                 //get the display name
                                 if (menuItem.hasProperty('alternateTitle')) {
@@ -122,6 +124,7 @@ printMenu = { node, navMenuLevel ->
                                 } else {
                                     displayName = menuItem.displayableName;
                                 }
+                                displayName = escapeXml(displayName);
                                 if (navMenuLevel == 1) {
                                     if (!ulIsOpen) {
                                         println "<ul class=\"nav navbar-nav\">\n"
@@ -134,12 +137,11 @@ printMenu = { node, navMenuLevel ->
                                             } else {
                                                 homeTitle = homePage.displayableName;
                                             }
-
-                                            println "<li><a href=\"" + homePage.url + "\" class=\"dropdown-toggle\">" + homeTitle + "</a></li>\n";
-
-
+                                            homeTitle = escapeXml(homeTitle);
+                                            printf('<li><a href="%s" class="dropdown-toggle">%s</a></li>\n',
+                                                    escapeXml(homePage.url), homeTitle);
                                         }
-                                        }
+                                    }
                                         /* end add home page as menu item */
                                         ulIsOpen = true;
                                     }

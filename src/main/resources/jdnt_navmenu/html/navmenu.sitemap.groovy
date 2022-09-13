@@ -5,6 +5,8 @@ import org.jahia.services.render.RenderService
 import org.jahia.services.render.Resource
 import org.jahia.taglibs.jcr.node.JCRTagUtils
 
+import static org.apache.commons.lang.StringEscapeUtils.escapeXml;
+
 def maxDepthValue = 3;
 def printMenu;
 printMenu = { node, navMenuLevel ->
@@ -74,6 +76,7 @@ printMenu = { node, navMenuLevel ->
                             } else {
                                 displayName = menuItem.displayableName;
                             }
+                            displayName = escapeXml(displayName);
                             if (navMenuLevel == 1) {
                                 println "<div class=\"col-md-3 col-sm-6 col-xs-12\">";
                                 println "<ul class=\"sitemap-list\">";
