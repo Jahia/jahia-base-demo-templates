@@ -49,7 +49,7 @@
   <parent>
     <groupId>org.jahia.modules</groupId>
     <artifactId>jahia-modules</artifactId>
-    <version>8.0.0.0</version>
+    <version>8.2.0.0-SNAPSHOT</version>
   </parent>
   <artifactId>dx-base-demo-templates</artifactId>
   <version>3.5.0-SNAPSHOT</version>
@@ -64,7 +64,7 @@
   </scm>
   <properties>
     <jahia-module-type>templatesSet</jahia-module-type>
-    <jahia-depends>default, search, bookmarks, topstories, facets, calendar, rating, location, news, skins, dx-base-demo-core, bootstrap3-core</jahia-depends>    
+    <jahia-depends>default, search, bookmarks, topstories, facets, calendar, rating, location, news, skins, dx-base-demo-core, bootstrap3-core, legacy-default-components</jahia-depends>
     <jahia-module-signature>MCwCFAMRc+kuxfn0TF+3lhh7eh53TIH5AhRCIrB80aelCQ0K26Csv8wE2wWCcQ==</jahia-module-signature>
     <require-capability>osgi.extender;filter:="(osgi.extender=org.jahia.bundles.blueprint.extender.config)"</require-capability>
   </properties>
