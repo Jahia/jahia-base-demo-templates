@@ -2,24 +2,6 @@
 <settings>
     <profiles>
         <profile>
-            <id>jahia-internal-repository</id>
-            <repositories>
-                <repository>
-                    <id>jahia-internal</id>
-                    <name>Jahia Internal Repository</name>
-                    <url>${env.NEXUS_INTERNAL_URL}</url>
-                    <releases>
-                        <enabled>true</enabled>
-                        <updatePolicy>never</updatePolicy>
-                    </releases>
-                    <snapshots>
-                        <enabled>true</enabled>
-                        <updatePolicy>always</updatePolicy>
-                    </snapshots>
-                </repository>
-            </repositories>
-        </profile>
-        <profile>
             <id>sonar</id>
             <activation>
                 <activeByDefault>true</activeByDefault>
@@ -30,14 +12,9 @@
             </properties>
         </profile>
     </profiles>
-
-    <activeProfiles>
-        <activeProfile>jahia-internal-repository</activeProfile>
-    </activeProfiles>
-
     <servers>
         <server>
-            <id>jahia-enterprise</id>
+            <id>jahia-public</id>
             <username>${env.NEXUS_USERNAME}</username>
             <password>${env.NEXUS_PASSWORD}</password>
         </server>
@@ -47,9 +24,12 @@
             <password>${env.NEXUS_PASSWORD}</password>
         </server>
         <server>
-            <id>jahia-internal</id>
+            <id>staging-repository</id>
             <username>${env.NEXUS_USERNAME}</username>
             <password>${env.NEXUS_PASSWORD}</password>
         </server>
     </servers>
+    <pluginGroups>
+	    <pluginGroup>org.owasp</pluginGroup>
+    </pluginGroups>   
 </settings>
