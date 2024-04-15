@@ -18,6 +18,9 @@
 <%--@elvariable id="currentResource" type="org.jahia.services.render.Resource"--%>
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
 <template:addResources type="css" resources="languageSwitchingLinks.css"/>
+<template:addResources type="javascript" resources="fa-v4-shims.min.js"/>
+<template:addResources type="javascript" resources="fontawesome-all.min.js"/>
+
 <%-- display the language switcher if more than one language is set on the site --%>
 
 <c:set var="linkKind" value="${currentNode.properties.typeOfDisplay.string}"/>
