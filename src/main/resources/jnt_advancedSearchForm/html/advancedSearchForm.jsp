@@ -17,7 +17,7 @@
     <div id="advancedSearch" class="row panel-collapse collapse" aria-expanded="false">
         <div class="row" id="advanced-search">
             <c:url value='${url.base}${renderContext.mainResource.node.path}.html' var="searchUrl"/>
-            <s:form name="advancedSearchForm" class="sky-form" method="post" action="${searchUrl}">
+            <s:form name="advancedSearchForm" class="sky-form" method="post" action="${searchUrl}" id="advancedSearchForm">
                 <div class="col-md-4">
                     <header><fmt:message key="search.advancedSearch.criteria.text.title"/></header>
                     <fieldset>
@@ -128,3 +128,21 @@
         </div>
     </div>
 </div>
+<script>
+    if (window.wem) {
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('advancedSearchForm').addEventListener('submit', function (event) {
+                console.log(event.target);
+                const searchTermInput = event.target.elements['searchTerm'];
+                const languageInput = event.target.querySelector('[name="src_languages.values"]');
+                const searchEvent = window.wem.buildSearchEvent('advancedSearchForm', event.target, searchTermInput.value, languageInput.value);
+                window.wem.collectEvent(searchEvent,
+                    () => console.debug('[Collecting search event] search formEvent sent'),
+                    () => console.debug('[Collecting search event] oups search formEvent was not handled properly')
+                );
+            });
+        });
+    } else {
+        console.debug('Wem does not exist');
+    }
+</script>

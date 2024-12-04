@@ -28,7 +28,7 @@
                 <h1>Discover <span class="color-theme">new</span> things</h1>
 
                 <div class="input-group">
-                    <s:form method="post" action="${searchUrl}">
+                    <s:form method="post" action="${searchUrl}" id="searchForm">
                         <fmt:message key='search.startSearching' var="startSearching"/>
                         <s:term match="all_words" id="searchTerm" value="${startSearching}"
                                 searchIn="siteContent,tags,files"
@@ -50,4 +50,21 @@
         </div>
     </div>
 </c:if>
-
+<script>
+    if (window.wem) {
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('searchForm').addEventListener('submit', function (event) {
+                console.log(event.target);
+                const searchTermInput = event.target.elements['searchTerm'];
+                const languageInput = event.target.querySelector('[name="src_languages.values"]');
+                const searchEvent = window.wem.buildSearchEvent('searchForm', event.target, searchTermInput.value, languageInput.value);
+                window.wem.collectEvent(searchEvent,
+                    () => console.debug('[Collecting search event] search formEvent sent'),
+                    () => console.debug('[Collecting search event] oups search formEvent was not handled properly')
+                );
+            });
+        });
+    } else {
+        console.debug('Wem does not exist');
+    }
+</script>
