@@ -104,7 +104,6 @@
         <extensions>true</extensions>
         <configuration>
           <instructions>
-            <Jahia-Source-Folders>/var/jahia/content/jahia-base-demo-templates</Jahia-Source-Folders>
             <Import-Package>org.jahia.services.search,
                             ${jahia.plugin.projectPackageImport},
                             *</Import-Package>
