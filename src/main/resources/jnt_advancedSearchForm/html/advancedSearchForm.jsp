@@ -8,6 +8,7 @@
 <template:addResources type="css" resources="plugins/skyforms/sky-forms.css"/>
 <template:addResources type="css" resources="plugins/skyforms/custom/custom-sky-forms.css"/>
 <template:addResources type="javascript" resources="custom/advancedSearchForm.js"/>
+<template:addResources type="javascript" resources="custom/trackSearch.js"/>
 
 <jcr:nodeProperty name="jcr:title" node="${currentNode}" var="title"/>
 <c:if test="${not empty title.string}">
@@ -17,7 +18,7 @@
     <div id="advancedSearch" class="row panel-collapse collapse" aria-expanded="false">
         <div class="row" id="advanced-search">
             <c:url value='${url.base}${renderContext.mainResource.node.path}.html' var="searchUrl"/>
-            <s:form name="advancedSearchForm" class="sky-form" method="post" action="${searchUrl}">
+            <s:form name="advancedSearchForm" class="sky-form" method="post" action="${searchUrl}" id="advancedSearchForm">
                 <div class="col-md-4">
                     <header><fmt:message key="search.advancedSearch.criteria.text.title"/></header>
                     <fieldset>
@@ -128,3 +129,4 @@
         </div>
     </div>
 </div>
+<script>registerSearchListener('advancedSearchForm');</script>

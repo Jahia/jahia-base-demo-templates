@@ -26,12 +26,12 @@
 <%@ taglib prefix="template" uri="http://www.jahia.org/tags/templateLib" %>
 
 <template:addResources type="css" resources="simplesearchform.css"/>
-
+<template:addResources type="javascript" resources="custom/trackSearch.js"/>
 <template:addCacheDependency uuid="${currentNode.properties.result.string}"/>
 <c:if test="${not empty currentNode.properties.result.node}">
     <c:url value='${url.base}${currentNode.properties.result.node.path}.html' var="searchUrl"/>
     <div class="container">
-        <s:form method="post" action="${searchUrl}">
+        <s:form method="post" action="${searchUrl}" id="topSearchForm">
             <fmt:message key='search.startSearching' var="startSearching"/>
             <s:term match="all_words" id="searchTerm" value="${startSearching}" searchIn="siteContent,tags,files"
                     onfocus="if(this.value=='${startSearching}')this.value='';"
@@ -43,3 +43,4 @@
         </s:form>
     </div>
 </c:if>
+<script>registerSearchListener('topSearchForm');</script>

@@ -19,6 +19,7 @@
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
 
 <template:addResources type="css" resources="pages/page_search.css"/>
+<template:addResources type="javascript" resources="custom/trackSearch.js"/>
 <template:addCacheDependency uuid="${currentNode.properties.result.string}"/>
 <c:if test="${not empty currentNode.properties.result.node}">
     <c:url value='${url.base}${currentNode.properties.result.node.path}.html' var="searchUrl"/>
@@ -28,7 +29,7 @@
                 <h1>Discover <span class="color-theme">new</span> things</h1>
 
                 <div class="input-group">
-                    <s:form method="post" action="${searchUrl}">
+                    <s:form method="post" action="${searchUrl}" id="searchForm">
                         <fmt:message key='search.startSearching' var="startSearching"/>
                         <s:term match="all_words" id="searchTerm" value="${startSearching}"
                                 searchIn="siteContent,tags,files"
@@ -50,4 +51,4 @@
         </div>
     </div>
 </c:if>
-
+<script>registerSearchListener('searchForm');</script>
