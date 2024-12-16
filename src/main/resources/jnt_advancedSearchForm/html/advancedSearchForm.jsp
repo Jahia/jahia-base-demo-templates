@@ -8,6 +8,7 @@
 <template:addResources type="css" resources="plugins/skyforms/sky-forms.css"/>
 <template:addResources type="css" resources="plugins/skyforms/custom/custom-sky-forms.css"/>
 <template:addResources type="javascript" resources="custom/advancedSearchForm.js"/>
+<template:addResources type="javascript" resources="custom/trackSearch.js"/>
 
 <jcr:nodeProperty name="jcr:title" node="${currentNode}" var="title"/>
 <c:if test="${not empty title.string}">
@@ -128,21 +129,4 @@
         </div>
     </div>
 </div>
-<script>
-    if (window.wem) {
-        document.addEventListener('DOMContentLoaded', () => {
-            document.getElementById('advancedSearchForm').addEventListener('submit', function (event) {
-                console.log(event.target);
-                const searchTermInput = event.target.elements['searchTerm'];
-                const languageInput = event.target.querySelector('[name="src_languages.values"]');
-                const searchEvent = window.wem.buildSearchEvent('advancedSearchForm', event.target, searchTermInput.value, languageInput.value);
-                window.wem.collectEvent(searchEvent,
-                    () => console.debug('[Collecting search event] search formEvent sent'),
-                    () => console.debug('[Collecting search event] oups search formEvent was not handled properly')
-                );
-            });
-        });
-    } else {
-        console.debug('Wem does not exist');
-    }
-</script>
+<script>registerSearchListener('advancedSearchForm');</script>

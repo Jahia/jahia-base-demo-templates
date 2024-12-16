@@ -27,6 +27,9 @@ Required module dependencies
 * rating
 * search
 * topstories
+* bookmarks
+* skins
+* default-skins
 
 How to compile
 ---
