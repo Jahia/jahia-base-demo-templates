@@ -20,6 +20,7 @@
 
 <c:set var="siteNode" value="${renderContext.site}"/>
 <c:set var="icon" value="${siteNode.properties['icon'].node}"/>
-<template:module node='${icon}' editable='false' view='hidden.contentURL' var="iconUrl"/>
+<template:addCacheDependency node="${icon}"/>
+<c:url var="iconUrl" value="${icon.url}" context="/"/>
 
 <link rel="shortcut icon" href="${iconUrl}" type="image/x-icon">
