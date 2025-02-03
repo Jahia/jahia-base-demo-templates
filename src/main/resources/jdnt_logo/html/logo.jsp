@@ -18,8 +18,10 @@
 
 <c:if test="${not empty logo}">
     <c:if test="${not empty renderContext.site.home.url}">
-        <template:module node='${renderContext.site.home}' editable='false' view='hidden.contentURL' var="homePageURL"/>
-        <template:module node='${logo}' editable='false' view='hidden.contentURL' var="logoUrl"/>
+        <template:addCacheDependency node="${renderContext.site.home}"/>
+        <c:url var="homePageURL" value="${renderContext.site.home.url}" context="/"/>
+        <template:addCacheDependency node="${logo}"/>
+        <c:url var="logoUrl" value="${logo.url}" context="/" />
     </c:if>
     <a href="${homePageURL}" class="logo"><img src="${logoUrl}" alt="Logo"></a>
 </c:if>
