@@ -116,8 +116,8 @@
 
 
 <c:if test="${jcr:isNodeType(siteNode, 'jdmix:topBackgroundColor') && not empty siteNode.properties.topHeaderBackgroundColor}">
-    <c:set var="bodyTopBackgroundColor" value="style='background : ${siteNode.properties.topHeaderBackgroundColor.string};'"/>
-    <c:set var="bodyNavBackground" value="style='background : ${siteNode.properties.topHeaderBackgroundColor.string};'"/>
+    <c:set var="bodyTopBackgroundColor" value="style='background : ${fn:escapeXml(siteNode.properties.topHeaderBackgroundColor.string)};'"/>
+    <c:set var="bodyNavBackground" value="style='background : ${fn:escapeXml(siteNode.properties.topHeaderBackgroundColor.string)};'"/>
 </c:if>
 <c:if test="${jcr:isNodeType(siteNode, 'jdmix:topBackgroundImage') && not empty siteNode.properties.topHeaderBackgroundImage}">
     <c:url var="topBackgoundImageUrl" value="${siteNode.properties.topHeaderBackgroundImage.node.url}" context="/"/>
@@ -125,7 +125,7 @@
 </c:if>
 
 <c:if test="${jcr:isNodeType(siteNode, 'jdmix:bottomBackgroundColor') && not empty siteNode.properties.bottomHeaderBackgroundColor}">
-    <c:set var="blogTopbarBackground" value="style='background : ${siteNode.properties.bottomHeaderBackgroundColor.string};'"/>
+    <c:set var="blogTopbarBackground" value="style='background : ${fn:escapeXml(siteNode.properties.bottomHeaderBackgroundColor.string)};'"/>
 </c:if>
 <c:if test="${jcr:isNodeType(siteNode, 'jdmix:bottomBackgroundImage') && not empty siteNode.properties.bottomHeaderBackgroundImage}">
     <c:url var="bottomBackgoundImageUrl" value="${siteNode.properties.bottomHeaderBackgroundImage.node.url}" context="/"/>
@@ -134,7 +134,7 @@
 
 
 <c:if test="${jcr:isNodeType(siteNode, 'jdmix:topFooterBackgroundColor') && not empty siteNode.properties.topFooterBackgroundColor}">
-    <c:set var="topFooterBackground" value="style='background : ${siteNode.properties.topFooterBackgroundColor.string};'"/>
+    <c:set var="topFooterBackground" value="style='background : ${fn:escapeXml(siteNode.properties.topFooterBackgroundColor.string)};'"/>
 </c:if>
 <c:if test="${jcr:isNodeType(siteNode, 'jdmix:topFooterBackgroundImage') && not empty siteNode.properties.topFooterBackgroundImage}">
     <c:url var="topFooterBackgoundImageUrl" value="${siteNode.properties.topFooterBackgroundImage.node.url}" context="/"/>
@@ -142,7 +142,7 @@
 </c:if>
 
 <c:if test="${jcr:isNodeType(siteNode, 'jdmix:bottomFooterBackgroundColor') && not empty siteNode.properties.bottomFooterBackgroundColor}">
-    <c:set var="bottomFooterBackground" value="style='background : ${siteNode.properties.bottomFooterBackgroundColor.string};'"/>
+    <c:set var="bottomFooterBackground" value="style='background : ${fn:escapeXml(siteNode.properties.bottomFooterBackgroundColor.string)};'"/>
 </c:if>
 <c:if test="${jcr:isNodeType(siteNode, 'jdmix:bottomFooterBackgroundImage') && not empty siteNode.properties.bottomFooterBackgroundImage}">
     <c:url var="bottomFooterBackgoundImageUrl" value="${siteNode.properties.bottomFooterBackgroundImage.node.url}" context="/"/>
