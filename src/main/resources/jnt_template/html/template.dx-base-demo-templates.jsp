@@ -121,7 +121,7 @@
 </c:if>
 <c:if test="${jcr:isNodeType(siteNode, 'jdmix:topBackgroundImage') && not empty siteNode.properties.topHeaderBackgroundImage}">
     <c:url var="topBackgoundImageUrl" value="${siteNode.properties.topHeaderBackgroundImage.node.url}" context="/"/>
-    <c:set var="bodyNavBackground" value="style='background : url(${topBackgoundImageUrl}) no-repeat scroll center center / cover;'"/>
+    <c:set var="bodyNavBackground" value="style='background : url(${fn:escapeXml(topBackgoundImageUrl)}) no-repeat scroll center center / cover;'"/>
 </c:if>
 
 <c:if test="${jcr:isNodeType(siteNode, 'jdmix:bottomBackgroundColor') && not empty siteNode.properties.bottomHeaderBackgroundColor}">
@@ -129,7 +129,7 @@
 </c:if>
 <c:if test="${jcr:isNodeType(siteNode, 'jdmix:bottomBackgroundImage') && not empty siteNode.properties.bottomHeaderBackgroundImage}">
     <c:url var="bottomBackgoundImageUrl" value="${siteNode.properties.bottomHeaderBackgroundImage.node.url}" context="/"/>
-    <c:set var="blogTopbarBackground" value="style='background : url(${bottomBackgoundImageUrl}) no-repeat scroll center center / cover;'"/>
+    <c:set var="blogTopbarBackground" value="style='background : url(${fn:escapeXml(bottomBackgoundImageUrl)}) no-repeat scroll center center / cover;'"/>
 </c:if>
 
 
@@ -138,7 +138,7 @@
 </c:if>
 <c:if test="${jcr:isNodeType(siteNode, 'jdmix:topFooterBackgroundImage') && not empty siteNode.properties.topFooterBackgroundImage}">
     <c:url var="topFooterBackgoundImageUrl" value="${siteNode.properties.topFooterBackgroundImage.node.url}" context="/"/>
-    <c:set var="topFooterBackground" value="style='background : url(${topFooterBackgoundImageUrl}) no-repeat scroll center center / cover;'"/>
+    <c:set var="topFooterBackground" value="style='background : url(${fn:escapeXml(topFooterBackgoundImageUrl)}) no-repeat scroll center center / cover;'"/>
 </c:if>
 
 <c:if test="${jcr:isNodeType(siteNode, 'jdmix:bottomFooterBackgroundColor') && not empty siteNode.properties.bottomFooterBackgroundColor}">
@@ -146,7 +146,7 @@
 </c:if>
 <c:if test="${jcr:isNodeType(siteNode, 'jdmix:bottomFooterBackgroundImage') && not empty siteNode.properties.bottomFooterBackgroundImage}">
     <c:url var="bottomFooterBackgoundImageUrl" value="${siteNode.properties.bottomFooterBackgroundImage.node.url}" context="/"/>
-    <c:set var="bottomFooterBackground" value="style='background : url(${bottomFooterBackgoundImageUrl}) no-repeat scroll center center / cover;'"/>
+    <c:set var="bottomFooterBackground" value="style='background : url(${fn:escapeXml(bottomFooterBackgoundImageUrl)}) no-repeat scroll center center / cover;'"/>
 </c:if>
 
 
