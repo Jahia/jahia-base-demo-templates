@@ -19,13 +19,13 @@
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
 
 <%-- if social icons were included, get the urls --%>
-<c:set var="facebookLink" value="${currentNode.properties.facebookLink.string}"/>
-<c:set var="googlePlusLink" value="${currentNode.properties.googlePlusLink.string}"/>
-<c:set var="twitterLink" value="${currentNode.properties.twitterLink.string}"/>
-<c:set var="youtubeLink" value="${currentNode.properties.youtubeLink.string}"/>
-<c:set var="instagramLink" value="${currentNode.properties.instagramLink.string}"/>
-<c:set var="linkedinLink" value="${currentNode.properties.linkedinLink.string}"/>
-<c:set var="pinterestLink" value="${currentNode.properties.pinterestLink.string}"/>
+<c:set var="facebookLink" value="${fn:trim(currentNode.properties.facebookLink.string)}"/>
+<c:set var="googlePlusLink" value="${fn:trim(currentNode.properties.googlePlusLink.string)}"/>
+<c:set var="twitterLink" value="${fn:trim(currentNode.properties.twitterLink.string)}"/>
+<c:set var="youtubeLink" value="${fn:trim(currentNode.properties.youtubeLink.string)}"/>
+<c:set var="instagramLink" value="${fn:trim(currentNode.properties.instagramLink.string)}"/>
+<c:set var="linkedinLink" value="${fn:trim(currentNode.properties.linkedinLink.string)}"/>
+<c:set var="pinterestLink" value="${fn:trim(currentNode.properties.pinterestLink.string)}"/>
 <%-- a value with no http(s), ftp, mailto or tel scheme links as http:// --%>
 <c:set var="linkSchemes" value="(?i)(https?|ftp)://.*|(mailto|tel):.*"/>
 

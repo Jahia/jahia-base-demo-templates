@@ -36,7 +36,7 @@
     </c:when>
     <c:when test="${privacyLink == 'externalLink'}">
         <template:addCacheDependency node="${renderContext.site.properties.privacyPageExternalLink.node}"/>
-        <a href="${functions:matches(linkSchemes, renderContext.site.properties.privacyPageExternalLink.string) ? '' : 'http://'}${fn:escapeXml(renderContext.site.properties.privacyPageExternalLink.string)}">${fn:escapeXml(privacyPolicyLinkText)}</a>
+        <a href="${functions:matches(linkSchemes, fn:trim(renderContext.site.properties.privacyPageExternalLink.string)) ? '' : 'http://'}${fn:escapeXml(fn:trim(renderContext.site.properties.privacyPageExternalLink.string))}">${fn:escapeXml(privacyPolicyLinkText)}</a>
     </c:when>
     <c:when test="${privacyLink == 'link'}">
         <c:if test="${! empty privacyLink}">
@@ -59,7 +59,7 @@
     </c:when>
     <c:when test="${termsLink == 'externalLink'}">
 
-        <a href="${functions:matches(linkSchemes, renderContext.site.properties.termsPageExternalLink.string) ? '' : 'http://'}${fn:escapeXml(renderContext.site.properties.termsPageExternalLink.string)}">${fn:escapeXml(termsLinkText)}</a>
+        <a href="${functions:matches(linkSchemes, fn:trim(renderContext.site.properties.termsPageExternalLink.string)) ? '' : 'http://'}${fn:escapeXml(fn:trim(renderContext.site.properties.termsPageExternalLink.string))}">${fn:escapeXml(termsLinkText)}</a>
     </c:when>
     <c:when test="${termsLink == 'link'}">
         <c:if test="${! empty privacyLink}">
