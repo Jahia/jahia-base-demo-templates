@@ -31,7 +31,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">${renderContext.site.properties.privacyPolicyLinkText.string}</h4>
+                    <h4 class="modal-title">${fn:escapeXml(renderContext.site.properties.privacyPolicyLinkText.string)}</h4>
                 </div>
                 <div class="modal-body">
                         ${privacyModalMessage}
@@ -48,7 +48,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">${renderContext.site.properties.termsLinkText.string}</h4>
+                    <h4 class="modal-title">${fn:escapeXml(renderContext.site.properties.termsLinkText.string)}</h4>
                 </div>
                 <div class="modal-body">
                         ${termsModalMessage}

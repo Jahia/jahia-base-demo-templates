@@ -26,42 +26,44 @@
 <c:set var="instagramLink" value="${currentNode.properties.instagramLink.string}"/>
 <c:set var="linkedinLink" value="${currentNode.properties.linkedinLink.string}"/>
 <c:set var="pinterestLink" value="${currentNode.properties.pinterestLink.string}"/>
+<%-- a value with no http(s), ftp, mailto or tel scheme links as http:// --%>
+<c:set var="linkSchemes" value="(?i)(https?|ftp)://.*|(mailto|tel):.*"/>
 
 <!-- Site Social Links -->
 
 <ul class="footer-socials list-inline pull-right">
     <c:if test="${not empty facebookLink and facebookLink != 'http://'}">
-        <li><a href="${facebookLink}" title="Facebook">
+        <li><a href="${functions:matches(linkSchemes, facebookLink) ? '' : 'http://'}${fn:escapeXml(facebookLink)}" title="Facebook">
             <i class="fa fa-facebook"></i></a>
         </li>
     </c:if>
     <c:if test="${not empty googlePlusLink and googlePlusLink != 'http://'}">
-        <li><a href="${googlePlusLink}" title="Google Plus">
+        <li><a href="${functions:matches(linkSchemes, googlePlusLink) ? '' : 'http://'}${fn:escapeXml(googlePlusLink)}" title="Google Plus">
             <i class="fa fa-google-plus"></i></a>
         </li>
     </c:if>
     <c:if test="${not empty twitterLink and twitterLink != 'http://'}">
-        <li><a href="${twitterLink}" title="Twitter">
+        <li><a href="${functions:matches(linkSchemes, twitterLink) ? '' : 'http://'}${fn:escapeXml(twitterLink)}" title="Twitter">
             <i class="fa fa-twitter"></i></a>
         </li>
     </c:if>
     <c:if test="${not empty youtubeLink and youtubeLink != 'http://'}">
-        <li><a href="${youtubeLink}" title="YouTube">
+        <li><a href="${functions:matches(linkSchemes, youtubeLink) ? '' : 'http://'}${fn:escapeXml(youtubeLink)}" title="YouTube">
             <i class="fa fa-youtube"></i></a>
         </li>
     </c:if>
     <c:if test="${not empty instagramLink and instagramLink != 'http://'}">
-        <li><a href="${instagramLink}" title="Instagram">
+        <li><a href="${functions:matches(linkSchemes, instagramLink) ? '' : 'http://'}${fn:escapeXml(instagramLink)}" title="Instagram">
             <i class="fa fa-instagram"></i></a>
         </li>
     </c:if>
     <c:if test="${not empty linkedinLink and linkedinLink != 'http://'}">
-        <li><a href="${linkedinLink}" title="LinkedIn">
+        <li><a href="${functions:matches(linkSchemes, linkedinLink) ? '' : 'http://'}${fn:escapeXml(linkedinLink)}" title="LinkedIn">
             <i class="fa fa-linkedin"></i></a>
         </li>
     </c:if>
     <c:if test="${not empty pinterestLink and pinterestLink != 'http://'}">
-        <li><a href="${pinterestLink}" title="Pinterest">
+        <li><a href="${functions:matches(linkSchemes, pinterestLink) ? '' : 'http://'}${fn:escapeXml(pinterestLink)}" title="Pinterest">
             <i class="fa fa-pinterest"></i></a>
         </li>
     </c:if>

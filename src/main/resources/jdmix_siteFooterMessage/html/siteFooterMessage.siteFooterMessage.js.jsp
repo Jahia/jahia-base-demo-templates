@@ -23,29 +23,31 @@
 <c:set var="privacyLink" value="${renderContext.site.properties.privacyLink.string}"/>
 <c:set var="termsLinkText" value="${renderContext.site.properties.termsLinkText.string}"/>
 <c:set var="termsLink" value="${renderContext.site.properties.termsLink.string}"/>
+<%-- a value with no http(s), ftp, mailto or tel scheme links as http:// --%>
+<c:set var="linkSchemes" value="(?i)(https?|ftp)://.*|(mailto|tel):.*"/>
 
 <p>
 <c:if test="${not empty footerMessage}">
-    ${footerMessage}&nbsp;
+    ${fn:escapeXml(footerMessage)}&nbsp;
 </c:if>
 <c:choose>
     <c:when test="${privacyLink == 'none'}">
-        ${privacyPolicyLinkText}&nbsp;
+        ${fn:escapeXml(privacyPolicyLinkText)}&nbsp;
     </c:when>
     <c:when test="${privacyLink == 'externalLink'}">
         <template:addCacheDependency node="${renderContext.site.properties.privacyPageExternalLink.node}"/>
-        <a href="${renderContext.site.properties.privacyPageExternalLink.string}">${privacyPolicyLinkText}</a>
+        <a href="${functions:matches(linkSchemes, renderContext.site.properties.privacyPageExternalLink.string) ? '' : 'http://'}${fn:escapeXml(renderContext.site.properties.privacyPageExternalLink.string)}">${fn:escapeXml(privacyPolicyLinkText)}</a>
     </c:when>
     <c:when test="${privacyLink == 'link'}">
         <c:if test="${! empty privacyLink}">
             <template:addCacheDependency node="${renderContext.site.properties.privacyPageLink.node}"/>
             <c:url var="privacyPolicyLinkTextUrl" value="${renderContext.site.properties.privacyPageLink.node.url}" context="/"/>
-            <a href="${privacyPolicyLinkTextUrl}">${privacyPolicyLinkText}</a>
+            <a href="${privacyPolicyLinkTextUrl}">${fn:escapeXml(privacyPolicyLinkText)}</a>
         </c:if>
     </c:when>
     <c:when test="${privacyLink == 'modal'}">
         <c:set var="privacyModalMessage" value="${renderContext.site.properties.privacyModalMessage.string}"/>
-        <a href="" data-toggle="modal" data-target="#myPrivacyModal">${privacyPolicyLinkText}</a>
+        <a href="" data-toggle="modal" data-target="#myPrivacyModal">${fn:escapeXml(privacyPolicyLinkText)}</a>
     </c:when>
 </c:choose>
 <c:if test="${not empty privacyPolicyLinkText and not empty termsLinkText}">
@@ -53,23 +55,23 @@
 </c:if>
 <c:choose>
     <c:when test="${termsLink == 'none'}">
-        ${termsLinkText}
+        ${fn:escapeXml(termsLinkText)}
     </c:when>
     <c:when test="${termsLink == 'externalLink'}">
 
-        <a href="${renderContext.site.properties.termsPageExternalLink.string}">${termsLinkText}</a>
+        <a href="${functions:matches(linkSchemes, renderContext.site.properties.termsPageExternalLink.string) ? '' : 'http://'}${fn:escapeXml(renderContext.site.properties.termsPageExternalLink.string)}">${fn:escapeXml(termsLinkText)}</a>
     </c:when>
     <c:when test="${termsLink == 'link'}">
         <c:if test="${! empty privacyLink}">
             <template:addCacheDependency node="${renderContext.site.properties.termsPageLink.node}"/>
             <c:url var="termsLinkUrl" value="${renderContext.site.properties.termsPageLink.node.url}" context="/"/>
 
-            <a href="${termsLinkUrl}">${termsLinkText}</a>
+            <a href="${termsLinkUrl}">${fn:escapeXml(termsLinkText)}</a>
         </c:if>
     </c:when>
     <c:when test="${termsLink == 'modal'}">
         <c:set var="termsModalMessage" value="${renderContext.site.properties.termsModalMessage.string}"/>
-        <a href="" data-toggle="modal" data-target="#myTermsModal">${termsLinkText}</a>
+        <a href="" data-toggle="modal" data-target="#myTermsModal">${fn:escapeXml(termsLinkText)}</a>
     </c:when>
 </c:choose>
 </p>
