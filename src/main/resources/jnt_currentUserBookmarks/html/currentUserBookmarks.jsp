@@ -53,12 +53,12 @@
     </c:if>
 
 	<c:if test="${currentResource.workspace ne 'default'}">
+		<c:url var="bookmarkListUrl" value="${url.baseLive}${currentNode.path}.html.ajax${ps}"/>
 		<script type="text/javascript">
 			function deleteBookmark(source) {
 				$.post('<c:url value="${url.base}"/>' + source, {"jcrMethodToCall": "delete"},
 						function (result) {
-							$('#bookmarkList${user.identifier}').load('<c:url
-							value="${url.baseLive}${currentNode.path}.html.ajax${ps}"/>');
+							$('#bookmarkList${user.identifier}').load('${fn:replace(functions:escapeJavaScript(bookmarkListUrl), '<', '\\x3C')}');
 						}, 'json');
 			}
 
