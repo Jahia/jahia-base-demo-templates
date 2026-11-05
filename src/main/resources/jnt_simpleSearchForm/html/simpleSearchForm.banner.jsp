@@ -29,7 +29,7 @@
                 <h1>Discover <span class="color-theme">new</span> things</h1>
 
                 <div class="input-group">
-                    <s:form method="post" action="${searchUrl}" id="searchForm">
+                    <s:form method="post" action="${fn:escapeXml(searchUrl)}" id="searchForm">
                         <fmt:message key='search.startSearching' var="startSearching"/>
                         <s:term match="all_words" id="searchTerm" value="${startSearching}"
                                 searchIn="siteContent,tags,files"
