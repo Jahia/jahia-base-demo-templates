@@ -31,7 +31,7 @@
 <c:if test="${not empty currentNode.properties.result.node}">
     <c:url value='${url.base}${currentNode.properties.result.node.path}.html' var="searchUrl"/>
     <div class="container">
-        <s:form method="post" action="${searchUrl}" id="topSearchForm">
+        <s:form method="post" action="${fn:escapeXml(searchUrl)}" id="topSearchForm">
             <fmt:message key='search.startSearching' var="startSearching"/>
             <s:term match="all_words" id="searchTerm" value="${startSearching}" searchIn="siteContent,tags,files"
                     onfocus="if(this.value=='${startSearching}')this.value='';"
