@@ -46,9 +46,9 @@
 	<template:displayPagination id="${renderContext.mainResource.node.identifier}"/>
 
     <c:if test="${currentResource.workspace eq 'default'}">
+        <c:url var="bookmarkListLiveUrl" value="${url.baseLive}${currentNode.path}.html.ajax"/>
         <script type="text/javascript">
-            $('#bookmarkList${user.identifier}').load('<c:url
-            value="${url.baseLive}${currentNode.path}.html.ajax"/>');
+            $('#bookmarkList${user.identifier}').load('${fn:replace(functions:escapeJavaScript(bookmarkListLiveUrl), '<', '\\x3C')}');
         </script>
     </c:if>
 
